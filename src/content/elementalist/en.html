@@ -1,0 +1,272 @@
+{% from "macros.html" import section, skill, core, loadout, passives, glance, hotline, macroseq, dv_board with context %}
+
+{# ============================== PvE and PvP ============================== #}
+{% call glance('pve') %}
+  <h3>{{ t.core_skills }}</h3>
+  {{ core([('elemental-fusion', '20'), ('combustion', '20'), ('summon-fire-spirit', '20'), ('cold-shock', '16'), ('summon-water-spirit', '16')]) }}
+  <h3>{{ t.stigma_loadout }}</h3>
+  {{ loadout([('summon-ancient-spirit', 20), ('enhance-spirits-benediction', 20), ('flame-blessing', 20), ('jointstrike-corrode', 20)]) }}
+  <h3>{{ t.key_passives }}</h3>
+  {{ passives(['mental-focus', 'spirit-strike', 'element-unification', 'spirit-revitalization']) }}
+{% endcall %}
+
+{% call glance('pvp') %}
+  <h3>{{ t.core_skills }}</h3>
+  {{ core([('defiance', '20'), ('cold-shock', '20'), ('elemental-fusion', '20'), ('jointstrike-curse', '20'), ('combustion', '20')]) }}
+  <h3>{{ t.stigma_loadout }}</h3>
+  {{ loadout([('summon-ancient-spirit', 20), ('enhance-spirits-benediction', 20), ('command-proxy', 20), ('seize-magic', 20)]) }}
+  <h3>{{ t.key_passives }}</h3>
+  {{ passives(['spirit-protection', 'revitalization-contract', 'spirit-strike', 'mental-focus']) }}
+{% endcall %}
+
+{% call section('intro', 'Overview', 'pve') %}
+  <p>The Elementalist (Spirit Master) is the only summoner: a spirit fights next to you, every spirit skill gives you an element, and at four elements {{ s('elemental-fusion') }} is ready. Most of the damage comes from Elemental Fusion and the spirits — above all {{ s('summon-ancient-spirit') }} and {{ s('summon-fire-spirit') }}.</p>
+  <div class="callout accent">
+    <h3>The build in one sentence</h3>
+    <p>Buff first, then summon: a spirit copies your stats at the moment it appears. Keep five stacks of {{ s('cold-shock') }}'s Attack buff, open with the buffs and the Ancient Spirit, and let the macro fire Elemental Fusion whenever it is ready.</p>
+  </div>
+  <div class="callout"><ul>
+    <li><strong>The snapshot rule.</strong> A spirit's damage depends on your stats and buffs when you summon it. A buff cast after the summon does nothing for that spirit — never call the Ancient Spirit without your buffs up.</li>
+    <li><strong>Weave the basic attack.</strong> Cold Shock gives +2% Attack per hit, up to five stacks. Losing them costs 10% Attack for you and for every spirit you summon; an extra basic attack is worth more than the next summon.</li>
+    <li><strong>Long fights favour you.</strong> The class leans on buffs and damage over time, so it gets stronger the longer a fight lasts — and loses the most if you die with everything on cooldown.</li>
+  </ul></div>
+  <p class="note">This guide follows Evripides' written Spirit Master guide, global edition for Season 1 (aion2sm.com, written at 700k CP, updated September 29), which DankRNG builds his video on; aLuckyRO's global video adds the day-one picks. The guide is adapted from the Taiwan and Korean version — its author will update it after launch.</p>
+{% endcall %}
+
+{% call section('intro-pvp', 'Overview', 'pvp') %}
+  <p>In PvP the Elementalist is a <strong>kiting class that wins by outlasting</strong>: less mobility than a Ranger and less burst than a Sorcerer, but by far the tankiest ranged class, with fear, a dispel and spirits that keep hitting when you are out of range.</p>
+  <div class="callout"><ul>
+    <li><strong>Fear is control, not a kill tool.</strong> Use it to peel and to force out the enemy's {{ s('defiance', False) }}; the damage comes from Elemental Fusion, curses and spirits.</li>
+    <li><strong>Timing decides fights.</strong> Know the other class's skills: a defensive used too early or too late loses the fight.</li>
+    <li><strong>{{ s('summon-earth-spirit') }} taunts</strong> — and Defiance cannot break a taunt.</li>
+  </ul></div>
+  <p class="note">The PvP mode follows the "PvP Starter" build of the same guide (updated September 29).</p>
+{% endcall %}
+
+{% call section('skills', 'Skills', 'pve') %}
+  <p>Three skills must reach <strong>20</strong>: {{ s('combustion') }}, {{ s('summon-fire-spirit') }} and {{ s('elemental-fusion') }}. {{ s('summon-water-spirit') }} is fine at 16 and nice at 20; everything else stops at 16. In the first days, with skills at 8–12, take the mana picks named in the cards (aLuckyRO).</p>
+  <ul class="skill-grid">
+    {% call skill('elemental-fusion', 'must', '20', [1, 2, 4]) %}Your biggest hit, with no cooldown — it fires every time you hold four elements. Delayed damage, +10 to all Element Boosts and a 25% chance to keep the four elements. aLuckyRO takes the charged version (up to +200%) on day one instead.{% endcall %}
+    {% call skill('combustion', 'must', '20', [1, 3, 4]) %}+12% on a single target, +20% Skill Speed and the Ashy Call chain. First days: −20% MP until your mana holds (aLuckyRO).{% endcall %}
+    {% call skill('summon-fire-spirit', 'must', '20', [1, 2, 4]) %}The strongest base spirit and the one with the longest uptime — summon it last so it stays out while the others cool down.{% endcall %}
+    {% call skill('cold-shock', 'must', '16', [2, 3]) %}Basic attack: Multi-Hit and the +2% Attack stacks that every summon copies. 14 is fine, 16 is best early on because cooldowns are long. First days: +20% MP restored instead of Multi-Hit.{% endcall %}
+    {% call skill('summon-water-spirit', 'must', '16', [1, 4]) %}The highest single-target hit of the base spirits when it joins Jointstrike: Corrode, and your mana while leveling.{% endcall %}
+    {% call skill('jointstrike-curse', 'must', '16', [0, 2]) %}DoT and debuff: +2s Curse and the mobile pick. Your spirits — the Ancient Spirit too — hit with you.{% endcall %}
+    {% call skill('dimensional-control', 'must', '16', [1, 2]) %}Fires when you summon; delayed damage and Multi-Hit. Skip the pull and the slow.{% endcall %}
+    {% call skill('summon-earth-spirit', 'opt', '16', [1, 2]) %}Taunts the enemy onto itself — the boss hits the spirit, not you. Useful solo.{% endcall %}
+    {% call skill('rapid-scattershot', 'opt', '16', [3, 4]) %}Only on Staggered bosses. Below 16 take the mobile pick and Multi-Hit; at 16 Multi-Hit and −1s to all cooldowns.{% endcall %}
+    {% call skill('defiance', 'opt', '16', [2, 4]) %}CC break; 20% HP back and damage tolerance for the Tenacity window.{% endcall %}
+    {% call skill('summon-wind-spirit', 'skip', 'skip') %}The weakest skill damage, and summoning it costs time from the others. aLuckyRO keeps it for the first week to reach four elements faster; drop it once three spirits open Fusion on their own.{% endcall %}
+    {% call skill('souls-cry', 'skip', 'PvP') %}Fear — a PvP skill.{% endcall %}
+  </ul>
+{% endcall %}
+
+{% call section('skills-pvp', 'Skills', 'pvp') %}
+  <p>Four hard musts at <strong>20</strong>: {{ s('defiance') }}, {{ s('cold-shock') }}, {{ s('elemental-fusion') }} and {{ s('jointstrike-curse') }}; {{ s('combustion') }} reaches 20 through the arcana set anyway.</p>
+  <ul class="skill-grid">
+    {% call skill('defiance', 'must', '20', [2, 3, 4]) %}CC break with 20% HP, +2s Tenacity and damage tolerance. When someone engages on you, break the first CC at once.{% endcall %}
+    {% call skill('cold-shock', 'must', '20', [1, 2]) %}HP absorb and Multi-Hit. The Attack stacks rarely build up in PvP, so they are not taken here.{% endcall %}
+    {% call skill('elemental-fusion', 'must', '20', [1, 2, 4]) %}Your burst. For mass PvP swap the delayed damage for the AoE version.{% endcall %}
+    {% call skill('jointstrike-curse', 'must', '20', [1, 3, 4]) %}Multi-Hit, −2s cooldown, and at 16 it ignores Block and Evasion and crits. Apply it first — it baits out the enemy's healing potion.{% endcall %}
+    {% call skill('combustion', 'must', '20', [1, 3, 4]) %}The same picks as in PvE.{% endcall %}
+    {% call skill('dimensional-control', 'must', '16', [1, 4]) %}Lots of CC and kiting: delayed damage and a root chance; it procs with every summon and roots out the enemy's Defiance.{% endcall %}
+    {% call skill('summon-earth-spirit', 'must', '16', [1, 4]) %}The taunt — one of the strongest CCs in the game. Damage tolerance and +20% stats for the spirit.{% endcall %}
+    {% call skill('souls-cry', 'opt', '12–16', [1, 3]) %}Fear with a root and −10s cooldown; below 16 is fine.{% endcall %}
+    {% call skill('summon-water-spirit', 'opt', '12–16', [1, 2]) %}12–16 is enough.{% endcall %}
+    {% call skill('summon-fire-spirit', 'opt', '14', [1, 2]) %}Still hits hard at a low level.{% endcall %}
+    {% call skill('summon-wind-spirit', 'skip', 'skip') %}Not used in PvP.{% endcall %}
+    {% call skill('rapid-scattershot', 'skip', 'skip') %}Only works on Staggered targets.{% endcall %}
+  </ul>
+{% endcall %}
+
+{% call section('passives', 'Passives', 'pve pvp') %}
+  <p>Passive levels come from every armor piece, the earrings and the necklace, so they run far ahead of the actives — in a finished Season 1 set a passive reaches 30 and more.</p>
+  <div class="table-wrap" data-only="pve"><table>
+    <thead><tr><th>#</th><th>Passive</th><th>Why</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>{{ s('mental-focus') }}</td><td>Double Chance — max it (about 32 in Season 1).</td></tr>
+      <tr><td>2</td><td>{{ s('spirit-strike') }}</td><td>PvE Damage Boost and Perfect Chance for you and the spirit. A close second.</td></tr>
+      <tr><td>3</td><td>{{ s('element-unification') }}</td><td>Stacking Critical Damage Boost whenever a spirit skill lands.</td></tr>
+      <tr><td>4</td><td>{{ s('spirit-revitalization') }}</td><td>Shorter spirit cooldowns — more Elemental Fusion.</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note" data-only="pve">First days (aLuckyRO): {{ s('spirit-strike') }} first, then {{ s('spirits-descent') }} and {{ s('consecutive-countercurrent') }}. {{ s('corrode') }} and Element Unification only pay off once your gear gives Critical Hit — before that you barely crit.</p>
+  <div class="table-wrap" data-only="pvp"><table>
+    <thead><tr><th>#</th><th>Passive</th><th>Why</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>{{ s('spirit-protection') }}</td><td>Defense against burst — Assassins, Sorcerers, Gladiators. About 20.</td></tr>
+      <tr><td>2</td><td>{{ s('revitalization-contract') }}</td><td>Status Effect Resist. About 20.</td></tr>
+    </tbody>
+  </table></div>
+{% endcall %}
+
+{% call section('stigmas', 'Stigmas', 'pve') %}
+  <p>These four are the set for every PvE fight. Take all four to 10 first, then each to 20 in this order. Slots open at levels 22, 27, 32 and 37.</p>
+  <ul class="skill-grid">
+    {% call skill('summon-ancient-spirit', 'must', 'Lv 20', upto=20) %}Your highest-damage stigma: a 30-second extra spirit that gives you Elemental Fusion every time it uses its skill — at 15 after every five basic attacks. Always summon it with your buffs and Cold Shock stacks up.{% endcall %}
+    {% call skill('enhance-spirits-benediction', 'must', 'Lv 20', upto=20) %}Damage Boost and Tolerance for you and your spirits — cast it before you summon.{% endcall %}
+    {% call skill('flame-blessing', 'must', 'Lv 20', upto=20) %}Accuracy and extra damage on hit; one of your strongest buffs and it scales a lot at 20.{% endcall %}
+    {% call skill('jointstrike-corrode', 'must', 'Lv 20', upto=20) %}A DoT that makes the target take more damage from your spirits. At 20 it lasts 20 seconds and can stay up all the time with about 33% cooldown reduction.{% endcall %}
+    {% call skill('cursed-cloud', 'opt', 'later', upto=10) %}Strong in PvE, but there is no slot for it in Season 1.{% endcall %}
+  </ul>
+{% endcall %}
+
+{% call section('stigmas-pvp', 'Stigmas', 'pvp') %}
+  <div class="table-wrap"><table>
+    <thead><tr><th>Set</th><th>Stigmas</th><th>When</th></tr></thead>
+    <tbody>
+      <tr><td>Default</td><td>Ancient Spirit, Spirit's Benediction, Command: Proxy, Seize Magic</td><td>The best all-round set.</td></tr>
+      <tr><td>No Proxy</td><td>Corrode in place of Command: Proxy</td><td>Riskier, more damage and anti-heal — against Clerics, Gladiators, Templars.</td></tr>
+      <tr><td>Utility</td><td>Ancient Spirit, Cry of Terror, Corrode, Kaisinel's Power</td><td>Extra AoE fear and CC chance — against Clerics and Chanters.</td></tr>
+    </tbody>
+  </table></div>
+  <ul class="skill-grid">
+    {% call skill('command-proxy', 'must', 'Lv 20', upto=20) %}For 7 seconds most of the damage you take is shared with your spirits. Use it when an Assassin engages or a Sorcerer freezes you — not on the first CC.{% endcall %}
+    {% call skill('seize-magic', 'must', 'Lv 20', upto=20) %}Removes the enemy's buffs, bursts and at 20 seals. Dispel invulnerability skills, or a Ranger right after they buff.{% endcall %}
+    {% call skill('jointstrike-corrode', 'opt', 'No Proxy', upto=20) %}−60% healing and a long DoT against sustain classes. Apply Curse and your other DoTs first, so a potion can't cleanse it.{% endcall %}
+    {% call skill('cry-of-terror', 'opt', 'Utility', upto=20) %}AoE fear for extra control.{% endcall %}
+    {% call skill('kaisinels-power', 'opt', 'Utility', upto=20) %}Raises your CC chance — your CC lands rarely without it.{% endcall %}
+    {% call skill('siphon', 'opt', 'alt.', upto=20) %}Sustain, and a shield at 15.{% endcall %}
+  </ul>
+{% endcall %}
+
+{% call section('macro', 'Rotation & macro', 'pve') %}
+  <p>Two-hold play: hold {{ s('cold-shock') }} on <span class="key">LMB</span> and the macro on <span class="key">RMB</span>, steer, and press the rest by hand. The hotbar line that used to sit on RMB moves to <span class="key">T</span>.</p>
+  <h3>1. Hotbar lines</h3>
+  <div class="hotlines">
+    {% call hotline('1', 'Spirit line', ['elemental-fusion', 'summon-water-spirit', 'summon-earth-spirit', 'summon-fire-spirit']) %}Spam it: Elemental Fusion fires whenever it is ready, then the spirits; Fire Spirit comes last so it stays out the longest.{% endcall %}
+    {% call hotline('7', 'Buffs + Ancient Spirit', ['enhance-spirits-benediction', 'flame-blessing', 'summon-ancient-spirit']) %}The buffs sit before the Ancient Spirit, so the summon copies them.{% endcall %}
+    {% call hotline('T', 'Damage line', ['jointstrike-corrode', 'jointstrike-curse', 'dimensional-control', 'combustion']) %}Stacked by damage; Corrode goes up the moment it is ready.{% endcall %}
+  </div>
+  <h3>2. In-game macro</h3>
+  <p>Bind the macro to <span class="key">RMB</span>, <strong>10 ms</strong> on each step:</p>
+  {{ macroseq([(skill_data('enhance-spirits-benediction')[lang].name, 'RMB · 10 ms'), (skill_data('elemental-fusion')[lang].name, '10 ms'), (skill_data('jointstrike-corrode')[lang].name, '10 ms')]) }}
+  <h3>3. The fight</h3>
+  <ol>
+    <li><strong>Open</strong> with {{ s('flame-blessing') }} → {{ s('enhance-spirits-benediction') }} → {{ s('summon-ancient-spirit') }} — buffs land before the summon.</li>
+    <li>Spirit line and Corrode, then start the macro and settle into the two-hold.</li>
+    <li>Keep rotating your spirits; recast the buffs as soon as they are ready instead of saving them for the Ancient Spirit.</li>
+    <li>If the five Cold Shock stacks are about to drop, an extra basic attack beats the next summon.</li>
+  </ol>
+  <p class="note">The weave depends on ping: the author wants 65% Combat Speed or more and under ~60 ms ping. aLuckyRO's advice for the first week: play without the macro until you know the class. Bind "dismiss all spirits" to a key you can reach.</p>
+{% endcall %}
+
+{% call section('combos-pvp', 'Opening a fight', 'pvp') %}
+  <p>PvP barely relies on the macro: it only weaves {{ s('elemental-fusion') }} → {{ s('summon-earth-spirit') }} on <span class="key">RMB</span>. Everything else is timing.</p>
+  <div class="callout">
+    <h3>Engaged on</h3>
+    <p>Break the first CC with {{ s('defiance') }} at once; be patient with {{ s('command-proxy') }} for the follow-up.</p>
+  </div>
+  <div class="callout accent">
+    <h3>You engage</h3>
+    <div class="combo">{{ s('enhance-spirits-benediction') }} + {{ s('kaisinels-power') }}<span class="arrow">→</span>{{ s('summon-earth-spirit') }} + {{ s('jointstrike-curse') }}<span class="arrow">→</span>{{ s('summon-ancient-spirit') }}<span class="arrow">→</span>{{ s('jointstrike-corrode') }} after their potion</div>
+    <p>Use {{ s('souls-cry') }} when the Earth Spirit doesn't land a CC, or once their Defiance is gone — root them with {{ s('dimensional-control') }} to force it out.</p>
+  </div>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Against</th><th>Answer</th></tr></thead>
+    <tbody>
+      <tr><td>Gladiator, Cleric</td><td>Seize Magic on their invulnerability; Curse first, then Corrode against the sustain.</td></tr>
+      <tr><td>Ranger</td><td>Seize Magic right after they buff; Corrode against their sustain.</td></tr>
+      <tr><td>Assassin</td><td>Command: Proxy when they engage.</td></tr>
+      <tr><td>Sorcerer</td><td>Command: Proxy when frozen; save the dash for the meteor — it ignores Evasion and Block.</td></tr>
+      <tr><td>Chanter</td><td>Corrode: −60% healing and a near-30-second DoT.</td></tr>
+    </tbody>
+  </table></div>
+{% endcall %}
+
+{% call section('gear', 'Gear, arcana & stats', 'pve pvp') %}
+  <div class="callout"><ul>
+    <li><strong>Where levels come from:</strong> 10 from skill points, 14 with the first four Daevanion boards, then +4 from an arcana and +1 from each ring — 20 for the must skills. Active skills roll on rings, weapon and guard; passives on every armor piece, the earrings and the necklace.</li>
+    <li data-only="pve"><strong>Arcana:</strong> three Primal Vigor cards plus two Magic Armor cards — both 2-piece bonuses.</li>
+    <li data-only="pve"><strong>Goals:</strong> Double Chance 25%, Cooldown Reduction 20%, Accuracy 1,500.</li>
+    <li data-only="pvp"><strong>Arcana:</strong> five Primal Vigor cards. Jointstrike: Curse and Elemental Fusion are the two skills to chase on the card rolls.</li>
+    <li data-only="pvp"><strong>Goals:</strong> Accuracy 2,000+, Status Effect Resist 100%+, about 40% Regeneration.</li>
+  </ul></div>
+{% endcall %}
+
+{% call section('daevanion', 'Daevanion boards', 'pve pvp') %}
+  <p>Daevanion takes your skills from 10 to 14. Each blue node gives <strong>+1 level</strong> to its skill.</p>
+  <div class="callout"><ul>
+    <li data-only="pve"><strong>Priority:</strong> blue nodes for {{ s('elemental-fusion') }}, {{ s('combustion') }}, {{ s('summon-fire-spirit') }}, {{ s('cold-shock') }}, {{ s('summon-water-spirit') }}, the green {{ s('mental-focus') }} and {{ s('spirit-strike') }}, then the offensive orange nodes.</li>
+    <li data-only="pve"><strong>First days:</strong> take the cheapest node of each skill — every board has all of them, some close to the start (aLuckyRO).</li>
+    <li data-only="pvp"><strong>Priority:</strong> blue nodes for {{ s('defiance') }}, {{ s('cold-shock') }}, {{ s('elemental-fusion') }}, {{ s('jointstrike-curse') }}, {{ s('combustion') }}; Azphel (level 45) is all PvP Damage Boost and Tolerance — take it.</li>
+  </ul></div>
+  <div data-only="pve">{{ dv_board('pve') }}</div>
+  <div data-only="pvp">{{ dv_board('pvp') }}</div>
+  <p class="note">Boards and costs come from the global client data (questlog.gg); the path is calculated, not taken from a guide.</p>
+{% endcall %}
+
+{% call section('recap', 'Recap', 'pve') %}
+  <div class="callout accent"><ul>
+    <li><strong>Skills:</strong> Elemental Fusion, Combustion, Fire Spirit 20; Cold Shock, Water Spirit, Curse, Dimensional Control 16; no Wind Spirit.</li>
+    <li><strong>Stigmas:</strong> Ancient Spirit → Spirit's Benediction → Flame Blessing → Corrode, all to 10 first, then 20.</li>
+    <li><strong>Passives:</strong> Mental Focus, Spirit Strike, Element Unification, Spirit Revitalization.</li>
+    <li><strong>Play:</strong> buff before you summon; keep five Cold Shock stacks.</li>
+  </ul></div>
+{% endcall %}
+
+{% call section('recap-pvp', 'Recap', 'pvp') %}
+  <div class="callout accent"><ul>
+    <li><strong>Skills:</strong> Defiance, Cold Shock, Elemental Fusion, Curse, Combustion 20; Earth Spirit and Dimensional Control 16.</li>
+    <li><strong>Stigmas:</strong> Ancient Spirit, Spirit's Benediction, Command: Proxy, Seize Magic — Corrode for anti-heal.</li>
+    <li><strong>Passives:</strong> Spirit Protection, Revitalization Contract.</li>
+    <li><strong>Play:</strong> Curse first, Corrode after their potion; fear to control, not to kill.</li>
+  </ul></div>
+{% endcall %}
+{# ============================ Leveling ============================ #}
+
+{% call section('intro-lvl', 'Overview', 'lvl') %}
+  <p>The Elementalist (Spiritmaster) is the only summoner: a spirit fights next to you, every spirit skill gives you an element, and at four elements {{ s('elemental-fusion') }} is ready. {{ s('dimensional-control') }} fires each time a spirit uses its skill, and curses keep ticking on the target.</p>
+  <div class="callout accent">
+    <h3>Leveling in one sentence</h3>
+    <p>Level with {{ s('summon-water-spirit') }} (damage and mana), hold {{ s('cold-shock') }} for MP, and let the in-game macro cycle the Spirit line and the Fusion line.</p>
+  </div>
+{% endcall %}
+
+{% call section('fight-lvl', t.lvl_combat, 'lvl') %}
+  <div class="callout"><ul>
+    <li><strong>Spirit:</strong> {{ s('summon-water-spirit') }} until the cap — best single-target damage, and it feeds your mana. The others stay at level 1 while leveling.</li>
+    <li><strong>Packs:</strong> {{ s('jointstrike-curse') }} (hits up to 4) → {{ s('combustion') }} → {{ s('elemental-fusion') }} with the AoE pick once it's ready.</li>
+    <li><strong>Mana:</strong> the main early problem — target mode, {{ s('cold-shock') }} between skills, and end your spirit rotation on the Water Spirit.</li>
+    <li><strong>Staggered targets:</strong> {{ s('rapid-scattershot') }}.</li>
+    <li>Skip {{ s('souls-cry') }} — it's a PvP skill.</li>
+  </ul></div>
+{% endcall %}
+
+{% call section('macro-lvl', 'Leveling macro', 'lvl') %}
+  <p>Grobs' early-game setup: two hotbar lines and a two-slot in-game macro. In AION 2 the <strong>bottom slot of a line has the highest priority</strong> — the cards show each line top to bottom as in the game.</p>
+  <div class="hotlines">
+    {% call hotline('1', 'Spirit line', ['summon-water-spirit', 'jointstrike-corrode', 'summon-earth-spirit', 'summon-fire-spirit']) %}Water Spirit first; Jointstrike: Corrode (a stigma) makes the target take more damage from your spirit.{% endcall %}
+    {% call hotline('2', 'Fusion line', ['elemental-fusion', 'dimensional-control', 'jointstrike-curse', 'combustion']) %}Elemental Fusion and Dimensional Control fire as soon as the spirits unlock them; Combustion fills the gaps.{% endcall %}
+  </div>
+  <p>In-game macro (Skill window → Macro), delay <strong>10 ms</strong> on each slot:</p>
+  {{ macroseq([('Spirit line', '1 · 10 ms'), ('Fusion line', '2 · 10 ms')]) }}
+  <ul class="presslist">
+    <li><span class="press-how">Hold</span><span class="press-what">{{ s('cold-shock') }} on <span class="key">LMB</span> and the macro key together.</span></li>
+    <li><span class="press-how">By hand</span><span class="press-what">{{ s('enhance-spirits-benediction') }}, then {{ s('summon-ancient-spirit') }} (buff first — the Ancient Spirit lasts 30s).</span></li>
+  </ul>
+{% endcall %}
+
+{% call section('stigmas-lvl', 'Stigmas while leveling', 'lvl') %}
+  <p>Stigmas unlock at level 22.</p>
+  <ul class="skill-grid">
+    {% call skill('summon-ancient-spirit', 'must', 'Lv 5', upto=5) %}A 30-second extra spirit that also grants elements for Elemental Fusion.{% endcall %}
+    {% call skill('enhance-spirits-benediction', 'must', 'Lv 5', upto=5) %}+20% PvE Damage Boost and Tolerance with healing for 10s — cast before the Ancient Spirit.{% endcall %}
+    {% call skill('jointstrike-corrode', 'must', 'Lv 5', upto=5) %}In Grobs' Spirit line: the target takes more damage from your spirit.{% endcall %}
+    {% call skill('flame-blessing', 'opt', 'Lv 5', upto=5) %}Extra damage on hit for 10s — take it once your accuracy holds up.{% endcall %}
+  </ul>
+{% endcall %}
+
+{# ============================ Sources ============================ #}
+<section class="sources" aria-labelledby="h-sources">
+  <h2 id="h-sources">{{ t.sources }}</h2>
+  <ul>
+    <li><a href="https://www.youtube.com/watch?v=HMod6Z4GrE0" target="_blank" rel="noopener">Grobs — AION 2 Macro Guide</a> — the early-game macro slide (Spiritmaster hotbar lines and macro)</li>
+    <li><a href="https://aion2sm.com/global/" target="_blank" rel="noopener">Evripides — Spirit Master guide, Global edition (aion2sm.com)</a> — PvE and PvP builds for the global client: skill levels and specializations, stigmas, passives, rotation, macro, arcana, matchups</li>
+    <li><a href="https://www.youtube.com/watch?v=KlmstIyukX8" target="_blank" rel="noopener">DankRNG — How to MASTER the SPIRITS | Elementalist Guide &amp; Build</a> — the snapshot rule, spirit order, why Wind Spirit is left out</li>
+    <li><a href="https://www.youtube.com/watch?v=v9MYphrcvic" target="_blank" rel="noopener">aLuckyRO — AION 2 Latest Spiritmaster PVE Build for Global</a> — day-one specializations, stigma order, Daevanion for the first days</li>
+    <li><a href="https://mmo-codex.com/articles/aion-2-spiritmaster-guide/" target="_blank" rel="noopener">MMO Codex — Aion 2 Spiritmaster build</a> — skill order by level, Water Spirit for leveling, stigmas</li>
+    <li><a href="https://questlog.gg/aion-2/en/db/skills/elementalist" target="_blank" rel="noopener">questlog.gg</a> — skill data from the global client</li>
+  </ul>
+  <p class="sources-all"><a href="{{ root }}{{ lang }}/sources/">{{ t.src_all }} →</a></p>
+</section>

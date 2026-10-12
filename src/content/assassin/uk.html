@@ -1,0 +1,213 @@
+{% from "macros.html" import section, skill, core, loadout, passives, glance, hotline, macroseq, hotbar, dv_board with context %}
+
+{# ============================== PvE ============================== #}
+{% call glance('pve') %}
+  <h3>{{ t.core_skills }}</h3>
+  {{ core([('heart-gore', '16 → 20'), ('insignia-explosion', '16 → 20'), ('quick-slice', '16 → 20'), ('ambush', '16'), ('storm-rampage', '16')]) }}
+  <h3>{{ t.stigma_loadout }}</h3>
+  {{ loadout([('illusive-clone', 20), ('swift-contract', 15), ('savage-fang', 15), ('triniels-dagger', 10)]) }}
+  <h3>{{ t.key_passives }}</h3>
+  {{ passives(['rear-smite', 'exploit-weakness', 'assault-stance', 'determination']) }}
+{% endcall %}
+
+{% call section('intro', 'Огляд', 'pve') %}
+  <p>Assassin — берстовий клас із кинджалами, що живе на бафах. Удари накладають на ціль <strong>емблеми</strong>, {{ s('insignia-explosion') }} їх реалізує, а {{ s('heart-gore') }} спрацьовує на криті й скидає собі перезарядку на наступному криті. Найбільший бонус до шкоди дає удар у спину, тож позиціювання важить більше, ніж у будь-якого іншого класу.</p>
+  <div class="callout accent">
+    <h3>Білд одним реченням</h3>
+    <p>Тримайся за спиною боса, весь час вплітай {{ s('quick-slice') }}, тисни {{ s('insignia-explosion') }}, щойно він готовий, і {{ s('heart-gore') }} на кожному криті — а все, що маєш, вкладай у 20 секунд {{ s('illusive-clone') }}, коли Heart Gore взагалі не має перезарядки.</p>
+  </div>
+  <div class="callout">
+    <h3>Чого чекати в 1 сезоні</h3>
+    <ul>
+      <li><strong>Берст, потім провал.</strong> На KR/TW рівень 25 Illusive Clone дає хорошим гравцям тримати його постійно. Глобал зупиняється на 20: близько 20 секунд берсту на перезарядці 1 хв 30 с, а між вікнами ти граєш філерами, поки Heart Gore залежить від везіння на крит.</li>
+      <li><strong>Бафи не збігаються.</strong> Swift Contract і Savage Fang повертаються за хвилину, Illusive Clone — за півтори, тож ти постійно вирішуєш, чекати чи тиснути.</li>
+      <li><strong>Час у спину — це шкода.</strong> На манекені він 100%; у справжньому бою чекай 60–80%, і кожен удар спереду втрачає бонус Rear Smite.</li>
+      <li><strong>Крихкий.</strong> Блоку немає, захисту мало — помилки, які Gladiator переживе, тебе вбивають.</li>
+    </ul>
+    <p>Вердикт Arthars: цікавий клас із високою стелею, якому потрібно в рази більше роботи, ніж Gladiator чи Sorcerer, за ту саму шкоду або меншу. Обирай його, бо подобається стиль гри, а не заради цифр.</p>
+  </div>
+  <p class="note">Режим PvE — за відео Arthars Gaming по Assassin до глобального запуску (30 вересня, записано на тайванському сервері), прочитаним кадр за кадром; у відео немає субтитрів, тож текст отримано з аудіо розпізнаванням мовлення, а кожну назву й число звірено з екраном.</p>
+{% endcall %}
+
+{% call section('global', 'Глобальний 1 сезон: що змінюється', 'pve pvp') %}
+  <p>Глобальні сервери відкриваються <strong>5 жовтня 2026</strong> (ранній доступ Founder's — з 30 вересня). Що це означає для Assassin:</p>
+  <div class="callout">
+    <ul>
+      <li><strong>4 слоти стигм, максимум 20.</strong> Усі чотири йдуть у шкоду: Illusive Clone, Swift Contract, Savage Fang і Triniel's Dagger.</li>
+      <li><strong>Постійного Illusive Clone немає.</strong> Рівень, що скорочує його перезарядку за крити в спину, — 25, а його на глобалі немає.</li>
+      <li><strong>На старті мало скорочення перезарядок.</strong> Саме тому Storm Rampage іде до 16, а Triniel's Dagger використовують як інструмент перезарядок, а не заради шкоди.</li>
+      <li><strong>Довші бої.</strong> Боси, що на Тайвані вмирають за 30 секунд, триватимуть хвилини — побачиш кілька вікон берсту й провали між ними.</li>
+      <li data-only="pvp"><strong>PvP:</strong> усі починають в однаковому обмеженому спорядженні, мета ще не склалася.</li>
+    </ul>
+  </div>
+  <p class="note">Активні скіли й пасивки в глобальних і KR/TW даних однакові; стигми втрачають рівень 25.</p>
+{% endcall %}
+
+{% call section('skills', 'Скіли', 'pve') %}
+  <p>Важливі лише три рівні скілів: <strong>12, 16 і 20</strong>. Очки навичок дають 10, Daevanion +4, два кільця +2, аркани решту. Спершу доведи п'ять ключових скілів до <strong>16</strong>, потім жени Heart Gore і Insignia Explosion до 20.</p>
+  <ul class="skill-grid">
+    {% call skill('heart-gore', 'must', '16 → 20', [0, 4], then=[3]) %}Твій найважливіший скіл. Йому потрібно 16: крит скидає перезарядку, інакше він чекає 5 секунд. Поглинання HP тримає тебе живим; на 20 додай мультиудар. Якщо на старті бракує криту, спеціалізація +20% криту — варіант замість поглинання.{% endcall %}
+    {% call skill('insignia-explosion', 'must', '16 → 20', [2, 4], then=[1]) %}Друга половина твоєї шкоди. −3 с перезарядки й дві емблеми лишаються після кожного вибуху — тисни щоразу, коли готовий, не чекай стаків. На 20 додай мультиудар.{% endcall %}
+    {% call skill('quick-slice', 'must', '16 → 20', [3, 4], then=[2]) %}Базова атака, яку вплітаєш між усім: гарантований крит і −1 с Insignia Explosion за кожен удар. На 20 третій слот на твій вибір — поглинання HP чи мультиудар.{% endcall %}
+    {% call skill('ambush', 'must', '16', [0, 4]) %}Твій перший філер, коли Heart Gore закритий: два додаткові використання на 16 і дві емблеми за кожен удар у спину. Якщо дійде до 20, додай поглинання HP.{% endcall %}
+    {% call skill('storm-rampage', 'must', '16', [3, 4]) %}В інших класів його можна пропустити, тут — ні. Поки бос оглушений, кожен удар знімає 1 с з усіх перезарядок — це повертає твої бафи, а без бафів цей клас шкоди не завдає.{% endcall %}
+    {% call skill('defiance', 'opt', '12 → 16', [2, 3]) %}Зняття контролю: лікування й +2 с Tenacity на 12; на 16 міняй лікування на стійкість до шкоди.{% endcall %}
+    {% call skill('savage-roar', 'opt', '12', [1, 3]) %}Останній філер у лінії: швидший, і кожен удар скорочує Shadowstrike. Не вартий більше 12–16.{% endcall %}
+    {% call skill('shadowstrike', 'opt', '12', [1]) %}Телепорт за спину цілі й +20% крит. шкоди на 10 с — баф і найкращий шлях у спину. Бережи для зміни позиції, а не витрачай за відкатом; решта спеціалізацій — для PvP.{% endcall %}
+    {% call skill('flash-slice', 'opt', '12', [1, 3]) %}Другий спосіб зайти за спину: дальність 10 м і два використання.{% endcall %}
+    {% call skill('infiltrate', 'opt', '12', [0, 1]) %}Ухилення → за спину цілі, і він повертає витривалість. Ніколи не бери продовження ланцюжка.{% endcall %}
+    {% call skill('whirlwind-slice', 'opt', '12', [0, 2]) %}Ривок на далеку дистанцію. На папері б'є сильно, але анімація довга — у ротацію не входить.{% endcall %}
+    {% call skill('shadow-fall', 'opt', '12', [0, 2]) %}PvP-скіл; у PvE — лише екстрене лікування на 10%.{% endcall %}
+  </ul>
+{% endcall %}
+
+{% call section('passives', 'Пасивки', 'pve') %}
+  <p>Очки навичок майже всі пасивки доводять до максимуму ще на прокачці. Дефіцит — рядки на спорядженні: класу там потрібні чотири пасивки, а влазять дві-три.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Пасивка</th><th>Пріоритет на спорядженні</th><th>Навіщо</th></tr></thead>
+    <tbody>
+      <tr><td>{{ s('rear-smite') }}</td><td>1</td><td>Атака в спину й бонус до шкоди в PvE — найсильніша пасивка; дає шкоду навіть спереду.</td></tr>
+      <tr><td>{{ s('exploit-weakness') }}</td><td>2</td><td>Крит і баф атаки, що висить майже весь бій; Illusive Clone його множить.</td></tr>
+      <tr><td>{{ s('assault-stance') }}</td><td>2</td><td>Бонус до крит. шкоди; Swift Contract його множить.</td></tr>
+      <tr><td>{{ s('determination') }}</td><td>3</td><td>Додаткова шкода по цілі з низьким HP — aLuckyRO вважає її однією з найважливіших: будь-який бос проводить там кінець бою.</td></tr>
+      <tr><td>{{ s('impact-hit') }}</td><td>4</td><td>Шанс подвійного удару — лише 3,3% на 10 рівні, у PvE майже нічого (aLuckyRO). Лиши для PvP; на PvE-спорядженні спершу Determination.</td></tr>
+      <tr><td>{{ s('ambush-stance') }}, {{ s('heightened-sixth-sense') }}</td><td>лише очки</td><td>Доводяться до максимуму очками навичок; рядка на спорядженні не варті.</td></tr>
+      <tr><td>{{ s('apply-poison') }}, {{ s('defense-break') }}</td><td>пропустити</td><td>Отрута — менше 1% твоєї шкоди; Defense Break — PvP-пасивка. {{ s('revitalization-contract') }} — лише із зайвими очками.</td></tr>
+    </tbody>
+  </table></div>
+{% endcall %}
+
+{% call section('gear', 'Спорядження й статі', 'pve') %}
+  <div class="callout"><ul>
+    <li><strong>Кільця:</strong> єдине місце для активних скілів — {{ s('heart-gore') }}, {{ s('quick-slice') }}, {{ s('insignia-explosion') }}, {{ s('ambush') }}. Вони піднімають ключові скіли з 14 до 16.</li>
+    <li><strong>Зброя й наручі:</strong> ніколи не став туди скіли — їхні рядки шкоди варті більше за один рівень скіла.</li>
+    <li><strong>Інші речі:</strong> спершу Rear Smite; будь-яка з наступних трьох пасивок підійде. Не женися за ідеальним сетом у 1 сезоні — на глобальному спорядженні на один рядок менше, і там також випадають Might, Precision і швидкість бою.</li>
+    <li><strong>Крит</strong> важить більше, ніж в інших класів: Heart Gore скидається лише на криті.</li>
+    <li><strong>Манастоуни:</strong> атака, крит, точність.</li>
+  </ul></div>
+{% endcall %}
+
+{% call section('arcana', 'Аркани', 'pve') %}
+  <p>У 1 сезоні п'ять карт і два сети. Assassin — єдиний клас, якому <strong>обов'язково</strong> потрібен Illusion (перезарядки) на Mirror, тож природний вибір — чотири карти Primal Vigor.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Карта</th><th>Стат</th><th>Сет</th><th>Що ролити</th></tr></thead>
+    <tbody>
+      <tr><td>Chalice</td><td>Time (швидкість бою)</td><td>Primal Vigor</td><td>Той із трьох ключових скілів, якому ще бракує до 20</td></tr>
+      <tr><td>Parchment</td><td>Life</td><td>Primal Vigor</td><td>{{ s('quick-slice') }}, {{ s('heart-gore') }}, {{ s('insignia-explosion') }} — усі три</td></tr>
+      <tr><td>Compass</td><td>Freedom (точність)</td><td>Primal Vigor</td><td>{{ s('storm-rampage') }}, {{ s('ambush') }}, {{ s('savage-roar') }} — щоб дійти до 16</td></tr>
+      <tr><td>Mirror</td><td>Illusion (перезарядки)</td><td>Primal Vigor</td><td>{{ s('rear-smite') }}, {{ s('exploit-weakness') }}; {{ s('impact-hit') }}</td></tr>
+      <tr><td>Bell</td><td>Destruction (атака)</td><td>Magic Armor</td><td>{{ s('assault-stance') }}</td></tr>
+    </tbody>
+  </table></div>
+  <p><strong>Parchment — це гринд.</strong> Усі три скіли, які потрібні на 20, сидять на цій одній карті, а карта 1 сезону дає обрати лише два з чотирьох рядків. Прокачка карти додає чотири випадкові +1 — сподівайся на рівний розподіл (+2 на кожен), а не на +4 на одному: тоді Chalice доповнить відсутні +2. Якщо не вийде, тримай Heart Gore і Insignia Explosion на 20, а Quick Slice залиш на 16.</p>
+  <p class="note">Compass і Bell — без напруги: нічого на них не мусить доходити до 20. Усі ці карти замінять, коли 2 сезон принесе нові.</p>
+{% endcall %}
+
+{% call section('daevanion', 'Дошки Daevanion', 'pve pvp') %}
+  <p>Daevanion піднімає твої скіли з 10 до 14 і додає статі. Кожен синій вузол дає <strong>+1 рівень</strong> своєму скілу.</p>
+  <div class="callout"><ul>
+    <li data-only="pve"><strong>Пріоритет:</strong> сині вузли {{ s('heart-gore') }}, {{ s('insignia-explosion') }}, {{ s('quick-slice') }}, потім {{ s('ambush') }} і {{ s('storm-rampage') }}; далі помаранчеві вузли.</li>
+    <li data-only="pve"><strong>Крит. шкода одразу:</strong> Assassin помаранчевий вузол крит. шкоди на Vaizel окупається з самого початку — вона критує з першого дня, на відміну від більшості класів (aLuckyRO).</li>
+    <li data-only="pvp"><strong>Пріоритет:</strong> сині вузли {{ s('shadowstrike') }}, {{ s('flash-slice') }}, {{ s('defiance') }}.</li>
+    <li data-only="pve"><strong>На глобалі немає Ariel:</strong> дошок п'ять, і дошка 45 рівня, Azphel, дає лише шкоду й стійкість у PvP — у PvE закривай перші чотири.</li>
+    <li data-only="pvp"><strong>Azphel</strong> (45 рівень) — суцільно шкода й стійкість у PvP: бери його, а раніше — Triniel.</li>
+  </ul></div>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Дошка</th><th>Відкривається</th><th>Помаранчеві вузли</th></tr></thead>
+    <tbody>
+      <tr><td>Nezekan</td><td>Рів. 12</td><td>Швидкість бою, скорочення перезарядок</td></tr>
+      <tr><td>Zikel</td><td>Рів. 20</td><td>Бонус до шкоди, стійкість до шкоди</td></tr>
+      <tr><td>Vaizel</td><td>Рів. 30</td><td>Бонус і стійкість до крит. шкоди</td></tr>
+      <tr><td>Triniel</td><td>Рів. 40</td><td>Шанс мультиудару й опір йому</td></tr>
+      <tr><td>Azphel</td><td>Рів. 45</td><td>Шкода й стійкість у PvP — вузлів скілів немає</td></tr>
+    </tbody>
+  </table></div>
+  <h3>Маршрут на дошках</h3>
+  <p>Справжні глобальні дошки з даних гри. Золотом позначено найдешевший шлях від Start до вузлів, які бере цей гайд, — сині вузли пріоритетних скілів і помаранчеві; наведи на будь-який вузол, щоб побачити, що він дає.</p>
+  <div data-only="pve">{{ dv_board('pve') }}</div>
+  <div data-only="pvp">{{ dv_board('pvp') }}</div>
+  <p class="note">Дошки й вартість — із даних глобального клієнта (questlog.gg); шлях розраховано, а не взято з відео. Значення статів ще можуть змінитися на запуску — перевір дошку в грі, перш ніж вкладати повний маршрут.</p>
+{% endcall %}
+
+{% call section('stigmas', 'Стигми', 'pve') %}
+  <p>Усі чотири слоти — бафи. Спершу Illusive Clone до 20 — він з'їдає більшість уламків стигм, — потім решта.</p>
+  <ul class="skill-grid">
+    {% call skill('illusive-clone', 'must', 'Рів. 20', upto=20) %}Твій берст: 20 секунд у Heart Gore немає перезарядки, і ти завдаєш на 20% більше шкоди, а зверху +20% крит. шкоди й ×1,5 Exploit Weakness. Перезарядка 1 хв 30 с. Більшість твоєї шкоди — всередині нього: використовуй на босі, ніколи на треші. aLuckyRO: обов'язкова, поки Heart Gore не 16; коли критів досить, він скидається сам і слот можна на час віддати, але на 20 клон повертається заради бонусу шкоди.{% endcall %}
+    {% call skill('swift-contract', 'must', 'Рів. 15 → 20', upto=15) %}+20% швидкості бою і ×1,5 Rear Smite та Assault Stance на час дії. Для старту вистачить 15; 20 додає ще 10% швидкості бою.{% endcall %}
+    {% call skill('savage-fang', 'must', 'Рів. 15', upto=15) %}П'ять емблем разом, велика шкода по шкалі оглушення і на 15 — +10% до шкоди в PvE на 10 с. Та сама хвилинна перезарядка, що й у Swift Contract, — тисни їх разом.{% endcall %}
+    {% call skill('triniels-dagger', 'must', 'Рів. 10', upto=10) %}Не заради шкоди: на 10 влучання скорочує <em>залишок</em> перезарядки всіх твоїх скілів на 10%. Тисни одразу після бафів, коли їхні перезарядки найдовші.{% endcall %}
+    {% call skill('evasion-stance', 'opt', 'Рів. 5–10', upto=10) %}Гарантоване ухилення від великого удару; два заряди на 5, рух на 10. Безпечна заміна одного з бафів, поки вчиш бій — клас крихкий.{% endcall %}
+    {% call skill('throw-shadowblade', 'opt', 'фарм', upto=10) %}Кидок на 20 м, що на 10 скидається при вбивстві, — для фарму у відкритому світі, не для босів.{% endcall %}
+  </ul>
+{% endcall %}
+
+{% call section('macro', 'Макрос і ротація', 'pve') %}
+  <p>В AION 2 є два окремі інструменти:</p>
+  <ul>
+    <li><strong>Лінія на кнопці</strong> — кілька скілів на <em>одній</em> кнопці панелі. Натискання кастує готовий скіл із найвищим пріоритетом, і в AION 2 <strong>найвищий пріоритет у нижнього слота</strong>. Картки показують лінії згори донизу, як у грі.</li>
+    <li><strong>Вбудований макрос</strong> — поки тримаєш його клавішу, він по черзі натискає кнопки панелі й скасовує хвости анімацій. Скіли на перезарядці пропускаються.</li>
+  </ul>
+  {{ hotbar([('N2', ['shadowstrike']), ('Бічна', []), ('3', ['flash-slice']), ('4', []), None, ('5', []), ('N4', []), ('6', []), ('7', ['illusive-clone', 'swift-contract', 'savage-fang', 'triniels-dagger']), None, ('N1', ['whirlwind-slice', 'infiltrate', 'shadow-fall']), ('N5', ['storm-rampage']), ('1', ['quick-slice']), ('E', ['insignia-explosion', 'heart-gore', 'ambush', 'savage-roar'])], macro=['E', '1'], own_keys=true) }}
+
+  <h3>1. Лінії на кнопках</h3>
+  <div class="hotlines">
+    {% call hotline('E', 'Лінія шкоди', ['insignia-explosion', 'heart-gore', 'ambush', 'savage-roar']) %}Insignia Explosion спрацьовує щоразу, коли готовий, Heart Gore — на кожному криті. Коли жоден недоступний, лінія падає на філери: спершу Ambush, останнім Savage Roar.{% endcall %}
+    {% call hotline('7', 'Лінія бафів', ['illusive-clone', 'swift-contract', 'savage-fang', 'triniels-dagger']) %}Arthars тримає всі чотири стигми на одній кнопці й тисне її вручну — ніколи з макросу, інакше бафи розсинхронізуються.{% endcall %}
+  </div>
+
+  <h3>2. Вбудований макрос</h3>
+  <p>Два кроки, по <strong>10 мс</strong>, на клавіші, яку можна тримати весь час:</p>
+  {{ macroseq([('Лінія шкоди', '10 мс'), (skill_data('quick-slice')[lang].name, '10 мс')]) }}
+  <p class="note">У відео видно панель, але не вікно макросу: цей макрос повторює налаштування з гайда Arthars по Chanter (головна лінія, потім базова атака). Лінії й клавіші прочитано з його панелі.</p>
+
+  <h3>3. Що ти насправді тиснеш</h3>
+  <ul class="presslist">
+    <li><span class="press-how">Тримати</span><span class="press-what">Клавішу макросу — і сам спам {{ s('quick-slice') }}: кожен удар скорочує Insignia Explosion.</span></li>
+    <li><span class="press-how">Берст</span><span class="press-what">{{ s('illusive-clone') }} + {{ s('swift-contract') }} + {{ s('savage-fang') }} разом, потім одразу {{ s('triniels-dagger') }}, щоб скоротити їхні перезарядки. Наступні 20 секунд — Heart Gore за Heart Gore.</span></li>
+    <li><span class="press-how">Між вікнами</span><span class="press-what">Swift Contract і Savage Fang повертаються раніше за Illusive Clone. Або тримай їх до наступного Clone (більший берст), або використовуй за відкатом (рівніша шкода) — однозначної відповіді немає; на коротких боях тримай.</span></li>
+    <li><span class="press-how">Оглушення</span><span class="press-what">{{ s('storm-rampage') }} по оглушеному босу, вплітаючи Quick Slice, — він знімає з кожної перезарядки секунди.</span></li>
+    <li><span class="press-how">Позиція</span><span class="press-what">{{ s('shadowstrike') }}, {{ s('flash-slice') }} і {{ s('infiltrate') }} ставлять тебе за спину цілі. Використовуй їх, щоб там лишатися, а не як кнопки шкоди.</span></li>
+  </ul>
+  <p class="note">Звідки шкода в тесті Arthars на манекені: Heart Gore близько 30%, Insignia Explosion близько 25%, усе інше — 6% або менше кожен.</p>
+{% endcall %}
+
+{% call section('recap', 'Підсумок', 'pve') %}
+  <div class="callout accent"><ul>
+    <li><strong>Скіли:</strong> Heart Gore, Insignia Explosion, Quick Slice 16 → 20; Ambush і Storm Rampage 16; решта 12.</li>
+    <li><strong>Стигми:</strong> Illusive Clone 20, Swift Contract 15 → 20, Savage Fang 15, Triniel's Dagger 10.</li>
+    <li><strong>Пасивки на спорядженні:</strong> Rear Smite, потім Exploit Weakness, Assault Stance, Impact Hit.</li>
+    <li><strong>Гра:</strong> тримайся за спиною боса, берст усередині Illusive Clone, Triniel's Dagger одразу після бафів.</li>
+  </ul></div>
+{% endcall %}
+
+{# ============================ Leveling ============================ #}
+{% call section('fight-lvl', t.lvl_combat, 'lvl') %}
+  <div class="callout"><ul>
+    <li><strong>Пачки:</strong> {{ s('savage-fang') }} (5 емблем) → {{ s('insignia-explosion') }} → {{ s('whirlwind-slice') }}; {{ s('throw-shadowblade') }} скидається при вбивстві для наступного пулу.</li>
+    <li><strong>Елітки:</strong> зайди за спину → {{ s('ambush') }} → {{ s('savage-roar') }}, щоб набрати емблем → Insignia Explosion → {{ s('heart-gore') }} на критах.</li>
+    <li><strong>Мана:</strong> {{ s('quick-slice') }} відновлює MP — тримай на ЛКМ.</li>
+    <li><strong>Мало HP:</strong> {{ s('shadow-fall') }} поглинає HP; {{ s('defiance') }} лікує, коли тебе законтролили.</li>
+  </ul></div>
+{% endcall %}
+
+{% call section('macro-lvl', 'Макрос на прокачці', 'lvl') %}
+  <p>На прокачці, поки Heart Gore не дійшов до 16, з 1 рівня працює простіше налаштування: лінія емблем у вбудованому макросі на середній кнопці миші, Quick Slice на ЛКМ і Heart Gore на Q. Для фарму мобів використовуй Throw Shadowblade (2) і ПКМ. Ранній білд на 1–45: Quick Slice, Savage Roar, Insignia Explosion і Heart Gore до 12, решта до 8.</p>
+  <div class="hotlines">
+    {{ hotline('СКМ', 'Лінія емблем', ['insignia-explosion', 'whirlwind-slice', 'ambush', 'savage-roar']) }}
+  </div>
+  <p><a href="https://aion2t.com/ru/simulator?job=5&amp;b=iUjpcy" target="_blank" rel="noopener">Стартовий білд 1–45 (aion2t) →</a> · <a href="https://aion2t.com/ru/simulator?job=5&amp;b=MeyRht" target="_blank" rel="noopener">Цільовий білд 45+ →</a></p>
+{% endcall %}
+
+{# ============================ Sources ============================ #}
+<section class="sources" aria-labelledby="h-sources">
+  <h2 id="h-sources">{{ t.sources }}</h2>
+  <ul>
+    <li><a href="https://www.youtube.com/watch?v=UpvUVK1vnt8" target="_blank" rel="noopener">Arthars Gaming — The Brutal Truth About Assassin in Aion 2 Global Launch</a> — режим PvE: рівні скілів і спеціалізації, пасивки, аркани, стигми, лінії на кнопках, як клас грається в 1 сезоні</li>
+    <li><a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ0C3iKFteGvIbgqNDnQq7bmwIaU23DvjbPa0HPSVAdOOiCeBkEq69Cn8jVMJhToJcztCRylYeTYfOk/pubhtml" target="_blank" rel="noopener">TitanTheF — таблиця прогресії AION 2</a> (вкладка Assassin) — білди, панель, макрос, статі</li>
+    <li><a href="https://aion2t.com/ru/simulator?job=5&amp;b=MeyRht" target="_blank" rel="noopener">aion2t.com</a> — стартовий і 45+ білди TitanTheF (рівні скілів, спеціалізації, стигми, пасивки)</li>
+    <li><a href="https://questlog.gg/aion-2/en/db/skills/assassin" target="_blank" rel="noopener">questlog.gg</a> — дані скілів із глобального клієнта</li>
+    <li><a href="https://www.youtube.com/watch?v=HMod6Z4GrE0" target="_blank" rel="noopener">Grobs — AION 2 Macro Guide</a> — як працюють лінії на кнопках і вбудований макрос</li>
+    <li><a href="https://www.youtube.com/watch?v=DNfd1lZtQkI" target="_blank" rel="noopener">aLuckyRO — AION 2 Latest Assassin PVE Build for Global</a> — ранні спеціалізації (мана на Quick Slice, мультиудар на Storm Rampage), пріоритет пасивок, клон до Heart Gore 16, Throw Shadowblade для фарму</li>
+  </ul>
+  <p class="sources-all"><a href="{{ root }}{{ lang }}/sources/">{{ t.src_all }} →</a></p>
+</section>

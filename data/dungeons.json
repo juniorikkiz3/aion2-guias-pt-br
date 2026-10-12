@@ -1,0 +1,1107 @@
+{
+  "_note": "Dungeon guides page (/<lang>/dungeons/). Our own text, from BIGSKALA's walkthrough of the launch dungeons (Taiwan client, Sep 15). db = questlog dungeon / boss id in data/dungeons_db.json (names, portraits; tools/fetch_dungeons.py). mechs[].diagram = src/templates/diagrams/<name>.svg, danger = a wipe mechanic. at = moment in the video.",
+  "meta": {
+    "hero": "dungeons",
+    "pos": "50% 60%"
+  },
+  "src": "bigskala",
+  "sources": {
+    "bigskala": {
+      "name": "BIGSKALA — Все подземелья AION 2 на старте (полный разбор)",
+      "url": "https://www.youtube.com/watch?v=mMjaSbaVTjc",
+      "video": true
+    }
+  },
+  "_gs": "Required GS (Conquest) from expcarry.com's dungeon list (updated Oct 5, global client data); Transcendence ~1,600 (expcarry, trueeevil). Check against the in-game entry window.",
+  "types": {
+    "expedition": {
+      "title": {
+        "en": "Expedition: Conquest",
+        "ru": "Экспедиция: Завоевание",
+        "uk": "Expedition: Conquest",
+        "tr": "Expedition: Conquest",
+        "pt-BR": "Expedição: Conquista"
+      },
+      "tab": {
+        "en": "Expedition",
+        "ru": "Экспедиция",
+        "uk": "Expedition",
+        "tr": "Expedition",
+        "pt-BR": "Expedição"
+      },
+      "lead": {
+        "en": "5-player dungeons. Required GS is for Conquest; Exploration of the same dungeon opens earlier.",
+        "ru": "Подземелья на 5 игроков. Требуемый GS — для Завоевания; Исследование того же подземелья открывается раньше.",
+        "uk": "Підземелля на 5 гравців. Потрібний GS — для Conquest; Exploration того ж підземелля відкривається раніше.",
+        "tr": "5 kişilik zindanlar. Gereken GS Conquest içindir; aynı zindanın Exploration'ı daha erken açılır.",
+        "pt-BR": "5 - masmorras de jogadores. O GS necessário é para a conquista, a exploração do mesmo calabouço abre mais cedo."
+      }
+    },
+    "transcendence": {
+      "title": {
+        "en": "Transcendence",
+        "ru": "Трансцендентность (Transcendence)",
+        "uk": "Transcendence",
+        "tr": "Transcendence",
+        "pt-BR": "Transcendência"
+      },
+      "tab": {
+        "en": "Transcendence",
+        "ru": "Трансцендентность",
+        "uk": "Transcendence",
+        "tr": "Transcendence",
+        "pt-BR": "Transcendência"
+      },
+      "lead": {
+        "en": "Group dungeons for arcana; points for every mob and boss open the way to the final boss.",
+        "ru": "Групповые подземелья за арканами; очки за мобов и боссов открывают путь к финальному боссу.",
+        "uk": "Групові підземелля за арканами; очки за мобів і босів відкривають шлях до фінального боса.",
+        "tr": "Arcana için grup zindanları; her mob ve boss için puanlar son bossa giden yolu açar.",
+        "pt-BR": "Masmorras de grupo para Arcana, pontos para cada máfia e chefe abrem o caminho para o chefe final."
+      }
+    },
+    "nightmare": {
+      "title": {
+        "en": "Nightmare",
+        "ru": "Кошмар",
+        "uk": "Nightmare",
+        "tr": "Nightmare",
+        "pt-BR": "Pesadelo."
+      },
+      "tab": {
+        "en": "Nightmare",
+        "ru": "Кошмар",
+        "uk": "Nightmare",
+        "tr": "Nightmare",
+        "pt-BR": "Pesadelo."
+      },
+      "lead": {
+        "en": "Solo boss fights; an attempt is spent only on a kill.",
+        "ru": "Соло-бои с боссами; попытка тратится только при убийстве.",
+        "uk": "Соло-бої з босами; спроба витрачається лише при вбивстві.",
+        "tr": "Solo boss dövüşleri; deneme yalnızca öldürmede harcanır.",
+        "pt-BR": "O chefe sozinho luta, uma tentativa é gasta apenas em uma matança."
+      }
+    }
+  },
+  "dungeons": [
+    {
+      "id": "krao-cave",
+      "db": "600001",
+      "at": "1:00",
+      "type": "expedition",
+      "gs": 700,
+      "lead": {
+        "en": "The first two bosses have nothing that kills you outright — dodge and keep hitting.",
+        "ru": "У первых двух боссов нет ничего, что убивает сразу, — уклоняйся и бей.",
+        "uk": "У перших двох босів немає нічого, що вбиває одразу, — ухиляйся й бий.",
+        "tr": "İlk iki bossta seni anında öldüren bir şey yok — kaçın ve vurmaya devam et.",
+        "pt-BR": "Os dois primeiros chefes não têm nada que te mate de imediato."
+      },
+      "bosses": [
+        {
+          "db": "2300171",
+          "at": "1:12",
+          "final": true,
+          "role": {
+            "en": "Final boss",
+            "ru": "Финальный босс",
+            "uk": "Фінальний бос",
+            "tr": "Son boss",
+            "pt-BR": "Chefe final."
+          },
+          "mechs": [
+            {
+              "danger": true,
+              "diagram": "krao-rocks",
+              "at": "1:15",
+              "name": {
+                "en": "Hide behind the rocks",
+                "ru": "Спрятаться за камнями",
+                "uk": "Сховатися за каменями",
+                "tr": "Kayaların arkasına saklan",
+                "pt-BR": "Esconda-se atrás das rochas"
+              },
+              "text": {
+                "en": "The boss flies to the middle and four rocks appear at the edges. While he casts, everyone hides behind a rock — the green area behind each one is safe. Anyone left in the open is one-shot. Watch his cast bar.",
+                "ru": "Босс улетает в центр, по краям появляются четыре камня. Пока он кастует, все прячутся за камень — зелёная зона за каждым безопасна. Кто остался на открытом месте, умирает с одного удара. Следи за полосой каста.",
+                "uk": "Бос відлітає в центр, по краях з'являються чотири камені. Поки він кастує, усі ховаються за камінь — зелена зона за кожним безпечна. Хто лишився на відкритому місці, помирає з одного удару. Стеж за смугою касту.",
+                "tr": "Boss ortaya uçar ve kenarlarda dört kaya belirir. O büyüyü yaparken herkes bir kayanın arkasına saklanır — her birinin arkasındaki yeşil alan güvenli. Açıkta kalan tek vuruşta ölür. Büyü çubuğunu izle.",
+                "pt-BR": "O chefe voa para o meio e quatro pedras aparecem nas bordas. Enquanto ele lança, todos se escondem atrás de uma rocha - a área verde atrás de cada um é segura. Qualquer um que ficou em aberto é só uma chance. Cuidado com a barra de gesso."
+              },
+              "legend": {
+                "en": "Boss in the middle, four rocks at the edge; stand in the green shadow behind a rock.",
+                "ru": "Босс в центре, четыре камня у края; стой в зелёной тени за камнем.",
+                "uk": "Бос у центрі, чотири камені біля краю; стій у зеленій тіні за каменем.",
+                "tr": "Boss ortada, dört kaya kenarda; bir kayanın arkasındaki yeşil gölgede dur.",
+                "pt-BR": "Chefe no meio, quatro pedras na borda, ficar na sombra verde atrás de uma rocha."
+              }
+            },
+            {
+              "at": "1:33",
+              "name": {
+                "en": "Bleeding spin",
+                "ru": "Кровавое вращение",
+                "uk": "Кривавий вихор",
+                "tr": "Kanlı dönüş",
+                "pt-BR": "\"Bleeding spin\""
+              },
+              "text": {
+                "en": "After a pizza-slice hit, bright sparks flash around him and he spins after one player, adding bleeding. Stay out of his path; new players can burn a dodge, a potion or an invulnerability here.",
+                "ru": "После удара «пиццей» вокруг него вспыхивают искры, и он, вращаясь, гонится за одним игроком и накладывает кровотечение. Не попадайся на пути; новичкам здесь стоит потратить уклонение, банку или неуязвимость.",
+                "uk": "Після удару «піцою» навколо нього спалахують іскри, і він, крутячись, женеться за одним гравцем і накладає кровотечу. Не потрапляй на шлях; новачкам тут варто витратити ухилення, банку чи невразливість.",
+                "tr": "Pizza dilimi bir vuruştan sonra etrafında parlak kıvılcımlar çakar ve dönerek bir oyuncuyu kovalar, kanama ekler. Yolundan uzak dur; yeni oyuncular burada bir kaçınma, iksir veya dokunulmazlık harcayabilir.",
+                "pt-BR": "Depois de um ataque de pizza, faíscas brilhantes brilham em torno dele e ele gira após um jogador, adicionando sangramento. Fique fora do caminho dele, novos jogadores podem queimar um Dodge, uma poção ou uma invulnerabilidade aqui."
+              }
+            },
+            {
+              "danger": true,
+              "at": "2:03",
+              "name": {
+                "en": "Stagger bar",
+                "ru": "Полоса оглушения",
+                "uk": "Смуга оглушення",
+                "tr": "Stagger çubuğu",
+                "pt-BR": "Bar Stagger."
+              },
+              "text": {
+                "en": "When he raises his claws a stagger bar appears — break it fast or the group dies. Save your stagger skills for this moment; a broken bar stuns him for a few seconds of free damage.",
+                "ru": "Когда он поднимает когти, появляется полоса оглушения — сбей её быстро, иначе группа умрёт. Держи скиллы на оглушение до этого момента; сбитая полоса оглушает его на несколько секунд свободного урона.",
+                "uk": "Коли він піднімає кігті, з'являється смуга оглушення — збий її швидко, інакше група загине. Тримай скіли на оглушення до цього моменту; збита смуга оглушує його на кілька секунд вільного урону.",
+                "tr": "Pençelerini kaldırınca bir stagger çubuğu belirir — hızla kır, yoksa grup ölür. Stagger yeteneklerini bu ana sakla; kırılan çubuk onu birkaç saniye bedava hasar için sersemletir.",
+                "pt-BR": "Quando ele levanta suas garras, aparece uma barra cambaleante. Quebre-a rápido ou o grupo morre. Guarde suas habilidades para este momento, uma barra quebrada o atordoa por alguns segundos de danos livres."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "draupnir",
+      "db": "600031",
+      "at": "2:30",
+      "type": "expedition",
+      "gs": 700,
+      "lead": {
+        "en": "The two bosses on the way are simple; the final worm is about timing your jumps.",
+        "ru": "Два босса по пути простые; финальный червь — это тайминг прыжков.",
+        "uk": "Два боси дорогою прості; фінальний черв'як — це таймінг стрибків.",
+        "tr": "Yoldaki iki boss basit; son solucan zıplamaların zamanlamasıyla ilgili.",
+        "pt-BR": "Os dois chefes a caminho são simples, o último verme é sobre cronometrar seus saltos."
+      },
+      "bosses": [
+        {
+          "db": "2310471",
+          "at": "2:42",
+          "final": true,
+          "role": {
+            "en": "Final boss",
+            "ru": "Финальный босс",
+            "uk": "Фінальний бос",
+            "tr": "Son boss",
+            "pt-BR": "Chefe final."
+          },
+          "mechs": [
+            {
+              "danger": true,
+              "diagram": "draupnir-waves",
+              "at": "2:45",
+              "name": {
+                "en": "Waves, then the stun bar",
+                "ru": "Волны, затем полоса оглушения",
+                "uk": "Хвилі, потім смуга оглушення",
+                "tr": "Dalgalar, sonra sersemletme çubuğu",
+                "pt-BR": "Ondas, então o bar de choque"
+              },
+              "text": {
+                "en": "The screen goes black and everyone lands at the edge on opposite sides. Waves roll out from the boss: run in at once and jump each wave (Space) to reach the safe zone right next to him — gap-closers of Gladiator, Chanter and Assassin help. Then break the stun bar immediately: a slow group runs out of time and wipes.",
+                "ru": "Экран гаснет, все оказываются у края с разных сторон. От босса идут волны: сразу беги к нему и перепрыгивай каждую волну (Пробел), чтобы попасть в безопасную зону прямо возле него — помогают рывки Гладиатора, Чародея и Убийцы. Потом сразу сбивай полосу оглушения: медленная группа не успевает и вайпается.",
+                "uk": "Екран гасне, усі опиняються біля краю з різних боків. Від боса йдуть хвилі: одразу біжи до нього й перестрибуй кожну хвилю (Пробіл), щоб потрапити в безпечну зону поруч із ним — допомагають ривки Gladiator, Chanter і Assassin. Потім одразу збивай смугу оглушення: повільна група не встигає й вайпається.",
+                "tr": "Ekran kararır ve herkes zıt taraflarda kenara iner. Bosstan dalgalar yayılır: hemen içeri koş ve hemen yanındaki güvenli alana ulaşmak için her dalganın üstünden zıpla (Space) — Gladiator, Chanter ve Assassin'in atılmaları yardım eder. Sonra sersemletme çubuğunu hemen kır: yavaş bir grubun süresi yetmez ve silinir.",
+                "pt-BR": "A tela fica preta e todos pousam na borda em lados opostos. As ondas saem do chefe: corra e pule cada onda (Espaço) para alcançar a zona segura ao lado dele: fechadores de espaço de Gladiador, Chanter e Assassino ajuda. Então quebre a barra de atordoamento imediatamente: um grupo lento fica sem tempo e limpa."
+              },
+              "legend": {
+                "en": "Start at the edge, jump the rings, finish next to the boss.",
+                "ru": "Старт у края, прыжки через кольца, финиш возле босса.",
+                "uk": "Старт біля краю, стрибки через кільця, фініш біля боса.",
+                "tr": "Kenardan başla, halkaların üstünden zıpla, bossun yanında bitir.",
+                "pt-BR": "Comece na borda, pule os anéis, termine ao lado do chefe."
+              }
+            },
+            {
+              "at": "3:36",
+              "name": {
+                "en": "Dive and scatter",
+                "ru": "Нырок и разбег",
+                "uk": "Пірнання й розбіг",
+                "tr": "Dalış ve dağılma",
+                "pt-BR": "Mergulhe e espalhe"
+              },
+              "text": {
+                "en": "He dives and attacks every player separately — keep moving and spread out. A big area hit ends the phase: just get out of it. Near the end the wave phase repeats with tornadoes on the water to run around.",
+                "ru": "Он ныряет и бьёт каждого игрока отдельно — двигайтесь и расходитесь. Фазу завершает большой удар по площади: просто выйди из него. Ближе к концу фаза волн повторяется, но с торнадо на воде, которые надо обегать.",
+                "uk": "Він пірнає й б'є кожного гравця окремо — рухайся й розходьтеся. Фазу завершує великий удар по площі: просто вийди з нього. Ближче до кінця фаза хвиль повторюється, але з торнадо на воді, які треба оббігати.",
+                "tr": "Dalar ve her oyuncuya ayrı ayrı saldırır — hareket et ve dağılın. Fazı büyük bir alan vuruşu bitirir: sadece içinden çık. Sona doğru dalga fazı, etrafından dolaşılacak su hortumlarıyla tekrar eder.",
+                "pt-BR": "Ele mergulha e ataca cada jogador separadamente. Continue se movendo e se espalhe. Um grande sucesso na área termina a fase: apenas saia dela. Perto do fim, a fase da onda se repete com tornados na água para correr."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "urugugu-canyon",
+      "db": "600011",
+      "at": "4:06",
+      "type": "expedition",
+      "gs": 1400,
+      "bosses": [
+        {
+          "db": "2310206",
+          "at": "4:09",
+          "role": {
+            "en": "First boss",
+            "ru": "Первый босс",
+            "uk": "Перший бос",
+            "tr": "İlk boss",
+            "pt-BR": "Primeiro chefe."
+          },
+          "text": {
+            "en": "At times he lowers his shield and a big damage zone appears under his feet — stop hitting him and run well away until it ends.",
+            "ru": "Время от времени он опускает щит, и под ним появляется большая зона урона — не бей его и отбегай подальше, пока она не закончится.",
+            "uk": "Час від часу він опускає щит, і під ним з'являється велика зона урону — не бий його й відбігай подалі, поки вона не скінчиться.",
+            "tr": "Zaman zaman kalkanını indirir ve ayaklarının altında büyük bir hasar alanı belirir — ona vurmayı bırak ve bitene kadar uzağa koş.",
+            "pt-BR": "Às vezes ele baixa o escudo e uma grande zona de dano aparece sob seus pés - pare de bater nele e fuja bem até que termine."
+          }
+        },
+        {
+          "db": "2310207",
+          "at": "4:21",
+          "role": {
+            "en": "Second boss",
+            "ru": "Второй босс",
+            "uk": "Другий бос",
+            "tr": "İkinci boss",
+            "pt-BR": "Segundo chefe."
+          },
+          "text": {
+            "en": "Simple: he enrages and gets faster in movement and attacks.",
+            "ru": "Простой: впадает в ярость и ускоряет движение и атаки.",
+            "uk": "Простий: впадає в лють і пришвидшує рух та атаки.",
+            "tr": "Basit: öfkelenir, hareketi ve saldırıları hızlanır.",
+            "pt-BR": "Simples: ele enraivece e fica mais rápido em movimento e ataques."
+          }
+        },
+        {
+          "db": "2310218",
+          "at": "4:27",
+          "final": true,
+          "role": {
+            "en": "Final boss — the bird",
+            "ru": "Финальный босс — птица",
+            "uk": "Фінальний бос — птах",
+            "tr": "Son boss — kuş",
+            "pt-BR": "O último chefe, o pássaro."
+          },
+          "mechs": [
+            {
+              "at": "4:30",
+              "name": {
+                "en": "Winds in front",
+                "ru": "Ветер спереди",
+                "uk": "Вітер спереду",
+                "tr": "Önündeki rüzgâr",
+                "pt-BR": "Ventos na frente"
+              },
+              "text": {
+                "en": "His winds hit in front of him — stand behind. If they catch you, he lifts you in his beak for a few seconds and slams you into the ground.",
+                "ru": "Его ветер бьёт перед ним — стой сзади. Если попадёт, он поднимает тебя в клюве на несколько секунд и бросает о землю.",
+                "uk": "Його вітер б'є перед ним — стій позаду. Якщо влучить, він піднімає тебе в дзьобі на кілька секунд і жбурляє об землю.",
+                "tr": "Rüzgârı önüne vurur — arkasında dur. Yakalanırsan seni birkaç saniye gagasında havaya kaldırır ve yere çarpar.",
+                "pt-BR": "Seus ventos bateram na frente dele - ficar atrás. Se eles te pegarem, ele te levanta em seu bico por alguns segundos e te bate no chão."
+              }
+            },
+            {
+              "danger": true,
+              "diagram": "share-circle",
+              "at": "4:45",
+              "name": {
+                "en": "Marked player: share the hit",
+                "ru": "Отмеченный игрок: разделить удар",
+                "uk": "Позначений гравець: розділити удар",
+                "tr": "İşaretli oyuncu: vuruşu paylaş",
+                "pt-BR": "Jogador marcado: compartilhe o sucesso."
+              },
+              "text": {
+                "en": "He flies up, marks one player with his eye and a small field grows around them, with arrows pointing in from four sides. Everyone runs into that circle and splits the final hit, or the marked player dies. Avoid the wind lines on the way. In the second phase he does the same from the middle, with a vortex around the arena.",
+                "ru": "Он взлетает, отмечает одного игрока глазом, и вокруг того растёт небольшое поле со стрелками внутрь с четырёх сторон. Все забегают в этот круг и делят финальный удар, иначе отмеченный умрёт. По пути обходи полосы ветра. Во второй фазе то же самое из центра, плюс вихрь по краю арены.",
+                "uk": "Він злітає, позначає одного гравця оком, і навколо того росте невелике поле зі стрілками всередину з чотирьох боків. Усі забігають у це коло й ділять фінальний удар, інакше позначений загине. Дорогою оминай смуги вітру. У другій фазі те саме з центру, плюс вихор по краю арени.",
+                "tr": "Havalanır, gözüyle bir oyuncuyu işaretler ve etrafında dört yönden içeriyi gösteren oklarla küçük bir alan büyür. Herkes o daireye koşar ve son vuruşu paylaşır, yoksa işaretli oyuncu ölür. Yoldaki rüzgâr çizgilerinden kaçın. İkinci fazda aynısını ortadan yapar, arenanın etrafında bir girdapla.",
+                "pt-BR": "Ele voa, marca um jogador com o olho e um pequeno campo cresce ao redor deles, com flechas apontando de quatro lados. Todo mundo corre para aquele círculo e divide o golpe final, ou o jogador marcado morre. Evite as linhas de vento no caminho. Na segunda fase ele faz o mesmo do meio, com um vórtice ao redor da arena."
+              },
+              "legend": {
+                "en": "Arrows from four sides: the whole group stacks inside the marked circle.",
+                "ru": "Стрелки с четырёх сторон: вся группа собирается в круге отмеченного.",
+                "uk": "Стрілки з чотирьох боків: уся група збирається в колі позначеного.",
+                "tr": "Dört yönden oklar: tüm grup işaretli dairenin içinde toplanır.",
+                "pt-BR": "Setas de quatro lados: o grupo inteiro se empilha dentro do círculo marcado."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vakron-sky-island",
+      "db": "600071",
+      "at": "5:21",
+      "type": "expedition",
+      "gs": 1400,
+      "tip": {
+        "en": "Running through the dungeon gives a debuff with three levels; at level 3 roots hold you and hurt — supports hit the roots to free you. Clear the debuff at a fountain.",
+        "ru": "По пути через подземелье копится дебафф из трёх уровней; на третьем тебя опутывают корни и бьют — саппорты разбивают корни. Снять дебафф можно у фонтана.",
+        "uk": "Дорогою через підземелля накопичується дебаф із трьох рівнів; на третьому тебе обплутують корені й б'ють — саппорти розбивають корені. Зняти дебаф можна біля фонтану.",
+        "tr": "Zindanda koşarken üç seviyeli bir debuff birikir; 3. seviyede kökler seni tutar ve can yakar — destekler kökleri vurarak seni kurtarır. Debuff'ı bir çeşmede temizle.",
+        "pt-BR": "Correr através da masmorra dá um debuff com três níveis; no nível 3 raízes prendem você e machucam - suportes bater as raízes para libertá-lo. Limpe o debufo em uma fonte."
+      },
+      "bosses": [
+        {
+          "db": "2310810",
+          "at": "5:45",
+          "role": {
+            "en": "First boss",
+            "ru": "Первый босс",
+            "uk": "Перший бос",
+            "tr": "İlk boss",
+            "pt-BR": "Primeiro chefe."
+          },
+          "mechs": [
+            {
+              "diagram": "tiere-poison",
+              "at": "5:48",
+              "name": {
+                "en": "Poisoned arena",
+                "ru": "Отравленная арена",
+                "uk": "Отруєна арена",
+                "tr": "Zehirli arena",
+                "pt-BR": "Arena envenenada"
+              },
+              "text": {
+                "en": "She retreats to the middle and poisons everything but a small circle around her; a flower blooms inside — kill it to clean the area. She throws poison at every player and it stays on the ground, so the whole group moves together in one direction to keep a clean patch.",
+                "ru": "Она уходит в центр и отравляет всё, кроме маленького круга вокруг себя; внутри распускается цветок — убей его, чтобы очистить зону. Она бросает яд в каждого игрока, и он остаётся на земле, поэтому вся группа двигается вместе в одну сторону, чтобы сохранить чистый пятачок.",
+                "uk": "Вона йде в центр і отруює все, крім маленького кола навколо себе; усередині розквітає квітка — убий її, щоб очистити зону. Вона кидає отруту в кожного гравця, і та лишається на землі, тож уся група рухається разом в один бік, щоб зберегти чистий клаптик.",
+                "tr": "Ortaya çekilir ve etrafındaki küçük bir daire dışında her yeri zehirler; içeride bir çiçek açar — alanı temizlemek için onu öldür. Her oyuncuya zehir atar ve zehir yerde kalır, bu yüzden temiz bir yer kalsın diye tüm grup birlikte tek yöne hareket eder.",
+                "pt-BR": "Ela se retira para o meio e envenena tudo, menos um pequeno círculo ao seu redor; uma flor floresce por dentro - matá-la para limpar a área. Ela joga veneno em cada jogador e ele fica no chão, então todo o grupo se move juntos em uma direção para manter um remendo limpo."
+              },
+              "legend": {
+                "en": "Kill the flower; move together so the poison stays behind you.",
+                "ru": "Убей цветок; двигайтесь вместе, чтобы яд оставался позади.",
+                "uk": "Убий квітку; рухайтеся разом, щоб отрута лишалася позаду.",
+                "tr": "Çiçeği öldür; zehir arkanda kalsın diye birlikte hareket edin.",
+                "pt-BR": "Matem a flor, andem juntos para que o veneno fique atrás de vocês."
+              }
+            }
+          ]
+        },
+        {
+          "db": "2310811",
+          "at": "6:21",
+          "role": {
+            "en": "Second boss — the boulder",
+            "ru": "Второй босс — валун",
+            "uk": "Другий бос — валун",
+            "tr": "İkinci boss — kaya",
+            "pt-BR": "Segundo chefe, a pedra."
+          },
+          "mechs": [
+            {
+              "at": "6:24",
+              "name": {
+                "en": "Stone circles",
+                "ru": "Каменные круги",
+                "uk": "Кам'яні кола",
+                "tr": "Taş daireler",
+                "pt-BR": "Círculos de pedra"
+              },
+              "text": {
+                "en": "Light circles flash under the players; stay in one and you turn to stone. The others break the stone fast, because a huge area hit comes right after and hits whoever is still trapped.",
+                "ru": "Под игроками вспыхивают световые круги; не вышел — превращаешься в камень. Остальные быстро разбивают камень, потому что сразу следует огромный удар по площади по тем, кто ещё внутри.",
+                "uk": "Під гравцями спалахують світлові кола; не вийшов — перетворюєшся на камінь. Інші швидко розбивають камінь, бо одразу йде величезний удар по площі по тих, хто ще всередині.",
+                "tr": "Oyuncuların altında ışık daireleri çakar; birinde kalırsan taşa dönüşürsün. Diğerleri taşı hızla kırar, çünkü hemen ardından hâlâ içeride olanlara çarpan dev bir alan vuruşu gelir.",
+                "pt-BR": "Círculos de luz piscam sob os jogadores, fiquem em um e vocês se transformam em pedra. Os outros quebram a pedra rápido, porque um enorme golpe de área vem logo depois e atinge quem ainda está preso."
+              }
+            },
+            {
+              "at": "6:36",
+              "name": {
+                "en": "Red or purple",
+                "ru": "Красный или фиолетовый",
+                "uk": "Червоний чи фіолетовий",
+                "tr": "Kırmızı veya mor",
+                "pt-BR": "Vermelho ou roxo"
+              },
+              "text": {
+                "en": "In the second phase he puts a vampiric buff on himself: red glow — melee stops hitting; purple glow — casters stop. Hitting into the wrong colour heals him a lot.",
+                "ru": "Во второй фазе он вешает на себя вампирский бафф: красное свечение — ближний бой не бьёт, фиолетовое — маги не бьют. Удары в неправильный цвет сильно его лечат.",
+                "uk": "У другій фазі він вішає на себе вампірський баф: червоне світіння — ближній бій не б'є, фіолетове — маги не б'ють. Удари в неправильний колір сильно його лікують.",
+                "tr": "İkinci fazda kendine vampirik bir buff koyar: kırmızı parıltı — yakın dövüş vurmayı bırakır; mor parıltı — büyücüler bırakır. Yanlış renge vurmak onu çok iyileştirir.",
+                "pt-BR": "Na segunda fase, ele coloca um vampírico em si mesmo: brilho vermelho - melee pára de bater; brilho roxo - casters parar. Bater na cor errada o cura muito."
+              }
+            }
+          ],
+          "after": {
+            "en": "After him, find four spheres in flight mode and bring each to the statue of its element to open the way to Vakron.",
+            "ru": "После него в режиме полёта найди четыре сферы и отнеси каждую к статуе своей стихии — это открывает путь к Вакрону.",
+            "uk": "Після нього в режимі польоту знайди чотири сфери й віднеси кожну до статуї своєї стихії — це відкриває шлях до Vakron.",
+            "tr": "Ondan sonra uçuş modunda dört küre bul ve her birini kendi elementinin heykeline götür — bu Vakron'a giden yolu açar.",
+            "pt-BR": "Depois dele, encontre quatro esferas em modo de vôo e traga cada uma para a estátua de seu elemento para abrir o caminho para Vakron."
+          }
+        },
+        {
+          "db": "2310812",
+          "at": "7:03",
+          "final": true,
+          "role": {
+            "en": "Final boss",
+            "ru": "Финальный босс",
+            "uk": "Фінальний бос",
+            "tr": "Son boss",
+            "pt-BR": "Chefe final."
+          },
+          "mechs": [
+            {
+              "at": "7:03",
+              "name": {
+                "en": "The seed",
+                "ru": "Семя",
+                "uk": "Насіння",
+                "tr": "Tohum",
+                "pt-BR": "A semente."
+              },
+              "text": {
+                "en": "He throws a seed at a player; a few seconds later it roots them in spikes with heavy damage over time and spreads to anyone close. The seeded player steps out of the group — not too far, so the others can still hit the spikes and free them.",
+                "ru": "Он бросает в игрока семя; через несколько секунд оно опутывает того шипами с сильным уроном со временем и перекидывается на тех, кто рядом. Игрок с семенем выходит из группы — но недалеко, чтобы остальные могли разбить шипы и освободить его.",
+                "uk": "Він кидає в гравця насіння; за кілька секунд воно обплутує того шипами з сильним уроном із часом і перекидається на тих, хто поруч. Гравець із насінням виходить із групи — але недалеко, щоб інші могли розбити шипи й звільнити його.",
+                "tr": "Bir oyuncuya tohum atar; birkaç saniye sonra onu zamanla ağır hasar veren dikenlere hapseder ve yakındakilere de bulaşır. Tohumlu oyuncu gruptan çıkar — ama çok uzağa değil, diğerleri dikenlere vurup onu kurtarabilsin.",
+                "pt-BR": "Ele joga uma semente em um jogador, alguns segundos depois ele os enraiza em espinhos com danos pesados ao longo do tempo e se espalha para qualquer um próximo. O jogador sem sementes sai do grupo, não muito longe, então os outros ainda podem acertar os espinhos e libertá-los."
+              }
+            },
+            {
+              "danger": true,
+              "diagram": "vakron-waves",
+              "at": "7:15",
+              "name": {
+                "en": "Red floor: three waves and a blast",
+                "ru": "Красный пол: три волны и взрыв",
+                "uk": "Червона підлога: три хвилі й вибух",
+                "tr": "Kırmızı zemin: üç dalga ve patlama",
+                "pt-BR": "Piso vermelho: três ondas e uma explosão"
+              },
+              "text": {
+                "en": "The whole floor turns red. Three waves roll out from him — jump each one. At the same time attacks shoot out of the centre along lines in every direction, in two sets that take turns: stand between the lines of the next set. A moment after the third wave a blast covers the area: dodge it with a jump too. The easy way: on the third wave jump, press Space again and glide, and the blast passes under you.",
+                "ru": "Весь пол краснеет. От него идут три волны — перепрыгивай каждую. Одновременно из центра во все стороны бьют атаки по линиям, двумя наборами по очереди: вставай между линиями следующего набора. Через мгновение после третьей волны следует взрыв по площади: от него тоже уходи прыжком. Проще всего: на третьей волне прыгни, нажми Пробел ещё раз и планируй — взрыв пройдёт под тобой.",
+                "uk": "Уся підлога червоніє. Від нього йдуть три хвилі — перестрибуй кожну. Одночасно з центру в усі боки б'ють атаки по лініях, двома наборами по черзі: ставай між лініями наступного набору. За мить після третьої хвилі йде вибух по площі: його теж ухиляєш стрибком. Найпростіше: на третій хвилі стрибни, натисни Пробіл ще раз і плануй — вибух пройде під тобою.",
+                "tr": "Tüm zemin kızarır. Ondan üç dalga yayılır — her birinin üstünden zıpla. Aynı anda merkezden her yöne çizgiler boyunca saldırılar çıkar, sırayla iki set hâlinde: bir sonraki setin çizgilerinin arasında dur. Üçüncü dalgadan kısa süre sonra alanı bir patlama kaplar: ondan da zıplayarak kaçın. En kolayı: üçüncü dalgada zıpla, Space'e bir daha bas ve süzül, patlama altından geçer.",
+                "pt-BR": "O chão todo fica vermelho. Três ondas saem dele, pulem cada uma. Ao mesmo tempo, os ataques saem do centro em todas as direções, em dois conjuntos que se revezam: fiquem entre as linhas do próximo conjunto. Um momento depois da terceira onda, uma explosão cobre a área: esquive-se com um salto também. A maneira fácil: no terceiro salto, pressione o espaço novamente e deslize, e a explosão passa sob você."
+              },
+              "legend": {
+                "en": "Jump the three rings; the red lines are the attacks from the centre — stand between them; glide over the final blast.",
+                "ru": "Перепрыгни три кольца; красные линии — атаки из центра, стой между ними; над финальным взрывом — планируй.",
+                "uk": "Перестрибни три кільця; червоні лінії — атаки з центру, стій між ними; над фінальним вибухом — плануй.",
+                "tr": "Üç halkanın üstünden zıpla; kırmızı çizgiler merkezden gelen saldırılar — aralarında dur; son patlamanın üstünde süzül.",
+                "pt-BR": "Pule os três anéis, as linhas vermelhas são os ataques do centro, fique entre eles, deslize sobre a explosão final."
+              }
+            },
+            {
+              "danger": true,
+              "diagram": "vakron-rocks",
+              "at": "7:45",
+              "name": {
+                "en": "The red rock",
+                "ru": "Красный камень",
+                "uk": "Червоний камінь",
+                "tr": "Kırmızı kaya",
+                "pt-BR": "A rocha vermelha"
+              },
+              "text": {
+                "en": "He goes to the middle and pulls everyone in; rocks grow around him and one is reddish. The whole group breaks that rock and runs out of the circle through the gap — if it stays, everyone dies.",
+                "ru": "Он уходит в центр и стягивает всех к себе; вокруг вырастают камни, один красноватый. Вся группа разбивает этот камень и выбегает из круга через проход — если он устоит, умирают все.",
+                "uk": "Він іде в центр і стягує всіх до себе; навколо виростають камені, один червонуватий. Уся група розбиває цей камінь і вибігає з кола крізь прохід — якщо він устоїть, гинуть усі.",
+                "tr": "Ortaya gider ve herkesi çeker; etrafında kayalar büyür ve biri kırmızımsı. Tüm grup o kayayı kırar ve boşluktan daireden dışarı koşar — kaya kalırsa herkes ölür.",
+                "pt-BR": "Ele vai para o meio e puxa todo mundo, pedras crescem ao redor dele e uma é avermelhada. O grupo inteiro quebra aquela rocha e corre para fora do círculo através da lacuna - se ela ficar, todos morrem."
+              },
+              "legend": {
+                "en": "Break the red rock, leave the circle through its gap.",
+                "ru": "Разбей красный камень и выйди из круга через проход.",
+                "uk": "Розбий червоний камінь і вийди з кола крізь прохід.",
+                "tr": "Kırmızı kayayı kır, daireden onun boşluğundan çık.",
+                "pt-BR": "Quebre a rocha vermelha, deixe o círculo através de sua fenda."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fire-temple",
+      "db": "600021",
+      "at": "8:02",
+      "type": "expedition",
+      "gs": 2100,
+      "tip": {
+        "en": "Bring yellow potions for debuff removal and set Chanter and Cleric skills to the cleanse picks. This is the fastest dungeon and the one you will farm the most.",
+        "ru": "Возьми жёлтые банки на снятие дебаффов и поставь Чародею и Целителю особенности на очищение. Это самое быстрое подземелье, его будут фармить больше всего.",
+        "uk": "Візьми жовті банки на зняття дебафів і постав Chanter і Cleric спеціалізації на очищення. Це найшвидше підземелля, його фармитимуть найбільше.",
+        "tr": "Debuff temizlemek için sarı iksir al ve Chanter ile Cleric yeteneklerini temizleme seçimlerine ayarla. Bu en hızlı zindan ve en çok farmlayacağın yer.",
+        "pt-BR": "Traga poções amarelas para remoção de debuff e coloque Chanter e habilidades cléricas para limpar picaretas. Esta é a masmorra mais rápida e a que você mais vai cultivar."
+      },
+      "bosses": [
+        {
+          "db": "2310371",
+          "at": "8:44",
+          "final": true,
+          "role": {
+            "en": "Final boss — Kromede",
+            "ru": "Финальный босс — Кромед",
+            "uk": "Фінальний бос — Kromede",
+            "tr": "Son boss — Kromede",
+            "pt-BR": "Chefe final, Kromede."
+          },
+          "mechs": [
+            {
+              "at": "8:44",
+              "name": {
+                "en": "Bow up, bow down",
+                "ru": "Лук вверх, лук вниз",
+                "uk": "Лук угору, лук униз",
+                "tr": "Yay yukarı, yay aşağı",
+                "pt-BR": "Curve-se, curve-se"
+              },
+              "text": {
+                "en": "Bow raised: arrows rain on every player — keep moving. Bow lowered: balls fly out in several directions and debuff whoever they hit. Then she leaps from player to player with area hits, and later a three-stage leap whose radius grows each time.",
+                "ru": "Лук поднят: стрелы падают на каждого — не стой. Лук опущен: шары летят в разные стороны и вешают дебафф. Потом она прыгает от игрока к игроку с ударами по площади, а позже — трёхступенчатый прыжок, радиус которого растёт с каждым разом.",
+                "uk": "Лук піднято: стріли падають на кожного — не стій. Лук опущено: кулі летять у різні боки й вішають дебаф. Потім вона стрибає від гравця до гравця з ударами по площі, а пізніше — триступеневий стрибок, радіус якого росте щоразу.",
+                "tr": "Yay yukarıda: her oyuncuya ok yağar — hareket et. Yay aşağıda: birkaç yöne toplar uçar ve isabet ettiklerine debuff koyar. Sonra oyuncudan oyuncuya alan vuruşlarıyla sıçrar, daha sonra da her seferinde yarıçapı büyüyen üç aşamalı bir sıçrama.",
+                "pt-BR": "Arco levantado: flechas chovem em cada jogador - continue andando. Bow baixou: bolas voam em várias direções e desbofeteiam quem quer que eles acertem. Então ela salta de jogador para jogador com sucessos de área, e depois um salto de três estágios cujo raio cresce cada vez."
+              }
+            },
+            {
+              "danger": true,
+              "diagram": "fire-walls",
+              "at": "9:30",
+              "name": {
+                "en": "Walls of fire",
+                "ru": "Огненные стены",
+                "uk": "Вогняні стіни",
+                "tr": "Ateş duvarları",
+                "pt-BR": "Paredes de fogo"
+              },
+              "text": {
+                "en": "She flies up and walls of fire sweep across the arena with one safe window each. The windows jump left and right, so turn early — with high ping, start turning before you reach the wall. Heal and use invulnerabilities; surviving is all that matters. The second time, fireballs fly around the arena too.",
+                "ru": "Она взлетает, и через арену идут огненные стены, в каждой одно безопасное окно. Окна прыгают влево и вправо, поэтому поворачивай заранее — с высоким пингом начинай поворот до стены. Лечись и жми неуязвимости; главное — выжить. Во второй раз по арене ещё летают огненные шары.",
+                "uk": "Вона злітає, і через арену йдуть вогняні стіни, у кожній одне безпечне вікно. Вікна стрибають ліворуч і праворуч, тож повертай заздалегідь — із високим пінгом починай поворот до стіни. Лікуйся й тисни невразливості; головне — вижити. Удруге по арені ще літають вогняні кулі.",
+                "tr": "Havalanır ve arenada her birinde tek güvenli pencere olan ateş duvarları ilerler. Pencereler sağa sola atlar, o yüzden erken dön — yüksek ping'le duvara varmadan dönmeye başla. İyileş ve dokunulmazlık kullan; önemli olan hayatta kalmak. İkinci seferde arenada ateş topları da uçar.",
+                "pt-BR": "Ela voa e as paredes de fogo atravessam a arena com uma janela segura cada. As janelas saltam para a esquerda e para a direita, então vire cedo, com ping alto, comece a girar antes de chegar à parede. Curar e usar invulnerabilidades, sobreviver é tudo o que importa. Na segunda vez, bolas de fogo voam pela arena também."
+              },
+              "legend": {
+                "en": "One window per wall, never in the same place: zigzag through.",
+                "ru": "Одно окно в каждой стене, всегда в новом месте: проходи зигзагом.",
+                "uk": "Одне вікно в кожній стіні, щоразу в новому місці: проходь зигзагом.",
+                "tr": "Her duvarda bir pencere, hiç aynı yerde değil: zikzakla geç.",
+                "pt-BR": "Uma janela por parede, nunca no mesmo lugar: ziguezague."
+              }
+            },
+            {
+              "at": "10:12",
+              "name": {
+                "en": "Clones",
+                "ru": "Клоны",
+                "uk": "Клони",
+                "tr": "Klonlar",
+                "pt-BR": "Clones."
+              },
+              "text": {
+                "en": "She moves to the middle and illusions appear that attack fast, then close in and hit an area together — dash or run out of it. After the second fire walls more illusions shoot fire arrows from the edges.",
+                "ru": "Она уходит в центр, появляются иллюзии, которые быстро атакуют, затем сходятся к игрокам и бьют по площади — уходи рывком или выбегай. После вторых стен иллюзии с краёв ещё и стреляют огненными стрелами.",
+                "uk": "Вона йде в центр, з'являються ілюзії, які швидко атакують, потім сходяться до гравців і б'ють по площі — тікай ривком або вибігай. Після других стін ілюзії з країв ще й стріляють вогняними стрілами.",
+                "tr": "Ortaya geçer ve hızlı saldıran illüzyonlar belirir, sonra oyunculara yaklaşıp birlikte bir alana vurur — atıl veya dışarı koş. İkinci ateş duvarlarından sonra kenarlardaki illüzyonlar ateş okları da atar.",
+                "pt-BR": "Ela se move para o meio e as ilusões parecem que atacam rápido, então se aproximam e atingem uma área juntos - correr ou sair dela. Depois do segundo incêndio, mais ilusões disparam flechas das bordas."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ferocious-horn-den",
+      "db": "600091",
+      "at": "10:51",
+      "type": "expedition",
+      "gs": 2100,
+      "lead": {
+        "en": "The dungeon for armor pieces and the guard.",
+        "ru": "Подземелье за частями брони и защитой.",
+        "uk": "Підземелля за частинами броні й захистом.",
+        "tr": "Zırh parçaları ve koruma için zindan.",
+        "pt-BR": "O calabouço para peças de armadura e o guarda."
+      },
+      "bosses": [
+        {
+          "db": "2310908",
+          "at": "10:54",
+          "role": {
+            "en": "First boss — the wolf",
+            "ru": "Первый босс — волк",
+            "uk": "Перший бос — вовк",
+            "tr": "İlk boss — kurt",
+            "pt-BR": "Primeiro chefe, o lobo."
+          },
+          "text": {
+            "en": "He jumps around the arena while area hits rain down, then fireballs appear: collect them fast — each one slows you more. At the end he releases a wave from the middle (jump it) and every ball nobody picked up explodes.",
+            "ru": "Он прыгает по арене, сыплются удары по площади, потом появляются огненные шары: собирайте их быстро — каждый замедляет сильнее. В конце он выпускает волну из центра (перепрыгни), и каждый несобранный шар взрывается.",
+            "uk": "Він стрибає ареною, сиплються удари по площі, потім з'являються вогняні кулі: збирайте їх швидко — кожна сповільнює сильніше. Наприкінці він випускає хвилю з центру (перестрибни), і кожна незібрана куля вибухає.",
+            "tr": "Alan vuruşları yağarken arenada zıplar, sonra ateş topları belirir: hızla toplayın — her biri seni daha çok yavaşlatır. Sonunda ortadan bir dalga salar (üstünden zıpla) ve toplanmayan her top patlar.",
+            "pt-BR": "Ele pula pela arena enquanto a área cai, e as bolas de fogo aparecem, recolhem-nas rapidamente, cada uma te atrasa mais. No final, ele libera uma onda do meio e cada bola que ninguém pega explode."
+          }
+        },
+        {
+          "db": "2310909",
+          "at": "11:36",
+          "role": {
+            "en": "Second boss — the necromancer",
+            "ru": "Второй босс — некромант",
+            "uk": "Другий бос — некромант",
+            "tr": "İkinci boss — nekromant",
+            "pt-BR": "Segundo chefe, o necromante."
+          },
+          "text": {
+            "en": "Before him: a totem room — grab bombs from the stairs on both sides (three at a time) to clear the adds. He summons four souls; one player (usually a ranged one) takes an orb so the group can damage them. He marks a player and stands on them with heavy damage — the supports share it in the circle. At the end he pulls everyone in and spreads the zone: run out and dodge the souls flying to him.",
+            "ru": "Перед ним комната с тотемом — бери бомбы с лестниц по бокам (по три сразу), чтобы быстрее зачистить мобов. Он призывает четыре души; один игрок (обычно дальник) берёт сферу, чтобы по ним проходил урон. Он отмечает игрока и стоит на нём с сильным уроном — саппорты делят его в круге. В конце он стягивает всех и расширяет зону: выбегай, уворачиваясь от летящих к нему душ.",
+            "uk": "Перед ним кімната з тотемом — бери бомби зі сходів обабіч (по три одразу), щоб швидше зачистити мобів. Він викликає чотири душі; один гравець (зазвичай дальній) бере сферу, щоб по них проходив урон. Він позначає гравця й стоїть на ньому з сильним уроном — саппорти ділять його в колі. Наприкінці він стягує всіх і розширює зону: вибігай, ухиляючись від душ, що летять до нього.",
+            "tr": "Ondan önce: totemli bir oda — mobları temizlemek için iki yandaki merdivenlerden bomba al (bir seferde üç). Dört ruh çağırır; bir oyuncu (genellikle menzilli) bir küre alır ki grup onlara hasar verebilsin. Bir oyuncuyu işaretler ve ağır hasarla üstünde durur — destekler dairede paylaşır. Sonunda herkesi çeker ve alanı genişletir: dışarı koş ve ona uçan ruhlardan kaçın.",
+            "pt-BR": "Antes dele: uma sala de totem, pegue bombas das escadas de ambos os lados (três de cada vez) para limpar as adições. Ele convoca quatro almas; um jogador (geralmente um variado) toma uma esfera para que o grupo possa danificá-los. Ele marca um jogador e está sobre eles com danos pesados - os suportes compartilham-lo no círculo. No final ele puxa todos para dentro e espalha a zona: correr e desviar as almas voando para ele."
+          }
+        },
+        {
+          "db": "2310910",
+          "at": "12:27",
+          "final": true,
+          "role": {
+            "en": "Final boss",
+            "ru": "Финальный босс",
+            "uk": "Фінальний бос",
+            "tr": "Son boss",
+            "pt-BR": "Chefe final."
+          },
+          "mechs": [
+            {
+              "at": "12:48",
+              "name": {
+                "en": "Illusion leap",
+                "ru": "Прыжок иллюзии",
+                "uk": "Стрибок ілюзії",
+                "tr": "İllüzyon sıçraması",
+                "pt-BR": "Salto de ilusão"
+              },
+              "text": {
+                "en": "He jumps onto his statue, marks and roots a player and his illusion jumps away from them while a circle grows. Read the arrows: small circle — the supports run in; large circle — they run out. One more player stands in the illusion's path, or its damage-taken debuff kills the marked player when the wolf lands. Two jumps the first time, three the second.",
+                "ru": "Он запрыгивает на статую, отмечает и обездвиживает игрока, а его иллюзия отпрыгивает от того, пока растёт круг. Смотри на стрелки: маленький круг — саппорты забегают внутрь, большой — выбегают. Ещё один игрок встаёт на пути иллюзии, иначе её дебафф на получаемый урон убьёт отмеченного, когда волк приземлится. В первый раз два прыжка, во второй — три.",
+                "uk": "Він застрибує на статую, позначає й знерухомлює гравця, а його ілюзія відстрибує від того, поки росте коло. Дивись на стрілки: мале коло — саппорти забігають усередину, велике — вибігають. Ще один гравець стає на шляху ілюзії, інакше її дебаф на отримуваний урон уб'є позначеного, коли вовк приземлиться. Першого разу два стрибки, другого — три.",
+                "tr": "Heykeline sıçrar, bir oyuncuyu işaretleyip köklendirir ve bir daire büyürken illüzyonu ondan uzağa zıplar. Oklara bak: küçük daire — destekler içeri koşar; büyük daire — dışarı koşar. Bir oyuncu daha illüzyonun yolunda durur, yoksa onun alınan hasar debuff'ı kurt indiğinde işaretli oyuncuyu öldürür. İlk seferde iki sıçrama, ikincide üç.",
+                "pt-BR": "Ele pula em sua estátua, marcas e raízes um jogador e sua ilusão salta para longe deles enquanto um círculo cresce. Leia as setas: círculo pequeno - os suportes funcionam em, círculo grande - eles se esgotam. Mais um jogador está no caminho da ilusão, ou seu debufo danificado mata o jogador marcado quando o lobo aterrissa. Dois saltos na primeira vez, três na segunda."
+              }
+            },
+            {
+              "danger": true,
+              "diagram": "nuakum-orb",
+              "at": "13:42",
+              "name": {
+                "en": "Redirect the strike into the orb",
+                "ru": "Направить удар в сферу",
+                "uk": "Спрямувати удар у сферу",
+                "tr": "Vuruşu küreye yönlendir",
+                "pt-BR": "Redirecionar o ataque para a esfera"
+              },
+              "text": {
+                "en": "He casts an orb in the middle that pulls players slightly, jumps to the side and marks a player. The marked player runs to the opposite side, through the area hits, so his ranged strike passes through the orb. Three hits out of four attempts must go into the orb; he jumps somewhere new every time.",
+                "ru": "Он создаёт в центре сферу, которая слегка притягивает игроков, отпрыгивает в сторону и отмечает игрока. Отмеченный бежит на противоположную сторону сквозь удары по площади, чтобы его дальний удар прошёл через сферу. Три удара из четырёх попыток должны попасть в сферу; каждый раз он прыгает в новое место.",
+                "uk": "Він створює в центрі сферу, яка трохи притягує гравців, відстрибує вбік і позначає гравця. Позначений біжить на протилежний бік крізь удари по площі, щоб його дальній удар пройшов через сферу. Три удари з чотирьох спроб мають влучити у сферу; щоразу він стрибає в нове місце.",
+                "tr": "Ortada oyuncuları hafifçe çeken bir küre yaratır, kenara zıplar ve bir oyuncuyu işaretler. İşaretli oyuncu alan vuruşlarının arasından karşı tarafa koşar, böylece menzilli vuruşu küreden geçer. Dört denemeden üç vuruş küreye gitmeli; her seferinde yeni bir yere zıplar.",
+                "pt-BR": "Ele lança uma esfera no meio que puxa os jogadores ligeiramente, salta para o lado e marca um jogador. O jogador marcado corre para o lado oposto, através dos hits de área, então seu ataque variado passa através da esfera. Três de quatro tentativas devem ir para o globo, ele pula em algum lugar novo toda vez."
+              },
+              "legend": {
+                "en": "Boss, orb and marked player on one line.",
+                "ru": "Босс, сфера и отмеченный — на одной линии.",
+                "uk": "Бос, сфера й позначений — на одній лінії.",
+                "tr": "Boss, küre ve işaretli oyuncu tek çizgide.",
+                "pt-BR": "Chefe, orbita e jogador marcado em uma linha."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "deus-research-base",
+      "db": "600053",
+      "at": "14:21",
+      "type": "transcendence",
+      "gs": 1600,
+      "tip": {
+        "en": "Points for every mob and boss open the way to the final boss, so clear the starting mobs as soon as the door opens and everything at the first teleporter. Avoid the purple puddles.",
+        "ru": "Путь к финальному боссу открывают очки за каждого моба и босса, поэтому сразу после открытия двери зачищай стартовых мобов и всё у первого телепорта. Обходи фиолетовые лужи.",
+        "uk": "Шлях до фінального боса відкривають очки за кожного моба й боса, тож одразу після відкриття дверей зачищай стартових мобів і все біля першого телепорту. Оминай фіолетові калюжі.",
+        "tr": "Son bossa giden yolu her mob ve boss için verilen puanlar açar, bu yüzden kapı açılır açılmaz başlangıç moblarını ve ilk ışınlayıcıdaki her şeyi temizle. Mor su birikintilerinden kaçın.",
+        "pt-BR": "Pontos para cada máfia e chefe abrem o caminho para o chefe final, então libere as máfias assim que a porta abrir e tudo no primeiro teletransporte. Evite as poças roxas."
+      },
+      "bosses": [
+        {
+          "db": "2320616",
+          "at": "14:51",
+          "role": {
+            "en": "First boss — electric whip",
+            "ru": "Первый босс — электрохлыст",
+            "uk": "Перший бос — електробатіг",
+            "tr": "İlk boss — elektrik kırbaç",
+            "pt-BR": "Primeiro chefe, chicote elétrico."
+          },
+          "mechs": [
+            {
+              "at": "15:09",
+              "name": {
+                "en": "Charge and puddles",
+                "ru": "Рывок и лужи",
+                "uk": "Ривок і калюжі",
+                "tr": "Hücum ve birikintiler",
+                "pt-BR": "Carga e poças"
+              },
+              "text": {
+                "en": "His whip hits hurt on weak gear; a debuff that reaches three stacks makes you explode with lightning in all directions. He marks a player and charges twice, leaving an electric puddle each time — the marked player drags him to a corner so the puddles don't cover the arena. Then he pounds the ground from the middle: dodge the zones before the big whip hit.",
+                "ru": "Удары хлыстом больно бьют по слабой экипировке; дебафф на трёх стаках взрывается молниями во все стороны. Он отмечает игрока и дважды делает рывок, каждый раз оставляя электрическую лужу, — отмеченный уводит его в угол, чтобы лужи не покрыли арену. Потом он бьёт кулаками из центра: уклонись от зон до большого удара хлыстом.",
+                "uk": "Удари батогом боляче б'ють по слабкому спорядженню; дебаф на трьох стаках вибухає блискавками в усі боки. Він позначає гравця й двічі робить ривок, щоразу лишаючи електричну калюжу, — позначений відводить його в кут, щоб калюжі не вкрили арену. Потім він гатить кулаками з центру: ухилися від зон до великого удару батогом.",
+                "tr": "Kırbaç vuruşları zayıf ekipmanda can yakar; üç yüke ulaşan bir debuff seni her yöne şimşek saçarak patlatır. Bir oyuncuyu işaretler ve iki kez hücum eder, her seferinde elektrikli bir birikinti bırakır — işaretli oyuncu onu köşeye çeker ki birikintiler arenayı kaplamasın. Sonra ortadan yere yumruk atar: büyük kırbaç vuruşundan önce alanlardan kaçın.",
+                "pt-BR": "O chicote dele doía em marcha fraca, um debufo que atinge três pilhas faz você explodir com um raio em todas as direções. Ele marca um jogador e cobra duas vezes, deixando uma poça elétrica cada vez - o jogador marcado arrasta-o para um canto para que as poças não cubram a arena. Então ele bate o chão do meio, esquiva-se das zonas antes do grande chicote bater."
+              }
+            },
+            {
+              "danger": true,
+              "at": "16:03",
+              "name": {
+                "en": "The great whip",
+                "ru": "Большой хлыст",
+                "uk": "Великий батіг",
+                "tr": "Büyük kırbaç",
+                "pt-BR": "O grande chicote"
+              },
+              "text": {
+                "en": "A large ring appears and he swings the great whip in every direction for colossal damage — run out of the ring or block it with skills.",
+                "ru": "Появляется большое кольцо, и он размахивает большим хлыстом во все стороны с колоссальным уроном — выбегай из кольца или блокируй скиллами.",
+                "uk": "З'являється велике кільце, і він розмахує великим батогом в усі боки з колосальним уроном — вибігай із кільця або блокуй скілами.",
+                "tr": "Büyük bir halka belirir ve devasa hasarla büyük kırbacını her yöne savurur — halkadan dışarı koş veya yeteneklerle blokla.",
+                "pt-BR": "Um anel grande aparece e ele balança o grande chicote em todas as direções para danos colossais - sair do anel ou bloqueá-lo com habilidades."
+              }
+            }
+          ]
+        },
+        {
+          "db": "2320615",
+          "at": "16:18",
+          "role": {
+            "en": "Second boss",
+            "ru": "Второй босс",
+            "uk": "Другий бос",
+            "tr": "İkinci boss",
+            "pt-BR": "Segundo chefe."
+          },
+          "text": {
+            "en": "Easier: he hits in front, three devices send electric threads around in a circle — jump them — and he puts a big ticking zone on players: carry it away from the group. Dodge his bombs.",
+            "ru": "Проще: бьёт перед собой, три устройства гоняют по кругу электрические нити — перепрыгивай, — и вешает на игроков большую тикающую зону: уноси её от группы. Уклоняйся от его бомб.",
+            "uk": "Простіший: б'є перед собою, три пристрої ганяють по колу електричні нитки — перестрибуй, — і вішає на гравців велику тикаючу зону: відноси її від групи. Ухиляйся від його бомб.",
+            "tr": "Daha kolay: önüne vurur, üç cihaz elektrik iplerini daire içinde döndürür — üstlerinden zıpla — ve oyunculara büyük, işleyen bir alan koyar: onu gruptan uzağa taşı. Bombalarından kaçın.",
+            "pt-BR": "Mais fácil: ele bate na frente, três dispositivos enviam fios elétricos em um círculo - pulá-los - e ele coloca uma grande zona de tique-taque nos jogadores: levá-lo para longe do grupo. Desvie das bombas dele."
+          }
+        },
+        {
+          "db": "2320601",
+          "at": "16:51",
+          "final": true,
+          "role": {
+            "en": "Final boss",
+            "ru": "Финальный босс",
+            "uk": "Фінальний бос",
+            "tr": "Son boss",
+            "pt-BR": "Chefe final."
+          },
+          "mechs": [
+            {
+              "at": "16:51",
+              "name": {
+                "en": "Thread and shared hit",
+                "ru": "Нить и общий удар",
+                "uk": "Нитка й спільний удар",
+                "tr": "İp ve ortak vuruş",
+                "pt-BR": "Thread e hit compartilhado"
+              },
+              "text": {
+                "en": "She pulls the group together and a thread links the players — run apart to break it. Then she roots a player: everyone runs into that circle to share the damage. Waves fly out that hurt and stun briefly — find their rhythm — while a wind pushes you to the edge, which explodes and shrinks at the end.",
+                "ru": "Она стягивает группу, и игроков связывает нить — разбегайтесь, чтобы её порвать. Потом она обездвиживает игрока: все забегают в его круг, чтобы разделить урон. Летят волны, которые бьют и ненадолго оглушают, — поймай ритм, — а ветер сносит к краю, который в конце взрывается и сжимается.",
+                "uk": "Вона стягує групу, і гравців зв'язує нитка — розбігайтеся, щоб її розірвати. Потім вона знерухомлює гравця: усі забігають у його коло, щоб розділити урон. Летять хвилі, які б'ють і ненадовго оглушають, — злови ритм, — а вітер зносить до краю, який наприкінці вибухає й стискається.",
+                "tr": "Grubu bir araya çeker ve oyuncuları bir ip bağlar — kırmak için ayrı yönlere koşun. Sonra bir oyuncuyu köklendirir: hasarı paylaşmak için herkes o daireye koşar. Can yakan ve kısa süre sersemleten dalgalar uçar — ritmini bul — bir rüzgâr ise seni sonunda patlayıp daralan kenara iter.",
+                "pt-BR": "Ela junta o grupo e um fio liga os jogadores, correndo para quebrá-lo. Então ela cria um jogador: todo mundo corre para aquele círculo para compartilhar os danos. Ondas saem voando que doem e atordoam brevemente, encontram seu ritmo, enquanto um vento te empurra para a borda, que explode e encolhe no final."
+              }
+            },
+            {
+              "danger": true,
+              "at": "17:32",
+              "name": {
+                "en": "Last stagger",
+                "ru": "Последнее оглушение",
+                "uk": "Останнє оглушення",
+                "tr": "Son stagger",
+                "pt-BR": "Última cambaleação"
+              },
+              "text": {
+                "en": "Copies rush across the arena like a train while a red thread punishes going too far from her. Then she spawns a stagger bar, but the wind blows melee off — close in with skills and break it while dodging her pizza hits. If the bar holds, the run fails.",
+                "ru": "Копии проносятся по арене, как поезд, а красная нить наказывает за удаление от неё. Потом она выставляет полосу оглушения, но ветер сдувает ближний бой — подходи скиллами и сбивай её, уклоняясь от «пиццы». Не сбили полосу — забег провален.",
+                "uk": "Копії проносяться ареною, як потяг, а червона нитка карає за віддалення від неї. Потім вона виставляє смугу оглушення, але вітер здуває ближній бій — підходь скілами й збивай її, ухиляючись від «піци». Не збили смугу — забіг провалено.",
+                "tr": "Kopyalar arenada tren gibi geçer, kırmızı bir ip de ondan çok uzaklaşmayı cezalandırır. Sonra bir stagger çubuğu çıkarır ama rüzgâr yakın dövüşçüleri savurur — yeteneklerle yaklaş ve pizza vuruşlarından kaçarak kır. Çubuk dayanırsa koşu başarısız olur.",
+                "pt-BR": "Cópias atravessam a arena como um trem enquanto uma linha vermelha pune indo longe demais dela. Então ela cria um bar cambaleante, mas o vento sopra para fora - perto com habilidades e quebrá-lo enquanto evitando seus sucessos de pizza. Se a barra aguentar, a corrida falha."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "shattered-arkanis",
+      "db": "600063",
+      "at": "18:03",
+      "type": "transcendence",
+      "gs": 1600,
+      "tip": {
+        "en": "Clear the mobs after the gates open, keep moving — most of them deal magic damage — and activate the obelisk so you don't run from the start after a wipe. The rotating walls on the way hit hard; the safest spot is in the middle by the pillar they come from.",
+        "ru": "После открытия ворот зачищай мобов и не стой — почти все бьют магией — и активируй обелиск, чтобы после вайпа не бежать с начала. Вращающиеся стены по пути бьют больно; безопаснее всего в центре у столба, из которого они выходят.",
+        "uk": "Після відкриття воріт зачищай мобів і не стій — майже всі б'ють магією — і активуй обеліск, щоб після вайпу не бігти з початку. Обертові стіни дорогою б'ють боляче; найбезпечніше в центрі біля стовпа, з якого вони виходять.",
+        "tr": "Kapılar açılınca mobları temizle, hareket et — çoğu büyü hasarı verir — ve bir wipe'tan sonra baştan koşmamak için obeliski etkinleştir. Yoldaki dönen duvarlar sert vurur; en güvenli yer çıktıkları sütunun yanındaki orta nokta.",
+        "pt-BR": "Limpem as multidões após os portões abrirem, continuem se movendo, a maioria deles causa danos mágicos, e ativem o obelisco para que não fujam do início depois de uma limpeza. As paredes rotativas no caminho bateram forte, o lugar mais seguro está no meio pelo pilar de onde vêm."
+      },
+      "bosses": [
+        {
+          "db": "2330707",
+          "at": "18:30",
+          "role": {
+            "en": "First boss — the rings",
+            "ru": "Первый босс — кольца",
+            "uk": "Перший бос — кільця",
+            "tr": "İlk boss — halkalar",
+            "pt-BR": "Primeiro chefe, os anéis."
+          },
+          "mechs": [
+            {
+              "danger": true,
+              "diagram": "rings-cross",
+              "at": "18:57",
+              "name": {
+                "en": "Cross the rings",
+                "ru": "Скрестить кольца",
+                "uk": "Схрестити кільця",
+                "tr": "Halkaları çaprazla",
+                "pt-BR": "Cruze os anéis."
+              },
+              "text": {
+                "en": "First she throws rings at a few players, then the rest fly out — read their path to find a safe spot. The main mechanic is for two players: two rings slowly come at them along red bars. Stand so the bars form a cross and the rings collide. If one player moves at the last second they fly past and must be lined up again; a failed try sends them after you and hurts everyone. Adjust calmly.",
+                "ru": "Сначала она бросает кольца в нескольких игроков, потом вылетают остальные — читай траекторию и ищи безопасное место. Главная механика на двоих: два кольца медленно идут к ним по красным полосам. Встаньте так, чтобы полосы образовали крест и кольца столкнулись. Если кто-то сдвинется в последний момент, кольца пролетят и их придётся выравнивать снова; неудача — кольца летят за вами и бьют всех. Поправляйтесь без паники.",
+                "uk": "Спершу вона кидає кільця в кількох гравців, потім вилітають решта — читай траєкторію й шукай безпечне місце. Головна механіка на двох: два кільця повільно йдуть до них червоними смугами. Станьте так, щоб смуги утворили хрест і кільця зіткнулися. Якщо хтось зрушить в останню мить, кільця пролетять і їх доведеться вирівнювати знову; невдача — кільця летять за вами й б'ють усіх. Поправляйтеся без паніки.",
+                "tr": "Önce birkaç oyuncuya halka atar, sonra kalanlar fırlar — güvenli bir yer bulmak için yollarını oku. Ana mekanik iki oyuncu için: iki halka kırmızı çubuklar boyunca onlara yavaşça gelir. Çubuklar çarpı oluşturacak ve halkalar çarpışacak şekilde durun. Biri son anda kıpırdarsa halkalar geçip gider ve yeniden hizalanmalı; başarısız deneme halkaları peşinize takar ve herkese vurur. Sakince düzeltin.",
+                "pt-BR": "Primeiro ela joga anéis em alguns jogadores, depois o resto voa para fora - leia seu caminho para encontrar um lugar seguro. O mecânico principal é para dois jogadores: dois anéis lentamente vêm até eles ao longo de barras vermelhas. Levantem-se para que as barras formem uma cruz e os anéis colidam. Se um jogador se mover no último segundo, eles passam e devem estar alinhados novamente. Uma tentativa fracassada envia-os atrás de você e machuca todos. Ajustar calmamente."
+              },
+              "legend": {
+                "en": "Two players make the red bars cross; the rings meet in the middle.",
+                "ru": "Двое игроков скрещивают красные полосы; кольца встречаются посередине.",
+                "uk": "Двоє гравців схрещують червоні смуги; кільця зустрічаються посередині.",
+                "tr": "İki oyuncu kırmızı çubukları çaprazlar; halkalar ortada buluşur.",
+                "pt-BR": "Dois jogadores fazem as barras vermelhas cruzarem, os anéis se encontram no meio."
+              }
+            }
+          ]
+        },
+        {
+          "db": "2330708",
+          "at": "20:03",
+          "role": {
+            "en": "Second boss",
+            "ru": "Второй босс",
+            "uk": "Другий бос",
+            "tr": "İkinci boss",
+            "pt-BR": "Segundo chefe."
+          },
+          "text": {
+            "en": "Easier. Avoid her pizza; when the whole arena turns red, run to her — it's safe there. Lightning strikes from above several times; if one hits you, a circle around you spreads across the arena at the end — jump it (there may be several). Then another pizza and damaging blobs. Burst her down.",
+            "ru": "Проще. Избегай «пиццы»; когда вся арена краснеет, беги к ней — там безопасно. Сверху несколько раз бьют молнии; если попала, вокруг тебя появляется круг, который в конце расходится на всю арену, — перепрыгни (их может быть несколько). Дальше ещё «пицца» и наносящие урон сгустки. Просто быстро дави.",
+            "uk": "Простіше. Уникай «піци»; коли вся арена червоніє, біжи до неї — там безпечно. Згори кілька разів б'ють блискавки; якщо влучила, навколо тебе з'являється коло, яке наприкінці розходиться на всю арену, — перестрибни (їх може бути кілька). Далі ще «піца» й згустки, що ранять. Просто швидко тисни.",
+            "tr": "Daha kolay. Pizzasından kaçın; tüm arena kızarınca ona koş — orası güvenli. Yukarıdan birkaç kez şimşek çakar; isabet ederse etrafında bir daire belirir ve sonunda tüm arenaya yayılır — üstünden zıpla (birkaç tane olabilir). Sonra bir pizza daha ve hasar veren pıhtılar. Hızla erit.",
+            "pt-BR": "Mais fácil. Evite a pizza dela, quando toda a arena ficar vermelha, corra para ela. É seguro lá. O relâmpago vem de cima várias vezes; se um bate em você, um círculo ao seu redor se espalha pela arena no final - pule-o (pode haver vários). Depois outra pizza e bolhas prejudiciais. Exploda-a."
+          }
+        },
+        {
+          "db": "2330709",
+          "at": "20:36",
+          "final": true,
+          "role": {
+            "en": "Final boss",
+            "ru": "Финальный босс",
+            "uk": "Фінальний бос",
+            "tr": "Son boss",
+            "pt-BR": "Chefe final."
+          },
+          "mechs": [
+            {
+              "at": "20:36",
+              "name": {
+                "en": "Spears and beams",
+                "ru": "Копья и лучи",
+                "uk": "Списи й промені",
+                "tr": "Mızraklar ve ışınlar",
+                "pt-BR": "Lanças e vigas"
+              },
+              "text": {
+                "en": "Four spears appear, three purple and one white — attack the white one or it hits very hard. Circles on the water mean fire beams from above that move chaotically. She sends a white wave outward and a purple wave inward: jump both.",
+                "ru": "Появляются четыре копья, три фиолетовых и одно белое — бей белое, иначе оно ударит очень больно. Круги на воде — сверху пойдут огненные лучи, двигаясь хаотично. Она пускает белую волну к краю и фиолетовую к себе: перепрыгни обе.",
+                "uk": "З'являються чотири списи, три фіолетові й один білий — бий білий, інакше він ударить дуже боляче. Кола на воді — згори підуть вогняні промені, рухаючись хаотично. Вона пускає білу хвилю до краю й фіолетову до себе: перестрибни обидві.",
+                "tr": "Dört mızrak belirir, üçü mor biri beyaz — beyazı vur, yoksa çok sert vurur. Sudaki daireler yukarıdan gelecek, rastgele hareket eden ateş ışınları demek. Kenara beyaz bir dalga, kendine doğru mor bir dalga gönderir: ikisinin de üstünden zıpla.",
+                "pt-BR": "Quatro lanças aparecem, três roxas e uma branca — ataquem a branca ou ela bate muito forte. Círculos na água significam raios de fogo de cima que se movem caoticamente. Ela envia uma onda branca para fora e uma onda roxa para dentro: pule ambos."
+              }
+            },
+            {
+              "danger": true,
+              "diagram": "color-domes",
+              "at": "21:03",
+              "name": {
+                "en": "Colour orbs and domes",
+                "ru": "Цветные сферы и купола",
+                "uk": "Кольорові сфери й куполи",
+                "tr": "Renkli küreler ve kubbeler",
+                "pt-BR": "Orbes de cor e cúpulas"
+              },
+              "text": {
+                "en": "Purple and white orbs converge on her from all sides — agree in advance who collects which colour; each missed orb raises her damage. When they run out a dome of your colour forms over you; don't stand close to others or the domes vanish. Remember the order of colours she shows: everyone stands under the dome of the first colour, then moves to the second. The second time there are three colours and waves to jump.",
+                "ru": "Со всех сторон к ней летят фиолетовые и белые сферы — заранее договоритесь, кто собирает какой цвет; каждая пропущенная сфера усиливает её урон. Когда сферы заканчиваются, над тобой появляется купол твоего цвета; не стой близко к другим, иначе купола исчезнут. Запомни порядок цветов, который она показывает: все встают под купол первого цвета, затем переходят ко второму. Во второй раз цветов три и есть волны для прыжка.",
+                "uk": "З усіх боків до неї летять фіолетові й білі сфери — заздалегідь домовтеся, хто збирає який колір; кожна пропущена сфера посилює її урон. Коли сфери закінчуються, над тобою з'являється купол твого кольору; не стій близько до інших, інакше куполи зникнуть. Запам'ятай порядок кольорів, який вона показує: усі стають під купол першого кольору, потім переходять до другого. Удруге кольорів три й є хвилі для стрибка.",
+                "tr": "Mor ve beyaz küreler her yönden ona doğru gelir — kimin hangi rengi toplayacağında önceden anlaşın; kaçan her küre hasarını artırır. Küreler bitince üstünde kendi renginde bir kubbe oluşur; başkalarına yakın durma, yoksa kubbeler kaybolur. Gösterdiği renk sırasını hatırla: herkes önce ilk rengin kubbesinin altına, sonra ikinciye geçer. İkinci seferde üç renk ve zıplanacak dalgalar var.",
+                "pt-BR": "Orbes roxos e brancos convergem sobre ela de todos os lados. Concordam com antecedência que recolhe qual cor; cada orbe perdido levanta seu dano. Quando eles acabarem com uma redoma da sua cor sobre você, não fique perto dos outros ou as redomas desaparecem. Lembre-se da ordem de cores que ela mostra: todos ficam sob a cúpula da primeira cor, e depois se movem para a segunda. A segunda vez há três cores e ondas para saltar."
+              },
+              "legend": {
+                "en": "Each player under their own dome, apart; go to the colour she shows first.",
+                "ru": "Каждый под своим куполом, на расстоянии; идите к цвету, который она показала первым.",
+                "uk": "Кожен під своїм куполом, на відстані; йдіть до кольору, який вона показала першим.",
+                "tr": "Her oyuncu kendi kubbesinin altında, ayrı; ilk gösterdiği renge gidin.",
+                "pt-BR": "Cada jogador sob sua própria cúpula, separados; vá para a cor que ela mostra primeiro."
+              }
+            },
+            {
+              "at": "22:09",
+              "name": {
+                "en": "Break the cage",
+                "ru": "Разбить клетку",
+                "uk": "Розбити клітку",
+                "tr": "Kafesi kır",
+                "pt-BR": "Quebre a jaula"
+              },
+              "text": {
+                "en": "She locks one player in a cage that takes damage and throws spears at the other three, their path shown by a yellow bar. Aim all three at the cage: three hits shatter it.",
+                "ru": "Она запирает одного игрока в клетку, которая получает урон, и бросает копья в остальных троих — траектория видна по жёлтой полосе. Направьте все три в клетку: три попадания её разбивают.",
+                "uk": "Вона замикає одного гравця в клітку, яка отримує урон, і кидає списи в решту трьох — траєкторію видно за жовтою смугою. Спрямуйте всі три в клітку: три влучання її розбивають.",
+                "tr": "Bir oyuncuyu hasar alan bir kafese kilitler ve diğer üçüne mızrak atar, yolları sarı bir çubukla gösterilir. Üçünü de kafese yönlendirin: üç isabet onu kırar.",
+                "pt-BR": "Ela tranca um jogador em uma gaiola que leva dano e lança lanças nos outros três, seu caminho mostrado por uma barra amarela. Aponte todos os três para a jaula: três batidas quebrando-o."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zikel",
+      "at": "22:45",
+      "type": "nightmare",
+      "name": {
+        "en": "Nightmare: Zikel",
+        "ru": "Кошмар: Зикель",
+        "uk": "Nightmare: Zikel",
+        "tr": "Nightmare: Zikel",
+        "pt-BR": "Pesadelo: Zikel"
+      },
+      "tip": {
+        "en": "Stock up: HP potions, yellow potions for debuffs, food. Beating him lets you buy his statue in the solo shop for your Pantheon.",
+        "ru": "Запасись: банки HP, жёлтые банки от дебаффов, еда. После победы над ним в магазине соло-режима можно купить его статую для Пантеона.",
+        "uk": "Запасися: банки HP, жовті банки від дебафів, їжа. Перемога над ним дає купити його статую в магазині соло-режиму для Пантеону.",
+        "tr": "Stok yap: HP iksirleri, debuff için sarı iksirler, yemek. Onu yenmek, Pantheon'un için heykelini solo mod mağazasından almanı sağlar.",
+        "pt-BR": "Estoque: HP poções, poções amarelas para debuffs, comida. Bater nele permite que você compre sua estátua na loja solo para o seu Panteão."
+      },
+      "bosses": [
+        {
+          "name": {
+            "en": "Zikel",
+            "ru": "Призрак Зикеля",
+            "uk": "Zikel",
+            "tr": "Zikel",
+            "pt-BR": "Zikel"
+          },
+          "at": "23:27",
+          "final": true,
+          "role": {
+            "en": "Solo boss",
+            "ru": "Соло-босс",
+            "uk": "Соло-бос",
+            "tr": "Solo boss",
+            "pt-BR": "Chefe Solo."
+          },
+          "mechs": [
+            {
+              "at": "23:27",
+              "name": {
+                "en": "Every hit hurts",
+                "ru": "Каждый удар бьёт больно",
+                "uk": "Кожен удар болить",
+                "tr": "Her vuruş can yakar",
+                "pt-BR": "Cada golpe dói."
+              },
+              "text": {
+                "en": "Dodge everything: single hits and short combos all hurt, and they bleed — clear it with potions or skills. One attack tethers and lifts you, then his huge sword lands.",
+                "ru": "Уклоняйся от всего: одиночные удары и короткие комбо бьют больно и вешают кровотечение — снимай банками или скиллами. Одна атака притягивает и поднимает тебя, после чего падает его огромный меч.",
+                "uk": "Ухиляйся від усього: поодинокі удари й короткі комбо б'ють боляче й вішають кровотечу — знімай банками чи скілами. Одна атака притягує й піднімає тебе, після чого падає його величезний меч.",
+                "tr": "Her şeyden kaçın: tek vuruşlar ve kısa kombolar hep can yakar ve kanatır — iksir veya yetenekle temizle. Bir saldırı seni bağlayıp havaya kaldırır, ardından devasa kılıcı iner.",
+                "pt-BR": "Desvie de tudo: hits simples e combos curtos todos doem, e eles sangram - limpar com poções ou habilidades. Uma corda de ataque e levanta você, então sua enorme espada pousa."
+              }
+            },
+            {
+              "danger": true,
+              "diagram": "zikel-lanes",
+              "at": "24:00",
+              "name": {
+                "en": "Safe lanes",
+                "ru": "Безопасные коридоры",
+                "uk": "Безпечні коридори",
+                "tr": "Güvenli koridorlar",
+                "pt-BR": "Caminhos seguros."
+              },
+              "text": {
+                "en": "He jumps to the edge and slams the ground; once he has struck, a safe lane forms — step in, never before. He reappears on the opposite side and slams a second, roughly parallel lane: start moving when the purple glow fades, not earlier and not later. If you are outside a lane when the arena lights purple again, you die. Then he dives to the middle — jump right before the landing wave. The second round adds area hits on the floor and a third side; at the end the safe spot is right next to him.",
+                "ru": "Он прыгает к краю и бьёт в землю; после удара появляется безопасный коридор — заходи только после удара. Он появляется на противоположной стороне и бьёт второй, примерно параллельный коридор: начинай движение, когда гаснет фиолетовое свечение, — не раньше и не позже. Если ты вне коридора, когда арена снова вспыхивает фиолетовым, — смерть. Затем он пикирует в центр — прыгай перед самой волной приземления. Во втором круге добавляются удары по полу и третья сторона; в конце безопасное место — прямо возле него.",
+                "uk": "Він стрибає до краю й б'є в землю; після удару з'являється безпечний коридор — заходь лише після удару. Він з'являється на протилежному боці й б'є другий, приблизно паралельний коридор: починай рух, коли гасне фіолетове світіння, — не раніше й не пізніше. Якщо ти поза коридором, коли арена знову спалахує фіолетовим, — смерть. Потім він пікірує в центр — стрибай перед самою хвилею приземлення. У другому колі додаються удари по підлозі й третій бік; наприкінці безпечне місце — просто біля нього.",
+                "tr": "Kenara zıplar ve yere vurur; vurduktan sonra güvenli bir koridor oluşur — ancak o zaman gir, asla önce değil. Karşı tarafta yeniden belirir ve ikinci, aşağı yukarı paralel bir koridor vurur: mor parıltı sönünce harekete geç, ne erken ne geç. Arena yeniden mora boyandığında koridorun dışındaysan ölürsün. Sonra ortaya dalar — iniş dalgasından hemen önce zıpla. İkinci tur yere alan vuruşları ve üçüncü bir taraf ekler; sonunda güvenli yer tam yanı.",
+                "pt-BR": "Ele pula para a borda e bate o chão; uma vez atingido, uma pista segura se forma - entrar, nunca antes. Ele reaparece no lado oposto e bate um segundo, aproximadamente paralelo: começar a se mover quando o brilho roxo desaparece, não mais cedo e não mais tarde. Se você está fora de uma pista quando a arena brilha roxo novamente, você morre. Então ele mergulha para o meio - saltar bem antes da onda de aterrissagem. O segundo round adiciona área no chão e um terceiro lado, no final o lugar seguro é ao lado dele."
+              },
+              "legend": {
+                "en": "He strikes from one side, then the other: move from lane to lane on his swing.",
+                "ru": "Он бьёт с одной стороны, потом с другой: переходи из коридора в коридор на его замахе.",
+                "uk": "Він б'є з одного боку, потім з іншого: переходь із коридору в коридор на його замаху.",
+                "tr": "Önce bir taraftan, sonra diğerinden vurur: savuruşunda koridordan koridora geç.",
+                "pt-BR": "Ele ataca de um lado, depois o outro: se move de pista em pista em seu balanço."
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,272 @@
+{% from "macros.html" import section, skill, core, loadout, passives, glance, hotline, macroseq, dv_board with context %}
+
+{# ============================== PvE and PvP ============================== #}
+{% call glance('pve') %}
+  <h3>{{ t.core_skills }}</h3>
+  {{ core([('elemental-fusion', '20'), ('combustion', '20'), ('summon-fire-spirit', '20'), ('cold-shock', '16'), ('summon-water-spirit', '16')]) }}
+  <h3>{{ t.stigma_loadout }}</h3>
+  {{ loadout([('summon-ancient-spirit', 20), ('enhance-spirits-benediction', 20), ('flame-blessing', 20), ('jointstrike-corrode', 20)]) }}
+  <h3>{{ t.key_passives }}</h3>
+  {{ passives(['mental-focus', 'spirit-strike', 'element-unification', 'spirit-revitalization']) }}
+{% endcall %}
+
+{% call glance('pvp') %}
+  <h3>{{ t.core_skills }}</h3>
+  {{ core([('defiance', '20'), ('cold-shock', '20'), ('elemental-fusion', '20'), ('jointstrike-curse', '20'), ('combustion', '20')]) }}
+  <h3>{{ t.stigma_loadout }}</h3>
+  {{ loadout([('summon-ancient-spirit', 20), ('enhance-spirits-benediction', 20), ('command-proxy', 20), ('seize-magic', 20)]) }}
+  <h3>{{ t.key_passives }}</h3>
+  {{ passives(['spirit-protection', 'revitalization-contract', 'spirit-strike', 'mental-focus']) }}
+{% endcall %}
+
+{% call section('intro', 'Genel bakış', 'pve') %}
+  <p>Elementalist (Spirit Master) tek çağırıcı sınıf: yanında bir ruh savaşır, her ruh yeteneği sana bir element verir ve dört elementte {{ s('elemental-fusion') }} hazır olur. Hasarın çoğu Elemental Fusion'dan ve ruhlardan gelir — her şeyden önce {{ s('summon-ancient-spirit') }} ve {{ s('summon-fire-spirit') }}'tan.</p>
+  <div class="callout accent">
+    <h3>Tek cümlede build</h3>
+    <p>Önce bufflan, sonra çağır: bir ruh, ortaya çıktığı andaki statlarını kopyalar. {{ s('cold-shock') }}'un Attack buffının beş yükünü tut, bufflar ve Ancient Spirit ile aç ve makronun Elemental Fusion'ı hazır olduğunda ateşlemesine izin ver.</p>
+  </div>
+  <div class="callout"><ul>
+    <li><strong>Snapshot kuralı.</strong> Bir ruhun hasarı, onu çağırdığın andaki statlarına ve bufflarına bağlı. Çağırmadan sonra kullanılan bir buff o ruh için hiçbir şey yapmaz — Ancient Spirit'i asla bufflar açık değilken çağırma.</li>
+    <li><strong>Temel saldırıyı araya ör.</strong> Cold Shock vuruş başına +%2 Attack verir, beş yüke kadar. Onları kaybetmek sana ve çağırdığın her ruha %10 Attack'e mal olur; fazladan bir temel saldırı sonraki çağırmadan daha değerli.</li>
+    <li><strong>Uzun dövüşler senin lehine.</strong> Sınıf bufflara ve zamanla hasara dayanır, bu yüzden dövüş uzadıkça güçlenir — ve her şey bekleme süresindeyken ölürsen en çok o kaybeder.</li>
+  </ul></div>
+  <p class="note">Bu rehber Evripides'in yazılı Spirit Master rehberini, Season 1 için global sürümü (aion2sm.com, 700k CP'de yazıldı, 29 Eylül'de güncellendi) izliyor; DankRNG videosunu bunun üzerine kuruyor; aLuckyRO'nun global videosu ilk gün seçimlerini ekliyor. Rehber Tayvan ve Kore sürümünden uyarlandı — yazarı çıkıştan sonra güncelleyecek.</p>
+{% endcall %}
+
+{% call section('intro-pvp', 'Genel bakış', 'pvp') %}
+  <p>PvP'de Elementalist <strong>dayanarak kazanan bir kite sınıfı</strong>: Ranger'dan az hareketli ve Sorcerer'dan az patlamalı, ama korku, dispel ve sen menzil dışındayken vurmaya devam eden ruhlarla açık ara en dayanıklı menzilli sınıf.</p>
+  <div class="callout"><ul>
+    <li><strong>Korku bir kontrol, öldürme aracı değil.</strong> Kendini kurtarmak ve düşmanın {{ s('defiance', False) }}'ını çıkarmaya zorlamak için kullan; hasar Elemental Fusion, lanetler ve ruhlardan gelir.</li>
+    <li><strong>Dövüşleri zamanlama belirler.</strong> Diğer sınıfın yeteneklerini bil: çok erken veya çok geç kullanılan bir savunma dövüşü kaybettirir.</li>
+    <li><strong>{{ s('summon-earth-spirit') }} taunt yapar</strong> — ve Defiance bir taunt'u kıramaz.</li>
+  </ul></div>
+  <p class="note">PvP modu aynı rehberin "PvP Starter" buildini izliyor (29 Eylül'de güncellendi).</p>
+{% endcall %}
+
+{% call section('skills', 'Yetenekler', 'pve') %}
+  <p>Üç yetenek <strong>20</strong>'ye ulaşmalı: {{ s('combustion') }}, {{ s('summon-fire-spirit') }} ve {{ s('elemental-fusion') }}. {{ s('summon-water-spirit') }} 16'da iyi, 20'de güzel; geri kalan her şey 16'da durur. İlk günlerde, yetenekler 8–12'deyken kartlarda adı geçen mana seçimlerini al (aLuckyRO).</p>
+  <ul class="skill-grid">
+    {% call skill('elemental-fusion', 'must', '20', [1, 2, 4]) %}En büyük vuruşun, bekleme süresi yok — dört element tuttuğun her seferde ateşlenir. Gecikmeli hasar, tüm Element Boost'lara +10 ve dört elementi koruma şansı %25. aLuckyRO ilk gün yerine şarjlı sürümü (+%200'e kadar) alıyor.{% endcall %}
+    {% call skill('combustion', 'must', '20', [1, 3, 4]) %}Tek hedefte +%12, +%20 Skill Speed ve Ashy Call zinciri. İlk günler: manan dayanana kadar −%20 MP (aLuckyRO).{% endcall %}
+    {% call skill('summon-fire-spirit', 'must', '20', [1, 2, 4]) %}En güçlü temel ruh ve en uzun açık kalanı — diğerleri beklerken dışarıda kalsın diye en son çağır.{% endcall %}
+    {% call skill('cold-shock', 'must', '16', [2, 3]) %}Temel saldırı: Multi-Hit ve her çağırmanın kopyaladığı +%2 Attack yükleri. 14 olur, bekleme süreleri uzun olduğu için başta 16 en iyisi. İlk günler: Multi-Hit yerine +%20 MP yenileme.{% endcall %}
+    {% call skill('summon-water-spirit', 'must', '16', [1, 4]) %}Jointstrike: Corrode'a katıldığında temel ruhların en yüksek tek hedef vuruşu ve seviye atlarken manan.{% endcall %}
+    {% call skill('jointstrike-curse', 'must', '16', [0, 2]) %}DoT ve debuff: +2 sn Curse ve hareket seçimi. Ruhların — Ancient Spirit de — seninle birlikte vurur.{% endcall %}
+    {% call skill('dimensional-control', 'must', '16', [1, 2]) %}Çağırdığında tetiklenir; gecikmeli hasar ve Multi-Hit. Çekmeyi ve yavaşlatmayı atla.{% endcall %}
+    {% call skill('summon-earth-spirit', 'opt', '16', [1, 2]) %}Düşmanı kendine taunt'lar — boss seni değil ruhu vurur. Soloda faydalı.{% endcall %}
+    {% call skill('rapid-scattershot', 'opt', '16', [3, 4]) %}Yalnızca Stagger'daki bosslarda. 16'nın altında hareket seçimini ve Multi-Hit'i al; 16'da Multi-Hit ve tüm bekleme sürelerine −1 sn.{% endcall %}
+    {% call skill('defiance', 'opt', '16', [2, 4]) %}Kontrol kırıcı; %20 HP geri ve Tenacity penceresi için hasar toleransı.{% endcall %}
+    {% call skill('summon-wind-spirit', 'skip', 'atla') %}En zayıf yetenek hasarı ve çağırması diğerlerinden zaman alır. aLuckyRO dört elemente daha hızlı ulaşmak için ilk hafta tutuyor; üç ruh Fusion'ı kendi başına açınca çıkar.{% endcall %}
+    {% call skill('souls-cry', 'skip', 'PvP') %}Korku — bir PvP yeteneği.{% endcall %}
+  </ul>
+{% endcall %}
+
+{% call section('skills-pvp', 'Yetenekler', 'pvp') %}
+  <p><strong>20</strong>'de dört kesin şart: {{ s('defiance') }}, {{ s('cold-shock') }}, {{ s('elemental-fusion') }} ve {{ s('jointstrike-curse') }}; {{ s('combustion') }} zaten arcana setiyle 20'ye ulaşır.</p>
+  <ul class="skill-grid">
+    {% call skill('defiance', 'must', '20', [2, 3, 4]) %}%20 HP, +2 sn Tenacity ve hasar toleransıyla kontrol kırıcı. Biri sana dalınca ilk kontrolü hemen kır.{% endcall %}
+    {% call skill('cold-shock', 'must', '20', [1, 2]) %}HP emme ve Multi-Hit. Attack yükleri PvP'de nadiren birikir, bu yüzden burada alınmıyor.{% endcall %}
+    {% call skill('elemental-fusion', 'must', '20', [1, 2, 4]) %}Patlaman. Toplu PvP için gecikmeli hasarı alan sürümüyle değiştir.{% endcall %}
+    {% call skill('jointstrike-curse', 'must', '20', [1, 3, 4]) %}Multi-Hit, −2 sn bekleme süresi ve 16'da Block ve Evasion'ı yok sayar ve kritik vurur. Önce uygula — düşmanın iyileşme iksirini çıkartır.{% endcall %}
+    {% call skill('combustion', 'must', '20', [1, 3, 4]) %}PvE'deki aynı seçimler.{% endcall %}
+    {% call skill('dimensional-control', 'must', '16', [1, 4]) %}Bol kontrol ve kite: gecikmeli hasar ve kökleme şansı; her çağırmada tetiklenir ve düşmanın Defiance'ını çıkartır.{% endcall %}
+    {% call skill('summon-earth-spirit', 'must', '16', [1, 4]) %}Taunt — oyundaki en güçlü kontrollerden biri. Hasar toleransı ve ruh için +%20 stat.{% endcall %}
+    {% call skill('souls-cry', 'opt', '12–16', [1, 3]) %}Köklemeli ve −10 sn bekleme süreli korku; 16'nın altı da olur.{% endcall %}
+    {% call skill('summon-water-spirit', 'opt', '12–16', [1, 2]) %}12–16 yeterli.{% endcall %}
+    {% call skill('summon-fire-spirit', 'opt', '14', [1, 2]) %}Düşük seviyede bile sert vurur.{% endcall %}
+    {% call skill('summon-wind-spirit', 'skip', 'atla') %}PvP'de kullanılmaz.{% endcall %}
+    {% call skill('rapid-scattershot', 'skip', 'atla') %}Yalnızca Stagger'daki hedeflerde çalışır.{% endcall %}
+  </ul>
+{% endcall %}
+
+{% call section('passives', 'Pasifler', 'pve pvp') %}
+  <p>Pasif seviyeleri her zırh parçasından, küpelerden ve kolyeden gelir, bu yüzden aktiflerin çok önüne geçerler — bitmiş bir Season 1 setinde bir pasif 30 ve üstüne ulaşır.</p>
+  <div class="table-wrap" data-only="pve"><table>
+    <thead><tr><th>#</th><th>Pasif</th><th>Neden</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>{{ s('mental-focus') }}</td><td>Double Chance — maksimuma çıkar (Season 1'de yaklaşık 32).</td></tr>
+      <tr><td>2</td><td>{{ s('spirit-strike') }}</td><td>Sana ve ruha PvE Damage Boost ve Perfect Chance. Hemen arkadan gelen ikinci.</td></tr>
+      <tr><td>3</td><td>{{ s('element-unification') }}</td><td>Bir ruh yeteneği her isabet ettiğinde biriken Critical Damage Boost.</td></tr>
+      <tr><td>4</td><td>{{ s('spirit-revitalization') }}</td><td>Daha kısa ruh bekleme süreleri — daha fazla Elemental Fusion.</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note" data-only="pve">İlk günler (aLuckyRO): önce {{ s('spirit-strike') }}, sonra {{ s('spirits-descent') }} ve {{ s('consecutive-countercurrent') }}. {{ s('corrode') }} ve Element Unification ancak ekipmanın Critical Hit verince karşılığını verir — ondan önce zar zor kritik vurursun.</p>
+  <div class="table-wrap" data-only="pvp"><table>
+    <thead><tr><th>#</th><th>Pasif</th><th>Neden</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>{{ s('spirit-protection') }}</td><td>Patlamaya karşı savunma — Assassin'ler, Sorcerer'lar, Gladiator'lar. Yaklaşık 20.</td></tr>
+      <tr><td>2</td><td>{{ s('revitalization-contract') }}</td><td>Status Effect Resist. Yaklaşık 20.</td></tr>
+    </tbody>
+  </table></div>
+{% endcall %}
+
+{% call section('stigmas', 'Stigmalar', 'pve') %}
+  <p>Bu dördü her PvE dövüşü için set. Önce dördünü de 10'a, sonra bu sırayla her birini 20'ye çıkar. Slotlar 22, 27, 32 ve 37. seviyelerde açılır.</p>
+  <ul class="skill-grid">
+    {% call skill('summon-ancient-spirit', 'must', 'Sv 20', upto=20) %}En yüksek hasarlı stigman: yeteneğini her kullandığında sana Elemental Fusion veren 30 saniyelik ek bir ruh — 15'te her beş temel saldırıdan sonra. Her zaman bufflar ve Cold Shock yükleri açıkken çağır.{% endcall %}
+    {% call skill('enhance-spirits-benediction', 'must', 'Sv 20', upto=20) %}Sana ve ruhlarına Damage Boost ve Tolerance — çağırmadan önce kullan.{% endcall %}
+    {% call skill('flame-blessing', 'must', 'Sv 20', upto=20) %}Accuracy ve isabette ek hasar; en güçlü bufflarından biri ve 20'de çok ölçeklenir.{% endcall %}
+    {% call skill('jointstrike-corrode', 'must', 'Sv 20', upto=20) %}Hedefin ruhlarından daha fazla hasar almasını sağlayan bir DoT. 20'de 20 saniye sürer ve yaklaşık %33 bekleme süresi azaltmayla sürekli açık kalabilir.{% endcall %}
+    {% call skill('cursed-cloud', 'opt', 'sonra', upto=10) %}PvE'de güçlü, ama Season 1'de ona slot yok.{% endcall %}
+  </ul>
+{% endcall %}
+
+{% call section('stigmas-pvp', 'Stigmalar', 'pvp') %}
+  <div class="table-wrap"><table>
+    <thead><tr><th>Set</th><th>Stigmalar</th><th>Ne zaman</th></tr></thead>
+    <tbody>
+      <tr><td>Varsayılan</td><td>Ancient Spirit, Spirit's Benediction, Command: Proxy, Seize Magic</td><td>En iyi çok yönlü set.</td></tr>
+      <tr><td>Proxy'siz</td><td>Command: Proxy yerine Corrode</td><td>Daha riskli, daha fazla hasar ve iyileştirme karşıtı — Cleric, Gladiator, Templar'lara karşı.</td></tr>
+      <tr><td>Fayda</td><td>Ancient Spirit, Cry of Terror, Corrode, Kaisinel's Power</td><td>Ek alan korkusu ve kontrol şansı — Cleric ve Chanter'lara karşı.</td></tr>
+    </tbody>
+  </table></div>
+  <ul class="skill-grid">
+    {% call skill('command-proxy', 'must', 'Sv 20', upto=20) %}7 saniye boyunca aldığın hasarın çoğu ruhlarınla paylaşılır. Bir Assassin dalınca veya bir Sorcerer seni dondurunca kullan — ilk kontrolde değil.{% endcall %}
+    {% call skill('seize-magic', 'must', 'Sv 20', upto=20) %}Düşmanın bufflarını, patlamalarını ve 20'de mühürlerini kaldırır. Dokunulmazlık yeteneklerini veya bufflandıktan hemen sonra bir Ranger'ı dispel'le.{% endcall %}
+    {% call skill('jointstrike-corrode', 'opt', 'Proxy\'siz', upto=20) %}Dayanıklılık sınıflarına karşı −%60 iyileştirme ve uzun bir DoT. Önce Curse'ü ve diğer DoT'larını uygula, böylece bir iksir onu temizleyemez.{% endcall %}
+    {% call skill('cry-of-terror', 'opt', 'Fayda', upto=20) %}Ek kontrol için alan korkusu.{% endcall %}
+    {% call skill('kaisinels-power', 'opt', 'Fayda', upto=20) %}Kontrol şansını artırır — onsuz kontrolün nadiren tutar.{% endcall %}
+    {% call skill('siphon', 'opt', 'alt.', upto=20) %}Dayanıklılık ve 15'te bir kalkan.{% endcall %}
+  </ul>
+{% endcall %}
+
+{% call section('macro', 'Rotasyon ve makro', 'pve') %}
+  <p>İki tuşu basılı tutarak oyun: {{ s('cold-shock') }}'u <span class="key">LMB</span>'de ve makroyu <span class="key">RMB</span>'de basılı tut, yön ver ve geri kalanına elle bas. Eskiden RMB'de duran hızlı erişim satırı <span class="key">T</span>'ye taşınıyor.</p>
+  <h3>1. Hızlı erişim satırları</h3>
+  <div class="hotlines">
+    {% call hotline('1', 'Ruh satırı', ['elemental-fusion', 'summon-water-spirit', 'summon-earth-spirit', 'summon-fire-spirit']) %}Spamla: Elemental Fusion hazır olduğunda ateşlenir, sonra ruhlar; Fire Spirit en son gelir, böylece en uzun dışarıda kalır.{% endcall %}
+    {% call hotline('7', 'Bufflar + Ancient Spirit', ['enhance-spirits-benediction', 'flame-blessing', 'summon-ancient-spirit']) %}Bufflar Ancient Spirit'ten önce durur, böylece çağırma onları kopyalar.{% endcall %}
+    {% call hotline('T', 'Hasar satırı', ['jointstrike-corrode', 'jointstrike-curse', 'dimensional-control', 'combustion']) %}Hasara göre dizildi; Corrode hazır olduğu anda açılır.{% endcall %}
+  </div>
+  <h3>2. Oyun içi makro</h3>
+  <p>Makroyu <span class="key">RMB</span>'ye ata, her adımda <strong>10 ms</strong>:</p>
+  {{ macroseq([(skill_data('enhance-spirits-benediction')[lang].name, 'RMB · 10 ms'), (skill_data('elemental-fusion')[lang].name, '10 ms'), (skill_data('jointstrike-corrode')[lang].name, '10 ms')]) }}
+  <h3>3. Dövüş</h3>
+  <ol>
+    <li>{{ s('flame-blessing') }} → {{ s('enhance-spirits-benediction') }} → {{ s('summon-ancient-spirit') }} ile <strong>aç</strong> — bufflar çağırmadan önce oturur.</li>
+    <li>Ruh satırı ve Corrode, sonra makroyu başlat ve iki tuşlu oyuna yerleş.</li>
+    <li>Ruhlarını döndürmeye devam et; buffları Ancient Spirit için saklamak yerine hazır olur olmaz yeniden kullan.</li>
+    <li>Beş Cold Shock yükü düşmek üzereyse fazladan bir temel saldırı sonraki çağırmayı yener.</li>
+  </ol>
+  <p class="note">Örme pinge bağlı: yazar %65 veya üstü Combat Speed ve ~60 ms altı ping istiyor. aLuckyRO'nun ilk hafta tavsiyesi: sınıfı tanıyana kadar makrosuz oyna. "Tüm ruhları gönder"i ulaşabileceğin bir tuşa ata.</p>
+{% endcall %}
+
+{% call section('combos-pvp', 'Dövüşü açmak', 'pvp') %}
+  <p>PvP neredeyse hiç makroya dayanmaz: yalnızca <span class="key">RMB</span>'de {{ s('elemental-fusion') }} → {{ s('summon-earth-spirit') }} örer. Geri kalan her şey zamanlama.</p>
+  <div class="callout">
+    <h3>Sana dalındığında</h3>
+    <p>İlk kontrolü hemen {{ s('defiance') }} ile kır; devam için {{ s('command-proxy') }} ile sabırlı ol.</p>
+  </div>
+  <div class="callout accent">
+    <h3>Sen dalıyorsun</h3>
+    <div class="combo">{{ s('enhance-spirits-benediction') }} + {{ s('kaisinels-power') }}<span class="arrow">→</span>{{ s('summon-earth-spirit') }} + {{ s('jointstrike-curse') }}<span class="arrow">→</span>{{ s('summon-ancient-spirit') }}<span class="arrow">→</span>iksirlerinden sonra {{ s('jointstrike-corrode') }}</div>
+    <p>Earth Spirit kontrol tutturmadığında veya Defiance'ları gittiğinde {{ s('souls-cry') }} kullan — çıkarmaya zorlamak için onları {{ s('dimensional-control') }} ile köklendir.</p>
+  </div>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Rakip</th><th>Cevap</th></tr></thead>
+    <tbody>
+      <tr><td>Gladiator, Cleric</td><td>Dokunulmazlıklarına Seize Magic; dayanıklılığa karşı önce Curse, sonra Corrode.</td></tr>
+      <tr><td>Ranger</td><td>Bufflandıktan hemen sonra Seize Magic; dayanıklılıklarına karşı Corrode.</td></tr>
+      <tr><td>Assassin</td><td>Dalınca Command: Proxy.</td></tr>
+      <tr><td>Sorcerer</td><td>Donunca Command: Proxy; atılmayı meteor için sakla — Evasion ve Block'u yok sayar.</td></tr>
+      <tr><td>Chanter</td><td>Corrode: −%60 iyileştirme ve yaklaşık 30 saniyelik bir DoT.</td></tr>
+    </tbody>
+  </table></div>
+{% endcall %}
+
+{% call section('gear', 'Ekipman, arcana ve statlar', 'pve pvp') %}
+  <div class="callout"><ul>
+    <li><strong>Seviyeler nereden:</strong> yetenek puanlarından 10, ilk dört Daevanion panosuyla 14, sonra bir arcana'dan +4 ve her yüzükten +1 — şart yetenekler için 20. Aktif yetenekler yüzüklerde, silahta ve korumada; pasifler her zırh parçasında, küpelerde ve kolyede çıkar.</li>
+    <li data-only="pve"><strong>Arcana:</strong> üç Primal Vigor kartı artı iki Magic Armor kartı — iki 2 parça bonusu.</li>
+    <li data-only="pve"><strong>Hedefler:</strong> Double Chance %25, Cooldown Reduction %20, Accuracy 1.500.</li>
+    <li data-only="pvp"><strong>Arcana:</strong> beş Primal Vigor kartı. Kart çevirmelerinde peşine düşülecek iki yetenek Jointstrike: Curse ve Elemental Fusion.</li>
+    <li data-only="pvp"><strong>Hedefler:</strong> Accuracy 2.000+, Status Effect Resist %100+, yaklaşık %40 Regeneration.</li>
+  </ul></div>
+{% endcall %}
+
+{% call section('daevanion', 'Daevanion panoları', 'pve pvp') %}
+  <p>Daevanion yeteneklerini 10'dan 14'e çıkarır. Her mavi düğüm yeteneğine <strong>+1 seviye</strong> verir.</p>
+  <div class="callout"><ul>
+    <li data-only="pve"><strong>Öncelik:</strong> {{ s('elemental-fusion') }}, {{ s('combustion') }}, {{ s('summon-fire-spirit') }}, {{ s('cold-shock') }}, {{ s('summon-water-spirit') }} için mavi düğümler, yeşil {{ s('mental-focus') }} ve {{ s('spirit-strike') }}, sonra saldırı turuncu düğümleri.</li>
+    <li data-only="pve"><strong>İlk günler:</strong> her yeteneğin en ucuz düğümünü al — her panoda hepsi var, bazıları başlangıca yakın (aLuckyRO).</li>
+    <li data-only="pvp"><strong>Öncelik:</strong> {{ s('defiance') }}, {{ s('cold-shock') }}, {{ s('elemental-fusion') }}, {{ s('jointstrike-curse') }}, {{ s('combustion') }} için mavi düğümler; Azphel (45. seviye) tamamen PvP Damage Boost ve Tolerance — al.</li>
+  </ul></div>
+  <div data-only="pve">{{ dv_board('pve') }}</div>
+  <div data-only="pvp">{{ dv_board('pvp') }}</div>
+  <p class="note">Panolar ve maliyetler global istemci verilerinden (questlog.gg) geliyor; yol bir rehberden alınmadı, hesaplandı.</p>
+{% endcall %}
+
+{% call section('recap', 'Özet', 'pve') %}
+  <div class="callout accent"><ul>
+    <li><strong>Yetenekler:</strong> Elemental Fusion, Combustion, Fire Spirit 20; Cold Shock, Water Spirit, Curse, Dimensional Control 16; Wind Spirit yok.</li>
+    <li><strong>Stigmalar:</strong> Ancient Spirit → Spirit's Benediction → Flame Blessing → Corrode, önce hepsi 10'a, sonra 20.</li>
+    <li><strong>Pasifler:</strong> Mental Focus, Spirit Strike, Element Unification, Spirit Revitalization.</li>
+    <li><strong>Oyun:</strong> çağırmadan önce bufflan; beş Cold Shock yükünü tut.</li>
+  </ul></div>
+{% endcall %}
+
+{% call section('recap-pvp', 'Özet', 'pvp') %}
+  <div class="callout accent"><ul>
+    <li><strong>Yetenekler:</strong> Defiance, Cold Shock, Elemental Fusion, Curse, Combustion 20; Earth Spirit ve Dimensional Control 16.</li>
+    <li><strong>Stigmalar:</strong> Ancient Spirit, Spirit's Benediction, Command: Proxy, Seize Magic — iyileştirme karşıtı için Corrode.</li>
+    <li><strong>Pasifler:</strong> Spirit Protection, Revitalization Contract.</li>
+    <li><strong>Oyun:</strong> önce Curse, iksirlerinden sonra Corrode; korku kontrol için, öldürmek için değil.</li>
+  </ul></div>
+{% endcall %}
+{# ============================ Leveling ============================ #}
+
+{% call section('intro-lvl', 'Genel bakış', 'lvl') %}
+  <p>Elementalist (Spiritmaster) tek çağırıcı sınıf: yanında bir ruh savaşır, her ruh yeteneği sana bir element verir ve dört elementte {{ s('elemental-fusion') }} hazır olur. {{ s('dimensional-control') }} bir ruh yeteneğini her kullandığında tetiklenir, lanetler de hedefte işlemeye devam eder.</p>
+  <div class="callout accent">
+    <h3>Tek cümlede seviye atlama</h3>
+    <p>{{ s('summon-water-spirit') }} ile seviye atla (hasar ve mana), MP için {{ s('cold-shock') }}'u basılı tut ve oyun içi makronun Ruh satırını ve Fusion satırını döndürmesine izin ver.</p>
+  </div>
+{% endcall %}
+
+{% call section('fight-lvl', t.lvl_combat, 'lvl') %}
+  <div class="callout"><ul>
+    <li><strong>Ruh:</strong> sınıra kadar {{ s('summon-water-spirit') }} — en iyi tek hedef hasarı ve mananı besler. Diğerleri seviye atlarken 1. seviyede kalır.</li>
+    <li><strong>Gruplar:</strong> {{ s('jointstrike-curse') }} (4'e kadar vurur) → {{ s('combustion') }} → hazır olunca alan seçimli {{ s('elemental-fusion') }}.</li>
+    <li><strong>Mana:</strong> erken dönemin ana sorunu — hedef modu, yetenekler arasında {{ s('cold-shock') }} ve ruh rotasyonunu Water Spirit ile bitir.</li>
+    <li><strong>Stagger'daki hedefler:</strong> {{ s('rapid-scattershot') }}.</li>
+    <li>{{ s('souls-cry') }}'ı atla — bir PvP yeteneği.</li>
+  </ul></div>
+{% endcall %}
+
+{% call section('macro-lvl', 'Seviye makrosu', 'lvl') %}
+  <p>Grobs'un erken oyun düzeni: iki hızlı erişim satırı ve iki slotluk bir oyun içi makro. AION 2'de <strong>bir satırın en alttaki slotu en yüksek önceliğe sahiptir</strong> — kartlar her satırı oyundaki gibi yukarıdan aşağıya gösterir.</p>
+  <div class="hotlines">
+    {% call hotline('1', 'Ruh satırı', ['summon-water-spirit', 'jointstrike-corrode', 'summon-earth-spirit', 'summon-fire-spirit']) %}Önce Water Spirit; Jointstrike: Corrode (bir stigma) hedefin ruhundan daha fazla hasar almasını sağlar.{% endcall %}
+    {% call hotline('2', 'Fusion satırı', ['elemental-fusion', 'dimensional-control', 'jointstrike-curse', 'combustion']) %}Elemental Fusion ve Dimensional Control, ruhlar onları açar açmaz ateşlenir; boşlukları Combustion doldurur.{% endcall %}
+  </div>
+  <p>Oyun içi makro (Yetenek penceresi → Macro), her slotta gecikme <strong>10 ms</strong>:</p>
+  {{ macroseq([('Ruh satırı', '1 · 10 ms'), ('Fusion satırı', '2 · 10 ms')]) }}
+  <ul class="presslist">
+    <li><span class="press-how">Basılı tut</span><span class="press-what"><span class="key">LMB</span>'de {{ s('cold-shock') }} ve makro tuşunu birlikte.</span></li>
+    <li><span class="press-how">Elle</span><span class="press-what">{{ s('enhance-spirits-benediction') }}, sonra {{ s('summon-ancient-spirit') }} (önce buff — Ancient Spirit 30 sn sürer).</span></li>
+  </ul>
+{% endcall %}
+
+{% call section('stigmas-lvl', 'Seviye atlarken stigmalar', 'lvl') %}
+  <p>Stigmalar 22. seviyede açılır.</p>
+  <ul class="skill-grid">
+    {% call skill('summon-ancient-spirit', 'must', 'Sv 5', upto=5) %}Elemental Fusion için element de veren 30 saniyelik ek bir ruh.{% endcall %}
+    {% call skill('enhance-spirits-benediction', 'must', 'Sv 5', upto=5) %}10 sn boyunca iyileştirmeyle +%20 PvE Damage Boost ve Tolerance — Ancient Spirit'ten önce kullan.{% endcall %}
+    {% call skill('jointstrike-corrode', 'must', 'Sv 5', upto=5) %}Grobs'un Ruh satırında: hedef ruhundan daha fazla hasar alır.{% endcall %}
+    {% call skill('flame-blessing', 'opt', 'Sv 5', upto=5) %}10 sn boyunca isabette ek hasar — accuracy'n dayanınca al.{% endcall %}
+  </ul>
+{% endcall %}
+
+{# ============================ Sources ============================ #}
+<section class="sources" aria-labelledby="h-sources">
+  <h2 id="h-sources">{{ t.sources }}</h2>
+  <ul>
+    <li><a href="https://www.youtube.com/watch?v=HMod6Z4GrE0" target="_blank" rel="noopener">Grobs — AION 2 Macro Guide</a> — erken oyun makro slaytı (Spiritmaster hızlı erişim satırları ve makro)</li>
+    <li><a href="https://aion2sm.com/global/" target="_blank" rel="noopener">Evripides — Spirit Master guide, Global edition (aion2sm.com)</a> — global istemci için PvE ve PvP buildleri: yetenek seviyeleri ve uzmanlıklar, stigmalar, pasifler, rotasyon, makro, arcana, eşleşmeler</li>
+    <li><a href="https://www.youtube.com/watch?v=KlmstIyukX8" target="_blank" rel="noopener">DankRNG — How to MASTER the SPIRITS | Elementalist Guide &amp; Build</a> — snapshot kuralı, ruh sırası, Wind Spirit'in neden dışarıda kaldığı</li>
+    <li><a href="https://www.youtube.com/watch?v=v9MYphrcvic" target="_blank" rel="noopener">aLuckyRO — AION 2 Latest Spiritmaster PVE Build for Global</a> — ilk gün uzmanlıkları, stigma sırası, ilk günler için Daevanion</li>
+    <li><a href="https://mmo-codex.com/articles/aion-2-spiritmaster-guide/" target="_blank" rel="noopener">MMO Codex — Aion 2 Spiritmaster build</a> — seviyeye göre yetenek sırası, seviye atlama için Water Spirit, stigmalar</li>
+    <li><a href="https://questlog.gg/aion-2/en/db/skills/elementalist" target="_blank" rel="noopener">questlog.gg</a> — global istemciden yetenek verileri</li>
+  </ul>
+  <p class="sources-all"><a href="{{ root }}{{ lang }}/sources/">{{ t.src_all }} →</a></p>
+</section>

@@ -1,0 +1,161 @@
+{
+  "_note": "Elementalist leveling steps (WIP: Grobs' early-game macro slide + MMO Codex leveling order). [[slug]] = localized skill name, [[slug#N]] = its N-th specialization.",
+  "steps": [
+    {
+      "id": "el-clicks",
+      "order": 2,
+      "skills": [
+        "cold-shock",
+        "combustion"
+      ],
+      "when": {
+        "en": "Lv 1",
+        "ru": "Ур. 1",
+        "uk": "Рів. 1",
+        "tr": "Sv 1",
+        "pt-BR": "LV 1"
+      },
+      "text": {
+        "en": "Level [[cold-shock]] (restores MP) and [[combustion]] first. Play in <strong>target mode</strong> so the basic attack keeps running — mana is the Elementalist's early problem.",
+        "ru": "Сначала качай [[cold-shock]] (восполняет ману) и [[combustion]]. Играй в <strong>режиме с таргетом</strong>, чтобы автоатака не прерывалась: мана — главная проблема Заклинателя на старте.",
+        "uk": "Спершу качай [[cold-shock]] (поповнює ману) і [[combustion]]. Грай у <strong>режимі з таргетом</strong>, щоб автоатака не переривалася: мана — головна проблема Elementalist на старті.",
+        "tr": "Önce [[cold-shock]] (MP yeniler) ve [[combustion]]'ı geliştir. Temel saldırı sürsün diye <strong>hedef modunda</strong> oyna — mana, Elementalist'in erken dönem sorunu.",
+        "pt-BR": "Nível [[cold-shock]] (restaura MP) e [[combustion]] primeiro. Jogue no modo alvo <strong> </strong> para que o ataque básico continue funcionando - mana é o problema inicial do Elementalista."
+      }
+    },
+    {
+      "id": "el-water",
+      "order": 90,
+      "skills": [
+        "summon-water-spirit"
+      ],
+      "when": {
+        "en": "Lv ~9",
+        "ru": "~Ур. 9",
+        "uk": "~Рів. 9",
+        "tr": "Sv ~9",
+        "pt-BR": "LV ~ 9"
+      },
+      "text": {
+        "en": "[[summon-water-spirit]] is your spirit for leveling: the best single-target damage and it feeds your mana. Other spirits stay at 1 for now.",
+        "ru": "[[summon-water-spirit]] — твой дух на прокачке: лучший урон по одной цели и подпитка маной. Остальных духов пока держи на 1.",
+        "uk": "[[summon-water-spirit]] — твій дух на прокачці: найкраща шкода по одній цілі й підживлення маною. Решту духів поки тримай на 1.",
+        "tr": "[[summon-water-spirit]] seviye atlama ruhun: en iyi tek hedef hasarı ve mananı besler. Diğer ruhlar şimdilik 1'de kalır.",
+        "pt-BR": "[[summon-water-spirit]] é o seu espírito para nivelar: o melhor dano de alvo único e alimenta seu mana. Outros espíritos ficam na 1 por enquanto."
+      }
+    },
+    {
+      "id": "el-curse",
+      "order": 130,
+      "skills": [
+        "jointstrike-curse",
+        "dimensional-control",
+        "rapid-scattershot"
+      ],
+      "when": {
+        "en": "Lv 9–18",
+        "ru": "Ур. 9–18",
+        "uk": "Рів. 9–18",
+        "tr": "Sv 9–18",
+        "pt-BR": "Lv 9 - 18"
+      },
+      "text": {
+        "en": "Add [[jointstrike-curse]] (damage over time), [[dimensional-control]] (fires each time a spirit uses its skill) and [[rapid-scattershot]] (only on staggered targets).",
+        "ru": "Добавь [[jointstrike-curse]] (урон со временем), [[dimensional-control]] (срабатывает каждый раз, когда дух использует скилл) и [[rapid-scattershot]] (только по ошеломлённым).",
+        "uk": "Додай [[jointstrike-curse]] (шкода з часом), [[dimensional-control]] (спрацьовує щоразу, коли дух використовує скіл) і [[rapid-scattershot]] (лише по оглушених).",
+        "tr": "[[jointstrike-curse]] (zamanla hasar), [[dimensional-control]] (bir ruh yeteneğini her kullandığında tetiklenir) ve [[rapid-scattershot]] (yalnızca stagger'lı hedeflerde) ekle.",
+        "pt-BR": "Adicione [[jointstrike-curse]] (dano contínuo), [[dimensional-control]] (dispara cada vez que um espírito usa sua habilidade) e [[rapid-scattershot]] (apenas em alvos escalonados)."
+      }
+    },
+    {
+      "id": "el-spec",
+      "order": 190,
+      "skills": [
+        "cold-shock",
+        "combustion",
+        "summon-water-spirit"
+      ],
+      "when": {
+        "en": "Lv 19",
+        "ru": "Ур. 19",
+        "uk": "Рів. 19",
+        "tr": "Sv 19",
+        "pt-BR": "LV 19"
+      },
+      "text": {
+        "en": "First specializations: [[cold-shock#0]] and [[combustion#1]]. Water Spirit, Jointstrike: Curse and Rapid Scattershot to 8.",
+        "ru": "Первые особенности: [[cold-shock#0]] и [[combustion#1]]. Дух воды, Кооперация: Проклятие и Беспорядочный огонь — до 8.",
+        "uk": "Перші спеціалізації: [[cold-shock#0]] і [[combustion#1]]. Water Spirit, Jointstrike: Curse і Rapid Scattershot — до 8.",
+        "tr": "İlk uzmanlıklar: [[cold-shock#0]] ve [[combustion#1]]. Water Spirit, Jointstrike: Curse ve Rapid Scattershot 8'e.",
+        "pt-BR": "Primeiras especializações: [[cold-shock#0]] e [[combustion#1]]. Espírito da Água, Jointstrike: Curse e Rapid Scattershot para 8."
+      }
+    },
+    {
+      "id": "el-stigmas",
+      "order": 221,
+      "skills": [
+        "summon-ancient-spirit",
+        "enhance-spirits-benediction",
+        "jointstrike-corrode"
+      ],
+      "when": {
+        "en": "Lv 22",
+        "ru": "Ур. 22",
+        "uk": "Рів. 22",
+        "tr": "Sv 22",
+        "pt-BR": "LV 22"
+      },
+      "text": {
+        "en": "Stigmas: [[summon-ancient-spirit]] and [[enhance-spirits-benediction]] to 5 (buff first, then summon the Ancient Spirit); Grobs also runs [[jointstrike-corrode]]; [[flame-blessing]] if your accuracy allows.",
+        "ru": "Стигмы: [[summon-ancient-spirit]] и [[enhance-spirits-benediction]] до 5 (сначала бафф, потом призыв Древнего духа); Grobs ставит ещё [[jointstrike-corrode]]; [[flame-blessing]] — если позволяет точность.",
+        "uk": "Стигми: [[summon-ancient-spirit]] і [[enhance-spirits-benediction]] до 5 (спершу баф, потім виклик Ancient Spirit); Grobs ставить ще [[jointstrike-corrode]]; [[flame-blessing]] — якщо дозволяє точність.",
+        "tr": "Stigmalar: [[summon-ancient-spirit]] ve [[enhance-spirits-benediction]] 5'e (önce buff, sonra Ancient Spirit'i çağır); Grobs ayrıca [[jointstrike-corrode]] kullanıyor; accuracy'n izin verirse [[flame-blessing]].",
+        "pt-BR": "Estigmas: [[summon-ancient-spirit]] e [[enhance-spirits-benediction]] para 5 primeiro, depois convoque o Espírito Antigo, Grobs também corre [[jointstrike-corrode]]; [[flame-blessing]] se sua precisão permitir."
+      }
+    },
+    {
+      "id": "el-fusion",
+      "order": 300,
+      "skills": [
+        "elemental-fusion"
+      ],
+      "when": {
+        "en": "Lv 26–37",
+        "ru": "Ур. 26–37",
+        "uk": "Рів. 26–37",
+        "tr": "Sv 26–37",
+        "pt-BR": "Lv 26 - 37"
+      },
+      "text": {
+        "en": "[[elemental-fusion]]: every spirit skill grants an element, at four you can cast it. Dimensional Control and Elemental Fusion to 8.",
+        "ru": "[[elemental-fusion]]: каждый скилл духа даёт элемент, на четырёх его можно кастовать. Повелитель пространства и Синтез элементов — до 8.",
+        "uk": "[[elemental-fusion]]: кожен скіл духа дає елемент, на чотирьох його можна кастувати. Dimensional Control і Elemental Fusion — до 8.",
+        "tr": "[[elemental-fusion]]: her ruh yeteneği bir element verir, dördünde onu kullanabilirsin. Dimensional Control ve Elemental Fusion 8'e.",
+        "pt-BR": "[[elemental-fusion]]Cada habilidade espiritual concede um elemento, aos quatro você pode lançá-lo. Dimensional Control e Elemental Fusion para 8."
+      }
+    },
+    {
+      "id": "el-cap",
+      "order": 455,
+      "skills": [
+        "elemental-fusion",
+        "summon-fire-spirit",
+        "summon-earth-spirit"
+      ],
+      "when": {
+        "en": "Cap",
+        "ru": "Кап",
+        "uk": "Кап",
+        "tr": "Sınır",
+        "pt-BR": "Cap."
+      },
+      "text": {
+        "en": "Elemental Fusion and all four spirits to 10. Skip [[souls-cry]] — it's for PvP.",
+        "ru": "Синтез элементов и всех четырёх духов — до 10. [[souls-cry]] не качай — он для PvP.",
+        "uk": "Elemental Fusion і всіх чотирьох духів — до 10. [[souls-cry]] не качай — він для PvP.",
+        "tr": "Elemental Fusion ve dört ruhun hepsi 10'a. [[souls-cry]]'ı atla — PvP için.",
+        "pt-BR": "Elemental Fusion e todos os quatro espíritos para 10. Skip [[souls-cry]] - é para PvP."
+      }
+    }
+  ]
+}

@@ -1,0 +1,226 @@
+{% from "macros.html" import section, skill, core, loadout, passives, glance, hotline, macroseq, hotbar, dv_board with context %}
+
+{# ============================== PvE ============================== #}
+{% call glance('pve') %}
+  <h3>{{ t.core_skills }}</h3>
+  {{ core([('dark-crush', '16 → 20'), ('onslaught', '16 → 20'), ('spinning-strike', '16 → 20'), ('incandescent-blow', '16'), ('recuperation', '12')]) }}
+  <h3>{{ t.stigma_loadout }}</h3>
+  {{ loadout([('undefeated-mantra', 20), ('power-of-the-storm', 5), ('marchutans-wrath', 1), ('focused-defense', 5)]) }}
+  <h3>{{ t.key_passives }}</h3>
+  {{ passives(['attack-preparation', 'inspiring-spell', 'winds-promise', 'impact-hit']) }}
+{% endcall %}
+
+{% call section('intro', 'Overview', 'pve') %}
+  <p>The Chanter fights in melee with a staff and makes the whole party stronger at the same time: a buffer and a backup healer that every group wants. Don't expect top damage — with equal gear Chanter and Cleric are the two lowest damage dealers — but the party hits harder, dies less and gets its debuffs cleansed.</p>
+  <div class="callout accent">
+    <h3>The build in one sentence</h3>
+    <p>Keep {{ s('undefeated-mantra') }} on and hold the macro on the line where {{ s('spinning-strike') }}, {{ s('marchutans-wrath') }} and {{ s('impactful-crush') }} open {{ s('dark-crush') }} again and again, weaving {{ s('onslaught') }} between every hit.</p>
+  </div>
+  <p><strong>How Dark Crush works:</strong> it can only be used for a short time after a ranged skill — 2 seconds after {{ s('spinning-strike') }} or {{ s('impactful-crush') }}, 3 seconds after {{ s('marchutans-wrath') }}. At skill level 16 its own cooldown disappears, so inside that window you press it again and again. Everything in the build is about keeping that window open.</p>
+  <p class="note">The PvE mode follows Arthars Gaming's Chanter starter guide for the global launch (video, September 26; eight months on the class on the Taiwan server), read frame by frame. Checked against Grobs' Chanter PvE guide (English, global, October 5).</p>
+{% endcall %}
+
+{% call section('global', 'Global Season 1: what changes', 'pve pvp') %}
+  <p>Global servers open on <strong>October 5, 2026</strong> (Founder's early access from September 30). What that means for the Chanter:</p>
+  <div class="callout">
+    <ul>
+      <li><strong>4 stigma slots, capped at 20.</strong> The Chanter has more useful stigmas than slots, so the four you take are a real choice (see Stigmas).</li>
+      <li><strong>Little cooldown reduction and combat speed at the start.</strong> Every specialization that shortens a cooldown is worth more, and fights last longer than on Taiwan.</li>
+      <li><strong>Skill level 20 is hard to reach in Season 1.</strong> Plan for 16 on the key skills first; 20 comes from arcana later.</li>
+      <li><strong>Bigger groups</strong> (5-player expeditions, 10-player sanctuaries): with a Cleric in the party your mantra does not stack with Light of Protection (at the same level yours wins), and Wave Blow's debuff does not stack with the Cleric's Debilitating Mark.</li>
+      <li data-only="pvp"><strong>PvP:</strong> everyone starts on the same limited gear and no meta has formed yet.</li>
+    </ul>
+  </div>
+  <p class="note">Active skills and passives are identical in the global and KR/TW data; stigmas lose their level-25 tier.</p>
+{% endcall %}
+
+{% call section('skills', 'Skills', 'pve') %}
+  <p>Only three skill levels matter: <strong>12, 16 and 20</strong> — that is where a new specialization or slot opens; a level in between adds almost nothing. Skill points give 10, Daevanion +4, the two rings +2, arcana the rest. Get the key skills to <strong>16</strong> first.</p>
+  <ul class="skill-grid">
+    {% call skill('dark-crush', 'must', '16 → 20', [3, 4], then=[2]) %}Your main damage and the first skill to take to 16: without the cooldown removal the class doesn't work. At 20 add the guaranteed crit — then every Dark Crush gets the full Wind's Promise bonus.{% endcall %}
+    {% call skill('onslaught', 'must', '16 → 20', [3, 4], then=[2]) %}Basic attack you weave between everything: restores MP, shortens Spinning Strike's cooldown, and at 16 adds Storm Chain. The third pick at 20 is yours: damage or the HP absorb.{% endcall %}
+    {% call skill('spinning-strike', 'must', '16 → 20', [0, 2], then=[4]) %}One of your hardest hits: stacking +15% Critical Damage for 30s, and it opens Dark Crush. At 20 add the pick that ignores Block and Evasion and always crits. Grobs takes that pick already at 16 and drops −5s instead. Skip the heal boost — you are not the main healer.{% endcall %}
+    {% call skill('incandescent-blow', 'must', '16', [2, 4]) %}The filler while Dark Crush is closed: +12% on a single target and Multi-Hit. No good third pick exists, so 16 is enough.{% endcall %}
+    {% call skill('recuperation', 'must', '12', [0, 3]) %}Your only heal outside stigmas, and your cleanse. 12 is enough (notXeon, WallyJTV): +5% HP — the base heal is a flat number — and a second charge. Swap the charge for the two-debuff cleanse on debuff-heavy fights; go to 16 for −3s only if you are the only healer. Grobs takes 16 and −3s in place of +5% HP.{% endcall %}
+    {% call skill('defiance', 'must', '16', [3, 4]) %}CC break: +2s Tenacity with 50% damage tolerance for the whole time — seven seconds in which you can stand in mechanics.{% endcall %}
+    {% call skill('impactful-crush', 'opt', '12', [2, 3]) %}Ranged skill that opens Dark Crush; mobile and faster. 12 is enough — the level-16 pick is for PvP.{% endcall %}
+    {% call skill('wave-blow', 'opt', '12', [1, 3]) %}−15% boss damage for 10s and a 10m reach. Its animation weaves badly: press it only when there is a gap, never instead of Dark Crush.{% endcall %}
+    {% call skill('rushing-smash', 'opt', '12', [2, 3]) %}Gap-closer that resets on a kill — dash from pack to pack. Never take the charge pick: charged skills are a damage loss.{% endcall %}
+    {% call skill('tremor-crush', 'opt', '12', [0, 1]) %}Dodge that pays its stamina back and a 20m gap-closer.{% endcall %}
+    {% call skill('heat-wave-blow', 'opt', '12', [2, 3]) %}Hits hard, but you rarely have a moment for it in PvE now that Dark Crush carries the rotation.{% endcall %}
+    {% call skill('gust-rampage', 'skip', '0–8') %}Only on Staggered targets, and a boss is staggered two or three times a fight — not worth the points in Season 1.{% endcall %}
+  </ul>
+{% endcall %}
+
+{% call section('passives', 'Passives', 'pve') %}
+  <p>There are enough skill points to max almost every passive. Gear lines are scarce, so put them on the first three.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Passive</th><th>Priority</th><th>Why</th></tr></thead>
+    <tbody>
+      <tr><td>{{ s('attack-preparation') }}</td><td>1 · max</td><td>Flat PvE Damage Boost, Defense and Accuracy — always works.</td></tr>
+      <tr><td>{{ s('inspiring-spell') }}</td><td>2 · max</td><td>Critical Hit and Perfect Chance. Wind's Promise only pays off on crits, so this comes first (notXeon, WallyJTV).</td></tr>
+      <tr><td>{{ s('winds-promise') }}</td><td>3 · max</td><td>Critical Damage Boost and extra damage; pairs with Dark Crush's guaranteed crit. No level gate — max it as soon as you have it.</td></tr>
+      <tr><td>{{ s('impact-hit') }}</td><td>4 · max</td><td>Double Chance — a straight damage increase.</td></tr>
+      <tr><td>{{ s('protection-circle') }}</td><td>max</td><td>A big shield when your HP drops below half and a small one for the party on every hit — the best defensive passive and the first one after the damage ones.</td></tr>
+      <tr><td>{{ s('earths-promise') }}</td><td>5</td><td>−PvE Damage Tolerance on the target, but it is up about half the time and overlaps with the Cleric's Chain of Torment.</td></tr>
+      <tr><td>{{ s('blessing-of-life') }}, {{ s('survival-willpower') }}</td><td>points only</td><td>Free to max with skill points; don't spend gear lines on them.</td></tr>
+      <tr><td>{{ s('crossguard') }}, {{ s('raging-spell') }}</td><td>skip</td><td>Do next to nothing in PvE — reroll them off your gear.</td></tr>
+    </tbody>
+  </table></div>
+{% endcall %}
+
+{% call section('gear', 'Gear & stats', 'pve') %}
+  <div class="callout"><ul>
+    <li><strong>Rings:</strong> the only place for active skills — four or five lines (crafted rings have one more) that take the key skills from 14 to 16.</li>
+    <li><strong>Weapon and guard:</strong> never put skills there — their damage lines are worth more.</li>
+    <li><strong>Passives</strong> come from the other pieces. Global gear also rolls Might, Precision and Combat Speed there, so expect fewer passive lines than on Taiwan.</li>
+    <li><strong>Accuracy</strong> is short early on: without it you have to hit bosses from behind and get parried.</li>
+    <li><strong>Manastones:</strong> Attack, Critical Hit, Accuracy. <strong>Guard</strong> (off-hand) to +10.</li>
+  </ul></div>
+{% endcall %}
+
+{% call section('arcana', 'Arcana', 'pve') %}
+  <p>Season 1 has five cards and two sets. Arthars' pick is three Primal Vigor cards plus the Bell and the Mirror from Magic Armor; four Primal Vigor cards (+150 PvE Attack) work too.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Card</th><th>Stat</th><th>Set</th><th>Roll for</th></tr></thead>
+    <tbody>
+      <tr><td>Chalice</td><td>Time (Combat Speed)</td><td>Primal Vigor</td><td>Whatever key skill is still short of 20</td></tr>
+      <tr><td>Parchment</td><td>Life</td><td>Primal Vigor</td><td>{{ s('dark-crush') }}, {{ s('onslaught') }}, {{ s('spinning-strike') }}</td></tr>
+      <tr><td>Compass</td><td>Freedom (Accuracy)</td><td>Primal Vigor</td><td>{{ s('incandescent-blow') }}, {{ s('recuperation') }}; {{ s('defiance') }} is fine</td></tr>
+      <tr><td>Bell</td><td>Destruction (Attack)</td><td>Magic Armor</td><td>{{ s('attack-preparation') }}</td></tr>
+      <tr><td>Mirror</td><td>Wisdom (Double Chance)</td><td>Magic Armor</td><td>{{ s('impact-hit') }}, {{ s('winds-promise') }}</td></tr>
+    </tbody>
+  </table></div>
+  <p>Leveling a card adds up to +4 to its skills at random — plan for about <strong>+2</strong>. That is enough: 10 from points, 4 from Daevanion and 2 from a card make 16, and the ring lines go to other skills.</p>
+  <p class="note">Don't overspend on these cards: they are replaced as soon as Season 2 brings new ones. Illusion (cooldowns) on the Mirror is the full-support alternative to Wisdom.</p>
+{% endcall %}
+
+{% call section('daevanion', 'Daevanion boards', 'pve pvp') %}
+  <p>Daevanion takes your skills from 10 to 14 and adds stats. Each blue node gives <strong>+1 level</strong> to its skill.</p>
+  <div class="callout"><ul>
+    <li data-only="pve"><strong>Priority:</strong> blue nodes for {{ s('dark-crush') }}, {{ s('onslaught') }}, {{ s('spinning-strike') }} and {{ s('incandescent-blow') }}, then orange nodes.</li>
+    <li data-only="pvp"><strong>Priority:</strong> blue nodes for {{ s('impactful-crush') }}, {{ s('wave-blow') }}, {{ s('defiance') }}.</li>
+    <li data-only="pve"><strong>No Ariel on global:</strong> there are five boards, and the level-45 one, Azphel, gives only PvP Damage Boost and Tolerance — in PvE finish the first four.</li>
+    <li data-only="pvp"><strong>Azphel</strong> (level 45) is all PvP Damage Boost and Tolerance — take it, and Triniel earlier.</li>
+  </ul></div>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Board</th><th>Unlock</th><th>Orange nodes</th></tr></thead>
+    <tbody>
+      <tr><td>Nezekan</td><td>Lv 12</td><td>Combat Speed, Cooldown Reduction</td></tr>
+      <tr><td>Zikel</td><td>Lv 20</td><td>Damage Boost, Damage Tolerance</td></tr>
+      <tr><td>Vaizel</td><td>Lv 30</td><td>Critical Damage Boost and Tolerance</td></tr>
+      <tr><td>Triniel</td><td>Lv 40</td><td>Multi-Hit Chance and Resist</td></tr>
+      <tr><td>Azphel</td><td>Lv 45</td><td>PvP Damage Boost and Tolerance — no skill nodes</td></tr>
+    </tbody>
+  </table></div>
+  <h3>The route on the boards</h3>
+  <p>The real global boards from the game data. Gold marks the cheapest path from Start to the nodes this guide takes — the blue nodes of the priority skills and the orange nodes; hover any node to see what it gives.</p>
+  <div data-only="pve">{{ dv_board('pve') }}</div>
+  <div data-only="pvp">{{ dv_board('pvp') }}</div>
+  <p class="note">Boards and costs come from the global client data (questlog.gg); the path is calculated, not taken from a video. Stat values may still change at launch — check the in-game board before committing a full route.</p>
+{% endcall %}
+
+{% call section('stigmas', 'Stigmas', 'pve') %}
+  <p>Three are locked in; the fourth is a choice. Level them in this order — Undefeated Mantra to 20 comes before everything else.</p>
+  <ul class="skill-grid">
+    {% call skill('undefeated-mantra', 'must', 'Lv 20', upto=20) %}The reason a party takes a Chanter: PvE damage and tolerance, Critical Hit, Accuracy, Critical Damage and Double Chance for everyone. First to 20, and it never leaves your bar.{% endcall %}
+    {% call skill('marchutans-wrath', 'must', 'Lv 1', upto=1) %}A third ranged skill that opens Dark Crush for 3 seconds — it nearly doubles your Dark Crush time. One point is enough: the higher tiers are for PvP.{% endcall %}
+    {% call skill('focused-defense', 'must', 'Lv 5', upto=5) %}A block with two charges at level 5. Underrated: it lets a melee stay on the boss through most attacks instead of running out.{% endcall %}
+    {% call skill('sprint-mantra', 'opt', 'Lv 10', upto=10) %}Move speed, +10% incoming heal and stamina regeneration, so the party can dodge almost without limit — notXeon runs it in dungeons and while farming, and takes it off in PvP. Grobs runs it always, instead of Focused Defense: with a Chanter the party walks out of most attacks, and every hit has a 15% chance to heal it. Its healing is negligible — don't level it past 10.{% endcall %}
+    {% call skill('power-of-the-storm', 'must', 'Lv 5 → 20', upto=20) %}+20% Combat Speed and −20% cooldowns for 10s (the party gets +20% and −10%). notXeon takes it in every kind of content: while nobody has Combat Speed it is one of your biggest damage buffs. Level 5 cuts its cooldown by 30s; 20 adds Attack for you and the party. Grobs' order: this one to 5, then Undefeated Mantra to 20, then the rest.{% endcall %}
+    {% call skill('healing-touch', 'opt', 'no Cleric', upto=15) %}Strong emergency heal: more at low HP, and at 15 it removes five debuffs. Take it when you are the only healer or the fight is heavy on debuffs. Grobs skips it even then: too little healing for a 30-second cooldown — more damage and buffs help the party more.{% endcall %}
+    {% call skill('impeding-authority', 'opt', 'progression', upto=15) %}A shield for the party — more effective HP while the group is still learning a fight.{% endcall %}
+    {% call skill('guardian-blessing', 'opt', 'no slot', upto=15) %}×1.5 Wind's Promise at 15 is a real damage gain, but with four slots there is no room for it in Season 1.{% endcall %}
+    {% call skill('obliterate', 'opt', 'stagger', upto=5) %}AoE knockdown for packs while leveling. WallyJTV keeps it at the cap for bosses with a stagger check: 50 Stagger Gauge Damage when the group needs it.{% endcall %}
+  </ul>
+  <p class="note">Mantras are toggles: switch them on once and keep them out of any macro — a second press turns them off. {{ s('barrier-spell') }}, {{ s('ensnaring-mark') }}, and {{ s('assault-shock') }} have no place in PvE. {{ s('fracturing-blow') }} is Grobs' pick for a premade group early in the season: Defense is a flat reduction, so lowering it is worth most while gear is low.</p>
+{% endcall %}
+
+{% call section('macro', 'Macro & rotation', 'pve') %}
+  <p>AION 2 has two separate tools:</p>
+  <ul>
+    <li><strong>Hotbar line</strong> — several skills stacked on <em>one</em> hotbar button. Pressing it casts the highest-priority skill that's ready, and in AION 2 the <strong>bottom slot has the highest priority</strong>. The cards show each line top to bottom as in the game.</li>
+    <li><strong>In-game macro</strong> — while you hold its key, it presses your hotbar buttons in order and cancels animation tails. Skills on cooldown are skipped.</li>
+  </ul>
+  {{ hotbar([('1', []), ('2', []), ('3', ['undefeated-mantra']), ('4', ['sprint-mantra']), None, ('Q', ['recuperation']), ('E', ['power-of-the-storm']), ('R', []), ('F', ['rushing-smash', 'tremor-crush']), None, ('Side 2', []), ('Side', ['dark-crush', 'spinning-strike', 'marchutans-wrath', 'impactful-crush']), ('LMB', ['onslaught']), ('—', ['incandescent-blow'])], macro=['Side', '—'], own_keys=true) }}
+
+  <h3>1. Hotbar lines</h3>
+  <p>Grobs' global setup (frame 19:05): all three openers sit on one line with {{ s('dark-crush') }} at the bottom, so after every opener the line goes straight back to Dark Crush; Incandescent Blow has a line of its own.</p>
+  <div class="hotlines">
+    {% call hotline('Side', 'Dark Crush line', ['dark-crush', 'spinning-strike', 'marchutans-wrath', 'impactful-crush']) %}Dark Crush whenever its window is open; when it closes, Spinning Strike opens it again, then Marchutan's Wrath, then Impactful Crush.{% endcall %}
+    {{ hotline('—', 'Filler', ['incandescent-blow']) }}
+  </div>
+  <p>Outside the macro — the rest of his bar:</p>
+  <div class="hotlines">
+    {% call hotline('F', 'Gap-closer line', ['rushing-smash', 'tremor-crush']) %}Rushing Smash (resets on a kill), Tremor Crush when it is on cooldown.{% endcall %}
+  </div>
+  <ul class="presslist">
+    <li><span class="press-how">Own keys</span><span class="press-what"><span class="key">LMB</span> {{ s('onslaught') }}, <span class="key">3</span> {{ s('undefeated-mantra') }} and <span class="key">4</span> {{ s('sprint-mantra') }} (toggles — switch them on once), <span class="key">Q</span> {{ s('recuperation') }}, <span class="key">E</span> {{ s('power-of-the-storm') }}.</span></li>
+  </ul>
+  <p class="note">Before Dark Crush reaches 16 its cooldown breaks this line: the macro spends the openers while Dark Crush is still cooling down, and the 3-second window goes to waste. notXeon's fix until then: keep one opener on its own key and press it yourself the moment Dark Crush is ready again.</p>
+
+  <h3>2. In-game macro</h3>
+  <p>Two steps, <strong>10 ms</strong> each, on a key you can hold all the time (most players use <span class="key">RMB</span>):</p>
+  {{ macroseq([('Dark Crush line', '10 ms'), ('Filler', '10 ms')]) }}
+
+  <h3>3. What you actually press</h3>
+  <ul class="presslist">
+    <li><span class="press-how">Open</span><span class="press-what">{{ s('power-of-the-storm') }} first, {{ s('rushing-smash') }} to the boss, then the macro.</span></li>
+    <li><span class="press-how">Hold</span><span class="press-what">The macro key together with {{ s('onslaught') }} on <span class="key">LMB</span> — Onslaught weaves between every step. When all openers are on cooldown, the macro falls back to Incandescent Blow.</span></li>
+    <li><span class="press-how">By hand</span><span class="press-what">{{ s('recuperation') }} when the party loses HP or needs a cleanse, {{ s('wave-blow') }} only in a gap, the gap-closers.</span></li>
+  </ul>
+
+  <h3>Another option: Arthars' line</h3>
+  <p>One line with Incandescent Blow in it and {{ s('marchutans-wrath') }} on its own key; the macro presses the line, then Onslaught.</p>
+  <div class="hotlines">
+    {% call hotline('E', 'Dark Crush line', ['dark-crush', 'spinning-strike', 'impactful-crush', 'incandescent-blow']) %}Dark Crush fires whenever its window is open. When it closes, Spinning Strike opens it again, then Impactful Crush does; Incandescent Blow fills in when both are on cooldown.{% endcall %}
+  </div>
+  <p class="note">Keep {{ s('marchutans-wrath') }} <strong>off</strong> this line. On its own key it is your reserve: a way to open Dark Crush when both ranged skills are on cooldown, or right after you had to step away from the boss. On the line it would push Incandescent Blow out of the rotation.</p>
+  {{ macroseq([('Dark Crush line', '10 ms'), (skill_data('onslaught')[lang].name, '10 ms')]) }}
+  <p class="note">With this line spam Onslaught and the line key yourself as well — your own presses land between the macro's steps; {{ s('focused-defense') }} on big hits.</p>
+  <p class="note">Where the damage comes from in Arthars' test: Dark Crush and its Piercing Strike follow-up about 40%, then Bursting Blow, Storm Chain, Incandescent Blow and Spinning Strike at about 10% each. That is why Dark Crush goes to 16 first and Onslaught needs Storm Chain.</p>
+{% endcall %}
+
+{% call section('recap', 'Recap', 'pve') %}
+  <div class="callout accent"><ul>
+    <li><strong>Skills:</strong> Dark Crush, Onslaught, Spinning Strike 16 → 20; Incandescent Blow, Defiance 16; Recuperation and the rest 12.</li>
+    <li><strong>Stigmas:</strong> Undefeated Mantra 20, Power of the Storm 5 → 20, Marchutan's Wrath 1, Focused Defense 5; Sprint Mantra in dungeons, Obliterate for stagger checks.</li>
+    <li><strong>Passives:</strong> Attack Preparation, Inspiring Spell, Wind's Promise, Impact Hit; Protection Circle to the max.</li>
+    <li><strong>Macro:</strong> Dark Crush line with all three openers → Incandescent Blow, Onslaught held on LMB.</li>
+  </ul></div>
+{% endcall %}
+
+{# ============================ Leveling ============================ #}
+{% call section('fight-lvl', t.lvl_combat, 'lvl') %}
+  <div class="callout"><ul>
+    <li><strong>Packs:</strong> {{ s('rushing-smash') }} in (resets on a kill) → {{ s('obliterate') }} → Crush line + {{ s('onslaught') }}.</li>
+    <li><strong>Elites:</strong> {{ s('impactful-crush') }} (stun) → {{ s('dark-crush') }} → {{ s('wave-blow') }} → {{ s('spinning-strike') }} → Dark Crush again.</li>
+    <li><strong>Mana:</strong> Onslaught restores MP on every hit — never stop weaving it.</li>
+    <li><strong>Low HP:</strong> {{ s('recuperation') }}, and Sprint Mantra heals on hits.</li>
+  </ul></div>
+{% endcall %}
+
+{% call section('macro-lvl', 'Leveling macro', 'lvl') %}
+  <p>While leveling, before Dark Crush reaches 16, a simpler setup works from level 1: the Crush line on RMB, Onslaught on LMB and the in-game macro (Power of the Storm → Onslaught → Wave line → Onslaught) on the middle mouse button. Early build at 1–45: Onslaught, Incandescent Blow, Spinning Strike and Rushing Smash to 12, everything else to 8.</p>
+  <div class="hotlines">
+    {{ hotline('RMB', 'Crush line', ['impactful-crush', 'dark-crush', 'spinning-strike', 'incandescent-blow']) }}
+  </div>
+  <p><strong>Grobs' early setup:</strong> one line — Dark Crush, Spinning Strike, Incandescent Blow — with <span class="key">LMB</span> and the macro held together. Press {{ s('impactful-crush') }} yourself whenever Dark Crush is ready again, so the macro doesn't wait for Spinning Strike. Onslaught takes the HP absorb and Multi-Hit; Impactful Crush needs only level 8 with the mobile pick.</p>
+  <p><a href="https://aion2t.com/ru/simulator?job=9&amp;b=S5RCtE" target="_blank" rel="noopener">Starting build 1–45 (aion2t) →</a> · <a href="https://aion2t.com/ru/simulator?job=9&amp;b=yDzsiQ" target="_blank" rel="noopener">45+ goal build →</a></p>
+{% endcall %}
+
+{# ============================ Sources ============================ #}
+<section class="sources" aria-labelledby="h-sources">
+  <h2 id="h-sources">{{ t.sources }}</h2>
+  <ul>
+    <li><a href="https://www.youtube.com/watch?v=7qMgsnSsmIU" target="_blank" rel="noopener">Arthars Gaming — The ULTIMATE AION 2 Chanter Starter Guide! (Global Launch)</a> — the PvE mode: skill levels and specializations, passives, arcana, stigmas, hotbar line and macro</li>
+    <li><a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ0C3iKFteGvIbgqNDnQq7bmwIaU23DvjbPa0HPSVAdOOiCeBkEq69Cn8jVMJhToJcztCRylYeTYfOk/pubhtml" target="_blank" rel="noopener">TitanTheF — AION 2 progression sheet</a> (Chanter tab) — leveling build and macro, manastones</li>
+    <li><a href="https://aion2t.com/ru/simulator?job=9&amp;b=yDzsiQ" target="_blank" rel="noopener">aion2t.com</a> — TitanTheF's start and 45+ builds (skill levels, specializations, stigmas, passives)</li>
+    <li><a href="https://questlog.gg/aion-2/en/db/skills/chanter" target="_blank" rel="noopener">questlog.gg</a> — skill data from the global client</li>
+    <li><a href="https://www.youtube.com/watch?v=HMod6Z4GrE0" target="_blank" rel="noopener">Grobs — AION 2 Macro Guide</a> — how hotbar lines and the in-game macro work</li>
+    <li><a href="https://www.youtube.com/watch?v=aqv5kWXqtIw" target="_blank" rel="noopener">notXeon — The ONLY Chanter Skill Guide You'll Ever Need</a> — what to take to 16 first, passive priority, stigmas for every kind of content, the macro tip before Dark Crush 16</li>
+    <li><a href="https://www.youtube.com/watch?v=2qTjfkuzdj4" target="_blank" rel="noopener">Grobs — The Only Chanter PVE Guide You Need</a> — global picks at 16, Sprint Mantra, stigma order, his hotbar line and the early setup</li>
+    <li><a href="https://www.youtube.com/watch?v=zxq03c3NhEw" target="_blank" rel="noopener">WallyJTV — Aion 2 CHANTER Global Skill Guide</a> — global changes, specializations for PvE and PvP, stigmas with Obliterate for stagger checks</li>
+  </ul>
+  <p class="sources-all"><a href="{{ root }}{{ lang }}/sources/">{{ t.src_all }} →</a></p>
+</section>

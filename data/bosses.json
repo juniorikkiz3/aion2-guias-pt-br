@@ -1,0 +1,898 @@
+{
+  "_note": "World/field bosses for global Season 1. Names, levels and titles are from the global client (questlog getNpc). respawn_min = respawn after a kill in minutes (null = not known yet; Verteron and Altgard: half of the cycles in NCSOFT's Korean field boss notice (via aion2timers.com) — global runs them halved: Sharp Shylak respawned in 6 h instead of 12 (user, Oct 3), and every Altgard countdown in the in-game list fits the halved cycle); area = spawn area (English only for now); schedule = fixed spawn times ('Wed 22:30' in server time, null = not known yet). kr = the KR/TW schedule, shown for reference only. Fill respawn_min / schedule once global servers are live.",
+  "groups": [
+    {
+      "id": "elyos",
+      "zone": {
+        "en": "Verteron",
+        "ru": "Бертрон",
+        "pt-BR": "Verteron"
+      },
+      "faction": {
+        "en": "Elyos",
+        "ru": "Элийцы",
+        "pt-BR": "Elyos"
+      },
+      "bosses": [
+        {
+          "id": "2100050",
+          "name": {
+            "en": "Kernon of the West",
+            "ru": "Кернон запада",
+            "pt-BR": "Kernon of the West"
+          },
+          "level": 45,
+          "area": {
+            "en": "Cantas Valley",
+            "pt-BR": "Cantas Valley"
+          },
+          "respawn_min": 30,
+          "schedule": null,
+          "kr": null
+        },
+        {
+          "id": "2100003",
+          "name": {
+            "en": "Neikel of the East",
+            "ru": "Нейкель востока",
+            "pt-BR": "Neikel of the East"
+          },
+          "level": 45,
+          "area": {
+            "en": "Cantas Valley",
+            "pt-BR": "Cantas Valley"
+          },
+          "respawn_min": 30,
+          "schedule": null,
+          "kr": null
+        },
+        {
+          "id": "2100040",
+          "name": {
+            "en": "Rotten Kutar",
+            "ru": "Гнилой Кутар",
+            "pt-BR": "Rotten Kutar"
+          },
+          "level": 45,
+          "area": {
+            "en": "Elun River Swamp",
+            "pt-BR": "Elun River Swamp"
+          },
+          "respawn_min": 30,
+          "schedule": null,
+          "kr": null
+        },
+        {
+          "id": "2100141",
+          "name": {
+            "en": "Blooming Korin",
+            "ru": "Расцветший Корин",
+            "pt-BR": "Blooming Korin"
+          },
+          "level": 45,
+          "area": {
+            "en": "Elun River Midstream",
+            "pt-BR": "Elun River Midstream"
+          },
+          "respawn_min": 60,
+          "schedule": null,
+          "kr": null
+        },
+        {
+          "id": "2100079",
+          "name": {
+            "en": "Bodyguard Teegant",
+            "ru": "Стражник Тигант",
+            "pt-BR": "Bodyguard Teegant"
+          },
+          "level": 45,
+          "area": {
+            "en": "Fortress Ruins",
+            "pt-BR": "Fortress Ruins"
+          },
+          "respawn_min": 90,
+          "schedule": null,
+          "kr": null
+        },
+        {
+          "id": "2100076",
+          "name": {
+            "en": "Kusan the Mad Gladiator",
+            "ru": "Безумный берсерк Кусан",
+            "pt-BR": "Kusan the Mad Gladiator"
+          },
+          "level": 45,
+          "area": {
+            "en": "Fortress Ruins",
+            "pt-BR": "Fortress Ruins"
+          },
+          "respawn_min": 120,
+          "schedule": null,
+          "kr": null
+        },
+        {
+          "id": "2100077",
+          "name": {
+            "en": "Ritualist Garshim",
+            "ru": "Ритуалист Гаршим",
+            "pt-BR": "Ritualist Garshim"
+          },
+          "level": 45,
+          "area": {
+            "en": "Fortress Ruins",
+            "pt-BR": "Fortress Ruins"
+          },
+          "respawn_min": 120,
+          "schedule": null,
+          "kr": null
+        },
+        {
+          "id": "2100178",
+          "name": {
+            "en": "Bloodfang Pnyn",
+            "ru": "Кровоклык Фнин",
+            "pt-BR": "Bloodfang Pnyn"
+          },
+          "level": 45,
+          "area": {
+            "en": "Tolbas Forest",
+            "pt-BR": "Tolbas Forest"
+          },
+          "respawn_min": 180,
+          "schedule": null,
+          "kr": null
+        },
+        {
+          "id": "2100177",
+          "name": {
+            "en": "Furious Saursus",
+            "ru": "Разъяренная Сарус",
+            "pt-BR": "Furious Saursus"
+          },
+          "level": 45,
+          "area": {
+            "en": "Tolbas Forest",
+            "pt-BR": "Tolbas Forest"
+          },
+          "respawn_min": 180,
+          "schedule": null,
+          "kr": null
+        },
+        {
+          "id": "2100988",
+          "name": {
+            "en": "Scholar Aulla",
+            "ru": "Ученый Раулла",
+            "pt-BR": "Scholar Aulla"
+          },
+          "level": 45,
+          "area": {
+            "en": "Aulau Village",
+            "pt-BR": "Aulau Village"
+          },
+          "respawn_min": 120,
+          "schedule": null,
+          "kr": null
+        },
+        {
+          "id": "2100991",
+          "name": {
+            "en": "Chaser Taulo",
+            "ru": "Гонитель Тауло",
+            "pt-BR": "Chaser Taulo"
+          },
+          "level": 45,
+          "area": {
+            "en": "Aulau Village",
+            "pt-BR": "Aulau Village"
+          },
+          "respawn_min": 120,
+          "schedule": null,
+          "kr": null
+        },
+        {
+          "id": "2100989",
+          "name": {
+            "en": "Forest Warrior Aullamu",
+            "ru": "Лесной воин Ураму",
+            "pt-BR": "Forest Warrior Aullamu"
+          },
+          "level": 45,
+          "area": {
+            "en": "Aulau Village",
+            "pt-BR": "Aulau Village"
+          },
+          "respawn_min": 120,
+          "schedule": null,
+          "kr": null
+        },
+        {
+          "id": "2100582",
+          "name": {
+            "en": "Heretic Layla",
+            "ru": "Отступница Лейла",
+            "pt-BR": "Heretic Layla"
+          },
+          "level": 45,
+          "area": {
+            "en": "Artamia Plateau",
+            "pt-BR": "Artamia Plateau"
+          },
+          "respawn_min": 180,
+          "schedule": null,
+          "kr": null
+        },
+        {
+          "id": "2100617",
+          "name": {
+            "en": "Black Tentacle Lawa",
+            "ru": "Черное щупальце Лава",
+            "pt-BR": "Black Tentacle Lawa"
+          },
+          "level": 45,
+          "area": {
+            "en": "Artamia Gorge",
+            "pt-BR": "Artamia Gorge"
+          },
+          "respawn_min": 120,
+          "schedule": null,
+          "kr": null
+        },
+        {
+          "id": "2100708",
+          "name": {
+            "en": "Centurion Demiros",
+            "ru": "Центурион Демирос",
+            "pt-BR": "Centurion Demiros"
+          },
+          "level": 45,
+          "area": {
+            "en": "Artamia Plateau",
+            "pt-BR": "Artamia Plateau"
+          },
+          "respawn_min": 120,
+          "schedule": null,
+          "kr": null
+        },
+        {
+          "id": "2100718",
+          "name": {
+            "en": "Divine Ansas",
+            "ru": "Священный Ансас",
+            "pt-BR": "Divine Ansas"
+          },
+          "level": 45,
+          "area": {
+            "en": "Artamia Plateau",
+            "pt-BR": "Artamia Plateau"
+          },
+          "respawn_min": 360,
+          "schedule": null,
+          "kr": null
+        },
+        {
+          "id": "2100876",
+          "name": {
+            "en": "Harvest Manager Moshav",
+            "ru": "Управляющий сбором Мошав",
+            "pt-BR": "Harvest Manager Moshav"
+          },
+          "level": 45,
+          "area": {
+            "en": "Drana Plantation",
+            "pt-BR": "Drana Plantation"
+          },
+          "respawn_min": 180,
+          "schedule": null,
+          "kr": null
+        },
+        {
+          "id": "2100877",
+          "name": {
+            "en": "Sentinel K'nash",
+            "ru": "Страж Кнаш",
+            "pt-BR": "Sentinel K'nash"
+          },
+          "level": 45,
+          "area": {
+            "en": "Drana Plantation",
+            "pt-BR": "Drana Plantation"
+          },
+          "respawn_min": 120,
+          "schedule": null,
+          "kr": null
+        },
+        {
+          "id": "2101016",
+          "name": {
+            "en": "Researcher Setram",
+            "ru": "Исследователь Сетрам",
+            "pt-BR": "Researcher Setram"
+          },
+          "level": 45,
+          "area": {
+            "en": "Nahid Legion Fortress",
+            "pt-BR": "Nahid Legion Fortress"
+          },
+          "respawn_min": 180,
+          "schedule": null,
+          "kr": null
+        },
+        {
+          "id": "2100661",
+          "name": {
+            "en": "Phantasm Kasia",
+            "ru": "Касия фантазии",
+            "pt-BR": "Phantasm Kasia"
+          },
+          "level": 45,
+          "area": {
+            "en": "Garden of the Illusion God",
+            "pt-BR": "Garden of the Illusion God"
+          },
+          "respawn_min": 360,
+          "schedule": null,
+          "kr": null
+        },
+        {
+          "id": "2101120",
+          "name": {
+            "en": "Silent Dartan",
+            "ru": "Немая Тартан",
+            "pt-BR": "Silent Dartan"
+          },
+          "level": 48,
+          "area": {
+            "en": "Artamia Plateau South",
+            "pt-BR": "Artamia Plateau South"
+          },
+          "respawn_min": 180,
+          "schedule": null,
+          "kr": null
+        },
+        {
+          "id": "2101122",
+          "name": {
+            "en": "Soul Ruler Kashapa",
+            "ru": "Властелин душ Кашапа",
+            "pt-BR": "Soul Ruler Kashapa"
+          },
+          "level": 48,
+          "area": {
+            "en": "Artamia Plateau East",
+            "pt-BR": "Artamia Plateau East"
+          },
+          "respawn_min": 360,
+          "schedule": null,
+          "kr": null
+        },
+        {
+          "id": "2101131",
+          "name": {
+            "en": "High Commander Lagta",
+            "ru": "Глава армии Рагт",
+            "pt-BR": "High Commander Lagta"
+          },
+          "level": 48,
+          "area": {
+            "en": "Red Forest",
+            "pt-BR": "Red Forest"
+          },
+          "respawn_min": 360,
+          "schedule": null,
+          "kr": null
+        },
+        {
+          "id": "2101074",
+          "name": {
+            "en": "Eternal Gartua",
+            "ru": "Вечный Гартуа",
+            "pt-BR": "Eternal Gartua"
+          },
+          "level": 51,
+          "area": {
+            "en": "Isle of Eternity",
+            "pt-BR": "Isle of Eternity"
+          },
+          "respawn_min": 360,
+          "schedule": null,
+          "kr": null
+        }
+      ]
+    },
+    {
+      "id": "asmodians",
+      "zone": {
+        "en": "Altgard",
+        "ru": "Альтгард",
+        "pt-BR": "Altgard"
+      },
+      "faction": {
+        "en": "Asmodians",
+        "ru": "Асмодиане",
+        "pt-BR": "Asmodians"
+      },
+      "bosses": [
+        {
+          "id": "2400017",
+          "name": {
+            "en": "Melted Danar",
+            "ru": "Расплавленный Данар",
+            "pt-BR": "Melted Danar"
+          },
+          "level": 45,
+          "area": {
+            "en": "Dredgion Crash Site",
+            "pt-BR": "Dredgion Crash Site"
+          },
+          "respawn_min": 30,
+          "schedule": null,
+          "kr": null
+        },
+        {
+          "id": "2400074",
+          "name": {
+            "en": "Black Warrior Aed",
+            "ru": "Черный воин Аэд",
+            "pt-BR": "Black Warrior Aed"
+          },
+          "level": 45,
+          "area": {
+            "en": "Nameless Graveyard",
+            "pt-BR": "Nameless Graveyard"
+          },
+          "respawn_min": 30,
+          "schedule": null,
+          "kr": null
+        },
+        {
+          "id": "2400140",
+          "name": {
+            "en": "Faithful Rajit",
+            "ru": "Верный Ладжит",
+            "pt-BR": "Faithful Rajit"
+          },
+          "level": 45,
+          "area": {
+            "en": "Sanctuary Watch Post",
+            "pt-BR": "Sanctuary Watch Post"
+          },
+          "respawn_min": 30,
+          "schedule": null,
+          "kr": null
+        },
+        {
+          "id": "2400141",
+          "name": {
+            "en": "Berserker Vargor",
+            "ru": "Берсерк Вальг",
+            "pt-BR": "Berserker Vargor"
+          },
+          "level": 45,
+          "area": {
+            "en": "Sanctuary Watch Post",
+            "pt-BR": "Sanctuary Watch Post"
+          },
+          "respawn_min": 60,
+          "schedule": null,
+          "kr": null
+        },
+        {
+          "id": "2400223",
+          "name": {
+            "en": "Blood Warrior Lannar",
+            "ru": "Воин крови Ланнар",
+            "pt-BR": "Blood Warrior Lannar"
+          },
+          "level": 45,
+          "area": {
+            "en": "Moslan Forest",
+            "pt-BR": "Moslan Forest"
+          },
+          "respawn_min": 90,
+          "schedule": null,
+          "kr": null
+        },
+        {
+          "id": "2400212",
+          "name": {
+            "en": "Predator Garsan",
+            "ru": "Хищник Гарсан",
+            "pt-BR": "Predator Garsan"
+          },
+          "level": 45,
+          "area": {
+            "en": "Moslan Forest",
+            "pt-BR": "Moslan Forest"
+          },
+          "respawn_min": 120,
+          "schedule": null,
+          "kr": null
+        },
+        {
+          "id": "2400274",
+          "name": {
+            "en": "Deceiver Trid",
+            "ru": "Притворщица Трида",
+            "pt-BR": "Deceiver Trid"
+          },
+          "level": 45,
+          "area": {
+            "en": "Urtumheim",
+            "pt-BR": "Urtumheim"
+          },
+          "respawn_min": 120,
+          "schedule": null,
+          "kr": null
+        },
+        {
+          "id": "2400335",
+          "name": {
+            "en": "Blue Wave Kelpina",
+            "ru": "Келпина лазурной волны",
+            "pt-BR": "Blue Wave Kelpina"
+          },
+          "level": 45,
+          "area": {
+            "en": "Forest of Purification",
+            "pt-BR": "Forest of Purification"
+          },
+          "respawn_min": 120,
+          "schedule": null,
+          "kr": null
+        },
+        {
+          "id": "2400358",
+          "name": {
+            "en": "Advisor Resana",
+            "ru": "Советник Рсан",
+            "pt-BR": "Advisor Resana"
+          },
+          "level": 45,
+          "area": {
+            "en": "Dranactus",
+            "pt-BR": "Dranactus"
+          },
+          "respawn_min": 180,
+          "schedule": null,
+          "kr": null
+        },
+        {
+          "id": "2400353",
+          "name": {
+            "en": "High Overseer Nutah",
+            "ru": "Главный надзиратель Нута",
+            "pt-BR": "High Overseer Nutah"
+          },
+          "level": 45,
+          "area": {
+            "en": "Dranactus",
+            "pt-BR": "Dranactus"
+          },
+          "respawn_min": 120,
+          "schedule": null,
+          "kr": null
+        },
+        {
+          "id": "2400419",
+          "name": {
+            "en": "Special Operations Leader Linx",
+            "ru": "Капитан спецотряда Линкс",
+            "pt-BR": "Special Operations Leader Linx"
+          },
+          "level": 45,
+          "area": {
+            "en": "Basfelt Ruins",
+            "pt-BR": "Basfelt Ruins"
+          },
+          "respawn_min": 180,
+          "schedule": null,
+          "kr": null
+        },
+        {
+          "id": "2400424",
+          "name": {
+            "en": "Desecrator Newbold",
+            "ru": "Осквернитель Ноблуд",
+            "pt-BR": "Desecrator Newbold"
+          },
+          "level": 45,
+          "area": {
+            "en": "Basfelt Ruins",
+            "pt-BR": "Basfelt Ruins"
+          },
+          "respawn_min": 240,
+          "schedule": null,
+          "kr": null
+        },
+        {
+          "id": "2400425",
+          "name": {
+            "en": "Specter Archon Axios",
+            "ru": "Акан потерянных душ Аксиос",
+            "pt-BR": "Specter Archon Axios"
+          },
+          "level": 45,
+          "area": {
+            "en": "Basfelt Ruins",
+            "pt-BR": "Basfelt Ruins"
+          },
+          "respawn_min": 240,
+          "schedule": null,
+          "kr": null
+        },
+        {
+          "id": "2400474",
+          "name": {
+            "en": "Addicted Hardirun",
+            "ru": "Одурманенный Хадирун",
+            "pt-BR": "Addicted Hardirun"
+          },
+          "level": 45,
+          "area": {
+            "en": "Pafnite Burial Ground",
+            "pt-BR": "Pafnite Burial Ground"
+          },
+          "respawn_min": 180,
+          "schedule": null,
+          "kr": null
+        },
+        {
+          "id": "2400504",
+          "name": {
+            "en": "Executioner Barthien",
+            "ru": "Эмиссар Варсиен",
+            "pt-BR": "Executioner Barthien"
+          },
+          "level": 45,
+          "area": {
+            "en": "Gribade Canyon West",
+            "pt-BR": "Gribade Canyon West"
+          },
+          "respawn_min": 240,
+          "schedule": null,
+          "kr": null
+        },
+        {
+          "id": "2400593",
+          "name": {
+            "en": "Drakan Battalion Weapon Guruta",
+            "ru": "Биооружие отряда драканов Гурута",
+            "pt-BR": "Drakan Battalion Weapon Guruta"
+          },
+          "level": 45,
+          "area": {
+            "en": "Gribade Canyon East",
+            "pt-BR": "Gribade Canyon East"
+          },
+          "respawn_min": 360,
+          "schedule": null,
+          "kr": null
+        },
+        {
+          "id": "2400607",
+          "name": {
+            "en": "Veteran Shujakan",
+            "ru": "Ветеран Шужакан",
+            "pt-BR": "Veteran Shujakan"
+          },
+          "level": 45,
+          "area": {
+            "en": "Black Claw Village",
+            "pt-BR": "Black Claw Village"
+          },
+          "respawn_min": 180,
+          "schedule": null,
+          "kr": null
+        },
+        {
+          "id": "2400608",
+          "name": {
+            "en": "Visionary Karuka",
+            "ru": "Визионер Карука",
+            "pt-BR": "Visionary Karuka"
+          },
+          "level": 45,
+          "area": {
+            "en": "Black Claw Village",
+            "pt-BR": "Black Claw Village"
+          },
+          "respawn_min": 240,
+          "schedule": null,
+          "kr": null
+        },
+        {
+          "id": "2400659",
+          "name": {
+            "en": "Dark Shadow Vishwada",
+            "ru": "Вишвада темной тени",
+            "pt-BR": "Dark Shadow Vishwada"
+          },
+          "level": 45,
+          "area": {
+            "en": "Ragta Fortress",
+            "pt-BR": "Ragta Fortress"
+          },
+          "respawn_min": 360,
+          "schedule": null,
+          "kr": null
+        },
+        {
+          "id": "2400709",
+          "name": {
+            "en": "Sharp Shylak",
+            "ru": "Острый Шурак",
+            "pt-BR": "Sharp Shylak"
+          },
+          "level": 45,
+          "area": {
+            "en": "Impetusium Plaza",
+            "pt-BR": "Impetusium Plaza"
+          },
+          "respawn_min": 360,
+          "schedule": null,
+          "kr": null
+        },
+        {
+          "id": "2400855",
+          "name": {
+            "en": "Silent Dartan",
+            "ru": "Немая Тартан",
+            "pt-BR": "Silent Dartan"
+          },
+          "level": 48,
+          "area": {
+            "en": "Forest of Purification",
+            "pt-BR": "Forest of Purification"
+          },
+          "respawn_min": 360,
+          "schedule": null,
+          "kr": null
+        },
+        {
+          "id": "2400854",
+          "name": {
+            "en": "Soul Ruler Kashapa",
+            "ru": "Властелин душ Кашапа",
+            "pt-BR": "Soul Ruler Kashapa"
+          },
+          "level": 48,
+          "area": {
+            "en": "Pafnite Burial Ground",
+            "pt-BR": "Pafnite Burial Ground"
+          },
+          "respawn_min": 360,
+          "schedule": null,
+          "kr": null
+        },
+        {
+          "id": "2400853",
+          "name": {
+            "en": "High Commander Lagta",
+            "ru": "Глава армии Рагт",
+            "pt-BR": "High Commander Lagta"
+          },
+          "level": 48,
+          "area": {
+            "en": "Ragta Fortress",
+            "pt-BR": "Ragta Fortress"
+          },
+          "respawn_min": 720,
+          "schedule": null,
+          "kr": null
+        },
+        {
+          "id": "2400800",
+          "name": {
+            "en": "Immortal Gartua",
+            "ru": "Бессмертный Гартуа",
+            "pt-BR": "Immortal Gartua"
+          },
+          "level": 51,
+          "area": {
+            "en": "Isle of Immortality",
+            "pt-BR": "Isle of Immortality"
+          },
+          "respawn_min": 720,
+          "schedule": null,
+          "kr": null
+        }
+      ]
+    },
+    {
+      "id": "abyss",
+      "zone": {
+        "en": "Chaotic Lower Reshanta",
+        "ru": "Хаотическая нижняя Reshanta",
+        "pt-BR": "Chaotic Lower Reshanta"
+      },
+      "faction": {
+        "en": "Abyss",
+        "ru": "Бездна",
+        "pt-BR": "Abyss"
+      },
+      "bosses": [
+        {
+          "id": "2600089",
+          "name": {
+            "en": "Watcher Kaira",
+            "ru": "Дозорщик Кайра",
+            "pt-BR": "Watcher Kaira"
+          },
+          "level": 65,
+          "respawn_min": null,
+          "schedule": null,
+          "kr": {
+            "en": "every 4 h from 01:00",
+            "ru": "каждые 4 ч с 01:00",
+            "pt-BR": "A cada 4 h de 01:00"
+          }
+        },
+        {
+          "id": "2600097",
+          "name": {
+            "en": "Executor Argo",
+            "ru": "Исполнитель Агро",
+            "pt-BR": "Executor Argo"
+          },
+          "level": 65,
+          "respawn_min": null,
+          "schedule": null,
+          "kr": {
+            "en": "Wed, Sat 22:30",
+            "ru": "ср, сб 22:30",
+            "pt-BR": "Wed, Sáb 22:30"
+          }
+        },
+        {
+          "id": "2600098",
+          "name": {
+            "en": "Executor Kaira",
+            "ru": "Исполнитель Кайра",
+            "pt-BR": "Executor Kaira"
+          },
+          "level": 65,
+          "respawn_min": null,
+          "schedule": null,
+          "kr": {
+            "en": "Wed, Sat 22:30",
+            "ru": "ср, сб 22:30",
+            "pt-BR": "Wed, Sáb 22:30"
+          }
+        },
+        {
+          "id": "2600096",
+          "name": {
+            "en": "Executor Tamasa",
+            "ru": "Исполнитель Тамаса",
+            "pt-BR": "Executor Tamasa"
+          },
+          "level": 65,
+          "respawn_min": null,
+          "schedule": null,
+          "kr": {
+            "en": "Wed, Sat 22:30",
+            "ru": "ср, сб 22:30",
+            "pt-BR": "Wed, Sáb 22:30"
+          }
+        },
+        {
+          "id": "siege-lower",
+          "name": {
+            "en": "Abyss siege boss",
+            "ru": "Босс осады Бездны",
+            "pt-BR": "Abyss siege boss"
+          },
+          "level": null,
+          "respawn_min": null,
+          "schedule": null,
+          "kr": {
+            "en": "Fri, Sun 22:00",
+            "ru": "пт, вс 22:00",
+            "pt-BR": "Sex, Sun 22:00"
+          }
+        }
+      ]
+    }
+  ]
+}

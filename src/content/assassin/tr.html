@@ -1,0 +1,213 @@
+{% from "macros.html" import section, skill, core, loadout, passives, glance, hotline, macroseq, hotbar, dv_board with context %}
+
+{# ============================== PvE ============================== #}
+{% call glance('pve') %}
+  <h3>{{ t.core_skills }}</h3>
+  {{ core([('heart-gore', '16 → 20'), ('insignia-explosion', '16 → 20'), ('quick-slice', '16 → 20'), ('ambush', '16'), ('storm-rampage', '16')]) }}
+  <h3>{{ t.stigma_loadout }}</h3>
+  {{ loadout([('illusive-clone', 20), ('swift-contract', 15), ('savage-fang', 15), ('triniels-dagger', 10)]) }}
+  <h3>{{ t.key_passives }}</h3>
+  {{ passives(['rear-smite', 'exploit-weakness', 'assault-stance', 'determination']) }}
+{% endcall %}
+
+{% call section('intro', 'Genel bakış', 'pve') %}
+  <p>Assassin, bufflarla yaşayan bir hançer patlama sınıfı. Vuruşlar hedefe <strong>Insignia</strong> kazır, {{ s('insignia-explosion') }} onları bozdurur, {{ s('heart-gore') }} ise kritiklerde tetiklenir ve bir sonraki kritikte kendini sıfırlar. En büyük hasar bonusu hedefe arkadan vurmaktan gelir, bu yüzden konumlanma diğer tüm sınıflardan daha önemli.</p>
+  <div class="callout accent">
+    <h3>Tek cümlede build</h3>
+    <p>Bossun arkasında kal, {{ s('quick-slice') }}'ı sürekli araya ör, {{ s('insignia-explosion') }}'a hazır olduğu anda ve {{ s('heart-gore') }}'a her kritikte bas — ve elindeki her şeyi Heart Gore'un hiç bekleme süresi olmadığı {{ s('illusive-clone') }}'un 20 saniyesine koy.</p>
+  </div>
+  <div class="callout">
+    <h3>Season 1'de ne beklemeli</h3>
+    <ul>
+      <li><strong>Patlama, sonra boşluk.</strong> KR/TW'de Illusive Clone'un 25. seviye kademesi iyi oyuncuların onu sürekli açık tutmasını sağlıyor. Global 20'de duruyor: 1 dk 30 sn bekleme süresinde yaklaşık 20 saniye patlama, pencereler arasında ise Heart Gore kritik şansına bağlıyken dolgu oynarsın.</li>
+      <li><strong>Bufflar hizalanmıyor.</strong> Swift Contract ve Savage Fang bir dakikada, Illusive Clone bir buçuk dakikada döner — sürekli beklemek mi basmak mı diye karar verirsin.</li>
+      <li><strong>Arkada kalmak hasardır.</strong> Kuklada %100; gerçek bir dövüşte %60–80 bekle, önden gelen her vuruş Rear Smite bonusunu kaybeder.</li>
+      <li><strong>Kırılgan.</strong> Blok yok, savunma az — Gladiator'ın atlattığı hatalar seni öldürür.</li>
+    </ul>
+    <p>Arthars'ın kararı: eğlenceli, yüksek beceri isteyen bir sınıf; aynı veya daha az hasar için Gladiator ya da Sorcerer'dan kat kat fazla emek ister. Rakamlar için değil, oyun tarzını sevdiğin için seç.</p>
+  </div>
+  <p class="note">PvE modu, Arthars Gaming'in global çıkış için Assassin videosunu (30 Eylül, Tayvan sunucusunda kaydedildi) kare kare izliyor; videoda altyazı yok, bu yüzden metni sesten konuşma tanımayla alındı ve her ad ve sayı ekrana göre kontrol edildi.</p>
+{% endcall %}
+
+{% call section('global', 'Global Season 1: neler değişiyor', 'pve pvp') %}
+  <p>Global sunucular <strong>5 Ekim 2026</strong>'da açılıyor (Founder erken erişimi 30 Eylül'den itibaren). Bunun Assassin için anlamı:</p>
+  <div class="callout">
+    <ul>
+      <li><strong>4 stigma slotu, sınır 20.</strong> Dördü de hasara gidiyor: Illusive Clone, Swift Contract, Savage Fang ve Triniel's Dagger.</li>
+      <li><strong>Kalıcı Illusive Clone yok.</strong> Arkadan kritiklerde bekleme süresini kısaltan kademe 25. seviye — global'de yok.</li>
+      <li><strong>Başta az bekleme süresi azaltma.</strong> Storm Rampage'in 16'ya çıkması ve Triniel's Dagger'ın hasarı için değil bekleme süresi aracı olarak kullanılması bu yüzden.</li>
+      <li><strong>Daha uzun dövüşler.</strong> Tayvan'da 30 saniyede ölen bosslar dakikalar sürecek — birkaç patlama penceresi ve aralarındaki boşlukları göreceksin.</li>
+      <li data-only="pvp"><strong>PvP:</strong> herkes aynı sınırlı ekipmanla başlar ve henüz bir meta oluşmadı.</li>
+    </ul>
+  </div>
+  <p class="note">Aktif yetenekler ve pasifler global ve KR/TW verilerinde aynı; stigmalar 25. seviye kademesini kaybediyor.</p>
+{% endcall %}
+
+{% call section('skills', 'Yetenekler', 'pve') %}
+  <p>Yalnızca üç yetenek seviyesi önemli: <strong>12, 16 ve 20</strong>. Yetenek puanları 10, Daevanion +4, iki yüzük +2, arcana geri kalanını verir. Önce beş ana yeteneği <strong>16</strong>'ya çıkar, sonra Heart Gore ve Insignia Explosion'ı 20'ye it.</p>
+  <ul class="skill-grid">
+    {% call skill('heart-gore', 'must', '16 → 20', [0, 4], then=[3]) %}En önemli yeteneğin. 16 ister: bir kritik bekleme süresini sıfırlar, yoksa 5 saniye bekler. HP emme seni hayatta tutar; 20'de Multi-Hit ekle. Başta Critical Hit'in azsa emme yerine +%20 kritik seçimi bir seçenek.{% endcall %}
+    {% call skill('insignia-explosion', 'must', '16 → 20', [2, 4], then=[1]) %}Hasarının diğer yarısı. −3 sn bekleme süresi ve her patlamadan sonra korunan iki Insignia — her hazır olduğunda bas, yük bekleme. 20'de Multi-Hit ekle.{% endcall %}
+    {% call skill('quick-slice', 'must', '16 → 20', [3, 4], then=[2]) %}Her şeyin arasına ördüğün temel saldırı: garantili kritik ve vuruş başına Insignia Explosion'a −1 sn. 20'de üçüncü slot senin seçimin — HP emme veya Multi-Hit.{% endcall %}
+    {% call skill('ambush', 'must', '16', [0, 4]) %}Heart Gore kapalıyken ilk dolgun: 16'da iki ek kullanım ve arkadan vuruş başına iki Insignia. 20'ye ulaşırsa HP emmeyi ekle.{% endcall %}
+    {% call skill('storm-rampage', 'must', '16', [3, 4]) %}Diğer sınıflarda atlanabilir; burada değil. Boss stagger'dayken her vuruş tüm bekleme sürelerinden 1 sn düşer — bufflarını geri getirir ve bu sınıf buffsız hasar yapmaz.{% endcall %}
+    {% call skill('defiance', 'opt', '12 → 16', [2, 3]) %}Kontrol kırıcı: 12'de iyileşme ve +2 sn Tenacity; 16'da iyileşmeyi hasar toleransıyla değiştir.{% endcall %}
+    {% call skill('savage-roar', 'opt', '12', [1, 3]) %}Satırdaki son dolgu: daha hızlı ve her vuruş Shadowstrike'ı kısaltır. 12–16'dan fazlasına değmez.{% endcall %}
+    {% call skill('shadowstrike', 'opt', '12', [1]) %}Hedefin arkasına ışınlanma ve 10 sn boyunca +%20 Critical Damage — bir buff ve arkaya geçmenin en iyi yolu. Bekleme süresi dolunca harcamak yerine yeniden konumlanmak için sakla; diğer seçimler PvP için.{% endcall %}
+    {% call skill('flash-slice', 'opt', '12', [1, 3]) %}Hedefin arkasına geçmenin ikinci yolu: 10 m menzil ve iki kullanım.{% endcall %}
+    {% call skill('infiltrate', 'opt', '12', [0, 1]) %}Kaçın → hedefin arkasına, ve stamina'yı geri öder. Devam zincirini asla alma.{% endcall %}
+    {% call skill('whirlwind-slice', 'opt', '12', [0, 2]) %}Uzun menzilli mesafe kapatıcı. Kâğıt üzerinde sert vurur ama animasyonu uzun — rotasyonun parçası değil.{% endcall %}
+    {% call skill('shadow-fall', 'opt', '12', [0, 2]) %}Bir PvP yeteneği; PvE'de yalnızca acil %10 iyileşme.{% endcall %}
+  </ul>
+{% endcall %}
+
+{% call section('passives', 'Pasifler', 'pve') %}
+  <p>Seviye atlarken yetenek puanları neredeyse tüm pasifleri maksimuma çıkarır. Kıt olan ekipman satırları: sınıf orada dört pasif ister ve yalnızca iki üçü sığar.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Pasif</th><th>Ekipmanda öncelik</th><th>Neden</th></tr></thead>
+    <tbody>
+      <tr><td>{{ s('rear-smite') }}</td><td>1</td><td>Arkadan saldırı ve PvE hasar artışı — en güçlü pasif; önden bile hasar verir.</td></tr>
+      <tr><td>{{ s('exploit-weakness') }}</td><td>2</td><td>Critical Hit ve savaşta neredeyse sürekli açık bir Attack buffı; Illusive Clone onu katlar.</td></tr>
+      <tr><td>{{ s('assault-stance') }}</td><td>2</td><td>Critical Damage Boost; Swift Contract onu katlar.</td></tr>
+      <tr><td>{{ s('determination') }}</td><td>3</td><td>Düşük HP'li hedefe ek hasar — aLuckyRO bunu en önemlilerden sayıyor: her boss dövüşün sonunu orada geçirir.</td></tr>
+      <tr><td>{{ s('impact-hit') }}</td><td>4</td><td>Double Chance — 10. seviyede yalnızca %3,3, PvE'de neredeyse hiç (aLuckyRO). PvP için sakla; PvE ekipmanında önce Determination al.</td></tr>
+      <tr><td>{{ s('ambush-stance') }}, {{ s('heightened-sixth-sense') }}</td><td>yalnızca puanlar</td><td>Yetenek puanlarıyla maksimuma çıkar; bir ekipman satırına değmez.</td></tr>
+      <tr><td>{{ s('apply-poison') }}, {{ s('defense-break') }}</td><td>atla</td><td>Zehir hasarının %1'inden az; Defense Break bir PvP pasifi. {{ s('revitalization-contract') }} yalnızca artan puanla.</td></tr>
+    </tbody>
+  </table></div>
+{% endcall %}
+
+{% call section('gear', 'Ekipman ve statlar', 'pve') %}
+  <div class="callout"><ul>
+    <li><strong>Yüzükler:</strong> aktif yeteneklerin tek yeri — {{ s('heart-gore') }}, {{ s('quick-slice') }}, {{ s('insignia-explosion') }}, {{ s('ambush') }}. Ana yetenekleri 14'ten 16'ya çıkarırlar.</li>
+    <li><strong>Silah ve koruma:</strong> oraya asla yetenek koyma — hasar satırları bir yetenek seviyesinden daha değerli.</li>
+    <li><strong>Diğer parçalar:</strong> önce Rear Smite; sonraki üç pasiften herhangi biri olur. Season 1'de mükemmel bir setin peşine düşme — global ekipmanda bir satır eksik ve orada Might, Precision ve Combat Speed de çıkıyor.</li>
+    <li><strong>Critical Hit</strong> diğer sınıflardan daha önemli: Heart Gore yalnızca kritikte sıfırlanır.</li>
+    <li><strong>Manastone'lar:</strong> Attack, Critical Hit, Accuracy.</li>
+  </ul></div>
+{% endcall %}
+
+{% call section('arcana', 'Arcana', 'pve') %}
+  <p>Season 1'de beş kart ve iki set var. Assassin, Mirror'da Illusion'ı (bekleme süreleri) <strong>almak zorunda</strong> olan tek sınıf, bu da dört Primal Vigor kartını doğal set yapıyor.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Kart</th><th>Stat</th><th>Set</th><th>Neyi çevirmeli</th></tr></thead>
+    <tbody>
+      <tr><td>Chalice</td><td>Time (Combat Speed)</td><td>Primal Vigor</td><td>Üç ana yetenekten hâlâ 20'nin altında olan</td></tr>
+      <tr><td>Parchment</td><td>Life</td><td>Primal Vigor</td><td>{{ s('quick-slice') }}, {{ s('heart-gore') }}, {{ s('insignia-explosion') }} — üçü de</td></tr>
+      <tr><td>Compass</td><td>Freedom (Accuracy)</td><td>Primal Vigor</td><td>{{ s('storm-rampage') }}, {{ s('ambush') }}, {{ s('savage-roar') }} — 16'ya ulaşmak için</td></tr>
+      <tr><td>Mirror</td><td>Illusion (bekleme süreleri)</td><td>Primal Vigor</td><td>{{ s('rear-smite') }}, {{ s('exploit-weakness') }}; {{ s('impact-hit') }}</td></tr>
+      <tr><td>Bell</td><td>Destruction (Attack)</td><td>Magic Armor</td><td>{{ s('assault-stance') }}</td></tr>
+    </tbody>
+  </table></div>
+  <p><strong>Asıl uğraş Parchment.</strong> 20'de istediğin üç yeteneğin hepsi bu tek kartta ve bir Season 1 kartı dört satırından yalnızca ikisini seçmene izin veriyor. Kartı geliştirmek dört rastgele +1 ekler — birine +4 yerine eşit dağılım (her birine +2) um: o zaman Chalice eksik +2'yi ekleyebilir. Olmazsa Heart Gore ve Insignia Explosion'ı 20'de tut, Quick Slice'ı 16'da bırak.</p>
+  <p class="note">Compass ve Bell rahat: üzerlerindeki hiçbir şeyin 20'ye ulaşması gerekmiyor. Season 2 yeni kartlar getirince bu kartların hepsi değişir.</p>
+{% endcall %}
+
+{% call section('daevanion', 'Daevanion panoları', 'pve pvp') %}
+  <p>Daevanion yeteneklerini 10'dan 14'e çıkarır ve stat ekler. Her mavi düğüm yeteneğine <strong>+1 seviye</strong> verir.</p>
+  <div class="callout"><ul>
+    <li data-only="pve"><strong>Öncelik:</strong> {{ s('heart-gore') }}, {{ s('insignia-explosion') }}, {{ s('quick-slice') }} için mavi düğümler, sonra {{ s('ambush') }} ve {{ s('storm-rampage') }}; ardından turuncu düğümler.</li>
+    <li data-only="pve"><strong>Erken Critical Damage:</strong> Assassin için Vaizel'in turuncu Critical Damage Boost'u en baştan karşılığını verir — çoğu sınıfın aksine ilk günden kritik vurur (aLuckyRO).</li>
+    <li data-only="pvp"><strong>Öncelik:</strong> {{ s('shadowstrike') }}, {{ s('flash-slice') }}, {{ s('defiance') }} için mavi düğümler.</li>
+    <li data-only="pve"><strong>Global'de Ariel yok:</strong> beş pano var ve 45. seviyedeki Azphel yalnızca PvP Damage Boost ve Tolerance veriyor — PvE'de ilk dördünü bitir.</li>
+    <li data-only="pvp"><strong>Azphel</strong> (45. seviye) tamamen PvP Damage Boost ve Tolerance — al, Triniel'i de daha erken.</li>
+  </ul></div>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Pano</th><th>Açılış</th><th>Turuncu düğümler</th></tr></thead>
+    <tbody>
+      <tr><td>Nezekan</td><td>Sv 12</td><td>Combat Speed, Cooldown Reduction</td></tr>
+      <tr><td>Zikel</td><td>Sv 20</td><td>Damage Boost, Damage Tolerance</td></tr>
+      <tr><td>Vaizel</td><td>Sv 30</td><td>Critical Damage Boost ve Tolerance</td></tr>
+      <tr><td>Triniel</td><td>Sv 40</td><td>Multi-Hit Chance ve Resist</td></tr>
+      <tr><td>Azphel</td><td>Sv 45</td><td>PvP Damage Boost ve Tolerance — yetenek düğümü yok</td></tr>
+    </tbody>
+  </table></div>
+  <h3>Panolardaki rota</h3>
+  <p>Oyun verilerinden gerçek global panolar. Altın renk, Start'tan bu rehberin aldığı düğümlere — öncelikli yeteneklerin mavi düğümleri ve turuncu düğümler — giden en ucuz yolu gösterir; ne verdiğini görmek için herhangi bir düğümün üzerine gel.</p>
+  <div data-only="pve">{{ dv_board('pve') }}</div>
+  <div data-only="pvp">{{ dv_board('pvp') }}</div>
+  <p class="note">Panolar ve maliyetler global istemci verilerinden (questlog.gg) geliyor; yol videodan alınmadı, hesaplandı. Stat değerleri çıkışta hâlâ değişebilir — tam bir rotaya girmeden önce oyundaki panoyu kontrol et.</p>
+{% endcall %}
+
+{% call section('stigmas', 'Stigmalar', 'pve') %}
+  <p>Dört slotun hepsi buff. Önce Illusive Clone'u 20'ye çıkar — stigma parçalarının çoğunu o yer — sonra geri kalanı.</p>
+  <ul class="skill-grid">
+    {% call skill('illusive-clone', 'must', 'Sv 20', upto=20) %}Patlaman: 20 saniye boyunca Heart Gore'un bekleme süresi yok ve %20 ek hasar verirsin, üstüne +%20 Critical Damage ve ×1,5 Exploit Weakness. Bekleme süresi 1 dk 30 sn. Hasarının çoğu onun içinde olur — bossta kullan, asla çöp moblarda. aLuckyRO: Heart Gore 16'ya ulaşana kadar şart; yeterli kritikle Heart Gore kendini sıfırlar ve slot bir süre değiştirilebilir, ama 20'de hasar artışı için geri gelir.{% endcall %}
+    {% call skill('swift-contract', 'must', 'Sv 15 → 20', upto=15) %}+%20 Combat Speed ve süre boyunca ×1,5 Rear Smite ve Assault Stance. Başlamak için 15 yeterli; 20 %10 daha fazla Combat Speed ekler.{% endcall %}
+    {% call skill('savage-fang', 'must', 'Sv 15', upto=15) %}Bir kerede beş Insignia, büyük stagger hasarı ve 15'te 10 sn boyunca +%10 PvE Damage Boost. Swift Contract ile aynı bir dakikalık bekleme süresi — birlikte bas.{% endcall %}
+    {% call skill('triniels-dagger', 'must', 'Sv 10', upto=10) %}Hasarı için değil: 10'da bir vuruş tüm yeteneklerinin <em>kalan</em> bekleme süresini %10 kısaltır. Bufflarından hemen sonra, bekleme süreleri en uzunken bas.{% endcall %}
+    {% call skill('evasion-stance', 'opt', 'Sv 5–10', upto=10) %}Büyük bir vuruştan garantili kaçınma; 5'te iki hak, 10'da hareketli. Bir dövüşü öğrenirken bufflardan biri için güvenli değişim — sınıf kırılgan.{% endcall %}
+    {% call skill('throw-shadowblade', 'opt', 'farm', upto=10) %}10'da öldürmede sıfırlanan 20 m fırlatma — bosslar için değil, açık dünya farmı için.{% endcall %}
+  </ul>
+{% endcall %}
+
+{% call section('macro', 'Makro ve rotasyon', 'pve') %}
+  <p>AION 2'de iki ayrı araç var:</p>
+  <ul>
+    <li><strong>Hızlı erişim satırı</strong> — <em>tek</em> bir hızlı erişim düğmesine üst üste dizilmiş birkaç yetenek. Basınca hazır olan en yüksek öncelikli yeteneği kullanır ve AION 2'de <strong>en alttaki slot en yüksek önceliğe sahiptir</strong>. Kartlar her satırı oyundaki gibi yukarıdan aşağıya gösterir.</li>
+    <li><strong>Oyun içi makro</strong> — tuşunu basılı tuttuğun sürece hızlı erişim düğmelerine sırayla basar ve animasyon kuyruklarını iptal eder. Bekleme süresindeki yetenekler atlanır.</li>
+  </ul>
+  {{ hotbar([('N2', ['shadowstrike']), ('Yan', []), ('3', ['flash-slice']), ('4', []), None, ('5', []), ('N4', []), ('6', []), ('7', ['illusive-clone', 'swift-contract', 'savage-fang', 'triniels-dagger']), None, ('N1', ['whirlwind-slice', 'infiltrate', 'shadow-fall']), ('N5', ['storm-rampage']), ('1', ['quick-slice']), ('E', ['insignia-explosion', 'heart-gore', 'ambush', 'savage-roar'])], macro=['E', '1'], own_keys=true) }}
+
+  <h3>1. Hızlı erişim satırları</h3>
+  <div class="hotlines">
+    {% call hotline('E', 'Hasar satırı', ['insignia-explosion', 'heart-gore', 'ambush', 'savage-roar']) %}Insignia Explosion her hazır olduğunda, Heart Gore her kritikte tetiklenir. İkisi de yoksa satır dolgulara düşer: önce Ambush, en son Savage Roar.{% endcall %}
+    {% call hotline('7', 'Buff satırı', ['illusive-clone', 'swift-contract', 'savage-fang', 'triniels-dagger']) %}Arthars dört stigmanın hepsini tek düğmede tutuyor ve elle basıyor — asla makrodan değil, yoksa bufflar senkron dışı açılır.{% endcall %}
+  </div>
+
+  <h3>2. Oyun içi makro</h3>
+  <p>Sürekli basılı tutabileceğin bir tuşta, her biri <strong>10 ms</strong> olan iki adım:</p>
+  {{ macroseq([('Hasar satırı', '10 ms'), (skill_data('quick-slice')[lang].name, '10 ms')]) }}
+  <p class="note">Video hızlı erişim çubuğunu gösteriyor ama makro penceresini göstermiyor: bu makro Arthars'ın Chanter rehberindeki düzeni izliyor (ana satır, sonra temel saldırı). Satırlar ve tuşlar onun hızlı erişim çubuğundan okundu.</p>
+
+  <h3>3. Gerçekte neye basıyorsun</h3>
+  <ul class="presslist">
+    <li><span class="press-how">Basılı tut</span><span class="press-what">Makro tuşunu, ve {{ s('quick-slice') }}'ı kendin spamla — her vuruş Insignia Explosion'ı kısaltır.</span></li>
+    <li><span class="press-how">Patlama</span><span class="press-what">{{ s('illusive-clone') }} + {{ s('swift-contract') }} + {{ s('savage-fang') }} birlikte, sonra bekleme sürelerini kısaltmak için hemen {{ s('triniels-dagger') }}. Sonraki 20 saniye Heart Gore ardına Heart Gore.</span></li>
+    <li><span class="press-how">Pencereler arası</span><span class="press-what">Swift Contract ve Savage Fang, Illusive Clone'dan önce döner. Ya bir sonraki Clone için tut (daha büyük patlama) ya da bekleme süresi dolunca kullan (daha istikrarlı hasar) — üzerinde uzlaşılmış bir cevap yok; kısa dövüşlerde tut.</span></li>
+    <li><span class="press-how">Stagger</span><span class="press-what">Stagger'daki bossta Quick Slice örerek {{ s('storm-rampage') }} — tüm bekleme sürelerini saniyelerce aşağı çeker.</span></li>
+    <li><span class="press-how">Konum</span><span class="press-what">{{ s('shadowstrike') }}, {{ s('flash-slice') }} ve {{ s('infiltrate') }} hepsi seni hedefin arkasına koyar. Orada kalmak için kullan, hasar düğmesi olarak değil.</span></li>
+  </ul>
+  <p class="note">Arthars'ın kukla testinde hasar nereden geliyor: Heart Gore yaklaşık %30, Insignia Explosion yaklaşık %25, geri kalan her biri %6 veya daha az.</p>
+{% endcall %}
+
+{% call section('recap', 'Özet', 'pve') %}
+  <div class="callout accent"><ul>
+    <li><strong>Yetenekler:</strong> Heart Gore, Insignia Explosion, Quick Slice 16 → 20; Ambush ve Storm Rampage 16; geri kalanı 12.</li>
+    <li><strong>Stigmalar:</strong> Illusive Clone 20, Swift Contract 15 → 20, Savage Fang 15, Triniel's Dagger 10.</li>
+    <li><strong>Ekipmanda pasifler:</strong> Rear Smite, sonra Exploit Weakness, Assault Stance, Impact Hit.</li>
+    <li><strong>Oyun:</strong> bossun arkasında kal, Illusive Clone içinde patla, bufflardan hemen sonra Triniel's Dagger.</li>
+  </ul></div>
+{% endcall %}
+
+{# ============================ Leveling ============================ #}
+{% call section('fight-lvl', t.lvl_combat, 'lvl') %}
+  <div class="callout"><ul>
+    <li><strong>Gruplar:</strong> {{ s('savage-fang') }} (5 Insignia) → {{ s('insignia-explosion') }} → {{ s('whirlwind-slice') }}; {{ s('throw-shadowblade') }} bir sonraki çekiş için öldürmede sıfırlanır.</li>
+    <li><strong>Elitler:</strong> arkaya geç → {{ s('ambush') }} → Insignia biriktirmek için {{ s('savage-roar') }} → Insignia Explosion → kritiklerde {{ s('heart-gore') }}.</li>
+    <li><strong>Mana:</strong> {{ s('quick-slice') }} MP yeniler — LMB'de tut.</li>
+    <li><strong>Düşük HP:</strong> {{ s('shadow-fall') }} HP emer; sıkıştığında {{ s('defiance') }} iyileştirir.</li>
+  </ul></div>
+{% endcall %}
+
+{% call section('macro-lvl', 'Seviye makrosu', 'lvl') %}
+  <p>Seviye atlarken, Heart Gore 16'ya ulaşmadan önce daha basit bir düzen 1. seviyeden çalışır: orta fare tuşunda oyun içi makroda Insignia satırı, LMB'de Quick Slice ve Q'da Heart Gore. Mob farmı için Throw Shadowblade (2) ve RMB kullan. 1–45 erken build: Quick Slice, Savage Roar, Insignia Explosion ve Heart Gore 12'ye, geri kalan her şey 8'e.</p>
+  <div class="hotlines">
+    {{ hotline('MMB', 'Insignia satırı', ['insignia-explosion', 'whirlwind-slice', 'ambush', 'savage-roar']) }}
+  </div>
+  <p><a href="https://aion2t.com/ru/simulator?job=5&amp;b=iUjpcy" target="_blank" rel="noopener">1–45 başlangıç buildi (aion2t) →</a> · <a href="https://aion2t.com/ru/simulator?job=5&amp;b=MeyRht" target="_blank" rel="noopener">45+ hedef buildi →</a></p>
+{% endcall %}
+
+{# ============================ Sources ============================ #}
+<section class="sources" aria-labelledby="h-sources">
+  <h2 id="h-sources">{{ t.sources }}</h2>
+  <ul>
+    <li><a href="https://www.youtube.com/watch?v=UpvUVK1vnt8" target="_blank" rel="noopener">Arthars Gaming — The Brutal Truth About Assassin in Aion 2 Global Launch</a> — PvE modu: yetenek seviyeleri ve uzmanlıklar, pasifler, arcana, stigmalar, hızlı erişim satırları, sınıfın Season 1'de nasıl oynandığı</li>
+    <li><a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ0C3iKFteGvIbgqNDnQq7bmwIaU23DvjbPa0HPSVAdOOiCeBkEq69Cn8jVMJhToJcztCRylYeTYfOk/pubhtml" target="_blank" rel="noopener">TitanTheF — AION 2 progression sheet</a> (Assassin sekmesi) — buildler, hızlı erişim çubuğu, makro, statlar</li>
+    <li><a href="https://aion2t.com/ru/simulator?job=5&amp;b=MeyRht" target="_blank" rel="noopener">aion2t.com</a> — TitanTheF'in başlangıç ve 45+ buildleri (yetenek seviyeleri, uzmanlıklar, stigmalar, pasifler)</li>
+    <li><a href="https://questlog.gg/aion-2/en/db/skills/assassin" target="_blank" rel="noopener">questlog.gg</a> — global istemciden yetenek verileri</li>
+    <li><a href="https://www.youtube.com/watch?v=HMod6Z4GrE0" target="_blank" rel="noopener">Grobs — AION 2 Macro Guide</a> — hızlı erişim satırları ve oyun içi makro nasıl çalışır</li>
+    <li><a href="https://www.youtube.com/watch?v=DNfd1lZtQkI" target="_blank" rel="noopener">aLuckyRO — AION 2 Latest Assassin PVE Build for Global</a> — erken uzmanlıklar (Quick Slice MP, Storm Rampage Multi-Hit), pasif önceliği, Heart Gore 16'dan önce Illusive Clone, farm için Throw Shadowblade</li>
+  </ul>
+  <p class="sources-all"><a href="{{ root }}{{ lang }}/sources/">{{ t.src_all }} →</a></p>
+</section>

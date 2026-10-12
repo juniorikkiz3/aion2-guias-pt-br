@@ -1,0 +1,2156 @@
+{
+  "vicious-strike": {
+    "id": "12010000",
+    "category": "active",
+    "icon": "vicious-strike.webp",
+    "cooldown": 0,
+    "en": {
+      "name": "Vicious Strike",
+      "desc": "Deals {se_dmg:1201000011:SkillUIMindmgsum}-{se_dmg:1201000011:SkillUIMaxdmgsum} damage to up to 4 enemies within 4m and increases Enmity. Restores 100 MP.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "+20% MP restored"
+        },
+        {
+          "level": 8,
+          "text": "Absorbs 1% HP"
+        },
+        {
+          "level": 8,
+          "text": "+50% Multi-Hit on hit"
+        },
+        {
+          "level": 12,
+          "text": "-2s [Warding Strike] cooldown on hit"
+        },
+        {
+          "level": 16,
+          "text": "Adds [Threatening Blow] Chain Skill"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Жестокий удар",
+      "desc": "Наносит {se_dmg:1201000011:SkillUIMindmgsum}-{se_dmg:1201000011:SkillUIMaxdmgsum} урона врагам (макс. 4) в радиусе 4 м и увеличивает Враждебность. Восстанавливает 100 ОМ.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Восстановление ОМ +20%"
+        },
+        {
+          "level": 8,
+          "text": "Поглощение 1% ОЗ"
+        },
+        {
+          "level": 8,
+          "text": "Шанс мультиудара +50% при попадании"
+        },
+        {
+          "level": 12,
+          "text": "Перезарядка [Кары хранителя] -2s при попадании"
+        },
+        {
+          "level": 16,
+          "text": "Добавление 4-ой комбинации [Ожесточенный удар угрозы]"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Vicious Strike",
+      "desc": "Denuncia danos {se_dmg:1201000011:SkillUIMindmgsum}-{se_dmg:1201000011:SkillUIMaxdmgsum} a inimigos 4 dentro do 4m e aumenta a Inimidade. Restaura 100 MP.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "+ 20% MP restaurado."
+        },
+        {
+          "level": 8,
+          "text": "Absorve 1% HP"
+        },
+        {
+          "level": 8,
+          "text": "+ 50% Multi-Hit no hit"
+        },
+        {
+          "level": 12,
+          "text": "- 2s [Warding Strike ] arrefecer no hit"
+        },
+        {
+          "level": 16,
+          "text": "Adiciona a habilidade da corrente"
+        }
+      ]
+    }
+  },
+  "pummel": {
+    "id": "12040000",
+    "category": "active",
+    "icon": "pummel.webp",
+    "cooldown": 0,
+    "en": {
+      "name": "Pummel",
+      "desc": "Deals {se_dmg:1204000011:SkillUIMindmgsum}-{se_dmg:1204000011:SkillUIMaxdmgsum} damage to up to 4 enemies within 4m and increases Enmity.\n\n3 Stagger Gauge Damage",
+      "specs": [
+        {
+          "level": 8,
+          "text": "-20% MP consumed"
+        },
+        {
+          "level": 8,
+          "text": "[Punishing Strike] absorbs 3% HP"
+        },
+        {
+          "level": 8,
+          "text": "Deals up to 12% more damage when less targets are hit"
+        },
+        {
+          "level": 12,
+          "text": "-1s [Punishment] cooldown on hit"
+        },
+        {
+          "level": 16,
+          "text": "[Punishing Strike] grants extra damage on hit"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Град ударов",
+      "desc": "Наносит {se_dmg:1204000011:SkillUIMindmgsum}-{se_dmg:1204000011:SkillUIMaxdmgsum} урона врагам (макс. 4) в радиусе 4 м и увеличивает Враждебность.\n\nУрон по шкале ошеломления — 3",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Затрата ОМ -20%"
+        },
+        {
+          "level": 8,
+          "text": "Поглощение 3% ОЗ от [Удара возмездия]"
+        },
+        {
+          "level": 8,
+          "text": "Чем меньше целей попадания, тем больше увелич. урона (макс. до 12%)"
+        },
+        {
+          "level": 12,
+          "text": "Перезарядка [Кровавая месть] -1s при попадании"
+        },
+        {
+          "level": 16,
+          "text": "Доп. урон при попадании атакой [Удар возмездия]"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Pummel",
+      "desc": "Denuncia danos {se_dmg:1204000011:SkillUIMindmgsum}-{se_dmg:1204000011:SkillUIMaxdmgsum} a inimigos 4 dentro do 4m e aumenta a Inimidade. 3 Stagger Gauge Danos",
+      "specs": [
+        {
+          "level": 8,
+          "text": "- 20% MP consumido."
+        },
+        {
+          "level": 8,
+          "text": "[Ataque punishing] absorve 3% HP"
+        },
+        {
+          "level": 8,
+          "text": "Comprou até 12% mais danos quando menos alvos foram atingidos."
+        },
+        {
+          "level": 12,
+          "text": "- 1s [Punishment ] arrefecer no hit"
+        },
+        {
+          "level": 16,
+          "text": "Dá danos extras no sucesso."
+        }
+      ]
+    }
+  },
+  "doom-shield": {
+    "id": "12070000",
+    "category": "stigma",
+    "icon": "doom-shield.webp",
+    "cooldown": 30000,
+    "en": {
+      "name": "Doom Shield",
+      "desc": "Rushes to a target within 20m and deals {se_dmg:1207000021:SkillUIMindmgsum}-{se_dmg:1207000021:SkillUIMaxdmgsum} damage. Has a 75% chance to inflict Knockdown for 3s. Grants a Protective Shield that blocks damage equaling 5% Max HP for 5s on hit. Triggers [Judgment] for 3s.\n100% chance to inflict Knockdown on NPC targets.\n\n20 Stagger Gauge Damage",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Resets [Annihilate] cooldown on hit"
+        },
+        {
+          "level": 10,
+          "text": "+200 Block for 5s on hit"
+        },
+        {
+          "level": 15,
+          "text": "Resets cooldown on defeating an enemy"
+        },
+        {
+          "level": 20,
+          "text": "+25% Knockdown Chance"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Щит погибели",
+      "desc": "Совершает рывок к цели в радиусе 20 м, наносит {se_dmg:1207000021:SkillUIMindmgsum}-{se_dmg:1207000021:SkillUIMaxdmgsum} урона и с шансом 75% сбивает ее с ног на 3s. При попадании на 5s получает защитную оболочку, равную 5% макс. ОЗ. При использовании активирует для цели [Суд] на 3s.\nДля NPC сбивание с ног срабатывает гарантированно. \n\nУрон по шкале ошеломления — 20 ед.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Завершение перезарядки [Истребления] при попадании"
+        },
+        {
+          "level": 10,
+          "text": "Блок +200 на 5s при попадании"
+        },
+        {
+          "level": 15,
+          "text": "Завершение перезарядки при уничтожении врага"
+        },
+        {
+          "level": 20,
+          "text": "Шанс сбить с ног +25%"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Doom Shield",
+      "desc": "Corre para um alvo dentro 20m e acordos. {se_dmg:1207000021:SkillUIMindmgsum}-{se_dmg:1207000021:SkillUIMaxdmgsum} damage. Has a 75% chance de infligir Knockdown para 3s. Grants a Protective Shield that blocks damage equaling 5% Max. HP para 5s on hit. Triggers [JudgmentPor... 3s.\n100% chance de infligir Knockdown em alvos da NPC.\n\n20 Danos no gauge",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Resets [ Annihilate ] recarga no hit"
+        },
+        {
+          "level": 10,
+          "text": "Bloco 200 para 5s em sucesso."
+        },
+        {
+          "level": 15,
+          "text": "Reinicia o recarga na derrota de um inimigo."
+        },
+        {
+          "level": 20,
+          "text": "+ 25% Knockdown Chance"
+        }
+      ]
+    }
+  },
+  "punishment": {
+    "id": "12090000",
+    "category": "active",
+    "icon": "punishment.webp",
+    "cooldown": 30000,
+    "en": {
+      "name": "Punishment",
+      "desc": "Selects a target within 20m and deals {se_dmg:1209000011:SkillUIMindmgsum}-{se_dmg:1209000311:SkillUIMaxdmgsum} damage to up to 4 enemies within 4m of the target and grants the Executor effect to the caster for 20s.\nExecutor: Increases Accuracy by 200, PvE Damage Boost by 20%, and PvP Damage Boost by 10%\n\nMax 3 Charge Levels\n20-35 Stagger Gauge Damage",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Absorbs 10% HP"
+        },
+        {
+          "level": 8,
+          "text": "Inflicts Damage over Time to target on hit"
+        },
+        {
+          "level": 8,
+          "text": "+30% Skill Speed"
+        },
+        {
+          "level": 12,
+          "text": "Changes to mobile skill"
+        },
+        {
+          "level": 16,
+          "text": "Ignores Block and Evasion and lands as a Critical Hit"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Кровавая месть",
+      "desc": "Наносит {se_dmg:1209000011:SkillUIMindmgsum}–{se_dmg:1209000311:SkillUIMaxdmgsum} урона врагам (макс. 4) в радиусе 4 м от цели в пределах 20 м и активирует эффект «Палач» на 20s.\nПалач: увелич. меткость на 200, усиление урона в PvE на 20% и усиление урона в PvP на 10%\n\nМакс. 3 стадии заряда\nУрон по шкале ошеломления — от 20 до 35 ед.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Поглощение 10% ОЗ"
+        },
+        {
+          "level": 8,
+          "text": "Нанесение постоянного урона цели при попадании"
+        },
+        {
+          "level": 8,
+          "text": "СКР умений +30%"
+        },
+        {
+          "level": 12,
+          "text": "Замена на умение с возможностью перемещения"
+        },
+        {
+          "level": 16,
+          "text": "Крит. удар, несмотря на блок и уклонение"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Punishment",
+      "desc": "Seleciona um alvo dentro do 20m e lida com danos {se_dmg:1209000011:SkillUIMindmgsum}-{se_dmg:1209000311:SkillUIMaxdmgsum} para até inimigos 4 dentro do 4m do alvo e concede o efeito executor ao lançador para o 20s. Executor: aumenta a precisão em 200, PvE aumenta os danos em 20% e PvP aumenta em 10% Max 3 Nível de carga 20 - 35 Danos no gauge do Stagger",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Absorve 10% HP"
+        },
+        {
+          "level": 8,
+          "text": "Inflige dano contínuo para atingir o alvo."
+        },
+        {
+          "level": 8,
+          "text": "+ 30% Velocidade de Habilidade"
+        },
+        {
+          "level": 12,
+          "text": "Mudanças na habilidade móvel."
+        },
+        {
+          "level": 16,
+          "text": "Ignora bloqueio e evacuação e aterrissa como um ataque crítico"
+        }
+      ]
+    }
+  },
+  "shield-smite": {
+    "id": "12100000",
+    "category": "active",
+    "icon": "shield-smite.webp",
+    "cooldown": 10000,
+    "en": {
+      "name": "Shield Smite",
+      "desc": "Deals {se_dmg:1210000011:SkillUIMindmgsum}-{se_dmg:1210000011:SkillUIMaxdmgsum} damage to up to 4 enemies within 4m. Has a 60% chance to inflict Stun on the target for 3s. Triggers [Judgment] for 2s.\n100% chance to inflict Stun on NPC targets.\n\n10 Stagger Gauge Damage",
+      "specs": [
+        {
+          "level": 8,
+          "text": "+1s Stun duration"
+        },
+        {
+          "level": 8,
+          "text": "Removes MP Cost and restores 200 MP on hit"
+        },
+        {
+          "level": 8,
+          "text": "50% chance to trigger [Debilitating Smash] on hit"
+        },
+        {
+          "level": 12,
+          "text": "-2s cooldown"
+        },
+        {
+          "level": 16,
+          "text": "AoE Stun"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Удар щитом",
+      "desc": "Наносит {se_dmg:1210000011:SkillUIMindmgsum}-{se_dmg:1210000011:SkillUIMaxdmgsum} урона врагам (макс. 4) в радиусе 4 м. С шансом 60% оглушает врагов на 3s. При использовании на 2s активируется [Суд].\nДля NPC оглушение срабатывает гарантированно.\n\nУрон по шкале ошеломления — 10 ед.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Длительность Оглушения +1 сек."
+        },
+        {
+          "level": 8,
+          "text": "Удаление затраты ОМ, восстановление 200 ОМ при попадании"
+        },
+        {
+          "level": 8,
+          "text": "Шанс 50% активировать [Удар изнеможения] при попадании"
+        },
+        {
+          "level": 12,
+          "text": "Перезарядка -2 сек."
+        },
+        {
+          "level": 16,
+          "text": "Оглушение по области"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Shield Smite",
+      "desc": "Acordos {se_dmg:1210000011:SkillUIMindmgsum}-{se_dmg:1210000011:SkillUIMaxdmgsum} Dano até 4 Inimigos dentro 4m. Tem um 60% A chance de infligir o Stun ao alvo. 3s. Triggers [JudgmentPor... 2s.\n100% chance de infligir Stun aos alvos da NPC.\n\n10 Danos no gauge",
+      "specs": [
+        {
+          "level": 8,
+          "text": "+ 1s duração de choque"
+        },
+        {
+          "level": 8,
+          "text": "Remove MP Custo e restaura 200 MP em sucesso"
+        },
+        {
+          "level": 8,
+          "text": "50% A chance de disparar.Debilitating Smash# No hit"
+        },
+        {
+          "level": 12,
+          "text": "- Arrefecer em 2s"
+        },
+        {
+          "level": 16,
+          "text": "AoE Stun"
+        }
+      ]
+    }
+  },
+  "battlefield-banner": {
+    "id": "12450000",
+    "category": "stigma",
+    "icon": "battlefield-banner.webp",
+    "cooldown": 90000,
+    "en": {
+      "name": "Battlefield Banner",
+      "desc": "Increases Attack proportional to Defense for 10s.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "+10% Multi-Hit Chance for duration"
+        },
+        {
+          "level": 10,
+          "text": "+10% Weapon Damage Boost for duration"
+        },
+        {
+          "level": 15,
+          "text": "+20% Attack increase proportional to Defense"
+        },
+        {
+          "level": 20,
+          "text": "-30s cooldown"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Боевое знамя",
+      "desc": "На 10s увеличивает АТК пропорционально ЗЩТ.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "+10% к шансу мультиудара во время действия"
+        },
+        {
+          "level": 10,
+          "text": "+10% к усилению урона от оружия во время действия"
+        },
+        {
+          "level": 15,
+          "text": "Эффект увеличения АТК пропорционально ЗЩТ +20%"
+        },
+        {
+          "level": 20,
+          "text": "Перезарядка -30 сек."
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Battlefield Banner",
+      "desc": "Aumenta o ataque proporcional à defesa para 10s.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "+ 10% Multi-Hit Chance para a duração"
+        },
+        {
+          "level": 10,
+          "text": "+ 10% Danos de Armas Aumentam a duração."
+        },
+        {
+          "level": 15,
+          "text": "+ Ataque 20% aumenta proporcionalmente à defesa"
+        },
+        {
+          "level": 20,
+          "text": "- Arrefecer em 30s"
+        }
+      ]
+    }
+  },
+  "shield-of-protection": {
+    "id": "12110000",
+    "category": "stigma",
+    "icon": "shield-of-protection.webp",
+    "cooldown": 20000,
+    "en": {
+      "name": "Shield of Protection",
+      "desc": "Temporarily increases Block Damage Reduction by 100% and guarantees Block. Restores 110 MP and Stamina once on Block.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "+1 consecutive use"
+        },
+        {
+          "level": 10,
+          "text": "Changes to mobile skill"
+        },
+        {
+          "level": 15,
+          "text": "+20% Move Speed for 3s on Block"
+        },
+        {
+          "level": 20,
+          "text": "Restores 10% HP once on Block"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Щит спасения",
+      "desc": "Временно увелич. снижение урона при блоке на 100% и обеспечивает гарантированный блок щитом. При успешном блоке восст. 110 ОМ и ОД 1 р.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Непрерывное использование +1 раз"
+        },
+        {
+          "level": 10,
+          "text": "Замена на умение с возможностью перемещения"
+        },
+        {
+          "level": 15,
+          "text": "СКР движ. +20% на 3s при успешном блоке"
+        },
+        {
+          "level": 20,
+          "text": "Восст. 10% ОЗ 1 раз при успешном блоке щитом"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Shield of Protection",
+      "desc": "Aumenta temporariamente a redução de danos em bloco por 100% e garante Block. Restaura 110 MP e Stamina uma vez no Block.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "+ 1 uso consecutivo"
+        },
+        {
+          "level": 10,
+          "text": "Mudanças na habilidade móvel."
+        },
+        {
+          "level": 15,
+          "text": "+ 20% Mova a velocidade para 3s no bloco"
+        },
+        {
+          "level": 20,
+          "text": "Restaura 10% HP uma vez no bloco"
+        }
+      ]
+    }
+  },
+  "taunt": {
+    "id": "12120000",
+    "category": "stigma",
+    "icon": "taunt.webp",
+    "cooldown": 30000,
+    "en": {
+      "name": "Taunt",
+      "desc": "Deals {se_dmg:1212000011:SkillUIMindmgsum}-{se_dmg:1212000011:SkillUIMaxdmgsum} damage to a target within 20m and increases Enmity. Inflict Shrink for 15s on hit and has a 50% chance to inflict Taunt for 3s if the target is a player.\nShrink: Reduces Accuracy by 200 and Attack by 10%\n\n20 Stagger Gauge Damage",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Adds 10% PvE Damage Tolerance reduction and 5% PvP Damage Tolerance reduction effect to Shrink"
+        },
+        {
+          "level": 10,
+          "text": "+10% Shrink Attack reduction"
+        },
+        {
+          "level": 15,
+          "text": "-5s cooldown"
+        },
+        {
+          "level": 20,
+          "text": "+2s Taunt duration, +5s Shrink duration"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Провокация",
+      "desc": "Наносит {se_dmg:1212000011:SkillUIMindmgsum}–{se_dmg:1212000011:SkillUIMaxdmgsum} урона цели в радиусе 20 м и увеличивает Враждебность. Если цель — другой персонаж, переводит противника в состояние смятения на 15s при попадании и с шансом 50% — в состояние провокации на 3s.\nСмятение: снижает меткость на 200, АТК на 10%.\n\nУрон по шкале ошеломления —  20 ед.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Снижение стойкости к урону в PvE на 10% и PvP на 5% при Смятении"
+        },
+        {
+          "level": 10,
+          "text": "Доп. сниж. АТК на 10% при смятении"
+        },
+        {
+          "level": 15,
+          "text": "Перезарядка -5 сек."
+        },
+        {
+          "level": 20,
+          "text": "Длительность Провокации +2 сек., длительность Смятении +5 сек."
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Taunt",
+      "desc": "Denuncia danos {se_dmg:1212000011:SkillUIMindmgsum}-{se_dmg:1212000011:SkillUIMaxdmgsum} em um alvo dentro do 20m e aumenta a Inimidade. Infligir encolher para 15s no sucesso e tem uma chance 50% de infligir Taunt para 3s se o alvo é um jogador. Reduz a precisão em 200 e o ataque em 10% 20 Stagger Gauge Danos",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Adiciona redução de tolerância de danos 10% PvE e efeito de redução de danos 5% PvP"
+        },
+        {
+          "level": 10,
+          "text": "+ Redução do ataque de encolhimento 10%"
+        },
+        {
+          "level": 15,
+          "text": "- Arrefecer em 5s"
+        },
+        {
+          "level": 20,
+          "text": "+ 2s Taunt duração, + 5s duração encolhimento"
+        }
+      ]
+    }
+  },
+  "poach": {
+    "id": "12130000",
+    "category": "active",
+    "icon": "poach.webp",
+    "cooldown": 15000,
+    "en": {
+      "name": "Poach",
+      "desc": "Deals {se_dmg:1213000011:SkillUIMindmgsum}-{se_dmg:1213000011:SkillUIMaxdmgsum} damage to a target within 20m and pulls them in front of the caster, with a 75% chance to inflict Root for 2s.\n100% chance to inflict Root on NPC targets. \n\n10 Stagger Gauge Damage",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Moves to the target if target has Incapacitated Immunity"
+        },
+        {
+          "level": 8,
+          "text": "-20% Status Effect Resist for 5s on hit"
+        },
+        {
+          "level": 8,
+          "text": "Resets cooldown on defeating an enemy"
+        },
+        {
+          "level": 12,
+          "text": "10% Max HP Protective Shield"
+        },
+        {
+          "level": 16,
+          "text": "50% chance to Stun for 3s"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Ловушка",
+      "desc": "Наносит {se_dmg:1213000011:SkillUIMindmgsum}-{se_dmg:1213000011:SkillUIMaxdmgsum} урона цели в радиусе 20 м, притягивает ее к себе и с шансом 75% берет в плен на 2s\nДля NPC плен срабатывает гарантированно.\n\nУрон по шкале ошеломления — 10 ед.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Перемещение к цели при наличии у нее иммунитета к обездвиживанию"
+        },
+        {
+          "level": 8,
+          "text": "-20% к сопротивлению негат. эффектам на 5s при попадании"
+        },
+        {
+          "level": 8,
+          "text": "Завершение перезарядки при уничтожении врага"
+        },
+        {
+          "level": 12,
+          "text": "Создание защитной оболочки, равной 10% от макс. ОЗ"
+        },
+        {
+          "level": 16,
+          "text": "50% шанс наложить Оглушение на 3s"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Poach",
+      "desc": "Lida com danos {se_dmg:1213000011:SkillUIMindmgsum}-{se_dmg:1213000011:SkillUIMaxdmgsum} em um alvo dentro do 20m e os puxa na frente do lançador, com uma chance 75% de infligir Root para o 2s. 100% chance de infligir Root em alvos da NPC. 10 Stagger Gauge Danos",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Move-se para o alvo se o alvo tem imunidade incapacitada"
+        },
+        {
+          "level": 8,
+          "text": "- Efeito 20% Status Resista para 5s no hit"
+        },
+        {
+          "level": 8,
+          "text": "Reinicia o recarga na derrota de um inimigo."
+        },
+        {
+          "level": 12,
+          "text": "10% Max HP Escudo protetor"
+        },
+        {
+          "level": 16,
+          "text": "50% chance de Stun para 3s"
+        }
+      ]
+    }
+  },
+  "second-skin": {
+    "id": "12190000",
+    "category": "stigma",
+    "icon": "second-skin.webp",
+    "cooldown": 90000,
+    "en": {
+      "name": "Second Skin",
+      "desc": "Increases PvE Damage Tolerance by 30% and PvP Damage Tolerance by 15% for 10s.\n\nUnaffected by cooldown increase effects.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "+10% all Element Tolerance for the duration"
+        },
+        {
+          "level": 10,
+          "text": "+20% Block for the duration"
+        },
+        {
+          "level": 15,
+          "text": "x1.5 [Ironclad Defense] effect for the duration"
+        },
+        {
+          "level": 20,
+          "text": "+20% PvE Damage Tolerance increase and +10% PvP Damage Tolerance increase"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Двойные доспехи",
+      "desc": "Увеличивает стойкость к урону в PvE на 30% и стойкость к урону в PvP на 15% на 10s.\n\nЭффекты увеличения времени перезарядки не действуют.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "+10% к стойкости ко всем стихиям во время действия"
+        },
+        {
+          "level": 10,
+          "text": "+20% к блоку во время действия"
+        },
+        {
+          "level": 15,
+          "text": "Эффект [Несокрушимой защиты] x1,5 во время действия"
+        },
+        {
+          "level": 20,
+          "text": "+20% к стойкости к урону в PvE и +10% к стойкости к урону в PvP"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Second Skin",
+      "desc": "Aumenta a tolerância aos danos PvE em 30% e PvP em 15% para 10s. Não afetado pelo efeito de recarga.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "+ 10% todos os elementos tolerância para a duração"
+        },
+        {
+          "level": 10,
+          "text": "+ 20% Bloqueio para a duração"
+        },
+        {
+          "level": 15,
+          "text": "x1.5 [Ironclad DefenseEfeito para a duração"
+        },
+        {
+          "level": 20,
+          "text": "+ 20% PvE Aumento da tolerância aos danos e + 10% PvP Aumento da tolerância aos danos"
+        }
+      ]
+    }
+  },
+  "armor-of-balance": {
+    "id": "12200000",
+    "category": "stigma",
+    "icon": "armor-of-balance.webp",
+    "cooldown": 90000,
+    "en": {
+      "name": "Armor of Balance",
+      "desc": "Increases Impact-type Resist by 50% for 10s.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "+20% Ailment-type, Mental-type Resist for the duration"
+        },
+        {
+          "level": 10,
+          "text": "+20% Move Speed for the duration"
+        },
+        {
+          "level": 15,
+          "text": "x1.5 [Warding Shield] effect for the duration"
+        },
+        {
+          "level": 20,
+          "text": "+50% Impact-type Resist increase"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Доспехи баланса",
+      "desc": "На 10s увеличивает сопротивление шок. эффектам на 50%.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "+20% к сопротивлению физ. и псих. эффектам во время действия"
+        },
+        {
+          "level": 10,
+          "text": "+20% к СКР движ. во время действия умения"
+        },
+        {
+          "level": 15,
+          "text": "Эффект [Священный щит] x1,5 во время действия"
+        },
+        {
+          "level": 20,
+          "text": "+50% к сопротивлению шок. эффектам"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Armor of Balance",
+      "desc": "Aumenta a resistência do tipo impacto em 50% para 10s.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "+ 20% tipo doença, tipo mental Resista por toda a duração"
+        },
+        {
+          "level": 10,
+          "text": "+ 20% Move Speed para a duração."
+        },
+        {
+          "level": 15,
+          "text": "x1.5 [Warding ShieldEfeito para a duração"
+        },
+        {
+          "level": 20,
+          "text": "+ 50% Tipo de impacto Aumento de resistência"
+        }
+      ]
+    }
+  },
+  "grapple": {
+    "id": "12220000",
+    "category": "stigma",
+    "icon": "grapple.webp",
+    "cooldown": 90000,
+    "en": {
+      "name": "Grapple",
+      "desc": "Selects a target within 20m and deals {se_dmg:1222000011:SkillUIMindmgsum}-{se_dmg:1222000011:SkillUIMaxdmgsum} damage to up to 4 enemies within 7m of the target, pulling them in front of the caster. Inflicts Root for 3s.\n\n20 Stagger Gauge Damage",
+      "specs": [
+        {
+          "level": 5,
+          "text": "50% chance to inflict Stun for 3s on hit"
+        },
+        {
+          "level": 10,
+          "text": "20% of Max HP as Protective Shield for 10s on use"
+        },
+        {
+          "level": 15,
+          "text": "-30s cooldown"
+        },
+        {
+          "level": 20,
+          "text": "Up to +20% PvE Damage Tolerance and +10% PvP Damage Tolerance when more targets hit"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Задержание",
+      "desc": "Выберите цель в радиусе 20 м, нанесите {se_dmg:1222000011:SkillUIMindmgsum}–{se_dmg:1222000011:SkillUIMaxdmgsum} урона врагам (макс. 4) в радиусе 7 м от цели и притяните их в положение перед собой. Накладывает Сковывание на 3s.\n\n20 ед. урона по шкале Истощения",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Шанс 50% наложить Оглушение на 3s при попадании"
+        },
+        {
+          "level": 10,
+          "text": "Получение защитной оболочки, равной 20% от макс. ОЗ, на 10s при применении умения"
+        },
+        {
+          "level": 15,
+          "text": "Перезарядка -30 сек."
+        },
+        {
+          "level": 20,
+          "text": "Чем больше целей попадания, тем больше увеличение стойкости к урону в PvE (макс. до  20%) и PvP (макс. до 10%)"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Grapple",
+      "desc": "Seleciona um alvo dentro do 20m e lida com danos {se_dmg:1222000011:SkillUIMindmgsum}-{se_dmg:1222000011:SkillUIMaxdmgsum} para até inimigos 4 dentro do 7m do alvo, puxando-os na frente do lançador. Inflige Root para 3s. 20 Stagger Gauge Danos",
+      "specs": [
+        {
+          "level": 5,
+          "text": "50% chance de infligir Stun para 3s em sucesso"
+        },
+        {
+          "level": 10,
+          "text": "20% de Max HP como escudo protetor para 10s em uso."
+        },
+        {
+          "level": 15,
+          "text": "- Arrefecer em 30s"
+        },
+        {
+          "level": 20,
+          "text": "Até + 20% PvE Tolerância de danos e + 10% PvP Tolerância de danos quando mais alvos atingirem"
+        }
+      ]
+    }
+  },
+  "noble-armor": {
+    "id": "12230000",
+    "category": "stigma",
+    "icon": "noble-armor.webp",
+    "cooldown": 120000,
+    "en": {
+      "name": "Noble Armor",
+      "desc": "Increases Max HP by 5.4% for 120s and immediately restores HP by 5.4% of Max HP.\n\nNot affected by buff dispel effects.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "+5% Defense for the duration"
+        },
+        {
+          "level": 10,
+          "text": "x1.5 [Insulting Roar] effect for the duration"
+        },
+        {
+          "level": 15,
+          "text": "x1.5 [Fury] effect for the duration"
+        },
+        {
+          "level": 20,
+          "text": "+10% Incoming Heal for the duration"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Благородные доспехи",
+      "desc": "Увелич. макс. ОЗ на 5.4% и мгновенно восст. 5.4% макс. ОЗ в теч. 120s.\n\nЭффекты маг. усиления не действуют.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "+5% к ЗЩТ во время действия"
+        },
+        {
+          "level": 10,
+          "text": "Эффект [Неповиновение] x1,5 во время действия"
+        },
+        {
+          "level": 15,
+          "text": "Эффект [Ярости] x1,5 во время действия"
+        },
+        {
+          "level": 20,
+          "text": "+10% к получ. исцелению во время действия"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Noble Armor",
+      "desc": "Aumenta Max HP em 5.4% para 120s e restaura imediatamente HP em 5.4% de Max HP. Não afetado pelos efeitos de dissipação.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "+ 5% Defesa para a duração"
+        },
+        {
+          "level": 10,
+          "text": "x1.5 [Insulting RoarEfeito para a duração"
+        },
+        {
+          "level": 15,
+          "text": "x1.5 [FuryEfeito para a duração"
+        },
+        {
+          "level": 20,
+          "text": "+ 10% Chegando Cura para a duração"
+        }
+      ]
+    }
+  },
+  "judgment": {
+    "id": "12240000",
+    "category": "active",
+    "icon": "judgment.webp",
+    "cooldown": 5000,
+    "en": {
+      "name": "Judgment",
+      "desc": "Deals {se_dmg:1224000011:SkillUIMindmgsum}-{se_dmg:1224000011:SkillUIMaxdmgsum} damage to a target within 4m and increases Enmity.\n\n5 Stagger Gauge Damage",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Absorbs 1% HP"
+        },
+        {
+          "level": 8,
+          "text": "Deals extra damage on attacking a target afflicted with Impact-type status"
+        },
+        {
+          "level": 8,
+          "text": "Extra damage on hit"
+        },
+        {
+          "level": 12,
+          "text": "Critical Hit on hit"
+        },
+        {
+          "level": 16,
+          "text": "Remove cooldown"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Суд",
+      "desc": "Наносит {se_dmg:1224000011:SkillUIMindmgsum}-{se_dmg:1224000011:SkillUIMaxdmgsum} урона цели в радиусе 4 м и увеличивает Враждебность при использовании умения со щитом.\n\nУрон по шкале ошеломления — 5 ед.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Поглощение 1% ОЗ"
+        },
+        {
+          "level": 8,
+          "text": "Доп. урон при атаке цели под воздействием шок. эффектов"
+        },
+        {
+          "level": 8,
+          "text": "Доп. урон при попадании"
+        },
+        {
+          "level": 12,
+          "text": "Гарантир. крит. удар при попадании"
+        },
+        {
+          "level": 16,
+          "text": "Убирает перезарядку"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Judgment",
+      "desc": "Denuncia danos {se_dmg:1224000011:SkillUIMindmgsum}-{se_dmg:1224000011:SkillUIMaxdmgsum} em um alvo dentro do 4m e aumenta a Inimidade. 5 Stagger Gauge Danos",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Absorve 1% HP"
+        },
+        {
+          "level": 8,
+          "text": "Detecta danos extras ao atacar um alvo com status de impacto."
+        },
+        {
+          "level": 8,
+          "text": "Dano extra no golpe."
+        },
+        {
+          "level": 12,
+          "text": "Ataque crítico no sucesso."
+        },
+        {
+          "level": 16,
+          "text": "Remova a recarga."
+        }
+      ]
+    }
+  },
+  "comrade-in-arms": {
+    "id": "12250000",
+    "category": "stigma",
+    "icon": "comrade-in-arms.webp",
+    "cooldown": 120000,
+    "en": {
+      "name": "Comrade in Arms",
+      "desc": "Increases the caster's PvE Damage Tolerance by 20% and PvP Damage Tolerance by 10% and redirects damage taken by a party member within 40m each time they are attacked, sharing 50% to the caster and 50% to the attacked party member for 6s.\n\nUnaffected by cooldown increase effects.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Restores 25% of Max HP once if hit during Comrade in Arms while HP is 25% or less"
+        },
+        {
+          "level": 10,
+          "text": "x1.5 [Guarding Seal] Protective Shield effect for the duration"
+        },
+        {
+          "level": 15,
+          "text": "x1.5 [Block Pain] effect for the duration"
+        },
+        {
+          "level": 20,
+          "text": "Restores 50% of caster's Max HP when the effect ends"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Плечом к плечу",
+      "desc": "Увеличивает стойкость к урону в PvE на 20% и стойкость к урону в PvP на 10%. Каждый раз, когда участник команды в радиусе 40 м получает урон, часть урона перенаправляется: 50% — на персонажа и 50% — на атакованного участника команды, на протяжении 6s.\n\nЭффекты увеличения времени перезарядки не действуют.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Восст. 25% от макс. ОЗ 1 р. при получении атаки во время действия эффекта, если ОЗ не выше 25%"
+        },
+        {
+          "level": 10,
+          "text": "Эффект [Печать защиты] x1,5 во время действия"
+        },
+        {
+          "level": 15,
+          "text": "Эффект [Избавления] x1,5 во время действия"
+        },
+        {
+          "level": 20,
+          "text": "Восстанавливает 50% от макс. ОЗ заклинателя при завершении действия эффекта."
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Comrade in Arms",
+      "desc": "Aumenta a tolerância de danos PvE do lançador por 20% e PvP Tolerância de danos 10% e redireciona danos causados por um membro do partido dentro do 40m cada vez que são atacados, compartilhando 50% para o lançador e 50% para o membro do partido atacado por 6s. Não afetado pelo efeito de recarga.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Restaura 25% de Max HP uma vez se atingido durante Comrade in Arms enquanto HP é 25% ou menos"
+        },
+        {
+          "level": 10,
+          "text": "x1.5 [Guarding SealEfeito protetor durante a duração."
+        },
+        {
+          "level": 15,
+          "text": "x1.5 [Block PainEfeito para a duração"
+        },
+        {
+          "level": 20,
+          "text": "Restaura 50% de Max HP do lançador quando o efeito terminar."
+        }
+      ]
+    }
+  },
+  "defiance": {
+    "id": "12260000",
+    "category": "active",
+    "icon": "defiance.webp",
+    "cooldown": 60000,
+    "en": {
+      "name": "Defiance",
+      "desc": "Removes Stun, Knockdown, Airborne, Grab, Frost, and Fear from the caster and grants Tenacity for 5s.\nTenacity: Grants Status Effect Immunity\n\nUnaffected by cooldown reduction effects.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Adds [Capture] Chain Skill"
+        },
+        {
+          "level": 8,
+          "text": "Restores 1000 Stamina on using [Defiance]"
+        },
+        {
+          "level": 8,
+          "text": "Restores 20% HP on using [Defiance]"
+        },
+        {
+          "level": 12,
+          "text": "+2s Tenacity duration"
+        },
+        {
+          "level": 16,
+          "text": "+50% PvE Damage Tolerance and +25% PvP Damage Tolerance for Tenacity duration"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Снятие шока",
+      "desc": "Отменяет эффекты Оглушения, Сбивания с ног, Воздушные оковы, захват, Заморозку и Ужас на 5s активирует для персонажа Непреклонность.\nНепреклонность: иммунитет к негат. эффектам\n\nЭффекты снижения времени перезарядки не действуют.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Добавляет 2-ное комбо [Взять живьем]"
+        },
+        {
+          "level": 8,
+          "text": "При использовании [Снятия шока] восстанавливает 1000 ОД"
+        },
+        {
+          "level": 8,
+          "text": "При использовании [Снятия шока] восстанавливает 20% ОЗ"
+        },
+        {
+          "level": 12,
+          "text": "Длительность Непреклонности +2 сек."
+        },
+        {
+          "level": 16,
+          "text": "Стойкость к урону в PvE +50% и стойкость к урону в PvP +25% во время действия Непреклонности"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Defiance",
+      "desc": "Remove Stun, Knockdown, Airborne, Grab, Frost e Medo do lançador e concede Tenacidade para 5s. Tenacidade: Efeito da Imunidade. Não afetado pelos efeitos de redução do recarga.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Adiciona a habilidade da corrente"
+        },
+        {
+          "level": 8,
+          "text": "Restaura a resistência 1000 usando o Defiance"
+        },
+        {
+          "level": 8,
+          "text": "Restaura 20% HP usando [Defiance ]"
+        },
+        {
+          "level": 12,
+          "text": "+ 2s Duração da tenacidade"
+        },
+        {
+          "level": 16,
+          "text": "+ 50% PvE Tolerância de danos e 25% PvP Tolerância de danos por duração de tenacidade"
+        }
+      ]
+    }
+  },
+  "debilitating-smash": {
+    "id": "12270000",
+    "category": "active",
+    "icon": "debilitating-smash.webp",
+    "cooldown": 10000,
+    "en": {
+      "name": "Debilitating Smash",
+      "desc": "Deals {se_dmg:1227000011:SkillUIMindmgsum}-{se_dmg:1227000011:SkillUIMaxdmgsum} damage to up to 4 enemies within 4m and inflicts Debilitate for 5s on Block.\nDebilitate: Reduces Defense by 25%\n\n10 Stagger Gauge Damage",
+      "specs": [
+        {
+          "level": 8,
+          "text": "30% chance to inflict Stun for 3s"
+        },
+        {
+          "level": 8,
+          "text": "+3s Debilitate duration"
+        },
+        {
+          "level": 8,
+          "text": "-60% Incoming Heal during Debilitate"
+        },
+        {
+          "level": 12,
+          "text": "Ignores Block and Evasion and lands as Multi-Hit"
+        },
+        {
+          "level": 16,
+          "text": "25% chance to reset cooldown on Block"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Удар изнеможения",
+      "desc": "При успешном блоке наносит {se_dmg:1227000011:SkillUIMindmgsum}-{se_dmg:1227000011:SkillUIMaxdmgsum} урона врагам (макс. 4) в радиусе 4 м и активирует ослабление «Истощение» на 5s\nИстощение: ЗЩТ -25%\n\nУрон по шкале ошеломления — 10 ед.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Шанс 30% оглушить на 3s"
+        },
+        {
+          "level": 8,
+          "text": "Длительность Изнеможения +3 сек."
+        },
+        {
+          "level": 8,
+          "text": "Получ. исцеление -60% при истощении"
+        },
+        {
+          "level": 12,
+          "text": "Игнорирование блока и УКЛ, попадание мультиударом"
+        },
+        {
+          "level": 16,
+          "text": "Шанс 25% сбросить время перезарядки при успешном блоке"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Debilitating Smash",
+      "desc": "Denuncia danos {se_dmg:1227000011:SkillUIMindmgsum}-{se_dmg:1227000011:SkillUIMaxdmgsum} a inimigos 4 dentro do 4m e inflige debilitação para 5s no Bloco. Debilitar: reduz a defesa em 25% 10 Stagger Gauge Danos",
+      "specs": [
+        {
+          "level": 8,
+          "text": "30% chance de infligir Stun para 3s"
+        },
+        {
+          "level": 8,
+          "text": "+ 3s Debilitar duração"
+        },
+        {
+          "level": 8,
+          "text": "- 60% vindo curar durante a debilitação"
+        },
+        {
+          "level": 12,
+          "text": "Ignore Block e Evasion e pouse como Multi-Hit."
+        },
+        {
+          "level": 16,
+          "text": "25% chance de reiniciar o recarga no bloco"
+        }
+      ]
+    }
+  },
+  "annihilate": {
+    "id": "12300000",
+    "category": "active",
+    "icon": "annihilate.webp",
+    "cooldown": 20000,
+    "en": {
+      "name": "Annihilate",
+      "desc": "Deals {se_dmg:1230000011:SkillUIMindmgsum}-{se_dmg:1230000011:SkillUIMaxdmgsum} damage to a target afflicted with Stun or Knockdown within 4m with a 30% chance to inflict Knockdown for 3s.\n100% chance to inflict Knockdown on NPC targets.\nHas a 5% chance to trigger when attacking a target with Incapacitated Immunity.\n\n10 Stagger Gauge Damage",
+      "specs": [
+        {
+          "level": 8,
+          "text": "+50% Multi-Hit on hit"
+        },
+        {
+          "level": 8,
+          "text": "+20% Knockdown Chance"
+        },
+        {
+          "level": 8,
+          "text": "+100% damage to targets with Incapacitated Immunity"
+        },
+        {
+          "level": 12,
+          "text": "-10s cooldown"
+        },
+        {
+          "level": 16,
+          "text": "Changes to AoE Skill"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Истребление",
+      "desc": "Наносит {se_dmg:1230000011:SkillUIMindmgsum}–{se_dmg:1230000011:SkillUIMaxdmgsum} урона оглушенной или сбитой с ног цели в радиусе 4 м с шансом 30% сбить с ног на 3s.\nДля NPC сбивание с ног применяется гарантированно.\nАктивируется с шансом 5% при атаке цели с иммунитетом к обездвиживанию.\n\nУрон по шкале ошеломления — 10 ед.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Шанс мультиудара +50% при попадании"
+        },
+        {
+          "level": 8,
+          "text": "Шанс сбить с ног +20%"
+        },
+        {
+          "level": 8,
+          "text": "+100% к урону по целям с иммунитетом к обездвиживанию"
+        },
+        {
+          "level": 12,
+          "text": "Перезарядка -10 сек."
+        },
+        {
+          "level": 16,
+          "text": "Смена на массовое умение"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Annihilate",
+      "desc": "Lida com danos {se_dmg:1230000011:SkillUIMindmgsum}-{se_dmg:1230000011:SkillUIMaxdmgsum} em um alvo atingido por Stun ou Knockdown dentro do 4m com uma chance 30% de infligir Knockdown para o 3s. 100% chance de infligir Knockdown em alvos da NPC. Tem uma chance 5% de disparar ao atacar um alvo com imunidade incapacitada. 10 Stagger Gauge Danos",
+      "specs": [
+        {
+          "level": 8,
+          "text": "+ 50% Multi-Hit no hit"
+        },
+        {
+          "level": 8,
+          "text": "+ 20% Knockdown Chance"
+        },
+        {
+          "level": 8,
+          "text": "Dano 100% em alvos com imunidade incapacitada."
+        },
+        {
+          "level": 12,
+          "text": "- Arrefecer em 10s"
+        },
+        {
+          "level": 16,
+          "text": "Mudanças para AoE Skill"
+        }
+      ]
+    }
+  },
+  "empyrean-lords-punishment": {
+    "id": "12310000",
+    "category": "stigma",
+    "icon": "empyrean-lords-punishment.webp",
+    "cooldown": 60000,
+    "en": {
+      "name": "Empyrean Lord's Punishment",
+      "desc": "Selects a target within 20m and deals {se_dmg:1231000011:SkillUIMindmgsum}-{se_dmg:1231000011:SkillUIMaxdmgsum} damage to up to 4 enemies within 4m of the target with a 50% chance to inflict Stun for 3s.\n100% chance to inflict Stun on NPC targets.\n\n50 Stagger Gauge Damage",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Up to +20% damage when less targets hit"
+        },
+        {
+          "level": 10,
+          "text": "+50 Stagger Gauge Damage"
+        },
+        {
+          "level": 15,
+          "text": "+10% PvE Damage Boost and +5% PvP Damage Boost for 10s on hit"
+        },
+        {
+          "level": 20,
+          "text": "+25% Stun Chance"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Кара Владыки Эмпирея",
+      "desc": "Выберите цель в радиусе 20 м и нанесите {se_dmg:1231000011:SkillUIMindmgsum}–{se_dmg:1231000011:SkillUIMaxdmgsum} урона врагам (макс. 4) в радиусе 4 м от цели с шансом 50% наложить Оглушение на 3s.\nС шансом 100% накладывает Оглушение на NPC-цели.\n\n50 ед. урона по шкале Истощения",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Чем меньше целей попадания, тем больше увелич. урона (макс. до 20%)"
+        },
+        {
+          "level": 10,
+          "text": "Урон по шкале Ошеломления +50"
+        },
+        {
+          "level": 15,
+          "text": "Увеличение урона в PvE +10%, увеличение урона в PvP +5% на 10s при попадании"
+        },
+        {
+          "level": 20,
+          "text": "Шанс Оглушения +25%"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Empyrean Lord's Punishment",
+      "desc": "Seleciona um alvo dentro do 20m e lida com danos {se_dmg:1231000011:SkillUIMindmgsum}-{se_dmg:1231000011:SkillUIMaxdmgsum} para até inimigos 4 dentro do 4m do alvo com uma chance 50% de infligir Stun para o 3s. 100% chance de infligir Stun em alvos da NPC. 50 Stagger Gauge Danos",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Até + 20% dano quando menos alvos atingem"
+        },
+        {
+          "level": 10,
+          "text": "+ Dano 50 Stagger Gauge"
+        },
+        {
+          "level": 15,
+          "text": "+ 10% PvE Danos Aumentam e + 5% PvP Danos Aumentam para 10s em sucesso"
+        },
+        {
+          "level": 20,
+          "text": "+ 25% Stun Chance"
+        }
+      ]
+    }
+  },
+  "nezekans-shield": {
+    "id": "12320000",
+    "category": "stigma",
+    "icon": "nezekans-shield.webp",
+    "cooldown": 60000,
+    "en": {
+      "name": "Nezekan's Shield",
+      "desc": "Grants a Protective Shield that blocks damage equaling 41% of Max HP for 3s to the caster and nearby party members within 40m.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "+20% all Element Tolerance for Protective Shield duration"
+        },
+        {
+          "level": 10,
+          "text": "+2s Protective Shield duration"
+        },
+        {
+          "level": 15,
+          "text": "+20% PvE Damage Tolerance and +10% PvP Damage Tolerance for Protective Shield duration"
+        },
+        {
+          "level": 20,
+          "text": "Restores 20% of Max HP when Protective Shield is removed"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Щит Неджакана",
+      "desc": "На 3s создает для себя и участников группы в радиусе 40 м защитную оболочку, блокирующую урон, равный 41% макс. ОЗ.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Стойкость ко всем стихиям +20% во время действия защитной оболочки"
+        },
+        {
+          "level": 10,
+          "text": "Длительность защитной оболочки +2 сек."
+        },
+        {
+          "level": 15,
+          "text": "Стойкость к урону в PvE +20%, стойкость к урону в PvP +10% во время действия защитной оболочки"
+        },
+        {
+          "level": 20,
+          "text": "Восстановление 20% от макс. ОЗ при снятии защитной оболочки"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Nezekan's Shield",
+      "desc": "Concede um escudo protetor que bloqueia danos iguais a 41% de Max HP para 3s para o lançador e membros próximos do partido dentro do 40m.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "+ 20% todos os elementos tolerância para a duração escudo protetor"
+        },
+        {
+          "level": 10,
+          "text": "+ 2s Escudo protetor duração"
+        },
+        {
+          "level": 15,
+          "text": "+ Tolerância de danos 20% PvE e + Tolerância de danos 10% PvP para a duração do escudo protetor"
+        },
+        {
+          "level": 20,
+          "text": "Restaura 20% de Max HP quando escudo protetor é removido"
+        }
+      ]
+    }
+  },
+  "flash-rampage": {
+    "id": "12340000",
+    "category": "active",
+    "icon": "flash-rampage.webp",
+    "cooldown": 0,
+    "en": {
+      "name": "Flash Rampage",
+      "desc": "Deals {se_dmg:1234000011:SkillUIMindmgsum}-{se_dmg:1234000011:SkillUIMaxdmgsum} damage to a target afflicted with Stagger within 4m and increases Enmity.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Absorbs 5% HP"
+        },
+        {
+          "level": 8,
+          "text": "Restores 120 MP on hit"
+        },
+        {
+          "level": 8,
+          "text": "Changes to mobile skill"
+        },
+        {
+          "level": 12,
+          "text": "Multi-Hit on hit"
+        },
+        {
+          "level": 16,
+          "text": "-1s to all skill cooldowns on hit"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Сияющий клинок",
+      "desc": "Наносит {se_dmg:1234000011:SkillUIMindmgsum}-{se_dmg:1234000011:SkillUIMaxdmgsum} урона цели в состоянии Ошеломления в радиусе 4 м и увеличивает враждебность.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Поглощение 5% ОЗ"
+        },
+        {
+          "level": 8,
+          "text": "Восстановление 120 ОМ при попадании"
+        },
+        {
+          "level": 8,
+          "text": "Замена на умение с возможностью перемещения"
+        },
+        {
+          "level": 12,
+          "text": "Гарантир. мультиудар при попадании"
+        },
+        {
+          "level": 16,
+          "text": "Перезарядка всех умений -1s при попадании"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Flash Rampage",
+      "desc": "Lida com danos {se_dmg:1234000011:SkillUIMindmgsum}-{se_dmg:1234000011:SkillUIMaxdmgsum} em um alvo atingido com Stagger dentro do 4m e aumenta a Inimidade.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Absorve 5% HP"
+        },
+        {
+          "level": 8,
+          "text": "Restaura 120 MP no hit"
+        },
+        {
+          "level": 8,
+          "text": "Mudanças na habilidade móvel."
+        },
+        {
+          "level": 12,
+          "text": "Multi-Hit na batida"
+        },
+        {
+          "level": 16,
+          "text": "- 1s para todos os destrezas em sucesso"
+        }
+      ]
+    }
+  },
+  "warding-strike": {
+    "id": "12350000",
+    "category": "active",
+    "icon": "warding-strike.webp",
+    "cooldown": 30000,
+    "en": {
+      "name": "Warding Strike",
+      "desc": "Deals {se_dmg:1235000011:SkillUIMindmgsum}-{se_dmg:1235000011:SkillUIMaxdmgsum} damage to up to 4 enemies within 5m of the caster. Immediately restores 180-198 HP and grants Warding to the caster for 10s. Triggers [Judgment] for 2s.\nWarding: Increases PvE Damage Tolerance by 20% and PvP Damage Tolerance by 10%\n\n5 Stagger Gauge Damage",
+      "specs": [
+        {
+          "level": 8,
+          "text": "-5s cooldown"
+        },
+        {
+          "level": 8,
+          "text": "+100 Block during Warding"
+        },
+        {
+          "level": 8,
+          "text": "Heal over Time during Warding"
+        },
+        {
+          "level": 12,
+          "text": "Adds PvE Damage Tolerance and PvP Damage Tolerance increase effect when more targets hit to Warding"
+        },
+        {
+          "level": 16,
+          "text": "+10% PvE Damage Tolerance and +5% PvP Damage Tolerance to party members on skill use"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Кара хранителя",
+      "desc": "Наносит {se_dmg:1235000011:SkillUIMindmgsum}–{se_dmg:1235000011:SkillUIMaxdmgsum} урона врагам (макс. 4) в радиусе 5 м. Мгновенно восст. 180–198 ОЗ и активирует эффект Покровительства на 10s. При использовании на 2s активирует [Суд].\nПокровительство: увелич. стойкость к урону в PvE на 20%, стойкость к урону в PvP на 10%\n\nУрон по шкале ошеломления — 5 ед.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Перезарядка -5 сек."
+        },
+        {
+          "level": 8,
+          "text": "Блок +100 во время Протекции"
+        },
+        {
+          "level": 8,
+          "text": "Эффект продолжительного восстановления во время Протекции"
+        },
+        {
+          "level": 12,
+          "text": "Чем больше целей попадания, тем больше увеличение эффекта стойкости к урону в PvE и стойкости к урону PvP от Протекции"
+        },
+        {
+          "level": 16,
+          "text": "Стойкость к урону в PvE участников группы +10%, стойкость к урону в PvP участников группы +5% при использовании умения"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Warding Strike",
+      "desc": "Acordos {se_dmg:1235000011:SkillUIMindmgsum}-{se_dmg:1235000011:SkillUIMaxdmgsum} Dano até 4 Inimigos dentro 5m of the caster. Immediately restores 180-198 HP e concede Warding para o elenco para 10s. Triggers [JudgmentPor... 2s.\nWarding: Increases PvE Danos Tolerância por 20% e PvP Danos Tolerância por 10%\n\n5 Danos no gauge",
+      "specs": [
+        {
+          "level": 8,
+          "text": "- Arrefecer em 5s"
+        },
+        {
+          "level": 8,
+          "text": "+ 100 Bloqueio durante Warding"
+        },
+        {
+          "level": 8,
+          "text": "Cure o tempo durante a Warding."
+        },
+        {
+          "level": 12,
+          "text": "Adiciona tolerância aos danos PvE e tolerância aos danos PvP aumentam o efeito quando mais alvos atingem Warding."
+        },
+        {
+          "level": 16,
+          "text": "+ 10% PvE Tolerância de danos e 5% PvP Tolerância de danos a membros do partido em uso de habilidade"
+        }
+      ]
+    }
+  },
+  "executing-blade": {
+    "id": "12410000",
+    "category": "stigma",
+    "icon": "executing-blade.webp",
+    "cooldown": 45000,
+    "en": {
+      "name": "Executing Blade",
+      "desc": "Deals  {se_dmg:1241000011:SkillUIMindmgsum}-{se_dmg:1241000011:SkillUIMaxdmgsum} damage to up to 4 enemies within 4m and reduces Defense by 30% for 5s. Deals 20% more damage on attacking a target inflicted with Impact-type status.\n\n20 Stagger Gauge Damage",
+      "specs": [
+        {
+          "level": 5,
+          "text": "-15s cooldown"
+        },
+        {
+          "level": 10,
+          "text": "Inflict Exposed for 5s on hit"
+        },
+        {
+          "level": 15,
+          "text": "Critical Hit on hit"
+        },
+        {
+          "level": 20,
+          "text": "+30% damage on attacking a target inflicted with Impact-type status"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Меч наказания",
+      "desc": "Наносит  {se_dmg:1241000011:SkillUIMindmgsum}–{se_dmg:1241000011:SkillUIMaxdmgsum} урона врагам (макс. 4) в радиусе 4 м и снижает ЗЩТ на 30% на 5s. При атаке цели под воздействием шок. негат. эффектов наносит на 20% больше урона.\n\nУрон по шкале ошеломления — 20 ед.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Перезарядка -15 сек."
+        },
+        {
+          "level": 10,
+          "text": "Активирует Уязвимость на 5s при попадании"
+        },
+        {
+          "level": 15,
+          "text": "Гарантир. крит. удар при попадании"
+        },
+        {
+          "level": 20,
+          "text": "+30% к урону при атаке цели под воздействием шок. эффекта"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Executing Blade",
+      "desc": "Acordos  {se_dmg:1241000011:SkillUIMindmgsum}-{se_dmg:1241000011:SkillUIMaxdmgsum} Dano até 4 Inimigos dentro 4m e reduz a defesa por 30% para 5s. Deals 20% Mais danos no ataque de um alvo infligido com o status do tipo Impacto.\n\n20 Danos no gauge",
+      "specs": [
+        {
+          "level": 5,
+          "text": "- Arrefecer em 15s"
+        },
+        {
+          "level": 10,
+          "text": "\"Infligir Exposto para 5s em sucesso\""
+        },
+        {
+          "level": 15,
+          "text": "Ataque crítico no sucesso."
+        },
+        {
+          "level": 20,
+          "text": "+ Dano 30% em atacar um alvo infligido com o tipo de impacto."
+        }
+      ]
+    }
+  },
+  "shield-rush": {
+    "id": "12430000",
+    "category": "active",
+    "icon": "shield-rush.webp",
+    "cooldown": 20000,
+    "en": {
+      "name": "Shield Rush",
+      "desc": "Rushes to a target within 10m and deals {se_dmg:1243000021:SkillUIMindmgsum}-{se_dmg:1243000021:SkillUIMaxdmgsum} damage after using [Dodge] or while flying. Has a 30% chance to inflict Stun for 3s. Triggers [Judgment] for 2s.\n100% chance to inflict Stun on NPC targets.\n\n20 Stagger Gauge Damage",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Restores 300 Stamina on hit"
+        },
+        {
+          "level": 8,
+          "text": "+10m range"
+        },
+        {
+          "level": 8,
+          "text": "Changes to Charge Skill and deals AoE damage"
+        },
+        {
+          "level": 12,
+          "text": "-10s cooldown"
+        },
+        {
+          "level": 16,
+          "text": "+25% Stun Chance"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Удар щитом",
+      "desc": "При использовании [Срочного уклонения] или в состоянии полета рывком перемещается к цели в радиусе 10 м и наносит {se_dmg:1243000021:SkillUIMindmgsum}-{se_dmg:1243000021:SkillUIMaxdmgsum} урона. С шансом 30% оглушает ее на 3s. Восстанавливает  ОД при успешном попадании. При использовании на 2s активируется [Суд]\nДля NPC оглушение срабатывает гарантированно.\n\nУрон по шкале ошеломления — 20 ед.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Восстанавливает 300 ОД при попадании"
+        },
+        {
+          "level": 8,
+          "text": "Дальность атаки +10 м"
+        },
+        {
+          "level": 8,
+          "text": "Умение становится заряжаемым и наносит урон по области"
+        },
+        {
+          "level": 12,
+          "text": "Перезарядка -10 сек."
+        },
+        {
+          "level": 16,
+          "text": "Шанс Оглушения +25%"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Shield Rush",
+      "desc": "Corre para um alvo dentro 10m e acordos. {se_dmg:1243000021:SkillUIMindmgsum}-{se_dmg:1243000021:SkillUIMaxdmgsum} damage after using [Dodge] or while flying. Has a 30% A chance de infligir Stun para 3s. Triggers [JudgmentPor... 2s.\n100% chance de infligir Stun aos alvos da NPC.\n\n20 Danos no gauge",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Restaura a força 300 no sucesso."
+        },
+        {
+          "level": 8,
+          "text": "+ Alcance 10m"
+        },
+        {
+          "level": 8,
+          "text": "Mudanças para cobrar habilidades e danos causados por AoE"
+        },
+        {
+          "level": 12,
+          "text": "- Arrefecer em 10s"
+        },
+        {
+          "level": 16,
+          "text": "+ 25% Stun Chance"
+        }
+      ]
+    }
+  },
+  "ironclad-defense": {
+    "id": "12740000",
+    "category": "passive",
+    "icon": "ironclad-defense.webp",
+    "cooldown": 0,
+    "en": {
+      "name": "Ironclad Defense",
+      "desc": "Increases the caster's Defense by 7% and Endurance by 1%.",
+      "specs": []
+    },
+    "ru": {
+      "name": "Несокрушимая защита",
+      "desc": "Увеличивает ЗЩТ на 7%, непробиваемость — на 1%.",
+      "specs": []
+    },
+    "pt-BR": {
+      "name": "Ironclad Defense",
+      "desc": "Aumenta a defesa do lançador em 7% e Endurance em 1%.",
+      "specs": []
+    }
+  },
+  "assault-fury": {
+    "id": "12700000",
+    "category": "stigma",
+    "icon": "assault-fury.webp",
+    "cooldown": 120000,
+    "en": {
+      "name": "Assault Fury",
+      "desc": "Selects a target within 20m and deals {se_dmg:1270000021:SkillUIMindmgsum}-{se_dmg:1270000021:SkillUIMaxdmgsum} damage to up to 4 enemies within 4m with a 30% chance to inflict Stun for 3s.\n100% chance to inflict Stun on NPC targets.\n\nIncreases Defense by up to 20% proportional to the number of targets hit.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "+20% Attack for 5s on hit"
+        },
+        {
+          "level": 10,
+          "text": "500 MP damage on hit"
+        },
+        {
+          "level": 15,
+          "text": "+10m range"
+        },
+        {
+          "level": 20,
+          "text": "+20% Stun Chance"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Яростный натиск",
+      "desc": "Наносит {se_dmg:1270000021:SkillUIMindmgsum}-{se_dmg:1270000021:SkillUIMaxdmgsum} урона врагам (макс. 4) в радиусе 4 м вокруг цели, находящейся в радиусе 20 м, и с шансом 30% на 3s оглушает их.\nДля NPC оглушение срабатывает гарантированно.\n\nУвеличивает ЗЩТ пропорционально количеству целей попадания (макс. до 20%).",
+      "specs": [
+        {
+          "level": 5,
+          "text": "АТК +20% на 5s при попадании"
+        },
+        {
+          "level": 10,
+          "text": "500 урона по ОМ при попадании"
+        },
+        {
+          "level": 15,
+          "text": "Дальность атаки +10 м"
+        },
+        {
+          "level": 20,
+          "text": "Шанс Оглушения +20%"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Assault Fury",
+      "desc": "Seleciona um alvo dentro do 20m e lida com danos {se_dmg:1270000021:SkillUIMindmgsum}-{se_dmg:1270000021:SkillUIMaxdmgsum} para até inimigos 4 dentro do 4m com uma chance 30% de infligir Stun para o 3s. 100% chance de infligir Stun em alvos da NPC. Aumenta a defesa em até 20% proporcional ao número de alvos atingidos.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "+ 20% Ataque para 5s em sucesso"
+        },
+        {
+          "level": 10,
+          "text": "Dano 500 MP no ataque."
+        },
+        {
+          "level": 15,
+          "text": "+ Alcance 10m"
+        },
+        {
+          "level": 20,
+          "text": "+ 20% Stun Chance"
+        }
+      ]
+    }
+  },
+  "enhance-health": {
+    "id": "12710000",
+    "category": "passive",
+    "icon": "enhance-health.webp",
+    "cooldown": 0,
+    "en": {
+      "name": "Enhance Health",
+      "desc": "Increases the caster's HP by 250. Increases Max HP by an additional 7.5% and Incoming Heal by 6%.",
+      "specs": []
+    },
+    "ru": {
+      "name": "Закаление",
+      "desc": "Увеличивает ОЗ на 250. Дополнительно увеличивает макс. ОЗ на 7.5%, получ. исцеление — на 6%.",
+      "specs": []
+    },
+    "pt-BR": {
+      "name": "Enhance Health",
+      "desc": "Aumenta o HP do lançador em 250. Aumenta Max HP em 7.5% adicional e está chegando cura em 6%.",
+      "specs": []
+    }
+  },
+  "warding-shield": {
+    "id": "12720000",
+    "category": "passive",
+    "icon": "warding-shield.webp",
+    "cooldown": 0,
+    "en": {
+      "name": "Warding Shield",
+      "desc": "Increases the caster's Block by 200 and restores 53-64 HP on Block.\n\nCooldown: 3s",
+      "specs": []
+    },
+    "ru": {
+      "name": "Священный щит",
+      "desc": "Увеличивает блок на 200 и восстанавливает 53–64 ОЗ при блоке.\n\nВремя перезарядки: 3s",
+      "specs": []
+    },
+    "pt-BR": {
+      "name": "Warding Shield",
+      "desc": "Aumenta o bloco de rodízio em 200 e restaura 53 - 64 HP em Block. Recarga: 3s",
+      "specs": []
+    }
+  },
+  "punishing-benediction": {
+    "id": "12730000",
+    "category": "passive",
+    "icon": "punishing-benediction.webp",
+    "cooldown": 0,
+    "en": {
+      "name": "Punishing Benediction",
+      "desc": "Increases the caster's Critical Hit by 100 and grants Punishing Benediction for 10s when landing an attack.\nPunishing Benediction: Has a 50% chance to deal {se_dmg:1273000111:SkillUIMindmgsum}-{se_dmg:1273000111:SkillUIMaxdmgsum} extra damage to the target when landing an attack.\n\nCooldown: 1s",
+      "specs": []
+    },
+    "ru": {
+      "name": "Кара небес",
+      "desc": "Увелич. крит. удара на 100 и активирует Кару небес на 10 сек. при успешном попадании.\nКара небес: с шансом 50% наносит {se_dmg:1273000111:SkillUIMindmgsum}–{se_dmg:1273000111:SkillUIMaxdmgsum} ед. доп. урона врагу при кажд. успешном попадании.\n\nВремя перезарядки: 1s",
+      "specs": []
+    },
+    "pt-BR": {
+      "name": "Punishing Benediction",
+      "desc": "Aumenta o impacto crítico do lançador. 100 e subsídios. Punishing Benediction para 10s Quando aterrissar um ataque.\nPunishing BenedictionTem um 50% chance de negociar. {se_dmg:1273000111:SkillUIMindmgsum}-{se_dmg:1273000111:SkillUIMaxdmgsum} extra damage to the target when landing an attack.\n\nCooldown: 1s",
+      "specs": []
+    }
+  },
+  "guarding-seal": {
+    "id": "12750000",
+    "category": "passive",
+    "icon": "guarding-seal.webp",
+    "cooldown": 0,
+    "en": {
+      "name": "Guarding Seal",
+      "desc": "Grants a Guarding Seal that blocks damage equaling 21% of Max HP for 30s when HP is 50% or less.\n\nCooldown: 60s",
+      "specs": []
+    },
+    "ru": {
+      "name": "Печать защиты",
+      "desc": "Дарует Печать защиты, блокирующую урон, равный 21% макс. ОЗ на 30s, если показатель ОЗ 50% или ниже.\n\nВремя перезарядки: 60s",
+      "specs": []
+    },
+    "pt-BR": {
+      "name": "Guarding Seal",
+      "desc": "Concede um Guarding Seal que bloqueia danos iguais a 21% de Max HP para 30s quando HP é 50% ou menos. Frio: 60s",
+      "specs": []
+    }
+  },
+  "impact-hit": {
+    "id": "12760000",
+    "category": "passive",
+    "icon": "impact-hit.webp",
+    "cooldown": 0,
+    "en": {
+      "name": "Impact Hit",
+      "desc": "Increases the caster's Impact-type Chance by 11.2% and Double Chance by 0.3%.",
+      "specs": []
+    },
+    "ru": {
+      "name": "Попадание шоком",
+      "desc": "Увеличивает попадание шок. эффектами на 11.2%, Сокрушающий удар — на 0.3%.",
+      "specs": []
+    },
+    "pt-BR": {
+      "name": "Impact Hit",
+      "desc": "Aumenta a chance de impacto do lançador por 11.2% e dupla chance por 0.3%.",
+      "specs": []
+    }
+  },
+  "insulting-roar": {
+    "id": "12770000",
+    "category": "passive",
+    "icon": "insulting-roar.webp",
+    "cooldown": 0,
+    "en": {
+      "name": "Insulting Roar",
+      "desc": "Increases Enmity Boost by 100% for the caster and increases Attack by 5.5% for 5s on landing a Front Attack.\n\nCooldown: 5s",
+      "specs": []
+    },
+    "ru": {
+      "name": "Неповиновение",
+      "desc": "Увелич. усиление враждебности на 100% для персонажа и увелич. АТК на 5.5% в теч. 5s при нанесении фронтальной атаки.\n\nВремя перезарядки: 5s",
+      "specs": []
+    },
+    "pt-BR": {
+      "name": "Insulting Roar",
+      "desc": "Aumenta o aumento da inimizade em 100% para o lançador e aumenta o ataque em 5.5% para 5s ao pousar um ataque frontal. Recarga: 5s",
+      "specs": []
+    }
+  },
+  "fury": {
+    "id": "12780000",
+    "category": "passive",
+    "icon": "fury.webp",
+    "cooldown": 0,
+    "en": {
+      "name": "Fury",
+      "desc": "Increases Front Attack Damage Boost by 0.3% for the caster, and increases PvE Damage Boost by 5.5% and PvP Damage Boost by 2.75% for 20s for the caster and party members on Block.\n\nCooldown: 1s",
+      "specs": []
+    },
+    "ru": {
+      "name": "Ярость",
+      "desc": "Увелич. усиление урона при фронтальной атаке на 0.3% для персонажа, а также увелич. усиление урона в PvE на 5.5% и усиление урона в PvP на 2.75% в теч. 20s для персонажа и участников группы при блоке.\n\nВремя перезарядки: 1s",
+      "specs": []
+    },
+    "pt-BR": {
+      "name": "Fury",
+      "desc": "Aumenta os danos do ataque frontal em 0.3% para o lançador, e aumenta os danos do PvE em 5.5% e PvP em 2.75% para 20s para o lançador e membros do partido no bloco. Frio: 1s",
+      "specs": []
+    }
+  },
+  "survival-willpower": {
+    "id": "12790000",
+    "category": "passive",
+    "icon": "survival-willpower.webp",
+    "cooldown": 0,
+    "en": {
+      "name": "Survival Willpower",
+      "desc": "Increases the caster's Status Effect Resist by 17%. Increases PvE Damage Tolerance by 12% and PvP Damage Tolerance by 6% for 5s when afflicted with Stun, Knockdown, Airborne, Frost, or Fear. Increases Status Effect Resist by 10% for 5s when hit while afflicted with Stun, Knockdown, Airborne, Frost, or Fear (up to 10 stacks).\n\nDamage Tolerance Increase Cooldown: 60s\nStatus Effect Resist Increase Cooldown: 1s",
+      "specs": []
+    },
+    "ru": {
+      "name": "Инстинкт выживания",
+      "desc": "Увеличивает сопротивление негат. эффектам  на 17%. Увеличивает стойкость к урону в PvE на 12% и стойкость к урону в PvP на 6% на 5s под действием Оглушения, Сбивания с ног, Воздушных оков, Заморозки или Ужаса. Увеличивает сопротивление негат. эффектам  на 10% на 5s при получении удара в состоянии Оглушения, Сбивания с ног, Воздушных оков, Заморозки или Ужаса (суммируется не более 10 раз).\n\nВремя перезарядки увеличения стойкости к урону: 60s\nВремя перезарядки увеличения сопротивления негат. эффектам: 1s",
+      "specs": []
+    },
+    "pt-BR": {
+      "name": "Survival Willpower",
+      "desc": "Aumenta o Efeito de Estado do lançador em 17%. Aumenta a tolerância aos danos PvE em 12% e PvP em 6% para 5s quando afligido por Stun, Knockdown, Airborne, Frost, ou Medo. Aumenta o Efeito de Status Resistir ao 10% para 5s quando atingido com Stun, Knockdown, Airborne, Frost ou Medo (até 10 pilhas). Tolerância de danos Aumentar o recarga: 60s Efeito Status Resista ao aumento de recarga: 1s",
+      "specs": []
+    }
+  },
+  "block-pain": {
+    "id": "12800000",
+    "category": "passive",
+    "icon": "block-pain.webp",
+    "cooldown": 0,
+    "en": {
+      "name": "Block Pain",
+      "desc": "Grants Block Pain for 10s when struck by an enemy.\nBlock Pain: Increases PvE Damage Tolerance by 11% and PvP Damage Tolerance by 5.5%\n\nCooldown: 20s",
+      "specs": []
+    },
+    "ru": {
+      "name": "Избавление",
+      "desc": "Дает Избавление на 10s при атаке врагом.\nИзбавление: увеличивает стойкость к урону в PvE на 11% и стойкость к урону в PvP на 5.5%\n\nВремя перезарядки: 20s",
+      "specs": []
+    },
+    "pt-BR": {
+      "name": "Block Pain",
+      "desc": "Grants. Block Pain para 10s quando atingido por um inimigo.\nBlock PainAumentos PvE Danos Tolerância por 11% e PvP Danos Tolerância por 5.5%\n\nRecarga: 20s",
+      "specs": []
+    }
+  }
+}

@@ -1,0 +1,213 @@
+{% from "macros.html" import section, skill, core, loadout, passives, glance, hotline, macroseq, hotbar, dv_board with context %}
+
+{# ============================== PvE ============================== #}
+{% call glance('pve') %}
+  <h3>{{ t.core_skills }}</h3>
+  {{ core([('heart-gore', '16 → 20'), ('insignia-explosion', '16 → 20'), ('quick-slice', '16 → 20'), ('ambush', '16'), ('storm-rampage', '16')]) }}
+  <h3>{{ t.stigma_loadout }}</h3>
+  {{ loadout([('illusive-clone', 20), ('swift-contract', 15), ('savage-fang', 15), ('triniels-dagger', 10)]) }}
+  <h3>{{ t.key_passives }}</h3>
+  {{ passives(['rear-smite', 'exploit-weakness', 'assault-stance', 'determination']) }}
+{% endcall %}
+
+{% call section('intro', 'Visão geral', 'pve') %}
+  <p> O Assassino é uma classe de adaga que vive de capangas. Atinge o <strong> Insignias </strong> no alvo, o {{ s('insignia-explosion') }} os desconta, e o {{ s('heart-gore') }} dispara em crits e se reinicia no próximo acerto crítico. O maior bônus de dano vem de acertar o alvo nas costas, então posicionar é mais importante do que em qualquer outra classe. </p>
+  <div class="callout accent">
+    <h3> A build em uma frase </h3>
+    <p> Fique atrás do chefe, teça {{ s('quick-slice') }} o tempo todo, pressione {{ s('insignia-explosion') }} no momento em que estiver pronto e {{ s('heart-gore') }} em cada acerto crítico - e coloque tudo o que você tem nos segundos 20 de {{ s('illusive-clone') }}, quando Heart Gore não tem qualquer recarga. </p>
+  </div>
+  <div class="callout">
+    <h3> O que esperar na temporada 1 </h3>
+    <ul>
+      <li> <strong> Burst, então uma lacuna. </strong> No KR/TW, o nível 25 do Illusive Clone permite que os bons jogadores o mantenham permanentemente. Paradas globais em 20 : cerca de 20 segundos de explosão em um 1 min 30 s recarga, e entre as janelas que você joga enchimentos enquanto Heart Gore depende da sorte crit. </li>
+      <li> <strong> Os fãs não se alinham. </strong> Swift Contract e Savage Fang voltam em um minuto, Illusive Clone em um minuto e meio. Você continua decidindo se espera ou pressiona. </li>
+      <li> <strong> Tempo de espera é dano. </strong> Em um boneco é 100%; em uma luta real esperar 60 - 80%, e cada hit da frente perde o bônus Rear Smite. </li>
+      <li> <strong> Frágil. </strong> Sem bloqueio, sem defesa. Erros que um Gladiador sobrevive te matam. </li>
+    </ul>
+    Veredito do <p> Arthars: uma classe divertida e de alta qualificação que precisa de várias vezes mais trabalho do que um Gladiador ou um Feiticeiro para o mesmo dano ou menos. Escolha porque você gosta do estilo de jogo, não para os números. </p>
+  </div>
+  <p class="note"> O modo PvE segue o vídeo Assassino do Arthars Gaming para o lançamento global (Setembro 30, gravado no servidor de Taiwan), leia quadro por quadro; o vídeo não tem legendas, então seu texto foi tirado do áudio pelo reconhecimento de fala e cada nome e número verificados na tela. </p>
+{% endcall %}
+
+{% call section('global', 'Global — Temporada 1: o que muda', 'pve pvp') %}
+  <p> Servidores globais abrem em <strong> de outubro 5, 2026 </strong> (acesso antecipado do founder a partir de setembro 30). O que isso significa para o assassino: </p>
+  <div class="callout">
+    <ul>
+      <li> <strong> 4 ranhuras de estigma, tampado em 20. </strong> Todos os quatro vão para o dano: Illusive Clone, Swift Contract, Savage Fang e Triniel's Dagger. </li>
+      <li> <strong> Sem Illusive Clone permanente. </strong> A camada que encurta seu recarga nos crits traseiros é o nível 25 - não em global. </li>
+      <li> <strong> Redução de recarga no início. </strong> É por isso que Storm Rampage vai para 16 e Triniel's Dagger é usado como uma ferramenta de recarga, não para seus danos. </li>
+      <li> <strong> Lutas mais longas. </strong> Bosses que morrem em 30 segundos em Taiwan levará minutos - você verá várias janelas estouradas e as lacunas entre eles. </li>
+      <li data-only="pvp"> <strong> PvP: </strong> todos começam com o mesmo equipamento limitado e nenhum meta se formou ainda. </li>
+    </ul>
+  </div>
+  <p class="note"> Habilidades ativas e passivas são idênticas nos dados globais e KR/TW, estigmas perdem o nível 25. </p>
+{% endcall %}
+
+{% call section('skills', 'Habilidades', 'pve') %}
+  <p> Apenas três níveis de habilidade importam: <strong> 12, 16 e 20 </strong>. Pontos de habilidade dão 10, Daevanion + 4, os dois anéis + 2, arcana o resto. Pegue as cinco habilidades chave para <strong> 16 </strong> primeiro, então empurre Heart Gore e Insignia Explosion para 20. </p>.
+  <ul class="skill-grid">
+    {% call skill('heart-gore', 'must', '16 → 20', [0, 4], then=[3]) %}Your most important skill. It needs 16... um acerto crítico reinicia seu recarga, caso contrário ele espera 5 segundos. HP Absorva-o, mantém-no vivo. 20 add Multi-Hit. If you are short on Critical Hit early, the +20% Crit Pick é uma opção em vez de absorver.{% endcall %}
+    {% call skill('insignia-explosion', 'must', '16 → 20', [2, 4], then=[1]) %} A outra metade do seu dano. - 3s descançar e duas Insignias mantidas após cada explosão - pressione-o toda vez que estiver pronto, não espere pilhas. No 20 adicione Multi-Hit. {% endcall %}
+    {% call skill('quick-slice', 'must', '16 → 20', [3, 4], then=[2]) %} O ataque básico que você tece entre tudo: crit garantido e 1s em Insignia Explosion por hit. No 20, a terceira vaga é sua escolha: HP Absorve ou Multi-Hit. {% endcall %}
+    {% call skill('ambush', 'must', '16', [0, 4]) %} Sua primeira carga quando o Heart Gore está fechado: 2 usos extras no 16 e 2 Insignias por volta. Se chegar ao 20, adicione o absorvente HP. {% endcall %}
+    {% call skill('storm-rampage', 'must', '16', [3, 4]) %}On other classes this is skippable; here it is not. While the boss is staggered every hit takes 1s E essa classe não faz nenhum dano sem aficionados.{% endcall %}
+    {% call skill('defiance', 'opt', '12 → 16', [2, 3]) %} CC quebra: a cura e + 2s Tenacidade em 12; em 16 trocar a cura pela tolerância ao dano. {% endcall %}
+    {% call skill('savage-roar', 'opt', '12', [1, 3]) %} O último preenchimento na linha: mais rápido, e cada golpe encurta Shadowstrike. Não vale mais do que 12 - 16. {% endcall %}
+    {% call skill('shadowstrike', 'opt', '12', [1]) %} Teleporto atrás do alvo e + 20% Danos Críticos para 10s - um fã e seu melhor caminho para trás. Guarde-o para reposicionar em vez de gastá-lo em recarga, as outras escolhas são para o PvP. {% endcall %}
+    {% call skill('flash-slice', 'opt', '12', [1, 3]) %} Uma segunda maneira de chegar atrás do alvo: alcance 10m e dois usos. {% endcall %}
+    {% call skill('infiltrate', 'opt', '12', [0, 1]) %} Dodge → atrás do alvo, e ele paga a resistência de volta. Nunca pegue a corrente de acompanhamento. {% endcall %}
+    {% call skill('whirlwind-slice', 'opt', '12', [0, 2]) %} de longo alcance mais próximo. É duro no papel, mas a animação é longa. Não faz parte da rotação. {% endcall %}
+    {% call skill('shadow-fall', 'opt', '12', [0, 2]) %} A habilidade PvP, em PvE apenas uma emergência 10% cura. {% endcall %}
+  </ul>
+{% endcall %}
+
+{% call section('passives', 'Passivas', 'pve') %}
+  <p> Skill aponta quase todos os passivos enquanto você nivela. Linhas de engrenagem são a parte escassa: a classe quer quatro passivos lá e apenas dois ou três se encaixam. </p>
+  <div class="table-wrap"><table>
+    <thead> <tr> <th> Passivo </th> <th> Prioridade na engrenagem </th> <th> Por que </th> </tr> </thead>
+    <tbody>
+      <tr> <td> {{ s('rear-smite') }} </td> <td> 1 </td> <td> Ataque de volta e aumento de danos PvE - o passivo mais forte, ele dá dano mesmo da frente. </td> </tr>
+      <tr> <td> {{ s('exploit-weakness') }} </td> <td> 2 </td> <td> Ataque crítico e um fã de ataque que está quase sempre em combate; Illusive Clone multiplica. </td> </tr>
+      <tr> <td> {{ s('assault-stance') }} </td> <td> 2 </td> <td> Os dano crítico aumentam, Swift Contract multiplica. </td> </tr>
+      <tr> <td> {{ s('determination') }} </td> <td> 3 </td> <td> Dano extra em um alvo HP baixo, aLuckyRO conta entre os mais importantes: cada chefe passa o fim da luta lá. </td> </tr>
+      <tr> <td> {{ s('impact-hit') }} </td> <td> 4 </td> <td> Dupla chance - apenas 3.3% no nível 10, quase nada em PvE (aLuckyRO). Mantenha-o para PvP, na marcha PvE pegue Determination primeiro. </td> </tr>
+      <tr> <td> {{ s('ambush-stance') }}, {{ s('heightened-sixth-sense') }} </td> <td> pontos apenas </td> <td> Maxed por pontos de habilidade, não vale uma linha de engrenagem. </td> </tr>
+      <tr> <td> {{ s('apply-poison') }}, {{ s('defense-break') }} </td> <td> Skip </td> <td> Veneno está sob 1% de seus danos, Defense Break é um PvP passivo. {{ s('revitalization-contract') }} só com pontos de reserva. </td> </tr>
+    </tbody>
+  </table></div>
+{% endcall %}
+
+{% call section('gear', 'Equipamentos e atributos', 'pve') %}
+  <div class="callout"><ul>
+    <li> <strong> Rings: </strong> o único lugar para habilidades ativas - {{ s('heart-gore') }}, {{ s('quick-slice') }}, {{ s('insignia-explosion') }}, {{ s('ambush') }}. Eles pegam as habilidades-chave de 14 para 16. </li>
+    <li><strong>Arma e guarda:</strong> Nunca coloque habilidades lá. Suas linhas de danos valem mais do que um nível de habilidade.</li>
+    <li> <strong> Outras peças: </strong> Rear Smite primeiro, qualquer um dos próximos três passivos está bem. Não persiga um conjunto perfeito na temporada 1 - a engrenagem global tem uma linha a menos e também rola Might, Precision and Combat Speed lá. </li>
+    <li> <strong> Crítico Hit </strong> importa mais do que em outras classes: Heart Gore reinicia apenas em um crit. </li>
+    <li> <strong> Manastones: Ataque </strong>, Ataque Crítico, Precisão. </li>
+  </ul></div>
+{% endcall %}
+
+{% call section('arcana', 'Arcana', 'pve') %}
+  <p> Season 1 tem cinco cartas e dois conjuntos. O Assassino é a única classe que <strong> deve </strong> tomar Illusion (cooldowns) no Espelho, o que faz de quatro cartões de Vigor Primal o conjunto natural. </p>
+  <div class="table-wrap"><table>
+    <thead> <tr> <th> Card </th> <th> Stat </th> <th> Set </th> <th> Roll para </th> </tr> </thead>
+    <tbody>
+      <tr><td>Cálice.</td><td>Tempo (Combat Speed)</td><td>Vigor Primal</td><td>Qualquer uma das três habilidades-chave ainda está aquém de 20</td></tr>
+      <tr> <td> Pergaminho </td> <td> Vida </td> <td> Vigor Primal </td> <td> {{ s('quick-slice') }}, {{ s('heart-gore') }}, {{ s('insignia-explosion') }} - todos os três </td> </tr>
+      <tr> <td> Compass </td> <td> Freedom (Acuracy) </td> <td> Primal Vigor </td> <td> {{ s('storm-rampage') }}, {{ s('ambush') }}, {{ s('savage-roar') }} - para alcançar 16 </td> </tr>
+      <tr> <td> Mirror </td> <td> Illusion (frigoríficos) </td> <td> Primal Vigor </td> <td> {{ s('rear-smite') }}, {{ s('exploit-weakness') }}; {{ s('impact-hit') }} </td> </tr>
+      <tr> <td> Bell </td> <td> Destruction (Attack) </td> <td> Magic Armor </td> <td> {{ s('assault-stance') }} </td> </tr>
+    </tbody>
+  </table></div>
+  <p> <strong> O Pergaminho é a moagem. </strong> Todas as três habilidades que você quer no 20 sente-se neste cartão, e um cartão da temporada 1 permite que você escolha apenas duas de suas quatro linhas. Nivelar o cartão adiciona quatro aleatórios + 1s - esperança para um espalhamento igual (+ 2 em cada) em vez de + 4 em um: o cálice pode então adicionar o faltando + 2. Se não der certo, mantenha Heart Gore e Insignia Explosion na 20 e deixe Quick Slice na 16. </p>.
+  <p class="note"> A Bússola e o Sino estão relaxados: nada neles tem que chegar ao 20. Todas essas cartas são substituídas quando a temporada 2 traz novas. </p>
+{% endcall %}
+
+{% call section('daevanion', 'Painéis Daevanion', 'pve pvp') %}
+  <p> Daevanion pega suas habilidades de 10 para 14 e adiciona estatísticas. Cada nó azul dá <strong> + 1 nível </strong> à sua habilidade. </p>
+  <div class="callout"><ul>
+    Prioridade <li data-only="pve"> <strong>: nós azuis </strong> para {{ s('heart-gore') }}, {{ s('insignia-explosion') }}, {{ s('quick-slice') }}, depois {{ s('ambush') }} e {{ s('storm-rampage') }}; nós laranjas a seguir. </li>
+    <li data-only="pve"> <strong> Danos Críticos cedo: </strong> para um assassino o Vaizel laranja Danos Críticos Boost vale a pena desde o início - ele crits desde o primeiro dia, ao contrário da maioria das classes (aLuckyRO). </li>
+    Prioridade <li data-only="pvp"> <strong>: nós azuis </strong> para {{ s('shadowstrike') }}, {{ s('flash-slice') }}, {{ s('defiance') }}. </li>
+    <li data-only="pve"> <strong> Não Ariel no global: </strong> há cinco placas, e o nível 45, um, Azphel, dá apenas PvP Danos Boost e Tolerância - em PvE terminar os quatro primeiros. </li>
+    <li data-only="pvp"> <strong> Azphel </strong> (nível 45) é tudo PvP Dano Boost e Tolerância - levá-lo, e Triniel mais cedo. </li>
+  </ul></div>
+  <div class="table-wrap"><table>
+    <thead> <tr> <th> Painel </th> <th> Desbloquear </th> <th> nós laranja </th> </tr> </thead>
+    <tbody>
+      <tr> <td> Nezekan </td> <td> Lv 12 </td> <td> Velocidade de combate, redução de recarga </td> </tr>
+      <tr> <td> Zikel </td> <td> Lv 20 </td> <td> Danos Aumentam, Tolerância de Danos </td> </tr>
+      <tr> <td> Vaizel </td> <td> Lv 30 </td> <td> Danos Críticos Aumentam e Tolerância </td> </tr>
+      <tr> <td> Triniel </td> <td> Lv 40 </td> <td> Multi-Hit Chance e Resista </td> </tr>
+      <tr> <td> Azphel </td> <td> Lv 45 </td> <td> PvP Dano Aumentar e Tolerância - sem nós de habilidade </td> </tr>
+    </tbody>
+  </table></div>
+  <h3> A rota nas tábuas </h3>
+  <p> Os reais quadros globais dos dados do jogo. O ouro marca o caminho mais bamouse de Start para os nós que este guia toma, os nós azuis das habilidades prioritárias e os nós laranja, pairando sobre qualquer nó para ver o que ele dá. </p>
+  <div data-only="pve">{{ dv_board('pve') }}</div>
+  <div data-only="pvp">{{ dv_board('pvp') }}</div>
+  <p class="note"> Boards e custos vêm dos dados globais do cliente (questlog.gg); o caminho é calculado, não retirado de um vídeo. Os valores do stat ainda podem mudar no lançamento. Verifique o painel antes de fazer uma rota completa. </p>
+{% endcall %}
+
+{% call section('stigmas', 'Estigmas', 'pve') %}
+  <p> Todas as quatro slot machines são lustres. Nível Illusive Clone para 20 primeiro, ele come a maioria dos seus fragmentos estigmatizantes, depois o resto. </p>
+  <ul class="skill-grid">
+    {% call skill('illusive-clone', 'must', 'Nv. 20', upto=20) %}Sua explosão: para 20 segundos Heart Gore Não tem como se acalmar e você negocia. 20% Dano extra, com +20% Dano crítico e ×1.5 Exploit Weakness on top. Cooldown 1 min 30 s. Most of your damage happens inside it — use it on the boss, never on trash. aLuckyRO: essential until Heart Gore Alcance 16; com bastante crits Heart Gore Resets por si só e o slot pode ser trocado por um tempo, mas 20 Ele volta para o seu aumento de danos.{% endcall %}
+    {% call skill('swift-contract', 'must', 'Nv. 15 → 20', upto=15) %} + 20% Velocidade de combate, e 1.5 Rear Smite e Assault Stance para a duração. 15 é suficiente para começar, 20 adiciona 10% mais velocidade de combate. {% endcall %}
+    {% call skill('savage-fang', 'must', 'Nv. 15', upto=15) %} Cinco Insígnias ao mesmo tempo, grandes danos cambaleantes e, em 15, + 10% PvE Danos Aumentam para 10s. O mesmo tempo que o Swift Contract: pressione-os juntos. {% endcall %}
+    {% call skill('triniels-dagger', 'must', 'Nv. 10', upto=10) %} Não por seu dano: em 10 um hit corta o <em> restante </em> de todas as suas habilidades por 10%. Aperte logo depois de seus fãs, quando os recargas forem mais longos. {% endcall %}
+    {% call skill('evasion-stance', 'opt', 'Nv. 5–10', upto=10) %} Evasão garantida de um grande sucesso, duas cargas em 5, móvel em 10. A troca segura por um dos fãs enquanto você aprende uma luta - a classe é frágil. {% endcall %}
+    {% call skill('throw-shadowblade', 'opt', 'farm', upto=10) %} 20m lança que reinicia em uma morte no 10 - para a agricultura do mundo aberto, não para os chefes. {% endcall %}
+  </ul>
+{% endcall %}
+
+{% call section('macro', 'Macro e rotação', 'pve') %}
+  <p> AION 2 tem duas ferramentas separadas: </p>
+  <ul>
+    <li> <strong> linha de barras </strong> - várias habilidades empilhadas no <em> um botão de barras </em>. Pressionando-o lança a habilidade mais alta prioridade que está pronto, e em AION 2 o slot inferior <strong> tem a maior prioridade </strong>. As cartas mostram cada linha de cima a baixo como no jogo. </li>
+    <li> <strong> No jogo macro </strong> - enquanto você segura sua chave, ele pressiona seus botões de barra de habilidades em ordem e cancela caudas de animação. As habilidades no recarga são ignoradas. </li>
+  </ul>
+  {{ hotbar([('N2', ['shadowstrike']), ('Side', []), ('3', ['flash-slice']), ('4', []), None, ('5', []), ('N4', []), ('6', []), ('7', ['illusive-clone', 'swift-contract', 'savage-fang', 'triniels-dagger']), None, ('N1', ['whirlwind-slice', 'infiltrate', 'shadow-fall']), ('N5', ['storm-rampage']), ('1', ['quick-slice']), ('E', ['insignia-explosion', 'heart-gore', 'ambush', 'savage-roar'])], macro=['E', '1'], own_keys=true) }}
+
+  <h3> 1. Linhas de barras </h3>
+  <div class="hotlines">
+    {% call hotline('E', 'Damage line', ['insignia-explosion', 'heart-gore', 'ambush', 'savage-roar']) %} Insignia Explosion dispara toda vez que está pronto, Heart Gore em cada acerto crítico. Quando nenhum deles está disponível, a linha cai para as cargas: Ambush primeiro, Savage Roar último. {% endcall %}
+    {% call hotline('7', 'Buff line', ['illusive-clone', 'swift-contract', 'savage-fang', 'triniels-dagger']) %} Arthars mantém todos os quatro estigmas em um botão e pressiona-o à mão - nunca da macro, ou os fãs saem de sincronia. {% endcall %}
+  </div>
+
+  <h3> 2. No jogo macro </h3>
+  <p> Dois passos, <strong> 10 ms </strong> cada, em uma chave que você pode segurar o tempo todo: </p>
+  {{ macroseq([('Damage line', '10 ms'), (skill_data('quick-slice')[lang].name, '10 ms')]) }}
+  <p class="note"> O vídeo mostra a barra de habilidades, mas não a janela macro: esta macro segue a configuração do guia de Arthars Chanter (a linha principal, em seguida, o ataque básico). As linhas e as chaves são lidas na barra dele. </p>
+
+  <h3> 3. O que você realmente pressiona </h3>
+  <ul class="presslist">
+    <li> <span class="press-how"> Segure </span> <span class="press-what"> A tecla da macro, e spam {{ s('quick-slice') }} você mesmo - cada hit encurta Insignia Explosion. </span> </li>
+    <li> <span class="press-how"> Burst </span> <span class="press-what"> {{ s('illusive-clone') }} + {{ s('swift-contract') }} + {{ s('savage-fang') }} juntos, então {{ s('triniels-dagger') }} imediatamente para cortar seus recargas. Para os próximos 20 segundos é Heart Gore após Heart Gore. </span> </li>
+    <li> <span class="press-how"> Entre as janelas </span> <span class="press-what"> Swift Contract e Savage Fang voltem antes do Illusive Clone. Ou segurá-los para o próximo Clone (explosão maior) ou usá-los em recarga (danos mais estáveis) - não há resposta acordada; em lutas curtas mantê-los. </span> </li>
+    <li> <span class="press-how"> Stagger </span> <span class="press-what"> {{ s('storm-rampage') }} em um chefe escalonado, tecendo Quick Slice - ele puxa cada recarga para baixo por segundos. </span> </li>
+    <li> <span class="press-how"> Posição </span> <span class="press-what"> {{ s('shadowstrike') }}, {{ s('flash-slice') }} e {{ s('infiltrate') }} todos os colocam atrás do alvo. Use-os para ficar lá, não como botões de dano. </span> </li>
+  </ul>
+  <p class="note"> De onde vem o dano no teste de Arthars em um boneco: Heart Gore sobre 30%, Insignia Explosion sobre 25%, tudo o resto 6% ou menos cada. </p>
+{% endcall %}
+
+{% call section('recap', 'Resumo', 'pve') %}
+  <div class="callout accent"><ul>
+    <li> <strong> Habilidades: </strong> Heart Gore, Insignia Explosion, Quick Slice 16 → 20; Ambush e Storm Rampage 16; o resto 12. </li>
+    <li> <strong> Stigmas: </strong> Illusive Clone 20, Swift Contract 15 → 20, Savage Fang 15, Triniel's Dagger 10. </li>
+    <li> <strong> Passivos em marcha: </strong> Rear Smite, depois Exploit Weakness, Assault Stance, Impact Hit. </li>
+    <li> <strong> Play: </strong> fique atrás do chefe, estoure dentro Illusive Clone, Triniel's Dagger logo após os fãs. </li>
+  </ul></div>
+{% endcall %}
+
+{# ============================ Leveling ============================ #}
+{% call section('fight-lvl', t.lvl_combat, 'lvl') %}
+  <div class="callout"><ul>
+    <li> <strong> Packs: </strong> {{ s('savage-fang') }} (5 Insignias) → {{ s('insignia-explosion') }} → {{ s('whirlwind-slice') }}; {{ s('throw-shadowblade') }} reinicia em uma morte para a próxima atração. </li>
+    <li> <strong> Elites: </strong> para trás → {{ s('ambush') }} → {{ s('savage-roar') }} para empilhar insígnias → Insignia Explosion → {{ s('heart-gore') }} em crits. </li>
+    <li> <strong> Mana: </strong> {{ s('quick-slice') }} restaura MP - mantê-lo em LMB. </li>
+    <li> <strong> Baixo HP </strong> {{ s('shadow-fall') }} absorve HP {{ s('defiance') }} cura quando você está preso. </li>
+  </ul></div>
+{% endcall %}
+
+{% call section('macro-lvl', 'Macro para subir de nível', 'lvl') %}
+  <p> Enquanto nivela, antes que Heart Gore chegue ao 16, uma configuração mais simples funciona do nível 1: a linha Insignia na macro no jogo no botão do meio do mouse, Quick Slice em LMB e Heart Gore em Q. Para grupos de agricultores use Throw Shadowblade (2) e RMB. Construção inicial em 1-45 Quick Slice, Savage Roar, Insignia Explosion e Heart Gore para 12, tudo mais em 8. </p>.
+  <div class="hotlines">
+    {{ hotline('MMB', 'Insignia line', ['insignia-explosion', 'whirlwind-slice', 'ambush', 'savage-roar']) }}
+  </div>
+  <p> <a href="https://aion2t.com/ru/simulator?job=5&amp;b=iUjpcy" target="_blank" rel="noopener"> Iniciando a build 1 – 45 (aion 2 t) → </a> · <a href="https://aion2t.com/ru/simulator?job=5&amp;b=MeyRht" target="_blank" rel="noopener"> 45 + build de gol → </a> </p>
+{% endcall %}
+
+{# ============================ Sources ============================ #}
+<section class="sources" aria-labelledby="h-sources">
+  <h2 id="h-sources">{{ t.sources }}</h2>
+  <ul>
+    <li> <a href="https://www.youtube.com/watch?v=UpvUVK1vnt8" target="_blank" rel="noopener"> Arthars Gaming: A Verdade Brutal sobre Assassino no Aion 2 Global Launch </a>: o modo PvE: níveis de habilidade e especialização, passivos, arcana, estigmas, linhas de hotbar, como a classe joga na temporada 1 </li>
+    <li> <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ0C3iKFteGvIbgqNDnQq7bmwIaU23DvjbPa0HPSVAdOOiCeBkEq69Cn8jVMJhToJcztCRylYeTYfOk/pubhtml" target="_blank" rel="noopener"> TitanTheF - AION 2 folha de progressão </a> - constrói, barra de habilidades, macro, estatísticas </li>
+    <li> <a href="https://aion2t.com/ru/simulator?job=5&amp;b=MeyRht" target="_blank" rel="noopener"> aion 2 t.com </a> - TitanTheF's start e 45 + builds (nível de habilidade, especialização, estigmas, passivos) </li>
+    <li> <a href="https://questlog.gg/aion-2/en/db/skills/assassin" target="_blank" rel="noopener"> questlog.gg </a> - dados de habilidade do cliente global </li>
+    <li> <a href="https://www.youtube.com/watch?v=HMod6Z4GrE0" target="_blank" rel="noopener"> Grobs - AION 2 Macro Guide </a> - como as linhas de barras quentes e a macro no jogo funcionam </li>
+    <li> <a href="https://www.youtube.com/watch?v=DNfd1lZtQkI" target="_blank" rel="noopener"> aLuckyRO — AION 2 Última Assassina PVE Build for Global </a> — especialização inicial (Quick Slice MP, Storm Rampage Multi-Hit), prioridade passiva, Illusive Clone antes de Heart Gore 16, Throw Shadowblade para agricultura </li>
+  </ul>
+  <p class="sources-all"><a href="{{ root }}{{ lang }}/sources/">{{ t.src_all }} →</a></p>
+</section>

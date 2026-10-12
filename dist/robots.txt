@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://aion2-guias-br.juniorikkix.chatgpt.site/sitemap.xml

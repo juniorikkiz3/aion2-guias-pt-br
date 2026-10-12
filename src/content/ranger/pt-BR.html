@@ -1,0 +1,265 @@
+{% from "macros.html" import section, skill, core, loadout, passives, glance, hotline, macroseq, hotbar, dv_board with context %}
+
+{# ============================== PvE ============================== #}
+{% call glance('pve') %}
+  <h3>{{ t.core_skills }}</h3>
+  {{ core([('deadshot', '20'), ('gale-arrow', '20'), ('drill-dart', '16'), ('snipe', '16'), ('tempest-shot', '16')]) }}
+  <h3>{{ t.stigma_loadout }}</h3>
+  {{ loadout([('vaizels-authority', 20), ('bow-of-blessing', 10), ('supporting-fire', 10), ('griffon-arrow', 10)]) }}
+  <h3>{{ t.key_passives }}</h3>
+  {{ passives(['focused-eye', 'hunters-resolve', 'hunters-soul', 'concentrated-fire']) }}
+{% endcall %}
+
+{% call section('intro', 'Visão geral', 'pve') %}
+  <p> O Ranger é um arco DPS que luta de cerca de <strong> 20 metros </strong> - o alcance de quase todas as habilidades que tem. Seu dano é superior, mas a sobrevivência e utilidade são baixas, então posicionar é tudo. </p>
+  <div class="callout accent">
+    <h3> A build em uma frase </h3>
+    <p> Buff up, manter {{ s('marking-shot') }} (precisão: + 300 Crítica Hit e + 35% {{ s('deadshot', False) }} dano) no alvo, e segure três botões: {{ s('snipe') }}, a macro e um {{ s('deadshot') }} carregado. </p>
+  </div>
+  <p class="note"> Este guia segue Whelps - um Ranger principal no 1 M CP nos servidores coreanos que também jogaram o teste global - e seu jogo final da temporada 1 PvE construir em questlog. </p>
+{% endcall %}
+
+{% call section('global', 'Global — Temporada 1: o que muda', 'pve pvp') %}
+  <p>Servidores globais abertos. <strong>Outubro 5, 2026</strong> (Acesso antecipado do founder de setembro 30). What that means for the Ranger:</p>
+  <div class="callout">
+    <ul>
+      <li> <strong> Quatro estigmas no nível 37. </strong> O teste global parou em 37; uma quinta vaga em 45 é provável, mas não confirmada - se vier, vai para {{ s('explosive-arrow') }}. </li>
+      <li> <strong> Apenas algumas habilidades chegam ao 20. </strong> Skills cap em 10 de pontos, Daevanion adiciona 4, anéis 2 e arcana até 4. Na temporada 1 plano para Deadshot e Gale Arrow em 20, e um terceiro se seu arcana rolar bem. </li>
+      <li> <strong> Capa de precisão desconhecida. </strong> Na Coréia era sobre 1,300 para Ludra, números globais vêm no lançamento. </li>
+      <li data-only="pvp"> <strong> PvP: </strong> todos começam com o mesmo equipamento limitado e nenhum meta se formou ainda. </li>
+    </ul>
+  </div>
+{% endcall %}
+
+{% call section('skills', 'Habilidades', 'pve') %}
+  As slots de especialização <p> estão abertas no <strong> 8 </strong>, <strong> 12 </strong> e <strong> 20 </strong> (16 adiciona uma nova opção, mas sem fenda) - cada um desses níveis é um pico de potência. Nível ativo primeiro, passivo depois. </p>
+  <ul class="skill-grid">
+    {% call skill('deadshot', 'must', '20', [1, 2, 4]) %} Carregado nuclear - sempre totalmente carregado, sempre sob Precisão. Antes que o 20 pegue os dois primeiros, troque a picareta móvel pelo dano 50% se não precisar se mover enquanto carrega. Fubgun (global) vai para os maiores críticos em vez disso, velocidade de habilidade e ignorar bloco e Evasão no 16, a picareta de danos em 20 - móvel apenas onde uma luta precisa. {% endcall %}
+    Velocidade de combate {% call skill('gale-arrow', 'must', '20', [2, 3, 4]) %} e aficionado. Antes que o 20 pegue a picareta de velocidade de combate e - 10s resfrie (antes da duração 16 + 5s) - Fubgun pula a mobilidade até a terceira vaga, porque sem ela o buff permanece acima o tempo todo. {% endcall %}
+    {% call skill('drill-dart', 'must', '16', [4, 2]) %} Pelo menos 16. Para um chefe que precisa de sustento, pegue o HP absorva em vez de Skill Speed. {% endcall %}
+    Ataque básico {% call skill('snipe', 'must', '16', [3, 4]) %}: encurta Deadshot e adiciona a corrente Tempest Arrow. No 20 adicione Multi-Hit. {% endcall %}
+    {% call skill('tempest-shot', 'must', '16', [2, 4]) %} Melhor contribuinte de danos, mas 16 é suficiente - você vai ser cortado de qualquer maneira. Jogadores PvP empurram para o 20 para o knockback. {% endcall %}
+    {% call skill('snare-shot', 'opt', '12', [1, 2]) %} 12 vem quase livre da placa Daevanion. {% endcall %}
+    {% call skill('marking-shot', 'opt', '12', [0, 2]) %} + 5% Perfect Chance, + 5s Duration. {% endcall %}
+    {% call skill('burst-arrow', 'opt', '12', [1, 3], then=[4]) %} + 50% Multi-Hit em cima de seu próprio 50%, então cada hit pousa como Multi-Hit (Moxsy), e + 20% em um único alvo. Na 20 adicione a chance de refazer. {% endcall %}
+    {% call skill('explosion-trap', 'opt', '12', [0, 2]) %} Só para juntar lixo (por exemplo. Transcendência corre). {% endcall %}
+    {% call skill('suppressing-arrow', 'opt', '12', [0, 2]) %} Só por sua atordoamento - bem enquanto nivela, não usado no final do jogo PvE. {% endcall %}
+    {% call skill('defiance', 'opt', '12', [2, 1]) %} na 16: a terceira e quinta escolhas. {% endcall %}
+    {% call skill('arrow-scattershot', 'opt', '12 no início', [2, 3]) %}Only usable on Staggered bosses. Whelps doesn't level it: in his endgame rotation the other skills do more. aLuckyRO and LordRobson take it to 12 No primeiro dia para o Multi-Hit na janela cambaleante - bem enquanto os pontos são bamouses, a primeira coisa a cair mais tarde.{% endcall %}
+  </ul>
+{% endcall %}
+
+{% call section('passives', 'Passivas', 'pve') %}
+  <p> {{ s('focused-eye') }} e {{ s('hunters-resolve') }} são os únicos que realmente importam, {{ s('hunters-soul') }} é o terceiro. </p>
+  <div class="callout"><ul>
+    <li>Então os ofensivos: {{ s('concentrated-fire') }}, {{ s('rooting-eye') }}, {{ s('melee-fire') }}.</li>
+    <li> Então {{ s('vigilant-eye') }} (Max HP) e {{ s('revitalization-contract') }} (cura em 10% HP ). </li>
+    <li> {{ s('unyielding-resolve') }} e {{ s('wind-vigor') }} são quase inúteis - nivelá-los com os pontos restantes. </li>
+  </ul></div>
+{% endcall %}
+
+{% call section('gear', 'Equipamentos e atributos', 'pve') %}
+  <p> Gear é simples: vá para o mais alto nível de item. Fim de jogo significa arma, guarda e acessórios, pulseiras Ludra e armadura. </p>
+  <div class="table-wrap"><table>
+    <thead> <tr> <th> Fenda </th> <th> A alma deve ter ligação </th> </tr> </thead>
+    <tbody>
+      <tr> <td> Armas, </td> <td> Velocidade de combate, Danos à Arma Aumentar, Danos Aumentar, Pode (+ Multi-Hit se criado) </td> </tr>
+      <tr> <td> Helm, capa </td> <td> dupla chance, ataque aumentar </td> </tr>
+      <tr> <td> Ombros </td> <td> dupla chance, dano crítico aumentam </td> </tr>
+      <tr> <td> Chest </td> <td> Danos Aumentam </td> </tr>
+      <tr> <td> Pernas </td> <td> Aumento do ataque, Tolerância de danos </td> </tr>
+      <tr> <td> Luvas / botas </td> <td> Velocidade de combate / velocidade de movimento </td> </tr>
+      <tr> <td> Brincos / colar </td> <td> Move Velocidade + Poder / Velocidade de combate + Poder </td> </tr>
+      <tr> <td> Rings </td> <td> {{ s('deadshot') }} e {{ s('gale-arrow') }} níveis (então Drill Dart ou Snipe); caso contrário, poderia </td> </tr>
+    </tbody>
+  </table></div>
+  <div class="callout"><ul>
+    A precisão <li> <strong> é a segunda estatística. </strong> Paroused perde mais da metade dos danos, e um Ranger nem sempre pode atacar por trás. Mire em ~ 1,100 - 1,200 (suporte adicionar + 100 ). </li>
+    <li>Espreguiçadeiras restantes: ataque, ataque crítico ou Focused Eye — keep whichever you rolled first. Critical Hit is easier to cap for a Ranger (+300 De Marking Shot).</li>
+    <li> <strong> Manastones: </strong> uma linha amarela de ataque é suficiente para a temporada 1; não persiga ataques frontais/back sets. </li>
+    <li> Só rola alma amarra em armadura que já tem um dos imperdíveis. </li>
+    <li> <strong> Bow e guarda em + 10 </strong> em todos os momentos, e manastones básicos em cada peça (N → Manastones) — estatísticas brutas baratas (Fubgun). </li>
+  </ul></div>
+{% endcall %}
+
+{% call section('arcana', 'Arcana', 'pve') %}
+  <p> Arcana é como as habilidades passam pelo 16. O gol é <strong> + 4 em {{ s('deadshot') }} e {{ s('gale-arrow') }} </strong>; um 4 Roll em {{ s('snipe') }} dá-lhe uma terceira habilidade em 20. </p>
+  <div class="table-wrap"><table>
+    <thead> <tr> <th> Card </th> <th> Tipo </th> <th> Roll para </th> </tr> </thead>
+    <tbody>
+      <tr> <td> Graal </td> <td> Vigor </td> <td> Deadshot, Gale Arrow (cartão selvagem: pode rolar qualquer coisa) </td> </tr>
+      <tr> <td> Pergaminho </td> <td> Vigor </td> <td> Snipe, Tempest Shot (Drill Dart, Burst Arrow como enchimento) </td> </tr>
+      <tr> <td> Bússola </td> <td> Morte ou Liberdade </td> <td> Deadshot, Gale Arrow </td> </tr>
+      <tr> <td> Bell </td> <td> Destruição </td> <td> Hunter's Resolve </td> </tr>
+      <tr> <td> Espelho </td> <td> Sabedoria </td> <td> Focused Eye </td> </tr>
+    </tbody>
+  </table></div>
+  <p class="note"> Arcana vem do estágio de transcendência 4 e são puros RNG - não se estresse, o sistema é provável que mude na temporada 2. </p>
+{% endcall %}
+
+{% call section('daevanion', 'Painéis Daevanion', 'pve pvp') %}
+  <p> Você vai eventualmente encher quase todos os painéis, então não se desespere demais. Cada nó azul dá <strong> + 1 nível </strong> à sua habilidade. </p>
+  <div class="callout"><ul>
+    <li data-only="pve"> <strong> 1. Nodos azuis </strong> que levam ativos para 12 (desbloqueiam sua segunda especialização): {{ s('deadshot') }}, {{ s('snipe') }}, {{ s('gale-arrow') }}, {{ s('drill-dart') }}, {{ s('burst-arrow') }}. </li>
+    <li data-only="pve"> <strong> 2. </strong> Nodos laranjas ofensivos nos cantos do painel, velocidade de combate, redução de recarga. Pegue o caminho mais curto e pegue habilidades no caminho. </li>
+    <li data-only="pve"> <strong> 3. </strong> Ataque, Ataque Crítico, {{ s('focused-eye') }} e {{ s('hunters-resolve') }} nós, depois o resto (defesa, HP, Crit Resist). </li>
+    <li data-only="pve"> No final, rota em torno de MP + 50 nós. Reiniciar uma prancha é bamouse. </li>
+    Prioridade <li data-only="pvp"> <strong>: nós azuis </strong> para {{ s('deadshot') }}, {{ s('snare-shot') }}, {{ s('suppressing-arrow') }}, {{ s('marking-shot') }}, {{ s('defiance') }}. </li>
+    <li data-only="pve"> <strong> Não Ariel no global: </strong> há cinco placas, e o nível 45, um, Azphel, dá apenas PvP Danos Boost e Tolerância - em PvE terminar os quatro primeiros. </li>
+    <li data-only="pvp"> <strong> Azphel </strong> (nível 45) é tudo PvP Dano Boost e Tolerância - levá-lo, e Triniel mais cedo. </li>
+  </ul></div>
+  <div class="table-wrap"><table>
+    <thead> <tr> <th> Painel </th> <th> Desbloquear </th> <th> nós laranja </th> </tr> </thead>
+    <tbody>
+      <tr> <td> Nezekan </td> <td> Lv 12 </td> <td> Velocidade de combate, redução de recarga </td> </tr>
+      <tr> <td> Zikel </td> <td> Lv 20 </td> <td> Danos Aumentam, Tolerância de Danos </td> </tr>
+      <tr> <td> Vaizel </td> <td> Lv 30 </td> <td> Danos Críticos Aumentam e Tolerância </td> </tr>
+      <tr> <td> Triniel </td> <td> Lv 40 </td> <td> Multi-Hit Chance e Resista </td> </tr>
+      <tr> <td> Azphel </td> <td> Lv 45 </td> <td> PvP Dano Aumentar e Tolerância - sem nós de habilidade </td> </tr>
+    </tbody>
+  </table></div>
+  <h3> A rota nas tábuas </h3>
+  <p> Os reais quadros globais dos dados do jogo. O ouro marca o caminho mais bamouse de Start para os nós que este guia toma, os nós azuis das habilidades prioritárias e os nós laranja, pairando sobre qualquer nó para ver o que ele dá. </p>
+  <div data-only="pve">{{ dv_board('pve') }}</div>
+  <div data-only="pvp">{{ dv_board('pvp') }}</div>
+  <p class="note"> Boards e custos vêm dos dados globais do cliente (questlog.gg); o caminho é calculado, não retirado de um vídeo. Os valores do stat ainda podem mudar no lançamento. Verifique o painel antes de fazer uma rota completa. </p>
+{% endcall %}
+
+{% call section('stigmas', 'Estigmas', 'pve') %}
+  <p> Nivelá-los uniformemente primeiro - 5 / 5 / 5 , em seguida, 10 - para atingir cada ponto de interrupção. Assim que você tiver os pontos para <strong> Vaizel's Authority 20 </strong>, reset e colocá-lo lá em primeiro lugar: é quando o Ranger clica. Então Bow of Blessing, Supporting Fire e Griffon Arrow para 20, por sua vez. </p>
+  <p class="note"> Fubgun (global): comece com 15 / 10 / 10 / 5 (Vaizel's Authority , Bow of Blessing , Supporting Fire , Explosive Arrow); após Vaizel's Authority 20 seus próximos pontos vão para Bow of Blessing 15 . Vaizel's Authority 20 só vale a pena com o suficiente Hit crítico - testá-lo em um boneco de treinamento antes de se comprometer. </p>.
+  <ul class="skill-grid">
+    {% call skill('vaizels-authority', 'must', 'Nv. 20', upto=20) %} × 1.5 Focused Eye e Hunter's Soul; em 20 cada acerto crítico tem uma chance 50% de cortar <em> todos os tempos de recarga </em> por 1s - um enorme salto DPS. {% endcall %}
+    {% call skill('bow-of-blessing', 'must', 'Nv. 10 → 20', upto=20) %} Multi-Hit, Ataque de Crit, Danos Críticos e dupla chance. {% endcall %}
+    {% call skill('supporting-fire', 'must', 'Nv. 10 → 20', upto=20) %} Uma esfera que atira ao seu lado, o mesmo recarga que Vaizel, para que possam compartilhar um botão. {% endcall %}
+    {% call skill('griffon-arrow', 'must', 'Nv. 10 → 20', upto=20) %} Flames Crimson DoT, abre a linha macro. {% endcall %}
+    {% call skill('explosive-arrow', 'opt', 'alternativa · 4º espaço', upto=10) %}Uma alternativa igual para Griffon ArrowLordRobson ratiza seus danos quase o mesmo, e um LuckyRO corre Explosive Arrow em 5 (−15s cooldown) instead of Griffon on day one. Moxsy's leveling set uses it too. Fubgun: Explosive Arrow é mais forte até Griffon Arrow Alcance 15, which takes a long time on global. If a fifth slot opens at 45Pegue os dois.{% endcall %}
+    {% call skill('arrow-storm', 'opt', 'evolução', upto=5) %} AoE para pacotes enquanto nivela. {% endcall %}
+  </ul>
+{% endcall %}
+
+{% call section('macro', 'Rotação e macro', 'pve') %}
+  <p> AION 2 tem duas ferramentas separadas, e a build usa ambas: </p>
+  <ul>
+    <li> <strong> linha de barras </strong> - várias habilidades empilhadas no <em> um botão de barras </em>. Pressionando-o lança a habilidade mais alta prioridade que está pronto, e em AION 2 o slot inferior <strong> tem a maior prioridade </strong>. As cartas mostram cada linha de cima a baixo como no jogo. </li>
+    <li> <strong> No jogo macro </strong> - enquanto você segura sua chave, ele pressiona suas linhas de hotbar em ordem e cancela caudas de animação. As habilidades no recarga são ignoradas. </li>
+  </ul>
+
+  <h3> 1. Linhas de barras </h3>
+  <p> Só essas duas linhas importam, elas podem sentar em qualquer slot de hotbar. </p>
+  <div class="hotlines">
+    {% call hotline('1', 'Griffon line', ['griffon-arrow', 'snare-shot', 'burst-arrow']) %} Snare Shot atrasa o alvo para que Burst Arrow possa atingir. {% endcall %}
+    {% call hotline('2', 'Gale line', ['gale-arrow', 'drill-dart', 'tempest-shot']) %} Tempest Shot preenche cada lacuna. {% endcall %}
+  </div>
+
+  <h3> 2. No jogo macro </h3>
+  <p> Skill window → <strong> Macro </strong>: adicione a linha Griffon, depois a linha Gale, <strong> 10 ms </strong> cada (alguns jogadores encontram um ponto doce entre 10 e 20 ms - teste-o). Ligar a macro ao <span class="key"> RMB </span> em Configurações → Configurações-chave → Geral → Macro. </p>
+  {{ macroseq([('Griffon line', '1 · 10 ms'), ('Gale line', '2 · 10 ms')]) }}
+  <div class="callout"><ul>
+    <li> Use o modo de controle <strong> AION 2 </strong> - a macro no jogo é restrita no modo AION 1. </li>
+    <li> Turn <strong> na fila de habilidades no </strong> nas configurações de controle de combate. </li>
+    <li> Dê a {{ s('deadshot') }} uma segunda chave em configurações de chave → Fenda rápida (um botão do mouse lateral). </li>
+  </ul></div>
+
+  <h3> 3. O que você realmente pressiona </h3>
+  <ul class="presslist">
+    <li> <span class="press-how"> Opener </span> <span class="press-what"> Buffs à mão - {{ s('bow-of-blessing') }}, {{ s('supporting-fire') }} + {{ s('vaizels-authority') }} (um botão, mesmo recarga) - então {{ s('marking-shot') }} e um {{ s('deadshot') }} totalmente carregado. </span> </li>
+    <li> <span class="press-how"> Segure </span> <span class="press-what"> {{ s('snipe') }} em <span class="key"> LMB </span>, a macro em <span class="key"> RMB </span> e {{ s('deadshot') }} no botão lateral - todos os três ao mesmo tempo. </span> </li>
+    <li> <span class="press-how"> Mantenha-se </span> <span class="press-what"> {{ s('marking-shot') }} - reformulação quando Precision cai abaixo ~ 3s (assistir a barra de buff). Precisão: + 5% Perfect Chance, + 300 Critical Hit, + 35% Deadshot Danos. Ele dura 15s - reformulá-lo mais frequentemente é uma perda DPS. </span> </li>
+    <li> <span class="press-how"> na recarga </span> <span class="press-what"> Os fãs novamente. </span> </li>
+  </ul>
+
+  <h3> Outra opção: o macro (global) de Fubgun </h3>
+  <p> Fubgun's bar (vídeo de Oct 9, quadros 2:10 e 3:00): Burst Arrow se move para a linha Drill, {{ s('explosive-arrow') }} substitui Griffon Arrow, e os fãs sentam em uma tecla que você mesmo pressiona. </p>
+  {{ hotbar([('1', ['vaizels-authority', 'bow-of-blessing', 'supporting-fire']), ('2', ['marking-shot']), ('3', ['deadshot']), ('4', ['explosion-trap']), None, ('5', ['suppressing-arrow']), ('6', []), ('7', []), ('8', []), None, ('Q', ['gale-arrow', 'snare-shot', 'explosive-arrow']), ('E', []), ('LMB', ['snipe']), ('T', ['drill-dart', 'burst-arrow', 'tempest-shot'])], macro=['Q', 'T']) }}
+  <div class="hotlines">
+    {% call hotline('Q', 'Gale line', ['gale-arrow', 'snare-shot', 'explosive-arrow']) %} Gale Arrow no recarga, Snare Shot para o lento, Explosive Arrow em cima. {% endcall %}
+    {% call hotline('T', 'Drill line', ['drill-dart', 'burst-arrow', 'tempest-shot']) %} Drill Dart primeiro, depois Burst Arrow; Tempest Shot preenche as lacunas. {% endcall %}
+  </div>
+  {{ macroseq([('Gale line', 'Q · 10 ms'), ('Drill line', 'T · 10 ms')]) }}
+  <ul class="presslist">
+    <li> <span class="press-how"> Segure </span> <span class="press-what"> {{ s('snipe') }} em <span class="key"> LMB </span> e a macro em <span class="key"> RMB </span> juntos, toda a luta. A chave T em si nunca é pressionada. Só a macro a usa. </span> </li>
+    <li> <span class="press-how"> à mão </span> <span class="press-what"> A linha de buff no <span class="key"> 1 </span> no momento certo, {{ s('marking-shot') }} a cada 15s, {{ s('deadshot') }} na recarga. </span> </li>
+  </ul>
+  <p class="note"> Versão preguiçosa para o mundo aberto e calabouços fáceis: colocar Burst Arrow no fundo da linha de buff no 1 e adicionar essa linha para a macro - os fãs em seguida, atirar em si mesmos. Pressioná-los você mesmo é mais dano, e em ataques é importante. </p>
+{% endcall %}
+
+{% call section('recap', 'Resumo', 'pve') %}
+  <div class="callout accent"><ul>
+    <li> <strong> Skills: </strong> Deadshot e Gale Arrow 20; Drill Dart , Snipe, Tempest Shot 16; o resto 12; Explosion Trap e Suppressing Arrow só quando necessário (enxotar multidões, um atordoamento) — no final do jogo PvE você pode pular eles; Arrow Scattershot de jeito nenhum. </li>.
+    <li> <strong> Stigmas: </strong> Vaizel's Authority 20 primeiro, depois Bow of Blessing, Supporting Fire, Griffon Arrow; Explosive Arrow se um 5 o slot abrir. </li>
+    <li> <strong> Passivos: </strong> Focused Eye, Hunter's Resolve e Hunter's Soul. </li>
+    <li> <strong> Stats: precisão </strong> para o boné, em seguida, ataque / ataque crítico. </li>
+    <li> <strong> Arcana: </strong> + 4 em Deadshot e Gale Arrow. </li>
+  </ul></div>
+{% endcall %}
+
+{# ============================ Leveling ============================ #}
+{% call section('fight-lvl', t.lvl_combat, 'lvl') %}
+  <p> Evolução e os primeiros dias no 45 seguir guia Ranger de Moxsy (global, outubro 5 ), feito com a ajuda de JohnPal, um Ranger com experiência na Coréia e Taiwan. </p>
+  <div class="callout"><ul>
+    <li> <strong> Packs: </strong> a maioria das habilidades dos Rangers atinge apenas dentro de 4 m do alvo, então não mate mobs um por um. Etiquete vários com {{ s('snipe') }} para puxá-los, depois {{ s('marking-shot') }} e {{ s('explosion-trap') }} para arrastá-los juntos, depois a macro. </li>
+    <li> <strong> Elites: </strong> {{ s('marking-shot') }} primeiro - Precisão fica para toda a luta - em seguida, a macro, e um {{ s('deadshot') }} totalmente carregado no maior alvo. Nunca desperdice Deadshot no lixo enquanto uma elite está acima. </li>
+    <li><strong>Stagger:</strong> {{ s('suppressing-arrow') }} when the boss is close to being stunned. Skip {{ s('arrow-scattershot') }}Segurando-o em um chefe cambaleante faz menos do que a rotação normal.</li>
+    <li> <strong> Mana: </strong> {{ s('snipe') }} restaura MP - tecer o tempo todo. </li>
+  </ul></div>
+{% endcall %}
+
+{% call section('skills-lvl', 'O que para nivelar primeiro?', 'lvl') %}
+  <ul class="skill-grid">
+    {% call skill('snipe', 'must', '8 → 12', [0, 3]) %} Seu ataque básico: + 20% MP restaurado em 8, - 1s Deadshot recarga no sucesso em 12. Leve-o junto com Tempest Shot. {% endcall %}
+    {% call skill('tempest-shot', 'must', '12', [1, 2]) %}Dano precoce: +10% habilidade, crítica e +12% on a single target. Level it together with Snipe.{% endcall %}
+    {% call skill('deadshot', 'must', '12 → 16', [1, 2]) %} Apresse-se sempre que puder, a picareta móvel e + 30% Skill Speed são um enorme salto de danos. Uma habilidade carregada: lançá-la à mão, o macro só dispara a primeira carga. {% endcall %}
+    {% call skill('gale-arrow', 'must', '12', [2, 3]) %} Mobile, e a escolha que aumenta a velocidade de combate - velocidade é a chave do Ranger. {% endcall %}
+    O {% call skill('drill-dart', 'must', '12', [3, 2]) %} bate forte, restaura o MP no acerto crítico, sangra e cura, em um curto recarga. Multi-Hit garantido, e + 20% Velocidade de Habilidade quando ele cai como um. {% endcall %}
+    {% call skill('burst-arrow', 'must', '12', [1, 2]) %} Big hit: com + 50% Multi-hit em cima de seu próprio 50% ele sempre pousa como Multi-hit; móvel; lentos e raízes. {% endcall %}
+  </ul>
+  <div class="callout"><ul>
+    <li> <strong> Ordem: </strong> Snipe e Tempest Shot uniformemente, então Drill Dart, Gale Arrow e Burst Arrow como eles desbloqueiam, Deadshot sempre que um nível está disponível. </li>
+    <li> <strong> Passivos </strong> depois das habilidades: {{ s('focused-eye') }} e {{ s('hunters-resolve') }} primeiro, {{ s('hunters-soul') }}, {{ s('rooting-eye') }} e {{ s('concentrated-fire') }} - suas muitas desacelerações, raízes e dano contínuo alimentam os dois últimos. </li>
+    <li> <strong> Stigmas: </strong> {{ s('vaizels-authority') }}, {{ s('bow-of-blessing') }}, {{ s('supporting-fire') }} e {{ s('explosive-arrow') }} uniformemente para 5. Depois do 45, um reset é gratuito: coloque tudo no Vaizel's Authority até chegar ao 20, o maior pico de energia que um Ranger consegue. </li>
+    <li> <strong> Daevanion: </strong> os nós de habilidade de suas grandes habilidades de dano primeiro, depois as outras habilidades, depois passivas; pule os nós de resistência crítica. </li>
+  </ul></div>
+  <p> Passo a passo: <a href="https://ranger.tgustafsson.se/#board=zikel-59" target="_blank" rel="noopener"> JohnPal's Ranger nivelando e Daevanion planejador → </a> · <a href="https://docs.google.com/document/d/1evrt_6e6WSHRT1vMem2i3O7ZlfANJbqyZoSn66IFrBo/edit?tab=t.0" target="_blank" rel="noopener"> escrito Ranger guia por Allyria → </a> </p>
+{% endcall %}
+
+{% call section('macro-lvl', 'Macro para subir de nível', 'lvl') %}
+  <p> Moxsy's setup (frame 13:32): buffs e rajadas vivem em duas linhas as prensas macro, Snipe e Deadshot ficam no mouse. </p>
+  {{ hotbar([('1', ['suppressing-arrow']), ('2', ['explosion-trap']), ('3', ['marking-shot']), ('4', ['drill-dart', 'tempest-shot']), None, ('5', []), ('6', []), ('7', []), ('8', ['burst-arrow', 'vaizels-authority', 'bow-of-blessing', 'supporting-fire']), None, ('Q', ['gale-arrow', 'explosive-arrow', 'snare-shot']), ('E', ['arrow-scattershot']), ('LMB', ['snipe']), ('RMB', ['deadshot'])], macro=['Q', '4', '8']) }}
+  <div class="hotlines">
+    {% call hotline('8', 'Burst line', ['burst-arrow', 'vaizels-authority', 'bow-of-blessing', 'supporting-fire']) %} Burst Arrow em primeiro lugar, quando está em esfriamento, cada buff dispara no momento em que está pronto. {% endcall %}
+    {% call hotline('Q', 'Gale line', ['gale-arrow', 'explosive-arrow', 'snare-shot']) %} Gale Arrow, Explosive Arrow e Snare Shot para o lento que Burst Arrow precisa. {% endcall %}
+    {% call hotline('4', 'Drill line', ['drill-dart', 'tempest-shot']) %} Drill Dart na recarga, Tempest Shot preenche as lacunas. {% endcall %}
+  </div>
+  <p> No jogo macro, cada passo com um atraso <strong> 10 ms </strong>: </p>
+  {{ macroseq([('Gale line', 'Q'), ('Drill line', '4'), ('Burst line', '8'), ('Drill line', '4')]) }}
+  <p class="note"> O segundo passo Drill Dart não faz nada de extra ainda - no teste de Moxsy o dano era o mesmo - mas compensa uma vez que os estigmas chegam ao 15. Mantenha {{ s('snipe') }} em LMB junto com a macro; {{ s('deadshot') }} é carregado à mão. </p>
+  <h3>Outra opção: as primeiras linhas de Grobs.</h3>
+  <div class="hotlines">
+    {{ hotline('1', 'Line 1', ['griffon-arrow', 'explosive-arrow'], []) }}
+    {{ hotline('2', 'Line 2', ['drill-dart', 'gale-arrow', 'tempest-shot'], []) }}
+  </div>
+  <p> No jogo macro: Linha 1 → Linha 2, 10 ms cada. Assim que suas habilidades chegarem ao 12-16, mude para a configuração completa na aba PvE. </p>
+{% endcall %}
+
+{# ============================ Sources ============================ #}
+<section class="sources" aria-labelledby="h-sources">
+  <h2 id="h-sources">{{ t.sources }}</h2>
+  <ul>
+    <li> <a href="https://www.youtube.com/watch?v=wKOm6yKuu_I" target="_blank" rel="noopener"> Whelps - AION 2 Ranger guia </a> e seu <a href="https://questlog.gg/aion-2/en/character-builder/AelonCommandAndTheSharpMerchant?build-id=8655" target="_blank" rel="noopener"> S 1 final game PvE construir em questlog </a> - a build deste guia segue (competências, estigmas, macro, engrenagem, arcana) </li>
+    <li> <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ0C3iKFteGvIbgqNDnQq7bmwIaU23DvjbPa0HPSVAdOOiCeBkEq69Cn8jVMJhToJcztCRylYeTYfOk/pubhtml" target="_blank" rel="noopener"> TitanTheF - AION 2 folha de progressão </a> (bancada Ranger) e seu <a href="https://aion2t.com/ru/simulator?job=4&amp;b=8QbCF0" target="_blank" rel="noopener"> 45 + construir em aion 2 t </a> - build global anterior (nível de habilidade, evolução) </li>
+    <li> <a href="https://questlog.gg/aion-2/en/db/skills/ranger" target="_blank" rel="noopener"> questlog.gg </a> - habilidade &amp; dados estigma do cliente global </li>
+    <li> <a href="https://7mmo.com/threads/guide-ranger-aion-2-build-pve-complet-sorts-stigmas-stuff.5771/" target="_blank" rel="noopener"> 7 MMO </a> - completa build coreana PvE (competências, estigmas, macro) </li>
+    <li> <a href="https://vortexgaming.io/postdetail/722757" target="_blank" rel="noopener"> Vortex Gaming </a> - Korean pós-patch estigma configuração </li>
+    <li> <a href="https://game8.co/games/Aion-2/archives/613085" target="_blank" rel="noopener"> Game 8 </a> - níveis de habilidade de desbloqueio, rotação básica </li>
+    <li> <a href="https://gamerstogether.cz/en/aion-2-ranger-build-guide/" target="_blank" rel="noopener"> Gamers juntos </a> - PvP aproximação </li>
+    <li> DCInside AION 2 galeria - Jogador coreano posta sobre o meta atual e estigmas (autores anônimos, sem um único link) </li>
+    <li> <a href="https://nemobek.github.io/aion2-guide/" target="_blank" rel="noopener"> Nemobek.github.io/aion 2-guia </a> (mesa de TitanTheF) - nivelando rota </li>
+    <li> <a href="https://www.youtube.com/watch?v=HMod6Z4GrE0" target="_blank" rel="noopener"> Grobs - AION 2 Macro Guide </a> - como as linhas de barras quentes e a macro no jogo funcionam </li>
+    <li> <a href="https://www.youtube.com/watch?v=VsvTt5JkEzY" target="_blank" rel="noopener"> Moxsy — GUIA DE ULTIMATE RANGER! (Levando, Macros, Rotação & Amp; Mais!) </a> — Modo de evolução: puxando pacotes, o que para nivelar primeiro, sua barra de habilidades e macro (feito com JohnPal) </li>
+    <li> <a href="https://www.youtube.com/watch?v=UOuiJT9E1xA" target="_blank" rel="noopener"> aLuckyRO — AION 2 Last Ranger PVE Build for Global </a> — especialização inicial, Explosive Arrow em vez de Griffon, o Marking Shot → Gale Arrow → Deadshot combinação </li>
+    <li> <a href="https://www.youtube.com/watch?v=fGABxC3QKd8" target="_blank" rel="noopener"> LordRobson - Aion 2 Ranger - Construir, Competências, Estigmas e Macros </a> - confirma os estigmas (Griffon Arrow ou Explosive Arrow como o quarto), Deadshot a 16 primeiro, Marking Shot duração </li>
+    <li> <a href="https://www.youtube.com/watch?v=GdAakaOGPLo" target="_blank" rel="noopener"> Fubgun - Guia de Rangers Final. Macro/Stigma habilidades/daevanion placa </a> - uma segunda opção macro com sua barra de habilidades, Explosive Arrow sobre Griffon Arrow, Deadshot e Gale Arrow picaretas, os níveis de estigma inicial, + arco 10 e guarda </li>
+  </ul>
+  <p class="sources-all"><a href="{{ root }}{{ lang }}/sources/">{{ t.src_all }} →</a></p>
+</section>

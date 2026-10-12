@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="en" data-mode="pve">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Class tier list for global Season 1 — AION 2 Global - Guides</title>
+<meta name="description" content="AION 2 class tier lists for global Season 1 compared side by side: PvE, mass PvP (Abyss sieges, ZvZ), solo PvP, pure DPS and how ping changes the choice.">
+<link rel="canonical" href="https://aion2-guias-br.juniorikkix.chatgpt.site/en/tier-list/">
+<link rel="alternate" hreflang="pt-BR" href="https://aion2-guias-br.juniorikkix.chatgpt.site/pt-BR/tier-list/">
+<link rel="alternate" hreflang="en" href="https://aion2-guias-br.juniorikkix.chatgpt.site/en/tier-list/">
+<link rel="alternate" hreflang="x-default" href="https://aion2-guias-br.juniorikkix.chatgpt.site/pt-BR/tier-list/">
+<meta name="theme-color" content="#0b0e14">
+<meta name="color-scheme" content="dark light">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AION 2 Global - Guides">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Class tier list for global Season 1 — AION 2 Global - Guides">
+<meta property="og:description" content="AION 2 class tier lists for global Season 1 compared side by side: PvE, mass PvP (Abyss sieges, ZvZ), solo PvP, pure DPS and how ping changes the choice.">
+<meta property="og:url" content="https://aion2-guias-br.juniorikkix.chatgpt.site/en/tier-list/">
+<meta property="og:image" content="https://aion2-guias-br.juniorikkix.chatgpt.site/assets/og/tier-list-en.jpg?v=190a0472">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image"><link rel="icon" href="../../favicon.ico" sizes="48x48">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-96.png" type="image/png" sizes="96x96">
+<link rel="icon" href="../../assets/favicon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Yeseva+One&family=JetBrains+Mono:wght@500;700&display=swap&subset=cyrillic">
+<script>
+  // Theme + guide mode before first paint (no flash).
+  (function (r) {
+    try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') r.dataset.theme = t; } catch (e) {}
+    var off = (r.getAttribute('data-off') || '').split(' ');
+    var modes = ['pve', 'pvp', 'lvl'].filter(function (x) { return off.indexOf(x) < 0; });
+    var m = new URLSearchParams(location.search).get('mode');
+    if (modes.indexOf(m) < 0) { try { m = localStorage.getItem('mode'); } catch (e) {} }
+    if (modes.indexOf(m) >= 0) r.dataset.mode = m;
+    else if (modes.indexOf(r.dataset.mode) < 0) r.dataset.mode = modes[0];
+  })(document.documentElement);
+</script>
+<link rel="stylesheet" href="../../assets/css/site.css?v=190a0472">
+</head>
+<body class="page-guide page-tierlist">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="../../en/">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3c1.8 4.6 5.6 7.2 12 8-4.4 2.2-6.8 5.6-7.4 10.6L16 29l-4.6-7.4C10.8 16.6 8.4 13.2 4 11c6.4-.8 10.2-3.4 12-8z" fill="currentColor"/></svg><span class="brand-text"><b>AION 2 Global</b><small><span class="sr-only"> - </span>Guides</small></span>
+    </a>
+    <details class="class-menu">
+      <summary class="class-menu-btn">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="4" y="4" width="6" height="6" rx="1.5"/><rect x="14" y="4" width="6" height="6" rx="1.5"/><rect x="4" y="14" width="6" height="6" rx="1.5"/><rect x="14" y="14" width="6" height="6" rx="1.5"/></svg><span>Classes</span>        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      </summary>
+      <nav class="class-menu-panel" aria-label="Classes">
+        <a href="../../en/gladiator/" class="cm-item accent-crimson">
+          <img src="../../assets/classes/gladiator.webp" width="44" height="44" alt=""><span class="cm-name">Gladiator</span><span class="cm-role">Melee DPS · bruiser</span>
+        </a>
+        <a href="../../en/ranger/" class="cm-item accent-emerald">
+          <img src="../../assets/classes/ranger.webp" width="44" height="44" alt=""><span class="cm-name">Ranger</span><span class="cm-role">Ranged DPS · kiter</span>
+        </a>
+        <a href="../../en/templar/" class="cm-item accent-sapphire">
+          <img src="../../assets/classes/templar.webp" width="44" height="44" alt=""><span class="cm-name">Templar</span><span class="cm-role">Tank · party buffer</span>
+        </a>
+        <a href="../../en/assassin/" class="cm-item accent-violet">
+          <img src="../../assets/classes/assassin.webp" width="44" height="44" alt=""><span class="cm-name">Assassin</span><span class="cm-role">Melee DPS · burst</span>
+        </a>
+        <a href="../../en/sorcerer/" class="cm-item accent-frost">
+          <img src="../../assets/classes/sorcerer.webp" width="44" height="44" alt=""><span class="cm-name">Sorcerer</span><span class="cm-role">Ranged magic DPS</span>
+        </a>
+        <a href="../../en/elementalist/" class="cm-item accent-spirit">
+          <img src="../../assets/classes/elementalist.webp" width="44" height="44" alt=""><span class="cm-name">Elementalist</span><span class="cm-role">Summoner · magic DPS</span>
+        </a>
+        <a href="../../en/cleric/" class="cm-item accent-sunlight">
+          <img src="../../assets/classes/cleric.webp" width="44" height="44" alt=""><span class="cm-name">Cleric</span><span class="cm-role">Healer · earth and lightning damage</span>
+        </a>
+        <a href="../../en/chanter/" class="cm-item accent-amber">
+          <img src="../../assets/classes/chanter.webp" width="44" height="44" alt=""><span class="cm-name">Chanter</span><span class="cm-role">Melee support · buffer</span>
+        </a>
+      </nav>
+    </details>
+    <div class="topbar-tools">      <span class="rift-timer" data-anchor="2026-10-02T18:00:00Z" data-every="3" data-tz="Europe/Kyiv" data-open-min="10" data-open="Rift is open" title="Rift — portal to the enemy zone, opens every 3 hours; the entrance stays open for 10 minutes, inside you can stay about an hour. Next">
+        <svg class="rt-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><ellipse cx="12" cy="12" rx="7.5" ry="10.5"/><path d="M11 13C10.2 11.4 11.4 10 12.8 10.4C14.6 11 14.6 14 12.8 15.6C11.4 16.8 9.6 16.8 8.6 16"/><path d="M12.4 6.6C14.8 6.4 17 8.6 17 12"/><g transform="rotate(180 12 12)"><path d="M11 13C10.2 11.4 11.4 10 12.8 10.4C14.6 11 14.6 14 12.8 15.6C11.4 16.8 9.6 16.8 8.6 16"/><path d="M12.4 6.6C14.8 6.4 17 8.6 17 12"/></g></svg><span class="rt-name">Rift</span><b class="rt-time">--:--</b>
+      </span>
+      <a class="wr-chip" href="../../en/weekly/" data-anchor="2026-09-30T07:00:00Z" data-tz="Europe/Kyiv" data-units="d,h,m,s" title="Weekly reset in">
+        <svg class="wr-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11a8 8 0 1 0-2.3 5.7"/><path d="M20 4v7h-7"/></svg><span class="wr-name">Reset</span><b class="wr-time">--</b>
+      </a>
+      <a class="top-timer" href="../../en/" title="Timers" data-events='[{"at": "2026-10-05T13:00:00Z", "n": "Global launch", "o": "Servers are open"}]' data-units="d,h,m,s" data-open="live">
+        <span class="tt-dot" aria-hidden="true"></span><span class="tt-name"></span><b class="tt-time">--:--:--</b>
+      </a>
+      <details class="class-menu nav-menu">
+        <summary class="class-menu-btn is-here">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10"/></svg><span>Guides</span>
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <nav class="nav-menu-panel" aria-label="Guides">
+          <div class="nm-col">
+            <p class="nm-group">Progress</p>
+            <a href="../../en/week-1/" class="nm-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21V4M5 4h11l-2 4 2 4H5"/></svg>
+              <span class="nm-name">Week 1</span><span class="nm-desc">What to finish before the first reset</span>
+            </a>
+            <a href="../../en/progression/" class="nm-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20h4v-6H3zM10 20h4V9h-4zM17 20h4V4h-4z"/></svg>
+              <span class="nm-name">After 45</span><span class="nm-desc">Item level route to the raid</span>
+            </a>
+            <a href="../../en/crafting/" class="nm-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0 5 5L21 13l-8 8-3-3 1.3-1.3a4 4 0 0 0-5-5L3 10l3-3 3 3 1.3-1.3a4 4 0 0 1 4.4-2.4z"/></svg>
+              <span class="nm-name">Gathering and crafting</span><span class="nm-desc">Professions and gold blanks</span>
+            </a>
+            <a href="../../en/settings/" class="nm-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h10M18 6h2M4 12h4M12 12h8M4 18h12M20 18h0"/><circle cx="16" cy="6" r="2"/><circle cx="10" cy="12" r="2"/><circle cx="18" cy="18" r="2"/></svg>
+              <span class="nm-name">Game settings</span><span class="nm-desc">Controls, keys, FPS and mass PvP</span>
+            </a>
+            <a href="../../en/dungeons/" class="nm-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V10l9-7 9 7v11"/><path d="M9 21v-6a3 3 0 0 1 6 0v6"/></svg>
+              <span class="nm-name">Dungeons</span><span class="nm-desc">Boss mechanics with arena diagrams</span>
+            </a>
+            <a href="../../en/tier-list/" class="nm-item" aria-current="page">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h4M4 12h4M4 19h4"/><path d="M11 5h9M11 12h6M11 19h3"/></svg>
+              <span class="nm-name">Tier list</span><span class="nm-desc">Classes ranked by content</span>
+            </a>
+          </div>
+          <div class="nm-col">
+            <p class="nm-group">Trackers</p>
+            <a href="../../en/weekly/" class="nm-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M8.5 15l2 2 4-4"/></svg>
+              <span class="nm-name">Weekly</span><span class="nm-desc">Weekly entries and energy</span>
+            </a>
+            <a href="../../en/bosses/" class="nm-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c-4.4 0-8 3.1-8 7.5 0 2.6 1.3 4.4 3 5.5V20h2v-2h2v2h2v-2h2v2h2v-4c1.7-1.1 3-2.9 3-5.5C20 6.1 16.4 3 12 3z"/><circle cx="9" cy="11" r="1.5"/><circle cx="15" cy="11" r="1.5"/></svg>
+              <span class="nm-name">World bosses</span><span class="nm-desc">Kill tracker and timers</span>
+            </a>
+          </div>
+          <div class="nm-foot">
+            <a href="../../en/sources/" class="nm-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h12v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5M8 7h6M8 11h6"/></svg>
+              <span class="nm-name">Sources &amp; credits</span><span class="nm-desc">Everyone this site builds on</span>
+            </a>
+          </div>
+        </nav>
+      </details>      <details class="lang-menu">
+        <summary class="lang-switch" title="Language"><span aria-hidden="true">EN</span><span class="sr-only">Language</span></summary>
+        <nav class="lang-panel" aria-label="Language">
+<a href="../../pt-BR/tier-list/" hreflang="pt-BR" lang="pt-BR" data-keep-query><b>BR</b>Português do Brasil</a><a href="../../en/tier-list/" hreflang="en" lang="en" aria-current="true" data-keep-query><b>EN</b>English</a>        </nav>
+      </details>
+      <button class="icon-btn search-open" type="button" aria-label="Search (Ctrl+K)" title="Search (Ctrl+K)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      </button>
+<a class="icon-btn wn-top" href="../../en/changelog/" aria-label="Changelog" title="Changelog">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.2a2.6 2.6 0 0 1 5 .9c0 1.7-2.5 2.3-2.5 3.9"/><path d="M12 17h.01"/></svg>
+      </a>      <button class="icon-btn theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
+        <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="page-hero has-art" style="--hero-art:url('../../assets/art/hero-tier-list.webp');--hero-pos:50% 78%">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="All classes"><a href="../../en/">All classes</a><span aria-hidden="true">/</span><span>Tier list</span></nav>
+      <h1>Class tier list</h1>
+      <p class="lead">Several creators&#39; tier lists side by side, by kind of content — and the average of them.</p>
+    </div>
+  </section>
+
+  <div class="wrap tl-page">
+    <div class="callout tl-warn" role="note"><p><strong>Not final and subjective</strong> — every letter here is a creator&#39;s opinion from the first days of global (or from Taiwan / Korea), and balance changes from patch to patch. Pick the class you enjoy; use this to see where it shines.</p>
+      <p class="tl-srcs"><a class="w1-src" href="https://www.youtube.com/watch?v=TupssWSk8GQ" target="_blank" rel="noopener" title="trueeevil — Ultimate Class Tier List for Aion 2 Global Launch">trueeevil</a><a class="w1-src" href="https://www.youtube.com/watch?v=YlYUst_BJD8" target="_blank" rel="noopener" title="XifanGG — Global Tier List (PvP, PvE, F2P &amp; ZvZ)">XifanGG</a><a class="w1-src" href="https://www.youtube.com/watch?v=2UHSUVB9Ipc" target="_blank" rel="noopener" title="KaidWOW — Ranking Best Classes After First Days of Release">KaidWOW</a><a class="w1-src" href="https://www.youtube.com/watch?v=ra-uMi9Whhs" target="_blank" rel="noopener" title="Kanon — Updated DPS Tierlist &amp; Rankings (Across All Content)">Kanon</a></p></div>
+
+    <div class="page-tabs-wrap">
+  <div class="page-tabs" role="tablist" aria-label="Tier list">
+    <span class="pt-ind" aria-hidden="true"></span>
+<button type="button" role="tab" class="pt-tab" id="tab-pve" data-tab="pve" aria-selected="true">PvE</button><button type="button" role="tab" class="pt-tab" id="tab-mass" data-tab="mass" aria-selected="false">Mass PvP</button><button type="button" role="tab" class="pt-tab" id="tab-duel" data-tab="duel" aria-selected="false">Solo PvP</button><button type="button" role="tab" class="pt-tab" id="tab-dps" data-tab="dps" aria-selected="false">DPS</button><button type="button" role="tab" class="pt-tab" id="tab-ping" data-tab="ping" aria-selected="false">Ping</button>  </div>
+</div>
+
+
+    <section class="tl-board tab-panel" id="pve" data-tab-panel="pve" role="tabpanel" aria-labelledby="h-pve">
+      <h2 id="h-pve" class="section-title">PvE: dungeons and progression</h2>
+<p class="pg-lead">What a group wants from you while learning dungeons. Healers and tanks rank high because groups need them; damage dealers are close to each other.</p>      <div class="tl-grid">
+        <div class="tl-row tl-s"><span class="tl-letter">S</span>
+          <div class="tl-cells"><a class="tl-cls accent-sunlight" href="../../en/cleric/" title="Cleric"><img src="../../assets/classes/cleric.webp" width="48" height="48" alt=""><span>Cleric</span></a><a class="tl-cls accent-sapphire" href="../../en/templar/" title="Templar"><img src="../../assets/classes/templar.webp" width="48" height="48" alt=""><span>Templar</span></a></div>
+        </div>
+        <div class="tl-row tl-a"><span class="tl-letter">A</span>
+          <div class="tl-cells"><a class="tl-cls accent-crimson" href="../../en/gladiator/" title="Gladiator"><img src="../../assets/classes/gladiator.webp" width="48" height="48" alt=""><span>Gladiator</span></a><a class="tl-cls accent-emerald" href="../../en/ranger/" title="Ranger"><img src="../../assets/classes/ranger.webp" width="48" height="48" alt=""><span>Ranger</span></a><a class="tl-cls accent-violet" href="../../en/assassin/" title="Assassin"><img src="../../assets/classes/assassin.webp" width="48" height="48" alt=""><span>Assassin</span></a><a class="tl-cls accent-frost" href="../../en/sorcerer/" title="Sorcerer"><img src="../../assets/classes/sorcerer.webp" width="48" height="48" alt=""><span>Sorcerer</span></a><a class="tl-cls accent-spirit" href="../../en/elementalist/" title="Elementalist"><img src="../../assets/classes/elementalist.webp" width="48" height="48" alt=""><span>Elementalist</span></a></div>
+        </div>
+        <div class="tl-row tl-b"><span class="tl-letter">B</span>
+          <div class="tl-cells"><a class="tl-cls accent-amber" href="../../en/chanter/" title="Chanter"><img src="../../assets/classes/chanter.webp" width="48" height="48" alt=""><span>Chanter</span></a></div>
+        </div>
+        <div class="tl-row tl-c"><span class="tl-letter">C</span>
+          <div class="tl-cells"></div>
+        </div>
+        <div class="tl-row tl-d"><span class="tl-letter">D</span>
+          <div class="tl-cells"></div>
+        </div>
+      </div>
+      <div class="table-wrap tl-compare"><table>
+        <thead><tr><th scope="col">Class</th><th scope="col"><a href="https://www.youtube.com/watch?v=TupssWSk8GQ&t=795s" target="_blank" rel="noopener">trueeevil</a></th><th scope="col"><a href="https://www.youtube.com/watch?v=YlYUst_BJD8&t=100s" target="_blank" rel="noopener">XifanGG</a></th><th scope="col">Average</th></tr></thead>
+        <tbody>
+          <tr><td class="tl-name"><img src="../../assets/classes/cleric.webp" width="22" height="22" alt="" loading="lazy"> Cleric</td>
+<td><span class="tl-mark tl-s">S</span></td><td><span class="tl-mark tl-s">S</span></td>            <td class="tl-avgv">4.0</td></tr>
+          <tr><td class="tl-name"><img src="../../assets/classes/templar.webp" width="22" height="22" alt="" loading="lazy"> Templar</td>
+<td><span class="tl-mark tl-a">A</span></td><td><span class="tl-mark tl-s">S</span></td>            <td class="tl-avgv">3.5</td></tr>
+          <tr><td class="tl-name"><img src="../../assets/classes/gladiator.webp" width="22" height="22" alt="" loading="lazy"> Gladiator</td>
+<td><span class="tl-mark tl-a">A</span></td><td><span class="tl-mark tl-a">A</span></td>            <td class="tl-avgv">3.0</td></tr>
+          <tr><td class="tl-name"><img src="../../assets/classes/ranger.webp" width="22" height="22" alt="" loading="lazy"> Ranger</td>
+<td><span class="tl-mark tl-a">A</span></td><td><span class="tl-mark tl-b">B</span></td>            <td class="tl-avgv">2.5</td></tr>
+          <tr><td class="tl-name"><img src="../../assets/classes/assassin.webp" width="22" height="22" alt="" loading="lazy"> Assassin</td>
+<td><span class="tl-mark tl-a">A</span></td><td><span class="tl-mark tl-b">B</span></td>            <td class="tl-avgv">2.5</td></tr>
+          <tr><td class="tl-name"><img src="../../assets/classes/sorcerer.webp" width="22" height="22" alt="" loading="lazy"> Sorcerer</td>
+<td><span class="tl-mark tl-a">A</span></td><td><span class="tl-mark tl-b">B</span></td>            <td class="tl-avgv">2.5</td></tr>
+          <tr><td class="tl-name"><img src="../../assets/classes/elementalist.webp" width="22" height="22" alt="" loading="lazy"> Elementalist</td>
+<td><span class="tl-mark tl-a">A</span></td><td><span class="tl-mark tl-b">B</span></td>            <td class="tl-avgv">2.5</td></tr>
+          <tr><td class="tl-name"><img src="../../assets/classes/chanter.webp" width="22" height="22" alt="" loading="lazy"> Chanter</td>
+<td><span class="tl-mark tl-c">C</span></td><td><span class="tl-mark tl-a">A</span></td>            <td class="tl-avgv">2.0</td></tr>
+        </tbody>
+      </table></div>
+<p class="note">XifanGG flips this for late game, once groups know the fights and bosses die in 30–40 seconds: Assassin and Chanter go to S, Templar and Cleric drop to B. trueeevil puts Chanter low because groups looking for a healer want a Cleric.</p>    </section>
+    <section class="tl-board tab-panel" id="mass" data-tab-panel="mass" role="tabpanel" aria-labelledby="h-mass" hidden>
+      <h2 id="h-mass" class="section-title">Mass PvP: Abyss sieges and ZvZ</h2>
+<p class="pg-lead">Hundreds of players around an artifact or a boss. Ranged classes and healers do the work; melee gets melted if it walks into the blob.</p>      <div class="tl-grid">
+        <div class="tl-row tl-s"><span class="tl-letter">S</span>
+          <div class="tl-cells"><a class="tl-cls accent-sunlight" href="../../en/cleric/" title="Cleric"><img src="../../assets/classes/cleric.webp" width="48" height="48" alt=""><span>Cleric</span></a><a class="tl-cls accent-emerald" href="../../en/ranger/" title="Ranger"><img src="../../assets/classes/ranger.webp" width="48" height="48" alt=""><span>Ranger</span></a><a class="tl-cls accent-frost" href="../../en/sorcerer/" title="Sorcerer"><img src="../../assets/classes/sorcerer.webp" width="48" height="48" alt=""><span>Sorcerer</span></a><a class="tl-cls accent-spirit" href="../../en/elementalist/" title="Elementalist"><img src="../../assets/classes/elementalist.webp" width="48" height="48" alt=""><span>Elementalist</span></a></div>
+        </div>
+        <div class="tl-row tl-a"><span class="tl-letter">A</span>
+          <div class="tl-cells"><a class="tl-cls accent-sapphire" href="../../en/templar/" title="Templar"><img src="../../assets/classes/templar.webp" width="48" height="48" alt=""><span>Templar</span></a><a class="tl-cls accent-amber" href="../../en/chanter/" title="Chanter"><img src="../../assets/classes/chanter.webp" width="48" height="48" alt=""><span>Chanter</span></a></div>
+        </div>
+        <div class="tl-row tl-b"><span class="tl-letter">B</span>
+          <div class="tl-cells"><a class="tl-cls accent-crimson" href="../../en/gladiator/" title="Gladiator"><img src="../../assets/classes/gladiator.webp" width="48" height="48" alt=""><span>Gladiator</span></a><a class="tl-cls accent-violet" href="../../en/assassin/" title="Assassin"><img src="../../assets/classes/assassin.webp" width="48" height="48" alt=""><span>Assassin</span></a></div>
+        </div>
+        <div class="tl-row tl-c"><span class="tl-letter">C</span>
+          <div class="tl-cells"></div>
+        </div>
+        <div class="tl-row tl-d"><span class="tl-letter">D</span>
+          <div class="tl-cells"></div>
+        </div>
+      </div>
+      <div class="table-wrap tl-compare"><table>
+        <thead><tr><th scope="col">Class</th><th scope="col"><a href="https://www.youtube.com/watch?v=TupssWSk8GQ&t=441s" target="_blank" rel="noopener">trueeevil</a></th><th scope="col"><a href="https://www.youtube.com/watch?v=YlYUst_BJD8&t=502s" target="_blank" rel="noopener">XifanGG</a></th><th scope="col">Average</th></tr></thead>
+        <tbody>
+          <tr><td class="tl-name"><img src="../../assets/classes/cleric.webp" width="22" height="22" alt="" loading="lazy"> Cleric</td>
+<td><span class="tl-mark tl-s">S</span></td><td><span class="tl-mark tl-s">S</span></td>            <td class="tl-avgv">4.0</td></tr>
+          <tr><td class="tl-name"><img src="../../assets/classes/ranger.webp" width="22" height="22" alt="" loading="lazy"> Ranger</td>
+<td><span class="tl-mark tl-a">A</span></td><td><span class="tl-mark tl-s">S</span></td>            <td class="tl-avgv">3.5</td></tr>
+          <tr><td class="tl-name"><img src="../../assets/classes/sorcerer.webp" width="22" height="22" alt="" loading="lazy"> Sorcerer</td>
+<td><span class="tl-mark tl-a">A</span></td><td><span class="tl-mark tl-s">S</span></td>            <td class="tl-avgv">3.5</td></tr>
+          <tr><td class="tl-name"><img src="../../assets/classes/elementalist.webp" width="22" height="22" alt="" loading="lazy"> Elementalist</td>
+<td><span class="tl-mark tl-a">A</span></td><td><span class="tl-mark tl-s">S</span></td>            <td class="tl-avgv">3.5</td></tr>
+          <tr><td class="tl-name"><img src="../../assets/classes/templar.webp" width="22" height="22" alt="" loading="lazy"> Templar</td>
+<td><span class="tl-mark tl-s">S</span></td><td><span class="tl-mark tl-b">B</span></td>            <td class="tl-avgv">3.0</td></tr>
+          <tr><td class="tl-name"><img src="../../assets/classes/chanter.webp" width="22" height="22" alt="" loading="lazy"> Chanter</td>
+<td><span class="tl-mark tl-a">A</span></td><td><span class="tl-mark tl-a">A</span></td>            <td class="tl-avgv">3.0</td></tr>
+          <tr><td class="tl-name"><img src="../../assets/classes/gladiator.webp" width="22" height="22" alt="" loading="lazy"> Gladiator</td>
+<td><span class="tl-mark tl-b">B</span></td><td><span class="tl-mark tl-c">C</span></td>            <td class="tl-avgv">1.5</td></tr>
+          <tr><td class="tl-name"><img src="../../assets/classes/assassin.webp" width="22" height="22" alt="" loading="lazy"> Assassin</td>
+<td><span class="tl-mark tl-b">B</span></td><td><span class="tl-mark tl-c">C</span></td>            <td class="tl-avgv">1.5</td></tr>
+        </tbody>
+      </table></div>
+<p class="note">They disagree on the Templar: trueeevil plays it in sieges and rates its pulls into the enemy line; XifanGG thinks a melee can&#39;t safely hit a contested boss or artifact.</p>    </section>
+    <section class="tl-board tab-panel" id="duel" data-tab-panel="duel" role="tabpanel" aria-labelledby="h-duel" hidden>
+      <h2 id="h-duel" class="section-title">Solo PvP: 1v1 and roaming</h2>
+<p class="pg-lead">Fights you pick yourself in the Abyss. The classes that are worst in sieges are the best here.</p>      <div class="tl-grid">
+        <div class="tl-row tl-s"><span class="tl-letter">S</span>
+          <div class="tl-cells"><a class="tl-cls accent-crimson" href="../../en/gladiator/" title="Gladiator"><img src="../../assets/classes/gladiator.webp" width="48" height="48" alt=""><span>Gladiator</span></a><a class="tl-cls accent-violet" href="../../en/assassin/" title="Assassin"><img src="../../assets/classes/assassin.webp" width="48" height="48" alt=""><span>Assassin</span></a></div>
+        </div>
+        <div class="tl-row tl-a"><span class="tl-letter">A</span>
+          <div class="tl-cells"><a class="tl-cls accent-emerald" href="../../en/ranger/" title="Ranger"><img src="../../assets/classes/ranger.webp" width="48" height="48" alt=""><span>Ranger</span></a><a class="tl-cls accent-sapphire" href="../../en/templar/" title="Templar"><img src="../../assets/classes/templar.webp" width="48" height="48" alt=""><span>Templar</span></a><a class="tl-cls accent-spirit" href="../../en/elementalist/" title="Elementalist"><img src="../../assets/classes/elementalist.webp" width="48" height="48" alt=""><span>Elementalist</span></a><a class="tl-cls accent-frost" href="../../en/sorcerer/" title="Sorcerer"><img src="../../assets/classes/sorcerer.webp" width="48" height="48" alt=""><span>Sorcerer</span></a><a class="tl-cls accent-amber" href="../../en/chanter/" title="Chanter"><img src="../../assets/classes/chanter.webp" width="48" height="48" alt=""><span>Chanter</span></a></div>
+        </div>
+        <div class="tl-row tl-b"><span class="tl-letter">B</span>
+          <div class="tl-cells"><a class="tl-cls accent-sunlight" href="../../en/cleric/" title="Cleric"><img src="../../assets/classes/cleric.webp" width="48" height="48" alt=""><span>Cleric</span></a></div>
+        </div>
+        <div class="tl-row tl-c"><span class="tl-letter">C</span>
+          <div class="tl-cells"></div>
+        </div>
+        <div class="tl-row tl-d"><span class="tl-letter">D</span>
+          <div class="tl-cells"></div>
+        </div>
+      </div>
+      <div class="table-wrap tl-compare"><table>
+        <thead><tr><th scope="col">Class</th><th scope="col"><a href="https://www.youtube.com/watch?v=TupssWSk8GQ&t=1047s" target="_blank" rel="noopener">trueeevil</a></th><th scope="col"><a href="https://www.youtube.com/watch?v=YlYUst_BJD8&t=170s" target="_blank" rel="noopener">XifanGG</a></th><th scope="col">Average</th></tr></thead>
+        <tbody>
+          <tr><td class="tl-name"><img src="../../assets/classes/gladiator.webp" width="22" height="22" alt="" loading="lazy"> Gladiator</td>
+<td><span class="tl-mark tl-s">S</span></td><td><span class="tl-mark tl-s">S</span></td>            <td class="tl-avgv">4.0</td></tr>
+          <tr><td class="tl-name"><img src="../../assets/classes/assassin.webp" width="22" height="22" alt="" loading="lazy"> Assassin</td>
+<td><span class="tl-mark tl-s">S</span></td><td><span class="tl-mark tl-s">S</span></td>            <td class="tl-avgv">4.0</td></tr>
+          <tr><td class="tl-name"><img src="../../assets/classes/ranger.webp" width="22" height="22" alt="" loading="lazy"> Ranger</td>
+<td><span class="tl-mark tl-a">A</span></td><td><span class="tl-mark tl-a">A</span></td>            <td class="tl-avgv">3.0</td></tr>
+          <tr><td class="tl-name"><img src="../../assets/classes/templar.webp" width="22" height="22" alt="" loading="lazy"> Templar</td>
+<td><span class="tl-mark tl-a">A</span></td><td><span class="tl-mark tl-a">A</span></td>            <td class="tl-avgv">3.0</td></tr>
+          <tr><td class="tl-name"><img src="../../assets/classes/elementalist.webp" width="22" height="22" alt="" loading="lazy"> Elementalist</td>
+<td><span class="tl-mark tl-a">A</span></td><td><span class="tl-mark tl-a">A</span></td>            <td class="tl-avgv">3.0</td></tr>
+          <tr><td class="tl-name"><img src="../../assets/classes/sorcerer.webp" width="22" height="22" alt="" loading="lazy"> Sorcerer</td>
+<td><span class="tl-mark tl-a">A</span></td><td><span class="tl-mark tl-b">B</span></td>            <td class="tl-avgv">2.5</td></tr>
+          <tr><td class="tl-name"><img src="../../assets/classes/chanter.webp" width="22" height="22" alt="" loading="lazy"> Chanter</td>
+<td><span class="tl-mark tl-b">B</span></td><td><span class="tl-mark tl-a">A</span></td>            <td class="tl-avgv">2.5</td></tr>
+          <tr><td class="tl-name"><img src="../../assets/classes/cleric.webp" width="22" height="22" alt="" loading="lazy"> Cleric</td>
+<td><span class="tl-mark tl-b">B</span></td><td><span class="tl-mark tl-b">B</span></td>            <td class="tl-avgv">2.0</td></tr>
+        </tbody>
+      </table></div>
+<p class="note">The two lists almost match. XifanGG&#39;s small-group PvP list is different again: Cleric S, Sorcerer C.</p>    </section>
+    <section class="tl-board tab-panel" id="dps" data-tab-panel="dps" role="tabpanel" aria-labelledby="h-dps" hidden>
+      <h2 id="h-dps" class="section-title">Pure damage (DPS)</h2>
+<p class="pg-lead">Only the damage meter, with equal gear and good play — not what a class brings to the group.</p>      <div class="tl-grid">
+        <div class="tl-row tl-s"><span class="tl-letter">S</span>
+          <div class="tl-cells"><a class="tl-cls accent-emerald" href="../../en/ranger/" title="Ranger"><img src="../../assets/classes/ranger.webp" width="48" height="48" alt=""><span>Ranger</span></a><a class="tl-cls accent-violet" href="../../en/assassin/" title="Assassin"><img src="../../assets/classes/assassin.webp" width="48" height="48" alt=""><span>Assassin</span></a><a class="tl-cls accent-frost" href="../../en/sorcerer/" title="Sorcerer"><img src="../../assets/classes/sorcerer.webp" width="48" height="48" alt=""><span>Sorcerer</span></a></div>
+        </div>
+        <div class="tl-row tl-a"><span class="tl-letter">A</span>
+          <div class="tl-cells"><a class="tl-cls accent-crimson" href="../../en/gladiator/" title="Gladiator"><img src="../../assets/classes/gladiator.webp" width="48" height="48" alt=""><span>Gladiator</span></a><a class="tl-cls accent-spirit" href="../../en/elementalist/" title="Elementalist"><img src="../../assets/classes/elementalist.webp" width="48" height="48" alt=""><span>Elementalist</span></a></div>
+        </div>
+        <div class="tl-row tl-b"><span class="tl-letter">B</span>
+          <div class="tl-cells"><a class="tl-cls accent-amber" href="../../en/chanter/" title="Chanter"><img src="../../assets/classes/chanter.webp" width="48" height="48" alt=""><span>Chanter</span></a></div>
+        </div>
+        <div class="tl-row tl-c"><span class="tl-letter">C</span>
+          <div class="tl-cells"><a class="tl-cls accent-sapphire" href="../../en/templar/" title="Templar"><img src="../../assets/classes/templar.webp" width="48" height="48" alt=""><span>Templar</span></a><a class="tl-cls accent-sunlight" href="../../en/cleric/" title="Cleric"><img src="../../assets/classes/cleric.webp" width="48" height="48" alt=""><span>Cleric</span></a></div>
+        </div>
+        <div class="tl-row tl-d"><span class="tl-letter">D</span>
+          <div class="tl-cells"></div>
+        </div>
+      </div>
+      <div class="table-wrap tl-compare"><table>
+        <thead><tr><th scope="col">Class</th><th scope="col"><a href="https://www.youtube.com/watch?v=2UHSUVB9Ipc" target="_blank" rel="noopener">KaidWOW</a></th><th scope="col"><a href="https://www.youtube.com/watch?v=ra-uMi9Whhs&t=654s" target="_blank" rel="noopener">Kanon</a></th><th scope="col">Average</th></tr></thead>
+        <tbody>
+          <tr><td class="tl-name"><img src="../../assets/classes/ranger.webp" width="22" height="22" alt="" loading="lazy"> Ranger</td>
+<td><span class="tl-mark tl-s">S</span></td><td><span class="tl-mark tl-a">A</span></td>            <td class="tl-avgv">3.5</td></tr>
+          <tr><td class="tl-name"><img src="../../assets/classes/assassin.webp" width="22" height="22" alt="" loading="lazy"> Assassin</td>
+<td><span class="tl-mark tl-s">S</span></td><td><span class="tl-mark tl-a">A</span></td>            <td class="tl-avgv">3.5</td></tr>
+          <tr><td class="tl-name"><img src="../../assets/classes/sorcerer.webp" width="22" height="22" alt="" loading="lazy"> Sorcerer</td>
+<td><span class="tl-mark tl-a">A</span></td><td><span class="tl-mark tl-s">S</span></td>            <td class="tl-avgv">3.5</td></tr>
+          <tr><td class="tl-name"><img src="../../assets/classes/gladiator.webp" width="22" height="22" alt="" loading="lazy"> Gladiator</td>
+<td><span class="tl-mark tl-s">S</span></td><td><span class="tl-mark tl-b">B</span></td>            <td class="tl-avgv">3.0</td></tr>
+          <tr><td class="tl-name"><img src="../../assets/classes/elementalist.webp" width="22" height="22" alt="" loading="lazy"> Elementalist</td>
+<td><span class="tl-mark tl-b">B</span></td><td><span class="tl-mark tl-a">A</span></td>            <td class="tl-avgv">2.5</td></tr>
+          <tr><td class="tl-name"><img src="../../assets/classes/chanter.webp" width="22" height="22" alt="" loading="lazy"> Chanter</td>
+<td><span class="tl-mark tl-c">C</span></td><td><span class="tl-mark tl-b">B</span></td>            <td class="tl-avgv">1.5</td></tr>
+          <tr><td class="tl-name"><img src="../../assets/classes/templar.webp" width="22" height="22" alt="" loading="lazy"> Templar</td>
+<td><span class="tl-mark tl-d">D</span></td><td><span class="tl-mark tl-b">B</span></td>            <td class="tl-avgv">1.0</td></tr>
+          <tr><td class="tl-name"><img src="../../assets/classes/cleric.webp" width="22" height="22" alt="" loading="lazy"> Cleric</td>
+<td><span class="tl-mark tl-c">C</span></td><td><span class="tl-mark tl-c">C</span></td>            <td class="tl-avgv">1.0</td></tr>
+        </tbody>
+      </table></div>
+<p class="note">Kanon&#39;s list is averaged from real parses (top 25% on notmeter.com) across the latest Korean raids, Transcendence and Conquest dungeons — ranged classes lead there because they build Front Attack Damage Boost. KaidWOW ranks the damage ceiling and puts Gladiator first. Balance on global starts from scratch, so take both as a direction.</p>    </section>
+
+    <section class="tl-board tab-panel" id="ping" data-tab-panel="ping" role="tabpanel" aria-labelledby="h-ping" hidden>
+      <h2 id="h-ping" class="section-title">Your ping matters more than the tier</h2>
+      <p class="pg-lead">trueeevil&#39;s fourth list, and he calls it the most important one: with friends on far servers he measured up to 40% less damage on the fast weaving classes. Pick from the row that matches your ping (ms).</p>
+      <div class="tl-grid tl-ping">
+        <div class="tl-row tl-s"><span class="tl-letter">50+</span>
+          <div class="tl-cells"><a class="tl-cls" href="../../en/elementalist/" title="Elementalist"><img src="../../assets/classes/elementalist.webp" width="48" height="48" alt=""><span>Elementalist</span></a><a class="tl-cls" href="../../en/sorcerer/" title="Sorcerer"><img src="../../assets/classes/sorcerer.webp" width="48" height="48" alt=""><span>Sorcerer</span></a></div>
+        </div>
+        <div class="tl-row tl-a"><span class="tl-letter">30–50</span>
+          <div class="tl-cells"><a class="tl-cls" href="../../en/cleric/" title="Cleric"><img src="../../assets/classes/cleric.webp" width="48" height="48" alt=""><span>Cleric</span></a><a class="tl-cls" href="../../en/chanter/" title="Chanter"><img src="../../assets/classes/chanter.webp" width="48" height="48" alt=""><span>Chanter</span></a><a class="tl-cls" href="../../en/templar/" title="Templar"><img src="../../assets/classes/templar.webp" width="48" height="48" alt=""><span>Templar</span></a></div>
+        </div>
+        <div class="tl-row tl-b"><span class="tl-letter">0–30</span>
+          <div class="tl-cells"><a class="tl-cls" href="../../en/gladiator/" title="Gladiator"><img src="../../assets/classes/gladiator.webp" width="48" height="48" alt=""><span>Gladiator</span></a><a class="tl-cls" href="../../en/ranger/" title="Ranger"><img src="../../assets/classes/ranger.webp" width="48" height="48" alt=""><span>Ranger</span></a><a class="tl-cls" href="../../en/assassin/" title="Assassin"><img src="../../assets/classes/assassin.webp" width="48" height="48" alt=""><span>Assassin</span></a></div>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-in">
+    <div>
+      <a class="brand brand-sm" href="../../en/">AION 2 Global - Guides</a>
+      <p>Unofficial fan site, not affiliated with NCSOFT. AION 2 and its skill icons are © NCSOFT.</p>
+      <p class="foot-credit">Guides are collected from content creators — all credit goes to them; the site is put together with the help of Claude (AI).</p><p class="foot-credit">Independent PT-BR adaptation. Original project: <a href="https://github.com/Couga54/aion2-guides" target="_blank" rel="noopener">Couga54 / AION 2 Guides</a>.</p>
+      <p>Last checked: <time datetime="2026-10-10">Oct 10, 2026</time>.</p>
+      <p><a href="../../en/sources/">All sources and creators</a> · <a href="../../en/changelog/">Changelog</a></p>
+    </div>
+  </div>
+</footer>
+<dialog class="search-dlg" aria-label="Search" data-index="../../en/search.json" data-base="../../en/" data-empty="Nothing found"
+  data-kinds="{&#34;boss&#34;: &#34;Boss&#34;, &#34;class&#34;: &#34;Class&#34;, &#34;page&#34;: &#34;Page&#34;, &#34;section&#34;: &#34;Section&#34;, &#34;skill&#34;: &#34;Skill&#34;}" data-root="../../">
+  <div class="search-in">
+    <div class="search-bar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      <input type="search" class="search-q" placeholder="Class, skill, boss, section…" aria-label="Search" autocomplete="off" spellcheck="false">
+      <kbd>Esc</kbd>
+    </div>
+    <ul class="search-res" role="listbox"></ul>
+  </div>
+</dialog>
+<dialog class="whatsnew" data-id="ptbr-2026-10-12" aria-labelledby="wn-title">
+  <form method="dialog" class="wn-in">
+    <div class="wn-head">
+      <h2 id="wn-title">What&#39;s new</h2>
+      <button class="icon-btn wn-x" value="close" aria-label="Got it">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <section class="wn-entry">
+      <time class="wn-date" datetime="2026-10-12">Oct 12, 2026</time>
+      <ul>
+        <li><span>Independent Brazilian Portuguese edition: translated guides and interface, with the English version available for comparison.</span></li>
+        <li><span>Interface and key Cleric sections reviewed. Other long-form content uses machine translation with partial review.</span></li>
+        <li><span>Original mechanics, build choices, Daevanion routes and local progress tracking preserved. Original project: Couga54 / AION 2 Guides.</span></li>
+      </ul>
+    </section>
+    <button class="btn btn-primary wn-ok" value="close">Got it</button>
+    <p class="wn-all"><a href="../../en/changelog/">Full changelog →</a></p>
+  </form>
+</dialog>
+<script src="../../assets/js/site.js?v=190a0472" defer></script>
+<script src="../../assets/js/fx.js?v=190a0472" defer></script>
+</body>
+</html>

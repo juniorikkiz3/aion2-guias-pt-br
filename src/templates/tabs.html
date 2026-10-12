@@ -1,0 +1,11 @@
+{#- Page tabs: one look for every page that switches content in place (dungeon types, tier list boards).
+    The side menu stays the "quick links"; these tabs switch what the page shows. items = [(id, label)];
+    panels are elements with data-tab-panel="<id>" (site.js shows one, moves the gold indicator, follows #links). -#}
+{% macro page_tabs(items, label) %}
+<div class="page-tabs-wrap">
+  <div class="page-tabs" role="tablist" aria-label="{{ label }}">
+    <span class="pt-ind" aria-hidden="true"></span>
+    {% for id, text in items %}<button type="button" role="tab" class="pt-tab" id="tab-{{ id }}" data-tab="{{ id }}" aria-selected="{{ 'true' if loop.first else 'false' }}">{{ text }}</button>{% endfor %}
+  </div>
+</div>
+{% endmacro %}

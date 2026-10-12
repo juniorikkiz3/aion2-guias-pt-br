@@ -1,0 +1,115 @@
+{
+  "_note": "Assassin leveling steps from TitanTheF's starting build (aion2t iUjpcy). [[slug]] = localized skill name, [[slug#N]] = its N-th specialization.",
+  "steps": [
+    {
+      "id": "assassin-core",
+      "order": 2,
+      "skills": [
+        "quick-slice",
+        "savage-roar"
+      ],
+      "when": {
+        "en": "Lv 1",
+        "ru": "Ур. 1",
+        "uk": "Рів. 1",
+        "tr": "Sv 1",
+        "pt-BR": "LV 1"
+      },
+      "text": {
+        "en": "First points into [[quick-slice]] (restores MP) and [[savage-roar]] (engraves Insignias). At 8: [[quick-slice#0]] and [[savage-roar#1]].",
+        "ru": "Первые очки в [[quick-slice]] (восполняет ману) и [[savage-roar]] (накладывает эмблемы). На 8: [[quick-slice#0]] и [[savage-roar#1]].",
+        "uk": "Перші очки в [[quick-slice]] (поповнює ману) і [[savage-roar]] (накладає емблеми). На 8: [[quick-slice#0]] і [[savage-roar#1]].",
+        "tr": "İlk puanlar [[quick-slice]] (MP yeniler) ve [[savage-roar]]'a (Insignia kazır). 8'de: [[quick-slice#0]] ve [[savage-roar#1]].",
+        "pt-BR": "Primeiros pontos em [[quick-slice]] (restaura MP) e [[savage-roar]] (grava Insignias). Em 8: [[quick-slice#0]] e [[savage-roar#1]]."
+      }
+    },
+    {
+      "id": "assassin-insignia",
+      "order": 4,
+      "skills": [
+        "insignia-explosion"
+      ],
+      "when": {
+        "en": "Lv 1–8",
+        "ru": "Ур. 1–8",
+        "uk": "Рів. 1–8",
+        "tr": "Sv 1–8",
+        "pt-BR": "Lv 1 - 8"
+      },
+      "text": {
+        "en": "[[insignia-explosion]] → 12: [[insignia-explosion#1]] and [[insignia-explosion#2]]. Put it at the bottom of your main line.",
+        "ru": "[[insignia-explosion]] → 12: [[insignia-explosion#1]] и [[insignia-explosion#2]]. Ставь его внизу основной линии.",
+        "uk": "[[insignia-explosion]] → 12: [[insignia-explosion#1]] і [[insignia-explosion#2]]. Став його внизу основної лінії.",
+        "tr": "[[insignia-explosion]] → 12: [[insignia-explosion#1]] ve [[insignia-explosion#2]]. Ana satırının en altına koy.",
+        "pt-BR": "[[insignia-explosion]] → 12: [[insignia-explosion#1]] e [[insignia-explosion#2]] . Coloque no fundo da linha principal."
+      }
+    },
+    {
+      "id": "assassin-heart",
+      "order": 100,
+      "skills": [
+        "heart-gore"
+      ],
+      "when": {
+        "en": "Heart Gore unlocked",
+        "ru": "Открыто Пронзание сердца",
+        "uk": "Відкрито Heart Gore",
+        "tr": "Heart Gore açıldı",
+        "pt-BR": "Heart Gore destrancado."
+      },
+      "text": {
+        "en": "[[heart-gore]] fires on crits — put it on Q and spam it. To 12 with [[heart-gore#2]].",
+        "ru": "[[heart-gore]] срабатывает на крите — повесь на Q и спамь. До 12 с [[heart-gore#2]].",
+        "uk": "[[heart-gore]] спрацьовує на криті — повісь на Q і спам. До 12 з [[heart-gore#2]].",
+        "tr": "[[heart-gore]] kritiklerde tetiklenir — Q'ya koy ve sürekli bas. [[heart-gore#2]] ile 12'ye.",
+        "pt-BR": "[[heart-gore]] Incêndio em animais. Coloque em Q e spam. Para 12 com [[heart-gore#2]]."
+      }
+    },
+    {
+      "id": "assassin-stigmas",
+      "order": 221,
+      "skills": [
+        "throw-shadowblade",
+        "savage-fang",
+        "swift-contract"
+      ],
+      "when": {
+        "en": "Lv ~22",
+        "ru": "~Ур. 22",
+        "uk": "~Рів. 22",
+        "tr": "Sv ~22",
+        "pt-BR": "LV ~ 22"
+      },
+      "text": {
+        "en": "Stigmas: [[throw-shadowblade]] first (to 10 — it resets on a kill), then [[savage-fang]] for packs, [[illusive-clone]] and [[swift-contract]].",
+        "ru": "Стигмы: сначала [[throw-shadowblade]] (до 10 — сбрасывается при убийстве), затем [[savage-fang]] для пачек, [[illusive-clone]] и [[swift-contract]].",
+        "uk": "Стигми: спершу [[throw-shadowblade]] (до 10 — скидається при вбивстві), потім [[savage-fang]] для пачок, [[illusive-clone]] і [[swift-contract]].",
+        "tr": "Stigmalar: önce [[throw-shadowblade]] (10'a — öldürmede sıfırlanır), sonra gruplar için [[savage-fang]], [[illusive-clone]] ve [[swift-contract]].",
+        "pt-BR": "Stigmas: [[throw-shadowblade]] primeiro (para 10 - ele reinicia em uma morte), então [[savage-fang]] para pacotes, [[illusive-clone]] e [[swift-contract]]."
+      }
+    },
+    {
+      "id": "assassin-cap",
+      "order": 455,
+      "skills": [
+        "savage-roar",
+        "heart-gore",
+        "insignia-explosion"
+      ],
+      "when": {
+        "en": "Cap",
+        "ru": "Кап",
+        "uk": "Кап",
+        "tr": "Sınır",
+        "pt-BR": "Cap."
+      },
+      "text": {
+        "en": "Start build done: Quick Slice, Savage Roar, Insignia Explosion, Heart Gore at 12. Next: those three toward 20 — see the PvE tab.",
+        "ru": "Стартовый билд готов: Быстрый разрез, Рев зверя, Взрыв эмблемы, Пронзание сердца на 12. Дальше эти три к 20 — вкладка PvE.",
+        "uk": "Стартовий білд готовий: Quick Slice, Savage Roar, Insignia Explosion, Heart Gore на 12. Далі ці три до 20 — вкладка PvE.",
+        "tr": "Başlangıç buildi tamam: Quick Slice, Savage Roar, Insignia Explosion, Heart Gore 12'de. Sonra: bu üçü 20'ye doğru — PvE sekmesine bak.",
+        "pt-BR": "Começar build feita: Quick Slice, Savage Roar, Insignia Explosion, Heart Gore em 12. Próximo: aqueles três em direção ao 20 - veja a aba PvE."
+      }
+    }
+  ]
+}

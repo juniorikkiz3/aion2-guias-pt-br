@@ -1,0 +1,648 @@
+<!doctype html>
+<html lang="pt-BR" data-mode="pve">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Masmorras: mecânicas dos chefes — AION 2 Global - Guias PT-BR</title>
+<meta name="description" content="AION 2 Krao Caverna, Draupnir, Urugugu Canyon, Ilha do Céu de Vakron, Templo do Fogo, Ferocious Horn Den, as masmorras da Transcendência e Zikel em Pesadelo, a mecânica que limpa um grupo, com diagramas de arena.">
+<link rel="canonical" href="https://aion2-guias-br.juniorikkix.chatgpt.site/pt-BR/dungeons/">
+<link rel="alternate" hreflang="pt-BR" href="https://aion2-guias-br.juniorikkix.chatgpt.site/pt-BR/dungeons/">
+<link rel="alternate" hreflang="en" href="https://aion2-guias-br.juniorikkix.chatgpt.site/en/dungeons/">
+<link rel="alternate" hreflang="x-default" href="https://aion2-guias-br.juniorikkix.chatgpt.site/pt-BR/dungeons/">
+<meta name="theme-color" content="#0b0e14">
+<meta name="color-scheme" content="dark light">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AION 2 Global - Guias PT-BR">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Masmorras: mecânicas dos chefes — AION 2 Global - Guias PT-BR">
+<meta property="og:description" content="AION 2 Krao Caverna, Draupnir, Urugugu Canyon, Ilha do Céu de Vakron, Templo do Fogo, Ferocious Horn Den, as masmorras da Transcendência e Zikel em Pesadelo, a mecânica que limpa um grupo, com diagramas de arena.">
+<meta property="og:url" content="https://aion2-guias-br.juniorikkix.chatgpt.site/pt-BR/dungeons/">
+<meta property="og:image" content="https://aion2-guias-br.juniorikkix.chatgpt.site/assets/og/dungeons-en.jpg?v=190a0472">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image"><link rel="icon" href="../../favicon.ico" sizes="48x48">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-96.png" type="image/png" sizes="96x96">
+<link rel="icon" href="../../assets/favicon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Yeseva+One&family=JetBrains+Mono:wght@500;700&display=swap&subset=cyrillic">
+<script>
+  // Theme + guide mode before first paint (no flash).
+  (function (r) {
+    try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') r.dataset.theme = t; } catch (e) {}
+    var off = (r.getAttribute('data-off') || '').split(' ');
+    var modes = ['pve', 'pvp', 'lvl'].filter(function (x) { return off.indexOf(x) < 0; });
+    var m = new URLSearchParams(location.search).get('mode');
+    if (modes.indexOf(m) < 0) { try { m = localStorage.getItem('mode'); } catch (e) {} }
+    if (modes.indexOf(m) >= 0) r.dataset.mode = m;
+    else if (modes.indexOf(r.dataset.mode) < 0) r.dataset.mode = modes[0];
+  })(document.documentElement);
+</script>
+<link rel="stylesheet" href="../../assets/css/site.css?v=190a0472">
+</head>
+<body class="page-guide page-dungeons">
+<a class="skip-link" href="#main">Ir para o conteúdo</a>
+
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="../../pt-BR/">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3c1.8 4.6 5.6 7.2 12 8-4.4 2.2-6.8 5.6-7.4 10.6L16 29l-4.6-7.4C10.8 16.6 8.4 13.2 4 11c6.4-.8 10.2-3.4 12-8z" fill="currentColor"/></svg><span class="brand-text"><b>AION 2 Global</b><small><span class="sr-only"> - </span>Guias PT-BR</small></span>
+    </a>
+    <details class="class-menu">
+      <summary class="class-menu-btn">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="4" y="4" width="6" height="6" rx="1.5"/><rect x="14" y="4" width="6" height="6" rx="1.5"/><rect x="4" y="14" width="6" height="6" rx="1.5"/><rect x="14" y="14" width="6" height="6" rx="1.5"/></svg><span>Classes</span>        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      </summary>
+      <nav class="class-menu-panel" aria-label="Classes">
+        <a href="../../pt-BR/gladiator/" class="cm-item accent-crimson">
+          <img src="../../assets/classes/gladiator.webp" width="44" height="44" alt=""><span class="cm-name">Gladiador</span><span class="cm-role">Dano corpo a corpo</span>
+        </a>
+        <a href="../../pt-BR/ranger/" class="cm-item accent-emerald">
+          <img src="../../assets/classes/ranger.webp" width="44" height="44" alt=""><span class="cm-name">Ranger</span><span class="cm-role">Dano físico à distância</span>
+        </a>
+        <a href="../../pt-BR/templar/" class="cm-item accent-sapphire">
+          <img src="../../assets/classes/templar.webp" width="44" height="44" alt=""><span class="cm-name">Templário</span><span class="cm-role">Tanque</span>
+        </a>
+        <a href="../../pt-BR/assassin/" class="cm-item accent-violet">
+          <img src="../../assets/classes/assassin.webp" width="44" height="44" alt=""><span class="cm-name">Assassino</span><span class="cm-role">Dano corpo a corpo</span>
+        </a>
+        <a href="../../pt-BR/sorcerer/" class="cm-item accent-frost">
+          <img src="../../assets/classes/sorcerer.webp" width="44" height="44" alt=""><span class="cm-name">Feiticeiro</span><span class="cm-role">Dano mágico à distância</span>
+        </a>
+        <a href="../../pt-BR/elementalist/" class="cm-item accent-spirit">
+          <img src="../../assets/classes/elementalist.webp" width="44" height="44" alt=""><span class="cm-name">Elementalista</span><span class="cm-role">Dano mágico e invocações</span>
+        </a>
+        <a href="../../pt-BR/cleric/" class="cm-item accent-sunlight">
+          <img src="../../assets/classes/cleric.webp" width="44" height="44" alt=""><span class="cm-name">Clérigo</span><span class="cm-role">Cura e dano mágico</span>
+        </a>
+        <a href="../../pt-BR/chanter/" class="cm-item accent-amber">
+          <img src="../../assets/classes/chanter.webp" width="44" height="44" alt=""><span class="cm-name">Chanter</span><span class="cm-role">Suporte e combate corpo a corpo</span>
+        </a>
+      </nav>
+    </details>
+    <div class="topbar-tools">      <span class="rift-timer" data-anchor="2026-10-02T18:00:00Z" data-every="3" data-tz="Europe/Kyiv" data-open-min="10" data-open="Rift aberta" title="Rift — portal para a região inimiga. Abre a cada 3 horas, com entrada disponível por 10 minutos. É possível permanecer dentro por cerca de uma hora. Próxima abertura">
+        <svg class="rt-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><ellipse cx="12" cy="12" rx="7.5" ry="10.5"/><path d="M11 13C10.2 11.4 11.4 10 12.8 10.4C14.6 11 14.6 14 12.8 15.6C11.4 16.8 9.6 16.8 8.6 16"/><path d="M12.4 6.6C14.8 6.4 17 8.6 17 12"/><g transform="rotate(180 12 12)"><path d="M11 13C10.2 11.4 11.4 10 12.8 10.4C14.6 11 14.6 14 12.8 15.6C11.4 16.8 9.6 16.8 8.6 16"/><path d="M12.4 6.6C14.8 6.4 17 8.6 17 12"/></g></svg><span class="rt-name">Rift</span><b class="rt-time">--:--</b>
+      </span>
+      <a class="wr-chip" href="../../pt-BR/weekly/" data-anchor="2026-09-30T07:00:00Z" data-tz="Europe/Kyiv" data-units="d,h,m,s" title="Reinício semanal em">
+        <svg class="wr-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11a8 8 0 1 0-2.3 5.7"/><path d="M20 4v7h-7"/></svg><span class="wr-name">Reinício</span><b class="wr-time">--</b>
+      </a>
+      <a class="top-timer" href="../../pt-BR/" title="Horários" data-events='[{"at": "2026-10-05T13:00:00Z", "n": "Lan\u00e7amento Global", "o": "Servidores abertos"}]' data-units="d,h,m,s" data-open="aberto">
+        <span class="tt-dot" aria-hidden="true"></span><span class="tt-name"></span><b class="tt-time">--:--:--</b>
+      </a>
+      <details class="class-menu nav-menu">
+        <summary class="class-menu-btn is-here">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10"/></svg><span>Guias</span>
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <nav class="nav-menu-panel" aria-label="Guias">
+          <div class="nm-col">
+            <p class="nm-group">Progressão</p>
+            <a href="../../pt-BR/week-1/" class="nm-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21V4M5 4h11l-2 4 2 4H5"/></svg>
+              <span class="nm-name">Primeira semana</span><span class="nm-desc">O que fazer antes do primeiro reinício</span>
+            </a>
+            <a href="../../pt-BR/progression/" class="nm-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20h4v-6H3zM10 20h4V9h-4zM17 20h4V4h-4z"/></svg>
+              <span class="nm-name">Após o nível 45</span><span class="nm-desc">Rota de equipamentos até a raid</span>
+            </a>
+            <a href="../../pt-BR/crafting/" class="nm-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0 5 5L21 13l-8 8-3-3 1.3-1.3a4 4 0 0 0-5-5L3 10l3-3 3 3 1.3-1.3a4 4 0 0 1 4.4-2.4z"/></svg>
+              <span class="nm-name">Coleta e fabricação</span><span class="nm-desc">Profissões e bases douradas</span>
+            </a>
+            <a href="../../pt-BR/settings/" class="nm-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h10M18 6h2M4 12h4M12 12h8M4 18h12M20 18h0"/><circle cx="16" cy="6" r="2"/><circle cx="10" cy="12" r="2"/><circle cx="18" cy="18" r="2"/></svg>
+              <span class="nm-name">Configurações do jogo</span><span class="nm-desc">Controles, teclas, FPS e PvP em grupo</span>
+            </a>
+            <a href="../../pt-BR/dungeons/" class="nm-item" aria-current="page">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V10l9-7 9 7v11"/><path d="M9 21v-6a3 3 0 0 1 6 0v6"/></svg>
+              <span class="nm-name">Masmorras</span><span class="nm-desc">Mecânicas de chefes e diagramas das arenas</span>
+            </a>
+            <a href="../../pt-BR/tier-list/" class="nm-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h4M4 12h4M4 19h4"/><path d="M11 5h9M11 12h6M11 19h3"/></svg>
+              <span class="nm-name">Ranking de classes</span><span class="nm-desc">Compare classes por tipo de conteúdo</span>
+            </a>
+          </div>
+          <div class="nm-col">
+            <p class="nm-group">Acompanhamento</p>
+            <a href="../../pt-BR/weekly/" class="nm-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M8.5 15l2 2 4-4"/></svg>
+              <span class="nm-name">Semanal</span><span class="nm-desc">Entradas semanais e energia</span>
+            </a>
+            <a href="../../pt-BR/bosses/" class="nm-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c-4.4 0-8 3.1-8 7.5 0 2.6 1.3 4.4 3 5.5V20h2v-2h2v2h2v-2h2v2h2v-4c1.7-1.1 3-2.9 3-5.5C20 6.1 16.4 3 12 3z"/><circle cx="9" cy="11" r="1.5"/><circle cx="15" cy="11" r="1.5"/></svg>
+              <span class="nm-name">Chefes de mundo</span><span class="nm-desc">Abates e horários de reaparecimento</span>
+            </a>
+          </div>
+          <div class="nm-foot">
+            <a href="../../pt-BR/sources/" class="nm-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h12v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5M8 7h6M8 11h6"/></svg>
+              <span class="nm-name">Fontes e créditos</span><span class="nm-desc">Autores e referências dos guias</span>
+            </a>
+          </div>
+        </nav>
+      </details>      <details class="lang-menu">
+        <summary class="lang-switch" title="Idioma"><span aria-hidden="true">BR</span><span class="sr-only">Idioma</span></summary>
+        <nav class="lang-panel" aria-label="Idioma">
+<a href="../../pt-BR/dungeons/" hreflang="pt-BR" lang="pt-BR" aria-current="true" data-keep-query><b>BR</b>Português do Brasil</a><a href="../../en/dungeons/" hreflang="en" lang="en" data-keep-query><b>EN</b>English</a>        </nav>
+      </details>
+      <button class="icon-btn search-open" type="button" aria-label="Buscar (Ctrl+K)" title="Buscar (Ctrl+K)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      </button>
+<a class="icon-btn wn-top" href="../../pt-BR/changelog/" aria-label="Histórico de alterações" title="Histórico de alterações">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.2a2.6 2.6 0 0 1 5 .9c0 1.7-2.5 2.3-2.5 3.9"/><path d="M12 17h.01"/></svg>
+      </a>      <button class="icon-btn theme-toggle" type="button" aria-label="Alternar tema claro e escuro" title="Alternar tema claro e escuro">
+        <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<aside class="br-notice" aria-label="Sobre esta tradução"><div class="wrap"><b>Português do Brasil</b><span>Tradução automática com revisão parcial. Nomes de habilidades e itens seguem o cliente Global em inglês.</span><a href="../../en/dungeons/" data-keep-query>Consultar original em inglês ↗</a></div></aside><main id="main">
+  <section class="page-hero has-art" style="--hero-art:url('../../assets/art/hero-dungeons.webp');--hero-pos:50% 60%">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Todas as classes"><a href="../../pt-BR/">Todas as classes</a><span aria-hidden="true">/</span><span>Masmorras</span></nav>
+      <h1>Chefes das masmorras</h1>
+      <p class="lead">Mecânicas que podem eliminar o grupo, explicadas por chefe e com diagramas das arenas.</p>
+    </div>
+  </section>
+
+  <div class="wrap guide-layout pg-layout">
+  <aside class="toc-side pg-side" aria-label="Nesta página">
+    <p class="toc-title">Nesta página</p>
+    <nav class="toc-list">
+<a href="#krao-cave">Caverna Krao</a><a href="#draupnir">Draupnir</a><a href="#urugugu-canyon">Cânion de Urugugu</a><a href="#vakron-sky-island">Ilha do Céu de Vakron</a><a href="#fire-temple">Templo de Fogo</a><a href="#ferocious-horn-den">Horn Den Feroz</a><a href="#deus-research-base">Base de Pesquisa de Deus.</a><a href="#shattered-arkanis">Arkanis despedaçados</a><a href="#zikel">Pesadelo: Zikel</a>    </nav>
+  </aside>
+  <div class="pg-page">
+    <p class="pg-note">Da caminhada de BIGSKALA nas masmorras de lançamento (gravadas nos servidores de Taiwan, setembro 15), masmorra e nomes de chefe do cliente global. Cada bloco se liga ao momento no vídeo. Diagramas são esboços simplificados, não mapas.
+<a class="w1-src" href="https://www.youtube.com/watch?v=mMjaSbaVTjc" target="_blank" rel="noopener" title="BIGSKALA — Все подземелья AION 2 на старте (полный разбор)">BIGSKALA</a></p>    <div class="page-tabs-wrap">
+  <div class="page-tabs" role="tablist" aria-label="Masmorras">
+    <span class="pt-ind" aria-hidden="true"></span>
+<button type="button" role="tab" class="pt-tab" id="tab-expedition" data-tab="expedition" aria-selected="true">Expedição</button><button type="button" role="tab" class="pt-tab" id="tab-transcendence" data-tab="transcendence" aria-selected="false">Transcendência</button><button type="button" role="tab" class="pt-tab" id="tab-nightmare" data-tab="nightmare" aria-selected="false">Pesadelo.</button>  </div>
+</div>
+
+
+    <div class="dg-group tab-panel" id="panel-expedition" data-tab-panel="expedition" role="tabpanel" aria-labelledby="tab-expedition">
+    <h2 class="dg-gtitle">Expedição: Conquista</h2>
+    <p class="pg-lead dg-glead">5 - masmorras de jogadores. O GS necessário é para a conquista, a exploração do mesmo calabouço abre mais cedo.</p>
+    <ol class="pg-toc dg-toc" aria-label="Etapas">
+      <li><a href="#krao-cave"><b>GS 700</b><span>Caverna Krao</span></a></li>
+      <li><a href="#draupnir"><b>GS 700</b><span>Draupnir</span></a></li>
+      <li><a href="#urugugu-canyon"><b>GS 1400</b><span>Cânion de Urugugu</span></a></li>
+      <li><a href="#vakron-sky-island"><b>GS 1400</b><span>Ilha do Céu de Vakron</span></a></li>
+      <li><a href="#fire-temple"><b>GS 2100</b><span>Templo de Fogo</span></a></li>
+      <li><a href="#ferocious-horn-den"><b>GS 2100</b><span>Horn Den Feroz</span></a></li>
+    </ol>
+
+    <section class="pg-sec dg-sec" id="krao-cave" aria-labelledby="h-krao-cave">
+      <h2 id="h-krao-cave" class="section-title">Caverna Krao</h2>
+      <p class="dg-meta"><span class="dg-tier">GS necessário: 700</span><span>5 jogadores</span><a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=60s" target="_blank" rel="noopener" title="Assistir a este trecho do vídeo">▶ 1:00</a></p>
+<p class="pg-lead">Os dois primeiros chefes não têm nada que te mate de imediato.</p>      <article class="dg-boss is-final">
+        <header class="dg-bhead">
+<img class="dg-portrait" src="../../assets/icons/bosses/2300171.webp" width="64" height="64" alt="" loading="lazy">          <div>
+            <h3>Berk final.</h3>
+            <p class="dg-brole">Chefe final. <a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=72s" target="_blank" rel="noopener" title="Assistir a este trecho do vídeo">▶ 1:12</a></p>
+          </div>
+        </header>
+        <div class="dg-mechs">
+          <div class="dg-mech has-diagram is-danger">
+<figure class="dg-diagram"><svg class="dz" viewBox="0 0 200 200" role="img" aria-label="Krao Cave: hide behind the rocks"><defs><marker id="dz-ar-krao-rocks" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="dz-ah"/></marker></defs><circle cx="100" cy="100" r="88" class="dz-floor"/><circle cx="100" cy="100" r="88" class="dz-bad-soft"/><path d="M162.4 85.6L162.4 114.4L181.7 126.9L181.7 73.1z" class="dz-safe"/><rect x="150.0" y="92.0" width="16" height="16" rx="4" class="dz-rock" transform="rotate(45 158.0 100.0)"/><circle cx="176.0" cy="100.0" r="5" class="dz-p"/><path d="M114.4 162.4L85.6 162.4L73.1 181.7L126.9 181.7z" class="dz-safe"/><rect x="92.0" y="150.0" width="16" height="16" rx="4" class="dz-rock" transform="rotate(45 100.0 158.0)"/><circle cx="100.0" cy="176.0" r="5" class="dz-p"/><path d="M37.6 114.4L37.6 85.6L18.3 73.1L18.3 126.9z" class="dz-safe"/><rect x="34.0" y="92.0" width="16" height="16" rx="4" class="dz-rock" transform="rotate(45 42.0 100.0)"/><circle cx="24.0" cy="100.00000000000001" r="5" class="dz-p"/><path d="M85.6 37.6L114.4 37.6L126.9 18.3L73.1 18.3z" class="dz-safe"/><rect x="92.0" y="34.0" width="16" height="16" rx="4" class="dz-rock" transform="rotate(45 100.0 42.0)"/><circle cx="99.99999999999999" cy="24.0" r="5" class="dz-p"/><path d="M111.3 111.3L156.6 156.6" class="dz-beam"/><path d="M88.7 111.3L43.4 156.6" class="dz-beam"/><path d="M88.7 88.7L43.4 43.4" class="dz-beam"/><path d="M111.3 88.7L156.6 43.4" class="dz-beam"/><circle cx="100" cy="100" r="11" class="dz-boss"/><path d="M96 99l4-5 4 5-4 6z" class="dz-boss-in"/></svg><figcaption>Chefe no meio, quatro pedras na borda, ficar na sombra verde atrás de uma rocha.</figcaption></figure>            <div class="dg-mtext">
+              <p class="dg-mname"><span class="dg-wipe">Risco de eliminar o grupo</span> Esconda-se atrás das rochas <a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=75s" target="_blank" rel="noopener" title="Assistir a este trecho do vídeo">▶ 1:15</a></p>
+              <p>O chefe voa para o meio e quatro pedras aparecem nas bordas. Enquanto ele lança, todos se escondem atrás de uma rocha - a área verde atrás de cada um é segura. Qualquer um que ficou em aberto é só uma chance. Cuidado com a barra de gesso.</p>
+            </div>
+          </div>
+          <div class="dg-mech">
+            <div class="dg-mtext">
+              <p class="dg-mname">&#34;Bleeding spin&#34; <a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=93s" target="_blank" rel="noopener" title="Assistir a este trecho do vídeo">▶ 1:33</a></p>
+              <p>Depois de um ataque de pizza, faíscas brilhantes brilham em torno dele e ele gira após um jogador, adicionando sangramento. Fique fora do caminho dele, novos jogadores podem queimar um Dodge, uma poção ou uma invulnerabilidade aqui.</p>
+            </div>
+          </div>
+          <div class="dg-mech is-danger">
+            <div class="dg-mtext">
+              <p class="dg-mname"><span class="dg-wipe">Risco de eliminar o grupo</span> Bar Stagger. <a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=123s" target="_blank" rel="noopener" title="Assistir a este trecho do vídeo">▶ 2:03</a></p>
+              <p>Quando ele levanta suas garras, aparece uma barra cambaleante. Quebre-a rápido ou o grupo morre. Guarde suas habilidades para este momento, uma barra quebrada o atordoa por alguns segundos de danos livres.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+    <section class="pg-sec dg-sec" id="draupnir" aria-labelledby="h-draupnir">
+      <h2 id="h-draupnir" class="section-title">Draupnir</h2>
+      <p class="dg-meta"><span class="dg-tier">GS necessário: 700</span><span>5 jogadores</span><a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=150s" target="_blank" rel="noopener" title="Assistir a este trecho do vídeo">▶ 2:30</a></p>
+<p class="pg-lead">Os dois chefes a caminho são simples, o último verme é sobre cronometrar seus saltos.</p>      <article class="dg-boss is-final">
+        <header class="dg-bhead">
+<img class="dg-portrait" src="../../assets/icons/bosses/2310471.webp" width="64" height="64" alt="" loading="lazy">          <div>
+            <h3>&#34;Bakarma Transcendente&#34;</h3>
+            <p class="dg-brole">Chefe final. <a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=162s" target="_blank" rel="noopener" title="Assistir a este trecho do vídeo">▶ 2:42</a></p>
+          </div>
+        </header>
+        <div class="dg-mechs">
+          <div class="dg-mech has-diagram is-danger">
+<figure class="dg-diagram"><svg class="dz" viewBox="0 0 200 200" role="img" aria-label="Draupnir: jump the waves to the safe zone at the boss"><defs><marker id="dz-ar-draupnir-waves" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="dz-ah"/></marker></defs><circle cx="100" cy="100" r="88" class="dz-floor"/><circle cx="100" cy="100" r="30" class="dz-wave"/><circle cx="100" cy="100" r="50" class="dz-wave"/><circle cx="100" cy="100" r="70" class="dz-wave"/><circle cx="100" cy="100" r="20" class="dz-safe"/><circle cx="100" cy="100" r="11" class="dz-boss"/><path d="M96 99l4-5 4 5-4 6z" class="dz-boss-in"/><circle cx="100" cy="182" r="5" class="dz-p"/><circle cx="100" cy="18" r="5" class="dz-p"/><circle cx="18" cy="100" r="5" class="dz-p"/><circle cx="182" cy="100" r="5" class="dz-p"/><path d="M100 176L100 126" class="dz-arrow" marker-end="url(#dz-ar-draupnir-waves)"/><path d="M100 24L100 74" class="dz-arrow" marker-end="url(#dz-ar-draupnir-waves)"/><path d="M24 100L74 100" class="dz-arrow" marker-end="url(#dz-ar-draupnir-waves)"/><path d="M176 100L126 100" class="dz-arrow" marker-end="url(#dz-ar-draupnir-waves)"/><text x="106" y="147" class="dz-t">⤴</text><text x="106" y="47" class="dz-t">⤴</text><text x="56" y="97" class="dz-t">⤴</text><text x="156" y="97" class="dz-t">⤴</text></svg><figcaption>Comece na borda, pule os anéis, termine ao lado do chefe.</figcaption></figure>            <div class="dg-mtext">
+              <p class="dg-mname"><span class="dg-wipe">Risco de eliminar o grupo</span> Ondas, então o bar de choque <a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=165s" target="_blank" rel="noopener" title="Assistir a este trecho do vídeo">▶ 2:45</a></p>
+              <p>A tela fica preta e todos pousam na borda em lados opostos. As ondas saem do chefe: corra e pule cada onda (Espaço) para alcançar a zona segura ao lado dele: fechadores de espaço de Gladiador, Chanter e Assassino ajuda. Então quebre a barra de atordoamento imediatamente: um grupo lento fica sem tempo e limpa.</p>
+            </div>
+          </div>
+          <div class="dg-mech">
+            <div class="dg-mtext">
+              <p class="dg-mname">Mergulhe e espalhe <a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=216s" target="_blank" rel="noopener" title="Assistir a este trecho do vídeo">▶ 3:36</a></p>
+              <p>Ele mergulha e ataca cada jogador separadamente. Continue se movendo e se espalhe. Um grande sucesso na área termina a fase: apenas saia dela. Perto do fim, a fase da onda se repete com tornados na água para correr.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+    <section class="pg-sec dg-sec" id="urugugu-canyon" aria-labelledby="h-urugugu-canyon">
+      <h2 id="h-urugugu-canyon" class="section-title">Cânion de Urugugu</h2>
+      <p class="dg-meta"><span class="dg-tier">GS necessário: 1400</span><span>5 jogadores</span><a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=246s" target="_blank" rel="noopener" title="Assistir a este trecho do vídeo">▶ 4:06</a></p>
+      <article class="dg-boss">
+        <header class="dg-bhead">
+<img class="dg-portrait" src="../../assets/icons/bosses/2310206.webp" width="64" height="64" alt="" loading="lazy">          <div>
+            <h3>Capitão Raur.</h3>
+            <p class="dg-brole">Primeiro chefe. <a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=249s" target="_blank" rel="noopener" title="Assistir a este trecho do vídeo">▶ 4:09</a></p>
+          </div>
+        </header>
+<p class="dg-btext">Às vezes ele baixa o escudo e uma grande zona de dano aparece sob seus pés - pare de bater nele e fuja bem até que termine.</p>      </article>
+      <article class="dg-boss">
+        <header class="dg-bhead">
+<img class="dg-portrait" src="../../assets/icons/bosses/2310207.webp" width="64" height="64" alt="" loading="lazy">          <div>
+            <h3>Juiz Urahum.</h3>
+            <p class="dg-brole">Segundo chefe. <a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=261s" target="_blank" rel="noopener" title="Assistir a este trecho do vídeo">▶ 4:21</a></p>
+          </div>
+        </header>
+<p class="dg-btext">Simples: ele enraivece e fica mais rápido em movimento e ataques.</p>      </article>
+      <article class="dg-boss is-final">
+        <header class="dg-bhead">
+<img class="dg-portrait" src="../../assets/icons/bosses/2310218.webp" width="64" height="64" alt="" loading="lazy">          <div>
+            <h3>Divino Aldor.</h3>
+            <p class="dg-brole">O último chefe, o pássaro. <a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=267s" target="_blank" rel="noopener" title="Assistir a este trecho do vídeo">▶ 4:27</a></p>
+          </div>
+        </header>
+        <div class="dg-mechs">
+          <div class="dg-mech">
+            <div class="dg-mtext">
+              <p class="dg-mname">Ventos na frente <a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=270s" target="_blank" rel="noopener" title="Assistir a este trecho do vídeo">▶ 4:30</a></p>
+              <p>Seus ventos bateram na frente dele - ficar atrás. Se eles te pegarem, ele te levanta em seu bico por alguns segundos e te bate no chão.</p>
+            </div>
+          </div>
+          <div class="dg-mech has-diagram is-danger">
+<figure class="dg-diagram"><svg class="dz" viewBox="0 0 200 200" role="img" aria-label="Share the hit: the whole group runs into the marked player's circle"><defs><marker id="dz-ar-share-circle" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="dz-ah"/></marker></defs><circle cx="100" cy="100" r="88" class="dz-floor"/><circle cx="158" cy="42" r="11" class="dz-boss"/><path d="M154 41l4-5 4 5-4 6z" class="dz-boss-in"/><circle cx="100" cy="108" r="26" class="dz-share"/><circle cx="100" cy="108" r="5" class="dz-mark"/><circle cx="100" cy="44" r="5" class="dz-p"/><path d="M100 51L100 90" class="dz-arrow" marker-end="url(#dz-ar-share-circle)"/><circle cx="164" cy="108" r="5" class="dz-p"/><path d="M157 108L118 108" class="dz-arrow" marker-end="url(#dz-ar-share-circle)"/><circle cx="100" cy="172" r="5" class="dz-p"/><path d="M100 165L100 126" class="dz-arrow" marker-end="url(#dz-ar-share-circle)"/><circle cx="36" cy="108" r="5" class="dz-p"/><path d="M43 108L82 108" class="dz-arrow" marker-end="url(#dz-ar-share-circle)"/></svg><figcaption>Setas de quatro lados: o grupo inteiro se empilha dentro do círculo marcado.</figcaption></figure>            <div class="dg-mtext">
+              <p class="dg-mname"><span class="dg-wipe">Risco de eliminar o grupo</span> Jogador marcado: compartilhe o sucesso. <a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=285s" target="_blank" rel="noopener" title="Assistir a este trecho do vídeo">▶ 4:45</a></p>
+              <p>Ele voa, marca um jogador com o olho e um pequeno campo cresce ao redor deles, com flechas apontando de quatro lados. Todo mundo corre para aquele círculo e divide o golpe final, ou o jogador marcado morre. Evite as linhas de vento no caminho. Na segunda fase ele faz o mesmo do meio, com um vórtice ao redor da arena.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+    <section class="pg-sec dg-sec" id="vakron-sky-island" aria-labelledby="h-vakron-sky-island">
+      <h2 id="h-vakron-sky-island" class="section-title">Ilha do Céu de Vakron</h2>
+      <p class="dg-meta"><span class="dg-tier">GS necessário: 1400</span><span>5 jogadores</span><a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=321s" target="_blank" rel="noopener" title="Assistir a este trecho do vídeo">▶ 5:21</a></p>
+<div class="callout pg-tip" role="note"><p>Correr através da masmorra dá um debuff com três níveis; no nível 3 raízes prendem você e machucam - suportes bater as raízes para libertá-lo. Limpe o debufo em uma fonte.</p></div>      <article class="dg-boss">
+        <header class="dg-bhead">
+<img class="dg-portrait" src="../../assets/icons/bosses/2310810.webp" width="64" height="64" alt="" loading="lazy">          <div>
+            <h3>Tiere.</h3>
+            <p class="dg-brole">Primeiro chefe. <a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=345s" target="_blank" rel="noopener" title="Assistir a este trecho do vídeo">▶ 5:45</a></p>
+          </div>
+        </header>
+        <div class="dg-mechs">
+          <div class="dg-mech has-diagram">
+<figure class="dg-diagram"><svg class="dz" viewBox="0 0 200 200" role="img" aria-label="Vakron Sky Island first boss: move together inside the clean circle"><defs><marker id="dz-ar-tiere-poison" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="dz-ah"/></marker></defs><circle cx="100" cy="100" r="88" class="dz-floor"/><circle cx="100" cy="100" r="88" class="dz-poison"/><circle cx="100" cy="100" r="44" class="dz-floor-clean"/><path d="M128 100l5-5 5 5-5 5z" class="dz-flower"/><circle cx="100" cy="100" r="10" class="dz-boss"/><path d="M96 99l4-5 4 5-4 6z" class="dz-boss-in"/><circle cx="70" cy="116" r="5" class="dz-p"/><circle cx="66" cy="104" r="5" class="dz-p"/><circle cx="74" cy="126" r="5" class="dz-p"/><circle cx="92" cy="132" r="6" class="dz-puddle"/><circle cx="106" cy="134" r="6" class="dz-puddle"/><circle cx="118" cy="128" r="6" class="dz-puddle"/><path d="M64 92A40 40 0 0 1 96 66" class="dz-arrow" marker-end="url(#dz-ar-tiere-poison)"/></svg><figcaption>Matem a flor, andem juntos para que o veneno fique atrás de vocês.</figcaption></figure>            <div class="dg-mtext">
+              <p class="dg-mname">Arena envenenada <a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=348s" target="_blank" rel="noopener" title="Assistir a este trecho do vídeo">▶ 5:48</a></p>
+              <p>Ela se retira para o meio e envenena tudo, menos um pequeno círculo ao seu redor; uma flor floresce por dentro - matá-la para limpar a área. Ela joga veneno em cada jogador e ele fica no chão, então todo o grupo se move juntos em uma direção para manter um remendo limpo.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+      <article class="dg-boss">
+        <header class="dg-bhead">
+<img class="dg-portrait" src="../../assets/icons/bosses/2310811.webp" width="64" height="64" alt="" loading="lazy">          <div>
+            <h3>Thamon.</h3>
+            <p class="dg-brole">Segundo chefe, a pedra. <a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=381s" target="_blank" rel="noopener" title="Assistir a este trecho do vídeo">▶ 6:21</a></p>
+          </div>
+        </header>
+        <div class="dg-mechs">
+          <div class="dg-mech">
+            <div class="dg-mtext">
+              <p class="dg-mname">Círculos de pedra <a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=384s" target="_blank" rel="noopener" title="Assistir a este trecho do vídeo">▶ 6:24</a></p>
+              <p>Círculos de luz piscam sob os jogadores, fiquem em um e vocês se transformam em pedra. Os outros quebram a pedra rápido, porque um enorme golpe de área vem logo depois e atinge quem ainda está preso.</p>
+            </div>
+          </div>
+          <div class="dg-mech">
+            <div class="dg-mtext">
+              <p class="dg-mname">Vermelho ou roxo <a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=396s" target="_blank" rel="noopener" title="Assistir a este trecho do vídeo">▶ 6:36</a></p>
+              <p>Na segunda fase, ele coloca um vampírico em si mesmo: brilho vermelho - melee pára de bater; brilho roxo - casters parar. Bater na cor errada o cura muito.</p>
+            </div>
+          </div>
+        </div>
+<p class="dg-btext dg-after">Depois dele, encontre quatro esferas em modo de vôo e traga cada uma para a estátua de seu elemento para abrir o caminho para Vakron.</p>      </article>
+      <article class="dg-boss is-final">
+        <header class="dg-bhead">
+<img class="dg-portrait" src="../../assets/icons/bosses/2310812.webp" width="64" height="64" alt="" loading="lazy">          <div>
+            <h3>Vakron.</h3>
+            <p class="dg-brole">Chefe final. <a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=423s" target="_blank" rel="noopener" title="Assistir a este trecho do vídeo">▶ 7:03</a></p>
+          </div>
+        </header>
+        <div class="dg-mechs">
+          <div class="dg-mech">
+            <div class="dg-mtext">
+              <p class="dg-mname">A semente. <a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=423s" target="_blank" rel="noopener" title="Assistir a este trecho do vídeo">▶ 7:03</a></p>
+              <p>Ele joga uma semente em um jogador, alguns segundos depois ele os enraiza em espinhos com danos pesados ao longo do tempo e se espalha para qualquer um próximo. O jogador sem sementes sai do grupo, não muito longe, então os outros ainda podem acertar os espinhos e libertá-los.</p>
+            </div>
+          </div>
+          <div class="dg-mech has-diagram is-danger">
+<figure class="dg-diagram"><svg class="dz" viewBox="0 0 200 200" role="img" aria-label="Vakron: jump the three waves, stand between the rays of the next set, glide over the blast"><defs><marker id="dz-ar-vakron-waves" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="dz-ah"/></marker></defs><circle cx="100" cy="100" r="88" class="dz-floor"/><circle cx="100" cy="100" r="88" class="dz-bad-soft"/><circle cx="100" cy="100" r="32" class="dz-wave"/><circle cx="100" cy="100" r="52" class="dz-wave"/><circle cx="100" cy="100" r="72" class="dz-wave"/><path d="M100 100L186.0 100.0" class="dz-ray-a"/><path d="M100 100L160.8 160.8" class="dz-ray-a"/><path d="M100 100L100.0 186.0" class="dz-ray-a"/><path d="M100 100L39.2 160.8" class="dz-ray-a"/><path d="M100 100L14.0 100.0" class="dz-ray-a"/><path d="M100 100L39.2 39.2" class="dz-ray-a"/><path d="M100 100L100.0 14.0" class="dz-ray-a"/><path d="M100 100L160.8 39.2" class="dz-ray-a"/><circle cx="100" cy="100" r="11" class="dz-boss"/><path d="M96 99l4-5 4 5-4 6z" class="dz-boss-in"/><circle cx="123.72637280663557" cy="157.28053101569978" r="5" class="dz-p"/></svg><figcaption>Pule os três anéis, as linhas vermelhas são os ataques do centro, fique entre eles, deslize sobre a explosão final.</figcaption></figure>            <div class="dg-mtext">
+              <p class="dg-mname"><span class="dg-wipe">Risco de eliminar o grupo</span> Piso vermelho: três ondas e uma explosão <a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=435s" target="_blank" rel="noopener" title="Assistir a este trecho do vídeo">▶ 7:15</a></p>
+              <p>O chão todo fica vermelho. Três ondas saem dele, pulem cada uma. Ao mesmo tempo, os ataques saem do centro em todas as direções, em dois conjuntos que se revezam: fiquem entre as linhas do próximo conjunto. Um momento depois da terceira onda, uma explosão cobre a área: esquive-se com um salto também. A maneira fácil: no terceiro salto, pressione o espaço novamente e deslize, e a explosão passa sob você.</p>
+            </div>
+          </div>
+          <div class="dg-mech has-diagram is-danger">
+<figure class="dg-diagram"><svg class="dz" viewBox="0 0 200 200" role="img" aria-label="Vakron: break the red rock and leave the circle"><defs><marker id="dz-ar-vakron-rocks" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="dz-ah"/></marker></defs><circle cx="100" cy="100" r="88" class="dz-floor"/><circle cx="100" cy="100" r="54" class="dz-bad-soft"/><circle cx="100" cy="100" r="11" class="dz-boss"/><path d="M96 99l4-5 4 5-4 6z" class="dz-boss-in"/><rect x="142.9" y="113.7" width="14" height="14" rx="3" class="dz-rock" transform="rotate(30 149.9 120.7)"/><rect x="113.7" y="142.9" width="14" height="14" rx="3" class="dz-rock-red" transform="rotate(30 120.7 149.9)"/><rect x="72.3" y="142.9" width="14" height="14" rx="3" class="dz-rock" transform="rotate(30 79.3 149.9)"/><rect x="43.1" y="113.7" width="14" height="14" rx="3" class="dz-rock" transform="rotate(30 50.1 120.7)"/><rect x="43.1" y="72.3" width="14" height="14" rx="3" class="dz-rock" transform="rotate(30 50.1 79.3)"/><rect x="72.3" y="43.1" width="14" height="14" rx="3" class="dz-rock" transform="rotate(30 79.3 50.1)"/><rect x="113.7" y="43.1" width="14" height="14" rx="3" class="dz-rock" transform="rotate(30 120.7 50.1)"/><rect x="142.9" y="72.3" width="14" height="14" rx="3" class="dz-rock" transform="rotate(30 149.9 79.3)"/><circle cx="104.08946671086241" cy="130.77785343425933" r="5" class="dz-p"/><circle cx="111.4805029709527" cy="127.7163859753386" r="5" class="dz-p"/><circle cx="118.87153923104299" cy="124.65491851641788" r="5" class="dz-p"/><path d="M114.5 135.1L130.6 173.9" class="dz-arrow" marker-end="url(#dz-ar-vakron-rocks)"/></svg><figcaption>Quebre a rocha vermelha, deixe o círculo através de sua fenda.</figcaption></figure>            <div class="dg-mtext">
+              <p class="dg-mname"><span class="dg-wipe">Risco de eliminar o grupo</span> A rocha vermelha <a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=465s" target="_blank" rel="noopener" title="Assistir a este trecho do vídeo">▶ 7:45</a></p>
+              <p>Ele vai para o meio e puxa todo mundo, pedras crescem ao redor dele e uma é avermelhada. O grupo inteiro quebra aquela rocha e corre para fora do círculo através da lacuna - se ela ficar, todos morrem.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+    <section class="pg-sec dg-sec" id="fire-temple" aria-labelledby="h-fire-temple">
+      <h2 id="h-fire-temple" class="section-title">Templo de Fogo</h2>
+      <p class="dg-meta"><span class="dg-tier">GS necessário: 2100</span><span>5 jogadores</span><a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=482s" target="_blank" rel="noopener" title="Assistir a este trecho do vídeo">▶ 8:02</a></p>
+<div class="callout pg-tip" role="note"><p>Traga poções amarelas para remoção de debuff e coloque Chanter e habilidades cléricas para limpar picaretas. Esta é a masmorra mais rápida e a que você mais vai cultivar.</p></div>      <article class="dg-boss is-final">
+        <header class="dg-bhead">
+<img class="dg-portrait" src="../../assets/icons/bosses/2310371.webp" width="64" height="64" alt="" loading="lazy">          <div>
+            <h3>Desejo de Kromede</h3>
+            <p class="dg-brole">Chefe final, Kromede. <a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=524s" target="_blank" rel="noopener" title="Assistir a este trecho do vídeo">▶ 8:44</a></p>
+          </div>
+        </header>
+        <div class="dg-mechs">
+          <div class="dg-mech">
+            <div class="dg-mtext">
+              <p class="dg-mname">Curve-se, curve-se <a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=524s" target="_blank" rel="noopener" title="Assistir a este trecho do vídeo">▶ 8:44</a></p>
+              <p>Arco levantado: flechas chovem em cada jogador - continue andando. Bow baixou: bolas voam em várias direções e desbofeteiam quem quer que eles acertem. Então ela salta de jogador para jogador com sucessos de área, e depois um salto de três estágios cujo raio cresce cada vez.</p>
+            </div>
+          </div>
+          <div class="dg-mech has-diagram is-danger">
+<figure class="dg-diagram"><svg class="dz" viewBox="0 0 200 200" role="img" aria-label="Fire Temple: run through the window in each wall of fire"><defs><marker id="dz-ar-fire-walls" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="dz-ah"/></marker></defs><rect x="12" y="12" width="176" height="176" rx="14" class="dz-floor"/><rect x="16" y="36" width="14" height="8" rx="2" class="dz-fire"/><rect x="58" y="36" width="126" height="8" rx="2" class="dz-fire"/><rect x="16" y="74" width="104" height="8" rx="2" class="dz-fire"/><rect x="148" y="74" width="36" height="8" rx="2" class="dz-fire"/><rect x="16" y="112" width="44" height="8" rx="2" class="dz-fire"/><rect x="88" y="112" width="96" height="8" rx="2" class="dz-fire"/><rect x="16" y="150" width="124" height="8" rx="2" class="dz-fire"/><rect x="168" y="150" width="16" height="8" rx="2" class="dz-fire"/><path d="M100 186 L154 154 L74 116 L134 78 L44 40 L100 16" class="dz-arrow" marker-end="url(#dz-ar-fire-walls)"/><circle cx="100" cy="182" r="5" class="dz-p"/></svg><figcaption>Uma janela por parede, nunca no mesmo lugar: ziguezague.</figcaption></figure>            <div class="dg-mtext">
+              <p class="dg-mname"><span class="dg-wipe">Risco de eliminar o grupo</span> Paredes de fogo <a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=570s" target="_blank" rel="noopener" title="Assistir a este trecho do vídeo">▶ 9:30</a></p>
+              <p>Ela voa e as paredes de fogo atravessam a arena com uma janela segura cada. As janelas saltam para a esquerda e para a direita, então vire cedo, com ping alto, comece a girar antes de chegar à parede. Curar e usar invulnerabilidades, sobreviver é tudo o que importa. Na segunda vez, bolas de fogo voam pela arena também.</p>
+            </div>
+          </div>
+          <div class="dg-mech">
+            <div class="dg-mtext">
+              <p class="dg-mname">Clones. <a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=612s" target="_blank" rel="noopener" title="Assistir a este trecho do vídeo">▶ 10:12</a></p>
+              <p>Ela se move para o meio e as ilusões parecem que atacam rápido, então se aproximam e atingem uma área juntos - correr ou sair dela. Depois do segundo incêndio, mais ilusões disparam flechas das bordas.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+    <section class="pg-sec dg-sec" id="ferocious-horn-den" aria-labelledby="h-ferocious-horn-den">
+      <h2 id="h-ferocious-horn-den" class="section-title">Horn Den Feroz</h2>
+      <p class="dg-meta"><span class="dg-tier">GS necessário: 2100</span><span>5 jogadores</span><a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=651s" target="_blank" rel="noopener" title="Assistir a este trecho do vídeo">▶ 10:51</a></p>
+<p class="pg-lead">O calabouço para peças de armadura e o guarda.</p>      <article class="dg-boss">
+        <header class="dg-bhead">
+<img class="dg-portrait" src="../../assets/icons/bosses/2310908.webp" width="64" height="64" alt="" loading="lazy">          <div>
+            <h3>Cão de guarda Kwapo</h3>
+            <p class="dg-brole">Primeiro chefe, o lobo. <a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=654s" target="_blank" rel="noopener" title="Assistir a este trecho do vídeo">▶ 10:54</a></p>
+          </div>
+        </header>
+<p class="dg-btext">Ele pula pela arena enquanto a área cai, e as bolas de fogo aparecem, recolhem-nas rapidamente, cada uma te atrasa mais. No final, ele libera uma onda do meio e cada bola que ninguém pega explode.</p>      </article>
+      <article class="dg-boss">
+        <header class="dg-bhead">
+<img class="dg-portrait" src="../../assets/icons/bosses/2310909.webp" width="64" height="64" alt="" loading="lazy">          <div>
+            <h3>Necromancer Duanka</h3>
+            <p class="dg-brole">Segundo chefe, o necromante. <a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=696s" target="_blank" rel="noopener" title="Assistir a este trecho do vídeo">▶ 11:36</a></p>
+          </div>
+        </header>
+<p class="dg-btext">Antes dele: uma sala de totem, pegue bombas das escadas de ambos os lados (três de cada vez) para limpar as adições. Ele convoca quatro almas; um jogador (geralmente um variado) toma uma esfera para que o grupo possa danificá-los. Ele marca um jogador e está sobre eles com danos pesados - os suportes compartilham-lo no círculo. No final ele puxa todos para dentro e espalha a zona: correr e desviar as almas voando para ele.</p>      </article>
+      <article class="dg-boss is-final">
+        <header class="dg-bhead">
+<img class="dg-portrait" src="../../assets/icons/bosses/2310910.webp" width="64" height="64" alt="" loading="lazy">          <div>
+            <h3>Nuakum, o Horn Feroz</h3>
+            <p class="dg-brole">Chefe final. <a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=747s" target="_blank" rel="noopener" title="Assistir a este trecho do vídeo">▶ 12:27</a></p>
+          </div>
+        </header>
+        <div class="dg-mechs">
+          <div class="dg-mech">
+            <div class="dg-mtext">
+              <p class="dg-mname">Salto de ilusão <a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=768s" target="_blank" rel="noopener" title="Assistir a este trecho do vídeo">▶ 12:48</a></p>
+              <p>Ele pula em sua estátua, marcas e raízes um jogador e sua ilusão salta para longe deles enquanto um círculo cresce. Leia as setas: círculo pequeno - os suportes funcionam em, círculo grande - eles se esgotam. Mais um jogador está no caminho da ilusão, ou seu debufo danificado mata o jogador marcado quando o lobo aterrissa. Dois saltos na primeira vez, três na segunda.</p>
+            </div>
+          </div>
+          <div class="dg-mech has-diagram is-danger">
+<figure class="dg-diagram"><svg class="dz" viewBox="0 0 200 200" role="img" aria-label="Ferocious Horn Nuakum: put the orb between the boss and the marked player"><defs><marker id="dz-ar-nuakum-orb" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="dz-ah"/></marker></defs><circle cx="100" cy="100" r="88" class="dz-floor"/><circle cx="100" cy="100" r="16" class="dz-orb"/><circle cx="40" cy="58" r="11" class="dz-boss"/><path d="M36 57l4-5 4 5-4 6z" class="dz-boss-in"/><path d="M40 58L166 150" class="dz-beam"/><circle cx="166" cy="150" r="5" class="dz-mark"/><path d="M118 176Q156 176 162 156" class="dz-arrow" marker-end="url(#dz-ar-nuakum-orb)"/><circle cx="76" cy="160" r="12" class="dz-bad"/><circle cx="148" cy="80" r="12" class="dz-bad"/></svg><figcaption>Chefe, orbita e jogador marcado em uma linha.</figcaption></figure>            <div class="dg-mtext">
+              <p class="dg-mname"><span class="dg-wipe">Risco de eliminar o grupo</span> Redirecionar o ataque para a esfera <a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=822s" target="_blank" rel="noopener" title="Assistir a este trecho do vídeo">▶ 13:42</a></p>
+              <p>Ele lança uma esfera no meio que puxa os jogadores ligeiramente, salta para o lado e marca um jogador. O jogador marcado corre para o lado oposto, através dos hits de área, então seu ataque variado passa através da esfera. Três de quatro tentativas devem ir para o globo, ele pula em algum lugar novo toda vez.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+    </div>
+    <div class="dg-group tab-panel" id="panel-transcendence" data-tab-panel="transcendence" role="tabpanel" aria-labelledby="tab-transcendence" hidden>
+    <h2 class="dg-gtitle">Transcendência</h2>
+    <p class="pg-lead dg-glead">Masmorras de grupo para Arcana, pontos para cada máfia e chefe abrem o caminho para o chefe final.</p>
+    <ol class="pg-toc dg-toc" aria-label="Etapas">
+      <li><a href="#deus-research-base"><b>GS 1600</b><span>Base de Pesquisa de Deus.</span></a></li>
+      <li><a href="#shattered-arkanis"><b>GS 1600</b><span>Arkanis despedaçados</span></a></li>
+    </ol>
+
+    <section class="pg-sec dg-sec" id="deus-research-base" aria-labelledby="h-deus-research-base">
+      <h2 id="h-deus-research-base" class="section-title">Base de Pesquisa de Deus.</h2>
+      <p class="dg-meta"><span class="dg-tier">GS necessário: 1600</span><span>5 jogadores</span><a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=861s" target="_blank" rel="noopener" title="Assistir a este trecho do vídeo">▶ 14:21</a></p>
+<div class="callout pg-tip" role="note"><p>Pontos para cada máfia e chefe abrem o caminho para o chefe final, então libere as máfias assim que a porta abrir e tudo no primeiro teletransporte. Evite as poças roxas.</p></div>      <article class="dg-boss">
+        <header class="dg-bhead">
+<img class="dg-portrait" src="../../assets/icons/bosses/2320616.webp" width="64" height="64" alt="" loading="lazy">          <div>
+            <h3>Gelcos.</h3>
+            <p class="dg-brole">Primeiro chefe, chicote elétrico. <a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=891s" target="_blank" rel="noopener" title="Assistir a este trecho do vídeo">▶ 14:51</a></p>
+          </div>
+        </header>
+        <div class="dg-mechs">
+          <div class="dg-mech">
+            <div class="dg-mtext">
+              <p class="dg-mname">Carga e poças <a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=909s" target="_blank" rel="noopener" title="Assistir a este trecho do vídeo">▶ 15:09</a></p>
+              <p>O chicote dele doía em marcha fraca, um debufo que atinge três pilhas faz você explodir com um raio em todas as direções. Ele marca um jogador e cobra duas vezes, deixando uma poça elétrica cada vez - o jogador marcado arrasta-o para um canto para que as poças não cubram a arena. Então ele bate o chão do meio, esquiva-se das zonas antes do grande chicote bater.</p>
+            </div>
+          </div>
+          <div class="dg-mech is-danger">
+            <div class="dg-mtext">
+              <p class="dg-mname"><span class="dg-wipe">Risco de eliminar o grupo</span> O grande chicote <a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=963s" target="_blank" rel="noopener" title="Assistir a este trecho do vídeo">▶ 16:03</a></p>
+              <p>Um anel grande aparece e ele balança o grande chicote em todas as direções para danos colossais - sair do anel ou bloqueá-lo com habilidades.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+      <article class="dg-boss">
+        <header class="dg-bhead">
+<img class="dg-portrait" src="../../assets/icons/bosses/2320615.webp" width="64" height="64" alt="" loading="lazy">          <div>
+            <h3>Nazmun.</h3>
+            <p class="dg-brole">Segundo chefe. <a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=978s" target="_blank" rel="noopener" title="Assistir a este trecho do vídeo">▶ 16:18</a></p>
+          </div>
+        </header>
+<p class="dg-btext">Mais fácil: ele bate na frente, três dispositivos enviam fios elétricos em um círculo - pulá-los - e ele coloca uma grande zona de tique-taque nos jogadores: levá-lo para longe do grupo. Desvie das bombas dele.</p>      </article>
+      <article class="dg-boss is-final">
+        <header class="dg-bhead">
+<img class="dg-portrait" src="../../assets/icons/bosses/2320601.webp" width="64" height="64" alt="" loading="lazy">          <div>
+            <h3>Atiel.</h3>
+            <p class="dg-brole">Chefe final. <a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=1011s" target="_blank" rel="noopener" title="Assistir a este trecho do vídeo">▶ 16:51</a></p>
+          </div>
+        </header>
+        <div class="dg-mechs">
+          <div class="dg-mech">
+            <div class="dg-mtext">
+              <p class="dg-mname">Thread e hit compartilhado <a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=1011s" target="_blank" rel="noopener" title="Assistir a este trecho do vídeo">▶ 16:51</a></p>
+              <p>Ela junta o grupo e um fio liga os jogadores, correndo para quebrá-lo. Então ela cria um jogador: todo mundo corre para aquele círculo para compartilhar os danos. Ondas saem voando que doem e atordoam brevemente, encontram seu ritmo, enquanto um vento te empurra para a borda, que explode e encolhe no final.</p>
+            </div>
+          </div>
+          <div class="dg-mech is-danger">
+            <div class="dg-mtext">
+              <p class="dg-mname"><span class="dg-wipe">Risco de eliminar o grupo</span> Última cambaleação <a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=1052s" target="_blank" rel="noopener" title="Assistir a este trecho do vídeo">▶ 17:32</a></p>
+              <p>Cópias atravessam a arena como um trem enquanto uma linha vermelha pune indo longe demais dela. Então ela cria um bar cambaleante, mas o vento sopra para fora - perto com habilidades e quebrá-lo enquanto evitando seus sucessos de pizza. Se a barra aguentar, a corrida falha.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+    <section class="pg-sec dg-sec" id="shattered-arkanis" aria-labelledby="h-shattered-arkanis">
+      <h2 id="h-shattered-arkanis" class="section-title">Arkanis despedaçados</h2>
+      <p class="dg-meta"><span class="dg-tier">GS necessário: 1600</span><span>5 jogadores</span><a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=1083s" target="_blank" rel="noopener" title="Assistir a este trecho do vídeo">▶ 18:03</a></p>
+<div class="callout pg-tip" role="note"><p>Limpem as multidões após os portões abrirem, continuem se movendo, a maioria deles causa danos mágicos, e ativem o obelisco para que não fujam do início depois de uma limpeza. As paredes rotativas no caminho bateram forte, o lugar mais seguro está no meio pelo pilar de onde vêm.</p></div>      <article class="dg-boss">
+        <header class="dg-bhead">
+<img class="dg-portrait" src="../../assets/icons/bosses/2330707.webp" width="64" height="64" alt="" loading="lazy">          <div>
+            <h3>Siliador da Enganação</h3>
+            <p class="dg-brole">Primeiro chefe, os anéis. <a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=1110s" target="_blank" rel="noopener" title="Assistir a este trecho do vídeo">▶ 18:30</a></p>
+          </div>
+        </header>
+        <div class="dg-mechs">
+          <div class="dg-mech has-diagram is-danger">
+<figure class="dg-diagram"><svg class="dz" viewBox="0 0 200 200" role="img" aria-label="Siliator of Deceit: stand so the two red bars cross and the rings meet"><defs><marker id="dz-ar-rings-cross" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="dz-ah"/></marker></defs><circle cx="100" cy="100" r="88" class="dz-floor"/><circle cx="100" cy="34" r="9" class="dz-boss"/><path d="M96 33l4-5 4 5-4 6z" class="dz-boss-in"/><path d="M24 70L176 150" class="dz-bar"/><path d="M176 70L24 150" class="dz-bar"/><circle cx="170" cy="147" r="5" class="dz-mark"/><circle cx="30" cy="147" r="5" class="dz-mark"/><circle cx="44" cy="81" r="8" class="dz-ring"/><circle cx="156" cy="81" r="8" class="dz-ring"/><path d="M56 88L80 100" class="dz-arrow" marker-end="url(#dz-ar-rings-cross)"/><path d="M144 88L120 100" class="dz-arrow" marker-end="url(#dz-ar-rings-cross)"/><path d="M100 104l4 6h7l-5 5 2 7-8-4-8 4 2-7-5-5h7z" class="dz-hit"/></svg><figcaption>Dois jogadores fazem as barras vermelhas cruzarem, os anéis se encontram no meio.</figcaption></figure>            <div class="dg-mtext">
+              <p class="dg-mname"><span class="dg-wipe">Risco de eliminar o grupo</span> Cruze os anéis. <a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=1137s" target="_blank" rel="noopener" title="Assistir a este trecho do vídeo">▶ 18:57</a></p>
+              <p>Primeiro ela joga anéis em alguns jogadores, depois o resto voa para fora - leia seu caminho para encontrar um lugar seguro. O mecânico principal é para dois jogadores: dois anéis lentamente vêm até eles ao longo de barras vermelhas. Levantem-se para que as barras formem uma cruz e os anéis colidam. Se um jogador se mover no último segundo, eles passam e devem estar alinhados novamente. Uma tentativa fracassada envia-os atrás de você e machuca todos. Ajustar calmamente.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+      <article class="dg-boss">
+        <header class="dg-bhead">
+<img class="dg-portrait" src="../../assets/icons/bosses/2330708.webp" width="64" height="64" alt="" loading="lazy">          <div>
+            <h3>Ruthilis da Dor</h3>
+            <p class="dg-brole">Segundo chefe. <a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=1203s" target="_blank" rel="noopener" title="Assistir a este trecho do vídeo">▶ 20:03</a></p>
+          </div>
+        </header>
+<p class="dg-btext">Mais fácil. Evite a pizza dela, quando toda a arena ficar vermelha, corra para ela. É seguro lá. O relâmpago vem de cima várias vezes; se um bate em você, um círculo ao seu redor se espalha pela arena no final - pule-o (pode haver vários). Depois outra pizza e bolhas prejudiciais. Exploda-a.</p>      </article>
+      <article class="dg-boss is-final">
+        <header class="dg-bhead">
+<img class="dg-portrait" src="../../assets/icons/bosses/2330709.webp" width="64" height="64" alt="" loading="lazy">          <div>
+            <h3>Talisra do Vazio</h3>
+            <p class="dg-brole">Chefe final. <a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=1236s" target="_blank" rel="noopener" title="Assistir a este trecho do vídeo">▶ 20:36</a></p>
+          </div>
+        </header>
+        <div class="dg-mechs">
+          <div class="dg-mech">
+            <div class="dg-mtext">
+              <p class="dg-mname">Lanças e vigas <a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=1236s" target="_blank" rel="noopener" title="Assistir a este trecho do vídeo">▶ 20:36</a></p>
+              <p>Quatro lanças aparecem, três roxas e uma branca — ataquem a branca ou ela bate muito forte. Círculos na água significam raios de fogo de cima que se movem caoticamente. Ela envia uma onda branca para fora e uma onda roxa para dentro: pule ambos.</p>
+            </div>
+          </div>
+          <div class="dg-mech has-diagram is-danger">
+<figure class="dg-diagram"><svg class="dz" viewBox="0 0 200 200" role="img" aria-label="Talisra of the Void: one dome per player, kept apart"><defs><marker id="dz-ar-color-domes" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="dz-ah"/></marker></defs><circle cx="100" cy="100" r="88" class="dz-floor"/><circle cx="100" cy="100" r="11" class="dz-boss"/><path d="M96 99l4-5 4 5-4 6z" class="dz-boss-in"/><circle cx="52" cy="60" r="20" class="dz-dome-w"/><circle cx="52" cy="60" r="5" class="dz-p"/><circle cx="150" cy="62" r="20" class="dz-dome-p"/><circle cx="150" cy="62" r="5" class="dz-p"/><circle cx="56" cy="146" r="20" class="dz-dome-p"/><circle cx="56" cy="146" r="5" class="dz-p"/><circle cx="146" cy="144" r="20" class="dz-dome-w"/><circle cx="146" cy="144" r="5" class="dz-p"/><circle cx="180.0" cy="100.0" r="4" class="dz-o-w"/><circle cx="169.3" cy="140.0" r="4" class="dz-o-p"/><circle cx="140.0" cy="169.3" r="4" class="dz-o-w"/><circle cx="100.0" cy="180.0" r="4" class="dz-o-p"/><circle cx="60.0" cy="169.3" r="4" class="dz-o-w"/><circle cx="30.7" cy="140.0" r="4" class="dz-o-p"/><circle cx="20.0" cy="100.0" r="4" class="dz-o-w"/><circle cx="30.7" cy="60.0" r="4" class="dz-o-p"/><circle cx="60.0" cy="30.7" r="4" class="dz-o-w"/><circle cx="100.0" cy="20.0" r="4" class="dz-o-p"/><circle cx="140.0" cy="30.7" r="4" class="dz-o-w"/><circle cx="169.3" cy="60.0" r="4" class="dz-o-p"/></svg><figcaption>Cada jogador sob sua própria cúpula, separados; vá para a cor que ela mostra primeiro.</figcaption></figure>            <div class="dg-mtext">
+              <p class="dg-mname"><span class="dg-wipe">Risco de eliminar o grupo</span> Orbes de cor e cúpulas <a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=1263s" target="_blank" rel="noopener" title="Assistir a este trecho do vídeo">▶ 21:03</a></p>
+              <p>Orbes roxos e brancos convergem sobre ela de todos os lados. Concordam com antecedência que recolhe qual cor; cada orbe perdido levanta seu dano. Quando eles acabarem com uma redoma da sua cor sobre você, não fique perto dos outros ou as redomas desaparecem. Lembre-se da ordem de cores que ela mostra: todos ficam sob a cúpula da primeira cor, e depois se movem para a segunda. A segunda vez há três cores e ondas para saltar.</p>
+            </div>
+          </div>
+          <div class="dg-mech">
+            <div class="dg-mtext">
+              <p class="dg-mname">Quebre a jaula <a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=1329s" target="_blank" rel="noopener" title="Assistir a este trecho do vídeo">▶ 22:09</a></p>
+              <p>Ela tranca um jogador em uma gaiola que leva dano e lança lanças nos outros três, seu caminho mostrado por uma barra amarela. Aponte todos os três para a jaula: três batidas quebrando-o.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+    </div>
+    <div class="dg-group tab-panel" id="panel-nightmare" data-tab-panel="nightmare" role="tabpanel" aria-labelledby="tab-nightmare" hidden>
+    <h2 class="dg-gtitle">Pesadelo.</h2>
+    <p class="pg-lead dg-glead">O chefe sozinho luta, uma tentativa é gasta apenas em uma matança.</p>
+    <ol class="pg-toc dg-toc" aria-label="Etapas">
+      <li><a href="#zikel"><span>Pesadelo: Zikel</span></a></li>
+    </ol>
+
+    <section class="pg-sec dg-sec" id="zikel" aria-labelledby="h-zikel">
+      <h2 id="h-zikel" class="section-title">Pesadelo: Zikel</h2>
+      <p class="dg-meta"><a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=1365s" target="_blank" rel="noopener" title="Assistir a este trecho do vídeo">▶ 22:45</a></p>
+<div class="callout pg-tip" role="note"><p>Estoque: HP poções, poções amarelas para debuffs, comida. Bater nele permite que você compre sua estátua na loja solo para o seu Panteão.</p></div>      <article class="dg-boss is-final">
+        <header class="dg-bhead">
+<span class="dg-portrait dg-noimg" aria-hidden="true">1</span>          <div>
+            <h3>Zikel</h3>
+            <p class="dg-brole">Chefe Solo. <a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=1407s" target="_blank" rel="noopener" title="Assistir a este trecho do vídeo">▶ 23:27</a></p>
+          </div>
+        </header>
+        <div class="dg-mechs">
+          <div class="dg-mech">
+            <div class="dg-mtext">
+              <p class="dg-mname">Cada golpe dói. <a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=1407s" target="_blank" rel="noopener" title="Assistir a este trecho do vídeo">▶ 23:27</a></p>
+              <p>Desvie de tudo: hits simples e combos curtos todos doem, e eles sangram - limpar com poções ou habilidades. Uma corda de ataque e levanta você, então sua enorme espada pousa.</p>
+            </div>
+          </div>
+          <div class="dg-mech has-diagram is-danger">
+<figure class="dg-diagram"><svg class="dz" viewBox="0 0 200 200" role="img" aria-label="Zikel: stand in the lane after he strikes, then move to the next one"><defs><marker id="dz-ar-zikel-lanes" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="dz-ah"/></marker></defs><circle cx="100" cy="100" r="88" class="dz-floor"/><circle cx="100" cy="100" r="88" class="dz-purple"/><path d="M34 74L166 67" class="dz-lane"/><path d="M34 132L166 127" class="dz-lane dz-lane-2"/><circle cx="24" cy="46" r="10" class="dz-boss"/><path d="M20 45l4-5 4 5-4 6z" class="dz-boss-in"/><circle cx="176" cy="154" r="9" class="dz-ghost"/><circle cx="100" cy="70" r="5" class="dz-p"/><path d="M100 80L100 116" class="dz-arrow" marker-end="url(#dz-ar-zikel-lanes)"/></svg><figcaption>Ele ataca de um lado, depois o outro: se move de pista em pista em seu balanço.</figcaption></figure>            <div class="dg-mtext">
+              <p class="dg-mname"><span class="dg-wipe">Risco de eliminar o grupo</span> Caminhos seguros. <a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=1440s" target="_blank" rel="noopener" title="Assistir a este trecho do vídeo">▶ 24:00</a></p>
+              <p>Ele pula para a borda e bate o chão; uma vez atingido, uma pista segura se forma - entrar, nunca antes. Ele reaparece no lado oposto e bate um segundo, aproximadamente paralelo: começar a se mover quando o brilho roxo desaparece, não mais cedo e não mais tarde. Se você está fora de uma pista quando a arena brilha roxo novamente, você morre. Então ele mergulha para o meio - saltar bem antes da onda de aterrissagem. O segundo round adiciona área no chão e um terceiro lado, no final o lugar seguro é ao lado dele.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+    </div>
+    <script type="application/json" id="sk-data">{"i:wings":{"n":"Ultimate Daeva Wings (Bound)","m":"","g":41,"d":"Grants [Ultimate Daeva Wings (Bound)]. [Efeito combinado] HP: 500 MP: 250 Penetração: 500 Ataque crítico: 35 [Efeito Produzido] Força de Voo: 500 Penetração: 100 Bônus de precisão: 20 Bônus de ataque: 10","sp":[]},"i:bracelet":{"n":"Ascension Bracelet","m":"Nível de item 51","g":41,"d":"Defesa: 156\nAtaque: 65","sp":[]},"i:trace":{"n":"Empyrean Trace: Altgard (Bound)","m":"","g":71,"d":"Um rastro fraco imbuído da força dos Senhores Empirenses que protegem Altgard. Pode ser ressoado com Altgard Monolith.","sp":[]},"i:dcrystal":{"n":"Daevanion Crystal (Bound)","m":"","g":71,"d":"Use para obter 1 Daevanion Point.","sp":[]},"i:dcrystal_azphel":{"n":"Daevanion Crystal: Azphel (Bound)","m":"","g":71,"d":"Use para obter 1 Azphel Daevanion Ponto.","sp":[]},"i:wisdom":{"n":"Wisdom Stone (Bound)","m":"","g":71,"d":"Uma pedra misteriosa imbuída de memórias de batalha. Use para obter 1 Skill Point.","sp":[]},"i:clashrune":{"n":"Clash Rune Chest (Bound)","m":"","g":71,"d":"Uma runa que só pode ser conquistada por quem venceu um pesadelo. Use para obter um Clash Rune (Bound) e Rune Enhance Scrolls (Bound).","sp":[]},"i:beltscroll":{"n":"Noble Belt Enhance Scroll (Bound)","m":"","g":11,"d":"Um Pergaminho de Melhoria contendo um poder antigo. Use para melhorar o cinto nobre.","sp":[]},"i:shugokey":{"n":"Shugo Festival Reward Key (Bound)","m":"","g":71,"d":"Recarregar 1 Shugo Festival Reward Key conta.","sp":[]},"i:shugocoin":{"n":"Centuryroot Token","m":"","g":11,"d":"Feito por secagem de alta qualidade centenária, este símbolo é popular entre Shugo como um item colecionável. Pode ser usado para comprar vários itens na loja Shugo Festival.","sp":[]},"i:nmcoin":{"n":"Phantasmal Fragment","m":"","g":11,"d":"Um fragmento de um sonho corrompido por pesadelos. Pode ser usado para comprar vários itens na Loja de Pesadelos.","sp":[]},"i:abysspts":{"n":"Abyss Points","m":"","g":11,"d":"Uma marca de honra ganha nos campos de uma guerra sem fim.","sp":[]},"i:bakarma":{"n":"Bakarma Breastplate","m":"Nível de item 54","g":41,"d":"HP: 216\nDefesa: 397","sp":[]},"i:voucher":{"n":"Gear Change Voucher: Vakron Sky Island (Bound)","m":"","g":41,"d":"Uma recompensa obtida derrotando Vakron. Quando usado como material de Morph Substância, pode ser transformado em uma Guarda Única ou um baú exclusivo de seleção de engrenagens.","sp":[]},"i:vakronguard":{"n":"Vakron Guard","m":"Nível de item 70","g":41,"d":"Acerto crítico: 50\nPrecisão: 50\nAtaque: 144","sp":[]},"i:mana_sup":{"n":"Superior Manastone (Bound)","m":"","g":11,"d":"Pode ser gravado em Manastone slots em todas as armas e armaduras para imbuí-los com estatísticas. O tipo e o valor das estatísticas são determinados pelo acaso.","sp":[]},"i:mana_int":{"n":"Intermediate Manastone (Bound)","m":"","g":11,"d":"Pode ser gravado em Manastone slots em todas as armas e armaduras para imbuí-los com estatísticas. O tipo e o valor das estatísticas são determinados pelo acaso.","sp":[]},"i:mana_less":{"n":"Lesser Manastone (Bound)","m":"","g":11,"d":"Pode ser gravado em Manastone slots em todas as armas e armaduras para imbuí-los com estatísticas. O tipo e o valor das estatísticas são determinados pelo acaso.","sp":[]},"i:theostone":{"n":"Theostone: Jumentis's Dexterity (Bound)","m":"","g":31,"d":"Grants [Theostone: Dexteridade Jumentis]. A Theostone obtida pode ser encontrada no menu de Melhoria. Tem um 20% chance de negociar. 250 AoE Dano do vento até 4 Alvos em ataque. Ativação do efeito: 1s\nApenas um efeito de Theostone se aplica quando Teostones idênticos são gravados.","sp":[]},"i:enhance":{"n":"Enhance Stone","m":"","g":11,"d":"Costumava despertar o potencial oculto de equipamento.","sp":[]},"i:bell_green":{"n":"Bell of Vigor","m":"Nível de item 40 · Conjunto: Primal Vigor","g":21,"d":"Justiça [Nezekan]: 12","sp":[["2×","+ 60 PvE Ataque quando HP é 70% ou mais"],["4×","+ 150 PvE Ataque quando HP é 70% ou mais"]]},"i:mirror_green":{"n":"Mirror of Magic","m":"Nível de item 40 · Conjunto: Magic Armor","g":21,"d":"Sabedoria [Lumiel]: 12","sp":[["2×","Restaurações 1,500 MP quando MP É 20% ou menos.30s Não, não, não."],["4×","+ 1,000 PvE Defesa quando MP é 50% ou mais"]]},"i:compass_grey":{"n":"Compass of Magic","m":"Nível de item 20 · Conjunto: Magic Armor","g":11,"d":"Morte [Triniel]: 8","sp":[["2×","Restaurações 1,500 MP quando MP É 20% ou menos.30s Não, não, não."],["4×","+ 1,000 PvE Defesa quando MP é 50% ou mais"]]},"i:chalice_grey":{"n":"Chalice of Magic","m":"Nível de item 20 · Conjunto: Magic Armor","g":11,"d":"Espaço [Israphel]: 8","sp":[["2×","Restaurações 1,500 MP quando MP É 20% ou menos.30s Não, não, não."],["4×","+ 1,000 PvE Defesa quando MP é 50% ou mais"]]},"i:mirror_gold":{"n":"Mirror of Vigor","m":"Nível de item 80 · Conjunto: Primal Vigor","g":41,"d":"Ilusão [Kaisinel]: 20","sp":[["2×","+ 60 PvE Ataque quando HP é 70% ou mais"],["4×","+ 150 PvE Ataque quando HP é 70% ou mais"]]},"i:transfer_w":{"n":"Transfer Stone: Weapon (Unique) (Bound)","m":"","g":41,"d":"Uma pedra preciosa formidável que transfere o poder ilimitado do equipamento para outro. Pode ser usado na Arma Única.","sp":[]},"i:transfer_a":{"n":"Transfer Stone: Armor (Unique) (Bound)","m":"","g":41,"d":"Uma pedra preciosa formidável que transfere o poder ilimitado do equipamento para outro. Pode ser usado na armadura única.","sp":[]},"i:stigmashard":{"n":"Stigma Shard (Bound)","m":"","g":71,"d":"Um fragmento selado com a Essência da Experiência. Concede 1 Stigma Shard Point quando for obtido.","sp":[]},"i:amplify":{"n":"Amplify Stone (Unique) (Bound)","m":"","g":41,"d":"Uma pedra preciosa mística que desperta o poder único da engrenagem. Usado para amplificar a engrenagem única que atingiu seu nível máximo de melhoria.","sp":[]},"i:amplify_frag":{"n":"Amplify Stone Fragment (Unique) (Bound)","m":"","g":41,"d":"Um pedaço de uma pedra amplificada usada para despertar o poder único da engrenagem. Pode ser convertido em uma pedra amplificada através da substância Morph.","sp":[]},"i:sync":{"n":"Sync Stone (Unique) (Bound)","m":"","g":41,"d":"Uma pedra que harmoniza as energias dentro do equipamento para despertar novas possibilidades. Quando usado em [Enhancement - Soul Binding - Sync], permite ajustar as propriedades da engrenagem.","sp":[]},"i:sapphire":{"n":"Sapphire Gemstone (Bound)","m":"","g":11,"d":"Uma pedra preciosa infundida com pedras preciosas. Usado como material para acessórios artesanais.","sp":[]},"i:ruby":{"n":"Ruby Gemstone (Bound)","m":"","g":11,"d":"Uma pedra preciosa infundida com pedras preciosas. Usado como material para acessórios artesanais.","sp":[]},"i:odyle":{"n":"Odyle","m":"","g":11,"d":"Costumava imbuir um item com o poder do Odyle. Usado como material para o fabricação e a substância Morph.","sp":[]},"i:log":{"n":"Yggdrasil Log (Bound)","m":"","g":11,"d":"Um tronco mágico. Usado para fazer armas de madeira em fabricação.","sp":[]},"i:odyle_energy":{"n":"Odyle Energy (Bound)","m":"","g":71,"d":"Recarregar energia 40 Odyle. A energia Odyle pode ser usada para ativar o cubo de energia Odyle que aparece quando você limpa uma Expedição, Transcendência ou Santuário.","sp":[]},"i:ore":{"n":"Orichalcum Ore","m":"","g":11,"d":"Um minério duro. Usado como material para ferreiro e armeiro.","sp":[]},"i:herb":{"n":"Calendula","m":"","g":11,"d":"Uma erva usada para inventar uma poção em Alquimia.","sp":[]},"i:ingredient":{"n":"Kukuru","m":"","g":11,"d":"Um ingrediente de cozinha.","sp":[]},"i:parchment_vigor":{"n":"Parchment of Vigor","m":"Nível de item 80 · Conjunto: Primal Vigor","g":41,"d":"Vida [Yustiel]: 20","sp":[["2×","+ 60 PvE Ataque quando HP é 70% ou mais"],["4×","+ 150 PvE Ataque quando HP é 70% ou mais"]]},"i:compass_vigor":{"n":"Compass of Vigor","m":"Nível de item 80 · Conjunto: Primal Vigor","g":41,"d":"","sp":[["2×","+ 60 PvE Ataque quando HP é 70% ou mais"],["4×","+ 150 PvE Ataque quando HP é 70% ou mais"]]},"i:chalice_vigor":{"n":"Chalice of Vigor","m":"Nível de item 80 · Conjunto: Primal Vigor","g":41,"d":"","sp":[["2×","+ 60 PvE Ataque quando HP é 70% ou mais"],["4×","+ 150 PvE Ataque quando HP é 70% ou mais"]]},"i:mirror_magic_gold":{"n":"Mirror of Magic","m":"Nível de item 80 · Conjunto: Magic Armor","g":41,"d":"Sabedoria [Lumiel]: 20","sp":[["2×","Restaurações 1,500 MP quando MP É 20% ou menos.30s Não, não, não."],["4×","+ 1,000 PvE Defesa quando MP é 50% ou mais"]]},"i:holyspirit_torso":{"n":"Holy Spirit Breastplate","m":"Nível de item 41","g":41,"d":"HP: 164\nDefesa: 299","sp":[]},"i:spectral_torso":{"n":"Spectral Breastplate","m":"Nível de item 41","g":41,"d":"HP: 164\nDefesa: 299","sp":[]}}</script>
+  </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-in">
+    <div>
+      <a class="brand brand-sm" href="../../pt-BR/">AION 2 Global - Guias PT-BR</a>
+      <p>Site de fãs, sem vínculo oficial com a NCSOFT. AION 2, suas imagens e seus ícones pertencem à NCSOFT.</p>
+      <p class="foot-credit">Guias e referências de criadores da comunidade, reunidos pelo projeto original com auxílio de IA.</p><p class="foot-credit">Adaptação independente em PT-BR. Projeto original: <a href="https://github.com/Couga54/aion2-guides" target="_blank" rel="noopener">Couga54 / AION 2 Guides</a>.</p>
+      <p>Revisão do projeto original: <time datetime="2026-10-10">10 out 2026</time>.</p>
+      <p><a href="../../pt-BR/sources/">Todas as fontes e criadores</a> · <a href="../../pt-BR/changelog/">Histórico de alterações</a></p>
+    </div>
+  </div>
+</footer>
+<dialog class="search-dlg" aria-label="Buscar" data-index="../../pt-BR/search.json" data-base="../../pt-BR/" data-empty="Nenhum resultado encontrado"
+  data-kinds="{&#34;boss&#34;: &#34;Chefe&#34;, &#34;class&#34;: &#34;Classe&#34;, &#34;page&#34;: &#34;P\u00e1gina&#34;, &#34;section&#34;: &#34;Se\u00e7\u00e3o&#34;, &#34;skill&#34;: &#34;Habilidade&#34;}" data-root="../../">
+  <div class="search-in">
+    <div class="search-bar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      <input type="search" class="search-q" placeholder="Classe, habilidade, chefe, seção…" aria-label="Buscar" autocomplete="off" spellcheck="false">
+      <kbd>Esc</kbd>
+    </div>
+    <ul class="search-res" role="listbox"></ul>
+  </div>
+</dialog>
+<dialog class="whatsnew" data-id="ptbr-2026-10-12" aria-labelledby="wn-title">
+  <form method="dialog" class="wn-in">
+    <div class="wn-head">
+      <h2 id="wn-title">Novidades</h2>
+      <button class="icon-btn wn-x" value="close" aria-label="Entendi">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <section class="wn-entry">
+      <time class="wn-date" datetime="2026-10-12">12 out 2026</time>
+      <ul>
+        <li><span><strong>Edição independente em português do Brasil:</strong> guias e interface traduzidos, com versão em inglês disponível para comparação.</span></li>
+        <li><span><strong>Revisão:</strong> interface e partes principais do guia do Clérigo revisadas. Os demais textos longos usam tradução automática com revisão parcial.</span></li>
+        <li><span><strong>Ferramentas preservadas:</strong> builds, rotas Daevanion e acompanhamento local do progresso. Projeto original: Couga54 / AION 2 Guides.</span></li>
+      </ul>
+    </section>
+    <button class="btn btn-primary wn-ok" value="close">Entendi</button>
+    <p class="wn-all"><a href="../../pt-BR/changelog/">Ver todas as alterações →</a></p>
+  </form>
+</dialog>
+<script src="../../assets/js/site.js?v=190a0472" defer></script>
+<script src="../../assets/js/fx.js?v=190a0472" defer></script>
+</body>
+</html>

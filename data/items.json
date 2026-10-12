@@ -1,0 +1,1823 @@
+{
+  "wings": {
+    "id": "532400007",
+    "grade": 41,
+    "cat": "getwing",
+    "icon": "wings.webp",
+    "en": "Ultimate Daeva Wings (Bound)",
+    "tip_en": {
+      "desc": "Grants [Ultimate Daeva Wings (Bound)].\n\n[Equipped Effect]\nHP: 500\nMP: 250\nPenetration: 500\nCritical Hit: 35\n[Owned Effect]\nFlight Power: 500\nPenetration: 100\nAccuracy Bonus: 20\nAttack Bonus: 10",
+      "il": null,
+      "stats": [],
+      "set": null
+    },
+    "ru": "Превосходные крылья даэва (привяз.)",
+    "tip_ru": {
+      "desc": "Дает [Превосходные крылья даэва (привяз.)].\n\n[При применении]\nОЗ: 500\nОМ: 250\nПробитие 500\nКрит. удар 35\n[При наличии]\nОП: 500\nПробитие: 100\nДоп. меткость 20\nДоп. АТК 10",
+      "il": null,
+      "stats": [],
+      "set": null
+    },
+    "pt-BR": "Ultimate Daeva Wings (Bound)",
+    "tip_pt-BR": {
+      "desc": "Grants [Ultimate Daeva Wings (Bound)]. [Efeito combinado] HP: 500 MP: 250 Penetração: 500 Ataque crítico: 35 [Efeito Produzido] Força de Voo: 500 Penetração: 100 Bônus de precisão: 20 Bônus de ataque: 10",
+      "il": null,
+      "stats": [],
+      "set": null
+    }
+  },
+  "bracelet": {
+    "id": "310430046",
+    "grade": 41,
+    "cat": "bracelet",
+    "icon": "bracelet.webp",
+    "en": "Ascension Bracelet",
+    "tip_en": {
+      "desc": "",
+      "il": 51,
+      "stats": [
+        [
+          "armordefense",
+          156
+        ],
+        [
+          "weaponfixingdamage",
+          65
+        ]
+      ],
+      "set": null
+    },
+    "ru": "Браслет пробуждения",
+    "tip_ru": {
+      "desc": "",
+      "il": 51,
+      "stats": [
+        [
+          "armordefense",
+          156
+        ],
+        [
+          "weaponfixingdamage",
+          65
+        ]
+      ],
+      "set": null
+    },
+    "pt-BR": "Ascension Bracelet",
+    "tip_pt-BR": {
+      "desc": "",
+      "il": 51,
+      "stats": [
+        [
+          "armordefense",
+          156
+        ],
+        [
+          "weaponfixingdamage",
+          65
+        ]
+      ],
+      "set": null
+    }
+  },
+  "trace": {
+    "id": "631900007",
+    "grade": 71,
+    "cat": "monolithtoken",
+    "icon": "trace.webp",
+    "en": "Empyrean Trace: Altgard (Bound)",
+    "tip_en": {
+      "desc": "A trace faintly imbued with the strength of the Empyrean Lords who protect Altgard. Can be resonated with Altgard Monolith.",
+      "il": null,
+      "stats": [],
+      "set": null
+    },
+    "ru": "След Владык Эмпирея: Альтгард (привяз.)",
+    "tip_ru": {
+      "desc": "След, в котором сохранилась слабая сила Владык, охраняющих Альтгард. Можно вызвать резонанс с Монолитом Альтгарда.",
+      "il": null,
+      "stats": [],
+      "set": null
+    },
+    "pt-BR": "Empyrean Trace: Altgard (Bound)",
+    "tip_pt-BR": {
+      "desc": "Um rastro fraco imbuído da força dos Senhores Empirenses que protegem Altgard. Pode ser ressoado com Altgard Monolith.",
+      "il": null,
+      "stats": [],
+      "set": null
+    }
+  },
+  "dcrystal": {
+    "id": "531900003",
+    "grade": 71,
+    "cat": "getpoint",
+    "icon": "dcrystal.webp",
+    "en": "Daevanion Crystal (Bound)",
+    "tip_en": {
+      "desc": "Use to obtain 1 Daevanion Point.",
+      "il": null,
+      "stats": [],
+      "set": null
+    },
+    "ru": "Кристалл Даэваниона (привяз.)",
+    "tip_ru": {
+      "desc": "Дает 1 очко Даэваниона.",
+      "il": null,
+      "stats": [],
+      "set": null
+    },
+    "pt-BR": "Daevanion Crystal (Bound)",
+    "tip_pt-BR": {
+      "desc": "Use para obter 1 Daevanion Point.",
+      "il": null,
+      "stats": [],
+      "set": null
+    }
+  },
+  "dcrystal_azphel": {
+    "id": "531900012",
+    "grade": 71,
+    "cat": "getpoint",
+    "icon": "dcrystal_azphel.webp",
+    "en": "Daevanion Crystal: Azphel (Bound)",
+    "tip_en": {
+      "desc": "Use to obtain 1 Azphel Daevanion Point.",
+      "il": null,
+      "stats": [],
+      "set": null
+    },
+    "ru": "Кристалл Даэваниона: Асфель (привяз.)",
+    "tip_ru": {
+      "desc": "Дает 1 очко Даэваниона Асфеля.",
+      "il": null,
+      "stats": [],
+      "set": null
+    },
+    "pt-BR": "Daevanion Crystal: Azphel (Bound)",
+    "tip_pt-BR": {
+      "desc": "Use para obter 1 Azphel Daevanion Ponto.",
+      "il": null,
+      "stats": [],
+      "set": null
+    }
+  },
+  "wisdom": {
+    "id": "531900001",
+    "grade": 71,
+    "cat": "getpoint",
+    "icon": "wisdom.webp",
+    "en": "Wisdom Stone (Bound)",
+    "tip_en": {
+      "desc": "A mysterious stone imbued with memories of battle.\nUse to obtain 1 Skill Point.",
+      "il": null,
+      "stats": [],
+      "set": null
+    },
+    "ru": "Камень мудрости (привяз.)",
+    "tip_ru": {
+      "desc": "Таинственный камень, хранящий воспоминания о бое.\nДает 1 очко умений.",
+      "il": null,
+      "stats": [],
+      "set": null
+    },
+    "pt-BR": "Wisdom Stone (Bound)",
+    "tip_pt-BR": {
+      "desc": "Uma pedra misteriosa imbuída de memórias de batalha. Use para obter 1 Skill Point.",
+      "il": null,
+      "stats": [],
+      "set": null
+    }
+  },
+  "clashrune": {
+    "id": "533700064",
+    "grade": 71,
+    "cat": "rewardbox",
+    "icon": "clashrune.webp",
+    "en": "Clash Rune Chest (Bound)",
+    "tip_en": {
+      "desc": "A rune that can be earned only by those who have overcome a nightmare.\nUse to obtain a Clash Rune (Bound) and Rune Enhance Scrolls (Bound).",
+      "il": null,
+      "stats": [],
+      "set": null
+    },
+    "ru": "Сундук рун столкновения (привяз.)",
+    "tip_ru": {
+      "desc": "Руна, которую может получить лишь тот, кто преодолел Кошмар.\nДает руну столкновения (привяз.) и свитки усиления руны (привяз.).",
+      "il": null,
+      "stats": [],
+      "set": null
+    },
+    "pt-BR": "Clash Rune Chest (Bound)",
+    "tip_pt-BR": {
+      "desc": "Uma runa que só pode ser conquistada por quem venceu um pesadelo. Use para obter um Clash Rune (Bound) e Rune Enhance Scrolls (Bound).",
+      "il": null,
+      "stats": [],
+      "set": null
+    }
+  },
+  "beltscroll": {
+    "id": "531110006",
+    "grade": 11,
+    "cat": "usable",
+    "icon": "beltscroll.webp",
+    "en": "Noble Belt Enhance Scroll (Bound)",
+    "tip_en": {
+      "desc": "An Enhance Scroll containing an ancient power.\nUse to enhance Noble Belt.",
+      "il": null,
+      "stats": [],
+      "set": null
+    },
+    "ru": "Свиток усиления Благородного пояса (привяз.)",
+    "tip_ru": {
+      "desc": "Свиток усиления, в котором заключена древняя сила.\nИспользуется для усиления Благородного пояса.",
+      "il": null,
+      "stats": [],
+      "set": null
+    },
+    "pt-BR": "Noble Belt Enhance Scroll (Bound)",
+    "tip_pt-BR": {
+      "desc": "Um Pergaminho de Melhoria contendo um poder antigo. Use para melhorar o cinto nobre.",
+      "il": null,
+      "stats": [],
+      "set": null
+    }
+  },
+  "shugokey": {
+    "id": "532000018",
+    "grade": 71,
+    "cat": "addcontentsticketcount",
+    "icon": "shugokey.webp",
+    "en": "Shugo Festival Reward Key (Bound)",
+    "tip_en": {
+      "desc": "Recharges 1 Shugo Festival Reward Key count.",
+      "il": null,
+      "stats": [],
+      "set": null
+    },
+    "ru": "Наградной ключ Фестиваля шиго (привяз.)",
+    "tip_ru": {
+      "desc": "Пополняет количество наградных ключей Фестиваля шиго на 1.",
+      "il": null,
+      "stats": [],
+      "set": null
+    },
+    "pt-BR": "Shugo Festival Reward Key (Bound)",
+    "tip_pt-BR": {
+      "desc": "Recarregar 1 Shugo Festival Reward Key conta.",
+      "il": null,
+      "stats": [],
+      "set": null
+    }
+  },
+  "shugocoin": {
+    "id": "930100011",
+    "grade": 11,
+    "cat": "currency",
+    "icon": "shugocoin.webp",
+    "en": "Centuryroot Token",
+    "tip_en": {
+      "desc": "Made by drying high quality centuryroot, this token is popular among Shugo as a collectable item. Can be used to purchase various items in the Shugo Festival Shop.",
+      "il": null,
+      "stats": [],
+      "set": null
+    },
+    "ru": "Жетон столетнего женьшеня",
+    "tip_ru": {
+      "desc": "Предмет коллекционирования шиго, изготовленный из хорошо высушенного столетнего женьшеня высокого качества. В магазине Фестиваля шиго за них можно приобрести различные товары.",
+      "il": null,
+      "stats": [],
+      "set": null
+    },
+    "pt-BR": "Centuryroot Token",
+    "tip_pt-BR": {
+      "desc": "Feito por secagem de alta qualidade centenária, este símbolo é popular entre Shugo como um item colecionável. Pode ser usado para comprar vários itens na loja Shugo Festival.",
+      "il": null,
+      "stats": [],
+      "set": null
+    }
+  },
+  "nmcoin": {
+    "id": "930100017",
+    "grade": 11,
+    "cat": "currency",
+    "icon": "nmcoin.webp",
+    "en": "Phantasmal Fragment",
+    "tip_en": {
+      "desc": "A fragment of a dream corrupted by nightmarish horrors. Can be used to purchase various items in the Nightmare Shop.",
+      "il": null,
+      "stats": [],
+      "set": null
+    },
+    "ru": "Осколок видения",
+    "tip_ru": {
+      "desc": "Осколок сна, пропитанный кошмаром. В магазине Кошмаров за них можно приобрести различные товары.",
+      "il": null,
+      "stats": [],
+      "set": null
+    },
+    "pt-BR": "Phantasmal Fragment",
+    "tip_pt-BR": {
+      "desc": "Um fragmento de um sonho corrompido por pesadelos. Pode ser usado para comprar vários itens na Loja de Pesadelos.",
+      "il": null,
+      "stats": [],
+      "set": null
+    }
+  },
+  "abysspts": {
+    "id": "930100003",
+    "grade": 11,
+    "cat": "currency",
+    "icon": "abysspts.webp",
+    "en": "Abyss Points",
+    "tip_en": {
+      "desc": "A mark of honor won on the fields of a war without end.",
+      "il": null,
+      "stats": [],
+      "set": null
+    },
+    "ru": "Очки Бездны",
+    "tip_ru": {
+      "desc": "Символ славы, завоеванной в нескончаемых ожесточенных сражениях.",
+      "il": null,
+      "stats": [],
+      "set": null
+    },
+    "pt-BR": "Abyss Points",
+    "tip_pt-BR": {
+      "desc": "Uma marca de honra ganha nos campos de uma guerra sem fim.",
+      "il": null,
+      "stats": [],
+      "set": null
+    }
+  },
+  "bakarma": {
+    "id": "210130034",
+    "grade": 41,
+    "cat": "torso",
+    "icon": "bakarma.webp",
+    "en": "Bakarma Breastplate",
+    "tip_en": {
+      "desc": "",
+      "il": 54,
+      "stats": [
+        [
+          "hpmax",
+          216
+        ],
+        [
+          "armordefense",
+          397
+        ]
+      ],
+      "set": null
+    },
+    "ru": "Нагрудник Бакрама",
+    "tip_ru": {
+      "desc": "",
+      "il": 54,
+      "stats": [
+        [
+          "hpmax",
+          216
+        ],
+        [
+          "armordefense",
+          397
+        ]
+      ],
+      "set": null
+    },
+    "pt-BR": "Bakarma Breastplate",
+    "tip_pt-BR": {
+      "desc": "",
+      "il": 54,
+      "stats": [
+        [
+          "hpmax",
+          216
+        ],
+        [
+          "armordefense",
+          397
+        ]
+      ],
+      "set": null
+    }
+  },
+  "voucher": {
+    "id": "632510016",
+    "grade": 41,
+    "cat": "conversionresource_special",
+    "icon": "voucher.webp",
+    "en": "Gear Change Voucher: Vakron Sky Island (Bound)",
+    "tip_en": {
+      "desc": "A reward obtained by defeating Vakron.\nWhen used as a Substance Morph material, it can be transformed into a Unique Guard or Unique Gear Selection Chest.",
+      "il": null,
+      "stats": [],
+      "set": null
+    },
+    "ru": "Билет на смену снаряжения: Парящий остров Вакрона (привяз.)",
+    "tip_ru": {
+      "desc": "Награда, полученная за победу над Вакроном.\nПри использовании в качестве материала для преобразования веществ дает наручи уник. ранга или сундук выбора снаряжения уникального ранга.",
+      "il": null,
+      "stats": [],
+      "set": null
+    },
+    "pt-BR": "Gear Change Voucher: Vakron Sky Island (Bound)",
+    "tip_pt-BR": {
+      "desc": "Uma recompensa obtida derrotando Vakron. Quando usado como material de Morph Substância, pode ser transformado em uma Guarda Única ou um baú exclusivo de seleção de engrenagens.",
+      "il": null,
+      "stats": [],
+      "set": null
+    }
+  },
+  "vakronguard": {
+    "id": "115030050",
+    "grade": 41,
+    "cat": "guarder",
+    "icon": "vakronguard.webp",
+    "en": "Vakron Guard",
+    "tip_en": {
+      "desc": "",
+      "il": 70,
+      "stats": [
+        [
+          "critical",
+          50
+        ],
+        [
+          "weaponaccuracy",
+          50
+        ],
+        [
+          "weaponfixingdamage",
+          144
+        ]
+      ],
+      "set": null
+    },
+    "ru": "Наручи Вакрона",
+    "tip_ru": {
+      "desc": "",
+      "il": 70,
+      "stats": [
+        [
+          "critical",
+          50
+        ],
+        [
+          "weaponaccuracy",
+          50
+        ],
+        [
+          "weaponfixingdamage",
+          144
+        ]
+      ],
+      "set": null
+    },
+    "pt-BR": "Vakron Guard",
+    "tip_pt-BR": {
+      "desc": "",
+      "il": 70,
+      "stats": [
+        [
+          "critical",
+          50
+        ],
+        [
+          "weaponaccuracy",
+          50
+        ],
+        [
+          "weaponfixingdamage",
+          144
+        ]
+      ],
+      "set": null
+    }
+  },
+  "mana_sup": {
+    "id": "531360004",
+    "grade": 11,
+    "cat": "magicstone",
+    "icon": "mana_sup.webp",
+    "en": "Superior Manastone (Bound)",
+    "tip_en": {
+      "desc": "Can be engraved on Manastone slots in all weapons and armor to imbue them with stats.\nThe type and value of the stats are determined by chance.",
+      "il": null,
+      "stats": [],
+      "set": null
+    },
+    "ru": "Качественный камень маны (привяз.)",
+    "tip_ru": {
+      "desc": "Можно вставить в ячейки для камней маны любого оружия или брони, чтобы наделить его дополнительными характеристиками.\nТип и значение характеристик определяются случайным образом.",
+      "il": null,
+      "stats": [],
+      "set": null
+    },
+    "pt-BR": "Superior Manastone (Bound)",
+    "tip_pt-BR": {
+      "desc": "Pode ser gravado em Manastone slots em todas as armas e armaduras para imbuí-los com estatísticas. O tipo e o valor das estatísticas são determinados pelo acaso.",
+      "il": null,
+      "stats": [],
+      "set": null
+    }
+  },
+  "mana_int": {
+    "id": "531360003",
+    "grade": 11,
+    "cat": "magicstone",
+    "icon": "mana_int.webp",
+    "en": "Intermediate Manastone (Bound)",
+    "tip_en": {
+      "desc": "Can be engraved on Manastone slots in all weapons and armor to imbue them with stats.\nThe type and value of the stats are determined by chance.",
+      "il": null,
+      "stats": [],
+      "set": null
+    },
+    "ru": "Средний камень маны (привяз.)",
+    "tip_ru": {
+      "desc": "Можно вставить в ячейки для камней маны любого оружия или брони, чтобы наделить его дополнительными характеристиками.\nТип и значение характеристик определяются случайным образом.",
+      "il": null,
+      "stats": [],
+      "set": null
+    },
+    "pt-BR": "Intermediate Manastone (Bound)",
+    "tip_pt-BR": {
+      "desc": "Pode ser gravado em Manastone slots em todas as armas e armaduras para imbuí-los com estatísticas. O tipo e o valor das estatísticas são determinados pelo acaso.",
+      "il": null,
+      "stats": [],
+      "set": null
+    }
+  },
+  "mana_less": {
+    "id": "531360001",
+    "grade": 11,
+    "cat": "magicstone",
+    "icon": "mana_less.webp",
+    "en": "Lesser Manastone (Bound)",
+    "tip_en": {
+      "desc": "Can be engraved on Manastone slots in all weapons and armor to imbue them with stats.\nThe type and value of the stats are determined by chance.",
+      "il": null,
+      "stats": [],
+      "set": null
+    },
+    "ru": "Простой камень маны (привяз.)",
+    "tip_ru": {
+      "desc": "Можно вставить в ячейки для камней маны любого оружия или брони, чтобы наделить его дополнительными характеристиками.\nТип и значение характеристик определяются случайным образом.",
+      "il": null,
+      "stats": [],
+      "set": null
+    },
+    "pt-BR": "Lesser Manastone (Bound)",
+    "tip_pt-BR": {
+      "desc": "Pode ser gravado em Manastone slots em todas as armas e armaduras para imbuí-los com estatísticas. O tipo e o valor das estatísticas são determinados pelo acaso.",
+      "il": null,
+      "stats": [],
+      "set": null
+    }
+  },
+  "theostone": {
+    "id": "533840018",
+    "grade": 31,
+    "cat": "getgodstone",
+    "icon": "theostone.webp",
+    "en": "Theostone: Jumentis's Dexterity (Bound)",
+    "tip_en": {
+      "desc": "Grants [Theostone: Jumentis's Dexterity].\nThe obtained Theostone can be found in the Enhancement menu.\nHas a 20% chance to deal 250 AoE Wind damage to up to 4 targets on attack\nEffect Activation Cooldown: 1s\nOnly one Theostone's effect applies when identical Theostones are engraved.",
+      "il": null,
+      "stats": [],
+      "set": null
+    },
+    "ru": "Священный камень: Ловкость Ювентос (привяз.)",
+    "tip_ru": {
+      "desc": "Дает [Священный камень: Ловкость Ювентос].\nПолученный священный камень можно просмотреть в меню усиления.\nПри атаке с шансом 20% наносит 250 урона стихии воздуха по области (макс. 4).\nПерезарядка срабатывания эффекта: 1 сек.\nПри инкрустации нескольких одинаковых священных камней применяется только один эффект.",
+      "il": null,
+      "stats": [],
+      "set": null
+    },
+    "pt-BR": "Theostone: Jumentis's Dexterity (Bound)",
+    "tip_pt-BR": {
+      "desc": "Grants [Theostone: Dexteridade Jumentis]. A Theostone obtida pode ser encontrada no menu de Melhoria. Tem um 20% chance de negociar. 250 AoE Dano do vento até 4 Alvos em ataque. Ativação do efeito: 1s\nApenas um efeito de Theostone se aplica quando Teostones idênticos são gravados.",
+      "il": null,
+      "stats": [],
+      "set": null
+    }
+  },
+  "enhance": {
+    "id": "930100023",
+    "grade": 11,
+    "cat": "currency",
+    "icon": "enhance.webp",
+    "en": "Enhance Stone",
+    "tip_en": {
+      "desc": "Used to awaken hidden potential of gear.",
+      "il": null,
+      "stats": [],
+      "set": null
+    },
+    "ru": "Камни усиления",
+    "tip_ru": {
+      "desc": "Используется для пробуждения скрытой силы снаряжения.",
+      "il": null,
+      "stats": [],
+      "set": null
+    },
+    "pt-BR": "Enhance Stone",
+    "tip_pt-BR": {
+      "desc": "Costumava despertar o potencial oculto de equipamento.",
+      "il": null,
+      "stats": [],
+      "set": null
+    }
+  },
+  "bell_green": {
+    "id": "810450001",
+    "grade": 21,
+    "cat": "bell",
+    "icon": "bell_green.webp",
+    "en": "Bell of Vigor",
+    "tip_en": {
+      "desc": "",
+      "il": 40,
+      "stats": [
+        [
+          "justice",
+          12
+        ]
+      ],
+      "set": {
+        "name": "Primal Vigor",
+        "bonus": [
+          [
+            2,
+            "+60 PvE Attack when HP is 70% or more"
+          ],
+          [
+            4,
+            "+150 PvE Attack when HP is 70% or more"
+          ]
+        ]
+      }
+    },
+    "ru": "Колокол жизни",
+    "tip_ru": {
+      "desc": "",
+      "il": 40,
+      "stats": [
+        [
+          "justice",
+          12
+        ]
+      ],
+      "set": {
+        "name": "Рождение жизни",
+        "bonus": [
+          [
+            2,
+            "АТК в PvE +60 при ОЗ 70% и выше"
+          ],
+          [
+            4,
+            "АТК в PvE +150 при ОЗ 70% и выше"
+          ]
+        ]
+      }
+    },
+    "pt-BR": "Bell of Vigor",
+    "tip_pt-BR": {
+      "desc": "",
+      "il": 40,
+      "stats": [
+        [
+          "justice",
+          12
+        ]
+      ],
+      "set": {
+        "name": "Primal Vigor",
+        "bonus": [
+          [
+            2,
+            "+ 60 PvE Ataque quando HP é 70% ou mais"
+          ],
+          [
+            4,
+            "+ 150 PvE Ataque quando HP é 70% ou mais"
+          ]
+        ]
+      }
+    }
+  },
+  "mirror_green": {
+    "id": "810550002",
+    "grade": 21,
+    "cat": "mirror",
+    "icon": "mirror_green.webp",
+    "en": "Mirror of Magic",
+    "tip_en": {
+      "desc": "",
+      "il": 40,
+      "stats": [
+        [
+          "wisdom",
+          12
+        ]
+      ],
+      "set": {
+        "name": "Magic Armor",
+        "bonus": [
+          [
+            2,
+            "Restores 1,500 MP when MP is 20% or less [30s cooldown]"
+          ],
+          [
+            4,
+            "+1,000 PvE Defense when MP is 50% or more"
+          ]
+        ]
+      }
+    },
+    "ru": "Зеркало магии",
+    "tip_ru": {
+      "desc": "",
+      "il": 40,
+      "stats": [
+        [
+          "wisdom",
+          12
+        ]
+      ],
+      "set": {
+        "name": "Магические доспехи",
+        "bonus": [
+          [
+            2,
+            "Восстанавливает 1500 ОМ, когда ОМ достигает 20% или меньше [Время перезарядки 30 с]"
+          ],
+          [
+            4,
+            "ЗЩТ в PvE +1000 при ОМ 50% и выше"
+          ]
+        ]
+      }
+    },
+    "pt-BR": "Mirror of Magic",
+    "tip_pt-BR": {
+      "desc": "",
+      "il": 40,
+      "stats": [
+        [
+          "wisdom",
+          12
+        ]
+      ],
+      "set": {
+        "name": "Magic Armor",
+        "bonus": [
+          [
+            2,
+            "Restaurações 1,500 MP quando MP É 20% ou menos.30s Não, não, não."
+          ],
+          [
+            4,
+            "+ 1,000 PvE Defesa quando MP é 50% ou mais"
+          ]
+        ]
+      }
+    }
+  },
+  "compass_grey": {
+    "id": "810360002",
+    "grade": 11,
+    "cat": "compass",
+    "icon": "compass_grey.webp",
+    "en": "Compass of Magic",
+    "tip_en": {
+      "desc": "",
+      "il": 20,
+      "stats": [
+        [
+          "death",
+          8
+        ]
+      ],
+      "set": {
+        "name": "Magic Armor",
+        "bonus": [
+          [
+            2,
+            "Restores 1,500 MP when MP is 20% or less [30s cooldown]"
+          ],
+          [
+            4,
+            "+1,000 PvE Defense when MP is 50% or more"
+          ]
+        ]
+      }
+    },
+    "ru": "Компас магии",
+    "tip_ru": {
+      "desc": "",
+      "il": 20,
+      "stats": [
+        [
+          "death",
+          8
+        ]
+      ],
+      "set": {
+        "name": "Магические доспехи",
+        "bonus": [
+          [
+            2,
+            "Восстанавливает 1500 ОМ, когда ОМ достигает 20% или меньше [Время перезарядки 30 с]"
+          ],
+          [
+            4,
+            "ЗЩТ в PvE +1000 при ОМ 50% и выше"
+          ]
+        ]
+      }
+    },
+    "pt-BR": "Compass of Magic",
+    "tip_pt-BR": {
+      "desc": "",
+      "il": 20,
+      "stats": [
+        [
+          "death",
+          8
+        ]
+      ],
+      "set": {
+        "name": "Magic Armor",
+        "bonus": [
+          [
+            2,
+            "Restaurações 1,500 MP quando MP É 20% ou menos.30s Não, não, não."
+          ],
+          [
+            4,
+            "+ 1,000 PvE Defesa quando MP é 50% ou mais"
+          ]
+        ]
+      }
+    }
+  },
+  "chalice_grey": {
+    "id": "810160002",
+    "grade": 11,
+    "cat": "grail",
+    "icon": "chalice_grey.webp",
+    "en": "Chalice of Magic",
+    "tip_en": {
+      "desc": "",
+      "il": 20,
+      "stats": [
+        [
+          "space",
+          8
+        ]
+      ],
+      "set": {
+        "name": "Magic Armor",
+        "bonus": [
+          [
+            2,
+            "Restores 1,500 MP when MP is 20% or less [30s cooldown]"
+          ],
+          [
+            4,
+            "+1,000 PvE Defense when MP is 50% or more"
+          ]
+        ]
+      }
+    },
+    "ru": "Грааль магии",
+    "tip_ru": {
+      "desc": "",
+      "il": 20,
+      "stats": [
+        [
+          "space",
+          8
+        ]
+      ],
+      "set": {
+        "name": "Магические доспехи",
+        "bonus": [
+          [
+            2,
+            "Восстанавливает 1500 ОМ, когда ОМ достигает 20% или меньше [Время перезарядки 30 с]"
+          ],
+          [
+            4,
+            "ЗЩТ в PvE +1000 при ОМ 50% и выше"
+          ]
+        ]
+      }
+    },
+    "pt-BR": "Chalice of Magic",
+    "tip_pt-BR": {
+      "desc": "",
+      "il": 20,
+      "stats": [
+        [
+          "space",
+          8
+        ]
+      ],
+      "set": {
+        "name": "Magic Armor",
+        "bonus": [
+          [
+            2,
+            "Restaurações 1,500 MP quando MP É 20% ou menos.30s Não, não, não."
+          ],
+          [
+            4,
+            "+ 1,000 PvE Defesa quando MP é 50% ou mais"
+          ]
+        ]
+      }
+    }
+  },
+  "mirror_gold": {
+    "id": "810530001",
+    "grade": 41,
+    "cat": "mirror",
+    "icon": "mirror_gold.webp",
+    "en": "Mirror of Vigor",
+    "tip_en": {
+      "desc": "",
+      "il": 80,
+      "stats": [
+        [
+          "illusion",
+          20
+        ]
+      ],
+      "set": {
+        "name": "Primal Vigor",
+        "bonus": [
+          [
+            2,
+            "+60 PvE Attack when HP is 70% or more"
+          ],
+          [
+            4,
+            "+150 PvE Attack when HP is 70% or more"
+          ]
+        ]
+      }
+    },
+    "ru": "Зеркало жизни",
+    "tip_ru": {
+      "desc": "",
+      "il": 80,
+      "stats": [
+        [
+          "illusion",
+          20
+        ]
+      ],
+      "set": {
+        "name": "Рождение жизни",
+        "bonus": [
+          [
+            2,
+            "АТК в PvE +60 при ОЗ 70% и выше"
+          ],
+          [
+            4,
+            "АТК в PvE +150 при ОЗ 70% и выше"
+          ]
+        ]
+      }
+    },
+    "pt-BR": "Mirror of Vigor",
+    "tip_pt-BR": {
+      "desc": "",
+      "il": 80,
+      "stats": [
+        [
+          "illusion",
+          20
+        ]
+      ],
+      "set": {
+        "name": "Primal Vigor",
+        "bonus": [
+          [
+            2,
+            "+ 60 PvE Ataque quando HP é 70% ou mais"
+          ],
+          [
+            4,
+            "+ 150 PvE Ataque quando HP é 70% ou mais"
+          ]
+        ]
+      }
+    }
+  },
+  "transfer_w": {
+    "id": "536830001",
+    "grade": 41,
+    "cat": "succession",
+    "icon": "transfer_w.webp",
+    "en": "Transfer Stone: Weapon (Unique) (Bound)",
+    "tip_en": {
+      "desc": "A formidable gemstone that transfers the boundless power of the gear to another.\nCan be used on the Unique Weapon.",
+      "il": null,
+      "stats": [],
+      "set": null
+    },
+    "ru": "Камень наследования: оружие (уникальный) (привяз.)",
+    "tip_ru": {
+      "desc": "Самородок, наделенный силой для передачи всей мощи одного снаряжения другому.\nМожно использовать для оружия уникального ранга.",
+      "il": null,
+      "stats": [],
+      "set": null
+    },
+    "pt-BR": "Transfer Stone: Weapon (Unique) (Bound)",
+    "tip_pt-BR": {
+      "desc": "Uma pedra preciosa formidável que transfere o poder ilimitado do equipamento para outro. Pode ser usado na Arma Única.",
+      "il": null,
+      "stats": [],
+      "set": null
+    }
+  },
+  "transfer_a": {
+    "id": "536830002",
+    "grade": 41,
+    "cat": "succession",
+    "icon": "transfer_a.webp",
+    "en": "Transfer Stone: Armor (Unique) (Bound)",
+    "tip_en": {
+      "desc": "A formidable gemstone that transfers the boundless power of the gear to another.\nCan be used on the Unique Armor.",
+      "il": null,
+      "stats": [],
+      "set": null
+    },
+    "ru": "Камень наследования: броня (уникальный) (привяз.)",
+    "tip_ru": {
+      "desc": "Самородок, наделенный силой для передачи всей мощи одного снаряжения другому.\nМожно использовать для брони уникального ранга.",
+      "il": null,
+      "stats": [],
+      "set": null
+    },
+    "pt-BR": "Transfer Stone: Armor (Unique) (Bound)",
+    "tip_pt-BR": {
+      "desc": "Uma pedra preciosa formidável que transfere o poder ilimitado do equipamento para outro. Pode ser usado na armadura única.",
+      "il": null,
+      "stats": [],
+      "set": null
+    }
+  },
+  "stigmashard": {
+    "id": "531900010",
+    "grade": 71,
+    "cat": "getpoint",
+    "icon": "stigmashard.webp",
+    "en": "Stigma Shard (Bound)",
+    "tip_en": {
+      "desc": "A fragment sealed with the Essence of Experience.\nGrants 1 Stigma Shard Point when obtained.",
+      "il": null,
+      "stats": [],
+      "set": null
+    },
+    "ru": "Обломок стигмы (привяз.)",
+    "tip_ru": {
+      "desc": "Осколок с запечатанной эссенцией опыта.\nДает 1 очко обломка стигмы.",
+      "il": null,
+      "stats": [],
+      "set": null
+    },
+    "pt-BR": "Stigma Shard (Bound)",
+    "tip_pt-BR": {
+      "desc": "Um fragmento selado com a Essência da Experiência. Concede 1 Stigma Shard Point quando for obtido.",
+      "il": null,
+      "stats": [],
+      "set": null
+    }
+  },
+  "amplify": {
+    "id": "536530001",
+    "grade": 41,
+    "cat": "usable",
+    "icon": "amplify.webp",
+    "en": "Amplify Stone (Unique) (Bound)",
+    "tip_en": {
+      "desc": "A mystical gemstone that awakens the unique power of gear.\nUsed to amplify Unique Gear that has reached its maximum enhancement level.",
+      "il": null,
+      "stats": [],
+      "set": null
+    },
+    "ru": "Камень прорыва (уникальный) (привяз.)",
+    "tip_ru": {
+      "desc": "Таинственный самородок, раскрывающий уникальные способности снаряжения. Используется как материал для прорыва снаряжения уникального ранга, достигшего максимального этапа усиления.",
+      "il": null,
+      "stats": [],
+      "set": null
+    },
+    "pt-BR": "Amplify Stone (Unique) (Bound)",
+    "tip_pt-BR": {
+      "desc": "Uma pedra preciosa mística que desperta o poder único da engrenagem. Usado para amplificar a engrenagem única que atingiu seu nível máximo de melhoria.",
+      "il": null,
+      "stats": [],
+      "set": null
+    }
+  },
+  "amplify_frag": {
+    "id": "631800004",
+    "grade": 41,
+    "cat": "material",
+    "icon": "amplify_frag.webp",
+    "en": "Amplify Stone Fragment (Unique) (Bound)",
+    "tip_en": {
+      "desc": "A piece of an Amplify Stone used to awaken the unique power of the gear.\nCan be converted into an Amplify Stone through Substance Morph.",
+      "il": null,
+      "stats": [],
+      "set": null
+    },
+    "ru": "Фрагмент камня прорыва (уникальный) (привяз.)",
+    "tip_ru": {
+      "desc": "Осколок камня прорыва, использованного для пробуждения уникальных способностей снаряжения.\nС помощью преобразования веществ его можно преобразовать в камень прорыва.",
+      "il": null,
+      "stats": [],
+      "set": null
+    },
+    "pt-BR": "Amplify Stone Fragment (Unique) (Bound)",
+    "tip_pt-BR": {
+      "desc": "Um pedaço de uma pedra amplificada usada para despertar o poder único da engrenagem. Pode ser convertido em uma pedra amplificada através da substância Morph.",
+      "il": null,
+      "stats": [],
+      "set": null
+    }
+  },
+  "sync": {
+    "id": "536630001",
+    "grade": 41,
+    "cat": "usable",
+    "icon": "sync.webp",
+    "en": "Sync Stone (Unique) (Bound)",
+    "tip_en": {
+      "desc": "A stone that harmonizes the energies within gear to awaken new possibilities.\nWhen used in [Enhancement - Soul Binding - Sync], it allows you to adjust the properties of gear.",
+      "il": null,
+      "stats": [],
+      "set": null
+    },
+    "ru": "Камень гармонии (уникальный) (привяз.)",
+    "tip_ru": {
+      "desc": "Камень гармонии, пробуждающий новые свойства снаряжения путем преобразования его внутренней силы.\nВ меню [Усиление — Привязка души — Налаживание] можно наладить опции.",
+      "il": null,
+      "stats": [],
+      "set": null
+    },
+    "pt-BR": "Sync Stone (Unique) (Bound)",
+    "tip_pt-BR": {
+      "desc": "Uma pedra que harmoniza as energias dentro do equipamento para despertar novas possibilidades. Quando usado em [Enhancement - Soul Binding - Sync], permite ajustar as propriedades da engrenagem.",
+      "il": null,
+      "stats": [],
+      "set": null
+    }
+  },
+  "sapphire": {
+    "id": "630660001",
+    "grade": 11,
+    "cat": "gatherresource",
+    "icon": "sapphire.webp",
+    "en": "Sapphire Gemstone (Bound)",
+    "tip_en": {
+      "desc": "A gemstone infused with valuable gems. Used as a material for handicrafting accessories.",
+      "il": null,
+      "stats": [],
+      "set": null
+    },
+    "ru": "Самородок сапфира (привяз.)",
+    "tip_ru": {
+      "desc": "Самородок, содержащий частицы ценных самоцветов. Материал для ювелирного создания аксессуаров.",
+      "il": null,
+      "stats": [],
+      "set": null
+    },
+    "pt-BR": "Sapphire Gemstone (Bound)",
+    "tip_pt-BR": {
+      "desc": "Uma pedra preciosa infundida com pedras preciosas. Usado como material para acessórios artesanais.",
+      "il": null,
+      "stats": [],
+      "set": null
+    }
+  },
+  "ruby": {
+    "id": "630660003",
+    "grade": 11,
+    "cat": "gatherresource",
+    "icon": "ruby.webp",
+    "en": "Ruby Gemstone (Bound)",
+    "tip_en": {
+      "desc": "A gemstone infused with valuable gems. Used as a material for handicrafting accessories.",
+      "il": null,
+      "stats": [],
+      "set": null
+    },
+    "ru": "Самородок рубина (привяз.)",
+    "tip_ru": {
+      "desc": "Самородок, содержащий частицы ценных самоцветов. Материал для ювелирного создания аксессуаров.",
+      "il": null,
+      "stats": [],
+      "set": null
+    },
+    "pt-BR": "Ruby Gemstone (Bound)",
+    "tip_pt-BR": {
+      "desc": "Uma pedra preciosa infundida com pedras preciosas. Usado como material para acessórios artesanais.",
+      "il": null,
+      "stats": [],
+      "set": null
+    }
+  },
+  "odyle": {
+    "id": "610610013",
+    "grade": 11,
+    "cat": "gatherresource",
+    "icon": "odyle.webp",
+    "en": "Odyle",
+    "tip_en": {
+      "desc": "Used to imbue an item with the power of Odyle. Used as a material for Crafting and Substance Morph.",
+      "il": null,
+      "stats": [],
+      "set": null
+    },
+    "ru": "Эфир",
+    "tip_ru": {
+      "desc": "Используется для наполнения предметов силой эфира. Материал, используемый для создания предметов и преобразования веществ.",
+      "il": null,
+      "stats": [],
+      "set": null
+    },
+    "pt-BR": "Odyle",
+    "tip_pt-BR": {
+      "desc": "Costumava imbuir um item com o poder do Odyle. Usado como material para o fabricação e a substância Morph.",
+      "il": null,
+      "stats": [],
+      "set": null
+    }
+  },
+  "log": {
+    "id": "630650001",
+    "grade": 11,
+    "cat": "gatherresource",
+    "icon": "log.webp",
+    "en": "Yggdrasil Log (Bound)",
+    "tip_en": {
+      "desc": "A magic-imbued log. Used for making wooden weapons in Handicrafting.",
+      "il": null,
+      "stats": [],
+      "set": null
+    },
+    "ru": "Древесина Иггдрасиля (привяз.)",
+    "tip_ru": {
+      "desc": "Древесина, наделенная магической силой. Материал, используемый для ювелирного создания деревянного оружия.",
+      "il": null,
+      "stats": [],
+      "set": null
+    },
+    "pt-BR": "Yggdrasil Log (Bound)",
+    "tip_pt-BR": {
+      "desc": "Um tronco mágico. Usado para fazer armas de madeira em fabricação.",
+      "il": null,
+      "stats": [],
+      "set": null
+    }
+  },
+  "odyle_energy": {
+    "id": "532000014",
+    "grade": 71,
+    "cat": "addcontentsticketcount",
+    "icon": "odyle_energy.webp",
+    "en": "Odyle Energy (Bound)",
+    "tip_en": {
+      "desc": "Recharges 40 Odyle Energy.\nOdyle Energy can be used to activate the Odyle Energy Cube that appears when you clear an Expedition, Transcendence, or Sanctuary.",
+      "il": null,
+      "stats": [],
+      "set": null
+    },
+    "ru": "Эфирная энергия (привяз.)",
+    "tip_ru": {
+      "desc": "Пополняет 40 ед. эфирной энергии.\nЭфирную энергию можно использовать для активации куба эфирной энергии, появляющегося при успешном прохождении испытаний (экспедиции, Возвышение и Священные земли).",
+      "il": null,
+      "stats": [],
+      "set": null
+    },
+    "pt-BR": "Odyle Energy (Bound)",
+    "tip_pt-BR": {
+      "desc": "Recarregar energia 40 Odyle. A energia Odyle pode ser usada para ativar o cubo de energia Odyle que aparece quando você limpa uma Expedição, Transcendência ou Santuário.",
+      "il": null,
+      "stats": [],
+      "set": null
+    }
+  },
+  "ore": {
+    "id": "610620013",
+    "grade": 11,
+    "cat": "gatherresource",
+    "icon": "ore.webp",
+    "en": "Orichalcum Ore",
+    "tip_en": {
+      "desc": "A hard ore. Used as a material for Blacksmithing and Armorsmithing.",
+      "il": null,
+      "stats": [],
+      "set": null
+    },
+    "ru": "Орихарконовая руда",
+    "tip_ru": {
+      "desc": "Прочная руда. Материал для кузнечного создания и создания доспехов.",
+      "il": null,
+      "stats": [],
+      "set": null
+    },
+    "pt-BR": "Orichalcum Ore",
+    "tip_pt-BR": {
+      "desc": "Um minério duro. Usado como material para ferreiro e armeiro.",
+      "il": null,
+      "stats": [],
+      "set": null
+    }
+  },
+  "herb": {
+    "id": "610670044",
+    "grade": 11,
+    "cat": "gatherresource",
+    "icon": "herb.webp",
+    "en": "Calendula",
+    "tip_en": {
+      "desc": "An herb used to concoct a potion in Alchemy.",
+      "il": null,
+      "stats": [],
+      "set": null
+    },
+    "ru": "Календула",
+    "tip_ru": {
+      "desc": "Листья трав. Материал для создания зелий в алхимии.",
+      "il": null,
+      "stats": [],
+      "set": null
+    },
+    "pt-BR": "Calendula",
+    "tip_pt-BR": {
+      "desc": "Uma erva usada para inventar uma poção em Alquimia.",
+      "il": null,
+      "stats": [],
+      "set": null
+    }
+  },
+  "ingredient": {
+    "id": "610680044",
+    "grade": 11,
+    "cat": "gatherresource",
+    "icon": "ingredient.webp",
+    "en": "Kukuru",
+    "tip_en": {
+      "desc": "A cooking ingredient.",
+      "il": null,
+      "stats": [],
+      "set": null
+    },
+    "ru": "Кукур",
+    "tip_ru": {
+      "desc": "Материал, используемый для кулинарии.",
+      "il": null,
+      "stats": [],
+      "set": null
+    },
+    "pt-BR": "Kukuru",
+    "tip_pt-BR": {
+      "desc": "Um ingrediente de cozinha.",
+      "il": null,
+      "stats": [],
+      "set": null
+    }
+  },
+  "parchment_vigor": {
+    "id": "810230001",
+    "grade": 41,
+    "cat": "parchment",
+    "icon": "parchment_vigor.webp",
+    "en": "Parchment of Vigor",
+    "tip_en": {
+      "desc": "",
+      "il": 80,
+      "stats": [
+        [
+          "life",
+          20
+        ]
+      ],
+      "set": {
+        "name": "Primal Vigor",
+        "bonus": [
+          [
+            2,
+            "+60 PvE Attack when HP is 70% or more"
+          ],
+          [
+            4,
+            "+150 PvE Attack when HP is 70% or more"
+          ]
+        ]
+      }
+    },
+    "ru": "Пергамент жизни",
+    "tip_ru": {
+      "desc": "",
+      "il": 80,
+      "stats": [
+        [
+          "life",
+          20
+        ]
+      ],
+      "set": {
+        "name": "Рождение жизни",
+        "bonus": [
+          [
+            2,
+            "АТК в PvE +60 при ОЗ 70% и выше"
+          ],
+          [
+            4,
+            "АТК в PvE +150 при ОЗ 70% и выше"
+          ]
+        ]
+      }
+    },
+    "pt-BR": "Parchment of Vigor",
+    "tip_pt-BR": {
+      "desc": "",
+      "il": 80,
+      "stats": [
+        [
+          "life",
+          20
+        ]
+      ],
+      "set": {
+        "name": "Primal Vigor",
+        "bonus": [
+          [
+            2,
+            "+ 60 PvE Ataque quando HP é 70% ou mais"
+          ],
+          [
+            4,
+            "+ 150 PvE Ataque quando HP é 70% ou mais"
+          ]
+        ]
+      }
+    }
+  },
+  "compass_vigor": {
+    "id": "810330001",
+    "grade": 41,
+    "cat": "compass",
+    "icon": "compass_vigor.webp",
+    "en": "Compass of Vigor",
+    "tip_en": {
+      "desc": "",
+      "il": 80,
+      "stats": [
+        [
+          "freedom",
+          20
+        ]
+      ],
+      "set": {
+        "name": "Primal Vigor",
+        "bonus": [
+          [
+            2,
+            "+60 PvE Attack when HP is 70% or more"
+          ],
+          [
+            4,
+            "+150 PvE Attack when HP is 70% or more"
+          ]
+        ]
+      }
+    },
+    "ru": "Компас жизни",
+    "tip_ru": {
+      "desc": "",
+      "il": 80,
+      "stats": [
+        [
+          "freedom",
+          20
+        ]
+      ],
+      "set": {
+        "name": "Рождение жизни",
+        "bonus": [
+          [
+            2,
+            "АТК в PvE +60 при ОЗ 70% и выше"
+          ],
+          [
+            4,
+            "АТК в PvE +150 при ОЗ 70% и выше"
+          ]
+        ]
+      }
+    },
+    "pt-BR": "Compass of Vigor",
+    "tip_pt-BR": {
+      "desc": "",
+      "il": 80,
+      "stats": [
+        [
+          "freedom",
+          20
+        ]
+      ],
+      "set": {
+        "name": "Primal Vigor",
+        "bonus": [
+          [
+            2,
+            "+ 60 PvE Ataque quando HP é 70% ou mais"
+          ],
+          [
+            4,
+            "+ 150 PvE Ataque quando HP é 70% ou mais"
+          ]
+        ]
+      }
+    }
+  },
+  "chalice_vigor": {
+    "id": "810130001",
+    "grade": 41,
+    "cat": "grail",
+    "icon": "chalice_vigor.webp",
+    "en": "Chalice of Vigor",
+    "tip_en": {
+      "desc": "",
+      "il": 80,
+      "stats": [
+        [
+          "time",
+          20
+        ]
+      ],
+      "set": {
+        "name": "Primal Vigor",
+        "bonus": [
+          [
+            2,
+            "+60 PvE Attack when HP is 70% or more"
+          ],
+          [
+            4,
+            "+150 PvE Attack when HP is 70% or more"
+          ]
+        ]
+      }
+    },
+    "ru": "Грааль жизни",
+    "tip_ru": {
+      "desc": "",
+      "il": 80,
+      "stats": [
+        [
+          "time",
+          20
+        ]
+      ],
+      "set": {
+        "name": "Рождение жизни",
+        "bonus": [
+          [
+            2,
+            "АТК в PvE +60 при ОЗ 70% и выше"
+          ],
+          [
+            4,
+            "АТК в PvE +150 при ОЗ 70% и выше"
+          ]
+        ]
+      }
+    },
+    "pt-BR": "Chalice of Vigor",
+    "tip_pt-BR": {
+      "desc": "",
+      "il": 80,
+      "stats": [
+        [
+          "time",
+          20
+        ]
+      ],
+      "set": {
+        "name": "Primal Vigor",
+        "bonus": [
+          [
+            2,
+            "+ 60 PvE Ataque quando HP é 70% ou mais"
+          ],
+          [
+            4,
+            "+ 150 PvE Ataque quando HP é 70% ou mais"
+          ]
+        ]
+      }
+    }
+  },
+  "mirror_magic_gold": {
+    "id": "810530002",
+    "grade": 41,
+    "cat": "mirror",
+    "icon": "mirror_magic_gold.webp",
+    "en": "Mirror of Magic",
+    "tip_en": {
+      "desc": "",
+      "il": 80,
+      "stats": [
+        [
+          "wisdom",
+          20
+        ]
+      ],
+      "set": {
+        "name": "Magic Armor",
+        "bonus": [
+          [
+            2,
+            "Restores 1,500 MP when MP is 20% or less [30s cooldown]"
+          ],
+          [
+            4,
+            "+1,000 PvE Defense when MP is 50% or more"
+          ]
+        ]
+      }
+    },
+    "ru": "Зеркало магии",
+    "tip_ru": {
+      "desc": "",
+      "il": 80,
+      "stats": [
+        [
+          "wisdom",
+          20
+        ]
+      ],
+      "set": {
+        "name": "Магические доспехи",
+        "bonus": [
+          [
+            2,
+            "Восстанавливает 1500 ОМ, когда ОМ достигает 20% или меньше [Время перезарядки 30 с]"
+          ],
+          [
+            4,
+            "ЗЩТ в PvE +1000 при ОМ 50% и выше"
+          ]
+        ]
+      }
+    },
+    "pt-BR": "Mirror of Magic",
+    "tip_pt-BR": {
+      "desc": "",
+      "il": 80,
+      "stats": [
+        [
+          "wisdom",
+          20
+        ]
+      ],
+      "set": {
+        "name": "Magic Armor",
+        "bonus": [
+          [
+            2,
+            "Restaurações 1,500 MP quando MP É 20% ou menos.30s Não, não, não."
+          ],
+          [
+            4,
+            "+ 1,000 PvE Defesa quando MP é 50% ou mais"
+          ]
+        ]
+      }
+    }
+  },
+  "holyspirit_torso": {
+    "id": "210130002",
+    "grade": 41,
+    "cat": "torso",
+    "icon": "holyspirit_torso.webp",
+    "en": "Holy Spirit Breastplate",
+    "tip_en": {
+      "desc": "",
+      "il": 41,
+      "stats": [
+        [
+          "hpmax",
+          164
+        ],
+        [
+          "armordefense",
+          299
+        ]
+      ],
+      "set": null
+    },
+    "ru": "Нагрудник святого духа",
+    "tip_ru": {
+      "desc": "",
+      "il": 41,
+      "stats": [
+        [
+          "hpmax",
+          164
+        ],
+        [
+          "armordefense",
+          299
+        ]
+      ],
+      "set": null
+    },
+    "pt-BR": "Holy Spirit Breastplate",
+    "tip_pt-BR": {
+      "desc": "",
+      "il": 41,
+      "stats": [
+        [
+          "hpmax",
+          164
+        ],
+        [
+          "armordefense",
+          299
+        ]
+      ],
+      "set": null
+    }
+  },
+  "spectral_torso": {
+    "id": "210130006",
+    "grade": 41,
+    "cat": "torso",
+    "icon": "spectral_torso.webp",
+    "en": "Spectral Breastplate",
+    "tip_en": {
+      "desc": "",
+      "il": 41,
+      "stats": [
+        [
+          "hpmax",
+          164
+        ],
+        [
+          "armordefense",
+          299
+        ]
+      ],
+      "set": null
+    },
+    "ru": "Нагрудник спектра",
+    "tip_ru": {
+      "desc": "",
+      "il": 41,
+      "stats": [
+        [
+          "hpmax",
+          164
+        ],
+        [
+          "armordefense",
+          299
+        ]
+      ],
+      "set": null
+    },
+    "pt-BR": "Spectral Breastplate",
+    "tip_pt-BR": {
+      "desc": "",
+      "il": 41,
+      "stats": [
+        [
+          "hpmax",
+          164
+        ],
+        [
+          "armordefense",
+          299
+        ]
+      ],
+      "set": null
+    }
+  }
+}

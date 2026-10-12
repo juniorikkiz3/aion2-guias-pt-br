@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% from "tracker_parts.html" import reset_box, charbar, tracker_config with context %}
+{% block og %}week-1{% endblock %}
+{% block title %}{{ t.w1_title }} — {{ t.site_name }}{% endblock %}
+{% block desc %}{{ t.w1_desc }}{% endblock %}
+{% block body_class %}page-tracker page-week1{% endblock %}
+{% block main %}
+<main id="main">
+  <section class="page-hero tracker-hero has-art" style="--hero-art:url('{{ root }}assets/art/hero-week-1.webp');--hero-pos:50% 40%">
+    <div class="wrap tracker-hero-in">
+      <div>
+        <nav class="crumbs" aria-label="{{ t.back_home }}"><a href="{{ root }}{{ lang }}/">{{ t.back_home }}</a><span aria-hidden="true">/</span><span>{{ t.nav_week1 }}</span></nav>
+        <h1>{{ t.w1_h1 }}</h1>
+        <p class="lead">{{ t.w1_lead }}</p>
+      </div>
+      {{ reset_box() }}
+    </div>
+  </section>
+
+  <div class="wrap tracker-page">
+    {{ charbar() }}
+
+    {% for g in week1.groups %}
+    <section class="w1-group" aria-labelledby="h-w1-{{ g.id }}">
+      <div class="w1-head">
+        <h2 id="h-w1-{{ g.id }}" class="section-title">{{ g.title[lang] }}</h2>
+        <span class="w1-progress"><b class="w1-n">0</b>/{{ g['items']|length }} {{ t.w1_done }}</span>
+      </div>
+      <p class="w1-lead">{{ g.lead[lang] }}</p>
+      <ol class="steps w1-list">
+        {% for it in g['items'] %}
+        <li class="step">
+          <label>
+            <input type="checkbox" data-goal="{{ it.id }}">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-text">{{ it.text[lang]|safe }}
+              {% for sk in it.src.split() %}<a class="w1-src" href="{{ week1.sources[sk].url }}" target="_blank" rel="noopener" title="{{ t.src_label }}: {{ week1.sources[sk].name }}">{{ week1.sources[sk].name.split(' — ')[0] }}</a>{% endfor %}
+            </span>
+          </label>
+        </li>
+        {% endfor %}
+      </ol>
+    </section>
+    {% endfor %}
+
+    <a class="w1-route-card" href="{{ root }}{{ lang }}/progression/">
+      <span class="w1-route-card-gs" aria-hidden="true">45 → 2800</span>
+      <span><b>{{ t.w1_route_title }}</b><span>{{ t.w1_route_text }}</span></span>
+      <span class="btn btn-ghost btn-sm">{{ t.w1_route_btn }} →</span>
+    </a>
+
+    <p class="w1-cta"><a class="btn btn-primary" href="{{ root }}{{ lang }}/weekly/">{{ t.w1_open_weekly }} →</a></p>
+  </div>
+</main>
+{{ tracker_config() }}
+{% endblock %}

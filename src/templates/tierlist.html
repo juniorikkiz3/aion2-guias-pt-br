@@ -1,0 +1,77 @@
+{#- Class tier list (/tier-list/): `tl` = data/tierlist.json. Each board (PvE, mass PvP, 1v1, DPS) shows the averaged tiers
+    as an S–D grid of class emblems, then every author's letter per class, so the lists can be compared side by side. -#}
+{% extends "base.html" %}
+{% block og %}tier-list{% endblock %}
+{% block title %}{{ t.tl_title }} — {{ t.site_name }}{% endblock %}
+{% block desc %}{{ t.tl_desc }}{% endblock %}
+{% block body_class %}page-guide page-tierlist{% endblock %}
+{% set SCORE = {'S': 4, 'A': 3, 'B': 2, 'C': 1, 'D': 0} %}
+{% set CLS = {} %}{% for c in classes %}{% do CLS.update({c.slug: c}) %}{% endfor %}
+{% from "tabs.html" import page_tabs %}
+{% block main %}
+<main id="main">
+  <section class="page-hero has-art" style="--hero-art:url('{{ root }}assets/art/hero-{{ tl.meta.hero }}.webp');--hero-pos:{{ tl.meta.pos }}">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="{{ t.back_home }}"><a href="{{ root }}{{ lang }}/">{{ t.back_home }}</a><span aria-hidden="true">/</span><span>{{ t.nav_tier }}</span></nav>
+      <h1>{{ t.tl_h1 }}</h1>
+      <p class="lead">{{ t.tl_lead }}</p>
+    </div>
+  </section>
+
+  <div class="wrap tl-page">
+    <div class="callout tl-warn" role="note"><p><strong>{{ t.tl_warn }}</strong> — {{ t.tl_note }}</p>
+      <p class="tl-srcs">{% for key, S in tl.sources.items() %}<a class="w1-src" href="{{ S.url }}" target="_blank" rel="noopener" title="{{ S.name }}">{{ S.name.split(' — ')[0] }}</a>{% endfor %}</p></div>
+
+    {% set tabs = [] %}{% for b in tl.boards %}{% do tabs.append((b.id, b.tab[lang])) %}{% endfor %}{% if tl.get('ping') %}{% do tabs.append(('ping', tl.ping.tab[lang])) %}{% endif %}
+    {{ page_tabs(tabs, t.nav_tier) }}
+
+    {% for b in tl.boards %}
+    {#- Average every author's letter for a class; the grid places the class by the rounded average. -#}
+    {% set avg = {} %}
+    {% for c in classes %}
+      {% set marks = [] %}
+      {% for l in b.lists %}{% for tier, slugs in l.tiers.items() if c.slug in slugs %}{% do marks.append(SCORE[tier]) %}{% endfor %}{% endfor %}
+      {% if marks %}{% do avg.update({c.slug: (marks|sum) / (marks|length)}) %}{% endif %}
+    {% endfor %}
+    <section class="tl-board tab-panel" id="{{ b.id }}" data-tab-panel="{{ b.id }}" role="tabpanel" aria-labelledby="h-{{ b.id }}"{% if not loop.first %} hidden{% endif %}>
+      <h2 id="h-{{ b.id }}" class="section-title">{{ b.title[lang] }}</h2>
+      {% if b.get('lead') %}<p class="pg-lead">{{ b.lead[lang] }}</p>{% endif %}
+      <div class="tl-grid">
+        {% for tier in ['S', 'A', 'B', 'C', 'D'] %}
+        {% set row = [] %}
+        {% for slug, v in avg|dictsort(by='value', reverse=true) if (v + 0.5)|int == SCORE[tier] %}{% do row.append(slug) %}{% endfor %}
+        <div class="tl-row tl-{{ tier|lower }}"><span class="tl-letter">{{ tier }}</span>
+          <div class="tl-cells">{% for slug in row %}<a class="tl-cls accent-{{ CLS[slug].accent }}" href="{{ root }}{{ lang }}/{{ slug }}/" title="{{ CLS[slug].name[lang] }}"><img src="{{ root }}assets/classes/{{ slug }}.webp" width="48" height="48" alt=""><span>{{ CLS[slug].name[lang] }}</span></a>{% endfor %}</div>
+        </div>
+        {% endfor %}
+      </div>
+      <div class="table-wrap tl-compare"><table>
+        <thead><tr><th scope="col">{{ t.tl_class }}</th>{% for l in b.lists %}{% set S = tl.sources[l.src] %}<th scope="col"><a href="{{ S.url }}{% if l.get('at') %}&t={{ (l.at.split(':')[0]|int) * 60 + (l.at.split(':')[1]|int) }}s{% endif %}" target="_blank" rel="noopener">{{ S.name.split(' — ')[0] }}</a></th>{% endfor %}<th scope="col">{{ t.tl_avg }}</th></tr></thead>
+        <tbody>
+          {% for slug, v in avg|dictsort(by='value', reverse=true) %}
+          <tr><td class="tl-name"><img src="{{ root }}assets/classes/{{ slug }}.webp" width="22" height="22" alt="" loading="lazy"> {{ CLS[slug].name[lang] }}</td>
+            {% for l in b.lists %}{% set mark = [] %}{% for tier, slugs in l.tiers.items() if slug in slugs %}{% do mark.append(tier) %}{% endfor %}<td>{% if mark %}<span class="tl-mark tl-{{ mark[0]|lower }}">{{ mark[0] }}</span>{% else %}—{% endif %}</td>{% endfor %}
+            <td class="tl-avgv">{{ '%.1f'|format(v) }}</td></tr>
+          {% endfor %}
+        </tbody>
+      </table></div>
+      {% if b.get('note') %}<p class="note">{{ b.note[lang] }}</p>{% endif %}
+    </section>
+    {% endfor %}
+
+    {% if tl.get('ping') %}
+    <section class="tl-board tab-panel" id="ping" data-tab-panel="ping" role="tabpanel" aria-labelledby="h-ping" hidden>
+      <h2 id="h-ping" class="section-title">{{ tl.ping.title[lang] }}</h2>
+      <p class="pg-lead">{{ tl.ping.lead[lang] }}</p>
+      <div class="tl-grid tl-ping">
+        {% for r in tl.ping.rows %}
+        <div class="tl-row tl-{{ r.tone }}"><span class="tl-letter">{{ r.label }}</span>
+          <div class="tl-cells">{% for slug in r.classes %}<a class="tl-cls" href="{{ root }}{{ lang }}/{{ slug }}/" title="{{ CLS[slug].name[lang] }}"><img src="{{ root }}assets/classes/{{ slug }}.webp" width="48" height="48" alt=""><span>{{ CLS[slug].name[lang] }}</span></a>{% endfor %}</div>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+    {% endif %}
+  </div>
+</main>
+{% endblock %}

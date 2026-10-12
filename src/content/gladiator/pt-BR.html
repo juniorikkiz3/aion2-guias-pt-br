@@ -1,0 +1,366 @@
+{% from "macros.html" import section, skill, core, loadout, passives, glance, hotline, macroseq, hotbar, dv_board with context %}
+
+{# ===== PvE and PvP: each PvP block follows its PvE counterpart, so both modes read in the same order; shared sections are 'pve pvp' ===== #}
+{% call glance('pve') %}
+  <h3>{{ t.core_skills }}</h3>
+  {{ core([('overhead-slam', '20'), ('rending-blow', '20'), ('ruinous-blow', '16')]) }}
+  <h3>{{ t.stigma_loadout }}</h3>
+  {{ loadout([('lunge-stance', 20), ('focused-block', 5), ('rage-burst', 5), ('zikels-blessing', 10)]) }}
+  <h3>{{ t.key_passives }}</h3>
+  {{ passives(['attack-preparation', 'experienced-counterstrike', 'murderous-burst', 'impact-hit']) }}
+{% endcall %}
+
+{% call glance('pvp') %}
+  <h3>{{ t.core_skills }}</h3>
+  {{ core([('overhead-slam', '20'), ('mocking-blade', '16'), ('defiance', '16'), ('aerial-snare', '16')]) }}
+  <h3> {{ t.stigma_loadout }} · Abismo </h3>
+  {{ loadout([('lunge-stance', 20), ('armor-of-balance', 5), ('tenaciousness', 10), ('blade-toss', 5)]) }}
+  <h3>{{ t.key_passives }}</h3>
+  {{ passives(['attack-preparation', 'survival-willpower', 'survival-stance', 'impact-hit']) }}
+{% endcall %}
+
+{% call section('intro', 'Visão geral', 'pve') %}
+  <p> Gladiator é a classe principal da NCSoft e tem ficado S-tier nos servidores coreanos e taiwaneses. Ele lustra a festa, pseudo-tanques e causa grandes danos com menos decisões a tomar do que outras classes. Feiticeiro e Assassino o colocam em um boneco estático, mas Gladiador está perto e muito mais simples de jogar. </p>
+  <div class="callout accent">
+    <h3> A build em uma frase </h3>
+    <p> {{ s('overhead-slam') }} em 16-20, {{ s('lunge-stance') }} no nível de estigma 20 e {{ s('rage-burst') }} para ativar Overhead Slam. Todo o resto é apoio. </p>
+  </div>
+{% endcall %}
+
+{% call section('intro-pvp', 'Visão geral', 'pvp') %}
+  <p> Em PvP, Gladiator é um mergulhador <strong> durável </strong>: fecha a distância, derruba o alvo e pune o nocaute com Overhead Slam. Tem HP suficiente, bloqueio e auto-cura para sobreviver no meio da luta. É uma das aulas mais populares do PvP, então esperem por jogos de espelho. </p>
+  <p> Prioridades em ordem: <strong> anti-controle </strong> → <strong> rigidez </strong> → <strong> estourar </strong> quando suas defesas estão para baixo. </p>
+  <p class="note"> Nenhum meta global PvP existe ainda. Este modo combina Coreano/Taiwanese PvP constrói com dados de habilidade do cliente global - tratá-lo como um ponto de partida. </p>
+{% endcall %}
+
+{% call section('global', 'Global — Temporada 1: o que muda', 'pve pvp') %}
+  <p> Servidores globais abrem no <strong> de outubro 5, 2026 </strong> (acesso antecipado do Founder de setembro 30), separados dos servidores coreanos/taiwaneses. O que isso significa para Gladiator: </p>
+  <div class="callout">
+    <ul>
+      <li> <strong> 4 slots estigma </strong> em vez de 6 (esperada apenas para a temporada 1). </li>
+      <li> <strong> Stigmas cap no nível 20 </strong> - o nível 25 não existe no cliente global. </li>
+      <li> <strong> Sem equipamento heróico </strong> na temporada 1, então o equipamento tem menos linhas bônus para passivos. </li>
+      <li><strong>Fraco. Daevanion Bônus</strong> As lutas duram mais, então o tempo de trabalho é mais importante.</li>
+      <li> <strong> Grupos maiores </strong>: 5 expedições de jogadores e 10 santuários de jogadores, e Elios e Asmodians podem fazer fila juntos. Os fãs de festas valem mais. </li>
+      <li data-only="pvp"> <strong> PvP: </strong> todos começam com o mesmo equipamento limitado e nenhum meta se formou ainda. </li>
+    </ul>
+  </div>
+  <p class="note"> Habilidades ativas e passivas são idênticas nos dados globais e KR/TW. Só estigmas perdem o nível 25. </p>
+{% endcall %}
+
+{% call section('skills', 'Habilidades', 'pve') %}
+  <p> Só três habilidades precisam ser altas: <strong> Overhead Slam → Rending Blow → Ruinous Blow </strong>. Habilidades alcançam <strong> 10 </strong> de pontos de habilidade, <strong> 14 </strong> com Daevanion, <strong> 16 </strong> com dois anéis (+ 1 cada) e <strong> 20 </strong> com arcana. Especializações desbloqueiam em 8, 12 e 16. </p>
+  <ul class="skill-grid">
+    {% call skill('overhead-slam', 'must', '16 → 20', [2, 4], then=[3]) %} Sua fonte de dano 1. Com Rage Burst e Lunge Stance é efetivamente sempre para cima. Na 20 a terceira vaga vai para o crit garantido. {% endcall %}
+    {% call skill('rending-blow', 'must', '16 → 20', [3, 4], then=[2]) %}Second-biggest damage source and your mana engine. At 20 Adicione o celular.{% endcall %}
+    {% call skill('ruinous-blow', 'must', '16', [2, 3]) %} Grande bomba nuclear que concede prepare-se para a batalha (+ 20% PvE dano, 20s ). Grobs leva + 20% Skill Speed em vez de Skill Critical Hit em 8. {% endcall %}
+    {% call skill('leaping-slam', 'opt', '12', [0, 2]) %} principal mais próximo, 3s de Preparar para a Batalha antes que Ruinous Blow o estenda. {% endcall %}
+    {% call skill('rush-strike', 'opt', '12', [1, 0]) %}Dodge into a gap-close. With Lunge StanceOs procedimentos de recarga, a resistência bate...10s -Recarga.{% endcall %}
+    {% call skill('mocking-blade', 'opt', '12', [0, 1]) %} botão de cura de emergência: 15% HP absorvido pelos chefes. {% endcall %}
+    {% call skill('ankle-slice', 'opt', '12', [2, 3]) %} Reforço mais perto. Saltar a corrente de Smash tornozelo - ele retarda sua rotação. {% endcall %}
+    {% call skill('crushing-wave', 'skip', '12', [0, 3]) %}Muito lento para chefes, AoE e auto-cura no lixo.{% endcall %}
+    {% call skill('defiance', 'opt', '16 se sobrar', [4]) %} CC quebra. Bom para ataques, não uma prioridade. {% endcall %}
+    {% call skill('sword-aura-rampage', 'opt', '16 se sobrar', [2, 4]) %} só atinge alvos Staggered, mas em 16 cada batida tira 1s do <em> todos os tempos de recarga </em> - estigmas incluídos. É forte, fora dela, é uma perda de danos (Grobs). Não é uma prioridade. {% endcall %}
+    {% call skill('keen-strike', 'opt', '12', [0, 3]) %} Ataque básico: + 20% MP restaurado e - 1s Ruinous Blow recarga por hit - aLuckyRO e Sen ambos levá-lo para 12 no primeiro dia, quando mana é curta. Uma vez que Overhead Slam e Rending Blow são 16, pare de segurá-lo (Grobs, veja evolução). {% endcall %}
+    {% call skill('aerial-snare', 'opt', 'chefes · 12', [2, 3]) %}Só atinge alvos derrubados, mas chefes são a exceção. 12 para +100% damage to CC-immune targets (every boss) and the Forced Fall chain, and uses it in Nightmare dungeons. Grobs and Arthars leave it out; if you add it, give it its own key, not the main line.{% endcall %}
+  </ul>
+{% endcall %}
+
+{% call section('skills-pvp', 'Habilidades', 'pvp') %}
+  <div class="callout accent">
+    <h3> O mecânico que importa, Knockdown </h3>
+    <p> {{ s('overhead-slam') }} e {{ s('aerial-snare') }} só acertaram um alvo atingido com <strong> Knockdown </strong> (os homens são uma exceção, por isso PvE nunca se importa). Todas as janelas começam com um nocaute: Mocking Blade (garantido), Rush Strike depois de um desvio, Ankle Slice. A exceção é {{ s('rage-burst') }}, que permite Overhead Slam em seu alvo para 10s. </p>
+  </div>
+  <ul class="skill-grid">
+    {% call skill('overhead-slam', 'must', '16 → 20', [2, 4], then=[3]) %}Your punish on knocked-down targets. Korean PvP Os guias chamam o nível...20 guaranteed crit essential. It takes the third slot, which opens at 20.{% endcall %}
+    {% call skill('mocking-blade', 'must', '16', [3, 4]) %} Garantido 3s Knockdown - seu abridor principal. No 16: um Knockdown mais longo que ignora Block e Evasion; os dois strikes extras esperam pela terceira vaga no 20. {% endcall %}
+    {% call skill('defiance', 'must', '16', [3, 4]) %} quebra Stun, Knockdown, Airborne, Grab, Frost e Medo. Obrigatório. Na 16: + Tenacidade 2s com a tolerância ao dano, a picareta 20% HP é a terceira vaga, na 20. {% endcall %}
+    {% call skill('aerial-snare', 'must', '16', [3, 4]) %} Seguimento que lança um alvo derrubado. Inútil no PvE, núcleo aqui. Na 16: a corrente de queda forçada e metade do recarga, a chance aérea é a terceira vaga, na 20. {% endcall %}
+    {% call skill('rush-strike', 'opt', '12–16', [1, 3]) %} Dodge → correr com uma chance Knockdown. Na 16 você pode trocar a escolha de alcance por + 25% Knockdown Chance. {% endcall %}
+    {% call skill('rending-blow', 'opt', '16', [2, 4]) %} Ainda seu motor de carga e mana. {% endcall %}
+    {% call skill('ruinous-blow', 'opt', '12–16', [1, 4]) %}A third gap-closer; ignoring Block/Evasion is strong against Templars. That pick needs level 16; em 12 Pegue o alcance e os danos extras.{% endcall %}
+    {% call skill('crushing-wave', 'opt', '16', [3, 4]) %} A puxar arrasta um curandeiro ou lançador para fora de sua linha de trás. {% endcall %}
+    {% call skill('ankle-slice', 'opt', '12', [2, 0]) %} Outra maneira de entrar na janela derrubada. {% endcall %}
+    {% call skill('leaping-slam', 'opt', '12', [1, 3]) %} 20m salto que sobrevive aterrissando em um grupo. {% endcall %}
+  </ul>
+{% endcall %}
+
+{% call section('passives', 'Passivas', 'pve') %}
+  <p> Os pontos passivos são abundantes. A maioria dos passivos se esgotam sem pensar. Uma armadilha e uma picareta atrasada: </p>
+  <div class="callout">
+    <ul>
+      <li> {{ s('protection-armor') }} - uma pequena cura no bloco. Rebole o equipamento e as cartas que o rolam. </li>
+      <li> {{ s('destructive-impulse') }} - danos bônus apenas em alvos Staggered. Não é uma armadilha: ALuckyRO e Sen nivelam-na para a janela cambaleante, onde se empilha com {{ s('sword-aura-rampage') }}. Tome-o depois dos passivos principais. </li>
+    </ul>
+  </div>
+  <p> {{ s('blood-absorption') }} não precisa de investimento: uma chance 50% de curar em cada batida, mais uma grande cura instantânea quando você cair para 50% HP. É por isso que Gladiator passa sem um curandeiro. </p>
+{% endcall %}
+
+{% call section('passives-pvp', 'Passivas', 'pvp') %}
+  <div class="table-wrap"><table>
+    <thead> <tr> <th> Passivo </th> <th> PvP Valor </th> </tr> </thead>
+    <tbody>
+      <tr> <td> {{ s('attack-preparation') }} </td> <td> Ainda 1: PvP Danos Aumentam, Defesa, Precisão. </td> </tr>
+      <tr> <td> {{ s('survival-willpower') }} </td> <td> Status resiste mais tolerância enquanto você é CC'd. Peso morto no PvE, ótimo aqui. </td> </tr>
+      <tr> <td> {{ s('survival-stance') }} </td> <td> HP e PvP Tolerância de Danos. </td> </tr>
+      <tr> <td> {{ s('impact-hit') }} </td> <td> Mais chance de impacto - seus nocautes aterrissam mais vezes. </td> </tr>
+      <tr> <td> {{ s('destructive-impulse') }} </td> <td> Dano de bônus em alvos derrubados - a armadilha PvE se torna útil. </td> </tr>
+    </tbody>
+  </table></div>
+{% endcall %}
+
+{% call section('gear', 'Equipamentos e atributos', 'pve') %}
+  <p> Sem equipamento heroico, velocidade de ataque, velocidade de movimento, força e precisão peguem a maioria das linhas bônus, deixando 1 - 2 para passivos. Prioridade: </p>
+  <div class="table-wrap"><table>
+    <thead> <tr> <th> # </th> <th> Passivo </th> <th> Por que </th> </tr> </thead>
+    <tbody>
+      <tr> <td> 1 </td> <td> {{ s('attack-preparation') }} </td> <td> Flat PvE Danos Aumentam, Defesa e Precisão. Sem condições. </td> </tr>
+      <tr> <td> 2 </td> <td> {{ s('experienced-counterstrike') }} </td> <td> Dano frontal em todos os momentos, mais um 20s PvE Danos Aumentar para você <em> e a festa </em> em cada bloco. Não se empilha com o Fury de Templário, mas cobre uma festa sem um. </td> </tr>
+      <tr> <td> 3 </td> <td> {{ s('murderous-burst') }} / {{ s('impact-hit') }} </td> <td> Cada 5 bate = AoE explosão + danos de crit / mais Impacto e dupla chance. </td> </tr>
+    </tbody>
+  </table></div>
+  <p> Os impulsos de danos frontais e frontais são os tipos mais fortes, e Gladiator sempre luta pela frente. Não persiga rolos de manastone perfeitos na temporada 1 - rerolls custam aproximadamente 200 - 300 k cada um na TW. </p>
+  <h3> Stats (Ulfhednar, global) </h3>
+  <div class="callout"><ul>
+    <li> <strong> Linhas de engrenagem, </strong> qualquer coisa que diga dano, ataque crítico, dano aumenta. </li>
+    <li> <strong> Soul liga-se à arma e guarda, </strong> Danos de Armas, Aceleração de Combate, Danos, Poder, nessa ordem. </li>
+    <li> <strong> Stats: Sabedoria </strong> (Dupla Chance), Tempo (Velocidade do Combate), Destruição (Danos), Mais alguma Precisão - chefes Parry um Gladiador que é curto sobre ele. </li>
+    <li> <strong> Genus Insight: </strong> role as linhas de ataque. Eles levantam o Combat Power, os números das partes verificam antes de convidá-lo para uma masmorra. </li>
+    <li> <strong> Mana: </strong> se você correr seco, pegue Max MP e MP regen linhas, os nós + 50 MP nas painéis Daevanion, e mana poções (Crafting → Alquimia). </li>
+  </ul></div>
+{% endcall %}
+
+{% call section('gear-pvp', 'Equipamentos e atributos', 'pvp') %}
+  <p> Com o equipamento limitado da temporada 1, não construa um conjunto PvP separado ainda, mantenha seu equipamento PvE e mude passivos, estigmas e Daevanion. </p>
+  <div class="callout"><ul>
+    <li> <strong> Precisão </strong> - jogadores Block e Evade muito mais do que chefes. </li>
+    <li> <strong> Critical Hit and Combat Speed </strong> - crits drive Lunge Stance's Cooldown Procs. </li>
+    <li> <strong> PvP Dano Aumentar / Tolerância </strong> sobre as versões PvE onde quer que um slot os ofereça. </li>
+    <li> <strong> Arcana: </strong> Overhead Slam para 20 primeiro, depois Mocking Blade, Defiance e Aerial Snare para 16. </li>
+  </ul></div>
+{% endcall %}
+
+{% call section('arcana', 'Arcana', 'pve') %}
+  <p> Uma carta nivelada em médias 5 sobre <strong> + 2 </strong> para uma habilidade aleatória que pode rolar. </p>
+  <div class="table-wrap"><table>
+    <thead> <tr> <th> Card </th> <th> Procure </th> </tr> </thead>
+    <tbody>
+      <tr> <td> {{ it('{i:parchment_vigor}') }} </td> <td> {{ s('overhead-slam') }} e {{ s('ruinous-blow') }} - o único de seus seis que importam. </td> </tr>
+      <tr> <td> {{ it('{i:compass_vigor}') }} </td> <td> {{ s('rending-blow') }} apenas. Use a versão da Liberdade para Precisão. Parries na frente de um chefe são perdidos danos. </td> </tr>
+      <tr> <td> {{ it('{i:chalice_vigor}') }} </td> <td> Rola qualquer habilidade; crafting permite que você escolha dois. Recupere o que ainda falta de 20. </td> </tr>
+    </tbody>
+  </table></div>
+  <p> Sorte média: 14 + 2 (ring) + 2 + 2 = <strong> 20 </strong> em Overhead Slam. Se apenas mais uma habilidade pode alcançar 20, escolha Rending Blow sobre Ruinous Blow. </p>
+  <div class="callout">
+    <h3> Define &amp; cartões passivos </h3>
+    <p> Apontar para 4 - peça <strong> Vigor Primal </strong> (todas as cartas de vigor acima - paira um para o bônus conjunto). Gladiador nunca precisa de CDR (Ilusão). Se MP secar na velocidade de ataque da temporada 1, mude para 2-peça <strong> Magic Armor </strong> ({{ it('{i:mirror_magic_gold}') }} e as outras cartas mágicas). Cartões passivos: {{ s('attack-preparation') }} primeiro, depois qualquer mistura de Experienced Counterstrike &gt; Murderous Burst &gt; Impact Hit &gt; Identify Weakness. </p>.
+  </div>
+{% endcall %}
+
+{% call section('daevanion', 'Painéis Daevanion', 'pve pvp') %}
+  <p> Daevanion pega suas habilidades de 10 para 14 e adiciona uma pilha de estatísticas. Cada nó azul dá <strong> + 1 nível </strong> à sua habilidade. </p>
+  <div class="table-wrap"><table>
+    <thead> <tr> <th> Painel </th> <th> Desbloqueie </th> <th> Focus </th> </tr> </thead>
+    <tbody>
+      <tr> <td> Nezekan </td> <td> Lv 12 </td> <td> Velocidade de combate, redução de recarga </td> </tr>
+      <tr> <td> Zikel </td> <td> Lv 20 </td> <td> Danos Aumentam, Tolerância de Danos </td> </tr>
+      <tr> <td> Vaizel </td> <td> Lv 30 </td> <td> Danos Críticos Aumentam e Tolerância </td> </tr>
+      <tr> <td> Triniel </td> <td> Lv 40 </td> <td> Multi-Hit Chance e Resista </td> </tr>
+      <tr> <td> Azphel </td> <td> Lv 45 </td> <td> PvP Dano Aumentar e Tolerância - sem nós de habilidade </td> </tr>
+    </tbody>
+  </table></div>
+  <div class="callout">
+    <ul>
+      Custos do nó <li>: cinza stat 1, verde passivo 2, azul habilidade 3, laranja especial 4. </li>
+      Prioridade <li data-only="pve"> <strong>: nós azuis </strong> para {{ s('overhead-slam') }}, {{ s('rending-blow') }} e {{ s('ruinous-blow') }}, depois nós laranja, e depois estatísticas. </li>
+      Prioridade <li data-only="pvp"> <strong>: nós azuis </strong> para {{ s('overhead-slam') }}, {{ s('mocking-blade') }}, {{ s('defiance') }}, {{ s('aerial-snare') }} e depois nós laranja. </li>
+      <li data-only="pve"> <strong> Não Ariel no global: </strong> o cliente global tem cinco placas - a placa PvE Ariel do KR/TW não está lá. Azphel é PvP -somente, então em PvE terminar as primeiras quatro tábuas primeiro. </li>
+      <li data-only="pvp"> <strong> Azphel </strong> (nível 45) é tudo PvP Dano Boost / Tolerância - levá-lo, e Triniel mais cedo: multi-hit é um PvP stat. </li>
+    </ul>
+  </div>
+  <h3> A rota nas tábuas </h3>
+  <p> Os reais quadros globais dos dados do jogo. O ouro marca o caminho mais bamouse de Start para os nós que este guia leva, paira qualquer nó para ver o que ele dá. </p>
+  <div data-only="pve">{{ dv_board('pve') }}</div>
+  <div data-only="pvp">{{ dv_board('pvp') }}</div>
+  <p class="note"> Conselhos e custos vêm dos dados globais do cliente (questlog.gg). Os valores do stat ainda podem mudar no lançamento. Verifique o painel antes de fazer uma rota completa. </p>
+{% endcall %}
+
+{% call section('stigmas', 'Estigmas', 'pve') %}
+  <p>Three stigmas are locked in, and the fourth depends on your party. Skip Wrath Wave, Armor of Balance, Forced Restraint, Assault Strike e Fracturing Rush em PvE; Blade Toss Apenas em um grupo (abaixo).</p>
+  <ul class="skill-grid">
+    {% call skill('lunge-stance', 'must', 'Nv. 20', upto=20) %} O nível 20 proc corta todos os recargas em crits: permanente Overhead Slam, Rage Burst, bloco e fechamentos. Primeiro estigma ao máximo. {% endcall %}
+    {% call skill('focused-block', 'must', 'Nv. 5', upto=5) %} Garantido Parry. Cada bloco aciona o fã de festa do Experienced Counterstrike - Bloquear é lustrar. No nível 5 pode ser usado duas vezes seguidas. Tome-o primeiro enquanto nivela. {% endcall %}
+    {% call skill('rage-burst', 'must', 'Nv. 5', upto=5) %} Triggers Overhead Slam no alvo para 10s, + 10% PvE Danos Aumentar e - 10% chefe Ataque. {% endcall %}
+    {% call skill('zikels-blessing', 'opt', 'Nv. 10', upto=10) %} Padrão 4 o slot: + 20% Ataque, não depende de quão bem sua festa joga. {% endcall %}
+    {% call skill('lifestealing-blade', 'opt', 'Nv. 20', upto=20) %}4th slot for an organized party: Predation boosts everyone's hits. Only worth it at 20.{% endcall %}
+    {% call skill('blade-toss', 'opt', 'grupo', upto=5) %} aLuckyRO's grupo escolher: - 30% Defesa sobre o chefe para 10s, então todo o partido mata mais rápido. Leve-o em um grupo organizado no lugar do Zikel's Blessing quando você toca o semi-tanque. {% endcall %}
+    {% call skill('wave-armor', 'skip', 'Nv. 15', upto=15) %} Só sem um Templário. Seu nível forte, nível 25, não existe em global. {% endcall %}
+  </ul>
+  Fontes de Stigma <p>: loja de pesadelos, loja Shugo Festa e loja de Abyss em camadas. Gladiador precisa de tão poucos que seja montado nos primeiros dias. </p>
+{% endcall %}
+
+{% call section('stigmas-pvp', 'Estigmas', 'pvp') %}
+  <p> Korean PvP constrói executar exatamente quatro estigmas, então eles se encaixam em slots globais como é. </p>
+  <div class="table-wrap"><table>
+    <thead> <tr> <th> Mode </th> <th> Stigmas </th> </tr> </thead>
+    <tbody>
+      <tr> <td> Abyss </td> <td> Lunge Stance, Armor of Balance, Blade Toss, Tenaciousness </td> </tr>
+      <tr> <td> Arena </td> <td> Lunge Stance, Armor of Balance, Tenaciousness, Focused Block </td> </tr>
+    </tbody>
+  </table></div>
+  <ul class="skill-grid">
+    {% call skill('lunge-stance', 'must', 'Nv. 20', upto=20) %} Processos de recarga do Crit também trazem Tenaciousness e Defiance de volta mais rápido. {% endcall %}
+    {% call skill('armor-of-balance', 'must', 'Nv. 5+', upto=5) %} Difícil de derrubar para o 10s. Coloque <em> antes de </em> mergulhar em um grupo pesado. {% endcall %}
+    Imunidade {% call skill('tenaciousness', 'must', 'Nv. 10+', upto=10) %} 3s para danos e efeitos de status, então uma cura. No 20 ele se ativa no Impact CC. {% endcall %}
+    {% call skill('blade-toss', 'opt', 'Abyss', upto=5) %} 20m lançamento: - 30% Defesa e - 50% cura recebida para 10s. Sua resposta para curandeiros e corredores. {% endcall %}
+    {% call skill('focused-block', 'opt', 'Arena', upto=5) %} Bloqueie suas habilidades de dano em 1 v 1. Não desperdice com CC. {% endcall %}
+    {% call skill('forced-restraint', 'opt', 'alternativa', upto=5) %} Seal (silêncio) para bloquear um alvo durante a janela Overhead Slam. {% endcall %}
+    {% call skill('rage-burst', 'opt', 'alternativa', upto=5) %} habilita Overhead Slam sem um nocaute para 10s. {% endcall %}
+  </ul>
+{% endcall %}
+
+{% call section('macro', 'Macro e rotação', 'pve') %}
+  <p> AION 2 tem duas ferramentas separadas, e a build usa ambas: </p>
+  <ul>
+    <li> <strong> linha de barras </strong> - várias habilidades empilhadas no <em> um botão de barras </em>. Pressionando-o lança a habilidade mais alta prioridade que está pronto, e em AION 2 o slot inferior <strong> tem a maior prioridade </strong>. As cartas abaixo mostram cada linha de cima a baixo como no jogo, com o número de prioridade em cada habilidade. </li>
+    <li> <strong> No jogo macro </strong> - enquanto você segura sua chave, ele pressiona suas linhas de hotbar em ordem e cancela caudas de animação. As habilidades no recarga são ignoradas. Mantenha seu ataque básico <em> junto </em> com a tecla da macro em vez de colocá-lo na macro - o jogo tece e cancela melhor assim. </li>
+  </ul>
+  <p> Gladiator precisa de habilidades <strong> 6 em botões 3 </strong>: habilidades 4 de dano e 2 de buffs. </p>
+
+  <h3> 1. Linhas de barras </h3>
+  <div class="hotlines">
+    {% call hotline('RMB', 'Main line', ['rage-burst', 'overhead-slam', 'rending-blow']) %}Rage Burst Sente-se no <strong>fundo</strong> slot - veja abaixo.{% endcall %}
+    {% call hotline('E', 'Ruinous line', ['ruinous-blow'], ['lifestealing-blade']) %} Grants Combat Pronto. Adicione Lifestealing Blade só se estiver em seus estigmas. {% endcall %}
+    {% call hotline('R', 'Buff line', ['lunge-stance', 'zikels-blessing']) %} Ambos se mantêm em pé graças aos cortes de recarga do Lunge Stance. {% endcall %}
+  </div>
+
+  <h3> 2. No jogo macro </h3>
+  Janela <p> Habilidade → <strong> Macro </strong>. Coloque as três linhas nesta ordem e defina cada atraso <strong> para 10 ms </strong> (é a pausa entre botões, não o seu ping). Amarre a macro em Configurações → Configurações-chave → Geral → Jogo → <strong> Macro </strong> — um botão lateral do mouse é ideal, porque você segura. </p>
+  {{ macroseq([('Main line', 'RMB · 10 ms'), ('Ruinous line', 'E · 10 ms'), ('Buff line', 'R · 10 ms')]) }}
+
+  <p class="note">Temporada 1 As descompensações são lentas no lançamento, por isso os "buffs" valem mais quando cronometrados. Você pode tirar a linha de "buff" da macro e pressioná-la você mesmo antes de um chefe ou um pacote grande.</p>
+
+  <h3> 3. O que você realmente pressiona </h3>
+  <ul class="presslist">
+    <li> <span class="press-how"> Segure </span> <span class="press-what"> <span class="key"> Macro chave </span> toda a luta. </span> </li>
+    <li> <span class="press-how"> Spam </span> <span class="press-what"> <span class="key"> RMB </span> linha principal e <span class="key"> E </span> linha ruinosa em cima dele - as duas linhas devem ficar separadas para que possam ser tecidos. </span> </li>
+    <li> <span class="press-how"> à mão </span> <span class="press-what"> {{ s('focused-block') }} (bloco = festa), {{ s('mocking-blade') }} (batedor + cura), {{ s('leaping-slam') }} (gap mais perto), {{ s('crushing-wave') }} em pacotes. </span> </li>
+  </ul>
+
+  <div class="callout accent">
+    <h3> Abrindo um chefe </h3>
+    <div class="combo"> {{ s('lunge-stance') }} + {{ s('zikels-blessing') }} <span class="arrow"> → </span> {{ s('leaping-slam') }} em <span class="arrow"> → </span> {{ s('ruinous-blow') }} <span class="arrow"> → </span> mantenha a macro </div>
+    <p> Bloqueie o primeiro ataque <strong> do chefe </strong> com {{ s('focused-block') }} - Experienced Counterstrike lustra a festa toda imediatamente. Cada chefe abre de forma diferente: em alguns é melhor pular, bloquear primeiro e só depois lustrar. Aprenda os chefes e se encaixe no bloco. </p>
+    <p class="note"> Configuração Útil (Grobs): Esc → Configurações → Info Display → Combate → <strong> Indicador de orientação do chefe de exibição </strong>. Ele mostra onde está a frente do chefe - Gladiador sempre quer bater pela frente. </p>
+  </div>
+  <div class="callout">
+    <h3> Por que Rage Burst fica no fundo </h3>
+    <p>Rage Burst is a buff that must always be up, so it takes the bottom slot — the highest priority — and fires every time it comes off cooldown. Put it above Overhead Slam e nunca dispara: Lunge Stance Fica. Overhead Slam permanently available, and the lower slot always wins. Don't stuff more skills into the main line: macro timing depends on frame rate, and any delay to Overhead Slam custa mais do que a habilidade extra acrescenta.</p>
+  </div>
+  <div class="callout">
+    <h3> De onde vem o dano </h3>
+    <p> Em uma análise de um minuto: Overhead Slam Greve para cima) Rending Blow Ruinous Blow Lunge Stance Murderous Burst Rage Burst </p>
+  </div>
+  <p> A macro mantém o ritmo, não toca para você. Você ainda decide quando bloquear, quando se aproximar e quando se curar. As estatísticas mais fracas da temporada 1 significam brigas de chefes de vários minutos, então cada segundo de tempo perdido conta. </p>
+  <p class="note"> Keys são o layout do modo de ação de Arthars (RMB / E); no alvo da tabulação, use qualquer duas chaves que você possa spam. A ordem de fenda macro segue o mesmo esquema linha-a-linha Coreana constrói uso. </p>
+
+  <h3>Outra opção: macro de Ulfhednar (global)</h3>
+  <p> Ulfhednar's bar (vídeo de outubro 6, quadros 3:04 e 3:12). Rage Burst e Overhead Slam dividem uma linha como acima, mas Rending Blow divide uma linha com {{ s('sword-aura-rampage') }}, que fica abaixo dela e dispara primeiro sempre que um chefe é cambaleado, e Ruinous Blow vai em cima da linha de buff. Ele comanda {{ s('blade-toss') }} (- 30% defesa inimiga para 10s, um partido debuff) no lugar de Focused Block. </p>.
+  {{ hotbar([('1', ['leaping-slam']), ('2', ['mocking-blade']), ('3', ['rush-strike', 'aerial-snare']), ('4', ['ankle-slice']), None, ('Caps', []), ('—', ['crushing-wave']), ('F', []), ('9', []), None, ('Q', ['zikels-blessing', 'lunge-stance', 'blade-toss', 'ruinous-blow']), ('E', ['sword-aura-rampage', 'rending-blow']), ('LMB', ['keen-strike']), ('RMB', ['rage-burst', 'overhead-slam'])], macro=['Q', 'RMB', 'E'], own_keys=true) }}
+  <div class="hotlines">
+    {% call hotline('Q', 'Buff line', ['zikels-blessing', 'lunge-stance', 'blade-toss', 'ruinous-blow']) %} Os fãs e o debufo na recarga, o Ruinous Blow dispara sempre que estão correndo. {% endcall %}
+    {% call hotline('RMB', 'Main line', ['rage-burst', 'overhead-slam']) %} Rage Burst na ranhura inferior, Overhead Slam acima dela. {% endcall %}
+    {% call hotline('E', 'Stagger line', ['sword-aura-rampage', 'rending-blow']) %} Sword Aura Rampage só atinge alvos escalonados, então o resto do tempo a linha lança Rending Blow. {% endcall %}
+  </div>
+  {{ macroseq([('Buff line', 'Q · 10 ms'), ('Main line', 'RMB · 10 ms'), ('Stagger line', 'E · 10 ms')]) }}
+  <ul class="presslist">
+    <li> <span class="press-how"> Segure </span> <span class="press-what"> {{ s('keen-strike') }} em <span class="key"> LMB </span> e a tecla da macro - ele liga a macro no jogo para <span class="key"> C </span>. Keen Strike mantém a mana e corta o efeito do Ruinous Blow em cada batida. </span> </li>
+    <li> <span class="press-how"> à mão </span> <span class="press-what"> Os mais próximos e {{ s('mocking-blade') }} em 1-4, {{ s('crushing-wave') }} em pacotes. </span> </li>
+  </ul>
+  <p class="note"> Além disso, ele corre uma macro de software do mouse que spams as mesmas chaves (10 ms cada, 15 ms para LMB) e pressiona a tecla macro no jogo enquanto corre, para tecer em mais ataques. Uma macro simples no jogo é o suficiente para começar. </p>
+{% endcall %}
+
+{% call section('combos-pvp', 'Combos e jogo', 'pvp') %}
+  <div class="callout">
+    <h3> Knockdown punir </h3>
+    <div class="combo"> {{ s('mocking-blade') }} <span class="arrow"> → </span> {{ s('overhead-slam') }} × N <span class="arrow"> → </span> {{ s('aerial-snare') }} <span class="arrow"> → </span> Forced Fall </div>
+  </div>
+  <div class="callout">
+    <h3> Acionar do alcance </h3>
+    <div class="combo"> {{ s('blade-toss') }} <span class="arrow"> → </span> Dodge + {{ s('rush-strike') }} / {{ s('leaping-slam') }} <span class="arrow"> → </span> knockdown punir </div>
+    <p> Nenhum nocaute caiu? {{ s('rage-burst') }} ou {{ s('forced-restraint') }} abre a janela de qualquer maneira. </p>
+  </div>
+  <div class="callout">
+    <h3> Mantendo-se vivo </h3>
+    <ul>
+      <li> {{ s('defiance') }} quebra o primeiro CC duro, guarde {{ s('tenaciousness') }} para a cadeia de seguimento. </li>
+      <li> {{ s('armor-of-balance') }} sobe antes de mergulhar, não depois de cair. </li>
+      <li> Contra os curandeiros: Blade Toss primeiro, depois o Crushing Wave puxa. </li>
+    </ul>
+  </div>
+{% endcall %}
+
+{% call section('recap', 'Resumo', 'pve') %}
+  <div class="callout accent"><ul>
+    <li> <strong> Habilidades: </strong> Overhead Slam 20, Rending Blow 16 → 20, Ruinous Blow 16; tudo o resto 12 ou menos. </li>
+    <li> <strong> Níveis de: </strong> Daevanion (+ 4 ) → anéis (+ 2 ) → arcana (+ 4 ). </li>
+    <li> <strong> Stigmas: </strong> Lunge Stance 20, Focused Block 5, Rage Burst 5, Zikel's Blessing 10 (ou Lifestealing Blade 20). </li>
+    <li> <strong> Passivos: </strong> Attack Preparation &gt; Experienced Counterstrike &gt; Murderous Burst / Impact Hit </li>
+  </ul></div>
+{% endcall %}
+
+{% call section('recap-pvp', 'Resumo', 'pvp') %}
+  <div class="callout accent"><ul>
+    <li> <strong> Habilidades: </strong> Overhead Slam 16 → 20, Mocking Blade 16, Defiance 16, Aerial Snare 16. </li>
+    <li> <strong> Stigmas: </strong> Lunge Stance 20 + Armor of Balance + Tenaciousness + Blade Toss (Abismo) ou Focused Block (Arena). </li>
+    <li> <strong> Daevanion: </strong> tomar Azphel (PvP Danos Aumentar e Tolerância), Triniel mais cedo. </li>
+    <li> <strong> Play: </strong> knockdown → Overhead Slam; quebrar CC com Defiance, salvar Tenaciousness. </li>
+  </ul></div>
+{% endcall %}
+
+{# ============================ Leveling ============================ #}
+{% call section('fight-lvl', t.lvl_combat, 'lvl') %}
+  <div class="callout"><ul>
+    Pacotes <li> <strong>: </strong> {{ s('leaping-slam') }} em → {{ s('crushing-wave') }} → {{ s('rending-blow') }} . Uma morte reinicia Leaping Slam → próximo pacote. </li>
+    <li> <strong> Elites: </strong> {{ s('mocking-blade') }} (batedor) → spam {{ s('overhead-slam') }} → {{ s('ruinous-blow') }} na recarga. Dodge → {{ s('rush-strike') }} também derruba NPCs. </li>
+    <li> <strong> Baixo HP </strong> Mocking Blade e Crushing Wave absorvem HP Blood Absorption cura em 50%. Não precisa de poções no lixo. </li>
+  </ul></div>
+{% endcall %}
+
+{% call section('macro-lvl', 'Macro para subir de nível', 'lvl') %}
+  <p> Uma configuração mais simples para nivelar e os primeiros dias no cap, das macros de Grobs. Apenas as habilidades que você spam vai em, fãs, estigma estoura e fecha-buracos ficam em suas próprias chaves. </p>
+  <div class="hotlines">
+    {{ hotline('1', 'Line 1', ['rage-burst', 'overhead-slam', 'rending-blow'], []) }}
+  </div>
+  <p> macro no jogo: linha 1, cada um com um atraso 10 ms. Mantenha seu ataque básico {{ s('keen-strike') }} em LMB <strong> e </strong> a tecla da macro juntos. </p>
+  <div class="callout">
+    <h3> Prioridades ao nivelar (Grobs) </h3>
+    <ul>
+      <li> <strong> Passivos: </strong> {{ s('experienced-counterstrike') }} primeiro, depois {{ s('attack-preparation') }} - os únicos dois que importam agora. </li>
+      <li> <strong> Daevanion: Pontos de habilidade </strong> levam habilidades para 10; depois disso, as placas fazem. Uma rota 65 dá + 2 para suas quatro habilidades principais de dano, então eles alcançam 12 e a segunda especialidade rapidamente - veja as placas abaixo. </li>
+      <li> <strong> em 16: </strong> uma vez que Overhead Slam e Rending Blow são 16, pare de segurar LMB - {{ s('keen-strike') }} se torna uma perda de dano. Segure apenas a macro e pegue o Rending Blow's "Restaura 50 MP em um hit crítico" para mana. </li>
+    </ul>
+  </div>
+  <p class="note"> Quando suas habilidades chegarem ao 12 – 16 e as especialidades mudarem seus tempos de recarga, mudem para a configuração completa na aba PvE. </p>
+  <h3> rota de evolução nas painéis Daevanion (Grobs, pontos 65) </h3>
+  <p> + 2 para Overhead Slam, Rending Blow, Ruinous Blow e Keen Strike - Nezekan em 12, então Zikel em 20. </p>
+  {{ dv_board('lvl') }}
+{% endcall %}
+
+{# ============================ Sources ============================ #}
+<section class="sources" aria-labelledby="h-sources">
+  <h2 id="h-sources">{{ t.sources }}</h2>
+  <ul>
+    <li> <a href="https://www.youtube.com/watch?v=xRPr30JetyY" target="_blank" rel="noopener"> Grobs, o único guia de gladiador PVE que você precisa </a> confirma a build, estigmas e macro deste guia </li>
+    <li> <a href="https://www.youtube.com/watch?v=tYTZ8VucMXw" target="_blank" rel="noopener"> Arthars Gaming - O Guia de Iniciação do Gladiador AION 2 ULTIMATE </a> (PvE, do servidor TW) </li>
+    <li> <a href="https://questlog.gg/aion-2/en/db/skills/gladiator" target="_blank" rel="noopener"> questlog.gg </a> - habilidade &amp; dados estigma do cliente global </li>
+    <li> <a href="https://vortexgaming.io/en/postdetail/611533" target="_blank" rel="noopener"> Vortex Gaming </a> - Coreano PvP constrói (Abismo / Arena) </li>
+    <li> <a href="https://www.iggm.com/news/aion-2-global-servers-dungeon-gameplay-changes-expeditions-gear-progression-stigma-slots" target="_blank" rel="noopener"> IGGM </a> - A temporada 1 global muda </li>
+    <li> <a href="https://nemobek.github.io/aion2-guide/" target="_blank" rel="noopener"> Nemobek.github.io/aion 2-guia </a> (mesa de TitanTheF) - nivelando rota </li>
+    <li> <a href="https://www.youtube.com/watch?v=HMod6Z4GrE0" target="_blank" rel="noopener"> Grobs - AION 2 Macro Guide </a> - como as linhas de barras quentes e a macro no jogo funcionam </li>
+    <li> <a href="https://www.youtube.com/watch?v=WlxLOTs62dM" target="_blank" rel="noopener"> aLuckyRO — AION 2 Último Gladiator PVE Build for Global </a> — especialização inicial (Keen Strike, Aerial Snare em chefes), estigmas, prioridade Daevanion, rotação do chefe da frente </li>
+    <li> <a href="https://www.youtube.com/watch?v=t-B-5lR_GIs" target="_blank" rel="noopener"> Sen - Guia de Progressão AION 2 (Guia Gladiador) </a> - confirma as habilidades, estigmas e passivos deste guia nos servidores globais </li>
+    <li> <a href="https://www.youtube.com/watch?v=zrdG1XDYUtE" target="_blank" rel="noopener"> Ulfhednar - AION 2 Gladiator PvE DPS Build </a> - uma segunda opção macro com sua barra de habilidades (Sword Aura Rampage linha, Blade Toss ), linhas de engrenagem, alma liga, estatísticas, Genus Insight, mana </li>
+  </ul>
+  <p class="sources-all"><a href="{{ root }}{{ lang }}/sources/">{{ t.src_all }} →</a></p>
+</section>

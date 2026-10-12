@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="{{ lang }}" data-mode="pve"{% block html_attrs %}{% endblock %}>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{% block title %}{{ t.home_title }}{% endblock %}</title>
+<meta name="description" content="{% block desc %}{{ t.home_desc }}{% endblock %}">
+<link rel="canonical" href="{{ canonical }}">
+{% for l, u in alt_urls.items() %}
+<link rel="alternate" hreflang="{{ l }}" href="{{ u }}">
+{% endfor %}
+<link rel="alternate" hreflang="x-default" href="{{ alt_urls['pt-BR'] }}">
+<meta name="theme-color" content="#0b0e14">
+<meta name="color-scheme" content="dark light">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="{{ t.site_name }}">
+<meta property="og:locale" content="{{ {'pt-BR': 'pt_BR', 'ru': 'ru_RU', 'uk': 'uk_UA', 'tr': 'tr_TR'}.get(lang, 'en_US') }}">
+<meta property="og:title" content="{{ self.title() }}">
+<meta property="og:description" content="{{ self.desc() }}">
+<meta property="og:url" content="{{ canonical }}">
+<meta property="og:image" content="{{ SITE.base_url }}assets/og/{% block og %}home{% endblock %}-{{ "en" if lang == "pt-BR" else lang }}.jpg?v={{ ASSET_V }}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+{#- Icons: Google Search wants a square raster icon of 48px or a multiple (tools/make_icons.py). -#}
+<link rel="icon" href="{{ root }}favicon.ico" sizes="48x48">
+<link rel="icon" href="{{ root }}assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="{{ root }}assets/favicon-96.png" type="image/png" sizes="96x96">
+<link rel="icon" href="{{ root }}assets/favicon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="{{ root }}assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Yeseva+One&family=JetBrains+Mono:wght@500;700&display=swap&subset=cyrillic">
+<script>
+  // Theme + guide mode before first paint (no flash).
+  (function (r) {
+    try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') r.dataset.theme = t; } catch (e) {}
+    var off = (r.getAttribute('data-off') || '').split(' ');
+    var modes = ['pve', 'pvp', 'lvl'].filter(function (x) { return off.indexOf(x) < 0; });
+    var m = new URLSearchParams(location.search).get('mode');
+    if (modes.indexOf(m) < 0) { try { m = localStorage.getItem('mode'); } catch (e) {} }
+    if (modes.indexOf(m) >= 0) r.dataset.mode = m;
+    else if (modes.indexOf(r.dataset.mode) < 0) r.dataset.mode = modes[0];
+  })(document.documentElement);
+</script>
+{% if SITE.get('ga') %}
+<script>
+  // Google Analytics (site.json "ga"). Not loaded on local previews. A visitor who came through the root
+  // language redirect keeps the site they came from (root.html saves it in sessionStorage).
+  if (!/^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname)) {
+    (function () {
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id={{ SITE.ga }}';
+      document.head.appendChild(s);
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function () { dataLayer.push(arguments); };
+      var ref = null;
+      try { ref = sessionStorage.getItem('ref'); sessionStorage.removeItem('ref'); } catch (e) {}
+      gtag('js', new Date());
+      gtag('config', '{{ SITE.ga }}', ref ? { page_referrer: ref } : {});
+    })();
+  }
+</script>
+{% endif %}
+<link rel="stylesheet" href="{{ root }}assets/css/site.css?v={{ ASSET_V }}">
+</head>
+<body class="{% block body_class %}{% endblock %}">
+<a class="skip-link" href="#main">{{ t.skip }}</a>
+
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="{{ root }}{{ lang }}/">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3c1.8 4.6 5.6 7.2 12 8-4.4 2.2-6.8 5.6-7.4 10.6L16 29l-4.6-7.4C10.8 16.6 8.4 13.2 4 11c6.4-.8 10.2-3.4 12-8z" fill="currentColor"/></svg>
+      {#- "AION 2 Global - Guides" in two lines: the name on top, the word "Guides" small below it (saves top bar room). -#}
+      {% set bn = t.site_name.split(' - ') %}<span class="brand-text"><b>{{ bn[0] }}</b>{% if bn|length > 1 %}<small><span class="sr-only"> - </span>{{ bn[1] }}</small>{% endif %}</span>
+    </a>
+    <details class="class-menu">
+      <summary class="class-menu-btn{% if cls %} accent-{{ cls.accent }}{% endif %}">
+        {% if cls %}<img src="{{ root }}assets/classes/{{ cls.slug }}.webp" width="24" height="24" alt=""><span>{{ cls.name[lang] }}</span>
+        {% else %}<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="4" y="4" width="6" height="6" rx="1.5"/><rect x="14" y="4" width="6" height="6" rx="1.5"/><rect x="4" y="14" width="6" height="6" rx="1.5"/><rect x="14" y="14" width="6" height="6" rx="1.5"/></svg><span>{{ t.classes }}</span>{% endif %}
+        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      </summary>
+      <nav class="class-menu-panel" aria-label="{{ t.classes }}">
+        {% for c in classes %}
+        {% if c.status == 'ready' %}
+        <a href="{{ root }}{{ lang }}/{{ c.slug }}/" class="cm-item accent-{{ c.accent }}"{% if cls and cls.slug == c.slug %} aria-current="page"{% endif %}>
+          <img src="{{ root }}assets/classes/{{ c.slug }}.webp" width="44" height="44" alt=""><span class="cm-name">{{ c.name[lang] }}{% if c.get('wip') %} <span class="wip-tag">{{ t.wip }}</span>{% endif %}</span><span class="cm-role">{{ c.role[lang] }}</span>
+        </a>
+        {% else %}
+        <span class="cm-item is-soon" aria-disabled="true">
+          <img src="{{ root }}assets/classes/{{ c.slug }}.webp" width="44" height="44" alt=""><span class="cm-name">{{ c.name[lang] }}</span><span class="cm-role">{{ t.soon }}</span>
+        </span>
+        {% endif %}
+        {% endfor %}
+      </nav>
+    </details>
+    <div class="topbar-tools">
+      {#- Countdown to the next launch event on every page; for a day after an event with a tt_open_<id> text it says that it is open.
+          On the home page it stays hidden while the schedule panel is on screen. -#}
+      {% set tt = namespace(list=[]) %}
+      {% for ev in SITE.events if ev.get('at') %}{% do tt.list.append({'at': ev.at, 'n': t['ev_' ~ ev.id], 'o': t.get('tt_open_' ~ ev.id, '')}) %}{% endfor %}
+      {#- Rift: a small always-on countdown to the next portal to the enemy zone (every few hours from an anchor). -#}
+      {% if SITE.rift %}
+      <span class="rift-timer{% if path == '' %} is-away{% endif %}" data-anchor="{{ SITE.rift.anchor }}" data-every="{{ SITE.rift.every_h }}" data-tz="{{ SITE.rift.tz }}" data-open-min="{{ SITE.rift.open_min }}" data-open="{{ t.rift_open }}" title="{{ t.rift_title }}">
+        <svg class="rt-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><ellipse cx="12" cy="12" rx="7.5" ry="10.5"/><path d="M11 13C10.2 11.4 11.4 10 12.8 10.4C14.6 11 14.6 14 12.8 15.6C11.4 16.8 9.6 16.8 8.6 16"/><path d="M12.4 6.6C14.8 6.4 17 8.6 17 12"/><g transform="rotate(180 12 12)"><path d="M11 13C10.2 11.4 11.4 10 12.8 10.4C14.6 11 14.6 14 12.8 15.6C11.4 16.8 9.6 16.8 8.6 16"/><path d="M12.4 6.6C14.8 6.4 17 8.6 17 12"/></g></svg><span class="rt-name">Rift</span><b class="rt-time">--:--</b>
+      </span>
+      {% endif %}
+      {#- Weekly reset: a small countdown next to the Rift chip, linking to the weekly tracker (anchor + tz like tracker.js). -#}
+      {% if SITE.get('weekly_reset') %}
+      <a class="wr-chip{% if path == '' %} is-away{% endif %}" href="{{ root }}{{ lang }}/weekly/" data-anchor="{{ SITE.weekly_reset.anchor }}" data-tz="{{ SITE.weekly_reset.tz }}" data-units="{{ t.units|join(',') }}" title="{{ t.reset_in }}">
+        <svg class="wr-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11a8 8 0 1 0-2.3 5.7"/><path d="M20 4v7h-7"/></svg><span class="wr-name">{{ t.tt_reset }}</span><b class="wr-time">--</b>
+      </a>
+      {% endif %}
+      {% if tt.list %}
+      <a class="top-timer{% if path == '' %} is-away{% endif %}" href="{{ root }}{{ lang }}/" title="{{ t.events_title }}" data-events='{{ tt.list|tojson }}' data-units="{{ t.units|join(',') }}" data-open="{{ t.tt_open_short }}">
+        <span class="tt-dot" aria-hidden="true"></span><span class="tt-name"></span><b class="tt-time">--:--:--</b>
+      </a>
+      {% endif %}
+      {#- Site pages menu, right-aligned so the class name length never moves it; the current page is highlighted inside. -#}
+      {% set NAV = [('week-1/', 'nav_week1'), ('progression/', 'nav_progression'), ('crafting/', 'nav_crafting'), ('settings/', 'nav_settings'), ('weekly/', 'nav_weekly'), ('bosses/', 'nav_bosses'), ('dungeons/', 'nav_dungeons'), ('tier-list/', 'nav_tier'), ('sources/', 'sources')] %}
+      {% set here = NAV|selectattr(0, 'equalto', path)|list %}
+      <details class="class-menu nav-menu">
+        <summary class="class-menu-btn{% if here %} is-here{% endif %}">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10"/></svg><span>{{ t.nav_guides }}</span>
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <nav class="nav-menu-panel" aria-label="{{ t.nav_guides }}">
+          <div class="nm-col">
+            <p class="nm-group">{{ t.nav_group_progress }}</p>
+            <a href="{{ root }}{{ lang }}/week-1/" class="nm-item"{% if path == 'week-1/' %} aria-current="page"{% endif %}>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21V4M5 4h11l-2 4 2 4H5"/></svg>
+              <span class="nm-name">{{ t.nav_week1 }}</span><span class="nm-desc">{{ t.nd_week1 }}</span>
+            </a>
+            <a href="{{ root }}{{ lang }}/progression/" class="nm-item"{% if path == 'progression/' %} aria-current="page"{% endif %}>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20h4v-6H3zM10 20h4V9h-4zM17 20h4V4h-4z"/></svg>
+              <span class="nm-name">{{ t.nav_progression }}</span><span class="nm-desc">{{ t.nd_progression }}</span>
+            </a>
+            <a href="{{ root }}{{ lang }}/crafting/" class="nm-item"{% if path == 'crafting/' %} aria-current="page"{% endif %}>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0 5 5L21 13l-8 8-3-3 1.3-1.3a4 4 0 0 0-5-5L3 10l3-3 3 3 1.3-1.3a4 4 0 0 1 4.4-2.4z"/></svg>
+              <span class="nm-name">{{ t.cr_h1 }}</span><span class="nm-desc">{{ t.nd_crafting }}</span>
+            </a>
+            <a href="{{ root }}{{ lang }}/settings/" class="nm-item"{% if path == 'settings/' %} aria-current="page"{% endif %}>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h10M18 6h2M4 12h4M12 12h8M4 18h12M20 18h0"/><circle cx="16" cy="6" r="2"/><circle cx="10" cy="12" r="2"/><circle cx="18" cy="18" r="2"/></svg>
+              <span class="nm-name">{{ t.st_h1 }}</span><span class="nm-desc">{{ t.nd_settings }}</span>
+            </a>
+            <a href="{{ root }}{{ lang }}/dungeons/" class="nm-item"{% if path == 'dungeons/' %} aria-current="page"{% endif %}>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V10l9-7 9 7v11"/><path d="M9 21v-6a3 3 0 0 1 6 0v6"/></svg>
+              <span class="nm-name">{{ t.nav_dungeons }}</span><span class="nm-desc">{{ t.nd_dungeons }}</span>
+            </a>
+            <a href="{{ root }}{{ lang }}/tier-list/" class="nm-item"{% if path == 'tier-list/' %} aria-current="page"{% endif %}>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h4M4 12h4M4 19h4"/><path d="M11 5h9M11 12h6M11 19h3"/></svg>
+              <span class="nm-name">{{ t.nav_tier }}</span><span class="nm-desc">{{ t.nd_tier }}</span>
+            </a>
+          </div>
+          <div class="nm-col">
+            <p class="nm-group">{{ t.nav_group_trackers }}</p>
+            <a href="{{ root }}{{ lang }}/weekly/" class="nm-item"{% if path == 'weekly/' %} aria-current="page"{% endif %}>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M8.5 15l2 2 4-4"/></svg>
+              <span class="nm-name">{{ t.nav_weekly }}</span><span class="nm-desc">{{ t.nd_weekly }}</span>
+            </a>
+            <a href="{{ root }}{{ lang }}/bosses/" class="nm-item"{% if path == 'bosses/' %} aria-current="page"{% endif %}>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c-4.4 0-8 3.1-8 7.5 0 2.6 1.3 4.4 3 5.5V20h2v-2h2v2h2v-2h2v2h2v-4c1.7-1.1 3-2.9 3-5.5C20 6.1 16.4 3 12 3z"/><circle cx="9" cy="11" r="1.5"/><circle cx="15" cy="11" r="1.5"/></svg>
+              <span class="nm-name">{{ t.nav_bosses }}</span><span class="nm-desc">{{ t.nd_bosses }}</span>
+            </a>
+          </div>
+          <div class="nm-foot">
+            <a href="{{ root }}{{ lang }}/sources/" class="nm-item"{% if path == 'sources/' %} aria-current="page"{% endif %}>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h12v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5M8 7h6M8 11h6"/></svg>
+              <span class="nm-name">{{ t.src_h1 }}</span><span class="nm-desc">{{ t.nd_sources }}</span>
+            </a>
+          </div>
+        </nav>
+      </details>
+      {#- Language menu: the current language on the button, every language inside. -#}
+      {% set LANG_CODE = {'pt-BR': 'BR', 'en': 'EN', 'ru': 'RU', 'uk': 'UA', 'tr': 'TR'} %}
+      {% set LANG_NAME = {'pt-BR': 'Português do Brasil', 'en': 'English', 'ru': 'Русский', 'uk': 'Українська', 'tr': 'Türkçe'} %}
+      <details class="lang-menu">
+        <summary class="lang-switch" title="{{ t.switch_lang }}"><span aria-hidden="true">{{ LANG_CODE[lang] }}</span><span class="sr-only">{{ t.switch_lang }}</span></summary>
+        <nav class="lang-panel" aria-label="{{ t.switch_lang }}">
+          {% for l in langs %}<a href="{{ root }}{{ l }}/{{ path }}" hreflang="{{ l }}" lang="{{ l }}"{% if l == lang %} aria-current="true"{% endif %} data-keep-query><b>{{ LANG_CODE[l] }}</b>{{ LANG_NAME[l] }}</a>{% endfor %}
+        </nav>
+      </details>
+      <button class="icon-btn search-open" type="button" aria-label="{{ t.search }} ({{ t.search_hint }})" title="{{ t.search }} ({{ t.search_hint }})">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      </button>
+      {% if CHANGELOG %}<a class="icon-btn wn-top" href="{{ root }}{{ lang }}/changelog/"{% if path == 'changelog/' %} aria-current="page"{% endif %} aria-label="{{ t.wn_history }}" title="{{ t.wn_history }}">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.2a2.6 2.6 0 0 1 5 .9c0 1.7-2.5 2.3-2.5 3.9"/><path d="M12 17h.01"/></svg>
+      </a>{% endif %}
+      <button class="icon-btn theme-toggle" type="button" aria-label="{{ t.theme }}" title="{{ t.theme }}">
+        <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+{% if lang == 'pt-BR' %}<aside class="br-notice" aria-label="Sobre esta tradução"><div class="wrap"><b>Português do Brasil</b><span>Tradução automática com revisão parcial. Nomes de habilidades e itens seguem o cliente Global em inglês.</span><a href="{{ root }}en/{{ path }}" data-keep-query>Consultar original em inglês ↗</a></div></aside>{% endif %}
+{% block main %}{% endblock %}
+
+<footer class="site-footer">
+  <div class="wrap footer-in">
+    <div>
+      <a class="brand brand-sm" href="{{ root }}{{ lang }}/">{{ t.site_name }}</a>
+      <p>{{ t.footer_disclaimer }}</p>
+      <p class="foot-credit">{{ t.credit_foot }}</p><p class="foot-credit">{% if lang == "pt-BR" %}Adaptação independente em PT-BR. Projeto original: {% else %}Independent PT-BR adaptation. Original project: {% endif %}<a href="https://github.com/Couga54/aion2-guides" target="_blank" rel="noopener">Couga54 / AION 2 Guides</a>.</p>
+      <p>{{ t.footer_updated }}: <time datetime="{{ updated }}">{{ fmt_day(updated, lang) }}</time>{% if updated < SITE.launch_utc[:10] %} ({{ t.footer_before_launch }}){% endif %}.</p>
+      <p><a href="{{ root }}{{ lang }}/sources/">{{ t.src_all }}</a> · <a href="{{ root }}{{ lang }}/changelog/">{{ t.wn_history }}</a></p>
+    </div>
+    {% block footer_extra %}{% endblock %}
+  </div>
+</footer>
+{% if CHANGELOG %}
+<dialog class="search-dlg" aria-label="{{ t.search }}" data-index="{{ root }}{{ lang }}/search.json" data-base="{{ root }}{{ lang }}/" data-empty="{{ t.search_empty }}"
+  data-kinds="{{ t.search_kind|tojson|forceescape }}" data-root="{{ root }}">
+  <div class="search-in">
+    <div class="search-bar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      <input type="search" class="search-q" placeholder="{{ t.search_ph }}" aria-label="{{ t.search }}" autocomplete="off" spellcheck="false">
+      <kbd>Esc</kbd>
+    </div>
+    <ul class="search-res" role="listbox"></ul>
+  </div>
+</dialog>
+<dialog class="whatsnew" data-id="{{ CHANGELOG[0].id }}" aria-labelledby="wn-title">
+  <form method="dialog" class="wn-in">
+    <div class="wn-head">
+      <h2 id="wn-title">{{ t.wn_title }}</h2>
+      <button class="icon-btn wn-x" value="close" aria-label="{{ t.wn_close }}">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    {% for e in CHANGELOG[:1] %}
+    <section class="wn-entry">
+      <time class="wn-date" datetime="{{ e.date }}">{{ fmt_day(e.date, lang) }}</time>
+      <ul>
+        {% for it in e['items'] %}
+        <li>{% if it.get('href') %}<a href="{{ root }}{{ lang }}/{{ it.href }}">{{ it[lang]|safe }}</a>{% else %}<span>{{ it[lang]|safe }}</span>{% endif %}</li>
+        {% endfor %}
+      </ul>
+    </section>
+    {% endfor %}
+    <button class="btn btn-primary wn-ok" value="close">{{ t.wn_close }}</button>
+    <p class="wn-all"><a href="{{ root }}{{ lang }}/changelog/">{{ t.wn_all }} →</a></p>
+  </form>
+</dialog>
+{% endif %}
+{% if SITE.get('feedback_url') %}
+{#- Report form: sent to the owner's Telegram through the Worker in site.json "feedback_url". -#}
+<dialog class="whatsnew feedback" aria-labelledby="fb-title" data-url="{{ SITE.feedback_url }}" data-page="{{ lang }}/{{ path }}" data-lang="{{ lang }}">
+  <form class="wn-in fb-form" novalidate>
+    <div class="wn-head">
+      <h2 id="fb-title">{{ t.report }}</h2>
+      <button type="button" class="icon-btn fb-x" aria-label="{{ t.wn_close }}">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <p class="fb-hint">{{ t.fb_hint }}</p>
+    <label class="fb-label" for="fb-text">{{ t.fb_text }}</label>
+    <textarea id="fb-text" class="fb-text" name="text" rows="6" maxlength="2000" required placeholder="{{ t.fb_ph }}"></textarea>
+    <label class="fb-label" for="fb-contact">{{ t.fb_contact }}</label>
+    <input id="fb-contact" class="fb-contact" name="contact" type="text" maxlength="100" autocomplete="off" placeholder="{{ t.fb_contact_ph }}">
+    <input class="fb-hp" name="website" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <p class="fb-meta">{{ t.fb_meta }} <b class="fb-where"></b></p>
+    <p class="fb-status" role="status" data-sending="{{ t.fb_sending }}" data-ok="{{ t.fb_ok }}" data-err="{{ t.fb_err }}" data-rate="{{ t.fb_rate }}" data-short="{{ t.fb_short }}"></p>
+    <div class="fb-actions">
+      <button type="submit" class="btn btn-primary fb-send">{{ t.fb_send }}</button>
+      <button type="button" class="btn btn-ghost fb-cancel">{{ t.fb_cancel }}</button>
+    </div>
+  </form>
+</dialog>
+{% endif %}
+<script src="{{ root }}assets/js/site.js?v={{ ASSET_V }}" defer></script>
+<script src="{{ root }}assets/js/fx.js?v={{ ASSET_V }}" defer></script>
+{% for ev in SITE.events if ev.get('celebrate') and ev.get('at') %}
+<div class="cel-banner" role="status" hidden data-at="{{ ev.at }}" data-id="{{ ev.id }}">
+  <span class="cel-ico" aria-hidden="true">✦</span>
+  <div><p class="cel-h">{{ t.cel_title }}</p><p class="cel-p">{{ t.cel_text }}</p></div>
+  <button type="button" class="cel-x" aria-label="{{ t.cel_close }}">×</button>
+</div>
+<script src="{{ root }}assets/js/celebrate.js?v={{ ASSET_V }}" defer></script>
+{% endfor %}
+</body>
+</html>

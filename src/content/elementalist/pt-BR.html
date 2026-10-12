@@ -1,0 +1,272 @@
+{% from "macros.html" import section, skill, core, loadout, passives, glance, hotline, macroseq, dv_board with context %}
+
+{# ============================== PvE and PvP ============================== #}
+{% call glance('pve') %}
+  <h3>{{ t.core_skills }}</h3>
+  {{ core([('elemental-fusion', '20'), ('combustion', '20'), ('summon-fire-spirit', '20'), ('cold-shock', '16'), ('summon-water-spirit', '16')]) }}
+  <h3>{{ t.stigma_loadout }}</h3>
+  {{ loadout([('summon-ancient-spirit', 20), ('enhance-spirits-benediction', 20), ('flame-blessing', 20), ('jointstrike-corrode', 20)]) }}
+  <h3>{{ t.key_passives }}</h3>
+  {{ passives(['mental-focus', 'spirit-strike', 'element-unification', 'spirit-revitalization']) }}
+{% endcall %}
+
+{% call glance('pvp') %}
+  <h3>{{ t.core_skills }}</h3>
+  {{ core([('defiance', '20'), ('cold-shock', '20'), ('elemental-fusion', '20'), ('jointstrike-curse', '20'), ('combustion', '20')]) }}
+  <h3>{{ t.stigma_loadout }}</h3>
+  {{ loadout([('summon-ancient-spirit', 20), ('enhance-spirits-benediction', 20), ('command-proxy', 20), ('seize-magic', 20)]) }}
+  <h3>{{ t.key_passives }}</h3>
+  {{ passives(['spirit-protection', 'revitalization-contract', 'spirit-strike', 'mental-focus']) }}
+{% endcall %}
+
+{% call section('intro', 'Visão geral', 'pve') %}
+  <p> O Elementalista (Mestre Espiritual) é o único chamador: um espírito luta ao seu lado, cada habilidade espiritual lhe dá um elemento, e em quatro elementos {{ s('elemental-fusion') }} está pronto. A maioria dos danos vem do Elemental Fusion e dos espíritos, acima de todos os {{ s('summon-ancient-spirit') }} e {{ s('summon-fire-spirit') }}. </p>
+  <div class="callout accent">
+    <h3> A build em uma frase </h3>
+    <p> Buff primeiro, depois convocar: um espírito copia suas estatísticas no momento em que aparece. Mantenha cinco pilhas de {{ s('cold-shock') }}'s Attack Fuff, abra com os fãs e o Espírito Antigo, e deixe o macro fogo Elemental Fusion quando estiver pronto. </p>
+  </div>
+  <div class="callout"><ul>
+    <li> <strong> A regra de instantâneo. </strong> O dano de um espírito depende de suas estatísticas e de seus aficionados quando você o convocar. Um elenco após a convocação não faz nada por esse espírito. Nunca chame o Espírito Antigo sem seu entusiasmo. </li>
+    <li> <strong> Faça o ataque básico. </strong> Cold Shock dá + 2% Ataque por ataque, até cinco pilhas. Perdê-los custa 10% Ataque para você e para cada espírito que você convoca, um ataque extra básico vale mais do que a próxima convocação. </li>
+    <li> <strong> Long lutas favorecem você. </strong> A classe se apoia em aficionados e dano contínuo, então fica mais forte quanto mais uma luta dura - e perde mais se você morrer com tudo no esfriamento. </li>
+  </ul></div>
+  <p class="note"> Este guia segue o guia escrito por Evripides, Spirit Master, edição global para a temporada 1 (aion 2s m.com, escrito em 700 k CP, atualizado em setembro 29 ), onde DankRNG constrói seu vídeo em; o vídeo global de aLuckyRO adiciona as escolhas do dia-a-dia. O guia é adaptado da versão de Taiwan e Coreana. Seu autor irá atualizá-lo após o lançamento. </p>
+{% endcall %}
+
+{% call section('intro-pvp', 'Visão geral', 'pvp') %}
+  <p> Em PvP, o Elementalista é uma classe de kits <strong> que ganha por </strong> duradouro: menos mobilidade do que um Ranger e menos explosão do que um Feiticeiro, mas de longe a classe mais variada, com medo, um dissipador e espíritos que continuam batendo quando você está fora de alcance. </p>
+  <div class="callout"><ul>
+    <li> <strong> Medo é controle, não uma ferramenta de matar. </strong> Use-o para descascar e forçar o inimigo {{ s('defiance', False) }}; o dano vem do Elemental Fusion, maldições e espíritos. </li>
+    <li> <strong> Timing decide brigas. </strong> Conheça as habilidades da outra classe: uma defensiva usada muito cedo ou muito tarde perde a luta. </li>
+    <li> <strong> {{ s('summon-earth-spirit') }} provoca </strong> - e Defiance não pode quebrar uma provocação. </li>
+  </ul></div>
+  <p class="note"> O modo PvP segue o "PvP Starter" do mesmo guia (atualizado em setembro 29 ). </p>
+{% endcall %}
+
+{% call section('skills', 'Habilidades', 'pve') %}
+  <p> Três habilidades devem alcançar <strong> 20 </strong>: {{ s('combustion') }}, {{ s('summon-fire-spirit') }} e {{ s('elemental-fusion') }}. {{ s('summon-water-spirit') }} está bem no 16 e bom no 20; tudo o resto para no 16. Nos primeiros dias, com habilidades no 8 - 12, pegue o nome de mana nas cartas (aLuckyRO). </p>
+  <ul class="skill-grid">
+    {% call skill('elemental-fusion', 'must', '20', [1, 2, 4]) %}Your biggest hit, with no cooldown — it fires every time you hold four elements. Delayed damage, +10 para todos os Element Boosts e um 25% ALuckyRO pega a versão carregada (até +200%No primeiro dia, em vez disso.{% endcall %}
+    {% call skill('combustion', 'must', '20', [1, 3, 4]) %} + 12% em um único alvo, + Velocidade de Habilidade 20% e a cadeia Ashy Call. Primeiros dias: 20% MP até que sua mana aguente. {% endcall %}
+    {% call skill('summon-fire-spirit', 'must', '20', [1, 2, 4]) %} O espírito base mais forte e aquele com o maior tempo de serviço - convocá-lo por último para que ele fique fora enquanto os outros esfriam. {% endcall %}
+    Ataque básico {% call skill('cold-shock', 'must', '16', [2, 3]) %}: multi-ataque e + 2% ataque empilha que cada convocação copia. 14 está bem, 16 é melhor no início porque os recargas são longos. Primeiros dias: + 20% MP restaurado em vez de Multi-Hit. {% endcall %}
+    {% call skill('summon-water-spirit', 'must', '16', [1, 4]) %} O maior alvo dos espíritos da base quando se junta ao Jointstrike: Corrode, e seu mana enquanto nivela. {% endcall %}
+    {% call skill('jointstrike-curse', 'must', '16', [0, 2]) %} DoT e Debuff: + 2s Curse e a picareta móvel. Seus espíritos — o Espírito Antigo também — bateram com você. {% endcall %}
+    O {% call skill('dimensional-control', 'must', '16', [1, 2]) %} dispara quando você convoca, danos atrasados e multi-ataque. Pule a puxada e o lento. {% endcall %}
+    {% call skill('summon-earth-spirit', 'opt', '16', [1, 2]) %} provoca o inimigo em si mesmo - o chefe atinge o espírito, não você. -Solo útil. {% endcall %}
+    {% call skill('rapid-scattershot', 'opt', '16', [3, 4]) %}Only on Staggered bosses. Below 16 Pegue a picareta móvel e o Multi-Hit; 16 Multi-Hit e −1s para todos os recargas.{% endcall %}
+    {% call skill('defiance', 'opt', '16', [2, 4]) %} CC quebrar, 20% HP voltar e danificar tolerância para a janela de Tenacidade. {% endcall %}
+    {% call skill('summon-wind-spirit', 'skip', 'dispensar') %}O dano mais fraco da habilidade, e convocando-o custa tempo dos outros.{% endcall %}
+    {% call skill('souls-cry', 'skip', 'PvP') %} Medo: uma habilidade PvP. {% endcall %}
+  </ul>
+{% endcall %}
+
+{% call section('skills-pvp', 'Habilidades', 'pvp') %}
+  <p> Quatro musts duros em <strong> 20 </strong>: {{ s('defiance') }}, {{ s('cold-shock') }}, {{ s('elemental-fusion') }} e {{ s('jointstrike-curse') }}; {{ s('combustion') }} atinge 20 através do conjunto arcana de qualquer maneira. </p>
+  <ul class="skill-grid">
+    {% call skill('defiance', 'must', '20', [2, 3, 4]) %} CC quebra com 20% HP, + 2s Tenacidade e tolerância a danos. Quando alguém se envolver em você, quebre o primeiro CC de uma vez. {% endcall %}
+    {% call skill('cold-shock', 'must', '20', [1, 2]) %} HP absorva e multi-bate. As pilhas de ataque raramente se acumulam no PvP, então não são tomadas aqui. {% endcall %}
+    {% call skill('elemental-fusion', 'must', '20', [1, 2, 4]) %}Your burst. For mass PvP swap the delayed damage for the AoE version.{% endcall %}
+    {% call skill('jointstrike-curse', 'must', '20', [1, 3, 4]) %} Multi-Hit, − 2s refrigerar, e no 16 ignora bloco, evasão e crits. Aplique-o primeiro, ele isca para fora da poção de cura do inimigo. {% endcall %}
+    {% call skill('combustion', 'must', '20', [1, 3, 4]) %} As mesmas escolhas que no PvE. {% endcall %}
+    {% call skill('dimensional-control', 'must', '16', [1, 4]) %} Muitos CC e kiting: danos atrasados e uma chance raiz, ele procede com cada convocação e arranca o Defiance do inimigo. {% endcall %}
+    {% call skill('summon-earth-spirit', 'must', '16', [1, 4]) %} A provocação - um dos CCs mais fortes do jogo. Tolerância de danos e estatísticas 20% para o espírito. {% endcall %}
+    {% call skill('souls-cry', 'opt', '12–16', [1, 3]) %} Medo com uma raiz e - 10s de recarga; abaixo 16 está bom. {% endcall %}
+    {% call skill('summon-water-spirit', 'opt', '12–16', [1, 2]) %} 12 - 16 é suficiente. {% endcall %}
+    {% call skill('summon-fire-spirit', 'opt', '14', [1, 2]) %} ainda bate forte em um nível baixo. {% endcall %}
+    {% call skill('summon-wind-spirit', 'skip', 'dispensar') %} Não é usado no PvP. {% endcall %}
+    O {% call skill('rapid-scattershot', 'skip', 'dispensar') %} só funciona em alvos Staggered. {% endcall %}
+  </ul>
+{% endcall %}
+
+{% call section('passives', 'Passivas', 'pve pvp') %}
+  Os níveis passivos <p> vêm de cada peça de armadura, os brincos e o colar, então eles correm muito à frente dos ativos - em uma temporada final 1 definir um passivo atinge 30 e muito mais. </p>
+  <div class="table-wrap" data-only="pve"><table>
+    <thead> <tr> <th> # </th> <th> Passivo </th> <th> Por que </th> </tr> </thead>
+    <tbody>
+      <tr> <td> 1 </td> <td> {{ s('mental-focus') }} </td> <td> Dupla chance - máx. (cerca de 32 na temporada 1 ). </td> </tr>
+      <tr> <td> 2 </td> <td> {{ s('spirit-strike') }} </td> <td> PvE Danos Aumentam e Perfect Chance para você e o espírito. Um segundo próximo. </td> </tr>
+      <tr> <td> 3 </td> <td> {{ s('element-unification') }} </td> <td> Empilhando dano crítico aumenta sempre que uma habilidade espiritual cai. </td> </tr>
+      <tr> <td> 4 </td> <td> {{ s('spirit-revitalization') }} </td> <td> Recarga de espírito mais curto - mais Elemental Fusion. </td> </tr>
+    </tbody>
+  </table></div>
+  <p class="note" data-only="pve"> Primeiros dias: {{ s('spirit-strike') }} primeiro, depois {{ s('spirits-descent') }} e {{ s('consecutive-countercurrent') }}. {{ s('corrode') }} e Element Unification só valem a pena quando seu equipamento der o Ataque Crítico, antes que você mal crite. </p>
+  <div class="table-wrap" data-only="pvp"><table>
+    <thead> <tr> <th> # </th> <th> Passivo </th> <th> Por que </th> </tr> </thead>
+    <tbody>
+      <tr> <td> 1 </td> <td> {{ s('spirit-protection') }} </td> <td> Defesa contra a explosão: assassinos, feiticeiros, gladiadores. Sobre o 20. </td> </tr>
+      <tr> <td> 2 </td> <td> {{ s('revitalization-contract') }} </td> <td> Status Effect Resist. Sobre o 20. </td> </tr>
+    </tbody>
+  </table></div>
+{% endcall %}
+
+{% call section('stigmas', 'Estigmas', 'pve') %}
+  <p> Estes quatro são o cenário para cada luta PvE. Pegue os quatro para 10 primeiro, e cada um para 20 nesta ordem. Fendas abertas nos níveis 22, 27, 32 e 37. </p>
+  <ul class="skill-grid">
+    {% call skill('summon-ancient-spirit', 'must', 'Nv. 20', upto=20) %} Seu maior estigma de dano: um espírito extra 30 segundo que lhe dá Elemental Fusion toda vez que usa sua habilidade - em 15 após cada cinco ataques básicos. Sempre convoque com seus capangas e Cold Shock empilhando. {% endcall %}
+    {% call skill('enhance-spirits-benediction', 'must', 'Nv. 20', upto=20) %} Danos Aumentam e Tolerância para você e seus espíritos. Joguem-no antes de convocar. {% endcall %}
+    Precisão {% call skill('flame-blessing', 'must', 'Nv. 20', upto=20) %} e danos extras no sucesso, um de seus melhores fãs e ele escala muito no 20. {% endcall %}
+    {% call skill('jointstrike-corrode', 'must', 'Nv. 20', upto=20) %} A DoT que faz o alvo sofrer mais danos de seus espíritos. Na 20 dura 20 segundos e pode ficar acordado o tempo todo com redução de recarga 33%. {% endcall %}
+    {% call skill('cursed-cloud', 'opt', 'mais tarde', upto=10) %} Forte no PvE, mas não há espaço para ele na temporada 1. {% endcall %}
+  </ul>
+{% endcall %}
+
+{% call section('stigmas-pvp', 'Estigmas', 'pvp') %}
+  <div class="table-wrap"><table>
+    <thead> <tr> <th> Set </th> <th> Stigmas </th> <th> Quando </th> </tr> </thead>
+    <tbody>
+      <tr> <td> Padrão </td> <td> Espírito Antigo, Benedicção do Espírito, Command: Proxy, Seize Magic </td> <td> O melhor conjunto de todos. </td> </tr>
+      <tr> <td> Sem Proxy </td> <td> Corrode no lugar de Command: Proxy </td> <td> Risky, mais danos e anti-cura - contra Cléricos, Gladiadores, Templários. </td> </tr>
+      <tr> <td> Utilidade </td> <td> Espírito antigo, Cry of Terror, Corrode, Kaisinel's Power </td> <td> Extra AoE medo e CC chance - contra Clerics e Chanters. </td> </tr>
+    </tbody>
+  </table></div>
+  <ul class="skill-grid">
+    {% call skill('command-proxy', 'must', 'Nv. 20', upto=20) %} Por 7 segundos a maioria dos danos que você sofre é compartilhada com seu espírito. Use-o quando um Assassino se envolver ou um Feiticeiro te congelar, não no primeiro CC. {% endcall %}
+    {% call skill('seize-magic', 'must', 'Nv. 20', upto=20) %} Remove os fãs do inimigo, estoura e sela 20. Dispulse as habilidades de invulnerabilidade, ou um Ranger logo após eles se ajeitarem. {% endcall %}
+    {% call skill('jointstrike-corrode', 'opt', 'Sem Proxy', upto=20) %} - 60% curando e um longo DoT contra as classes de sustentação. Aplique a maldição e seus outros pontos primeiro, para que uma poção não possa limpar. {% endcall %}
+    {% call skill('cry-of-terror', 'opt', 'Utilidade', upto=20) %} AoE medo por controle extra. {% endcall %}
+    {% call skill('kaisinels-power', 'opt', 'Utilidade', upto=20) %} aumenta sua chance CC - suas terras CC raramente sem ele. {% endcall %}
+    {% call skill('siphon', 'opt', 'alternativa', upto=20) %} Sustentar, e um escudo em 15. {% endcall %}
+  </ul>
+{% endcall %}
+
+{% call section('macro', 'Rotação e macro', 'pve') %}
+  <p> Jogo de dois esperas: segure {{ s('cold-shock') }} em <span class="key"> LMB </span> e a macro em <span class="key"> RMB </span>, guie e pressione o resto à mão. A linha que costumava sentar-se em RMB move-se para <span class="key"> T </span>. </p>
+  <h3> 1. Linhas de barras </h3>
+  <div class="hotlines">
+    {% call hotline('1', 'Spirit line', ['elemental-fusion', 'summon-water-spirit', 'summon-earth-spirit', 'summon-fire-spirit']) %} Spam-no: Elemental Fusion dispara sempre que está pronto, então os espíritos, o Espírito de Fogo vem por último para que fique fora por mais tempo. {% endcall %}
+    {% call hotline('7', 'Buffs + Ancient Spirit', ['enhance-spirits-benediction', 'flame-blessing', 'summon-ancient-spirit']) %} Os fãs sentam-se diante do Espírito Antigo, então a convocação os copia. {% endcall %}
+    {% call hotline('T', 'Damage line', ['jointstrike-corrode', 'jointstrike-curse', 'dimensional-control', 'combustion']) %} empilhado por danos, Corrode sobe assim que estiver pronto. {% endcall %}
+  </div>
+  <h3> 2. No jogo macro </h3>
+  <p> ligue a macro para <span class="key"> RMB </span>, <strong> 10 ms </strong> em cada passo: </p>
+  {{ macroseq([(skill_data('enhance-spirits-benediction')[lang].name, 'RMB · 10 ms'), (skill_data('elemental-fusion')[lang].name, '10 ms'), (skill_data('jointstrike-corrode')[lang].name, '10 ms')]) }}
+  <h3> 3. A luta </h3>
+  <ol>
+    <li> <strong> Abra o </strong> com {{ s('flame-blessing') }} → {{ s('enhance-spirits-benediction') }} → {{ s('summon-ancient-spirit') }} - os fãs chegam antes da convocação. </li>
+    <li> Spirit linha e Corrode, em seguida, iniciar a macro e se instalar no dois-hold. </li>
+    <li>Continuem girando seus espíritos, reformulando os fãs assim que estiverem prontos em vez de salvá-los para o Espírito Antigo.</li>
+    <li> Se as cinco pilhas Cold Shock estão prestes a cair, um ataque básico extra vence a próxima convocação. </li>
+  </ol>
+  <p class="note"> A trama depende do ping: o autor quer 65% Velocidade de Combate ou mais e sob ~ 60 ms ping. conselho de aLuckyRO para a primeira semana: jogar sem a macro até que você conheça a classe. Amarre "deixar todos os espíritos" em uma chave que você possa alcançar. </p>
+{% endcall %}
+
+{% call section('combos-pvp', 'Abrindo uma luta', 'pvp') %}
+  <p> PvP mal depende da macro: ele só tece {{ s('elemental-fusion') }} → {{ s('summon-earth-spirit') }} em <span class="key"> RMB </span>. Todo o resto é o momento certo. </p>
+  <div class="callout">
+    <h3> Notado em </h3>
+    <p> Quebre o primeiro CC com {{ s('defiance') }} de uma vez; seja paciente com {{ s('command-proxy') }} para o acompanhamento. </p>
+  </div>
+  <div class="callout accent">
+    <h3> Você se envolve com </h3>
+    <div class="combo"> {{ s('enhance-spirits-benediction') }} + {{ s('kaisinels-power') }} <span class="arrow"> → </span> {{ s('summon-earth-spirit') }} + {{ s('jointstrike-curse') }} <span class="arrow"> → </span> {{ s('summon-ancient-spirit') }} <span class="arrow"> → </span> {{ s('jointstrike-corrode') }} após sua poção </div>
+    <p> Use o {{ s('souls-cry') }} quando o Espírito da Terra não pousar um CC, ou uma vez que seu Defiance se foi - rastreá-los com {{ s('dimensional-control') }} para forçá-lo a sair. </p>
+  </div>
+  <div class="table-wrap"><table>
+    <thead> <tr> <th> Contra </th> <th> Resposta </th> </tr> </thead>
+    <tbody>
+      <tr> <td> Gladiator, Cleric </td> <td> Seize Magic em sua invulnerabilidade, maldição primeiro, depois Corrode contra o suporte. </td> </tr>
+      <tr> <td> Ranger </td> <td> Seize Magic logo depois que eles lustram, Corrode contra seu sustento. </td> </tr>
+      <tr> <td> Assassino </td> <td> Command: Proxy quando eles se envolverem. </td> </tr>
+      <tr> <td> Feiticeiro </td> <td> Command: Proxy quando congelado, guarde o traço para o meteoro, ignora Evasão e Bloqueio. </td> </tr>
+      <tr> <td> Chanter </td> <td> Corrode: - 60% curando e um próximo-30 segundo DoT. </td> </tr>
+    </tbody>
+  </table></div>
+{% endcall %}
+
+{% call section('gear', 'Engrenagem, arcana e estatísticas.', 'pve pvp') %}
+  <div class="callout"><ul>
+    <li> <strong> De onde os níveis vêm: </strong> 10 de pontos de habilidade, 14 com as primeiras quatro painéis Daevanion, então + 4 de um arcana e + 1 de cada anel - 20 para as habilidades de exigência. Habilidades ativas giram em anéis, arma e guarda, passivas em cada peça de armadura, os brincos e o colar. </li>
+    <li data-only="pve"> <strong> Arcana: </strong> 3 cartões de Vigor Primal mais dois cartões de armadura mágica - ambos bônus de peças 2. </li>
+    <li data-only="pve"> <strong> Objetivos: </strong> dupla chance 25%, redução de recarga 20%, precisão 1,500. </li>
+    <li data-only="pvp"> <strong> Arcana: </strong> 5 cartões de Vigor Primal. Jointstrike: Curse e Elemental Fusion são as duas habilidades para perseguir os rolos de cartas. </li>
+    <li data-only="pvp"> <strong> Objetivos: </strong> Precisão 2,000 +, Efeito de Estado Resista 100% +, sobre a Regeneração 40%. </li>
+  </ul></div>
+{% endcall %}
+
+{% call section('daevanion', 'Painéis Daevanion', 'pve pvp') %}
+  <p> Daevanion leva suas habilidades de 10 para 14. Cada nó azul dá <strong> + 1 nível </strong> à sua habilidade. </p>
+  <div class="callout"><ul>
+    Prioridade <li data-only="pve"> <strong>: nós azuis </strong> para {{ s('elemental-fusion') }}, {{ s('combustion') }}, {{ s('summon-fire-spirit') }}, {{ s('cold-shock') }}, {{ s('summon-water-spirit') }}, {{ s('mental-focus') }} e {{ s('spirit-strike') }}, depois os nós laranja ofensivos. </li>
+    <li data-only="pve"> <strong> Primeiros dias: </strong> pegue o nó mais bamouse de cada habilidade - cada placa tem todos eles, alguns perto do início (aLuckyRO). </li>
+    Prioridade <li data-only="pvp"> <strong>: nós azuis </strong> para {{ s('defiance') }}, {{ s('cold-shock') }}, {{ s('elemental-fusion') }}, {{ s('jointstrike-curse') }} e {{ s('combustion') }}; Azphel (nível 45) é tudo PvP Danos Aumentar e Tolerância - tomar. </li>
+  </ul></div>
+  <div data-only="pve">{{ dv_board('pve') }}</div>
+  <div data-only="pvp">{{ dv_board('pvp') }}</div>
+  <p class="note"> Boards e custos vêm dos dados globais do cliente (questlog.gg); o caminho é calculado, não tomado de um guia. </p>
+{% endcall %}
+
+{% call section('recap', 'Resumo', 'pve') %}
+  <div class="callout accent"><ul>
+    <li> <strong> Habilidades: </strong> Elemental Fusion, Combustion, Espírito de Fogo 20; Cold Shock, Espírito de Água, Maldição, Dimensional Control 16; Nenhum Espírito de Vento. </li>
+    <li> <strong> Stigmas: </strong> Espírito Antigo → Benediction do Espírito → Flame Blessing → Corrode , tudo para 10 primeiro, depois 20 . </li>
+    <li> <strong> Passivos: </strong> Mental Focus, Spirit Strike, Element Unification, Spirit Revitalization. </li>
+    <li> <strong> Jogue: </strong> antes de convocar, mantenha cinco pilhas Cold Shock. </li>
+  </ul></div>
+{% endcall %}
+
+{% call section('recap-pvp', 'Resumo', 'pvp') %}
+  <div class="callout accent"><ul>
+    <li> <strong> Habilidades: </strong> Defiance, Cold Shock, Elemental Fusion, Maldição, Combustion 20; Espírito da Terra e Dimensional Control 16. </li>
+    <li> <strong> Estigmas: </strong> Espírito Antigo, Benedicção do Espírito, Command: Proxy, Seize Magic - Corrode para anti-cura. </li>
+    <li> <strong> Passivos: </strong> Spirit Protection, Revitalization Contract. </li>
+    <li> <strong> Play: </strong> Curse primeiro, Corrode após sua poção, medo de controlar, não de matar. </li>
+  </ul></div>
+{% endcall %}
+{# ============================ Leveling ============================ #}
+
+{% call section('intro-lvl', 'Visão geral', 'lvl') %}
+  <p> O Elementalista (Spiritmaster) é o único chamador: um espírito luta ao seu lado, cada habilidade espiritual lhe dá um elemento, e em quatro elementos {{ s('elemental-fusion') }} está pronto. {{ s('dimensional-control') }} dispara cada vez que um espírito usa sua habilidade, e maldições continuam correndo no alvo. </p>
+  <div class="callout accent">
+    <h3> Nivelando em uma frase </h3>
+    Nível <p> com {{ s('summon-water-spirit') }} (danificação e mana), segure {{ s('cold-shock') }} para MP, e deixe o macro ciclo no jogo a linha Espírito e a linha Fusão. </p>
+  </div>
+{% endcall %}
+
+{% call section('fight-lvl', t.lvl_combat, 'lvl') %}
+  <div class="callout"><ul>
+    <li> <strong> Spirit: </strong> {{ s('summon-water-spirit') }} até a tampa - melhor dano de alvo único, e alimenta seu mana. Os outros ficam no nível 1 enquanto nivelam. </li>
+    <li> <strong> Packs: </strong> {{ s('jointstrike-curse') }} (bate até 4 ) → {{ s('combustion') }} → {{ s('elemental-fusion') }} com a escolha AoE quando estiver pronto. </li>
+    <li> <strong> Mana: </strong> o principal problema inicial - modo alvo, {{ s('cold-shock') }} entre habilidades, e terminar sua rotação espiritual no Espírito da Água. </li>
+    <li> <strong> Alvos marcados: </strong> {{ s('rapid-scattershot') }}. </li>
+    <li> Skip {{ s('souls-cry') }} - é uma habilidade PvP. </li>
+  </ul></div>
+{% endcall %}
+
+{% call section('macro-lvl', 'Macro para subir de nível', 'lvl') %}
+  O jogo inicial do <p> Grobs: duas linhas de hotbar e uma macro de dois pontos no jogo. Em AION 2, a fenda inferior <strong> de uma linha tem a maior prioridade </strong> - as cartas mostram cada linha de cima para baixo como no jogo. </p>
+  <div class="hotlines">
+    {% call hotline('1', 'Spirit line', ['summon-water-spirit', 'jointstrike-corrode', 'summon-earth-spirit', 'summon-fire-spirit']) %} Espírito da Água primeiro; Jointstrike: Corrode (um estigma) faz o alvo tomar mais danos de seu espírito. {% endcall %}
+    {% call hotline('2', 'Fusion line', ['elemental-fusion', 'dimensional-control', 'jointstrike-curse', 'combustion']) %} Elemental Fusion e Dimensional Control disparam assim que os espíritos os destrancarem, Combustion preenche as lacunas. {% endcall %}
+  </div>
+  <p> No jogo macro (Viagem de habilidade → Macro), atraso <strong> 10 ms </strong> em cada slot: </p>
+  {{ macroseq([('Spirit line', '1 · 10 ms'), ('Fusion line', '2 · 10 ms')]) }}
+  <ul class="presslist">
+    <li> <span class="press-how"> Segure </span> <span class="press-what"> {{ s('cold-shock') }} em <span class="key"> LMB </span> e a tecla da macro juntos. </span> </li>
+    <li> <span class="press-how"> pela mão </span> <span class="press-what"> {{ s('enhance-spirits-benediction') }}, então {{ s('summon-ancient-spirit') }} (a primeira algema - o Espírito Antigo dura 30s). </span> </li>
+  </ul>
+{% endcall %}
+
+{% call section('stigmas-lvl', 'Estigmas durante a evolução', 'lvl') %}
+  <p> Stigmas desbloqueiam no nível 22. </p>
+  <ul class="skill-grid">
+    {% call skill('summon-ancient-spirit', 'must', 'Nv. 5', upto=5) %} A 30 segundo espírito extra que também concede elementos para Elemental Fusion. {% endcall %}
+    {% call skill('enhance-spirits-benediction', 'must', 'Nv. 5', upto=5) %} + 20% PvE Danos Aumentam e Tolerância com cura para 10s - lançado diante do Espírito Antigo. {% endcall %}
+    {% call skill('jointstrike-corrode', 'must', 'Nv. 5', upto=5) %}Na linha do Espírito de Grobs, o alvo sofre mais danos do seu espírito.{% endcall %}
+    {% call skill('flame-blessing', 'opt', 'Nv. 5', upto=5) %} Dano extra na batida para 10s - tome-o uma vez que sua precisão se mantenha. {% endcall %}
+  </ul>
+{% endcall %}
+
+{# ============================ Sources ============================ #}
+<section class="sources" aria-labelledby="h-sources">
+  <h2 id="h-sources">{{ t.sources }}</h2>
+  <ul>
+    <li> <a href="https://www.youtube.com/watch?v=HMod6Z4GrE0" target="_blank" rel="noopener"> Grobs - AION 2 Macro Guide </a> - o slide macro do início do jogo (Linhas de barra de habilidades Spiritmaster e macro) </li>
+    <li> <a href="https://aion2sm.com/global/" target="_blank" rel="noopener"> Evripides — Spirit Master Guide, edição global (aion 2s m.com) </a> — PvE e PvP constrói para o cliente global: níveis de habilidade e especialização, estigmas, passivos, rotação, macro, arcana, correspondências </li>
+    <li> <a href="https://www.youtube.com/watch?v=KlmstIyukX8" target="_blank" rel="noopener"> DankRNG — Como masterizar os espíritos Guia Elementalista &amp; Construir </a> — a regra de instantâneo, ordem espiritual, por que o Espírito do Vento é deixado de fora </li>
+    <li> <a href="https://www.youtube.com/watch?v=v9MYphrcvic" target="_blank" rel="noopener"> aLuckyRO - AION 2 Último Mestre do Espírito PVE Construir para Global </a> - dia-um especializações, ordem estigma, Daevanion para os primeiros dias </li>
+    <li> <a href="https://mmo-codex.com/articles/aion-2-spiritmaster-guide/" target="_blank" rel="noopener"> MMO Codex - Aion 2 Spiritmaster construir </a> - ordem de habilidade por nível, Espírito de água para evolução, estigmas </li>
+    <li> <a href="https://questlog.gg/aion-2/en/db/skills/elementalist" target="_blank" rel="noopener"> questlog.gg </a> - dados de habilidade do cliente global </li>
+  </ul>
+  <p class="sources-all"><a href="{{ root }}{{ lang }}/sources/">{{ t.src_all }} →</a></p>
+</section>

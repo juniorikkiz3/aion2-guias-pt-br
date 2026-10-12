@@ -1,0 +1,289 @@
+{% from "macros.html" import section, skill, core, loadout, passives, glance, hotline, macroseq, hotbar, dv_board with context %}
+
+{# ===== PvE and PvP: each PvP block follows its PvE counterpart, so both modes read in the same order; shared sections are 'pve pvp' ===== #}
+{% call glance('pve') %}
+  <h3>{{ t.core_skills }}</h3>
+  {{ core([('judgment', '20'), ('punishment', '20'), ('pummel', '20'), ('annihilate', '16'), ('shield-smite', '16')]) }}
+  <h3>{{ t.stigma_loadout }}</h3>
+  {{ loadout([('empyrean-lords-punishment', 15), ('battlefield-banner', 15), ('doom-shield', 15), ('taunt', 5)]) }}
+  <h3>{{ t.key_passives }}</h3>
+  {{ passives(['fury', 'punishing-benediction', 'insulting-roar', 'ironclad-defense']) }}
+{% endcall %}
+
+{% call glance('pvp') %}
+  <h3>{{ t.core_skills }}</h3>
+  {{ core([('judgment', '20'), ('punishment', '20'), ('pummel', '20'), ('annihilate', '20')]) }}
+  <h3>{{ t.stigma_loadout }}</h3>
+  {{ loadout([('executing-blade', 10), ('empyrean-lords-punishment', 15), ('doom-shield', 15), ('nezekans-shield', 15)]) }}
+  <h3>{{ t.key_passives }}</h3>
+  {{ passives(['fury', 'punishing-benediction', 'ironclad-defense', 'survival-willpower']) }}
+{% endcall %}
+
+{% call section('intro', 'Genel bakış', 'pve') %}
+  <p>Templar, AION 2'nin ana tankı ve yine de gerçek hasar çıkarıyor. Tüm build, olabildiğince hızlı 20'ye çıkarılan ve olabildiğince sık kullanılan bir <strong>"kutsal üçlü"</strong> yeteneğe dayanıyor — {{ s('judgment') }}, {{ s('punishment') }} ve {{ s('pummel') }}. Templar'ı sınırlayan dayanıklılık değil, hasar.</p>
+  <div class="callout accent">
+    <h3>Tek cümlede build</h3>
+    <p>Kalkan yetenekleri {{ s('judgment') }}'ı tetikler: makroyu basılı tut — dövüşü {{ s('doom-shield') }} ile açar, Judgment'ı sürdürür ve boşlukları Pummel ve tetiklemeleriyle doldurur —, {{ s('punishment') }}'ı bekleme süresi dolunca şarj et ve {{ s('fury') }}'yi grupta tutmak için büyük vuruşları blokla.</p>
+  </div>
+  <p class="note">Bu rehber SolAshur'un global çıkış Templar buildini (solashur.com, 27 Eylül) ve onun video anlatımını (29 Eylül) izliyor; 30 Eylül'de video karelerine göre yeniden kontrol edildi.</p>
+{% endcall %}
+
+{% call section('intro-pvp', 'Genel bakış', 'pvp') %}
+  <p>PvP'de Templar aynı kutsal üçlüyü ve aynı Judgment döngüsünü korur; değişen stigmalar. {{ s('executing-blade') }} her düelloda üstünlük verir, 20'deki {{ s('annihilate') }} ise alan yere düşürmesine dönüşür.</p>
+  <p>Yakın dövüş kite edilir — hedefe ulaşamıyorsan güçlü bir silah daha az önemli, bu yüzden mesafe kapatıcıların ve Doom Shield etrafında oyna.</p>
+  <p class="note">KR/TW'deki özel PvP ekipman setleri global için doğrulanmadı, bu yüzden plan PvE sekmesindeki PvX ekipmanı. PvP ekipmanı çıkarsa: önce PvP stigmalarını geliştir, ancak sonra PvP silahına veya zırhına harca.</p>
+{% endcall %}
+
+{% call section('global', 'Global Season 1: neler değişiyor', 'pve pvp') %}
+  <p>Global sunucular <strong>5 Ekim 2026</strong>'da açılıyor (Founder erken erişimi 30 Eylül'den itibaren). Bunun Templar için anlamı:</p>
+  <div class="callout">
+    <ul>
+      <li><strong>45. seviyede 4 stigma.</strong> SolAshur'un Tayvan düzenlerinde altı vardı; global için profil başına ikisini çıkarıyor (Stigmalar bölümünde).</li>
+      <li><strong>Çıkıştan önce üç yetenek ön ayarı oluştur</strong> — PvX, PvP ve PvE — böylece içerik değiştirmek tek tık olur.</li>
+      <li><strong>Skill Point Shard'larını erken topla</strong>: kutsal üçlünün 20'ye ne kadar hızlı ulaşacağını onlar belirler.</li>
+      <li><strong>Bir legion'a katıl</strong> — solo Abyss farmı verimsiz.</li>
+      <li>Çıkışta stigma adlarını kontrol et: bazıları global istemcide yeniden adlandırılmış olabilir.</li>
+    </ul>
+  </div>
+{% endcall %}
+
+{% call section('skills', 'Yetenekler', 'pve') %}
+  <p>Önce kutsal üçlü <strong>20</strong>'ye. Yetenekler yetenek puanlarıyla 10'a, Daevanion ile 14'e ulaşır, sonra yüzükler ve arcana üçlüyü daha da ileri iter. Aşağıdaki uzmanlıklar SolAshur'un.</p>
+  <ul class="skill-grid">
+    {% call skill('judgment', 'must', '20', [4, 3, 2]) %}Temel hasarın: Shield Smite, Warding Strike, Shield Rush ve Doom Shield onu tetikler, 16'da bekleme süresi ortadan kalkar.{% endcall %}
+    {% call skill('punishment', 'must', '20', [1, 4, 2]) %}Şarjlı patlama — DoT, Block'u delen garantili kritik ve +%30 yetenek hızı. Hareket veya HP emme seçimlerini asla alma: yeterli saldırı hızın olunca "yem" olurlar.{% endcall %}
+    {% call skill('pummel', 'must', '20', [1, 2, 4]) %}Dolgu ve stagger. SolAshur'un seçimlerinin hepsi Punishing Strike'a gidiyor — seni iyileştirir ve daha sert vurur; −1 sn Punishment seçimini atlıyor. Bir an önce 20'ye çıkar. trueeevil ise bu −1 sn Punishment seçimini alıyor: Punishment daha erken döner — iyileşmeye ihtiyacın yoksa HP emme için adil bir değişim. Leonis de alıyor: Punishment 20 sn boyunca +%20 PvE hasarı verir ve bu seçimle bekleme süresi 20 sn'nin altına düşer, böylece bonus hiç düşmez — kuklada DPS'i yaklaşık 22k'dan 26k'ya çıktı.{% endcall %}
+    {% call skill('annihilate', 'must', '16 → 20', [2, 3], then=[0]) %}Kontrole bağışık bosslara +%100 hasar, −10 sn bekleme süresi. Alternatif build alan yere düşürme seçimi için 20'ye çıkarıyor. Üçüncü slot 20'de açılır: bosslar için Multi-Hit.{% endcall %}
+    {% call skill('shield-smite', 'must', '16', [3, 2]) %}Judgment'ı tetikler; −2 sn bekleme süresi ve Debilitating Smash'i tetikleme için %50 şans.{% endcall %}
+    {% call skill('debilitating-smash', 'opt', '12', [3, 0]) %}Bloktan veya Shield Smite'tan sonra tetiklenir; Block ve Evasion'ı yok sayar.{% endcall %}
+    {% call skill('warding-strike', 'opt', '12', [1, 3]) %}Judgment'ı tetikler; Warding sırasında Block ve hasar toleransı.{% endcall %}
+    {% call skill('flash-rampage', 'opt', '12 → 16', [4, 3]) %}Yalnızca Stagger'daki hedeflerde; vuruş başına tüm bekleme sürelerine −1 sn. Artık PvE satırında değil: Leonis onu düz bir DPS kaybı olarak çıkardı — boşlukları Pummel daha iyi doldurur. Daevanion düğümlerini de atla. −1 sn seçimi 16. seviye ister; 12'de Multi-Hit ve MP yenilemeyi al.{% endcall %}
+    {% call skill('shield-rush', 'opt', '12', [3, 1]) %}Kaçın → atılma, Judgment'ı tetikler; −10 sn bekleme süresi ve +10 m menzil.{% endcall %}
+    {% call skill('vicious-strike', 'opt', '10', []) %}LMB'de temel saldırı; yetenek puanlarından gelen 10 yeterli.{% endcall %}
+  </ul>
+{% endcall %}
+
+{% call section('skills-pvp', 'Yetenekler', 'pvp') %}
+  <ul class="skill-grid">
+    {% call skill('judgment', 'must', '20', [4, 3, 2]) %}PvE'deki aynı döngü: kalkan yetenekleri onu tetikler.{% endcall %}
+    {% call skill('punishment', 'must', '20', [1, 4, 2]) %}Block ve Evasion'ı delen patlama.{% endcall %}
+    {% call skill('pummel', 'must', '20', [1, 2, 4]) %}Judgment tetiklemeleri arasında dolgu; Punishing Strike seni iyileştirir ve ek hasar verir.{% endcall %}
+    {% call skill('annihilate', 'must', '20', [2, 3, 4]) %}Alternatif build: 20'de sersemlemiş veya yere düşmüş dört düşmana kadar vurur, %30 yere düşürme şansıyla — −10 sn seçimiyle spamlanabilen bir alan yere düşürmesi.{% endcall %}
+    {% call skill('shield-smite', 'opt', '16', [3, 2]) %}Judgment tetikleyicisi ve sersemletme kaynağı.{% endcall %}
+  </ul>
+{% endcall %}
+
+{% call section('passives', 'Pasifler', 'pve') %}
+  <div class="table-wrap"><table>
+    <thead><tr><th>#</th><th>Pasif</th><th>Neden</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>{{ s('fury') }}</td><td>Her bloktan sonra sana <em>ve gruba</em> +PvE Damage Boost — grupların Templar istemesinin nedeni.</td></tr>
+      <tr><td>2</td><td>{{ s('punishing-benediction') }}</td><td>Critical Hit ve her vuruşta ek hasar tetiklemesi; Bell arcana'sı onu çevirir.</td></tr>
+      <tr><td>3</td><td>{{ s('insulting-roar') }}</td><td>Enmity artı önden saldırılarda Attack.</td></tr>
+      <tr><td>4</td><td>{{ s('ironclad-defense') }}</td><td>Defense ve Endurance — dayanıklılık stat buildinin çekirdeği. SolAshur'un karakterinde (+6 seviye) +%37 Defense ve +%16 Endurance veriyor.</td></tr>
+    </tbody>
+  </table></div>
+{% endcall %}
+
+{% call section('gear', 'Ekipman yolu', 'pve') %}
+  <p>İlk gün başlıyorsan rota bu:</p>
+  <ol>
+    <li><strong>Holy Spirit seti</strong> (Elyos için {{ it('{i:holyspirit_torso}') }}, Verteron ve Eltnen'de; Asmodian'lar aynı ekipmanı <strong>Spectral</strong> seti olarak alır — {{ it('{i:spectral_torso}') }} — Altgard ve Morheim'da. Elyos ve Asmodian ekipmanı aynıdır, yalnızca adları farklı; statları karşılaştırmak için eşyanın üzerine gel) — alt Abyss'te (öldürme başına AP, evcil hayvanlar ve altın düşüşleri, artı boss doğmaları) veya açık dünyanın herhangi bir yerinde farmla. Yaklaşık <strong>1.600 savaş gücü</strong> hedefle.</li>
+    <li><strong>İlk zindan kademesini atla</strong>: Aulamus Longsword (item level 76, saldırı 308–385, alınca bağlanır) için <strong>Urugugu Canyon</strong> ve Vakron Guard (item level 76) ile Vakron zırhı için <strong>Vakron Sky Island</strong>. Fire Temple yapılabilir olana kadar Vakron parçalarını yükseltmeye devam et.</li>
+    <li><strong>Fire Temple</strong>'a — Enraged Kromede Sword (item level 84, saldırı 340–425, uzatılmış menzil) — ve <strong>Ferocious Horn</strong>'a (Nuakum zırhı) hazırlanmak için <strong>Transcendence</strong> kullan. Nuakum daha güvenli farm: neredeyse her parça bir yükseltme, silah sandığı ise başka sınıfların silahlarını düşürebilir.</li>
+    <li><strong>Son hedef</strong> — PvE: White Dragon Lord kılıcı, sonra koruma, sonra aksesuarlar, Nuakum zırhla (tam White Dragon zırhı yalnızca PvE toleransı ekler ve balina bölgesi). PvX, çoğu oyuncunun düzeni: Enraged Kromede kılıcı, White Dragon koruma, Nuakum zırh, White Dragon aksesuarlar.</li>
+  </ol>
+  <p><strong>Kanatlar:</strong> erken Dark Veil (saldırı bonusu, hasar artışı), geç Talisra — Attack 60, Defense 400, Accuracy 35 ve %4 bekleme süresi azaltma. Bekleme süresi azaltmayı olabildiğince erken biriktir: daha kısa kalkan yeteneği bekleme süreleri daha fazla Judgment tetiklemesi demek. Diğer tüm kanatları da topla — "sahip olunca" etkileri ve uçuş gücü Abyss farmına yardım eder.</p>
+{% endcall %}
+
+{% call section('stats', 'Statlar, soul bind, evcil hayvanlar', 'pve pvp') %}
+  <p>Statların neyle sinerji yaptığına göre seçilen iki stat buildi:</p>
+  <div class="callout"><ul>
+    <li><strong>A · Block + Evasion + Dexterity</strong> — erken ve orta oyun, Accuracy'si az olan rakiplere karşı. Dexterity hem Block'u hem Evasion'ı besler. SolAshur'un çıkış seçimi.</li>
+    <li><strong>B · Block + Endurance + Ironclad Defense</strong> — geç oyun: %100 Endurance'ta bir vuruş %50 daha az hasar verir.</li>
+  </ul></div>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Slot</th><th>Benzersiz satır</th><th>Sonra</th></tr></thead>
+    <tbody>
+      <tr><td>Silah, koruma</td><td>Combat Speed + Weapon Damage Boost</td><td>Might + Multi-Hit; accuracy sınırının altındaysan Precision</td></tr>
+      <tr><td>Kask</td><td>Incoming Healing</td><td>Attack, Might, Critical Hit, Precision</td></tr>
+      <tr><td>Omuzluk</td><td>Critical Damage Boost</td><td>Attack, Might, Precision, Perfect Chance</td></tr>
+      <tr><td>Göğüslük</td><td>Damage Boost</td><td>Attack, Might, Critical Hit, Constitution</td></tr>
+      <tr><td>Eldiven</td><td>Combat Speed</td><td>Perfect Chance, Attack, Might, Multi-Hit</td></tr>
+      <tr><td>Dizlik</td><td>Perfect Chance</td><td>Damage Tolerance, Attack, Might, Constitution</td></tr>
+      <tr><td>Bot</td><td>Move Speed</td><td>Perfect Chance, Attack, Might, Dexterity</td></tr>
+      <tr><td>Pelerin</td><td>Critical Damage Tolerance</td><td>Perfect Chance, Damage Tolerance, Attack</td></tr>
+      <tr><td>Yüzükler / küpeler / kolye</td><td colspan="2">Yüzükler: en iyi 4 aktif yeteneğin · Küpeler: en iyi 4 pasif · Kolye: 2 aktif + Attack, Critical Hit, Weapon Damage Boost</td></tr>
+    </tbody>
+  </table></div>
+  <p><strong>Evcil hayvanlar (Genus Insight)</strong> — atlama; birkaç hafta içinde vurmakla ıskalamak arasındaki fark onlar. Özel olmayan insight Attack ve Accuracy, özel insight Attack ve Damage Boost verir. Daha iyi değerler için Genus'u bir an önce <strong>10</strong>'a çıkar. Kilitleme ilk büyük kinah gideridir: yalnızca benzersiz %50 maksimumunu çeviren önemli statları kilitle, asla dolguyu değil. Slotları bu sırayla kilitle: <strong>4 → 7 → 2 ve 8</strong> → geri kalanı (Attack, Accuracy, Critical Hit).</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Slot</th><th>Özel olmayan insight</th><th>Özel insight</th></tr></thead>
+    <tbody>
+      <tr><td>1, 4, 7</td><td>Critical Hit, Accuracy, Block (veya Evasion)</td><td>Max Attack, Attack Bonus</td></tr>
+      <tr><td>2, 5, 8</td><td>Max Attack, Attack Bonus</td><td>Max Attack, Attack Bonus</td></tr>
+      <tr><td>3</td><td colspan="2">Damage Boost, Weapon Damage Boost, Double Chance veya Perfect Chance</td></tr>
+      <tr><td>6</td><td>Critical Hit, Accuracy, Damage Tolerance</td><td>Damage Tolerance, Weapon Damage Tolerance</td></tr>
+      <tr><td>9</td><td>Damage Boost, Weapon Damage Boost, Double Chance veya Perfect Chance</td><td>Damage Boost veya Perfect Chance</td></tr>
+    </tbody>
+  </table></div>
+  <p><strong>Pantheon:</strong> önce Wisdom (Double Chance), Space (Block); sonra <span data-only="pve">PvE için Illusion (bekleme süresi azaltma)</span><span data-only="pvp">PvP için Time (saldırı hızı)</span>. Portreleri erken zorlamak için kaynak harcama — oynadıkça açılırlar.</p>
+{% endcall %}
+
+{% call section('arcana', 'Arcana', 'pve') %}
+  <div class="table-wrap"><table>
+    <thead><tr><th>Kart</th><th>Neyi çevirmeli</th></tr></thead>
+    <tbody>
+      <tr><td>Chalice (Grail)</td><td>{{ s('pummel') }}, {{ s('punishment') }}</td></tr>
+      <tr><td>Parchment</td><td>{{ s('judgment') }}, {{ s('punishment') }}</td></tr>
+      <tr><td>Compass</td><td>{{ s('pummel') }}, {{ s('shield-smite') }}</td></tr>
+      <tr><td>Bell</td><td>{{ s('fury') }}, {{ s('punishing-benediction') }}</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">Dayanıklılık yerine hasar set etkilerini seç — Templar'ın dayanıklılığı zaten yeterli.</p>
+{% endcall %}
+
+{% call section('daevanion', 'Daevanion panoları', 'pve pvp') %}
+  <p>Daevanion yeteneklerini 10'dan 14'e çıkarır ve stat ekler. Her mavi düğüm yeteneğine <strong>+1 seviye</strong> verir.</p>
+  <div class="callout"><ul>
+    <li><strong>Öncelik:</strong> {{ s('judgment') }}, {{ s('punishment') }}, {{ s('pummel') }} için mavi düğümler, sonra {{ s('shield-smite') }} ve {{ s('annihilate') }}; ardından turuncu düğümler.</li>
+    <li><strong>Atla:</strong> MP düğümleri (puanları Attack'e koy), {{ s('flash-rampage') }} düğümleri ve puanın artmıyorsa yeşil Warding Shield / Guardian Shield düğümleri.</li>
+    <li data-only="pve"><strong>Global'de Ariel yok:</strong> beş pano var ve 45. seviyedeki Azphel yalnızca PvP Damage Boost ve Tolerance veriyor — PvE'de ilk dördünü bitir.</li>
+    <li data-only="pvp"><strong>Azphel</strong> (45. seviye) tamamen PvP Damage Boost ve Tolerance — al.</li>
+  </ul></div>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Pano</th><th>Açılış</th><th>Turuncu düğümler</th></tr></thead>
+    <tbody>
+      <tr><td>Nezekan</td><td>Sv 12</td><td>Combat Speed, Cooldown Reduction</td></tr>
+      <tr><td>Zikel</td><td>Sv 20</td><td>Damage Boost, Damage Tolerance</td></tr>
+      <tr><td>Vaizel</td><td>Sv 30</td><td>Critical Damage Boost ve Tolerance</td></tr>
+      <tr><td>Triniel</td><td>Sv 40</td><td>Multi-Hit Chance ve Resist</td></tr>
+      <tr><td>Azphel</td><td>Sv 45</td><td>PvP Damage Boost ve Tolerance — yetenek düğümü yok</td></tr>
+    </tbody>
+  </table></div>
+  <h3>Panolardaki rota</h3>
+  <p>Oyun verilerinden gerçek global panolar. Altın renk, Start'tan bu rehberin aldığı düğümlere — beş öncelikli yeteneğin mavi düğümleri ve turuncu düğümler — giden en ucuz yolu gösterir; ne verdiğini görmek için herhangi bir düğümün üzerine gel.</p>
+  <div data-only="pve">{{ dv_board('pve') }}</div>
+  <div data-only="pvp">{{ dv_board('pvp') }}</div>
+  <p class="note">Panolar ve maliyetler global istemci verilerinden (questlog.gg) geliyor; yol videodan alınmadı, hesaplandı. Stat değerleri çıkışta hâlâ değişebilir — tam bir rotaya girmeden önce oyundaki panoyu kontrol et.</p>
+{% endcall %}
+
+{% call section('stigmas', 'Stigmalar', 'pve') %}
+  <p><strong>Derinlikten önce genişlik:</strong> önce dördüne de 1 puan koy, sonra Empyrean Lord's Punishment ve Battlefield Banner'ı 5'e it, sonra eşiklerin peşine düş — Empyrean Lord 10 → 15, Banner 10 → 15, Doom Shield 15.</p>
+  <ul class="skill-grid">
+    {% call skill('empyrean-lords-punishment', 'must', 'Sv 15', upto=15) %}Büyük stagger'lı alan hasarı (10'da +50); 15'te +%10 PvE Damage Boost. Stagger mekanikli bosslarda gerekli.{% endcall %}
+    {% call skill('battlefield-banner', 'must', 'Sv 15', upto=15) %}Hasar buffın: Multi-Hit, Weapon Damage Boost ve Defense'tan Attack. İyi olanlar 10. ve 15. seviye kademeleri.{% endcall %}
+    {% call skill('doom-shield', 'must', 'Sv 15', upto=15) %}Ana Judgment tetikleyicin. 15'te öldürmede sıfırlanır — PvX ve evcil hayvan farmı için hayati.{% endcall %}
+    {% call skill('taunt', 'must', 'Sv 5', upto=5) %}Grup içeriğinde aggro. Soloda yerine Nezekan's Shield al.{% endcall %}
+    {% call skill('nezekans-shield', 'opt', 'alt.', upto=15) %}Dayanıklılık değişimi; 15'ten önce iyi değil.{% endcall %}
+    {% call skill('comrade-in-arms', 'opt', 'grup', upto=15) %}Zindanlarda Doom Shield yerine dayanıklılık değişimi. Soloda işe yaramaz.{% endcall %}
+    {% call skill('executing-blade', 'opt', 'solo · başlangıç', upto=10) %}trueeevil'in ilk gün PvE seçimi: hedefte −%30 Defense ve 10'da Exposed. Onunla aç, sonra Punishment. Empyrean Lord's Punishment veya Taunt'a solo ve erken bir alternatif.{% endcall %}
+    {% call skill('shield-of-protection', 'opt', 'güvenli değişim', upto=10) %}Healer zayıfsa ya da dövüş yeniyse Leonis'in Empyrean Lord's Punishment yerine aldığı: hasarı sıfırlayan ve biraz iyileştiren tam bir blok; 10'da açıkken hareket edebilirsin.{% endcall %}
+    {% call skill('noble-armor', 'opt', 'solo · başlangıç', upto=5) %}2 dakikalık bekleme süresiyle 2 dakika boyunca Max HP ve Defense — hep açık. trueeevil soloda kullanıyor; grupta Taunt ve stagger stigması daha önemli.{% endcall %}
+  </ul>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Profil</th><th>4 stigma</th><th>Alternatifler</th></tr></thead>
+    <tbody>
+      <tr><td>PvE</td><td>Empyrean Lord's Punishment, Battlefield Banner, Doom Shield, Taunt</td><td>Nezekan's Shield, Comrade in Arms</td></tr>
+      <tr><td>PvE, solo</td><td>Empyrean Lord's Punishment, Battlefield Banner, Doom Shield, Nezekan's Shield</td><td>Tek başına aggro veya takım araçlarına gerek yok</td></tr>
+      <tr><td>PvE, daha fazla dayanıklılıklı zindan</td><td>Empyrean Lord's Punishment, Battlefield Banner, Taunt, Comrade in Arms</td><td>Doom Shield'in Judgment tetiklemelerine mal olur</td></tr>
+      <tr><td>PvX (her amaçlı)</td><td>Empyrean Lord's Punishment, Executing Blade, Battlefield Banner, Doom Shield</td><td>Nezekan's Shield, Comrade in Arms, Second Skin</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">Her değişimin bir bedeli var: Doom Shield olmadan Judgment tetiklemelerini, Empyrean Lord olmadan stagger'ı, Banner olmadan hasarı kaybedersin. Dayanıklılığa ihtiyacın varsa, dövüş hareketliliğini gerektirmediğinde çıkarılacak olan Doom Shield.</p>
+{% endcall %}
+
+{% call section('stigmas-pvp', 'Stigmalar', 'pvp') %}
+  <ul class="skill-grid">
+    {% call skill('executing-blade', 'must', 'Sv 10', upto=10) %}1v1 için en iyisi: hedefin savunmasını düşürür (10'da Exposed). Stigma puanların için 1v1'de en üst öncelik.{% endcall %}
+    {% call skill('empyrean-lords-punishment', 'must', 'Sv 15', upto=15) %}Doğrudan kontrol ve alan hasarı.{% endcall %}
+    {% call skill('doom-shield', 'must', 'Sv 15', upto=15) %}Mesafe kapatıcı, yere düşürme ve Judgment tetikleyicisi.{% endcall %}
+    {% call skill('nezekans-shield', 'must', 'Sv 15', upto=15) %}Fiziksel saldırganlara karşı. 15'ten önce iyi değil.{% endcall %}
+    {% call skill('second-skin', 'opt', 'büyüye karşı', upto=10) %}Büyü hasarına karşı — hayatta kalman gerektiğinde Empyrean Lord's Punishment yerine koy.{% endcall %}
+    {% call skill('comrade-in-arms', 'opt', 'grup PvP', upto=20) %}Grup PvP'de Nezekan's Shield yerine; en iyisi 20'de.{% endcall %}
+    {% call skill('assault-fury', 'opt', 'geç oyun') %}Ekipmanın derinleşince geç oyun değişimi: sersemletme şanslı menzilli bir alan vuruşu. En zayıf slotunun yerine koy.{% endcall %}
+  </ul>
+{% endcall %}
+
+{% call section('macro', 'Makro ve rotasyon', 'pve') %}
+  <p>AION 2'de iki ayrı araç var:</p>
+  <ul>
+    <li><strong>Hızlı erişim satırı</strong> — <em>tek</em> bir hızlı erişim düğmesine üst üste dizilmiş birkaç yetenek. Basınca hazır olan en yüksek öncelikli yeteneği kullanır ve AION 2'de <strong>en alttaki slot en yüksek önceliğe sahiptir</strong>. Kartlar her satırı oyundaki gibi yukarıdan aşağıya gösterir.</li>
+    <li><strong>Oyun içi makro</strong> — tuşunu basılı tuttuğun sürece hızlı erişim satırlarına sırayla basar ve animasyon kuyruklarını iptal eder. Bekleme süresindeki yetenekler atlanır.</li>
+  </ul>
+  <p>Leonis'in global düzeni (5 Ekim videosu, kare 0:57): oyun içi makronun bastığı iki hızlı erişim satırı, gerisi elle. Makro artık Doom Shield ile başlıyor; ona göre güncel düzen yaklaşık %20 daha fazla hasar veriyor.</p>
+  {{ hotbar([('1', ['poach']), ('2', ['punishment', 'empyrean-lords-punishment']), ('3', ['debilitating-smash', 'annihilate', 'pummel']), ('Yan', []), None, ('X', []), ('R', []), ('Yan 2', []), ('', []), None, ('Q', ['shield-rush']), ('E', ['battlefield-banner', 'noble-armor']), ('LMB', ['vicious-strike']), ('—', ['doom-shield', 'judgment', 'shield-smite', 'warding-strike'])], macro=['—', '3'], own_keys=true) }}
+
+  <h3>1. Hızlı erişim satırları</h3>
+  <div class="hotlines">
+    {% call hotline('—', 'Doom Shield satırı', ['doom-shield', 'judgment', 'shield-smite', 'warding-strike']) %}Makronun ilk adımı. {{ s('doom-shield') }} dövüşü açar — NPC'lerde {{ s('annihilate') }}'u açan bir atılma ve garantili yere düşürme — ve 15. seviyede öldürmede sıfırlanır, PvX ve evcil hayvan farmının anahtarı. Aralarda satır Judgment'ı ve onu tetikleyen kalkan yeteneklerini spamlar.{% endcall %}
+    {% call hotline('3', 'Pummel satırı', ['debilitating-smash', 'annihilate', 'pummel']) %}Makronun ikinci adımı. Tetiklemeler yanar yanmaz ateşlenir; Pummel her boşluğu doldurur — −1 sn Punishment seçimiyle her Pummel Punishment'ı daha erken geri getirir. {{ s('flash-rampage') }} çıkarıldı: Leonis'in testinde satır onsuz daha çok hasar veriyor. SolAshur Annihilate'i ilk sıraya koyuyor.{% endcall %}
+    {% call hotline('Yan', 'Judgment satırı (SolAshur)', ['judgment', 'shield-smite', 'warding-strike', 'doom-shield']) %}SolAshur'un makro dışı versiyonu: Judgment her zaman kazanır, Doom Shield en sonda. Onu <span class="key">R</span>'ye atıyor ve faresi R'yi saniyede yaklaşık 10 kez tekrarlıyor.{% endcall %}
+  </div>
+
+  <h3>2. Oyun içi makro ve tuşlar</h3>
+  {{ macroseq([('Doom Shield satırı', '10 ms'), ('Pummel satırı', '3 · 10 ms')]) }}
+  <ul class="presslist">
+    <li><span class="press-how">LMB</span><span class="press-what">{{ s('vicious-strike') }} (hızlı slot 1).</span></li>
+    <li><span class="press-how">RMB</span><span class="press-what">Oyun içi makro. Leonis dövüş boyunca iki fare tuşunu da basılı tutuyor.</span></li>
+    <li><span class="press-how">Seçenek</span><span class="press-what">Makrodaki Doom Shield yerine SolAshur'un Judgment satırı yan tuşta (yukarıya bak).</span></li>
+    <li><span class="press-how">Elle</span><span class="press-what">Bekleme süresi dolunca şarjlı {{ s('punishment') }}, {{ s('battlefield-banner') }}, stagger için {{ s('empyrean-lords-punishment') }}, {{ s('taunt') }}.</span></li>
+  </ul>
+  <p class="note">SolAshur tam kısayol düzenini daha önceki bir makro videosunda anlatıyor; buna uymak için oyundaki birkaç tuş atamasını değiştirmen gerekecek.</p>
+{% endcall %}
+
+{% call section('recap', 'Özet', 'pve') %}
+  <div class="callout accent"><ul>
+    <li><strong>Yetenekler:</strong> önce Judgment, Punishment, Pummel 20; Annihilate ve Shield Smite 16; geri kalanı 12.</li>
+    <li><strong>Stigmalar:</strong> Empyrean Lord's Punishment, Battlefield Banner, Doom Shield, Taunt — her birine 1 puan, sonra eşikler.</li>
+    <li><strong>Statlar:</strong> erken Block + Evasion + Dexterity, geç Block + Endurance; evcil hayvanları atlama.</li>
+    <li><strong>Ekipman:</strong> Holy Spirit / Spectral → Urugugu / Vakron → Fire Temple ve Ferocious Horn → White Dragon silahı, koruması ve aksesuarları.</li>
+  </ul></div>
+{% endcall %}
+
+{% call section('recap-pvp', 'Özet', 'pvp') %}
+  <div class="callout accent"><ul>
+    <li><strong>Yetenekler:</strong> 20'de aynı üçlü, artı alan yere düşürmesi için Annihilate 20.</li>
+    <li><strong>Stigmalar:</strong> Executing Blade, Empyrean Lord's Punishment, Doom Shield, Nezekan's Shield (büyüye karşı Second Skin, gruplar için Comrade in Arms).</li>
+    <li><strong>Pantheon:</strong> Illusion yerine Time (saldırı hızı).</li>
+  </ul></div>
+{% endcall %}
+
+{# ============================ Leveling ============================ #}
+{% call section('fight-lvl', t.lvl_combat, 'lvl') %}
+  <div class="callout"><ul>
+    <li><strong>Gruplar:</strong> {{ s('poach') }} ile birini çek (öldürme onu sıfırlar) → {{ s('warding-strike') }} → {{ s('vicious-strike') }} + {{ s('pummel') }} makrosunu basılı tut.</li>
+    <li><strong>Elitler:</strong> şarjlı {{ s('punishment') }} → {{ s('shield-smite') }} (sersemletme) → {{ s('judgment') }} → {{ s('annihilate') }}.</li>
+    <li><strong>Mana:</strong> Vicious Strike MP yeniler, Pummel harcar — sırayla kullan, hiç bitmez.</li>
+    <li><strong>Düşük HP:</strong> Warding Strike iyileştirir ve hasarı azaltır; her blok Warding Shield üzerinden iyileştirir.</li>
+  </ul></div>
+{% endcall %}
+
+{% call section('macro-lvl', 'Seviye makrosu', 'lvl') %}
+  <p>Grobs'un erken oyun makrolarından, seviye atlama ve sınırdaki ilk günler için daha basit bir düzen. Yalnızca spamladığın yetenekler girer; bufflar, stigma patlamaları ve mesafe kapatıcılar kendi tuşlarında kalır.</p>
+  <div class="hotlines">
+    {{ hotline('1', 'Satır 1', ['doom-shield', 'debilitating-smash', 'judgment', 'shield-smite'], []) }}
+    {{ hotline('2', 'Satır 2', ['warding-strike', 'pummel'], []) }}
+  </div>
+  <p>Oyun içi makro: Satır 1 → Satır 2, her biri 10 ms gecikmeyle. Temel saldırın {{ s('vicious-strike') }}'u LMB'de <strong>ve</strong> makro tuşunu birlikte basılı tut.</p>
+  <p class="note">Yeteneklerin 12–16'ya ulaşıp uzmanlıklar bekleme sürelerini değiştirince PvE sekmesindeki tam düzene geç.</p>
+{% endcall %}
+
+{# ============================ Sources ============================ #}
+<section class="sources" aria-labelledby="h-sources">
+  <h2 id="h-sources">{{ t.sources }}</h2>
+  <ul>
+    <li><a href="https://solashur.com/builds/templar-global-build.html" target="_blank" rel="noopener">SolAshur — AION 2 Templar global build</a> ve <a href="https://www.youtube.com/watch?v=ayyzLdGOaNc" target="_blank" rel="noopener">video anlatımı</a> — bu rehberin izlediği build (yetenekler, profile göre stigmalar, makro, ekipman yolu, statlar, evcil hayvanlar, Pantheon, arcana); uzmanlıklar <a href="https://questlog.gg/aion-2/en/character-builder/QuickCobraLifeBanish" target="_blank" rel="noopener">questlog buildlerinden</a></li>
+    <li><a href="https://www.youtube.com/watch?v=JEWRiaOb9JY" target="_blank" rel="noopener">NoBS Game Guides — Aion 2 Templar Guide: Skills Introduction + Early Game Macro</a> (yetenek özetinin ve seviye makrosunun temeli)</li>
+    <li><a href="https://questlog.gg/aion-2/en/db/skills/templar" target="_blank" rel="noopener">questlog.gg</a> — global istemciden yetenek ve stigma verileri</li>
+    <li><a href="https://www.inven.co.kr/board/aion2/6438/12803" target="_blank" rel="noopener">Inven</a> — Kore Templar yetenek uzmanlıkları, stigmalar ve makro düzeni</li>
+    <li><a href="https://vortexgaming.io/postdetail/977999" target="_blank" rel="noopener">Vortex Gaming</a> — Kore PvE düzeni (yetenek seviyeleri, ekipman statları) ve <a href="https://vortexgaming.io/postdetail/836552" target="_blank" rel="noopener">PvP düzeni yönergeleri</a></li>
+    <li><a href="https://www.inven.co.kr/board/aion2/6438/7621" target="_blank" rel="noopener">Inven</a> ve <a href="https://www.fmkorea.com/9447817669" target="_blank" rel="noopener">FM Korea</a> — PvP stigma seçimleri</li>
+    <li><a href="https://mmo-codex.com/articles/aion-2-templar-guide/" target="_blank" rel="noopener">MMO Codex</a> — seviye atlarken yetenek sırası, pasif önceliği</li>
+    <li><a href="https://nemobek.github.io/aion2-guide/" target="_blank" rel="noopener">nemobek.github.io/aion2-guide</a> (TitanTheF'in tablosu) — seviye rotası</li>
+    <li><a href="https://www.youtube.com/watch?v=HMod6Z4GrE0" target="_blank" rel="noopener">Grobs — AION 2 Macro Guide</a> — hızlı erişim satırları ve oyun içi makro nasıl çalışır</li>
+    <li><a href="https://www.youtube.com/watch?v=ZQVq7IYbLy8" target="_blank" rel="noopener">trueeevil — Ultimate Templar Guide for Aion 2: Skills, Stigmas, Rotations, Daevanion Board Explained</a> — global'de ikinci gün düzeni: solo PvE için Executing Blade ve Noble Armor, Pummel'da −1 sn Punishment seçimi, pasif sırası</li>
+    <li><a href="https://www.youtube.com/watch?v=0_Fu1DlEKPc" target="_blank" rel="noopener">Leonis — How I'm Top DPS as Templar | Build Guide Update</a> — Pummel'da −1 sn Punishment seçimi, Flash Rampage satırdan çıktı, güvenli değişim olarak Shield of Protection</li>
+  </ul>
+  <p class="sources-all"><a href="{{ root }}{{ lang }}/sources/">{{ t.src_all }} →</a></p>
+</section>

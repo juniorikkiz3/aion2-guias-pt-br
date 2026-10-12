@@ -1,0 +1,272 @@
+{% from "macros.html" import section, skill, core, loadout, passives, glance, hotline, macroseq, dv_board with context %}
+
+{# ============================== PvE і PvP ============================== #}
+{% call glance('pve') %}
+  <h3>{{ t.core_skills }}</h3>
+  {{ core([('elemental-fusion', '20'), ('combustion', '20'), ('summon-fire-spirit', '20'), ('cold-shock', '16'), ('summon-water-spirit', '16')]) }}
+  <h3>{{ t.stigma_loadout }}</h3>
+  {{ loadout([('summon-ancient-spirit', 20), ('enhance-spirits-benediction', 20), ('flame-blessing', 20), ('jointstrike-corrode', 20)]) }}
+  <h3>{{ t.key_passives }}</h3>
+  {{ passives(['mental-focus', 'spirit-strike', 'element-unification', 'spirit-revitalization']) }}
+{% endcall %}
+
+{% call glance('pvp') %}
+  <h3>{{ t.core_skills }}</h3>
+  {{ core([('defiance', '20'), ('cold-shock', '20'), ('elemental-fusion', '20'), ('jointstrike-curse', '20'), ('combustion', '20')]) }}
+  <h3>{{ t.stigma_loadout }}</h3>
+  {{ loadout([('summon-ancient-spirit', 20), ('enhance-spirits-benediction', 20), ('command-proxy', 20), ('seize-magic', 20)]) }}
+  <h3>{{ t.key_passives }}</h3>
+  {{ passives(['spirit-protection', 'revitalization-contract', 'spirit-strike', 'mental-focus']) }}
+{% endcall %}
+
+{% call section('intro', 'Огляд', 'pve') %}
+  <p>Elementalist (Spirit Master) — єдиний призивач: поруч із тобою б'ється дух, кожен скіл духа дає тобі стихію, а на чотирьох стихіях готовий {{ s('elemental-fusion') }}. Основну шкоду дають Elemental Fusion і духи — передусім {{ s('summon-ancient-spirit') }} і {{ s('summon-fire-spirit') }}.</p>
+  <div class="callout accent">
+    <h3>Білд одним реченням</h3>
+    <p>Спершу бафи, потім виклик: дух копіює твої характеристики в момент появи. Тримай п'ять стаків атаки від {{ s('cold-shock') }}, відкривай бій бафами й Ancient Spirit, а макрос нехай кидає Elemental Fusion, щойно він готовий.</p>
+  </div>
+  <div class="callout"><ul>
+    <li><strong>Правило знімка.</strong> Шкода духа залежить від твоїх характеристик і бафів у момент виклику. Баф після виклику цьому духу нічого не дає — ніколи не клич Ancient Spirit без бафів.</li>
+    <li><strong>Вплітай базову атаку.</strong> Cold Shock дає +2% атаки за удар, до п'яти стаків. Втратити їх — мінус 10% атаки тобі й кожному духу, якого ти викличеш; зайва базова атака цінніша за наступний виклик.</li>
+    <li><strong>Довгі бої — твої.</strong> Клас тримається на бафах і шкоді з часом, тож що довший бій, то він сильніший — і то більше втрачає, якщо гине з усім на перезарядці.</li>
+  </ul></div>
+  <p class="note">Гайд побудовано на письмовому гайді Evripides по Spirit Master, глобальна редакція для 1 сезону (aion2sm.com, написаний на 700 тис. CP, оновлений 29 вересня), на якому DankRNG будує своє відео; глобальне відео aLuckyRO додає вибір на перші дні. Гайд адаптовано з тайванської й корейської версії — автор оновить його після запуску.</p>
+{% endcall %}
+
+{% call section('intro-pvp', 'Огляд', 'pvp') %}
+  <p>У PvP Elementalist — <strong>кайтер, що перемагає витривалістю</strong>: мобільності менше, ніж у Ranger, берсту менше, ніж у Sorcerer, але це найживучіший клас дальнього бою — зі страхом, зняттям бафів і духами, які б'ють, навіть коли ти поза досяжністю.</p>
+  <div class="callout"><ul>
+    <li><strong>Страх — це контроль, а не спосіб убити.</strong> Ним прикриваєш себе й виманюєш у ворога {{ s('defiance', False) }}; шкоду дають Elemental Fusion, прокляття й духи.</li>
+    <li><strong>Усе вирішує таймінг.</strong> Знай скіли чужого класу: захист надто рано чи надто пізно програє бій.</li>
+    <li><strong>{{ s('summon-earth-spirit') }} провокує</strong> — а провокацію Defiance не знімає.</li>
+  </ul></div>
+  <p class="note">PvP-режим — за білдом «PvP Starter» з того самого гайда (оновлений 29 вересня).</p>
+{% endcall %}
+
+{% call section('skills', 'Скіли', 'pve') %}
+  <p>До <strong>20</strong> обов'язково три скіли: {{ s('combustion') }}, {{ s('summon-fire-spirit') }} і {{ s('elemental-fusion') }}. {{ s('summon-water-spirit') }} нормально на 16 і добре на 20; решта зупиняється на 16. У перші дні, коли скіли на 8–12, бери спеціалізації на ману з карток (aLuckyRO).</p>
+  <ul class="skill-grid">
+    {% call skill('elemental-fusion', 'must', '20', [1, 2, 4]) %}Найсильніший удар без перезарядки — спрацьовує щоразу, коли в тебе чотири стихії. Відкладена шкода, +10 до всіх посилень стихій і 25% шанс зберегти чотири стихії. aLuckyRO в перші дні бере заряджувану версію (до +200%).{% endcall %}
+    {% call skill('combustion', 'must', '20', [1, 3, 4]) %}+12% по одній цілі, +20% швидкості умінь і ланцюжок. Перші дні: −20% мани, поки її бракує (aLuckyRO).{% endcall %}
+    {% call skill('summon-fire-spirit', 'must', '20', [1, 2, 4]) %}Найсильніший із базових духів і той, що найдовше на полі, — клич його останнім, щоб він лишався, поки решта на перезарядці.{% endcall %}
+    {% call skill('cold-shock', 'must', '16', [2, 3]) %}Базова атака: мультиудар і стаки +2% атаки, які копіює кожен виклик. 14 нормально, 16 краще на старті — перезарядки довгі. Перші дні: +20% відновлення мани замість мультиудару.{% endcall %}
+    {% call skill('summon-water-spirit', 'must', '16', [1, 4]) %}Найсильніший удар по одній цілі серед базових духів разом із Jointstrike: Corrode, і мана на прокачці.{% endcall %}
+    {% call skill('jointstrike-curse', 'must', '16', [0, 2]) %}Шкода з часом і дебаф: +2 с прокляття і спеціалізація «в русі». Духи — і Ancient Spirit теж — б'ють разом із тобою.{% endcall %}
+    {% call skill('dimensional-control', 'must', '16', [1, 2]) %}Спрацьовує при виклику; відкладена шкода й мультиудар. Притягування й сповільнення не бери.{% endcall %}
+    {% call skill('summon-earth-spirit', 'opt', '16', [1, 2]) %}Провокує ворога на себе — бос б'є духа, а не тебе. Корисно соло.{% endcall %}
+    {% call skill('rapid-scattershot', 'opt', '16', [3, 4]) %}Лише по приголомшених босах. До 16 — «в русі» й мультиудар; на 16 — мультиудар і −1 с до всіх перезарядок.{% endcall %}
+    {% call skill('defiance', 'opt', '16', [2, 4]) %}Зняття контролю; 20% HP і стійкість до шкоди на час несприйнятливості.{% endcall %}
+    {% call skill('summon-wind-spirit', 'skip', 'пропуск') %}Найслабша шкода скілу, а його виклик забирає час в інших. aLuckyRO лишає його на перший тиждень, щоб швидше набирати чотири стихії; прибирай, коли три духи самі відкривають Fusion.{% endcall %}
+    {% call skill('souls-cry', 'skip', 'PvP') %}Страх — скіл для PvP.{% endcall %}
+  </ul>
+{% endcall %}
+
+{% call section('skills-pvp', 'Скіли', 'pvp') %}
+  <p>Чотири обов'язкові до <strong>20</strong>: {{ s('defiance') }}, {{ s('cold-shock') }}, {{ s('elemental-fusion') }} і {{ s('jointstrike-curse') }}; {{ s('combustion') }} однаково доходить до 20 завдяки набору аркан.</p>
+  <ul class="skill-grid">
+    {% call skill('defiance', 'must', '20', [2, 3, 4]) %}Зняття контролю з 20% HP, +2 с несприйнятливості й стійкістю до шкоди. Коли на тебе заходять, знімай перший контроль одразу.{% endcall %}
+    {% call skill('cold-shock', 'must', '20', [1, 2]) %}Поглинання HP і мультиудар. Стаки атаки в PvP майже не набираються, тож їх тут не беруть.{% endcall %}
+    {% call skill('elemental-fusion', 'must', '20', [1, 2, 4]) %}Твій берст. У масовому PvP міняй відкладену шкоду на АоЕ-версію.{% endcall %}
+    {% call skill('jointstrike-curse', 'must', '20', [1, 3, 4]) %}Мультиудар, −2 с перезарядки, а на 16 — ігнорує блок і ухилення й критує. Накладай першим — він виманює у ворога зілля лікування.{% endcall %}
+    {% call skill('combustion', 'must', '20', [1, 3, 4]) %}Ті самі спеціалізації, що в PvE.{% endcall %}
+    {% call skill('dimensional-control', 'must', '16', [1, 4]) %}Багато контролю й кайту: відкладена шкода й шанс прикорінити; спрацьовує при кожному виклику й витягує у ворога Defiance.{% endcall %}
+    {% call skill('summon-earth-spirit', 'must', '16', [1, 4]) %}Провокація — один із найсильніших контролів у грі. Стійкість до шкоди й +20% характеристик духу.{% endcall %}
+    {% call skill('souls-cry', 'opt', '12–16', [1, 3]) %}Страх із прикоріненням і −10 с перезарядки; нижче 16 нормально.{% endcall %}
+    {% call skill('summon-water-spirit', 'opt', '12–16', [1, 2]) %}12–16 досить.{% endcall %}
+    {% call skill('summon-fire-spirit', 'opt', '14', [1, 2]) %}Б'є сильно й на низькому рівні.{% endcall %}
+    {% call skill('summon-wind-spirit', 'skip', 'пропуск') %}У PvP не використовується.{% endcall %}
+    {% call skill('rapid-scattershot', 'skip', 'пропуск') %}Працює лише по приголомшених цілях.{% endcall %}
+  </ul>
+{% endcall %}
+
+{% call section('passives', 'Пасивки', 'pve pvp') %}
+  <p>Рівні пасивок дають усі частини броні, сережки й намисто, тому пасивки йдуть далеко вперед активних — у готовому наборі 1 сезону пасивка доходить до 30 і вище.</p>
+  <div class="table-wrap" data-only="pve"><table>
+    <thead><tr><th>#</th><th>Пасивка</th><th>Навіщо</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>{{ s('mental-focus') }}</td><td>Шанс подвійного удару — до максимуму (близько 32 в 1 сезоні).</td></tr>
+      <tr><td>2</td><td>{{ s('spirit-strike') }}</td><td>Посилення шкоди в PvE і шанс ідеального удару тобі й духу. Майже нарівні з першою.</td></tr>
+      <tr><td>3</td><td>{{ s('element-unification') }}</td><td>Накопичувана крит. шкода щоразу, коли влучає скіл духа.</td></tr>
+      <tr><td>4</td><td>{{ s('spirit-revitalization') }}</td><td>Коротша перезарядка духів — більше Elemental Fusion.</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note" data-only="pve">Перші дні (aLuckyRO): спершу {{ s('spirit-strike') }}, потім {{ s('spirits-descent') }} і {{ s('consecutive-countercurrent') }}. {{ s('corrode') }} і Element Unification окупаються, лише коли спорядження дає шанс криту, — доти ти майже не критуєш.</p>
+  <div class="table-wrap" data-only="pvp"><table>
+    <thead><tr><th>#</th><th>Пасивка</th><th>Навіщо</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>{{ s('spirit-protection') }}</td><td>Захист від берсту — Assassin, Sorcerer, Gladiator. Близько 20.</td></tr>
+      <tr><td>2</td><td>{{ s('revitalization-contract') }}</td><td>Опір ефектам. Близько 20.</td></tr>
+    </tbody>
+  </table></div>
+{% endcall %}
+
+{% call section('stigmas', 'Стигми', 'pve') %}
+  <p>Ці чотири — набір на будь-який бій у PvE. Спершу всі чотири до 10, потім кожну до 20 у такому порядку. Слоти відкриваються на 22, 27, 32 і 37 рівні.</p>
+  <ul class="skill-grid">
+    {% call skill('summon-ancient-spirit', 'must', 'Рів. 20', upto=20) %}Стигма з найбільшою шкодою: додатковий дух на 30 секунд, який дає тобі Elemental Fusion щоразу, коли використовує свій скіл, — на 15 після кожних п'яти базових атак. Завжди клич його з бафами й стаками Cold Shock.{% endcall %}
+    {% call skill('enhance-spirits-benediction', 'must', 'Рів. 20', upto=20) %}Посилення шкоди й стійкість тобі й духам — використовуй до виклику.{% endcall %}
+    {% call skill('flame-blessing', 'must', 'Рів. 20', upto=20) %}Точність і додаткова шкода при влучанні; один із найсильніших бафів, сильно росте до 20.{% endcall %}
+    {% call skill('jointstrike-corrode', 'must', 'Рів. 20', upto=20) %}Шкода з часом, через яку ціль отримує більше шкоди від духів. На 20 триває 20 секунд і при скороченні перезарядки близько 33% висить постійно.{% endcall %}
+    {% call skill('cursed-cloud', 'opt', 'пізніше', upto=10) %}Сильна в PvE, але в 1 сезоні для неї немає слота.{% endcall %}
+  </ul>
+{% endcall %}
+
+{% call section('stigmas-pvp', 'Стигми', 'pvp') %}
+  <div class="table-wrap"><table>
+    <thead><tr><th>Набір</th><th>Стигми</th><th>Коли</th></tr></thead>
+    <tbody>
+      <tr><td>Основний</td><td>Ancient Spirit, Spirit's Benediction, Command: Proxy, Seize Magic</td><td>Найкращий універсальний набір.</td></tr>
+      <tr><td>Без Proxy</td><td>Corrode замість Command: Proxy</td><td>Ризиковіше, більше шкоди й антихіл — проти Cleric, Gladiator, Templar.</td></tr>
+      <tr><td>Контроль</td><td>Ancient Spirit, Cry of Terror, Corrode, Kaisinel's Power</td><td>Додатковий АоЕ-страх і шанс контролю — проти Cleric і Chanter.</td></tr>
+    </tbody>
+  </table></div>
+  <ul class="skill-grid">
+    {% call skill('command-proxy', 'must', 'Рів. 20', upto=20) %}На 7 секунд більша частина шкоди по тобі ділиться з духами. Використовуй, коли заходить Assassin або Sorcerer тебе заморожує, — не на перший контроль.{% endcall %}
+    {% call skill('seize-magic', 'must', 'Рів. 20', upto=20) %}Знімає бафи ворога, б'є і на 20 накладає німоту. Знімай невразливість або бафи Ranger одразу після того, як він їх наклав.{% endcall %}
+    {% call skill('jointstrike-corrode', 'opt', 'без Proxy', upto=20) %}−60% лікування й довга шкода з часом проти класів із самолікуванням. Спершу наклади прокляття й інші дебафи, щоб зілля його не зняло.{% endcall %}
+    {% call skill('cry-of-terror', 'opt', 'контроль', upto=20) %}АоЕ-страх для додаткового контролю.{% endcall %}
+    {% call skill('kaisinels-power', 'opt', 'контроль', upto=20) %}Підвищує шанс контролю — без неї він проходить рідко.{% endcall %}
+    {% call skill('siphon', 'opt', 'альт.', upto=20) %}Самолікування, а на 15 — щит.{% endcall %}
+  </ul>
+{% endcall %}
+
+{% call section('macro', 'Ротація й макрос', 'pve') %}
+  <p>Гра на двох затиснутих кнопках: тримай {{ s('cold-shock') }} на <span class="key">ЛКМ</span> і макрос на <span class="key">ПКМ</span>, керуй персонажем, а решту тисни руками. Лінія, що стояла на ПКМ, переїжджає на <span class="key">T</span>.</p>
+  <h3>1. Лінії на кнопках</h3>
+  <div class="hotlines">
+    {% call hotline('1', 'Лінія духів', ['elemental-fusion', 'summon-water-spirit', 'summon-earth-spirit', 'summon-fire-spirit']) %}Тисни її постійно: Elemental Fusion спрацьовує, щойно готовий, потім духи; Fire Spirit останній — він найдовше лишається на полі.{% endcall %}
+    {% call hotline('7', 'Бафи + Ancient Spirit', ['enhance-spirits-benediction', 'flame-blessing', 'summon-ancient-spirit']) %}Бафи стоять перед Ancient Spirit, щоб виклик їх скопіював.{% endcall %}
+    {% call hotline('T', 'Лінія шкоди', ['jointstrike-corrode', 'jointstrike-curse', 'dimensional-control', 'combustion']) %}За шкодою; Corrode йде, щойно готовий.{% endcall %}
+  </div>
+  <h3>2. Вбудований макрос</h3>
+  <p>Признач макрос на <span class="key">ПКМ</span>, <strong>10 мс</strong> на кожен крок:</p>
+  {{ macroseq([(skill_data('enhance-spirits-benediction')[lang].name, 'ПКМ · 10 мс'), (skill_data('elemental-fusion')[lang].name, '10 мс'), (skill_data('jointstrike-corrode')[lang].name, '10 мс')]) }}
+  <h3>3. Бій</h3>
+  <ol>
+    <li><strong>Відкривай</strong> бій: {{ s('flame-blessing') }} → {{ s('enhance-spirits-benediction') }} → {{ s('summon-ancient-spirit') }} — бафи до виклику.</li>
+    <li>Лінія духів і Corrode, потім вмикай макрос і переходь на дві затиснуті кнопки.</li>
+    <li>Далі клич духів по колу; бафи оновлюй, щойно готові, а не тримай під Ancient Spirit.</li>
+    <li>Якщо п'ять стаків Cold Shock от-от спадуть, зайва базова атака важливіша за наступний виклик.</li>
+  </ol>
+  <p class="note">Вплітання залежить від пінгу: автор хоче від 65% швидкості бою й пінг до ~60 мс. Порада aLuckyRO на перший тиждень: грай без макросу, поки не освоїш клас. Постав «відкликати всіх духів» на зручну клавішу.</p>
+{% endcall %}
+
+{% call section('combos-pvp', 'Початок бою', 'pvp') %}
+  <p>У PvP макрос майже не потрібен: він лише вплітає {{ s('elemental-fusion') }} → {{ s('summon-earth-spirit') }} на <span class="key">ПКМ</span>. Усе інше — таймінг.</p>
+  <div class="callout">
+    <h3>На тебе зайшли</h3>
+    <p>Одразу знімай перший контроль {{ s('defiance', False) }}; {{ s('command-proxy') }} прибережи на наступний захід.</p>
+  </div>
+  <div class="callout accent">
+    <h3>Заходиш ти</h3>
+    <div class="combo">{{ s('enhance-spirits-benediction') }} + {{ s('kaisinels-power') }}<span class="arrow">→</span>{{ s('summon-earth-spirit') }} + {{ s('jointstrike-curse') }}<span class="arrow">→</span>{{ s('summon-ancient-spirit') }}<span class="arrow">→</span>{{ s('jointstrike-corrode') }} після його зілля</div>
+    <p>{{ s('souls-cry') }} — коли Earth Spirit не наклав контроль або коли Defiance у ворога вже витрачений; виманити його допомагає прикорінення {{ s('dimensional-control') }}.</p>
+  </div>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Проти</th><th>Відповідь</th></tr></thead>
+    <tbody>
+      <tr><td>Gladiator, Cleric</td><td>Seize Magic на невразливість; проти самолікування — спершу прокляття, потім Corrode.</td></tr>
+      <tr><td>Ranger</td><td>Seize Magic одразу після його бафів; Corrode проти самолікування.</td></tr>
+      <tr><td>Assassin</td><td>Command: Proxy, коли він заходить.</td></tr>
+      <tr><td>Sorcerer</td><td>Command: Proxy під заморозкою; ривок бережи під метеор — він ігнорує ухилення й блок.</td></tr>
+      <tr><td>Chanter</td><td>Corrode: −60% лікування й шкода з часом майже на 30 секунд.</td></tr>
+    </tbody>
+  </table></div>
+{% endcall %}
+
+{% call section('gear', 'Спорядження, аркани й статі', 'pve pvp') %}
+  <div class="callout"><ul>
+    <li><strong>Звідки рівні:</strong> 10 очками навичок, 14 з першими чотирма дошками Daevanion, далі +4 від аркани й +1 з кожного кільця — 20 для обов'язкових скілів. Активні скіли випадають на кільцях, зброї та щиті; пасивки — на всіх частинах броні, сережках і намисті.</li>
+    <li data-only="pve"><strong>Аркани:</strong> три карти Primal Vigor і дві Magic Armor — обидва бонуси за 2 предмети.</li>
+    <li data-only="pve"><strong>Цілі:</strong> шанс подвійного удару 25%, скорочення перезарядки 20%, точність 1 500.</li>
+    <li data-only="pvp"><strong>Аркани:</strong> п'ять карт Primal Vigor. Jointstrike: Curse і Elemental Fusion — два скіли, які варто ловити на картах.</li>
+    <li data-only="pvp"><strong>Цілі:</strong> точність від 2 000, опір ефектам від 100%, регенерація близько 40%.</li>
+  </ul></div>
+{% endcall %}
+
+{% call section('daevanion', 'Дошки Daevanion', 'pve pvp') %}
+  <p>Daevanion піднімає скіли з 10 до 14. Кожен синій вузол дає <strong>+1 рівень</strong> своєму скілу.</p>
+  <div class="callout"><ul>
+    <li data-only="pve"><strong>Пріоритет:</strong> сині вузли {{ s('elemental-fusion') }}, {{ s('combustion') }}, {{ s('summon-fire-spirit') }}, {{ s('cold-shock') }}, {{ s('summon-water-spirit') }}, зелені {{ s('mental-focus') }} і {{ s('spirit-strike') }}, потім атакувальні помаранчеві вузли.</li>
+    <li data-only="pve"><strong>Перші дні:</strong> бери найдешевший вузол кожного скіла — на кожній дошці є всі, і деякі близько до старту (aLuckyRO).</li>
+    <li data-only="pvp"><strong>Пріоритет:</strong> сині вузли {{ s('defiance') }}, {{ s('cold-shock') }}, {{ s('elemental-fusion') }}, {{ s('jointstrike-curse') }}, {{ s('combustion') }}; Azphel (45 рівень) — суцільне посилення шкоди й стійкість у PvP, бери.</li>
+  </ul></div>
+  <div data-only="pve">{{ dv_board('pve') }}</div>
+  <div data-only="pvp">{{ dv_board('pvp') }}</div>
+  <p class="note">Дошки й вартість — з даних глобального клієнта (questlog.gg); шлях розраховано, а не взято з гайда.</p>
+{% endcall %}
+
+{% call section('recap', 'Підсумок', 'pve') %}
+  <div class="callout accent"><ul>
+    <li><strong>Скіли:</strong> Elemental Fusion, Combustion, Fire Spirit — 20; Cold Shock, Water Spirit, Curse, Dimensional Control — 16; Wind Spirit не потрібен.</li>
+    <li><strong>Стигми:</strong> Ancient Spirit → Spirit's Benediction → Flame Blessing → Corrode: усі до 10, потім до 20.</li>
+    <li><strong>Пасивки:</strong> Mental Focus, Spirit Strike, Element Unification, Spirit Revitalization.</li>
+    <li><strong>Гра:</strong> бафи до виклику; тримай п'ять стаків Cold Shock.</li>
+  </ul></div>
+{% endcall %}
+
+{% call section('recap-pvp', 'Підсумок', 'pvp') %}
+  <div class="callout accent"><ul>
+    <li><strong>Скіли:</strong> Defiance, Cold Shock, Elemental Fusion, Curse, Combustion — 20; Earth Spirit і Dimensional Control — 16.</li>
+    <li><strong>Стигми:</strong> Ancient Spirit, Spirit's Benediction, Command: Proxy, Seize Magic — Corrode для антихілу.</li>
+    <li><strong>Пасивки:</strong> Spirit Protection, Revitalization Contract.</li>
+    <li><strong>Гра:</strong> спершу прокляття, Corrode після його зілля; страх — для контролю, а не щоб убити.</li>
+  </ul></div>
+{% endcall %}
+{# ============================ Leveling ============================ #}
+
+{% call section('intro-lvl', 'Огляд', 'lvl') %}
+  <p>Elementalist (Spiritmaster) — єдиний призивач: поруч із тобою б'ється дух, кожен його скіл дає елемент, а на чотирьох елементах готовий {{ s('elemental-fusion') }}. {{ s('dimensional-control') }} спрацьовує щоразу, коли дух використовує скіл, а прокляття продовжують тікати на цілі.</p>
+  <div class="callout accent">
+    <h3>Прокачка одним реченням</h3>
+    <p>Качайся з {{ s('summon-water-spirit') }} (шкода й мана), тримай {{ s('cold-shock') }} заради мани, а вбудований макрос нехай крутить лінію духів і лінію Fusion.</p>
+  </div>
+{% endcall %}
+
+{% call section('fight-lvl', t.lvl_combat, 'lvl') %}
+  <div class="callout"><ul>
+    <li><strong>Дух:</strong> {{ s('summon-water-spirit') }} до самого капу — найкраща шкода по одній цілі й підживлення маною. Решта на прокачці тримаються на 1 рівні.</li>
+    <li><strong>Пачки:</strong> {{ s('jointstrike-curse') }} (б'є до 4 цілей) → {{ s('combustion') }} → {{ s('elemental-fusion') }} зі спеціалізацією на АоЕ, коли він готовий.</li>
+    <li><strong>Мана:</strong> головна проблема на старті — режим із таргетом, {{ s('cold-shock') }} між скілами й ротація духів, що закінчується на Water Spirit.</li>
+    <li><strong>Оглушені цілі:</strong> {{ s('rapid-scattershot') }}.</li>
+    <li>{{ s('souls-cry') }} не качай — це PvP-скіл.</li>
+  </ul></div>
+{% endcall %}
+
+{% call section('macro-lvl', 'Макрос на прокачці', 'lvl') %}
+  <p>Стартове налаштування Grobs: дві лінії на кнопках і вбудований макрос із двох слотів. В AION 2 <strong>найвищий пріоритет у нижнього слота лінії</strong> — картки показують лінії згори донизу, як у грі.</p>
+  <div class="hotlines">
+    {% call hotline('1', 'Лінія духів', ['summon-water-spirit', 'jointstrike-corrode', 'summon-earth-spirit', 'summon-fire-spirit']) %}Спершу Water Spirit; Jointstrike: Corrode (стигма) змушує ціль отримувати більше шкоди від духа.{% endcall %}
+    {% call hotline('2', 'Лінія Fusion', ['elemental-fusion', 'dimensional-control', 'jointstrike-curse', 'combustion']) %}Elemental Fusion і Dimensional Control спрацьовують, щойно духи їх відкривають; Combustion заповнює паузи.{% endcall %}
+  </div>
+  <p>Вбудований макрос (вікно скілів → Macro), затримка <strong>10 мс</strong> у кожному слоті:</p>
+  {{ macroseq([('Лінія духів', '1 · 10 мс'), ('Лінія Fusion', '2 · 10 мс')]) }}
+  <ul class="presslist">
+    <li><span class="press-how">Тримати</span><span class="press-what">{{ s('cold-shock') }} на <span class="key">ЛКМ</span> разом із кнопкою макросу.</span></li>
+    <li><span class="press-how">Вручну</span><span class="press-what">{{ s('enhance-spirits-benediction') }}, потім {{ s('summon-ancient-spirit') }} (спершу баф — Ancient Spirit живе 30 с).</span></li>
+  </ul>
+{% endcall %}
+
+{% call section('stigmas-lvl', 'Стигми на прокачці', 'lvl') %}
+  <p>Стигми відкриваються на 22 рівні.</p>
+  <ul class="skill-grid">
+    {% call skill('summon-ancient-spirit', 'must', 'Рів. 5', upto=5) %}Додатковий дух на 30 с, який теж дає елементи для Elemental Fusion.{% endcall %}
+    {% call skill('enhance-spirits-benediction', 'must', 'Рів. 5', upto=5) %}+20% до шкоди й стійкості в PvE з лікуванням на 10 с — кастуй до Ancient Spirit.{% endcall %}
+    {% call skill('jointstrike-corrode', 'must', 'Рів. 5', upto=5) %}У лінії духів у Grobs: ціль отримує більше шкоди від духа.{% endcall %}
+    {% call skill('flame-blessing', 'opt', 'Рів. 5', upto=5) %}Додаткова шкода при влучанні на 10 с — бери, коли вистачає точності.{% endcall %}
+  </ul>
+{% endcall %}
+
+{# ============================ Sources ============================ #}
+<section class="sources" aria-labelledby="h-sources">
+  <h2 id="h-sources">{{ t.sources }}</h2>
+  <ul>
+    <li><a href="https://www.youtube.com/watch?v=HMod6Z4GrE0" target="_blank" rel="noopener">Grobs — AION 2 Macro Guide</a> — слайд зі стартовими макросами (лінії й макрос Spiritmaster)</li>
+    <li><a href="https://aion2sm.com/global/" target="_blank" rel="noopener">Evripides — Spirit Master guide, Global edition (aion2sm.com)</a> — PvE- і PvP-білди для глобального клієнта: рівні й спеціалізації скілів, стигми, пасивки, ротація, макрос, аркани, матчапи</li>
+    <li><a href="https://www.youtube.com/watch?v=KlmstIyukX8" target="_blank" rel="noopener">DankRNG — How to MASTER the SPIRITS | Elementalist Guide &amp; Build</a> — правило знімка, порядок духів, чому без Wind Spirit</li>
+    <li><a href="https://www.youtube.com/watch?v=v9MYphrcvic" target="_blank" rel="noopener">aLuckyRO — AION 2 Latest Spiritmaster PVE Build for Global</a> — спеціалізації на перші дні, порядок стигм, Daevanion на старті</li>
+    <li><a href="https://mmo-codex.com/articles/aion-2-spiritmaster-guide/" target="_blank" rel="noopener">MMO Codex — білд Spiritmaster для Aion 2</a> — порядок скілів за рівнями, Water Spirit на прокачці, стигми</li>
+    <li><a href="https://questlog.gg/aion-2/en/db/skills/elementalist" target="_blank" rel="noopener">questlog.gg</a> — дані скілів із глобального клієнта</li>
+  </ul>
+  <p class="sources-all"><a href="{{ root }}{{ lang }}/sources/">{{ t.src_all }} →</a></p>
+</section>

@@ -1,0 +1,226 @@
+{% from "macros.html" import section, skill, core, loadout, passives, glance, hotline, macroseq, hotbar, dv_board with context %}
+
+{# ============================== PvE ============================== #}
+{% call glance('pve') %}
+  <h3>{{ t.core_skills }}</h3>
+  {{ core([('dark-crush', '16 → 20'), ('onslaught', '16 → 20'), ('spinning-strike', '16 → 20'), ('incandescent-blow', '16'), ('recuperation', '12')]) }}
+  <h3>{{ t.stigma_loadout }}</h3>
+  {{ loadout([('undefeated-mantra', 20), ('power-of-the-storm', 5), ('marchutans-wrath', 1), ('focused-defense', 5)]) }}
+  <h3>{{ t.key_passives }}</h3>
+  {{ passives(['attack-preparation', 'inspiring-spell', 'winds-promise', 'impact-hit']) }}
+{% endcall %}
+
+{% call section('intro', 'Visão geral', 'pve') %}
+  <p> O Chanter luta em mim com uma equipe e torna toda a festa mais forte ao mesmo tempo: um amortecedor e um curandeiro reserva que todo grupo quer. Não espere danos superiores, com equipamento igual, Chanter e Cleric são os dois mais baixos negociantes de danos, mas a festa bate mais forte, morre menos e limpa seus debuffs. </p>
+  <div class="callout accent">
+    <h3> A build em uma frase </h3>
+    <p> Mantenha {{ s('undefeated-mantra') }} ligado e mantenha a macro na linha onde {{ s('spinning-strike') }}, {{ s('marchutans-wrath') }} e {{ s('impactful-crush') }} abrem {{ s('dark-crush') }} repetidamente, tecendo {{ s('onslaught') }} entre cada batida. </p>
+  </div>
+  <p> <strong> Como o Dark Crush funciona, </strong> só pode ser usado por um curto período de tempo após uma habilidade variada, 2 segundos após {{ s('spinning-strike') }} ou {{ s('impactful-crush') }}, 3 segundos após {{ s('marchutans-wrath') }}. No nível de habilidade 16 seu próprio recarga desaparece, então dentro daquela janela você pressiona-a várias vezes. Tudo no prédio é sobre manter a janela aberta. </p>
+  <p class="note"> O modo PvE segue o guia inicial da Arthars Gaming para o lançamento global (vídeo, setembro 26; oito meses na classe no servidor de Taiwan), leia quadro por quadro. Verificado contra o guia PvE de Grobs Chanter (Inglês, Global, Outubro 5). </p>
+{% endcall %}
+
+{% call section('global', 'Global — Temporada 1: o que muda', 'pve pvp') %}
+  <p> Servidores globais abrem em <strong> de outubro 5, 2026 </strong> (acesso antecipado do founder a partir de setembro 30). O que isso significa para o Chanter: </p>
+  <div class="callout">
+    <ul>
+      <li> <strong> 4 ranhuras de estigma, tampado em 20. </strong> O Chanter tem estigmas mais úteis do que slots, então os quatro que você toma são uma escolha real (ver Stigmas). </li>
+      <li> <strong> Pequena redução de recarga e velocidade de combate no início. </strong> Cada especialização que encurta um recarga vale mais, e lutas duram mais do que em Taiwan. </li>
+      <li> <strong> Nível de habilidade 20 é difícil de alcançar na temporada 1. </strong> Plano para 16 nas habilidades chave primeiro, 20 vem de Arcana mais tarde. </li>
+      <li> <strong> Maior grupos </strong> (expedições 5-jogador, 10-jogador santuários): com um Cleric na festa seu mantra não empilha com Light of Protection (no mesmo nível que o seu ganha), e Wave Blow 's debuff não empilha com o Debilitating Mark do Cleric. </li>
+      <li data-only="pvp"> <strong> PvP: </strong> todos começam com o mesmo equipamento limitado e nenhum meta se formou ainda. </li>
+    </ul>
+  </div>
+  <p class="note"> Habilidades ativas e passivas são idênticas nos dados globais e KR/TW, estigmas perdem o nível 25. </p>
+{% endcall %}
+
+{% call section('skills', 'Habilidades', 'pve') %}
+  <p> Apenas três níveis de habilidade importam: <strong> 12, 16 e 20 </strong> - que é onde uma nova especialização ou slot se abre; um nível entre acrescenta quase nada. Pontos de habilidade dão 10, Daevanion + 4, os dois anéis + 2, arcana o resto. Pegue as habilidades-chave para <strong> 16 </strong> primeiro. </p>
+  <ul class="skill-grid">
+    {% call skill('dark-crush', 'must', '16 → 20', [3, 4], then=[2]) %} Seu principal dano e a primeira habilidade para levar para 16: sem a remoção de recarga a classe não funciona. No 20 adicione o crit garantido - então cada Dark Crush recebe o bônus completo Wind's Promise. {% endcall %}
+    {% call skill('onslaught', 'must', '16 → 20', [3, 4], then=[2]) %} Ataque básico que você tece entre tudo: restaura MP, encurta o recarga do Spinning Strike, e no 16 adiciona a cadeia de tempestade. A terceira escolha no 20 é sua: dano ou absorção do HP. {% endcall %}
+    {% call skill('spinning-strike', 'must', '16 → 20', [0, 2], then=[4]) %} Um de seus mais difíceis golpes: empilhamento + 15% dano crítico para 30s, e abre Dark Crush. Na 20 adicione a picareta que ignora Block e Evasion e sempre crits. Grobs pega aquela picareta já no 16 e cai - 5s em vez disso. Esqueça o impulso de cura, você não é o curandeiro principal. {% endcall %}
+    {% call skill('incandescent-blow', 'must', '16', [2, 4]) %} A carga enquanto Dark Crush está fechada: + 12% em um único alvo e Multi-Hit. Não existe uma terceira escolha, então 16 é suficiente. {% endcall %}
+    {% call skill('recuperation', 'must', '12', [0, 3]) %} Seu único remédio para estigmas externos, e sua limpeza. 12 é suficiente (não éXeon, WallyJTV): + 5% HP - a cura base é um número plano - e uma segunda carga. Troque a acusação pela limpeza de dois debufos em lutas pesadas; vá ao 16 por 3s só se você for o único curandeiro. Grobs leva 16 e 3s no lugar de + 5% HP. {% endcall %}
+    {% call skill('defiance', 'must', '16', [3, 4]) %} CC quebra: + Tenacidade 2s com tolerância a danos 50% por todo o tempo - sete segundos em que você pode ficar na mecânica. {% endcall %}
+    {% call skill('impactful-crush', 'opt', '12', [2, 3]) %} Ranged habilidade que abre Dark Crush ; móvel e mais rápido. 12 é o suficiente, a escolha de nível 16 é para PvP. {% endcall %}
+    {% call skill('wave-blow', 'opt', '12', [1, 3]) %} - 15% chefe dano para 10s e um alcance 10m. Sua animação tece mal: pressione-a apenas quando houver uma lacuna, nunca em vez de Dark Crush. {% endcall %}
+    {% call skill('rushing-smash', 'opt', '12', [2, 3]) %} Gap-fechar que reinicia em uma matança - correr de pacote para pacote. Nunca escolha a carga, as habilidades carregadas são uma perda de danos. {% endcall %}
+    {% call skill('tremor-crush', 'opt', '12', [0, 1]) %} Dodge que paga sua resistência de volta e um 20m mais próximo. {% endcall %}
+    {% call skill('heat-wave-blow', 'opt', '12', [2, 3]) %} bate forte, mas você raramente tem um momento para isso em PvE agora que Dark Crush carrega a rotação. {% endcall %}
+    {% call skill('gust-rampage', 'skip', '0–8') %} Só em alvos apunhalados, e um chefe é cambaleado duas ou três vezes uma luta - não vale os pontos na temporada 1. {% endcall %}
+  </ul>
+{% endcall %}
+
+{% call section('passives', 'Passivas', 'pve') %}
+  <p> Há pontos de habilidade suficientes para atingir quase todos os passivos. Linhas de engrenagem são escassas, então coloque-as nos três primeiros. </p>
+  <div class="table-wrap"><table>
+    <thead> <tr> <th> Passivo </th> <th> Prioridade </th> <th> Por que </th> </tr> </thead>
+    <tbody>
+      <tr> <td> {{ s('attack-preparation') }} </td> <td> 1 · max </td> <td> Flat PvE Danos Aumentar, Defesa e Precisão - sempre funciona. </td> </tr>
+      <tr> <td> {{ s('inspiring-spell') }} </td> <td> 2 · Max </td> <td> Ataque Crítico e Perfect Chance. O Wind's Promise só compensa com os acertos críticos, então isso vem em primeiro lugar (não Xon, WallyJTV). </td> </tr>
+      <tr> <td> {{ s('winds-promise') }} </td> <td> 3 · max </td> <td> Danos Críticos Aumentam e causam danos extras; pares com o acerto crítico garantido do Dark Crush. Sem portão de nível - maxá-lo assim que você tiver. </td> </tr>
+      <tr> <td> {{ s('impact-hit') }} </td> <td> 4 · Max </td> <td> Duplo Chance - um aumento direto de danos. </td> </tr>
+      <tr> <td> {{ s('protection-circle') }} </td> <td> max </td> <td> Um grande escudo quando seu HP cai abaixo da metade e um pequeno para o partido em cada batida - o melhor passivo defensivo e o primeiro depois dos danos. </td> </tr>
+      <tr> <td> {{ s('earths-promise') }} </td> <td> 5 </td> <td> - PvE Tolerância de Danos no alvo, mas está acima da metade do tempo e se sobrepõe com o Chain of Torment do Cleric. </td> </tr>
+      <tr> <td> {{ s('blessing-of-life') }}, {{ s('survival-willpower') }} </td> <td> pontos apenas </td> <td> livre ao máximo com pontos de habilidade; não gaste linhas de engrenagem neles. </td> </tr>
+      <tr> <td> {{ s('crossguard') }}, {{ s('raging-spell') }} </td> <td> pular </td> <td> Não faça nada em PvE - rebole-os de seu equipamento. </td> </tr>
+    </tbody>
+  </table></div>
+{% endcall %}
+
+{% call section('gear', 'Equipamentos e atributos', 'pve') %}
+  <div class="callout"><ul>
+    <li> <strong> Rings: </strong> o único lugar para habilidades ativas - quatro ou cinco linhas (anéis artesanais têm mais um) que pegam as habilidades chave de 14 para 16. </li>
+    <li><strong>Arma e guarda:</strong> Nunca coloque habilidades lá. Suas linhas de danos valem mais.</li>
+    <li> <strong> Passivos </strong> vêm das outras peças. A engrenagem global também rola Poder, Precisão e Velocidade de Combate lá, então espere menos linhas passivas do que em Taiwan. </li>
+    <li> <strong> Precisão </strong> é curto no início: sem ele você tem que bater chefes por trás e se casar. </li>
+    <li> <strong> Manastones: Ataque </strong>, Ataque Crítico, Precisão. <strong> Guarda </strong> (de mão) para + 10. </li>
+  </ul></div>
+{% endcall %}
+
+{% call section('arcana', 'Arcana', 'pve') %}
+  <p> Season 1 tem cinco cartas e dois conjuntos. A escolha de Arthars é de três cartas de Vigor Primal mais o Bell e o Mirror da Armadura Mágica; quatro cartas de Vigor Primal (+ 150 PvE Attack) também funcionam. </p>
+  <div class="table-wrap"><table>
+    <thead> <tr> <th> Card </th> <th> Stat </th> <th> Set </th> <th> Roll para </th> </tr> </thead>
+    <tbody>
+      <tr> <td> Chalice </td> <td> Time (velocidade de combate) </td> <td> Primal Vigor </td> <td> Qualquer habilidade chave ainda está faltando de 20 </td> </tr>
+      <tr> <td> Pergaminho </td> <td> Vida </td> <td> Vigor Primal </td> <td> {{ s('dark-crush') }}, {{ s('onslaught') }}, {{ s('spinning-strike') }} </td> </tr>
+      <tr> <td> Compass </td> <td> Freedom (Acuracy) </td> <td> Primal Vigor </td> <td> {{ s('incandescent-blow') }}, {{ s('recuperation') }}; {{ s('defiance') }} está bem </td> </tr>
+      <tr> <td> Bell </td> <td> Destruction (Attack) </td> <td> Magic Armor </td> <td> {{ s('attack-preparation') }} </td> </tr>
+      <tr> <td> Espelho </td> <td> Sabedoria (Dupla Possibilidade) </td> <td> Armadura Mágica </td> <td> {{ s('impact-hit') }}, {{ s('winds-promise') }} </td> </tr>
+    </tbody>
+  </table></div>
+  <p> Nivelar um cartão soma + 4 para suas habilidades ao acaso - plano para cerca de <strong> + 2 </strong>. 10 de pontos, 4 de Daevanion e 2 de um cartão fazem 16, e as linhas do anel vão para outras habilidades. </p>
+  <p class="note"> Não gaste demais nestes cartões, eles são substituídos assim que a temporada 2 trouxe novos. Ilusão no espelho é a alternativa de suporte completo à sabedoria. </p>
+{% endcall %}
+
+{% call section('daevanion', 'Painéis Daevanion', 'pve pvp') %}
+  <p> Daevanion pega suas habilidades de 10 para 14 e adiciona estatísticas. Cada nó azul dá <strong> + 1 nível </strong> à sua habilidade. </p>
+  <div class="callout"><ul>
+    Prioridade <li data-only="pve"> <strong>: nós azuis </strong> para {{ s('dark-crush') }}, {{ s('onslaught') }}, {{ s('spinning-strike') }} e {{ s('incandescent-blow') }}, depois nós laranja. </li>
+    Prioridade <li data-only="pvp"> <strong>: nós azuis </strong> para {{ s('impactful-crush') }}, {{ s('wave-blow') }}, {{ s('defiance') }}. </li>
+    <li data-only="pve"> <strong> Não Ariel no global: </strong> há cinco placas, e o nível 45, um, Azphel, dá apenas PvP Danos Boost e Tolerância - em PvE terminar os quatro primeiros. </li>
+    <li data-only="pvp"> <strong> Azphel </strong> (nível 45) é tudo PvP Dano Boost e Tolerância - levá-lo, e Triniel mais cedo. </li>
+  </ul></div>
+  <div class="table-wrap"><table>
+    <thead> <tr> <th> Painel </th> <th> Desbloquear </th> <th> nós laranja </th> </tr> </thead>
+    <tbody>
+      <tr> <td> Nezekan </td> <td> Lv 12 </td> <td> Velocidade de combate, redução de recarga </td> </tr>
+      <tr> <td> Zikel </td> <td> Lv 20 </td> <td> Danos Aumentam, Tolerância de Danos </td> </tr>
+      <tr> <td> Vaizel </td> <td> Lv 30 </td> <td> Danos Críticos Aumentam e Tolerância </td> </tr>
+      <tr> <td> Triniel </td> <td> Lv 40 </td> <td> Multi-Hit Chance e Resista </td> </tr>
+      <tr> <td> Azphel </td> <td> Lv 45 </td> <td> PvP Dano Aumentar e Tolerância - sem nós de habilidade </td> </tr>
+    </tbody>
+  </table></div>
+  <h3> A rota nas tábuas </h3>
+  <p> Os reais quadros globais dos dados do jogo. O ouro marca o caminho mais bamouse de Start para os nós que este guia toma, os nós azuis das habilidades prioritárias e os nós laranja, pairando sobre qualquer nó para ver o que ele dá. </p>
+  <div data-only="pve">{{ dv_board('pve') }}</div>
+  <div data-only="pvp">{{ dv_board('pvp') }}</div>
+  <p class="note"> Boards e custos vêm dos dados globais do cliente (questlog.gg); o caminho é calculado, não retirado de um vídeo. Os valores do stat ainda podem mudar no lançamento. Verifique o painel antes de fazer uma rota completa. </p>
+{% endcall %}
+
+{% call section('stigmas', 'Estigmas', 'pve') %}
+  <p> Três estão presos, o quarto é uma escolha. Nivelá-los nesta ordem - Undefeated Mantra para 20 vem antes de tudo o mais. </p>
+  <ul class="skill-grid">
+    {% call skill('undefeated-mantra', 'must', 'Nv. 20', upto=20) %} A razão pela qual uma festa leva um Chanter: dano e tolerância PvE, golpe crítico, precisão, dano crítico e dupla chance para todos. Primeiro para 20, e nunca sai do seu bar. {% endcall %}
+    {% call skill('marchutans-wrath', 'must', 'Nv. 1', upto=1) %} Um terço variou habilidade que abre Dark Crush para 3 segundos - ele quase dobra seu tempo Dark Crush. Um ponto é suficiente: as camadas mais altas são para PvP. {% endcall %}
+    Bloco {% call skill('focused-defense', 'must', 'Nv. 5', upto=5) %} A com duas cargas no nível 5. Subestimado: permite que um melee fique no chefe através da maioria dos ataques em vez de fugir. {% endcall %}
+    {% call skill('sprint-mantra', 'opt', 'Nv. 10', upto=10) %} Move velocidade, + 10% chegando curar e regeneração de resistência, para que o partido pode esquivar quase sem limite - nãoXeon corre-lo em masmorras e enquanto a agricultura, e tirá-lo em PvP. Grobs o comanda sempre, em vez de Focused Defense: com um Chanter a festa sai da maioria dos ataques, e cada golpe tem uma chance 15% de curá-lo. Sua cura é insignificante. Não a nivele para além do 10. {% endcall %}
+    {% call skill('power-of-the-storm', 'must', 'Nv. 5 → 20', upto=20) %} + 20% Velocidade de combate e - 20% refrigerações para 10s (a festa recebe + 20% e - 10% ). nãoXeon leva em todos os tipos de conteúdo: enquanto ninguém tem Velocidade de combate é um dos seus maiores entusiastas de danos. O nível 5 reduz seu recarga em 30s; 20 adiciona Ataque para você e a festa. Ordem de Grobs: este para 5, depois Undefeated Mantra para 20, depois o resto. {% endcall %}
+    {% call skill('healing-touch', 'opt', 'sem Clérigo', upto=15) %} Forte emergência cura: mais em baixo HP, e em 15 remove cinco debuffs. Tome-o quando for o único curandeiro ou a luta é pesada em debuffs. Grobs pula mesmo assim: cura muito pouco para uma recuperação 30 segundos - mais danos e os fãs ajudam mais a festa. {% endcall %}
+    {% call skill('impeding-authority', 'opt', 'progressão', upto=15) %} Um escudo para o partido - mais eficaz HP enquanto o grupo ainda está aprendendo uma luta. {% endcall %}
+    {% call skill('guardian-blessing', 'opt', 'sem espaço', upto=15) %} × 1.5 Wind's Promise em 15 é um ganho de dano real, mas com quatro slots não há espaço para ele na temporada 1. {% endcall %}
+    {% call skill('obliterate', 'opt', 'desequilíbrio', upto=5) %} AoE nocauteando para pacotes enquanto nivelavam. WallyJTV mantém no cap para chefes com um cheque escalonado: 50 Stagger Gauge Danos quando o grupo precisa. {% endcall %}
+  </ul>
+  <p class="note"> Mantras são interruptores: ligue-os uma vez e mantenha-os fora de qualquer macro - uma segunda imprensa os desliga. {{ s('barrier-spell') }}, {{ s('ensnaring-mark') }} e {{ s('assault-shock') }} não têm lugar em PvE. {{ s('fracturing-blow') }} é a escolha de Grobs para um grupo pré-fabricado no início da temporada, a defesa é uma redução plana, então baixar vale mais enquanto o equipamento é baixo. </p>
+{% endcall %}
+
+{% call section('macro', 'Macro e rotação', 'pve') %}
+  <p> AION 2 tem duas ferramentas separadas: </p>
+  <ul>
+    <li> <strong> linha de barras </strong> - várias habilidades empilhadas no <em> um botão de barras </em>. Pressionando-o lança a habilidade mais alta prioridade que está pronto, e em AION 2 o slot inferior <strong> tem a maior prioridade </strong>. As cartas mostram cada linha de cima a baixo como no jogo. </li>
+    <li> <strong> No jogo macro </strong> - enquanto você segura sua chave, ele pressiona seus botões de barra de habilidades em ordem e cancela caudas de animação. As habilidades no recarga são ignoradas. </li>
+  </ul>
+  {{ hotbar([('1', []), ('2', []), ('3', ['undefeated-mantra']), ('4', ['sprint-mantra']), None, ('Q', ['recuperation']), ('E', ['power-of-the-storm']), ('R', []), ('F', ['rushing-smash', 'tremor-crush']), None, ('Side 2', []), ('Side', ['dark-crush', 'spinning-strike', 'marchutans-wrath', 'impactful-crush']), ('LMB', ['onslaught']), ('—', ['incandescent-blow'])], macro=['Side', '—'], own_keys=true) }}
+
+  <h3> 1. Linhas de barras </h3>
+  <p> Grobs' global setup (frame 19:05): todos os três abridores sentar em uma linha com {{ s('dark-crush') }} na parte inferior, então depois de cada abertura a linha vai direto para trás para Dark Crush; Incandescent Blow tem uma linha própria. </p>
+  <div class="hotlines">
+    {% call hotline('Side', 'Dark Crush line', ['dark-crush', 'spinning-strike', 'marchutans-wrath', 'impactful-crush']) %} Dark Crush sempre que sua janela está aberta, quando ela fecha, Spinning Strike a abre novamente, então Marchutan's Wrath, e Impactful Crush. {% endcall %}
+    {{ hotline('—', 'Filler', ['incandescent-blow']) }}
+  </div>
+  <p> Fora da macro - o resto de seu bar: </p>
+  <div class="hotlines">
+    {% call hotline('F', 'Gap-closer line', ['rushing-smash', 'tremor-crush']) %} Rushing Smash (repõe em uma morte), Tremor Crush quando está em recarga. {% endcall %}
+  </div>
+  <ul class="presslist">
+    <li> <span class="press-how"> Chaves próprias </span> <span class="press-what"> <span class="key"> LMB </span> {{ s('onslaught') }}, <span class="key"> 3 </span> {{ s('undefeated-mantra') }} e <span class="key"> 4 </span> {{ s('sprint-mantra') }} (toggles - ligue-as uma vez), <span class="key"> Q </span> {{ s('recuperation') }}, <span class="key"> E </span> {{ s('power-of-the-storm') }}. </span> </li>
+  </ul>
+  <p class="note">Antes. Dark Crush Alcance 16 O aquecimento quebra esta linha: a macro gasta os abridores enquanto Dark Crush Ainda está esfriando, e o 3- A segunda janela vai para o lixo. Dark Crush está pronto novamente.</p>
+
+  <h3> 2. No jogo macro </h3>
+  <p> Dois passos, <strong> 10 ms </strong> cada, em uma chave que você pode segurar o tempo todo (a maioria dos jogadores usam <span class="key"> RMB </span> ): </p>
+  {{ macroseq([('Dark Crush line', '10 ms'), ('Filler', '10 ms')]) }}
+
+  <h3> 3. O que você realmente pressiona </h3>
+  <ul class="presslist">
+    <li> <span class="press-how"> Abra o </span> <span class="press-what"> {{ s('power-of-the-storm') }} primeiro, {{ s('rushing-smash') }} para o chefe, depois a macro. </span> </li>
+    <li> <span class="press-how"> Segure </span> <span class="press-what"> A tecla da macro junto com {{ s('onslaught') }} em <span class="key"> LMB </span> - Onslaught tece entre cada passo. Quando todos os abridores estão no refrigerador, a macro cai de volta para o Incandescent Blow. </span> </li>
+    <li> <span class="press-how"> à mão </span> <span class="press-what"> {{ s('recuperation') }} quando o partido perde HP ou precisa de uma limpeza, {{ s('wave-blow') }} apenas em uma lacuna, os fechamentos. </span> </li>
+  </ul>
+
+  <h3>Outra opção: a linha de Arthars.</h3>
+  <p> Uma linha com Incandescent Blow nela e {{ s('marchutans-wrath') }} em sua própria chave, o macro pressiona a linha, então Onslaught. </p>
+  <div class="hotlines">
+    {% call hotline('E', 'Dark Crush line', ['dark-crush', 'spinning-strike', 'impactful-crush', 'incandescent-blow']) %} Dark Crush dispara sempre que a janela está aberta. Quando fecha, Spinning Strike abre de novo, então Impactful Crush faz; Incandescent Blow preenche quando ambos estão em recarga. {% endcall %}
+  </div>
+  <p class="note"> Mantenha {{ s('marchutans-wrath') }} <strong> fora da linha </strong>. Por sua própria chave, é a sua reserva: uma maneira de abrir Dark Crush quando ambas as habilidades variadas estão em esfriamento, ou logo depois que você teve que se afastar do chefe. Na linha, ele empurraria Incandescent Blow para fora da rotação. </p>
+  {{ macroseq([('Dark Crush line', '10 ms'), (skill_data('onslaught')[lang].name, '10 ms')]) }}
+  <p class="note"> Com essa linha de spam Onslaught e a chave de linha você também - sua própria imprensa fica entre os passos da macro, {{ s('focused-defense') }} em grandes sucessos. </p>
+  <p class="note"> De onde vem o dano no teste de Arthars: Dark Crush e seu Piercing Strike follow-up sobre 40%, então Bursting Blow, Storm Chain, Incandescent Blow e Spinning Strike em cerca de 10% cada. É por isso que Dark Crush vai para 16 primeiro e Onslaught precisa de cadeia de tempestade. </p>
+{% endcall %}
+
+{% call section('recap', 'Resumo', 'pve') %}
+  <div class="callout accent"><ul>
+    <li> <strong> Habilidades: </strong> Dark Crush, Onslaught, Spinning Strike 16 → 20; Incandescent Blow; Defiance 16; Recuperation e o resto 12. </li>
+    <li> <strong> Stigmas: </strong> Undefeated Mantra 20, Power of the Storm 5 → 20, Marchutan's Wrath 1, Focused Defense 5; Sprint Mantra em masmorras, Obliterate para verificações escalonadas. </li>.
+    <li> <strong> Passivos: </strong> Attack Preparation, Inspiring Spell, Wind's Promise, Impact Hit; Protection Circle ao máximo. </li>
+    <li> <strong> Macro: </strong> Dark Crush linha com todos os três abridores → Incandescent Blow, Onslaught realizada em LMB. </li>
+  </ul></div>
+{% endcall %}
+
+{# ============================ Leveling ============================ #}
+{% call section('fight-lvl', t.lvl_combat, 'lvl') %}
+  <div class="callout"><ul>
+    <li> <strong> Packs: </strong> {{ s('rushing-smash') }} dentro (resets on a kill) → {{ s('obliterate') }} → Linha de esmagamento + {{ s('onslaught') }} . </li>
+    <li> <strong> Elites: </strong> {{ s('impactful-crush') }} (estun) → {{ s('dark-crush') }} → {{ s('wave-blow') }} → {{ s('spinning-strike') }} → Dark Crush novamente. </li>
+    <li><strong>Mana:</strong> Onslaught restaura MP em cada batida, nunca pare de tecer.</li>
+    <li> <strong> Baixo HP </strong> {{ s('recuperation') }}, e Sprint Mantra cura em hits. </li>
+  </ul></div>
+{% endcall %}
+
+{% call section('macro-lvl', 'Macro para subir de nível', 'lvl') %}
+  <p> Enquanto nivela, antes que Dark Crush atinja 16, uma configuração mais simples funciona a partir do nível 1: a linha de esmagamento em RMB, Onslaught em LMB e a macro no jogo ( Power of the Storm → Onslaught → Linha de onda → Onslaught ) no botão do meio do mouse. Construção inicial em 1-45 Onslaught, Incandescent Blow, Spinning Strike e Rushing Smash para 12, tudo mais em 8. </p>.
+  <div class="hotlines">
+    {{ hotline('RMB', 'Crush line', ['impactful-crush', 'dark-crush', 'spinning-strike', 'incandescent-blow']) }}
+  </div>
+  <p> <strong> Grobs' configuração inicial: </strong> uma linha - Dark Crush, Spinning Strike, Incandescent Blow - com <span class="key"> LMB </span> ea macro mantida juntos. Pressione {{ s('impactful-crush') }} você mesmo quando Dark Crush estiver pronto novamente, para que a macro não espere por Spinning Strike. Onslaught pega o HP absorve e Multi-Hit; Impactful Crush só precisa de nível 8 com a picareta móvel. </p>.
+  <p> <a href="https://aion2t.com/ru/simulator?job=9&amp;b=S5RCtE" target="_blank" rel="noopener"> Iniciando a build 1 – 45 (aion 2 t) → </a> · <a href="https://aion2t.com/ru/simulator?job=9&amp;b=yDzsiQ" target="_blank" rel="noopener"> 45 + build de gol → </a> </p>
+{% endcall %}
+
+{# ============================ Sources ============================ #}
+<section class="sources" aria-labelledby="h-sources">
+  <h2 id="h-sources">{{ t.sources }}</h2>
+  <ul>
+    <li> <a href="https://www.youtube.com/watch?v=7qMgsnSsmIU" target="_blank" rel="noopener"> Arthars Gaming - O Guia de Iniciação AION 2 Ultimate! (Lançamento Global) </a> - o modo PvE: níveis de habilidade e especialização, passivos, arcana, estigmas, linha de hotbar e macro </li>
+    <li> <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ0C3iKFteGvIbgqNDnQq7bmwIaU23DvjbPa0HPSVAdOOiCeBkEq69Cn8jVMJhToJcztCRylYeTYfOk/pubhtml" target="_blank" rel="noopener"> TitanTheF - AION 2 folha de progressão </a> - nivelando build e macro, manastones </li>
+    <li> <a href="https://aion2t.com/ru/simulator?job=9&amp;b=yDzsiQ" target="_blank" rel="noopener"> aion 2 t.com </a> - TitanTheF's start e 45 + builds (nível de habilidade, especialização, estigmas, passivos) </li>
+    <li> <a href="https://questlog.gg/aion-2/en/db/skills/chanter" target="_blank" rel="noopener"> questlog.gg </a> - dados de habilidade do cliente global </li>
+    <li> <a href="https://www.youtube.com/watch?v=HMod6Z4GrE0" target="_blank" rel="noopener"> Grobs - AION 2 Macro Guide </a> - como as linhas de barras quentes e a macro no jogo funcionam </li>
+    <li> <a href="https://www.youtube.com/watch?v=aqv5kWXqtIw" target="_blank" rel="noopener"> notXeon — O ÚNICO Guia de Habilidade Chanter que você precisará </a> — o que levar ao 16 primeiro, prioridade passiva, estigmas para cada tipo de conteúdo, a dica macro antes do Dark Crush 16 </li>
+    <li> <a href="https://www.youtube.com/watch?v=2qTjfkuzdj4" target="_blank" rel="noopener"> Grobs, o único guia PVE Chanter que você precisa </a>, escolhe globalmente 16, Sprint Mantra, ordem estigmatizante, sua linha de hotbar e a configuração inicial </li>
+    <li> <a href="https://www.youtube.com/watch?v=zxq03c3NhEw" target="_blank" rel="noopener"> WallyJTV - Aion 2 CHANTER Global Skill Guide </a> - Mudanças globais, especialização para PvE e PvP, estigmas com Obliterate para verificações escalonadas </li>
+  </ul>
+  <p class="sources-all"><a href="{{ root }}{{ lang }}/sources/">{{ t.src_all }} →</a></p>
+</section>

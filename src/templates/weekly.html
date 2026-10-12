@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% from "tracker_parts.html" import reset_box, charbar, tracker_config, notify_toggle with context %}
+{% block og %}weekly{% endblock %}
+{% block title %}{{ t.wk_title }} — {{ t.site_name }}{% endblock %}
+{% block desc %}{{ t.wk_desc }}{% endblock %}
+{% block body_class %}page-tracker page-weekly{% endblock %}
+{% block main %}
+<main id="main">
+  <section class="page-hero tracker-hero has-art" style="--hero-art:url('{{ root }}assets/art/hero-weekly.webp');--hero-pos:50% 45%">
+    <div class="wrap tracker-hero-in">
+      <div>
+        <nav class="crumbs" aria-label="{{ t.back_home }}"><a href="{{ root }}{{ lang }}/">{{ t.back_home }}</a><span aria-hidden="true">/</span><span>{{ t.nav_weekly }}</span></nav>
+        <h1>{{ t.wk_h1 }}</h1>
+        <p class="lead">{{ t.wk_lead }}</p>
+      </div>
+      {{ reset_box() }}
+    </div>
+  </section>
+
+  <div class="wrap tracker-page">
+    {{ charbar() }}
+
+    <div class="wk-layout">
+      <section class="energy-card" aria-labelledby="h-energy">
+        <h2 id="h-energy" class="card-title">{{ t.energy }}</h2>
+        <div class="energy-main">
+          <span class="energy-value">—</span><span class="energy-cap">/ <span class="energy-cap-v">{{ SITE.energy.cap }}</span></span>
+        </div>
+        <div class="progress energy-bar" aria-hidden="true"><span></span></div>
+        <p class="energy-status"></p>
+        <p class="energy-rate">{{ t.energy_rate|replace('{n}', SITE.energy.regen|string)|replace('{h}', (SITE.energy.interval_min // 60)|string) }}</p>
+        <div class="energy-actions">
+          <button type="button" class="btn btn-sm energy-chest">{{ t.energy_chest }} −{{ SITE.energy.chest }}</button>
+          <form class="energy-form">
+            <label><span>{{ t.energy }}</span><input type="number" name="v" min="0" max="9999" inputmode="numeric"></label>
+            <label><span>{{ t.energy_cap }}</span><input type="number" name="cap" min="1" max="9999" inputmode="numeric"></label>
+            <button type="submit" class="btn btn-ghost btn-sm">{{ t.energy_set }}</button>
+          </form>
+        </div>
+        {{ notify_toggle() }}
+        <div class="energy-charged">
+          <label><span>{{ t.energy_charged }}</span><input type="number" name="charged" min="0" max="9999" inputmode="numeric" class="energy-charged-in"></label>
+          <p class="note">{{ t.energy_charged_note }}</p>
+        </div>
+      </section>
+
+      <div class="wk-groups">
+        <p class="wk-summary"><b class="wk-done-n">0</b>/<span class="wk-total-n">0</span> {{ t.wk_week_done }} · <span class="wk-auto">{{ t.wk_auto }}</span></p>
+        {% for g in weekly.groups %}
+        <section class="wk-group" aria-labelledby="h-wk-{{ g.id }}">
+          <h2 id="h-wk-{{ g.id }}" class="card-title">{{ g.title[lang] }}</h2>
+          <ul class="wk-list">
+            {% for it in g['items'] %}
+            <li class="wk-item" data-id="{{ it.id }}" data-max="{{ it.max }}">
+              <div class="wk-text"><span class="wk-name">{{ it.name[lang] }}</span><span class="wk-note">{{ it.note[lang] }}</span></div>
+              {% if it.max > 1 %}
+              <div class="wk-ctrl">
+                <button type="button" class="wk-btn" data-d="-1" aria-label="−1">−</button>
+                <span class="wk-count"><b>0</b>/{{ it.max }}</span>
+                <button type="button" class="wk-btn" data-d="1" aria-label="+1">+</button>
+              </div>
+              {% else %}
+              <div class="wk-ctrl"><button type="button" class="wk-check" aria-pressed="false" aria-label="{{ it.name[lang] }}"></button></div>
+              {% endif %}
+            </li>
+            {% endfor %}
+          </ul>
+        </section>
+        {% endfor %}
+        <p class="note">{{ t.wk_limits }}</p>
+      </div>
+    </div>
+  </div>
+</main>
+{{ tracker_config() }}
+{% endblock %}

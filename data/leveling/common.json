@@ -1,0 +1,293 @@
+{
+  "_note": "Shared leveling route for every class. 'order' ≈ character level × 10; class files interleave their steps by the same scale. Text may contain <strong>.",
+  "steps": [
+    {
+      "id": "route-story",
+      "order": 1,
+      "when": {
+        "en": "Start",
+        "ru": "Старт",
+        "uk": "Старт",
+        "tr": "Başlangıç",
+        "pt-BR": "Comecem."
+      },
+      "text": {
+        "en": "Follow <strong>yellow (main story) quests only</strong>. Side content scales with your level, so nothing is lost by doing it later.",
+        "ru": "Иди <strong>только по жёлтым (сюжетным) квестам</strong>. Побочный контент подстраивается под уровень, поэтому ничего не теряешь, если сделаешь его позже.",
+        "uk": "Іди <strong>лише за жовтими (сюжетними) квестами</strong>. Побічний контент підлаштовується під рівень, тому нічого не втрачаєш, якщо зробиш його пізніше.",
+        "tr": "<strong>Yalnızca sarı (ana hikâye) görevleri</strong> takip et. Yan içerik seviyenle ölçeklenir, sonra yapmakla bir şey kaybetmezsin.",
+        "pt-BR": "Siga <strong> amarelo (história principal) busca apenas </strong>. O conteúdo lateral aumenta com seu nível, então nada se perde fazendo isso depois."
+      }
+    },
+    {
+      "id": "route-feathers",
+      "order": 20,
+      "when": {
+        "en": "After prologue",
+        "ru": "После пролога",
+        "uk": "Після прологу",
+        "tr": "Prologdan sonra",
+        "pt-BR": "Depois do prólogo"
+      },
+      "text": {
+        "en": "Collect <strong>40 feathers</strong> (120 shards) for an early amulet upgrade.",
+        "ru": "Собери <strong>40 перьев</strong> (120 осколков) для раннего усиления амулета.",
+        "uk": "Збери <strong>40 пір'їн</strong> (120 уламків) для раннього посилення амулета.",
+        "tr": "Erken muska yükseltmesi için <strong>40 tüy</strong> (120 parça) topla.",
+        "pt-BR": "Recolha <strong>40 penas</strong> (120 Para uma atualização do amuleto."
+      }
+    },
+    {
+      "id": "route-daevanion",
+      "order": 120,
+      "when": {
+        "en": "Lv 12",
+        "ru": "Ур. 12",
+        "uk": "Рів. 12",
+        "tr": "Sv 12",
+        "pt-BR": "LV 12"
+      },
+      "text": {
+        "en": "<strong>Daevanion</strong> unlocks (Nezekan board). Blue nodes = +1 skill level — see your class step below.",
+        "ru": "Открывается <strong>Daevanion</strong> (доска Nezekan). Синие узлы дают +1 к уровню скилла — какие брать, смотри в шаге класса ниже.",
+        "uk": "Відкривається <strong>Daevanion</strong> (дошка Nezekan). Сині вузли дають +1 до рівня скіла — які брати, дивись у кроці класу нижче.",
+        "tr": "<strong>Daevanion</strong> açılır (Nezekan panosu). Mavi düğümler = +1 yetenek seviyesi — aşağıdaki sınıf adımına bak.",
+        "pt-BR": "<strong> Daevanion </strong> destrava (quadro Nezekan). Nodos azuis = + nível de habilidade 1 - veja sua classe passo abaixo."
+      }
+    },
+    {
+      "id": "route-hideouts",
+      "order": 150,
+      "when": {
+        "en": "Lv 15 / 20 / 25",
+        "ru": "Ур. 15 / 20 / 25",
+        "uk": "Рів. 15 / 20 / 25",
+        "tr": "Sv 15 / 20 / 25",
+        "pt-BR": "LV 15 / 20 / 25"
+      },
+      "text": {
+        "en": "Clear hideouts that are on your route — first clears give Enhance Stones and Daevanion Crystals.",
+        "ru": "Проходи убежища, которые попадаются по пути: первое прохождение даёт камни усиления и кристаллы Daevanion.",
+        "uk": "Проходь сховища, які трапляються дорогою: перше проходження дає камені посилення й кристали Daevanion.",
+        "tr": "Rotandaki saklanma yerlerini temizle — ilk geçişler Enhance Stone ve Daevanion Crystal verir.",
+        "pt-BR": "Escondidos limpos que estão em sua rota. Primeiros desobstruídos, dão Enhance Stones e Daevanion Crystals."
+      }
+    },
+    {
+      "id": "route-amulet",
+      "order": 170,
+      "when": {
+        "en": "~Lv 17",
+        "ru": "~Ур. 17",
+        "uk": "~Рів. 17",
+        "tr": "~Sv 17",
+        "pt-BR": "LV 17"
+      },
+      "text": {
+        "en": "<strong>Amulet +10</strong>, then Morph it into the blue version.",
+        "ru": "<strong>Амулет +10</strong>, затем через морф сделай его синим.",
+        "uk": "<strong>Амулет +10</strong>, потім через Morph зроби його синім.",
+        "tr": "<strong>Muska +10</strong>, sonra Morph ile mavi sürümüne çevir.",
+        "pt-BR": "<strong> Amuleto + 10 </strong> e depois Morph na versão azul."
+      }
+    },
+    {
+      "id": "route-weapon",
+      "order": 175,
+      "when": {
+        "en": "Any time",
+        "ru": "По ходу",
+        "uk": "Принагідно",
+        "tr": "Her zaman",
+        "pt-BR": "A qualquer hora."
+      },
+      "text": {
+        "en": "Weapon to <strong>~+10</strong> — the biggest damage jump while leveling. Don't push further before the cap.",
+        "ru": "Оружие до <strong>~+10</strong> — самый большой прирост урона на прокачке. Выше до капа не точи.",
+        "uk": "Зброя до <strong>~+10</strong> — найбільший приріст шкоди на прокачці. Вище до капу не точи.",
+        "tr": "Silah <strong>~+10</strong>'a — seviye atlarken en büyük hasar sıçraması. Sınırdan önce daha fazla zorlama.",
+        "pt-BR": "Arma para <strong> ~+ 10 </strong> - o maior salto de danos ao nivelar. Não empurre mais antes do boné."
+      }
+    },
+    {
+      "id": "route-zikel",
+      "order": 200,
+      "when": {
+        "en": "Lv 20",
+        "ru": "Ур. 20",
+        "uk": "Рів. 20",
+        "tr": "Sv 20",
+        "pt-BR": "LV 20"
+      },
+      "text": {
+        "en": "Zikel board opens — same node priority as before.",
+        "ru": "Открывается доска Zikel — приоритет узлов тот же.",
+        "uk": "Відкривається дошка Zikel — пріоритет вузлів той самий.",
+        "tr": "Zikel panosu açılır — düğüm önceliği öncekiyle aynı.",
+        "pt-BR": "Zikel placa abre - mesma prioridade de nó como antes."
+      }
+    },
+    {
+      "id": "route-stigma",
+      "order": 220,
+      "when": {
+        "en": "Lv ~22",
+        "ru": "~Ур. 22",
+        "uk": "~Рів. 22",
+        "tr": "Sv ~22",
+        "pt-BR": "LV ~ 22"
+      },
+      "text": {
+        "en": "Ascension → <strong>stigmas unlock</strong> (4 slots in global Season 1). The slots open one at a time at levels <strong>22, 27, 32 and 37</strong> — you can learn more stigmas, but only that many fit on the bar. Which ones — see your class step.",
+        "ru": "Вознесение → <strong>открываются стигмы</strong> (4 слота в 1 сезоне глобала). Слоты открываются по одному на уровнях <strong>22, 27, 32 и 37</strong> — выучить стигм можно больше, но на панель влезет только столько. Какие брать — в шаге класса.",
+        "uk": "Вознесіння → <strong>відкриваються стигми</strong> (4 слоти в 1 сезоні глобалу). Слоти відкриваються по одному на рівнях <strong>22, 27, 32 і 37</strong> — вивчити стигм можна більше, але на панель влізе лише стільки. Які брати — в кроці класу.",
+        "tr": "Ascension → <strong>stigmalar açılır</strong> (global Season 1'de 4 slot). Slotlar <strong>22, 27, 32 ve 37</strong>. seviyelerde birer birer açılır — daha fazla stigma öğrenebilirsin ama çubuğa yalnızca o kadarı sığar. Hangileri — sınıf adımına bak.",
+        "pt-BR": "Ascensão → <strong> estigmas desbloquear </strong> ( slots 4 na temporada global 1 ). Os slots abrem um de cada vez nos níveis <strong> 22, 27, 32 e 37 </strong> - você pode aprender mais estigmas, mas só que muitos cabem na barra. Quais, veja o seu passo de classe."
+      }
+    },
+    {
+      "id": "route-acts23",
+      "order": 240,
+      "when": {
+        "en": "Acts 2–3",
+        "ru": "Акты 2–3",
+        "uk": "Акти 2–3",
+        "tr": "2–3. perdeler",
+        "pt-BR": "ATOS 2 - 3"
+      },
+      "text": {
+        "en": "Story only — don't get distracted by the map.",
+        "ru": "Только сюжет — не отвлекайся на карту.",
+        "uk": "Лише сюжет — не відволікайся на мапу.",
+        "tr": "Yalnızca hikâye — haritaya dalma.",
+        "pt-BR": "Só a história, não se distraia com o mapa."
+      }
+    },
+    {
+      "id": "route-vaizel",
+      "order": 300,
+      "when": {
+        "en": "Lv 30",
+        "ru": "Ур. 30",
+        "uk": "Рів. 30",
+        "tr": "Sv 30",
+        "pt-BR": "LV 30"
+      },
+      "text": {
+        "en": "Vaizel board opens (critical damage).",
+        "ru": "Открывается доска Vaizel (критический урон).",
+        "uk": "Відкривається дошка Vaizel (критична шкода).",
+        "tr": "Vaizel panosu açılır (kritik hasar).",
+        "pt-BR": "Vaizel placa abre (dano crítico)."
+      }
+    },
+    {
+      "id": "route-act4",
+      "order": 330,
+      "when": {
+        "en": "Act 4",
+        "ru": "Акт 4",
+        "uk": "Акт 4",
+        "tr": "4. perde",
+        "pt-BR": "Ato 4"
+      },
+      "text": {
+        "en": "Side quests and solo dungeons are worth doing again here.",
+        "ru": "Здесь снова стоит делать побочные задания и соло-подземелья.",
+        "uk": "Тут знову варто робити побічні завдання й соло-підземелля.",
+        "tr": "Yan görevler ve solo zindanlar burada yeniden yapmaya değer.",
+        "pt-BR": "Buscas paralelas e masmorras solo valem a pena fazer de novo aqui."
+      }
+    },
+    {
+      "id": "route-triniel",
+      "order": 400,
+      "when": {
+        "en": "Lv 40",
+        "ru": "Ур. 40",
+        "uk": "Рів. 40",
+        "tr": "Sv 40",
+        "pt-BR": "LV 40"
+      },
+      "text": {
+        "en": "Triniel board opens (multi-hit; mostly PvP — can wait). Krao Cave expects about 1000 Gear Score.",
+        "ru": "Открывается доска Triniel (мульти-удар; в основном для PvP — может подождать). Пещера Крао требует около 1000 GS.",
+        "uk": "Відкривається дошка Triniel (мультиудар; здебільшого для PvP — може зачекати). Krao Cave вимагає близько 1000 GS.",
+        "tr": "Triniel panosu açılır (çoklu vuruş; çoğunlukla PvP — bekleyebilir). Krao Cave yaklaşık 1000 Gear Score bekler.",
+        "pt-BR": "Triniel placa abre (multi-hit; principalmente PvP - pode esperar). Krao Cave espera sobre 1000 Gear Score."
+      }
+    },
+    {
+      "id": "route-ariel",
+      "order": 450,
+      "when": {
+        "en": "Lv 45",
+        "ru": "Ур. 45",
+        "uk": "Рів. 45",
+        "tr": "Sv 45",
+        "pt-BR": "LV 45"
+      },
+      "text": {
+        "en": "<strong>Azphel board opens</strong> — PvP Damage Boost and Tolerance only, no skill nodes. For PvE keep filling the first four boards; global has no Ariel board.",
+        "ru": "<strong>Открывается доска Azphel</strong> — только урон и стойкость в PvP, узлов скиллов нет. Для PvE продолжай закрывать первые четыре доски; доски Ariel в глобале нет.",
+        "uk": "<strong>Відкривається дошка Azphel</strong> — лише шкода й стійкість у PvP, вузлів скілів немає. Для PvE продовжуй закривати перші чотири дошки; дошки Ariel на глобалі немає.",
+        "tr": "<strong>Azphel panosu açılır</strong> — yalnızca PvP Damage Boost ve Tolerance, yetenek düğümü yok. PvE için ilk dört panoyu doldurmaya devam et; global'de Ariel panosu yok.",
+        "pt-BR": "<strong> Azphel placa abre </strong> - PvP Danos Só Boost e Tolerância, sem nodos de habilidade. Para o PvE continuar enchendo as primeiras quatro tábuas, global não tem placa Ariel."
+      }
+    },
+    {
+      "id": "route-cap-shugo",
+      "order": 460,
+      "when": {
+        "en": "Cap",
+        "ru": "Кап",
+        "uk": "Кап",
+        "tr": "Sınır",
+        "pt-BR": "Cap."
+      },
+      "text": {
+        "en": "Shugo activities for the full level-cap reward set (gold gear, materials).",
+        "ru": "Активности Шуго — полный набор наград за кап (золотое снаряжение, материалы).",
+        "uk": "Активності Shugo — повний набір нагород за кап (золоте спорядження, матеріали).",
+        "tr": "Seviye sınırındaki tam ödül seti (altın ekipman, malzemeler) için Shugo etkinlikleri.",
+        "pt-BR": "Atividades Shugo para o conjunto de recompensas de nível completo (arte ouro, materiais)."
+      }
+    },
+    {
+      "id": "route-cap-map",
+      "order": 461,
+      "when": {
+        "en": "Cap",
+        "ru": "Кап",
+        "uk": "Кап",
+        "tr": "Sınır",
+        "pt-BR": "Cap."
+      },
+      "text": {
+        "en": "Sweep the map: question marks, bonfires, green quests, hidden cubes, feathers. Turn in feathers — altar Lv 30 gives a title.",
+        "ru": "Зачисти карту: знаки вопроса, костры, зелёные задания, скрытые кубы, перья. Сдай перья — алтарь 30 уровня даёт титул.",
+        "uk": "Зачисти мапу: знаки питання, вогнища, зелені завдання, приховані куби, пір'я. Здай пір'я — вівтар 30 рівня дає титул.",
+        "tr": "Haritayı tara: soru işaretleri, kamp ateşleri, yeşil görevler, gizli küpler, tüyler. Tüyleri teslim et — sunak Sv 30 unvan verir.",
+        "pt-BR": "Vasculhe o mapa: interrogações, fogueiras, missões verdes, cubos escondidos, penas. Vire-se em penas, o altar Lv 30 dá um título."
+      }
+    },
+    {
+      "id": "route-cap-daily",
+      "order": 462,
+      "when": {
+        "en": "Daily",
+        "ru": "Ежедневно",
+        "uk": "Щодня",
+        "tr": "Günlük",
+        "pt-BR": "Diariamente"
+      },
+      "text": {
+        "en": "Nightmare entry, Transformation floors as your GS allows, dungeons T2 before T3 (watch your energy).",
+        "ru": "Вход в Nightmare, этажи Трансформации по мере роста GS, подземелья: сначала T2, потом T3 (следи за энергией).",
+        "uk": "Вхід у Nightmare, поверхи Transformation в міру зростання GS, підземелля: спершу T2, потім T3 (стеж за енергією).",
+        "tr": "Nightmare girişi, GS'in izin verdiği kadar Transformation katları, T3'ten önce T2 zindanlar (enerjini izle).",
+        "pt-BR": "Entrada de pesadelos, pisos de transformação como seu GS permite, masmorras T 2 antes do T 3 (veja sua energia)."
+      }
+    }
+  ]
+}

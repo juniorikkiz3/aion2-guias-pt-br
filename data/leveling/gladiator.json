@@ -1,0 +1,243 @@
+{
+  "_note": "Gladiator leveling steps. [[slug]] = localized skill name, [[slug#N]] = its N-th specialization (data/skills/gladiator.json). Skill points cap skills at 10 while leveling; specializations unlock at skill level 8.",
+  "steps": [
+    {
+      "id": "gladiator-rending",
+      "order": 2,
+      "skills": [
+        "rending-blow"
+      ],
+      "when": {
+        "en": "Lv 1",
+        "ru": "Ур. 1",
+        "uk": "Рів. 1",
+        "tr": "Sv 1",
+        "pt-BR": "LV 1"
+      },
+      "text": {
+        "en": "First points: [[rending-blow]] → 8, take [[rending-blow#2]].",
+        "ru": "Первые очки: [[rending-blow]] → 8, бери [[rending-blow#2]].",
+        "uk": "Перші очки: [[rending-blow]] → 8, бери [[rending-blow#2]].",
+        "tr": "İlk puanlar: [[rending-blow]] → 8, [[rending-blow#2]] al.",
+        "pt-BR": "Primeiros pontos: [[rending-blow]] → 8, tomar [[rending-blow#2]]."
+      }
+    },
+    {
+      "id": "gladiator-leaping",
+      "order": 3,
+      "skills": [
+        "leaping-slam"
+      ],
+      "when": {
+        "en": "Lv 1",
+        "ru": "Ур. 1",
+        "uk": "Рів. 1",
+        "tr": "Sv 1",
+        "pt-BR": "LV 1"
+      },
+      "text": {
+        "en": "[[leaping-slam]] → 8: [[leaping-slam#2]] — leap from pack to pack.",
+        "ru": "[[leaping-slam]] → 8: [[leaping-slam#2]] — прыгай от пачки к пачке.",
+        "uk": "[[leaping-slam]] → 8: [[leaping-slam#2]] — стрибай від пачки до пачки.",
+        "tr": "[[leaping-slam]] → 8: [[leaping-slam#2]] — gruptan gruba sıçra.",
+        "pt-BR": "[[leaping-slam]] → 8 : [[leaping-slam#2]] - pule da matilha para a matilha."
+      }
+    },
+    {
+      "id": "gladiator-overhead",
+      "order": 4,
+      "skills": [
+        "overhead-slam",
+        "mocking-blade"
+      ],
+      "when": {
+        "en": "Lv 1",
+        "ru": "Ур. 1",
+        "uk": "Рів. 1",
+        "tr": "Sv 1",
+        "pt-BR": "LV 1"
+      },
+      "text": {
+        "en": "[[overhead-slam]] → 8: [[overhead-slam#2]]. It only hits knocked-down targets — open elites with [[mocking-blade]].",
+        "ru": "[[overhead-slam]] → 8: [[overhead-slam#2]]. Бьёт только сбитых с ног — открывай элиток [[mocking-blade]].",
+        "uk": "[[overhead-slam]] → 8: [[overhead-slam#2]]. Б'є лише збитих із ніг — відкривай елітки [[mocking-blade]].",
+        "tr": "[[overhead-slam]] → 8: [[overhead-slam#2]]. Yalnızca yere düşürülmüş hedeflere vurur — elitlere [[mocking-blade]] ile başla.",
+        "pt-BR": "[[overhead-slam]] → 8: [[overhead-slam#2]]. Só atinge alvos derrubados, elites abertas com o [[mocking-blade]]."
+      }
+    },
+    {
+      "id": "gladiator-crushing",
+      "order": 80,
+      "skills": [
+        "crushing-wave"
+      ],
+      "when": {
+        "en": "Lv 8",
+        "ru": "Ур. 8",
+        "uk": "Рів. 8",
+        "tr": "Sv 8",
+        "pt-BR": "LV 8"
+      },
+      "text": {
+        "en": "[[crushing-wave]] → 8: [[crushing-wave#0]]. Your AoE and heal on trash packs.",
+        "ru": "[[crushing-wave]] → 8: [[crushing-wave#0]]. Твоё АоЕ и лечение на пачках мобов.",
+        "uk": "[[crushing-wave]] → 8: [[crushing-wave#0]]. Твоє АоЕ й лікування на пачках мобів.",
+        "tr": "[[crushing-wave]] → 8: [[crushing-wave#0]]. Çöp mob gruplarında alan hasarın ve iyileşmen.",
+        "pt-BR": "[[crushing-wave]] → 8: [[crushing-wave#0]]. Sua AoE e curar em pacotes de lixo."
+      }
+    },
+    {
+      "id": "gladiator-rush",
+      "order": 100,
+      "skills": [
+        "rush-strike"
+      ],
+      "when": {
+        "en": "Lv 10",
+        "ru": "Ур. 10",
+        "uk": "Рів. 10",
+        "tr": "Sv 10",
+        "pt-BR": "LV 10"
+      },
+      "text": {
+        "en": "[[rush-strike]]: dodge → Rush Strike always knocks NPCs down → [[overhead-slam]].",
+        "ru": "[[rush-strike]]: уклонение → рывок всегда сбивает NPC с ног → [[overhead-slam]].",
+        "uk": "[[rush-strike]]: ухилення → ривок завжди збиває NPC з ніг → [[overhead-slam]].",
+        "tr": "[[rush-strike]]: kaçın → Rush Strike NPC'leri her zaman yere düşürür → [[overhead-slam]].",
+        "pt-BR": "[[rush-strike]]: Dodge → Rush Strike sempre derruba NPCs → [[overhead-slam]] ."
+      }
+    },
+    {
+      "id": "gladiator-daevanion",
+      "order": 121,
+      "skills": [
+        "overhead-slam",
+        "rending-blow"
+      ],
+      "when": {
+        "en": "Lv 12",
+        "ru": "Ур. 12",
+        "uk": "Рів. 12",
+        "tr": "Sv 12",
+        "pt-BR": "LV 12"
+      },
+      "text": {
+        "en": "Daevanion blue nodes: [[overhead-slam]] and [[rending-blow]] first, then [[ruinous-blow]].",
+        "ru": "Синие узлы Daevanion: сначала [[overhead-slam]] и [[rending-blow]], затем [[ruinous-blow]].",
+        "uk": "Сині вузли Daevanion: спершу [[overhead-slam]] і [[rending-blow]], потім [[ruinous-blow]].",
+        "tr": "Daevanion mavi düğümleri: önce [[overhead-slam]] ve [[rending-blow]], sonra [[ruinous-blow]].",
+        "pt-BR": "Daevanion nós azuis: [[overhead-slam]] e [[rending-blow]] primeiro, depois [[ruinous-blow]]."
+      }
+    },
+    {
+      "id": "gladiator-ruinous",
+      "order": 140,
+      "skills": [
+        "ruinous-blow"
+      ],
+      "when": {
+        "en": "Lv 14",
+        "ru": "Ур. 14",
+        "uk": "Рів. 14",
+        "tr": "Sv 14",
+        "pt-BR": "LV 14"
+      },
+      "text": {
+        "en": "[[ruinous-blow]] → 10: [[ruinous-blow#2]]. Use it on cooldown — it grants Prepare for Battle (+20% PvE damage for 20s).",
+        "ru": "[[ruinous-blow]] → 10: [[ruinous-blow#2]]. Жми по откату — даёт «Боевую готовность» (+20% урона в PvE на 20 сек.).",
+        "uk": "[[ruinous-blow]] → 10: [[ruinous-blow#2]]. Тисни по відкату — дає Prepare for Battle (+20% шкоди в PvE на 20 с).",
+        "tr": "[[ruinous-blow]] → 10: [[ruinous-blow#2]]. Bekleme süresi dolar dolmaz kullan — Prepare for Battle verir (20 sn boyunca +%20 PvE hasarı).",
+        "pt-BR": "[[ruinous-blow]] → 10: [[ruinous-blow#2]]. Use-o em recarga, ele concede preparar para batalha (+ 20% PvE dano para 20s )."
+      }
+    },
+    {
+      "id": "gladiator-defiance",
+      "order": 160,
+      "skills": [
+        "defiance"
+      ],
+      "when": {
+        "en": "Lv 16",
+        "ru": "Ур. 16",
+        "uk": "Рів. 16",
+        "tr": "Sv 16",
+        "pt-BR": "LV 16"
+      },
+      "text": {
+        "en": "[[defiance]]: one point is enough while leveling — it's your CC break.",
+        "ru": "[[defiance]]: на прокачке хватит одного очка — это снятие контроля.",
+        "uk": "[[defiance]]: на прокачці вистачить одного очка — це зняття контролю.",
+        "tr": "[[defiance]]: seviye atlarken bir puan yeterli — kontrol kırıcın bu.",
+        "pt-BR": "[[defiance]]Um ponto é o suficiente enquanto nivela. É a sua pausa para CC."
+      }
+    },
+    {
+      "id": "gladiator-stigmas",
+      "order": 221,
+      "skills": [
+        "focused-block",
+        "lunge-stance",
+        "rage-burst"
+      ],
+      "when": {
+        "en": "Lv ~22",
+        "ru": "~Ур. 22",
+        "uk": "~Рів. 22",
+        "tr": "Sv ~22",
+        "pt-BR": "LV ~ 22"
+      },
+      "text": {
+        "en": "Stigmas: [[focused-block]] first, then [[lunge-stance]] (aim for 20) and [[rage-burst]] (5).",
+        "ru": "Стигмы: сначала [[focused-block]], затем [[lunge-stance]] (цель — 20) и [[rage-burst]] (5).",
+        "uk": "Стигми: спершу [[focused-block]], потім [[lunge-stance]] (мета — 20) і [[rage-burst]] (5).",
+        "tr": "Stigmalar: önce [[focused-block]], sonra [[lunge-stance]] (hedef 20) ve [[rage-burst]] (5).",
+        "pt-BR": "Stigmas: [[focused-block]] primeiro, depois [[lunge-stance]] (Aim para 20) e [[rage-burst]] (5)."
+      }
+    },
+    {
+      "id": "gladiator-macro",
+      "order": 225,
+      "skills": [
+        "rage-burst",
+        "keen-strike"
+      ],
+      "when": {
+        "en": "After Rage Burst",
+        "ru": "После стигмы",
+        "uk": "Після стигми",
+        "tr": "Rage Burst'ten sonra",
+        "pt-BR": "Depois do Rage Burst"
+      },
+      "text": {
+        "en": "[[rage-burst]] lets [[overhead-slam]] hit without a knockdown → build the PvE macro and stop pressing [[keen-strike]].",
+        "ru": "[[rage-burst]] позволяет бить [[overhead-slam]] без сбивания → собирай PvE-макрос, [[keen-strike]] больше не нужен.",
+        "uk": "[[rage-burst]] дає бити [[overhead-slam]] без збивання → збирай PvE-макрос, [[keen-strike]] більше не потрібен.",
+        "tr": "[[rage-burst]], [[overhead-slam]]'in yere düşürme olmadan vurmasını sağlar → PvE makrosunu kur ve [[keen-strike]]'a basmayı bırak.",
+        "pt-BR": "[[rage-burst]] deixa [[overhead-slam]] bater sem um knockdown → construir a macro PvE e parar de pressionar [[keen-strike]]."
+      }
+    },
+    {
+      "id": "gladiator-cap",
+      "order": 455,
+      "skills": [
+        "overhead-slam",
+        "rending-blow",
+        "ruinous-blow"
+      ],
+      "when": {
+        "en": "Cap",
+        "ru": "Кап",
+        "uk": "Кап",
+        "tr": "Sınır",
+        "pt-BR": "Cap."
+      },
+      "text": {
+        "en": "Core three to 10 before anything else: [[overhead-slam]], [[rending-blow]], [[ruinous-blow]]. Then switch to the PvE tab.",
+        "ru": "Основная тройка до 10 раньше всего: [[overhead-slam]], [[rending-blow]], [[ruinous-blow]]. Дальше — вкладка PvE.",
+        "uk": "Основна трійка до 10 раніше за все: [[overhead-slam]], [[rending-blow]], [[ruinous-blow]]. Далі — вкладка PvE.",
+        "tr": "Her şeyden önce temel üçlü 10'a: [[overhead-slam]], [[rending-blow]], [[ruinous-blow]]. Sonra PvE sekmesine geç.",
+        "pt-BR": "Núcleo 3 para 10 antes de qualquer outra coisa: [[overhead-slam]], [[rending-blow]], [[ruinous-blow]]. Então mude para a aba PvE."
+      }
+    }
+  ]
+}

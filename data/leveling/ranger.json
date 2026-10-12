@@ -1,0 +1,266 @@
+{
+  "_note": "Ranger leveling steps. [[slug]] = localized skill name, [[slug#N]] = its N-th specialization (data/skills/ranger.json). Unlock levels per game8.",
+  "steps": [
+    {
+      "id": "ranger-drill",
+      "order": 2,
+      "skills": [
+        "drill-dart"
+      ],
+      "when": {
+        "en": "Lv 1",
+        "ru": "Ур. 1",
+        "uk": "Рів. 1",
+        "tr": "Sv 1",
+        "pt-BR": "LV 1"
+      },
+      "text": {
+        "en": "First points: [[drill-dart]] → 8, take [[drill-dart#0]] — your sustain while solo.",
+        "ru": "Первые очки: [[drill-dart]] → 8, бери [[drill-dart#0]] — лечение в соло.",
+        "uk": "Перші очки: [[drill-dart]] → 8, бери [[drill-dart#0]] — лікування в соло.",
+        "tr": "İlk puanlar: [[drill-dart]] → 8, [[drill-dart#0]] al — soloda dayanıklılığın.",
+        "pt-BR": "Primeiros pontos: [[drill-dart]] → 8, pegue [[drill-dart#0]] - seu sustento enquanto está sozinho."
+      }
+    },
+    {
+      "id": "ranger-snare",
+      "order": 3,
+      "skills": [
+        "snare-shot"
+      ],
+      "when": {
+        "en": "Lv 1",
+        "ru": "Ур. 1",
+        "uk": "Рів. 1",
+        "tr": "Sv 1",
+        "pt-BR": "LV 1"
+      },
+      "text": {
+        "en": "[[snare-shot]] → 8: [[snare-shot#2]]. Slow everything, then kite.",
+        "ru": "[[snare-shot]] → 8: [[snare-shot#2]]. Замедляй всё и кайти.",
+        "uk": "[[snare-shot]] → 8: [[snare-shot#2]]. Сповільнюй усе й кайть.",
+        "tr": "[[snare-shot]] → 8: [[snare-shot#2]]. Her şeyi yavaşlat, sonra kite et.",
+        "pt-BR": "[[snare-shot]] → 8: [[snare-shot#2]]. Devagar com tudo, então pipa."
+      }
+    },
+    {
+      "id": "ranger-marking",
+      "order": 4,
+      "skills": [
+        "marking-shot"
+      ],
+      "when": {
+        "en": "Lv 1",
+        "ru": "Ур. 1",
+        "uk": "Рів. 1",
+        "tr": "Sv 1",
+        "pt-BR": "LV 1"
+      },
+      "text": {
+        "en": "[[marking-shot]] moves you in the direction you press and grants Precision (+300 Critical Hit). Open every fight with it.",
+        "ru": "[[marking-shot]] перемещает тебя в выбранном направлении и даёт Точность (+300 крит. удара). Начинай им каждый бой.",
+        "uk": "[[marking-shot]] переміщує тебе в обраному напрямку й дає Precision (+300 крит. удару). Починай ним кожен бій.",
+        "tr": "[[marking-shot]] seni bastığın yöne taşır ve Precision verir (+300 Critical Hit). Her dövüşe onunla başla.",
+        "pt-BR": "[[marking-shot]] te move na direção que você pressiona e concede precisão (+ 300 Hit crítico). Abra todas as lutas com ele."
+      }
+    },
+    {
+      "id": "ranger-gale",
+      "order": 70,
+      "skills": [
+        "gale-arrow"
+      ],
+      "when": {
+        "en": "Lv 7",
+        "ru": "Ур. 7",
+        "uk": "Рів. 7",
+        "tr": "Sv 7",
+        "pt-BR": "LV 7"
+      },
+      "text": {
+        "en": "[[gale-arrow]] → 8: [[gale-arrow#2]]. Keep the Gale buff up (+7% Combat Speed and damage).",
+        "ru": "[[gale-arrow]] → 8: [[gale-arrow#2]]. Держи бафф «Шквал» (+7% скорости боя и урона).",
+        "uk": "[[gale-arrow]] → 8: [[gale-arrow#2]]. Тримай баф Gale (+7% швидкості бою й шкоди).",
+        "tr": "[[gale-arrow]] → 8: [[gale-arrow#2]]. Gale buffını açık tut (+%7 Combat Speed ve hasar).",
+        "pt-BR": "[[gale-arrow]] → 8: [[gale-arrow#2]]. Mantenha o lustro de Gale acima (+ 7% Velocidade de combate e danos)."
+      }
+    },
+    {
+      "id": "ranger-trap",
+      "order": 80,
+      "skills": [
+        "explosion-trap"
+      ],
+      "when": {
+        "en": "Lv 8",
+        "ru": "Ур. 8",
+        "uk": "Рів. 8",
+        "tr": "Sv 8",
+        "pt-BR": "LV 8"
+      },
+      "text": {
+        "en": "[[explosion-trap]]: one point. With [[explosion-trap#0]] it groups a pack for AoE.",
+        "ru": "[[explosion-trap]]: одно очко. С [[explosion-trap#0]] собирает пачку под АоЕ.",
+        "uk": "[[explosion-trap]]: одне очко. З [[explosion-trap#0]] збирає пачку під АоЕ.",
+        "tr": "[[explosion-trap]]: bir puan. [[explosion-trap#0]] ile alan hasarı için grubu toplar.",
+        "pt-BR": "[[explosion-trap]]Um ponto. Com [[explosion-trap#0]] Agrupa um pacote para AoE."
+      }
+    },
+    {
+      "id": "ranger-burst",
+      "order": 100,
+      "skills": [
+        "burst-arrow",
+        "snare-shot"
+      ],
+      "when": {
+        "en": "Lv 10",
+        "ru": "Ур. 10",
+        "uk": "Рів. 10",
+        "tr": "Sv 10",
+        "pt-BR": "LV 10"
+      },
+      "text": {
+        "en": "[[burst-arrow]] only hits Slowed/Rooted targets — always after [[snare-shot]]. Take [[burst-arrow#0]].",
+        "ru": "[[burst-arrow]] бьёт только цели под Замедлением или Пленом — всегда после [[snare-shot]]. Бери [[burst-arrow#0]].",
+        "uk": "[[burst-arrow]] б'є лише цілі під Slow чи Root — завжди після [[snare-shot]]. Бери [[burst-arrow#0]].",
+        "tr": "[[burst-arrow]] yalnızca yavaşlatılmış/köklenmiş hedeflere vurur — her zaman [[snare-shot]]'tan sonra. [[burst-arrow#0]] al.",
+        "pt-BR": "[[burst-arrow]] só atinge alvos lentos/roados - sempre depois do [[snare-shot]]. Tome [[burst-arrow#0]]."
+      }
+    },
+    {
+      "id": "ranger-daevanion",
+      "order": 121,
+      "skills": [
+        "drill-dart",
+        "snare-shot",
+        "gale-arrow"
+      ],
+      "when": {
+        "en": "Lv 12",
+        "ru": "Ур. 12",
+        "uk": "Рів. 12",
+        "tr": "Sv 12",
+        "pt-BR": "LV 12"
+      },
+      "text": {
+        "en": "Daevanion blue nodes: [[drill-dart]], [[snare-shot]], [[gale-arrow]], later [[deadshot]].",
+        "ru": "Синие узлы Daevanion: [[drill-dart]], [[snare-shot]], [[gale-arrow]], позже [[deadshot]].",
+        "uk": "Сині вузли Daevanion: [[drill-dart]], [[snare-shot]], [[gale-arrow]], пізніше [[deadshot]].",
+        "tr": "Daevanion mavi düğümleri: [[drill-dart]], [[snare-shot]], [[gale-arrow]], sonra [[deadshot]].",
+        "pt-BR": "Daevanion nós azuis: [[drill-dart]], [[snare-shot]], [[gale-arrow]], mais tarde [[deadshot]]."
+      }
+    },
+    {
+      "id": "ranger-deadshot",
+      "order": 140,
+      "skills": [
+        "deadshot"
+      ],
+      "when": {
+        "en": "Lv 14",
+        "ru": "Ур. 14",
+        "uk": "Рів. 14",
+        "tr": "Sv 14",
+        "pt-BR": "LV 14"
+      },
+      "text": {
+        "en": "[[deadshot]] — your main nuke. Points to 10, take [[deadshot#1]]. Fire it under Precision (+35% damage).",
+        "ru": "[[deadshot]] — главный урон. Очки до 10, бери [[deadshot#1]]. Стреляй под Точностью (+35% урона).",
+        "uk": "[[deadshot]] — головна шкода. Очки до 10, бери [[deadshot#1]]. Стріляй під Precision (+35% шкоди).",
+        "tr": "[[deadshot]] — ana bombanın. Puanlar 10'a, [[deadshot#1]] al. Precision altında ateşle (+%35 hasar).",
+        "pt-BR": "[[deadshot]] - sua bomba nuclear principal. Pontos para 10, tome [[deadshot#1]]. Dispare sob Precisão (+ 35% dano)."
+      }
+    },
+    {
+      "id": "ranger-defiance",
+      "order": 160,
+      "skills": [
+        "defiance"
+      ],
+      "when": {
+        "en": "Lv 16",
+        "ru": "Ур. 16",
+        "uk": "Рів. 16",
+        "tr": "Sv 16",
+        "pt-BR": "LV 16"
+      },
+      "text": {
+        "en": "[[defiance]]: one point is enough while leveling — it's your CC break.",
+        "ru": "[[defiance]]: на прокачке хватит одного очка — это снятие контроля.",
+        "uk": "[[defiance]]: на прокачці вистачить одного очка — це зняття контролю.",
+        "tr": "[[defiance]]: seviye atlarken bir puan yeterli — kontrol kırıcın bu.",
+        "pt-BR": "[[defiance]]Um ponto é o suficiente enquanto nivela. É a sua pausa para CC."
+      }
+    },
+    {
+      "id": "ranger-stigmas",
+      "order": 221,
+      "skills": [
+        "supporting-fire",
+        "bow-of-blessing",
+        "vaizels-authority",
+        "griffon-arrow"
+      ],
+      "when": {
+        "en": "Lv ~22",
+        "ru": "~Ур. 22",
+        "uk": "~Рів. 22",
+        "tr": "Sv ~22",
+        "pt-BR": "LV ~ 22"
+      },
+      "text": {
+        "en": "Stigmas: [[supporting-fire]], [[bow-of-blessing]], [[vaizels-authority]] and [[griffon-arrow]] (all four slots by Lv 37). Level them evenly — 5 / 5 / 5, then 10 — and put [[vaizels-authority]] to 20 first once you can.",
+        "ru": "Стигмы: [[supporting-fire]], [[bow-of-blessing]], [[vaizels-authority]] и [[griffon-arrow]] (все четыре слота к 37 ур.). Качай ровно — 5 / 5 / 5, потом 10 — и первой доведи до 20 [[vaizels-authority]], как только сможешь.",
+        "uk": "Стигми: [[supporting-fire]], [[bow-of-blessing]], [[vaizels-authority]] і [[griffon-arrow]] (усі чотири слоти до 37 рів.). Качай рівно — 5 / 5 / 5, потім 10 — і першою доведи до 20 [[vaizels-authority]], щойно зможеш.",
+        "tr": "Stigmalar: [[supporting-fire]], [[bow-of-blessing]], [[vaizels-authority]] ve [[griffon-arrow]] (Sv 37'ye kadar dört slotun hepsi). Eşit geliştir — 5 / 5 / 5, sonra 10 — ve yapabildiğinde önce [[vaizels-authority]]'yi 20'ye çıkar.",
+        "pt-BR": "Stigmas: [[supporting-fire]], [[bow-of-blessing]], [[vaizels-authority]] e [[griffon-arrow]] (todos os quatro slots por Lv 37). Nivele-os uniformemente - 5 / 5 / 5, em seguida, 10 - e coloque [[vaizels-authority]] para 20 primeiro uma vez que você puder."
+      }
+    },
+    {
+      "id": "ranger-macro",
+      "order": 225,
+      "skills": [
+        "snipe"
+      ],
+      "when": {
+        "en": "After stigmas",
+        "ru": "После стигм",
+        "uk": "Після стигм",
+        "tr": "Stigmalardan sonra",
+        "pt-BR": "Depois de estigmas"
+      },
+      "text": {
+        "en": "Build the macro: Griffon line → Gale line (10 ms) on RMB, hold [[snipe]] on LMB and a charged [[deadshot]] on a side button, recast [[marking-shot]] when Precision drops.",
+        "ru": "Собери макрос: линия грифона → линия шквала (10 мс) на ПКМ, держи [[snipe]] на ЛКМ и заряженный [[deadshot]] на боковой кнопке, обновляй [[marking-shot]], когда спадает Точность.",
+        "uk": "Збери макрос: лінія Griffon → лінія Gale (10 мс) на ПКМ, тримай [[snipe]] на ЛКМ і заряджений [[deadshot]] на бічній кнопці, оновлюй [[marking-shot]], коли спадає Precision.",
+        "tr": "Makroyu kur: RMB'de Griffon satırı → Gale satırı (10 ms), LMB'de [[snipe]]'ı basılı tut ve yan tuşta şarjlı [[deadshot]]; Precision düşünce [[marking-shot]]'ı yeniden kullan.",
+        "pt-BR": "Construa a macro: Linha Griffon → Linha Gale (10 ms) em RMB, segure [[snipe]] em LMB e um [[deadshot]] carregado em um botão lateral, remodele [[marking-shot]] quando Precision cair."
+      }
+    },
+    {
+      "id": "ranger-cap",
+      "order": 455,
+      "skills": [
+        "deadshot",
+        "gale-arrow",
+        "drill-dart",
+        "snare-shot"
+      ],
+      "when": {
+        "en": "Cap",
+        "ru": "Кап",
+        "uk": "Кап",
+        "tr": "Sınır",
+        "pt-BR": "Cap."
+      },
+      "text": {
+        "en": "Core four to 10 first: [[deadshot]], [[gale-arrow]], [[drill-dart]], [[snare-shot]]. Then switch to the PvE tab.",
+        "ru": "Основная четвёрка до 10 в первую очередь: [[deadshot]], [[gale-arrow]], [[drill-dart]], [[snare-shot]]. Дальше — вкладка PvE.",
+        "uk": "Основна четвірка до 10 насамперед: [[deadshot]], [[gale-arrow]], [[drill-dart]], [[snare-shot]]. Далі — вкладка PvE.",
+        "tr": "Önce temel dörtlü 10'a: [[deadshot]], [[gale-arrow]], [[drill-dart]], [[snare-shot]]. Sonra PvE sekmesine geç.",
+        "pt-BR": "Núcleo quatro para 10 primeiro: [[deadshot]], [[gale-arrow]], [[drill-dart]], [[snare-shot]]. Então mude para a aba PvE."
+      }
+    }
+  ]
+}

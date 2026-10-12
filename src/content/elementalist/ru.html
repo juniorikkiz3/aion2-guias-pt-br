@@ -1,0 +1,272 @@
+{% from "macros.html" import section, skill, core, loadout, passives, glance, hotline, macroseq, dv_board with context %}
+
+{# ============================== PvE и PvP ============================== #}
+{% call glance('pve') %}
+  <h3>{{ t.core_skills }}</h3>
+  {{ core([('elemental-fusion', '20'), ('combustion', '20'), ('summon-fire-spirit', '20'), ('cold-shock', '16'), ('summon-water-spirit', '16')]) }}
+  <h3>{{ t.stigma_loadout }}</h3>
+  {{ loadout([('summon-ancient-spirit', 20), ('enhance-spirits-benediction', 20), ('flame-blessing', 20), ('jointstrike-corrode', 20)]) }}
+  <h3>{{ t.key_passives }}</h3>
+  {{ passives(['mental-focus', 'spirit-strike', 'element-unification', 'spirit-revitalization']) }}
+{% endcall %}
+
+{% call glance('pvp') %}
+  <h3>{{ t.core_skills }}</h3>
+  {{ core([('defiance', '20'), ('cold-shock', '20'), ('elemental-fusion', '20'), ('jointstrike-curse', '20'), ('combustion', '20')]) }}
+  <h3>{{ t.stigma_loadout }}</h3>
+  {{ loadout([('summon-ancient-spirit', 20), ('enhance-spirits-benediction', 20), ('command-proxy', 20), ('seize-magic', 20)]) }}
+  <h3>{{ t.key_passives }}</h3>
+  {{ passives(['spirit-protection', 'revitalization-contract', 'spirit-strike', 'mental-focus']) }}
+{% endcall %}
+
+{% call section('intro', 'Обзор', 'pve') %}
+  <p>Заклинатель — единственный призыватель: рядом с тобой сражается дух, каждый скилл духа даёт тебе стихию, а на четырёх стихиях готов {{ s('elemental-fusion') }}. Основной урон дают Синтез элементов и духи — прежде всего {{ s('summon-ancient-spirit') }} и {{ s('summon-fire-spirit') }}.</p>
+  <div class="callout accent">
+    <h3>Билд в одном предложении</h3>
+    <p>Сначала баффы, потом призыв: дух копирует твои характеристики в момент появления. Держи пять стаков атаки от {{ s('cold-shock') }}, открывай бой баффами и Древним духом, а макрос пусть бросает Синтез элементов, как только он готов.</p>
+  </div>
+  <div class="callout"><ul>
+    <li><strong>Правило снимка.</strong> Урон духа зависит от твоих характеристик и баффов в момент призыва. Бафф после призыва этому духу ничего не даёт — никогда не зови Древнего духа без баффов.</li>
+    <li><strong>Вплетай базовую атаку.</strong> Шоковая заморозка даёт +2% атаки за удар, до пяти стаков. Потерять их — минус 10% атаки тебе и каждому духу, которого ты призовёшь; лишняя базовая атака ценнее следующего призыва.</li>
+    <li><strong>Длинные бои — твои.</strong> Класс держится на баффах и уроне со временем, поэтому чем дольше бой, тем он сильнее — и тем больше теряет, если умирает со всем на перезарядке.</li>
+  </ul></div>
+  <p class="note">Гайд построен на письменном гайде Evripides по Заклинателю, глобальная редакция для 1 сезона (aion2sm.com, написан на 700 тыс. CP, обновлён 29 сентября), на котором DankRNG строит своё видео; глобальное видео aLuckyRO добавляет выбор на первые дни. Гайд адаптирован с тайваньской и корейской версии; автор обновляет его по ходу сезона.</p>
+{% endcall %}
+
+{% call section('intro-pvp', 'Обзор', 'pvp') %}
+  <p>В PvP Заклинатель — <strong>кайтер, который побеждает выносливостью</strong>: мобильности меньше, чем у Стрелка, бурста меньше, чем у Волшебника, но это самый живучий класс дальнего боя — со страхом, снятием баффов и духами, которые бьют, даже когда ты вне досягаемости.</p>
+  <div class="callout"><ul>
+    <li><strong>Страх — это контроль, а не способ убить.</strong> Им прикрываешь себя и выманиваешь у врага {{ s('defiance', False) }}; урон дают Синтез элементов, проклятия и духи.</li>
+    <li><strong>Всё решает тайминг.</strong> Знай скиллы чужого класса: защита слишком рано или слишком поздно проигрывает бой.</li>
+    <li><strong>{{ s('summon-earth-spirit') }} провоцирует</strong> — а провокацию Снятием шока не снять.</li>
+  </ul></div>
+  <p class="note">PvP-режим — по билду «PvP Starter» из того же гайда (обновлён 29 сентября).</p>
+{% endcall %}
+
+{% call section('skills', 'Скиллы', 'pve') %}
+  <p>До <strong>20</strong> обязательно три скилла: {{ s('combustion') }}, {{ s('summon-fire-spirit') }} и {{ s('elemental-fusion') }}. {{ s('summon-water-spirit') }} нормально на 16 и хорошо на 20; всё остальное останавливается на 16. В первые дни, когда скиллы на 8–12, бери особенности на ману из карточек (aLuckyRO).</p>
+  <ul class="skill-grid">
+    {% call skill('elemental-fusion', 'must', '20', [1, 2, 4]) %}Самый сильный удар без перезарядки — срабатывает каждый раз, когда у тебя четыре стихии. Отложенный урон, +10 ко всем усилениям стихий и 25% шанс сохранить четыре стихии. aLuckyRO в первые дни берёт заряжаемую версию (до +200%).{% endcall %}
+    {% call skill('combustion', 'must', '20', [1, 3, 4]) %}+12% по одной цели, +20% скорости умения и цепочка. Первые дни: −20% маны, пока её не хватает (aLuckyRO).{% endcall %}
+    {% call skill('summon-fire-spirit', 'must', '20', [1, 2, 4]) %}Самый сильный из базовых духов и тот, что дольше всех на поле, — призывай его последним, чтобы он оставался, пока остальные на перезарядке.{% endcall %}
+    {% call skill('cold-shock', 'must', '16', [2, 3]) %}Базовая атака: мультиудар и стаки +2% атаки, которые копирует каждый призыв. 14 нормально, 16 лучше на старте — перезарядки длинные. Первые дни: +20% восстановления маны вместо мультиудара.{% endcall %}
+    {% call skill('summon-water-spirit', 'must', '16', [1, 4]) %}Самый сильный удар по одной цели среди базовых духов вместе с Кооперацией: Разложением, и мана на прокачке.{% endcall %}
+    {% call skill('jointstrike-curse', 'must', '16', [0, 2]) %}Урон со временем и дебафф: +2 сек. проклятия и особенность «в движении». Духи — и Древний дух тоже — бьют вместе с тобой.{% endcall %}
+    {% call skill('dimensional-control', 'must', '16', [1, 2]) %}Срабатывает при призыве; отложенный урон и мультиудар. Притягивание и замедление не бери.{% endcall %}
+    {% call skill('summon-earth-spirit', 'opt', '16', [1, 2]) %}Провоцирует врага на себя — босс бьёт духа, а не тебя. Полезно соло.{% endcall %}
+    {% call skill('rapid-scattershot', 'opt', '16', [3, 4]) %}Только по ошеломлённым боссам. До 16 — «в движении» и мультиудар; на 16 — мультиудар и −1 сек. ко всем перезарядкам.{% endcall %}
+    {% call skill('defiance', 'opt', '16', [2, 4]) %}Снятие контроля; 20% ОЗ и стойкость к урону на время невосприимчивости.{% endcall %}
+    {% call skill('summon-wind-spirit', 'skip', 'пропуск') %}Самый слабый урон скилла, а его призыв отнимает время у остальных. aLuckyRO оставляет его на первую неделю, чтобы быстрее набирать четыре стихии; убирай, когда три духа сами открывают Синтез.{% endcall %}
+    {% call skill('souls-cry', 'skip', 'PvP') %}Страх — скилл для PvP.{% endcall %}
+  </ul>
+{% endcall %}
+
+{% call section('skills-pvp', 'Скиллы', 'pvp') %}
+  <p>Четыре обязательных до <strong>20</strong>: {{ s('defiance') }}, {{ s('cold-shock') }}, {{ s('elemental-fusion') }} и {{ s('jointstrike-curse') }}; {{ s('combustion') }} всё равно доходит до 20 за счёт набора аркан.</p>
+  <ul class="skill-grid">
+    {% call skill('defiance', 'must', '20', [2, 3, 4]) %}Снятие контроля с 20% ОЗ, +2 сек. невосприимчивости и стойкостью к урону. Когда на тебя заходят, снимай первый контроль сразу.{% endcall %}
+    {% call skill('cold-shock', 'must', '20', [1, 2]) %}Поглощение ОЗ и мультиудар. Стаки атаки в PvP почти не набираются, поэтому их здесь не берут.{% endcall %}
+    {% call skill('elemental-fusion', 'must', '20', [1, 2, 4]) %}Твой бурст. В массовом PvP меняй отложенный урон на АоЕ-версию.{% endcall %}
+    {% call skill('jointstrike-curse', 'must', '20', [1, 3, 4]) %}Мультиудар, −2 сек. перезарядки, а на 16 — игнорирует блок и уклонение и критует. Накладывай первым — он выманивает у врага зелье лечения.{% endcall %}
+    {% call skill('combustion', 'must', '20', [1, 3, 4]) %}Те же особенности, что в PvE.{% endcall %}
+    {% call skill('dimensional-control', 'must', '16', [1, 4]) %}Много контроля и кайта: отложенный урон и шанс корней; срабатывает при каждом призыве и вытягивает у врага Снятие шока.{% endcall %}
+    {% call skill('summon-earth-spirit', 'must', '16', [1, 4]) %}Провокация — один из сильнейших контролей в игре. Стойкость к урону и +20% характеристик духу.{% endcall %}
+    {% call skill('souls-cry', 'opt', '12–16', [1, 3]) %}Страх с корнями и −10 сек. перезарядки; ниже 16 нормально.{% endcall %}
+    {% call skill('summon-water-spirit', 'opt', '12–16', [1, 2]) %}12–16 достаточно.{% endcall %}
+    {% call skill('summon-fire-spirit', 'opt', '14', [1, 2]) %}Бьёт сильно и на низком уровне.{% endcall %}
+    {% call skill('summon-wind-spirit', 'skip', 'пропуск') %}В PvP не используется.{% endcall %}
+    {% call skill('rapid-scattershot', 'skip', 'пропуск') %}Работает только по ошеломлённым целям.{% endcall %}
+  </ul>
+{% endcall %}
+
+{% call section('passives', 'Пассивки', 'pve pvp') %}
+  <p>Уровни пассивок дают все части брони, серьги и ожерелье, поэтому пассивки уходят далеко вперёд активных — в готовом наборе 1 сезона пассивка доходит до 30 и выше.</p>
+  <div class="table-wrap" data-only="pve"><table>
+    <thead><tr><th>#</th><th>Пассивка</th><th>Зачем</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>{{ s('mental-focus') }}</td><td>Двойной шанс — до максимума (около 32 в 1 сезоне).</td></tr>
+      <tr><td>2</td><td>{{ s('spirit-strike') }}</td><td>Усиление урона в PvE и шанс идеального удара тебе и духу. Почти наравне с первой.</td></tr>
+      <tr><td>3</td><td>{{ s('element-unification') }}</td><td>Накапливаемый крит. урон каждый раз, когда попадает скилл духа.</td></tr>
+      <tr><td>4</td><td>{{ s('spirit-revitalization') }}</td><td>Перезарядка духов короче — больше Синтеза элементов.</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note" data-only="pve">Первые дни (aLuckyRO): сначала {{ s('spirit-strike') }}, потом {{ s('spirits-descent') }} и {{ s('consecutive-countercurrent') }}. {{ s('corrode') }} и Слияние стихий окупаются, только когда экипировка даёт шанс крита, — до этого ты почти не критуешь.</p>
+  <div class="table-wrap" data-only="pvp"><table>
+    <thead><tr><th>#</th><th>Пассивка</th><th>Зачем</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>{{ s('spirit-protection') }}</td><td>Защита от бурста — Убийц, Волшебников, Гладиаторов. Около 20.</td></tr>
+      <tr><td>2</td><td>{{ s('revitalization-contract') }}</td><td>Сопротивление эффектам. Около 20.</td></tr>
+    </tbody>
+  </table></div>
+{% endcall %}
+
+{% call section('stigmas', 'Стигмы', 'pve') %}
+  <p>Эти четыре — набор на любой бой в PvE. Сначала все четыре до 10, потом каждую до 20 в этом порядке. Слоты открываются на 22, 27, 32 и 37 уровне.</p>
+  <ul class="skill-grid">
+    {% call skill('summon-ancient-spirit', 'must', 'Ур. 20', upto=20) %}Стигма с самым большим уроном: дополнительный дух на 30 секунд, который даёт тебе Синтез элементов при каждом своём скилле — на 15 после каждых пяти базовых атак. Всегда зови его с баффами и стаками Шоковой заморозки.{% endcall %}
+    {% call skill('enhance-spirits-benediction', 'must', 'Ур. 20', upto=20) %}Усиление урона и стойкость тебе и духам — используй до призыва.{% endcall %}
+    {% call skill('flame-blessing', 'must', 'Ур. 20', upto=20) %}Точность и доп. урон при попадании; один из самых сильных баффов, сильно растёт к 20.{% endcall %}
+    {% call skill('jointstrike-corrode', 'must', 'Ур. 20', upto=20) %}Урон со временем, из-за которого цель получает больше урона от духов. На 20 длится 20 секунд и при сокращении перезарядки около 33% висит постоянно.{% endcall %}
+    {% call skill('cursed-cloud', 'opt', 'позже', upto=10) %}Сильная в PvE, но в 1 сезоне для неё нет слота.{% endcall %}
+  </ul>
+{% endcall %}
+
+{% call section('stigmas-pvp', 'Стигмы', 'pvp') %}
+  <div class="table-wrap"><table>
+    <thead><tr><th>Набор</th><th>Стигмы</th><th>Когда</th></tr></thead>
+    <tbody>
+      <tr><td>Основной</td><td>Призыв: Древний дух, Усиление: Благословение духа, Свиток приказа: Жертва духа, Кража маны</td><td>Лучший универсальный набор.</td></tr>
+      <tr><td>Без Жертвы духа</td><td>Кооперация: Разложение вместо Жертвы духа</td><td>Рискованнее, больше урона и антихил — против Целителей, Гладиаторов, Стражей.</td></tr>
+      <tr><td>Контроль</td><td>Древний дух, Крик ужаса, Разложение, Сила Кайсинеля</td><td>Доп. АоЕ-страх и шанс контроля — против Целителей и Чародеев.</td></tr>
+    </tbody>
+  </table></div>
+  <ul class="skill-grid">
+    {% call skill('command-proxy', 'must', 'Ур. 20', upto=20) %}На 7 секунд большая часть урона по тебе делится с духами. Используй, когда заходит Убийца или Волшебник тебя замораживает, — не на первый контроль.{% endcall %}
+    {% call skill('seize-magic', 'must', 'Ур. 20', upto=20) %}Снимает баффы врага, бьёт и на 20 накладывает немоту. Снимай неуязвимость или баффы Стрелка сразу после того, как он их наложил.{% endcall %}
+    {% call skill('jointstrike-corrode', 'opt', 'без Жертвы', upto=20) %}−60% лечения и долгий урон со временем против классов с самолечением. Сначала наложи проклятие и другие дебаффы, чтобы зелье его не сняло.{% endcall %}
+    {% call skill('cry-of-terror', 'opt', 'контроль', upto=20) %}АоЕ-страх для дополнительного контроля.{% endcall %}
+    {% call skill('kaisinels-power', 'opt', 'контроль', upto=20) %}Повышает шанс контроля — без неё он проходит редко.{% endcall %}
+    {% call skill('siphon', 'opt', 'альт.', upto=20) %}Самолечение, а на 15 — щит.{% endcall %}
+  </ul>
+{% endcall %}
+
+{% call section('macro', 'Ротация и макрос', 'pve') %}
+  <p>Игра на двух зажатых кнопках: держи {{ s('cold-shock') }} на <span class="key">ЛКМ</span> и макрос на <span class="key">ПКМ</span>, управляй персонажем, а остальное жми руками. Линия, которая стояла на ПКМ, переезжает на <span class="key">T</span>.</p>
+  <h3>1. Линии на кнопках</h3>
+  <div class="hotlines">
+    {% call hotline('1', 'Линия духов', ['elemental-fusion', 'summon-water-spirit', 'summon-earth-spirit', 'summon-fire-spirit']) %}Жми её постоянно: Синтез элементов срабатывает, как только готов, потом духи; Дух огня последний — он дольше всех остаётся на поле.{% endcall %}
+    {% call hotline('7', 'Баффы + Древний дух', ['enhance-spirits-benediction', 'flame-blessing', 'summon-ancient-spirit']) %}Баффы стоят перед Древним духом, чтобы призыв их скопировал.{% endcall %}
+    {% call hotline('T', 'Линия урона', ['jointstrike-corrode', 'jointstrike-curse', 'dimensional-control', 'combustion']) %}По урону; Разложение уходит, как только готово.{% endcall %}
+  </div>
+  <h3>2. Встроенный макрос</h3>
+  <p>Назначь макрос на <span class="key">ПКМ</span>, <strong>10 мс</strong> на каждый шаг:</p>
+  {{ macroseq([(skill_data('enhance-spirits-benediction')[lang].name, 'ПКМ · 10 мс'), (skill_data('elemental-fusion')[lang].name, '10 мс'), (skill_data('jointstrike-corrode')[lang].name, '10 мс')]) }}
+  <h3>3. Бой</h3>
+  <ol>
+    <li><strong>Открывай</strong> бой: {{ s('flame-blessing') }} → {{ s('enhance-spirits-benediction') }} → {{ s('summon-ancient-spirit') }} — баффы до призыва.</li>
+    <li>Линия духов и Разложение, потом включай макрос и переходи на две зажатые кнопки.</li>
+    <li>Продолжай призывать духов; баффы обновляй, как только готовы, а не держи под Древнего духа.</li>
+    <li>Если пять стаков Шоковой заморозки вот-вот спадут, лишняя базовая атака важнее следующего призыва.</li>
+  </ol>
+  <p class="note">Вплетание зависит от пинга: автор хочет от 65% скорости боя и пинг до ~60 мс. Совет aLuckyRO на первую неделю: играй без макроса, пока не освоишь класс. Поставь «отозвать всех духов» на удобную клавишу.</p>
+{% endcall %}
+
+{% call section('combos-pvp', 'Начало боя', 'pvp') %}
+  <p>В PvP макрос почти не нужен: он только вплетает {{ s('elemental-fusion') }} → {{ s('summon-earth-spirit') }} на <span class="key">ПКМ</span>. Всё остальное — тайминг.</p>
+  <div class="callout">
+    <h3>На тебя зашли</h3>
+    <p>Сразу снимай первый контроль {{ s('defiance', False) }}; {{ s('command-proxy') }} придержи на следующий заход.</p>
+  </div>
+  <div class="callout accent">
+    <h3>Заходишь ты</h3>
+    <div class="combo">{{ s('enhance-spirits-benediction') }} + {{ s('kaisinels-power') }}<span class="arrow">→</span>{{ s('summon-earth-spirit') }} + {{ s('jointstrike-curse') }}<span class="arrow">→</span>{{ s('summon-ancient-spirit') }}<span class="arrow">→</span>{{ s('jointstrike-corrode') }} после его зелья</div>
+    <p>{{ s('souls-cry') }} — когда Дух земли не наложил контроль или когда Снятие шока у врага уже потрачено; выманить его помогают корни {{ s('dimensional-control') }}.</p>
+  </div>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Против</th><th>Ответ</th></tr></thead>
+    <tbody>
+      <tr><td>Гладиатор, Целитель</td><td>Кража маны на неуязвимость; против самолечения — сначала проклятие, потом Разложение.</td></tr>
+      <tr><td>Стрелок</td><td>Кража маны сразу после его баффов; Разложение против самолечения.</td></tr>
+      <tr><td>Убийца</td><td>Жертва духа, когда он заходит.</td></tr>
+      <tr><td>Волшебник</td><td>Жертва духа под заморозкой; рывок береги под метеор — он игнорирует уклонение и блок.</td></tr>
+      <tr><td>Чародей</td><td>Разложение: −60% лечения и урон со временем почти на 30 секунд.</td></tr>
+    </tbody>
+  </table></div>
+{% endcall %}
+
+{% call section('gear', 'Экипировка, арканы и статы', 'pve pvp') %}
+  <div class="callout"><ul>
+    <li><strong>Откуда уровни:</strong> 10 очками навыков, 14 с первыми четырьмя досками Daevanion, дальше +4 от арканы и +1 с каждого кольца — 20 для обязательных скиллов. Активные скиллы выпадают на кольцах, оружии и щите; пассивки — на всех частях брони, серьгах и ожерелье.</li>
+    <li data-only="pve"><strong>Арканы:</strong> три карты Primal Vigor и две Magic Armor — оба бонуса за 2 предмета.</li>
+    <li data-only="pve"><strong>Цели:</strong> двойной шанс 25%, сокращение перезарядки 20%, точность 1500.</li>
+    <li data-only="pvp"><strong>Арканы:</strong> пять карт Primal Vigor. Кооперация: Проклятие и Синтез элементов — два скилла, которые стоит ловить на картах.</li>
+    <li data-only="pvp"><strong>Цели:</strong> точность от 2000, сопротивление эффектам от 100%, регенерация около 40%.</li>
+  </ul></div>
+{% endcall %}
+
+{% call section('daevanion', 'Доски Daevanion', 'pve pvp') %}
+  <p>Daevanion поднимает скиллы с 10 до 14. Каждый синий узел даёт <strong>+1 уровень</strong> своему скиллу.</p>
+  <div class="callout"><ul>
+    <li data-only="pve"><strong>Приоритет:</strong> синие узлы {{ s('elemental-fusion') }}, {{ s('combustion') }}, {{ s('summon-fire-spirit') }}, {{ s('cold-shock') }}, {{ s('summon-water-spirit') }}, зелёные {{ s('mental-focus') }} и {{ s('spirit-strike') }}, потом атакующие оранжевые узлы.</li>
+    <li data-only="pve"><strong>Первые дни:</strong> бери самый дешёвый узел каждого скилла — на каждой доске есть все, и некоторые близко к старту (aLuckyRO).</li>
+    <li data-only="pvp"><strong>Приоритет:</strong> синие узлы {{ s('defiance') }}, {{ s('cold-shock') }}, {{ s('elemental-fusion') }}, {{ s('jointstrike-curse') }}, {{ s('combustion') }}; Azphel (45 уровень) — сплошь усиление урона и стойкость в PvP, бери.</li>
+  </ul></div>
+  <div data-only="pve">{{ dv_board('pve') }}</div>
+  <div data-only="pvp">{{ dv_board('pvp') }}</div>
+  <p class="note">Доски и стоимость — из данных глобального клиента (questlog.gg); путь рассчитан, а не взят из гайда.</p>
+{% endcall %}
+
+{% call section('recap', 'Итог', 'pve') %}
+  <div class="callout accent"><ul>
+    <li><strong>Скиллы:</strong> Синтез элементов, Воспламенение, Дух огня — 20; Шоковая заморозка, Дух воды, Проклятие, Повелитель пространства — 16; Дух воздуха не нужен.</li>
+    <li><strong>Стигмы:</strong> Древний дух → Благословение духа → Благословение пламени → Разложение: все до 10, потом до 20.</li>
+    <li><strong>Пассивки:</strong> Чистый разум, Удар элемента, Слияние стихий, Оживление духа.</li>
+    <li><strong>Игра:</strong> баффы до призыва; держи пять стаков Шоковой заморозки.</li>
+  </ul></div>
+{% endcall %}
+
+{% call section('recap-pvp', 'Итог', 'pvp') %}
+  <div class="callout accent"><ul>
+    <li><strong>Скиллы:</strong> Снятие шока, Шоковая заморозка, Синтез элементов, Проклятие, Воспламенение — 20; Дух земли и Повелитель пространства — 16.</li>
+    <li><strong>Стигмы:</strong> Древний дух, Благословение духа, Жертва духа, Кража маны — Разложение для антихила.</li>
+    <li><strong>Пассивки:</strong> Защита стихии, Контракт оживления.</li>
+    <li><strong>Игра:</strong> сначала проклятие, Разложение после его зелья; страх — для контроля, а не чтобы убить.</li>
+  </ul></div>
+{% endcall %}
+{# ============================ Leveling ============================ #}
+
+{% call section('intro-lvl', 'Обзор', 'lvl') %}
+  <p>Заклинатель (Spiritmaster) — единственный призыватель: рядом с тобой сражается дух, каждый его скилл даёт элемент, а на четырёх элементах готов {{ s('elemental-fusion') }}. {{ s('dimensional-control') }} срабатывает каждый раз, когда дух использует скилл, а проклятия продолжают тикать на цели.</p>
+  <div class="callout accent">
+    <h3>Прокачка в одном предложении</h3>
+    <p>Качайся с {{ s('summon-water-spirit') }} (урон и мана), держи {{ s('cold-shock') }} ради маны, а встроенный макрос пусть крутит линию духов и линию Синтеза.</p>
+  </div>
+{% endcall %}
+
+{% call section('fight-lvl', t.lvl_combat, 'lvl') %}
+  <div class="callout"><ul>
+    <li><strong>Дух:</strong> {{ s('summon-water-spirit') }} до самого капа — лучший урон по одной цели и подпитка маной. Остальные на прокачке держатся на 1 уровне.</li>
+    <li><strong>Пачки:</strong> {{ s('jointstrike-curse') }} (бьёт до 4 целей) → {{ s('combustion') }} → {{ s('elemental-fusion') }} с особенностью на АоЕ, когда он готов.</li>
+    <li><strong>Мана:</strong> главная проблема на старте — режим с таргетом, {{ s('cold-shock') }} между скиллами и ротация духов, которая заканчивается на Духе воды.</li>
+    <li><strong>Ошеломлённые цели:</strong> {{ s('rapid-scattershot') }}.</li>
+    <li>{{ s('souls-cry') }} не качай — это PvP-скилл.</li>
+  </ul></div>
+{% endcall %}
+
+{% call section('macro-lvl', 'Макрос на прокачке', 'lvl') %}
+  <p>Стартовая настройка Grobs: две линии на кнопках и встроенный макрос из двух слотов. В AION 2 <strong>наивысший приоритет у нижнего слота линии</strong> — карточки показывают линии сверху вниз, как в игре.</p>
+  <div class="hotlines">
+    {% call hotline('1', 'Линия духов', ['summon-water-spirit', 'jointstrike-corrode', 'summon-earth-spirit', 'summon-fire-spirit']) %}Сначала Дух воды; Кооперация: Разложение (стигма) заставляет цель получать больше урона от духа.{% endcall %}
+    {% call hotline('2', 'Линия Синтеза', ['elemental-fusion', 'dimensional-control', 'jointstrike-curse', 'combustion']) %}Синтез элементов и Повелитель пространства срабатывают, как только духи их открывают; Воспламенение заполняет паузы.{% endcall %}
+  </div>
+  <p>Встроенный макрос (окно скиллов → Макрос), задержка <strong>10 мс</strong> в каждом слоте:</p>
+  {{ macroseq([('Линия духов', '1 · 10 мс'), ('Линия Синтеза', '2 · 10 мс')]) }}
+  <ul class="presslist">
+    <li><span class="press-how">Держать</span><span class="press-what">{{ s('cold-shock') }} на <span class="key">ЛКМ</span> вместе с кнопкой макроса.</span></li>
+    <li><span class="press-how">Вручную</span><span class="press-what">{{ s('enhance-spirits-benediction') }}, затем {{ s('summon-ancient-spirit') }} (сначала бафф — Древний дух живёт 30 сек.).</span></li>
+  </ul>
+{% endcall %}
+
+{% call section('stigmas-lvl', 'Стигмы на прокачке', 'lvl') %}
+  <p>Стигмы открываются на 22 уровне.</p>
+  <ul class="skill-grid">
+    {% call skill('summon-ancient-spirit', 'must', 'Ур. 5', upto=5) %}Дополнительный дух на 30 сек., который тоже даёт элементы для Синтеза.{% endcall %}
+    {% call skill('enhance-spirits-benediction', 'must', 'Ур. 5', upto=5) %}+20% к урону и стойкости в PvE с лечением на 10 сек. — кастуй до Древнего духа.{% endcall %}
+    {% call skill('jointstrike-corrode', 'must', 'Ур. 5', upto=5) %}В линии духов у Grobs: цель получает больше урона от духа.{% endcall %}
+    {% call skill('flame-blessing', 'opt', 'Ур. 5', upto=5) %}Доп. урон при попадании на 10 сек. — бери, когда хватает точности.{% endcall %}
+  </ul>
+{% endcall %}
+
+{# ============================ Sources ============================ #}
+<section class="sources" aria-labelledby="h-sources">
+  <h2 id="h-sources">{{ t.sources }}</h2>
+  <ul>
+    <li><a href="https://www.youtube.com/watch?v=HMod6Z4GrE0" target="_blank" rel="noopener">Grobs — AION 2 Macro Guide</a> — слайд со стартовыми макросами (линии и макрос Spiritmaster)</li>
+    <li><a href="https://aion2sm.com/global/" target="_blank" rel="noopener">Evripides — Spirit Master guide, Global edition (aion2sm.com)</a> — PvE- и PvP-билды для глобального клиента: уровни и особенности скиллов, стигмы, пассивки, ротация, макрос, арканы, матчапы</li>
+    <li><a href="https://www.youtube.com/watch?v=KlmstIyukX8" target="_blank" rel="noopener">DankRNG — How to MASTER the SPIRITS | Elementalist Guide &amp; Build</a> — правило снимка, порядок духов, почему без Духа воздуха</li>
+    <li><a href="https://www.youtube.com/watch?v=v9MYphrcvic" target="_blank" rel="noopener">aLuckyRO — AION 2 Latest Spiritmaster PVE Build for Global</a> — особенности на первые дни, порядок стигм, Daevanion на старте</li>
+    <li><a href="https://mmo-codex.com/articles/aion-2-spiritmaster-guide/" target="_blank" rel="noopener">MMO Codex — билд Spiritmaster для Aion 2</a> — порядок скиллов по уровням, Дух воды на прокачке, стигмы</li>
+    <li><a href="https://questlog.gg/aion-2/en/db/skills/elementalist" target="_blank" rel="noopener">questlog.gg</a> — данные скиллов из глобального клиента</li>
+  </ul>
+  <p class="sources-all"><a href="{{ root }}{{ lang }}/sources/">{{ t.src_all }} →</a></p>
+</section>

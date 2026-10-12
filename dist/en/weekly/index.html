@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="en" data-mode="pve">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Weekly tracker — AION 2 Global - Guides</title>
+<meta name="description" content="Track AION 2 weekly entries and Odyle energy for all your characters. Resets itself every week; saved in your browser.">
+<link rel="canonical" href="https://aion2-guias-br.juniorikkix.chatgpt.site/en/weekly/">
+<link rel="alternate" hreflang="pt-BR" href="https://aion2-guias-br.juniorikkix.chatgpt.site/pt-BR/weekly/">
+<link rel="alternate" hreflang="en" href="https://aion2-guias-br.juniorikkix.chatgpt.site/en/weekly/">
+<link rel="alternate" hreflang="x-default" href="https://aion2-guias-br.juniorikkix.chatgpt.site/pt-BR/weekly/">
+<meta name="theme-color" content="#0b0e14">
+<meta name="color-scheme" content="dark light">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AION 2 Global - Guides">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Weekly tracker — AION 2 Global - Guides">
+<meta property="og:description" content="Track AION 2 weekly entries and Odyle energy for all your characters. Resets itself every week; saved in your browser.">
+<meta property="og:url" content="https://aion2-guias-br.juniorikkix.chatgpt.site/en/weekly/">
+<meta property="og:image" content="https://aion2-guias-br.juniorikkix.chatgpt.site/assets/og/weekly-en.jpg?v=190a0472">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image"><link rel="icon" href="../../favicon.ico" sizes="48x48">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-96.png" type="image/png" sizes="96x96">
+<link rel="icon" href="../../assets/favicon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Yeseva+One&family=JetBrains+Mono:wght@500;700&display=swap&subset=cyrillic">
+<script>
+  // Theme + guide mode before first paint (no flash).
+  (function (r) {
+    try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') r.dataset.theme = t; } catch (e) {}
+    var off = (r.getAttribute('data-off') || '').split(' ');
+    var modes = ['pve', 'pvp', 'lvl'].filter(function (x) { return off.indexOf(x) < 0; });
+    var m = new URLSearchParams(location.search).get('mode');
+    if (modes.indexOf(m) < 0) { try { m = localStorage.getItem('mode'); } catch (e) {} }
+    if (modes.indexOf(m) >= 0) r.dataset.mode = m;
+    else if (modes.indexOf(r.dataset.mode) < 0) r.dataset.mode = modes[0];
+  })(document.documentElement);
+</script>
+<link rel="stylesheet" href="../../assets/css/site.css?v=190a0472">
+</head>
+<body class="page-tracker page-weekly">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="../../en/">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3c1.8 4.6 5.6 7.2 12 8-4.4 2.2-6.8 5.6-7.4 10.6L16 29l-4.6-7.4C10.8 16.6 8.4 13.2 4 11c6.4-.8 10.2-3.4 12-8z" fill="currentColor"/></svg><span class="brand-text"><b>AION 2 Global</b><small><span class="sr-only"> - </span>Guides</small></span>
+    </a>
+    <details class="class-menu">
+      <summary class="class-menu-btn">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="4" y="4" width="6" height="6" rx="1.5"/><rect x="14" y="4" width="6" height="6" rx="1.5"/><rect x="4" y="14" width="6" height="6" rx="1.5"/><rect x="14" y="14" width="6" height="6" rx="1.5"/></svg><span>Classes</span>        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      </summary>
+      <nav class="class-menu-panel" aria-label="Classes">
+        <a href="../../en/gladiator/" class="cm-item accent-crimson">
+          <img src="../../assets/classes/gladiator.webp" width="44" height="44" alt=""><span class="cm-name">Gladiator</span><span class="cm-role">Melee DPS · bruiser</span>
+        </a>
+        <a href="../../en/ranger/" class="cm-item accent-emerald">
+          <img src="../../assets/classes/ranger.webp" width="44" height="44" alt=""><span class="cm-name">Ranger</span><span class="cm-role">Ranged DPS · kiter</span>
+        </a>
+        <a href="../../en/templar/" class="cm-item accent-sapphire">
+          <img src="../../assets/classes/templar.webp" width="44" height="44" alt=""><span class="cm-name">Templar</span><span class="cm-role">Tank · party buffer</span>
+        </a>
+        <a href="../../en/assassin/" class="cm-item accent-violet">
+          <img src="../../assets/classes/assassin.webp" width="44" height="44" alt=""><span class="cm-name">Assassin</span><span class="cm-role">Melee DPS · burst</span>
+        </a>
+        <a href="../../en/sorcerer/" class="cm-item accent-frost">
+          <img src="../../assets/classes/sorcerer.webp" width="44" height="44" alt=""><span class="cm-name">Sorcerer</span><span class="cm-role">Ranged magic DPS</span>
+        </a>
+        <a href="../../en/elementalist/" class="cm-item accent-spirit">
+          <img src="../../assets/classes/elementalist.webp" width="44" height="44" alt=""><span class="cm-name">Elementalist</span><span class="cm-role">Summoner · magic DPS</span>
+        </a>
+        <a href="../../en/cleric/" class="cm-item accent-sunlight">
+          <img src="../../assets/classes/cleric.webp" width="44" height="44" alt=""><span class="cm-name">Cleric</span><span class="cm-role">Healer · earth and lightning damage</span>
+        </a>
+        <a href="../../en/chanter/" class="cm-item accent-amber">
+          <img src="../../assets/classes/chanter.webp" width="44" height="44" alt=""><span class="cm-name">Chanter</span><span class="cm-role">Melee support · buffer</span>
+        </a>
+      </nav>
+    </details>
+    <div class="topbar-tools">      <span class="rift-timer" data-anchor="2026-10-02T18:00:00Z" data-every="3" data-tz="Europe/Kyiv" data-open-min="10" data-open="Rift is open" title="Rift — portal to the enemy zone, opens every 3 hours; the entrance stays open for 10 minutes, inside you can stay about an hour. Next">
+        <svg class="rt-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><ellipse cx="12" cy="12" rx="7.5" ry="10.5"/><path d="M11 13C10.2 11.4 11.4 10 12.8 10.4C14.6 11 14.6 14 12.8 15.6C11.4 16.8 9.6 16.8 8.6 16"/><path d="M12.4 6.6C14.8 6.4 17 8.6 17 12"/><g transform="rotate(180 12 12)"><path d="M11 13C10.2 11.4 11.4 10 12.8 10.4C14.6 11 14.6 14 12.8 15.6C11.4 16.8 9.6 16.8 8.6 16"/><path d="M12.4 6.6C14.8 6.4 17 8.6 17 12"/></g></svg><span class="rt-name">Rift</span><b class="rt-time">--:--</b>
+      </span>
+      <a class="wr-chip" href="../../en/weekly/" data-anchor="2026-09-30T07:00:00Z" data-tz="Europe/Kyiv" data-units="d,h,m,s" title="Weekly reset in">
+        <svg class="wr-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11a8 8 0 1 0-2.3 5.7"/><path d="M20 4v7h-7"/></svg><span class="wr-name">Reset</span><b class="wr-time">--</b>
+      </a>
+      <a class="top-timer" href="../../en/" title="Timers" data-events='[{"at": "2026-10-05T13:00:00Z", "n": "Global launch", "o": "Servers are open"}]' data-units="d,h,m,s" data-open="live">
+        <span class="tt-dot" aria-hidden="true"></span><span class="tt-name"></span><b class="tt-time">--:--:--</b>
+      </a>
+      <details class="class-menu nav-menu">
+        <summary class="class-menu-btn is-here">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10"/></svg><span>Guides</span>
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <nav class="nav-menu-panel" aria-label="Guides">
+          <div class="nm-col">
+            <p class="nm-group">Progress</p>
+            <a href="../../en/week-1/" class="nm-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21V4M5 4h11l-2 4 2 4H5"/></svg>
+              <span class="nm-name">Week 1</span><span class="nm-desc">What to finish before the first reset</span>
+            </a>
+            <a href="../../en/progression/" class="nm-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20h4v-6H3zM10 20h4V9h-4zM17 20h4V4h-4z"/></svg>
+              <span class="nm-name">After 45</span><span class="nm-desc">Item level route to the raid</span>
+            </a>
+            <a href="../../en/crafting/" class="nm-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0 5 5L21 13l-8 8-3-3 1.3-1.3a4 4 0 0 0-5-5L3 10l3-3 3 3 1.3-1.3a4 4 0 0 1 4.4-2.4z"/></svg>
+              <span class="nm-name">Gathering and crafting</span><span class="nm-desc">Professions and gold blanks</span>
+            </a>
+            <a href="../../en/settings/" class="nm-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h10M18 6h2M4 12h4M12 12h8M4 18h12M20 18h0"/><circle cx="16" cy="6" r="2"/><circle cx="10" cy="12" r="2"/><circle cx="18" cy="18" r="2"/></svg>
+              <span class="nm-name">Game settings</span><span class="nm-desc">Controls, keys, FPS and mass PvP</span>
+            </a>
+            <a href="../../en/dungeons/" class="nm-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V10l9-7 9 7v11"/><path d="M9 21v-6a3 3 0 0 1 6 0v6"/></svg>
+              <span class="nm-name">Dungeons</span><span class="nm-desc">Boss mechanics with arena diagrams</span>
+            </a>
+            <a href="../../en/tier-list/" class="nm-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h4M4 12h4M4 19h4"/><path d="M11 5h9M11 12h6M11 19h3"/></svg>
+              <span class="nm-name">Tier list</span><span class="nm-desc">Classes ranked by content</span>
+            </a>
+          </div>
+          <div class="nm-col">
+            <p class="nm-group">Trackers</p>
+            <a href="../../en/weekly/" class="nm-item" aria-current="page">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M8.5 15l2 2 4-4"/></svg>
+              <span class="nm-name">Weekly</span><span class="nm-desc">Weekly entries and energy</span>
+            </a>
+            <a href="../../en/bosses/" class="nm-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c-4.4 0-8 3.1-8 7.5 0 2.6 1.3 4.4 3 5.5V20h2v-2h2v2h2v-2h2v2h2v-4c1.7-1.1 3-2.9 3-5.5C20 6.1 16.4 3 12 3z"/><circle cx="9" cy="11" r="1.5"/><circle cx="15" cy="11" r="1.5"/></svg>
+              <span class="nm-name">World bosses</span><span class="nm-desc">Kill tracker and timers</span>
+            </a>
+          </div>
+          <div class="nm-foot">
+            <a href="../../en/sources/" class="nm-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h12v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5M8 7h6M8 11h6"/></svg>
+              <span class="nm-name">Sources &amp; credits</span><span class="nm-desc">Everyone this site builds on</span>
+            </a>
+          </div>
+        </nav>
+      </details>      <details class="lang-menu">
+        <summary class="lang-switch" title="Language"><span aria-hidden="true">EN</span><span class="sr-only">Language</span></summary>
+        <nav class="lang-panel" aria-label="Language">
+<a href="../../pt-BR/weekly/" hreflang="pt-BR" lang="pt-BR" data-keep-query><b>BR</b>Português do Brasil</a><a href="../../en/weekly/" hreflang="en" lang="en" aria-current="true" data-keep-query><b>EN</b>English</a>        </nav>
+      </details>
+      <button class="icon-btn search-open" type="button" aria-label="Search (Ctrl+K)" title="Search (Ctrl+K)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      </button>
+<a class="icon-btn wn-top" href="../../en/changelog/" aria-label="Changelog" title="Changelog">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.2a2.6 2.6 0 0 1 5 .9c0 1.7-2.5 2.3-2.5 3.9"/><path d="M12 17h.01"/></svg>
+      </a>      <button class="icon-btn theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
+        <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="page-hero tracker-hero has-art" style="--hero-art:url('../../assets/art/hero-weekly.webp');--hero-pos:50% 45%">
+    <div class="wrap tracker-hero-in">
+      <div>
+        <nav class="crumbs" aria-label="All classes"><a href="../../en/">All classes</a><span aria-hidden="true">/</span><span>Weekly</span></nav>
+        <h1>Weekly tracker</h1>
+        <p class="lead">Weekly entries and Odyle energy for each of your characters. The checklist clears itself at every weekly reset.</p>
+      </div>
+      <div class="reset-box" aria-live="off">
+  <span class="reset-label">Weekly reset in</span>
+  <div class="reset-timer"><span><b>--</b><i>d</i></span><span><b>--</b><i>h</i></span><span><b>--</b><i>m</i></span><span><b>--</b><i>s</i></span></div>
+  <time class="reset-when" datetime=""></time>
+</div>
+    </div>
+  </section>
+
+  <div class="wrap tracker-page">
+    <section class="charbar" aria-label="Characters">
+  <div class="char-tabs" role="tablist"></div>
+  <details class="char-manage">
+    <summary>Add character · Rename</summary>
+    <form class="char-form char-form-edit">
+      <input name="cname" maxlength="24" required placeholder="Character name" aria-label="Character name">
+      <select name="cls" aria-label="Class">
+        <option value="">No class</option>
+<option value="gladiator">Gladiator</option><option value="ranger">Ranger</option><option value="templar">Templar</option><option value="assassin">Assassin</option><option value="sorcerer">Sorcerer</option><option value="elementalist">Elementalist</option><option value="cleric">Cleric</option><option value="chanter">Chanter</option>      </select>
+      <button type="submit" class="btn btn-sm">Save</button>
+      <button type="button" class="btn btn-ghost btn-sm char-del">Delete</button>
+    </form>
+    <form class="char-form char-form-add">
+      <input name="cname" maxlength="24" required placeholder="Character name" aria-label="Character name">
+      <select name="cls" aria-label="Class">
+        <option value="">No class</option>
+<option value="gladiator">Gladiator</option><option value="ranger">Ranger</option><option value="templar">Templar</option><option value="assassin">Assassin</option><option value="sorcerer">Sorcerer</option><option value="elementalist">Elementalist</option><option value="cleric">Cleric</option><option value="chanter">Chanter</option>      </select>
+      <button type="submit" class="btn btn-primary btn-sm">Add character</button>
+    </form>
+  </details>
+  <p class="note local-note">Saved in this browser only — no account, nothing is sent anywhere.</p>
+</section>
+
+    <div class="wk-layout">
+      <section class="energy-card" aria-labelledby="h-energy">
+        <h2 id="h-energy" class="card-title">Odyle energy</h2>
+        <div class="energy-main">
+          <span class="energy-value">—</span><span class="energy-cap">/ <span class="energy-cap-v">840</span></span>
+        </div>
+        <div class="progress energy-bar" aria-hidden="true"><span></span></div>
+        <p class="energy-status"></p>
+        <p class="energy-rate">+15 every 3 h (EU test client value)</p>
+        <div class="energy-actions">
+          <button type="button" class="btn btn-sm energy-chest">Open chest −40</button>
+          <form class="energy-form">
+            <label><span>Odyle energy</span><input type="number" name="v" min="0" max="9999" inputmode="numeric"></label>
+            <label><span>Cap</span><input type="number" name="cap" min="1" max="9999" inputmode="numeric"></label>
+            <button type="submit" class="btn btn-ghost btn-sm">Set</button>
+          </form>
+        </div>
+        <div class="notify-box">
+  <button type="button" class="btn btn-ghost btn-sm notify-toggle" aria-pressed="false"
+    data-t-on="Notifications on" data-t-off="Turn on notifications" data-t-denied="Notifications are blocked in the browser" data-t-unsupported="This browser has no notifications">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg>
+    <span class="notify-label">Turn on notifications</span>
+  </button>
+  <span class="notify-note">They fire while this tab is open.</span>
+</div>
+<script src="../../assets/js/notify.js?v=190a0472" defer></script>
+        <div class="energy-charged">
+          <label><span>Charged energy</span><input type="number" name="charged" min="0" max="9999" inputmode="numeric" class="energy-charged-in"></label>
+          <p class="note">From crafts and items; doesn&#39;t regenerate.</p>
+        </div>
+      </section>
+
+      <div class="wk-groups">
+        <p class="wk-summary"><b class="wk-done-n">0</b>/<span class="wk-total-n">0</span> done this week · <span class="wk-auto">Clears itself at every weekly reset.</span></p>
+        <section class="wk-group" aria-labelledby="h-wk-dungeons">
+          <h2 id="h-wk-dungeons" class="card-title">Dungeons</h2>
+          <ul class="wk-list">
+            <li class="wk-item" data-id="daily-dungeon" data-max="7">
+              <div class="wk-text"><span class="wk-name">Daily Dungeon</span><span class="wk-note">Weekly despite the name — all 7 can go on one day.</span></div>
+              <div class="wk-ctrl">
+                <button type="button" class="wk-btn" data-d="-1" aria-label="−1">−</button>
+                <span class="wk-count"><b>0</b>/7</span>
+                <button type="button" class="wk-btn" data-d="1" aria-label="+1">+</button>
+              </div>
+            </li>
+            <li class="wk-item" data-id="nightmare" data-max="14">
+              <div class="wk-text"><span class="wk-name">Nightmare</span><span class="wk-note">2 charges a day — spend them before they cap.</span></div>
+              <div class="wk-ctrl">
+                <button type="button" class="wk-btn" data-d="-1" aria-label="−1">−</button>
+                <span class="wk-count"><b>0</b>/14</span>
+                <button type="button" class="wk-btn" data-d="1" aria-label="+1">+</button>
+              </div>
+            </li>
+            <li class="wk-item" data-id="transcendence" data-max="2">
+              <div class="wk-text"><span class="wk-name">Transcendence</span><span class="wk-note">Arcana source. Reward pool 2 (blue cards) needs ~1.8k item level.</span></div>
+              <div class="wk-ctrl">
+                <button type="button" class="wk-btn" data-d="-1" aria-label="−1">−</button>
+                <span class="wk-count"><b>0</b>/2</span>
+                <button type="button" class="wk-btn" data-d="1" aria-label="+1">+</button>
+              </div>
+            </li>
+            <li class="wk-item" data-id="expedition-conquest" data-max="3">
+              <div class="wk-text"><span class="wk-name">Expedition: Conquest</span><span class="wk-note">Chests cost Odyle energy.</span></div>
+              <div class="wk-ctrl">
+                <button type="button" class="wk-btn" data-d="-1" aria-label="−1">−</button>
+                <span class="wk-count"><b>0</b>/3</span>
+                <button type="button" class="wk-btn" data-d="1" aria-label="+1">+</button>
+              </div>
+            </li>
+            <li class="wk-item" data-id="sanctuary" data-max="1">
+              <div class="wk-text"><span class="wk-name">Sanctuary (raid)</span><span class="wk-note">10-player raid.</span></div>
+              <div class="wk-ctrl"><button type="button" class="wk-check" aria-pressed="false" aria-label="Sanctuary (raid)"></button></div>
+            </li>
+            <li class="wk-item" data-id="ascension-trial" data-max="3">
+              <div class="wk-text"><span class="wk-name">Ascension Trial</span><span class="wk-note">Do it last, right before the reset, at your highest item level — first-clear rewards grow with difficulty.</span></div>
+              <div class="wk-ctrl">
+                <button type="button" class="wk-btn" data-d="-1" aria-label="−1">−</button>
+                <span class="wk-count"><b>0</b>/3</span>
+                <button type="button" class="wk-btn" data-d="1" aria-label="+1">+</button>
+              </div>
+            </li>
+          </ul>
+        </section>
+        <section class="wk-group" aria-labelledby="h-wk-resources">
+          <h2 id="h-wk-resources" class="card-title">Energy &amp; resources</h2>
+          <ul class="wk-list">
+            <li class="wk-item" data-id="odyle-craft" data-max="7">
+              <div class="wk-text"><span class="wk-name">Odyle energy craft (Substance Morph)</span><span class="wk-note">7 a week, 40 energy each — the weekly cap is lost if you skip it.</span></div>
+              <div class="wk-ctrl">
+                <button type="button" class="wk-btn" data-d="-1" aria-label="−1">−</button>
+                <span class="wk-count"><b>0</b>/7</span>
+                <button type="button" class="wk-btn" data-d="1" aria-label="+1">+</button>
+              </div>
+            </li>
+            <li class="wk-item" data-id="shugo-festa" data-max="1">
+              <div class="wk-text"><span class="wk-name">Shugo Festa keys spent</span><span class="wk-note">Keys stop at 14 — don&#39;t sit on a full stack.</span></div>
+              <div class="wk-ctrl"><button type="button" class="wk-check" aria-pressed="false" aria-label="Shugo Festa keys spent"></button></div>
+            </li>
+          </ul>
+        </section>
+        <section class="wk-group" aria-labelledby="h-wk-quests">
+          <h2 id="h-wk-quests" class="card-title">Quests &amp; Abyss</h2>
+          <ul class="wk-list">
+            <li class="wk-item" data-id="commander-scrolls" data-max="1">
+              <div class="wk-text"><span class="wk-name">Abyss commander scrolls</span><span class="wk-note">Pick them up and reroll for the rewards you need.</span></div>
+              <div class="wk-ctrl"><button type="button" class="wk-check" aria-pressed="false" aria-label="Abyss commander scrolls"></button></div>
+            </li>
+            <li class="wk-item" data-id="duty-quests" data-max="1">
+              <div class="wk-text"><span class="wk-name">Duty quests</span><span class="wk-note">Burn them in the pet dungeon (Odilium Repository).</span></div>
+              <div class="wk-ctrl"><button type="button" class="wk-check" aria-pressed="false" aria-label="Duty quests"></button></div>
+            </li>
+          </ul>
+        </section>
+        <p class="note">Weekly limits come from the Korean/Taiwanese servers and the EU test — they will be checked against the global client at launch.</p>
+      </div>
+    </div>
+  </div>
+</main>
+<script type="application/json" id="tracker-config">{"energy": {"cap": 840, "chest": 40, "interval_min": 180, "regen": 15}, "lang": "en", "reset": {"anchor": "2026-09-30T07:00:00Z", "confirmed": true, "tz": "Europe/Kyiv"}, "root": "../../", "t": {"char_default": "Main", "char_delete_confirm": "Delete this character and all its progress?", "energy_at_cap": "At the cap \u2014 regeneration is wasted, spend it", "energy_full": "full", "energy_next": "next +{n} in", "notify_energy": "Odyle energy is full", "units": ["d", "h", "m", "s"]}}</script>
+<script src="../../assets/js/tracker.js?v=190a0472" defer></script>
+
+<footer class="site-footer">
+  <div class="wrap footer-in">
+    <div>
+      <a class="brand brand-sm" href="../../en/">AION 2 Global - Guides</a>
+      <p>Unofficial fan site, not affiliated with NCSOFT. AION 2 and its skill icons are © NCSOFT.</p>
+      <p class="foot-credit">Guides are collected from content creators — all credit goes to them; the site is put together with the help of Claude (AI).</p><p class="foot-credit">Independent PT-BR adaptation. Original project: <a href="https://github.com/Couga54/aion2-guides" target="_blank" rel="noopener">Couga54 / AION 2 Guides</a>.</p>
+      <p>Last checked: <time datetime="2026-10-10">Oct 10, 2026</time>.</p>
+      <p><a href="../../en/sources/">All sources and creators</a> · <a href="../../en/changelog/">Changelog</a></p>
+    </div>
+  </div>
+</footer>
+<dialog class="search-dlg" aria-label="Search" data-index="../../en/search.json" data-base="../../en/" data-empty="Nothing found"
+  data-kinds="{&#34;boss&#34;: &#34;Boss&#34;, &#34;class&#34;: &#34;Class&#34;, &#34;page&#34;: &#34;Page&#34;, &#34;section&#34;: &#34;Section&#34;, &#34;skill&#34;: &#34;Skill&#34;}" data-root="../../">
+  <div class="search-in">
+    <div class="search-bar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      <input type="search" class="search-q" placeholder="Class, skill, boss, section…" aria-label="Search" autocomplete="off" spellcheck="false">
+      <kbd>Esc</kbd>
+    </div>
+    <ul class="search-res" role="listbox"></ul>
+  </div>
+</dialog>
+<dialog class="whatsnew" data-id="ptbr-2026-10-12" aria-labelledby="wn-title">
+  <form method="dialog" class="wn-in">
+    <div class="wn-head">
+      <h2 id="wn-title">What&#39;s new</h2>
+      <button class="icon-btn wn-x" value="close" aria-label="Got it">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <section class="wn-entry">
+      <time class="wn-date" datetime="2026-10-12">Oct 12, 2026</time>
+      <ul>
+        <li><span>Independent Brazilian Portuguese edition: translated guides and interface, with the English version available for comparison.</span></li>
+        <li><span>Interface and key Cleric sections reviewed. Other long-form content uses machine translation with partial review.</span></li>
+        <li><span>Original mechanics, build choices, Daevanion routes and local progress tracking preserved. Original project: Couga54 / AION 2 Guides.</span></li>
+      </ul>
+    </section>
+    <button class="btn btn-primary wn-ok" value="close">Got it</button>
+    <p class="wn-all"><a href="../../en/changelog/">Full changelog →</a></p>
+  </form>
+</dialog>
+<script src="../../assets/js/site.js?v=190a0472" defer></script>
+<script src="../../assets/js/fx.js?v=190a0472" defer></script>
+</body>
+</html>

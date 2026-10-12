@@ -1,0 +1,366 @@
+{% from "macros.html" import section, skill, core, loadout, passives, glance, hotline, macroseq, hotbar, dv_board with context %}
+
+{# ===== PvE and PvP: each PvP block follows its PvE counterpart, so both modes read in the same order; shared sections are 'pve pvp' ===== #}
+{% call glance('pve') %}
+  <h3>{{ t.core_skills }}</h3>
+  {{ core([('overhead-slam', '20'), ('rending-blow', '20'), ('ruinous-blow', '16')]) }}
+  <h3>{{ t.stigma_loadout }}</h3>
+  {{ loadout([('lunge-stance', 20), ('focused-block', 5), ('rage-burst', 5), ('zikels-blessing', 10)]) }}
+  <h3>{{ t.key_passives }}</h3>
+  {{ passives(['attack-preparation', 'experienced-counterstrike', 'murderous-burst', 'impact-hit']) }}
+{% endcall %}
+
+{% call glance('pvp') %}
+  <h3>{{ t.core_skills }}</h3>
+  {{ core([('overhead-slam', '20'), ('mocking-blade', '16'), ('defiance', '16'), ('aerial-snare', '16')]) }}
+  <h3>{{ t.stigma_loadout }} · Abyss</h3>
+  {{ loadout([('lunge-stance', 20), ('armor-of-balance', 5), ('tenaciousness', 10), ('blade-toss', 5)]) }}
+  <h3>{{ t.key_passives }}</h3>
+  {{ passives(['attack-preparation', 'survival-willpower', 'survival-stance', 'impact-hit']) }}
+{% endcall %}
+
+{% call section('intro', 'Overview', 'pve') %}
+  <p>Gladiator is NCSoft's flagship class and has stayed S-tier on the Korean and Taiwanese servers. It buffs the party, pseudo-tanks and deals huge damage with fewer decisions to make than other classes. Sorcerer and Assassin edge it out on a static dummy, but Gladiator is close behind and far simpler to play.</p>
+  <div class="callout accent">
+    <h3>The build in one sentence</h3>
+    <p>{{ s('overhead-slam') }} at 16–20, {{ s('lunge-stance') }} at stigma level 20 and {{ s('rage-burst') }} to trigger Overhead Slam. Everything else is support.</p>
+  </div>
+{% endcall %}
+
+{% call section('intro-pvp', 'Overview', 'pvp') %}
+  <p>In PvP, Gladiator is a <strong>durable diver</strong>: it closes distance, knocks the target down and punishes the knockdown with Overhead Slam. It has enough HP, block and self-heal to survive in the middle of the fight. It's one of the most popular PvP classes, so expect mirror matches.</p>
+  <p>Priorities in order: <strong>anti-control</strong> → <strong>stickiness</strong> → <strong>burst</strong> when their defensives are down.</p>
+  <p class="note">No global PvP meta exists yet. This mode combines Korean/Taiwanese PvP builds with skill data from the global client — treat it as a starting point.</p>
+{% endcall %}
+
+{% call section('global', 'Global Season 1: what changes', 'pve pvp') %}
+  <p>Global servers open on <strong>October 5, 2026</strong> (Founder's early access from September 30), separate from the Korean/Taiwanese servers. What that means for Gladiator:</p>
+  <div class="callout">
+    <ul>
+      <li><strong>4 stigma slots</strong> instead of 6 (expected for Season 1 only).</li>
+      <li><strong>Stigmas cap at level 20</strong> — the level-25 tier doesn't exist in the global client.</li>
+      <li><strong>No Heroic gear</strong> in Season 1, so gear has fewer bonus lines for passives.</li>
+      <li><strong>Weaker Daevanion bonuses</strong> than in Taiwan: fights run longer, so uptime matters more.</li>
+      <li><strong>Bigger groups</strong>: 5-player expeditions and 10-player sanctuaries, and Elyos and Asmodians can queue together. Party buffs are worth more.</li>
+      <li data-only="pvp"><strong>PvP:</strong> everyone starts on the same limited gear and no meta has formed yet.</li>
+    </ul>
+  </div>
+  <p class="note">Active skills and passives are identical in the global and KR/TW data. Only stigmas lose their level-25 tier.</p>
+{% endcall %}
+
+{% call section('skills', 'Skills', 'pve') %}
+  <p>Only three skills need to go high: <strong>Overhead Slam → Rending Blow → Ruinous Blow</strong>. Skills reach <strong>10</strong> from skill points, <strong>14</strong> with Daevanion, <strong>16</strong> with two rings (+1 each) and <strong>20</strong> with arcana. Specializations unlock at 8, 12 and 16.</p>
+  <ul class="skill-grid">
+    {% call skill('overhead-slam', 'must', '16 → 20', [2, 4], then=[3]) %}Your #1 damage source. With Rage Burst and Lunge Stance it's effectively always up. At 20 the third slot goes to the guaranteed crit.{% endcall %}
+    {% call skill('rending-blow', 'must', '16 → 20', [3, 4], then=[2]) %}Second-biggest damage source and your mana engine. At 20 add the mobile pick.{% endcall %}
+    {% call skill('ruinous-blow', 'must', '16', [2, 3]) %}Big nuke that grants Prepare for Battle (+20% PvE damage, 20s). Grobs takes +20% Skill Speed instead of Skill Critical Hit at 8.{% endcall %}
+    {% call skill('leaping-slam', 'opt', '12', [0, 2]) %}Main gap-closer; 3s of Prepare for Battle before Ruinous Blow extends it.{% endcall %}
+    {% call skill('rush-strike', 'opt', '12', [1, 0]) %}Dodge into a gap-close. With Lunge Stance's cooldown procs, Stamina beats −10s cooldown.{% endcall %}
+    {% call skill('mocking-blade', 'opt', '12', [0, 1]) %}Emergency heal button: 15% HP absorbed from bosses.{% endcall %}
+    {% call skill('ankle-slice', 'opt', '12', [2, 3]) %}Backup closer. Skip the Ankle Smash chain — it slows your rotation.{% endcall %}
+    {% call skill('crushing-wave', 'skip', '12', [0, 3]) %}Too slow for bosses; AoE and self-heal on trash.{% endcall %}
+    {% call skill('defiance', 'opt', '16 if spare', [4]) %}CC break. Nice for raids, not a priority.{% endcall %}
+    {% call skill('sword-aura-rampage', 'opt', '16 if spare', [2, 4]) %}Only hits Staggered targets, but at 16 every hit takes 1s off <em>all</em> cooldowns — stigmas included. Spammed in a Stagger window it's strong; outside it, it's a damage loss (Grobs). Not a priority.{% endcall %}
+    {% call skill('keen-strike', 'opt', '12', [0, 3]) %}Basic attack: +20% MP restored and −1s Ruinous Blow cooldown per hit — aLuckyRO and Sen both take it to 12 on day one, when mana is short. Once Overhead Slam and Rending Blow are 16, stop holding it (Grobs, see Leveling).{% endcall %}
+    {% call skill('aerial-snare', 'opt', 'bosses · 12', [2, 3]) %}Only hits knocked-down targets — but bosses are the exception. aLuckyRO levels it to 12 for +100% damage to CC-immune targets (every boss) and the Forced Fall chain, and uses it in Nightmare dungeons. Grobs and Arthars leave it out; if you add it, give it its own key, not the main line.{% endcall %}
+  </ul>
+{% endcall %}
+
+{% call section('skills-pvp', 'Skills', 'pvp') %}
+  <div class="callout accent">
+    <h3>The one mechanic that matters: Knockdown</h3>
+    <p>{{ s('overhead-slam') }} and {{ s('aerial-snare') }} only hit a target afflicted with <strong>Knockdown</strong> (bosses are an exception, which is why PvE never cares). Every burst window starts with a knockdown: Mocking Blade (guaranteed), Rush Strike after a dodge, Ankle Slice. The exception is {{ s('rage-burst') }}, which enables Overhead Slam on its target for 10s.</p>
+  </div>
+  <ul class="skill-grid">
+    {% call skill('overhead-slam', 'must', '16 → 20', [2, 4], then=[3]) %}Your punish on knocked-down targets. Korean PvP guides call the level-20 guaranteed crit essential. It takes the third slot, which opens at 20.{% endcall %}
+    {% call skill('mocking-blade', 'must', '16', [3, 4]) %}Guaranteed 3s Knockdown — your main opener. At 16: a longer Knockdown that ignores Block and Evasion; the two extra strikes wait for the third slot at 20.{% endcall %}
+    {% call skill('defiance', 'must', '16', [3, 4]) %}Breaks Stun, Knockdown, Airborne, Grab, Frost and Fear. Mandatory. At 16: +2s Tenacity with the damage tolerance; the 20% HP pick is the third slot, at 20.{% endcall %}
+    {% call skill('aerial-snare', 'must', '16', [3, 4]) %}Follow-up that launches a knocked-down target. Useless in PvE, core here. At 16: the Forced Fall chain and half the cooldown; the Airborne chance is the third slot, at 20.{% endcall %}
+    {% call skill('rush-strike', 'opt', '12–16', [1, 3]) %}Dodge → dash with a Knockdown chance. At 16 you can swap the range pick for +25% Knockdown Chance.{% endcall %}
+    {% call skill('rending-blow', 'opt', '16', [2, 4]) %}Still your filler and mana engine.{% endcall %}
+    {% call skill('ruinous-blow', 'opt', '12–16', [1, 4]) %}A third gap-closer; ignoring Block/Evasion is strong against Templars. That pick needs level 16; at 12 take the range and the extra damage.{% endcall %}
+    {% call skill('crushing-wave', 'opt', '16', [3, 4]) %}The pull drags a healer or caster out of their backline.{% endcall %}
+    {% call skill('ankle-slice', 'opt', '12', [2, 0]) %}Another way into the knockdown window.{% endcall %}
+    {% call skill('leaping-slam', 'opt', '12', [1, 3]) %}20m leap that survives landing in a group.{% endcall %}
+  </ul>
+{% endcall %}
+
+{% call section('passives', 'Passives', 'pve') %}
+  <p>Passive points are plentiful — most passives max out without any thought. One trap and one late pick:</p>
+  <div class="callout">
+    <ul>
+      <li>{{ s('protection-armor') }} — a tiny heal on block. Reroll gear and cards that roll it.</li>
+      <li>{{ s('destructive-impulse') }} — bonus damage only on Staggered targets. Not a trap: aLuckyRO and Sen level it for the stagger window, where it stacks with {{ s('sword-aura-rampage') }}. Take it after the main passives.</li>
+    </ul>
+  </div>
+  <p>{{ s('blood-absorption') }} needs no investment: a 50% chance to heal on every hit, plus a big instant heal when you drop to 50% HP. It's why Gladiator gets by without a healer.</p>
+{% endcall %}
+
+{% call section('passives-pvp', 'Passives', 'pvp') %}
+  <div class="table-wrap"><table>
+    <thead><tr><th>Passive</th><th>PvP value</th></tr></thead>
+    <tbody>
+      <tr><td>{{ s('attack-preparation') }}</td><td>Still #1: PvP Damage Boost, Defense, Accuracy.</td></tr>
+      <tr><td>{{ s('survival-willpower') }}</td><td>Status resist plus tolerance while you're CC'd. Dead weight in PvE, great here.</td></tr>
+      <tr><td>{{ s('survival-stance') }}</td><td>HP and PvP Damage Tolerance.</td></tr>
+      <tr><td>{{ s('impact-hit') }}</td><td>More Impact chance — your knockdowns land more often.</td></tr>
+      <tr><td>{{ s('destructive-impulse') }}</td><td>Bonus damage on knocked-down targets — the PvE trap becomes useful.</td></tr>
+    </tbody>
+  </table></div>
+{% endcall %}
+
+{% call section('gear', 'Gear & stats', 'pve') %}
+  <p>With no Heroic gear, attack speed, move speed, Might and Precision take most of the bonus lines, leaving 1–2 for passives. Priority:</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>#</th><th>Passive</th><th>Why</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>{{ s('attack-preparation') }}</td><td>Flat PvE Damage Boost, Defense and Accuracy. No conditions.</td></tr>
+      <tr><td>2</td><td>{{ s('experienced-counterstrike') }}</td><td>Front damage at all times, plus a 20s PvE Damage Boost for you <em>and the party</em> on every block. Doesn't stack with a Templar's Fury but covers a party without one.</td></tr>
+      <tr><td>3</td><td>{{ s('murderous-burst') }} / {{ s('impact-hit') }}</td><td>Every 5 hits = AoE burst + crit damage / more Impact and Double chance.</td></tr>
+    </tbody>
+  </table></div>
+  <p>Weapon and front/back damage boosts are the strongest types, and Gladiator always fights from the front. Don't chase perfect manastone rolls in Season 1 — rerolls cost roughly 200–300k each on TW.</p>
+  <h3>Stats (Ulfhednar, global)</h3>
+  <div class="callout"><ul>
+    <li><strong>Gear lines:</strong> anything that says damage — Critical Hit, Damage Boost.</li>
+    <li><strong>Soul binds on weapon and guard:</strong> Weapon Damage Boost, Combat Speed, Damage Boost, Might — in that order.</li>
+    <li><strong>Stats:</strong> Wisdom (Double Chance), Time (Combat Speed), Destruction (damage), plus some Accuracy — bosses parry a Gladiator that is short on it.</li>
+    <li><strong>Genus Insight:</strong> roll the attack lines. They raise Combat Power, the number parties check before inviting you to a dungeon.</li>
+    <li><strong>Mana:</strong> if you run dry, take Max MP and MP regen lines, the +50 MP nodes on the Daevanion boards, and mana potions (Crafting → Alchemy).</li>
+  </ul></div>
+{% endcall %}
+
+{% call section('gear-pvp', 'Gear & stats', 'pvp') %}
+  <p>With Season 1's limited gear, don't build a separate PvP set yet — keep your PvE gear and change passives, stigmas and Daevanion.</p>
+  <div class="callout"><ul>
+    <li><strong>Accuracy</strong> — players Block and Evade far more than bosses.</li>
+    <li><strong>Critical Hit and Combat Speed</strong> — crits drive Lunge Stance's cooldown procs.</li>
+    <li><strong>PvP Damage Boost / Tolerance</strong> over the PvE versions wherever a slot offers them.</li>
+    <li><strong>Arcana:</strong> Overhead Slam to 20 first, then Mocking Blade, Defiance and Aerial Snare to 16.</li>
+  </ul></div>
+{% endcall %}
+
+{% call section('arcana', 'Arcana', 'pve') %}
+  <p>A card leveled to 5 averages about <strong>+2</strong> to a random skill it can roll.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Card</th><th>Look for</th></tr></thead>
+    <tbody>
+      <tr><td>{{ it('{i:parchment_vigor}') }}</td><td>{{ s('overhead-slam') }} and {{ s('ruinous-blow') }} — the only two of its six that matter.</td></tr>
+      <tr><td>{{ it('{i:compass_vigor}') }}</td><td>{{ s('rending-blow') }} only. Use the Freedom version for Accuracy — parries in front of a boss are lost damage.</td></tr>
+      <tr><td>{{ it('{i:chalice_vigor}') }}</td><td>Rolls any skill; crafting lets you pick two. Top up whatever is still short of 20.</td></tr>
+    </tbody>
+  </table></div>
+  <p>Average luck: 14 + 2 (ring) + 2 + 2 = <strong>20</strong> on Overhead Slam. If only one more skill can reach 20, pick Rending Blow over Ruinous Blow.</p>
+  <div class="callout">
+    <h3>Sets &amp; passive cards</h3>
+    <p>Aim for 4-piece <strong>Primal Vigor</strong> (all the Vigor cards above — hover one for the set bonus). Gladiator never needs CDR (Illusion). If MP runs dry at Season 1 attack speed, switch to 2-piece <strong>Magic Armor</strong> ({{ it('{i:mirror_magic_gold}') }} and the other Magic cards). Passive cards: {{ s('attack-preparation') }} first, then any mix of Experienced Counterstrike &gt; Murderous Burst &gt; Impact Hit &gt; Identify Weakness.</p>
+  </div>
+{% endcall %}
+
+{% call section('daevanion', 'Daevanion boards', 'pve pvp') %}
+  <p>Daevanion takes your skills from 10 to 14 and adds a pile of stats. Each blue node gives <strong>+1 level</strong> to its skill.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Board</th><th>Unlock</th><th>Focus</th></tr></thead>
+    <tbody>
+      <tr><td>Nezekan</td><td>Lv 12</td><td>Combat Speed, Cooldown Reduction</td></tr>
+      <tr><td>Zikel</td><td>Lv 20</td><td>Damage Boost, Damage Tolerance</td></tr>
+      <tr><td>Vaizel</td><td>Lv 30</td><td>Critical Damage Boost and Tolerance</td></tr>
+      <tr><td>Triniel</td><td>Lv 40</td><td>Multi-Hit Chance and Resist</td></tr>
+      <tr><td>Azphel</td><td>Lv 45</td><td>PvP Damage Boost and Tolerance — no skill nodes</td></tr>
+    </tbody>
+  </table></div>
+  <div class="callout">
+    <ul>
+      <li>Node costs: grey stat 1, green passive 2, blue skill 3, orange special 4.</li>
+      <li data-only="pve"><strong>Priority:</strong> blue nodes for {{ s('overhead-slam') }}, {{ s('rending-blow') }}, {{ s('ruinous-blow') }}, then orange nodes, then stats.</li>
+      <li data-only="pvp"><strong>Priority:</strong> blue nodes for {{ s('overhead-slam') }}, {{ s('mocking-blade') }}, {{ s('defiance') }}, {{ s('aerial-snare') }}, then orange nodes.</li>
+      <li data-only="pve"><strong>No Ariel on global:</strong> the global client has five boards — the PvE board Ariel from KR/TW isn't there. Azphel is PvP-only, so in PvE finish the first four boards first.</li>
+      <li data-only="pvp"><strong>Azphel</strong> (level 45) is all PvP Damage Boost / Tolerance — take it, and Triniel earlier: multi-hit is a PvP stat.</li>
+    </ul>
+  </div>
+  <h3>The route on the boards</h3>
+  <p>The real global boards from the game data. Gold marks the cheapest path from Start to the nodes this guide takes; hover any node to see what it gives.</p>
+  <div data-only="pve">{{ dv_board('pve') }}</div>
+  <div data-only="pvp">{{ dv_board('pvp') }}</div>
+  <p class="note">Boards and costs come from the global client data (questlog.gg). Stat values may still change at launch — check the in-game board before committing a full route.</p>
+{% endcall %}
+
+{% call section('stigmas', 'Stigmas', 'pve') %}
+  <p>Three stigmas are locked in, and the fourth depends on your party. Skip Wrath Wave, Armor of Balance, Forced Restraint, Assault Strike and Fracturing Rush in PvE; Blade Toss only in a group (below).</p>
+  <ul class="skill-grid">
+    {% call skill('lunge-stance', 'must', 'Lv 20', upto=20) %}The level-20 proc cuts all cooldowns on crits: permanent Overhead Slam, Rage Burst, block and gap-closers. First stigma to max.{% endcall %}
+    {% call skill('focused-block', 'must', 'Lv 5', upto=5) %}Guaranteed Parry. Every block triggers Experienced Counterstrike's party buff — blocking is buffing. At level 5 it can be used twice in a row. Take it first while leveling.{% endcall %}
+    {% call skill('rage-burst', 'must', 'Lv 5', upto=5) %}Triggers Overhead Slam on the target for 10s, +10% PvE Damage Boost and −10% boss Attack.{% endcall %}
+    {% call skill('zikels-blessing', 'opt', 'Lv 10', upto=10) %}Default 4th slot: +20% Attack, doesn't depend on how well your party plays.{% endcall %}
+    {% call skill('lifestealing-blade', 'opt', 'Lv 20', upto=20) %}4th slot for an organized party: Predation boosts everyone's hits. Only worth it at 20.{% endcall %}
+    {% call skill('blade-toss', 'opt', 'group', upto=5) %}aLuckyRO's group pick: −30% Defense on the boss for 10s, so the whole party kills it faster. Take it in an organized group in place of Zikel's Blessing when you play the semi-tank.{% endcall %}
+    {% call skill('wave-armor', 'skip', 'Lv 15', upto=15) %}Only without a Templar. Its strong level-25 tier doesn't exist in global.{% endcall %}
+  </ul>
+  <p>Stigma sources: Nightmare shop, Shugo Festa shop and the tiered Abyss shop. Gladiator needs so few that it's set up within the first days.</p>
+{% endcall %}
+
+{% call section('stigmas-pvp', 'Stigmas', 'pvp') %}
+  <p>Korean PvP builds run exactly four stigmas, so they fit global's slots as-is.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Mode</th><th>Stigmas</th></tr></thead>
+    <tbody>
+      <tr><td>Abyss</td><td>Lunge Stance, Armor of Balance, Blade Toss, Tenaciousness</td></tr>
+      <tr><td>Arena</td><td>Lunge Stance, Armor of Balance, Tenaciousness, Focused Block</td></tr>
+    </tbody>
+  </table></div>
+  <ul class="skill-grid">
+    {% call skill('lunge-stance', 'must', 'Lv 20', upto=20) %}Crit cooldown procs also bring Tenaciousness and Defiance back faster.{% endcall %}
+    {% call skill('armor-of-balance', 'must', 'Lv 5+', upto=5) %}Hard to knock down for 10s. Pop it <em>before</em> diving into a CC-heavy group.{% endcall %}
+    {% call skill('tenaciousness', 'must', 'Lv 10+', upto=10) %}3s immunity to damage and status effects, then a heal. At 20 it triggers itself on Impact CC.{% endcall %}
+    {% call skill('blade-toss', 'opt', 'Abyss', upto=5) %}20m throw: −30% Defense and −50% healing received for 10s. Your answer to healers and runners.{% endcall %}
+    {% call skill('focused-block', 'opt', 'Arena', upto=5) %}Block their big damage skills in 1v1. Don't waste it on CC.{% endcall %}
+    {% call skill('forced-restraint', 'opt', 'alt.', upto=5) %}Seal (silence) to lock a target during the Overhead Slam window.{% endcall %}
+    {% call skill('rage-burst', 'opt', 'alt.', upto=5) %}Enables Overhead Slam without a knockdown for 10s.{% endcall %}
+  </ul>
+{% endcall %}
+
+{% call section('macro', 'Macro & rotation', 'pve') %}
+  <p>AION 2 has two separate tools, and the build uses both:</p>
+  <ul>
+    <li><strong>Hotbar line</strong> — several skills stacked on <em>one</em> hotbar button. Pressing it casts the highest-priority skill that's ready, and in AION 2 the <strong>bottom slot has the highest priority</strong>. The cards below show each line top to bottom as in the game, with the priority number on every skill.</li>
+    <li><strong>In-game macro</strong> — while you hold its key, it presses your hotbar lines in order and cancels animation tails. Skills on cooldown are skipped. Hold your basic attack (LMB) <em>together</em> with the macro key instead of putting it into the macro — the game weaves and cancels it better that way.</li>
+  </ul>
+  <p>Gladiator needs <strong>6 skills on 3 buttons</strong>: 4 damage skills and 2 buffs.</p>
+
+  <h3>1. Hotbar lines</h3>
+  <div class="hotlines">
+    {% call hotline('RMB', 'Main line', ['rage-burst', 'overhead-slam', 'rending-blow']) %}Rage Burst sits in the <strong>bottom</strong> slot — see below.{% endcall %}
+    {% call hotline('E', 'Ruinous line', ['ruinous-blow'], ['lifestealing-blade']) %}Grants Combat Ready. Add Lifestealing Blade only if it's in your stigmas.{% endcall %}
+    {% call hotline('R', 'Buff line', ['lunge-stance', 'zikels-blessing']) %}Both keep themselves up thanks to Lunge Stance's cooldown cuts.{% endcall %}
+  </div>
+
+  <h3>2. In-game macro</h3>
+  <p>Skill window → <strong>Macro</strong>. Put the three lines in this order and set every <strong>Delay to 10 ms</strong> (it's the pause between buttons, not your ping). Bind the macro in Settings → Key Settings → General → Gameplay → <strong>Macro</strong> — a side mouse button is ideal, because you hold it.</p>
+  {{ macroseq([('Main line', 'RMB · 10 ms'), ('Ruinous line', 'E · 10 ms'), ('Buff line', 'R · 10 ms')]) }}
+
+  <p class="note">Season 1 tip (Grobs): cooldowns are slow at launch, so buffs are worth more when timed — you can take the buff line out of the macro and press it yourself right before a boss or a big pack.</p>
+
+  <h3>3. What you actually press</h3>
+  <ul class="presslist">
+    <li><span class="press-how">Hold</span><span class="press-what"><span class="key">Macro key</span> the whole fight.</span></li>
+    <li><span class="press-how">Spam</span><span class="press-what"><span class="key">RMB</span> main line and <span class="key">E</span> Ruinous line on top of it — the two lines must stay separate so they can be woven.</span></li>
+    <li><span class="press-how">By hand</span><span class="press-what">{{ s('focused-block') }} (block = party buff), {{ s('mocking-blade') }} (knockdown + heal), {{ s('leaping-slam') }} (gap closer), {{ s('crushing-wave') }} on packs.</span></li>
+  </ul>
+
+  <div class="callout accent">
+    <h3>Opening a boss</h3>
+    <div class="combo">{{ s('lunge-stance') }} + {{ s('zikels-blessing') }}<span class="arrow">→</span>{{ s('leaping-slam') }} in<span class="arrow">→</span>{{ s('ruinous-blow') }}<span class="arrow">→</span>hold the macro</div>
+    <p>Block the boss's <strong>first attack</strong> with {{ s('focused-block') }} — Experienced Counterstrike buffs the whole party right away. Every boss opens differently: on some it's better to jump in, block first and only then buff. Learn the bosses and fit the block in.</p>
+    <p class="note">Useful setting (Grobs): Esc → Settings → Info Display → Combat → <strong>Display boss orientation indicator</strong>. It shows where the boss's front is — Gladiator always wants to hit from the front.</p>
+  </div>
+  <div class="callout">
+    <h3>Why Rage Burst sits at the bottom</h3>
+    <p>Rage Burst is a buff that must always be up, so it takes the bottom slot — the highest priority — and fires every time it comes off cooldown. Put it above Overhead Slam and it never fires: Lunge Stance keeps Overhead Slam permanently available, and the lower slot always wins. Don't stuff more skills into the main line: macro timing depends on frame rate, and any delay to Overhead Slam costs more than the extra skill adds.</p>
+  </div>
+  <div class="callout">
+    <h3>Where the damage comes from</h3>
+    <p>On a one-minute dummy parse: Overhead Slam (incl. Upward Strike) &gt; Rending Blow &gt; Ruinous Blow &gt; Lunge Stance &gt; Murderous Burst &gt; Rage Burst.</p>
+  </div>
+  <p>The macro keeps pace — it doesn't play for you. You still decide when to block, when to close distance and when to self-heal. Season 1's weaker stats mean multi-minute boss fights, so every second of lost uptime counts.</p>
+  <p class="note">Keys are Arthars' action-mode layout (RMB / E); on tab-target use any two keys you can spam. The macro slot order follows the same line-by-line scheme Korean builds use.</p>
+
+  <h3>Another option: Ulfhednar's macro (global)</h3>
+  <p>Ulfhednar's bar (video of Oct 6, frames 3:04 and 3:12). Rage Burst and Overhead Slam share a line as above, but Rending Blow shares a line with {{ s('sword-aura-rampage') }}, which sits below it and fires first whenever a boss is staggered, and Ruinous Blow goes on top of the buff line. He runs {{ s('blade-toss') }} (−30% enemy defense for 10s, a party debuff) in place of Focused Block.</p>
+  {{ hotbar([('1', ['leaping-slam']), ('2', ['mocking-blade']), ('3', ['rush-strike', 'aerial-snare']), ('4', ['ankle-slice']), None, ('Caps', []), ('—', ['crushing-wave']), ('F', []), ('9', []), None, ('Q', ['zikels-blessing', 'lunge-stance', 'blade-toss', 'ruinous-blow']), ('E', ['sword-aura-rampage', 'rending-blow']), ('LMB', ['keen-strike']), ('RMB', ['rage-burst', 'overhead-slam'])], macro=['Q', 'RMB', 'E'], own_keys=true) }}
+  <div class="hotlines">
+    {% call hotline('Q', 'Buff line', ['zikels-blessing', 'lunge-stance', 'blade-toss', 'ruinous-blow']) %}The buffs and the debuff on cooldown; Ruinous Blow fires whenever they are all running.{% endcall %}
+    {% call hotline('RMB', 'Main line', ['rage-burst', 'overhead-slam']) %}Rage Burst in the bottom slot, Overhead Slam above it.{% endcall %}
+    {% call hotline('E', 'Stagger line', ['sword-aura-rampage', 'rending-blow']) %}Sword Aura Rampage only hits staggered targets, so the rest of the time the line casts Rending Blow.{% endcall %}
+  </div>
+  {{ macroseq([('Buff line', 'Q · 10 ms'), ('Main line', 'RMB · 10 ms'), ('Stagger line', 'E · 10 ms')]) }}
+  <ul class="presslist">
+    <li><span class="press-how">Hold</span><span class="press-what">{{ s('keen-strike') }} on <span class="key">LMB</span> and the macro key — he binds the in-game macro to <span class="key">C</span>. Keen Strike keeps the mana up and cuts Ruinous Blow's cooldown on every hit.</span></li>
+    <li><span class="press-how">By hand</span><span class="press-what">The closers and {{ s('mocking-blade') }} on 1–4, {{ s('crushing-wave') }} on packs.</span></li>
+  </ul>
+  <p class="note">On top of that he runs a mouse-software macro that spams the same keys (10 ms each, 15 ms for LMB) and presses the in-game macro key while it runs, to weave in more attacks. A plain in-game macro is enough to start with.</p>
+{% endcall %}
+
+{% call section('combos-pvp', 'Combos & play', 'pvp') %}
+  <div class="callout">
+    <h3>Knockdown punish</h3>
+    <div class="combo">{{ s('mocking-blade') }}<span class="arrow">→</span>{{ s('overhead-slam') }} × N<span class="arrow">→</span>{{ s('aerial-snare') }}<span class="arrow">→</span>Forced Fall</div>
+  </div>
+  <div class="callout">
+    <h3>Engage from range</h3>
+    <div class="combo">{{ s('blade-toss') }}<span class="arrow">→</span>dodge + {{ s('rush-strike') }} / {{ s('leaping-slam') }}<span class="arrow">→</span>knockdown punish</div>
+    <p>No knockdown landed? {{ s('rage-burst') }} or {{ s('forced-restraint') }} opens the window anyway.</p>
+  </div>
+  <div class="callout">
+    <h3>Staying alive</h3>
+    <ul>
+      <li>{{ s('defiance') }} breaks the first hard CC; save {{ s('tenaciousness') }} for the follow-up chain.</li>
+      <li>{{ s('armor-of-balance') }} goes up before you dive, not after you're down.</li>
+      <li>Against healers: Blade Toss first, then the Crushing Wave pull.</li>
+    </ul>
+  </div>
+{% endcall %}
+
+{% call section('recap', 'Recap', 'pve') %}
+  <div class="callout accent"><ul>
+    <li><strong>Skills:</strong> Overhead Slam 20, Rending Blow 16→20, Ruinous Blow 16; everything else 12 or less.</li>
+    <li><strong>Levels from:</strong> Daevanion (+4) → rings (+2) → arcana (+4).</li>
+    <li><strong>Stigmas:</strong> Lunge Stance 20, Focused Block 5, Rage Burst 5, Zikel's Blessing 10 (or Lifestealing Blade 20).</li>
+    <li><strong>Passives:</strong> Attack Preparation &gt; Experienced Counterstrike &gt; Murderous Burst / Impact Hit.</li>
+  </ul></div>
+{% endcall %}
+
+{% call section('recap-pvp', 'Recap', 'pvp') %}
+  <div class="callout accent"><ul>
+    <li><strong>Skills:</strong> Overhead Slam 16→20, Mocking Blade 16, Defiance 16, Aerial Snare 16.</li>
+    <li><strong>Stigmas:</strong> Lunge Stance 20 + Armor of Balance + Tenaciousness + Blade Toss (Abyss) or Focused Block (Arena).</li>
+    <li><strong>Daevanion:</strong> take Azphel (PvP Damage Boost and Tolerance), Triniel earlier.</li>
+    <li><strong>Play:</strong> knockdown → Overhead Slam; break CC with Defiance, save Tenaciousness.</li>
+  </ul></div>
+{% endcall %}
+
+{# ============================ Leveling ============================ #}
+{% call section('fight-lvl', t.lvl_combat, 'lvl') %}
+  <div class="callout"><ul>
+    <li><strong>Packs:</strong> {{ s('leaping-slam') }} in → {{ s('crushing-wave') }} → {{ s('rending-blow') }}. A kill resets Leaping Slam → next pack.</li>
+    <li><strong>Elites:</strong> {{ s('mocking-blade') }} (knockdown) → spam {{ s('overhead-slam') }} → {{ s('ruinous-blow') }} on cooldown. Dodge → {{ s('rush-strike') }} also knocks NPCs down.</li>
+    <li><strong>Low HP:</strong> Mocking Blade and Crushing Wave absorb HP; Blood Absorption heals at 50%. No potions needed on trash.</li>
+  </ul></div>
+{% endcall %}
+
+{% call section('macro-lvl', 'Leveling macro', 'lvl') %}
+  <p>A simpler setup for leveling and the first days at the cap, from Grobs' early-game macros. Only the skills you spam go in; buffs, stigma bursts and gap-closers stay on their own keys.</p>
+  <div class="hotlines">
+    {{ hotline('1', 'Line 1', ['rage-burst', 'overhead-slam', 'rending-blow'], []) }}
+  </div>
+  <p>In-game macro: Line 1, each with a 10 ms delay. Hold your basic attack {{ s('keen-strike') }} on LMB <strong>and</strong> the macro key together.</p>
+  <div class="callout">
+    <h3>Priorities while leveling (Grobs)</h3>
+    <ul>
+      <li><strong>Passives:</strong> {{ s('experienced-counterstrike') }} first, then {{ s('attack-preparation') }} — the only two that matter now.</li>
+      <li><strong>Daevanion:</strong> skill points take skills to 10; after that the boards do. A 65-point route gives +2 to your four main damage skills, so they reach 12 and the second specialty fast — see the boards below.</li>
+      <li><strong>At 16:</strong> once Overhead Slam and Rending Blow are 16, stop holding LMB — {{ s('keen-strike') }} becomes a damage loss. Hold only the macro and take Rending Blow's "Restores 50 MP on a Critical Hit" for mana.</li>
+    </ul>
+  </div>
+  <p class="note">Once your skills reach 12–16 and specializations change their cooldowns, switch to the full setup in the PvE tab.</p>
+  <h3>Leveling route on the Daevanion boards (Grobs, 65 points)</h3>
+  <p>+2 to Overhead Slam, Rending Blow, Ruinous Blow and Keen Strike — Nezekan at 12, then Zikel at 20.</p>
+  {{ dv_board('lvl') }}
+{% endcall %}
+
+{# ============================ Sources ============================ #}
+<section class="sources" aria-labelledby="h-sources">
+  <h2 id="h-sources">{{ t.sources }}</h2>
+  <ul>
+    <li><a href="https://www.youtube.com/watch?v=xRPr30JetyY" target="_blank" rel="noopener">Grobs — The Only Gladiator PVE Guide You Need</a> — confirms the build, stigmas and macro of this guide</li>
+    <li><a href="https://www.youtube.com/watch?v=tYTZ8VucMXw" target="_blank" rel="noopener">Arthars Gaming — The ULTIMATE AION 2 Gladiator Starter Guide</a> (PvE, from the TW server)</li>
+    <li><a href="https://questlog.gg/aion-2/en/db/skills/gladiator" target="_blank" rel="noopener">questlog.gg</a> — skill &amp; stigma data from the global client</li>
+    <li><a href="https://vortexgaming.io/en/postdetail/611533" target="_blank" rel="noopener">Vortex Gaming</a> — Korean PvP builds (Abyss / Arena)</li>
+    <li><a href="https://www.iggm.com/news/aion-2-global-servers-dungeon-gameplay-changes-expeditions-gear-progression-stigma-slots" target="_blank" rel="noopener">IGGM</a> — global Season 1 changes</li>
+    <li><a href="https://nemobek.github.io/aion2-guide/" target="_blank" rel="noopener">nemobek.github.io/aion2-guide</a> (TitanTheF's table) — leveling route</li>
+    <li><a href="https://www.youtube.com/watch?v=HMod6Z4GrE0" target="_blank" rel="noopener">Grobs — AION 2 Macro Guide</a> — how hotbar lines and the in-game macro work</li>
+    <li><a href="https://www.youtube.com/watch?v=WlxLOTs62dM" target="_blank" rel="noopener">aLuckyRO — AION 2 Latest Gladiator PVE Build for Global</a> — early specializations (Keen Strike, Aerial Snare on bosses), stigmas, Daevanion priority, boss rotation from the front</li>
+    <li><a href="https://www.youtube.com/watch?v=t-B-5lR_GIs" target="_blank" rel="noopener">Sen — AION 2 Progression Guide (+ Gladiator guide)</a> — confirms the skills, stigmas and passives of this guide on the global servers</li>
+    <li><a href="https://www.youtube.com/watch?v=zrdG1XDYUtE" target="_blank" rel="noopener">Ulfhednar — AION 2 Gladiator PvE DPS Build</a> — a second macro option with his hotbar (Sword Aura Rampage line, Blade Toss), gear lines, soul binds, stats, Genus Insight, mana</li>
+  </ul>
+  <p class="sources-all"><a href="{{ root }}{{ lang }}/sources/">{{ t.src_all }} →</a></p>
+</section>

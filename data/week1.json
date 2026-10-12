@@ -1,0 +1,336 @@
+{
+  "_note": "First-week page (/<lang>/week-1/). 'reset' = weekly caps that are lost for good if missed before the first reset; 'goals' = one-time things not to miss. src: spid = Spid '14 Tips I Wish I Knew', lfg = LittleFattyGG 'Don't waste your first week'. sanya = Sanya Jacuzzi 'New plan after level 45' (RU, from the global datamine the day before launch, unconfirmed). The item level route after 45 lives on its own page (data/progression.json). titan = TitanTheF's progression sheet (Taiwan experience).",
+  "groups": [
+    {
+      "id": "reset",
+      "title": {
+        "en": "Before the first weekly reset",
+        "ru": "До первого недельного сброса",
+        "uk": "До першого тижневого скидання",
+        "tr": "İlk haftalık sıfırlamadan önce",
+        "pt-BR": "Antes do primeiro reset semanal"
+      },
+      "lead": {
+        "en": "These are weekly caps: whatever you don't use before the reset is gone for good. If you start on October 5 you only have about two days until the first reset.",
+        "ru": "Это недельные лимиты: всё, что не использовал до сброса, сгорает навсегда. Если начинаешь 5 октября, до первого сброса остаётся всего около двух дней.",
+        "uk": "Це тижневі ліміти: усе, що не використав до скидання, згорає назавжди. Якщо починаєш 5 жовтня, до першого скидання лишається лише близько двох днів.",
+        "tr": "Bunlar haftalık limitler: sıfırlamadan önce kullanmadığın her şey sonsuza dek gider. 5 Ekim'de başlarsan ilk sıfırlamaya yaklaşık iki günün var.",
+        "pt-BR": "São limites semanais, o que não usar antes do reset sumir para sempre. Se você começar em outubro 5 você só tem cerca de dois dias até o primeiro reset."
+      },
+      "items": [
+        {
+          "id": "alts-22",
+          "src": "spid titan",
+          "text": {
+            "en": "<strong>Level your alts to 22 early.</strong> Odyle energy only starts regenerating at 22 — every offline hour after that is free energy. With 10–16 hours at launch, play the main first and start alts after 1–2 days, when the starting zones are emptier; with less time, take 4 characters to 22 first.",
+            "ru": "<strong>Качни альтов до 22 пораньше.</strong> Энергия Odyle начинает копиться только с 22 уровня — каждый час офлайна после этого даёт бесплатную энергию. Если на старте есть 10–16 часов — сначала мейн, а твинки через 1–2 дня, когда начальные локации освободятся; если времени меньше — сначала 4 персонажа до 22.",
+            "uk": "<strong>Прокачай альтів до 22 якомога раніше.</strong> Енергія Odyle починає накопичуватися лише з 22 рівня — кожна година офлайну після цього дає безкоштовну енергію. Якщо на старті є 10–16 годин — спершу мейн, а твінки через 1–2 дні, коли стартові локації звільняться; якщо часу менше — спершу 4 персонажі до 22.",
+            "tr": "<strong>Alt karakterlerini erkenden 22'ye çıkar.</strong> Odyle enerjisi ancak 22'de yenilenmeye başlar — ondan sonraki her çevrimdışı saat bedava enerjidir. Çıkışta 10–16 saatin varsa önce ana karakteri oyna, başlangıç bölgeleri boşalınca 1–2 gün sonra altlara başla; daha az vaktin varsa önce 4 karakteri 22'ye çıkar.",
+            "pt-BR": "<strong>Nivele seus alts para 22 cedo.</strong> Odyle A energia só começa a se regenerar em 22 - cada hora off-line depois disso é energia livre. Com 10–16 horas de lançamento, toque o primeiro e comece alts depois. 1–2 dias, quando as zonas de partida estão mais vazias; com menos tempo, tomar 4 personagens para 22 Primeiro."
+          }
+        },
+        {
+          "id": "energy-cap",
+          "src": "lfg",
+          "text": {
+            "en": "<strong>Never sit at the energy cap.</strong> Craft all 7 weekly Odyle energies (Substance Morph) and pick up the green Odium in the world and after dungeons.",
+            "ru": "<strong>Не упирайся в лимит энергии.</strong> Скрафти все 7 недельных энергий Odyle (Substance Morph) и собирай зелёный Odium в мире и после подземелий.",
+            "uk": "<strong>Не впирайся в ліміт енергії.</strong> Скрафти всі 7 тижневих енергій Odyle (Substance Morph) і збирай зелений Odium у світі та після підземель.",
+            "tr": "<strong>Asla enerji sınırında oturma.</strong> Haftalık 7 Odyle enerjisinin hepsini üret (Substance Morph) ve dünyadaki ve zindan sonrası yeşil Odium'u topla.",
+            "pt-BR": "<strong> Nunca sente na tampa de energia. </strong> Craft todas as energias 7 semanais Odyle (Substance Morph) e pegar o Odium verde no mundo e depois das masmorras."
+          }
+        },
+        {
+          "id": "daily-dungeon",
+          "src": "lfg",
+          "text": {
+            "en": "<strong>Daily Dungeon: 7 entries</strong> — it's a weekly limit despite the name.",
+            "ru": "<strong>Ежедневное подземелье: 7 входов</strong> — несмотря на название, лимит недельный.",
+            "uk": "<strong>Daily Dungeon: 7 входів</strong> — попри назву, ліміт тижневий.",
+            "tr": "<strong>Daily Dungeon: 7 giriş</strong> — adına rağmen haftalık bir limit.",
+            "pt-BR": "<strong> Daily Dungeon: 7 entradas </strong> - é um limite semanal apesar do nome."
+          }
+        },
+        {
+          "id": "charges",
+          "src": "spid",
+          "text": {
+            "en": "<strong>Nightmare and Shugo Festa charges</strong> — spend them before they cap. Shugo keys stop at 14; repeat clears still give shop currency.",
+            "ru": "<strong>Заряды Кошмара и Shugo Festa</strong> — трать до лимита. Ключи Shugo копятся до 14; повторные прохождения всё равно дают валюту магазина.",
+            "uk": "<strong>Заряди Nightmare і Shugo Festa</strong> — витрачай до ліміту. Ключі Shugo накопичуються до 14; повторні проходження все одно дають валюту магазину.",
+            "tr": "<strong>Nightmare ve Shugo Festa hakları</strong> — sınıra dolmadan harca. Shugo anahtarları 14'te durur; tekrar geçişler yine de mağaza parası verir.",
+            "pt-BR": "<strong> Nightmare e Shugo Festa cobram </strong> - gastá-los antes de cap. Chaves Shugo param no 14; as cópias ainda dão dinheiro."
+          }
+        },
+        {
+          "id": "duty",
+          "src": "lfg",
+          "text": {
+            "en": "<strong>Duty quests</strong> — burn them in the pet dungeon (Odilium Repository); reroll rare ones for enhancement stones.",
+            "ru": "<strong>Служебные задания</strong> — сдавай в питомнике (Odilium Repository); редкие перекидывай на камни усиления.",
+            "uk": "<strong>Службові завдання</strong> — здавай у підземеллі петів (Odilium Repository); рідкісні перекидай на камені посилення.",
+            "tr": "<strong>Duty görevleri</strong> — evcil hayvan zindanında (Odilium Repository) erit; nadir olanları güçlendirme taşları için yeniden çevir.",
+            "pt-BR": "<strong> Duty quests </strong> - queimá-los na masmorra animal (Odilium Repository); rebolo raros para pedras de realce."
+          }
+        },
+        {
+          "id": "transcendence",
+          "src": "lfg",
+          "text": {
+            "en": "<strong>Transcendence</strong> at ~1.8k item level if you can — reward pool 2 has the blue arcana; 1.5k only gets greens.",
+            "ru": "<strong>Трансцендентность</strong> по возможности на ~1800 уровня предметов — в пуле наград 2 синие арканы; на 1500 только зелёные.",
+            "uk": "<strong>Transcendence</strong> за можливості на ~1.8k рівня предметів — у пулі нагород 2 сині аркани; на 1.5k лише зелені.",
+            "tr": "Yapabiliyorsan <strong>Transcendence</strong>'ı ~1,8k item level'da yap — ödül havuzu 2'de mavi arcana var; 1,5k'da yalnızca yeşiller çıkar.",
+            "pt-BR": "<strong> Transcedência </strong> em ~ 1.8 k nível de item se você puder - recompensa piscina 2 tem o arcana azul; 1.5 k só recebe verdes."
+          }
+        },
+        {
+          "id": "commander",
+          "src": "spid",
+          "text": {
+            "en": "<strong>Abyss commander scrolls</strong> — pick them up and reroll for the rewards you need (Abyss points, stones).",
+            "ru": "<strong>Свитки командира Бездны</strong> — забери и перекинь награды на нужные (очки Бездны, камни).",
+            "uk": "<strong>Сувої командира Безодні</strong> — забери й перекинь нагороди на потрібні (очки Безодні, камені).",
+            "tr": "<strong>Abyss komutan parşömenleri</strong> — al ve ihtiyacın olan ödüller (Abyss puanları, taşlar) için yeniden çevir.",
+            "pt-BR": "<strong> Comandante do Abismo rola </strong> - pegue-os e reroll para as recompensas que você precisa (pontos do Abismo, pedras)."
+          }
+        },
+        {
+          "id": "ascension",
+          "src": "spid lfg",
+          "text": {
+            "en": "<strong>Ascension Trial last.</strong> 3 attempts a week: wait until right before the reset and run them at your highest item level — the first-clear rewards scale with difficulty.",
+            "ru": "<strong>Испытание восхождения — в конце.</strong> 3 попытки в неделю: дождись конца недели и иди на максимальном уровне предметов — награды за первое прохождение растут со сложностью.",
+            "uk": "<strong>Ascension Trial — наприкінці.</strong> 3 спроби на тиждень: дочекайся кінця тижня й іди на максимальному рівні предметів — нагороди за перше проходження ростуть зі складністю.",
+            "tr": "<strong>Ascension Trial en sona.</strong> Haftada 3 deneme: sıfırlamanın hemen öncesine kadar bekle ve en yüksek item level'ında gir — ilk geçiş ödülleri zorlukla ölçeklenir.",
+            "pt-BR": "<strong> Ascension Trial por último. </strong> 3 tenta por semana: esperar até o reset e executá-los em seu nível de item mais alto - a primeira recompensa clara escala com dificuldade."
+          }
+        }
+      ]
+    },
+    {
+      "id": "goals",
+      "title": {
+        "en": "Don't miss in week 1",
+        "ru": "Не упусти в первую неделю",
+        "uk": "Не пропусти в перший тиждень",
+        "tr": "1. haftada kaçırma",
+        "pt-BR": "Não perca na semana 1"
+      },
+      "lead": {
+        "en": "One-time things that are easy to get wrong in the first days.",
+        "ru": "Разовые вещи, в которых легко ошибиться в первые дни.",
+        "uk": "Разові речі, у яких легко помилитися в перші дні.",
+        "tr": "İlk günlerde yanlış yapması kolay tek seferlik şeyler.",
+        "pt-BR": "Coisas únicas que são fáceis de errar nos primeiros dias."
+      },
+      "items": [
+        {
+          "id": "msq-45",
+          "src": "lfg spid",
+          "text": {
+            "en": "<strong>Main story to 45 first.</strong> A lot opens at 45 (in Taiwan even gathering). Side content scales with you, so nothing is lost by rushing.",
+            "ru": "<strong>Сначала сюжет до 45.</strong> Многое открывается на 45 (на Тайване даже сбор). Побочный контент подстраивается под уровень, так что спешка ничего не теряет.",
+            "uk": "<strong>Спершу сюжет до 45.</strong> Багато що відкривається на 45 (на Тайвані навіть збір). Побічний контент підлаштовується під рівень, тож поспіх нічого не втрачає.",
+            "tr": "<strong>Önce ana hikâyeyle 45'e çık.</strong> 45'te çok şey açılır (Tayvan'da toplama bile). Yan içerik seninle ölçeklenir, acele etmekle bir şey kaybetmezsin.",
+            "pt-BR": "<strong> Principal história para 45 primeiro. </strong> Muito se abre no 45 (em Taiwan mesmo reunindo). O conteúdo lateral escala com você, então nada se perde correndo."
+          }
+        },
+        {
+          "id": "no-chests",
+          "src": "spid",
+          "text": {
+            "en": "<strong>Don't open expedition chests while leveling.</strong> Finish the runs but save the energy for Vakron Sky Island (1,600 item level) — the end of the main story hands you yellow weapons anyway.",
+            "ru": "<strong>Не открывай сундуки экспедиций на прокачке.</strong> Проходи забеги, но копи энергию для Vakron Sky Island (1600 уровня предметов) — в конце сюжета всё равно выдают жёлтое оружие.",
+            "uk": "<strong>Не відкривай скрині експедицій на прокачці.</strong> Проходь забіги, але накопичуй енергію для Vakron Sky Island (1600 рівня предметів) — наприкінці сюжету все одно видають жовту зброю.",
+            "tr": "<strong>Seviye atlarken expedition sandıklarını açma.</strong> Koşuları bitir ama enerjiyi Vakron Sky Island'a (1.600 item level) sakla — ana hikâyenin sonu zaten sarı silahlar veriyor.",
+            "pt-BR": "<strong> Não abra baús de expedição enquanto nivela. </strong> Termine as corridas, mas guarde a energia para a Ilha Vakron Sky (nível de item 1,600) - o fim da história principal dá-lhe armas amarelas mesmo assim."
+          }
+        },
+        {
+          "id": "feathers",
+          "src": "lfg spid sanya",
+          "text": {
+            "en": "<strong>Feathers → Monolith, but last.</strong> Nerfed on global, so collect them after everything else. 95+ feathers take the Monolith to level 11 (stones for the green amulet); it also gives stats, a costume and a title. Use an interactive map.",
+            "ru": "<strong>Перья → Монолит, но в последнюю очередь.</strong> На глобалке их понерфили — собирай после всего остального. 95+ перьев поднимают Монолит до 11 уровня (камни для зелёного амулета); ещё он даёт статы, костюм и титул. Пользуйся интерактивной картой.",
+            "uk": "<strong>Пір'я → Monolith, але в останню чергу.</strong> На глобалі їх понерфили — збирай після всього іншого. 95+ пір'їн піднімають Monolith до 11 рівня (камені для зеленого амулета); ще він дає стати, костюм і титул. Користуйся інтерактивною мапою.",
+            "tr": "<strong>Tüyler → Monolith, ama en son.</strong> Global'de zayıflatıldı, o yüzden her şeyden sonra topla. 95+ tüy Monolith'i 11. seviyeye çıkarır (yeşil muska için taşlar); ayrıca stat, kostüm ve unvan verir. Etkileşimli harita kullan.",
+            "pt-BR": "<strong> Penas → Monolito, mas por último. </strong> Nerfed no global, então pegue-os depois de tudo. 95 + penas levam o Monolito ao nível 11 (pedras para o amuleto verde); também dá estatísticas, uma fantasia e um título. Use um mapa interativo."
+          }
+        },
+        {
+          "id": "sealed",
+          "src": "lfg spid",
+          "text": {
+            "en": "<strong>Sealed dungeons and strongholds</strong> on your route — Daevanion crystals, and strongholds are the only way to upgrade the Noble belt.",
+            "ru": "<strong>Запечатанные подземелья и крепости</strong> по пути — кристаллы Daevanion, а крепости — единственный способ улучшить благородный пояс.",
+            "uk": "<strong>Запечатані підземелля й фортеці</strong> дорогою — кристали Daevanion, а фортеці — єдиний спосіб покращити благородний пояс.",
+            "tr": "Rotandaki <strong>mühürlü zindanlar ve kaleler</strong> — Daevanion kristalleri; Noble kemeri yükseltmenin tek yolu da kaleler.",
+            "pt-BR": "<strong> Masmorras e fortalezas seladas </strong> em sua rota - Cristais Daevanion, e fortalezas são a única maneira de atualizar o cinturão Noble."
+          }
+        },
+        {
+          "id": "rift",
+          "src": "lfg sanya",
+          "text": {
+            "en": "<strong>Enemy-side rifts are no longer a priority.</strong> Per the global datamine, enemy-side ? marks and sealed dungeons give 1,000 AP and 2–5k enhancement stones instead of Daevanion nodes — do them at your own pace, weekly caps come first.",
+            "ru": "<strong>Разломы на стороне врага больше не приоритет.</strong> По датамайну глобалки знаки вопроса и запечатанные подземелья врага дают 1000 AP и 2–5 тыс. камней заточки вместо узлов Daevanion — закрывай в своём темпе, недельные лимиты важнее.",
+            "uk": "<strong>Розломи на боці ворога вже не пріоритет.</strong> За датамайном глобалу знаки питання й запечатані підземелля ворога дають 1 000 AP і 2–5 тис. каменів заточки замість вузлів Daevanion — закривай у своєму темпі, тижневі ліміти важливіші.",
+            "tr": "<strong>Düşman tarafındaki riftler artık öncelik değil.</strong> Global datamine'a göre düşman tarafındaki ? işaretleri ve mühürlü zindanlar Daevanion düğümleri yerine 1.000 AP ve 2–5k güçlendirme taşı veriyor — kendi hızında yap, önce haftalık limitler.",
+            "pt-BR": "<strong>As fendas do lado inimigo não são mais uma prioridade.</strong> Pela mina de dados global, marcas inimigas e calabouços selados dão 1,000 AP e 2–5K pedras em vez de Daevanion Nodos, faça-os no seu próprio ritmo, os limites semanais vêm primeiro."
+          }
+        },
+        {
+          "id": "amulet-belt",
+          "src": "spid",
+          "text": {
+            "en": "<strong>Amulet and belt to +10</strong>, then Substance Morph them to the next colour. Unequip first, or the morph won't work.",
+            "ru": "<strong>Амулет и пояс до +10</strong>, затем Substance Morph в следующий цвет. Сначала сними предмет, иначе не сработает.",
+            "uk": "<strong>Амулет і пояс до +10</strong>, потім Substance Morph у наступний колір. Спершу зніми предмет, інакше не спрацює.",
+            "tr": "<strong>Muska ve kemer +10'a</strong>, sonra Substance Morph ile bir sonraki renge çevir. Önce çıkar, yoksa morph çalışmaz.",
+            "pt-BR": "<strong> Amuleto e cinturão para + 10 </strong>, então a substância Morfá-los para a próxima cor. Unequip primeiro, ou o morf não funcionará."
+          }
+        },
+        {
+          "id": "plus10",
+          "src": "spid",
+          "text": {
+            "en": "<strong>Enhance to +10 and stop.</strong> After +10 the 100% success rate is gone and costs explode. Weapon and accessories first — they give damage; armor later.",
+            "ru": "<strong>Точи до +10 и остановись.</strong> После +10 шанс уже не 100%, а цена резко растёт. Сначала оружие и аксессуары — они дают урон; броню позже.",
+            "uk": "<strong>Точи до +10 і зупинись.</strong> Після +10 шанс уже не 100%, а ціна різко зростає. Спершу зброя й аксесуари — вони дають шкоду; броню пізніше.",
+            "tr": "<strong>+10'a kadar güçlendir ve dur.</strong> +10'dan sonra %100 başarı biter ve maliyet patlar. Önce silah ve aksesuarlar — hasar onlardan gelir; zırh sonra.",
+            "pt-BR": "<strong> Melhorar para + 10 e parar. </strong> Após + 10 a taxa de sucesso 100% se foi e os custos explodem. Primeiro, armas e acessórios, eles causam danos, armadura depois."
+          }
+        },
+        {
+          "id": "keep-yellows",
+          "src": "spid",
+          "text": {
+            "en": "<strong>Keep yellow items you can't use.</strong> They make soulbinding rerolls 100% successful — don't dismantle them.",
+            "ru": "<strong>Не разбирай жёлтые вещи, которые не можешь надеть.</strong> Они дают 100% успех при перепривязке души.",
+            "uk": "<strong>Не розбирай жовті речі, які не можеш одягнути.</strong> Вони дають 100% успіху при переприв'язці душі.",
+            "tr": "<strong>Kullanamadığın sarı eşyaları sakla.</strong> Soulbinding yeniden çevirmelerini %100 başarılı yapıyorlar — parçalama.",
+            "pt-BR": "<strong>Mantenha itens amarelos que não pode usar.</strong> Eles fazem rebolos de ligação à alma. 100% Bem-sucedido, não os desmonte."
+          }
+        },
+        {
+          "id": "shops",
+          "src": "spid lfg",
+          "text": {
+            "en": "<strong>Season shop: don't buy blind.</strong> Season coins are scarce; wait until it's clear what's worth it. Skip the early Kanis PvP gear and don't enhance the Fierce Battle amulet — spend Abyss points on Daevanion crystals and stigma shards.",
+            "ru": "<strong>Сезонный магазин: не покупай наугад.</strong> Сезонных монет мало; подожди, пока станет ясно, что стоит брать. Не бери ранний PvP-сет Kanis и не точи амулет Fierce Battle — трать очки Бездны на кристаллы Daevanion и осколки стигм.",
+            "uk": "<strong>Сезонний магазин: не купуй наосліп.</strong> Сезонних монет мало; зачекай, поки стане зрозуміло, що варто брати. Не бери ранній PvP-сет Kanis і не точи амулет Fierce Battle — витрачай очки Безодні на кристали Daevanion і уламки стигм.",
+            "tr": "<strong>Sezon mağazası: körü körüne alma.</strong> Sezon paraları az; neyin değdiği netleşene kadar bekle. Erken Kanis PvP ekipmanını atla ve Fierce Battle muskasını güçlendirme — Abyss puanlarını Daevanion kristallerine ve stigma parçalarına harca.",
+            "pt-BR": "<strong> Season Shop: não compre às cegas. As moedas da temporada </strong> são escassas, espere até que fique claro o que vale a pena. Pule o equipamento Kanis PvP e não melhore o amuleto de batalha feroz, gaste pontos Abyss em cristais Daevanion e fragmentos de estigma."
+          }
+        },
+        {
+          "id": "shugo-45",
+          "src": "titan",
+          "text": {
+            "en": "<strong>Shugo Festival at 45.</strong> Only at level 45 do you get the full rewards — gold gear and craft materials (global also added stigma shards). Go to every one.",
+            "ru": "<strong>Шуго-фестиваль на 45.</strong> Только на 45 уровне дают полные награды — золотую экипировку и крафтовые ресурсы (на глобалке добавили ещё осколки стигм). Ходи на каждый.",
+            "uk": "<strong>Shugo Festival на 45.</strong> Лише на 45 рівні дають повні нагороди — золоту екіпіровку й крафтові ресурси (на глобалі додали ще уламки стигм). Ходи на кожен.",
+            "tr": "<strong>45'te Shugo Festival.</strong> Tam ödülleri ancak 45. seviyede alırsın — altın ekipman ve üretim malzemeleri (global stigma parçalarını da ekledi). Hepsine git.",
+            "pt-BR": "<strong> Shugo Festival na 45. </strong> Só no nível 45 você recebe as recompensas completas - equipamento de ouro e materiais artesanais (global também adicionado fragmentos estigma). Vá para cada um."
+          }
+        },
+        {
+          "id": "shugo-500",
+          "src": "lfg",
+          "text": {
+            "en": "<strong>Shugo Festa “Not This Tile”:</strong> one runner collects orbs, everyone else stops at 500 points and steps off the board — the whole group gets top-tier rewards.",
+            "ru": "<strong>Shugo Festa «Not This Tile»:</strong> один игрок собирает шары, остальные останавливаются на 500 очках и уходят с поля — вся группа получает максимальные награды.",
+            "uk": "<strong>Shugo Festa «Not This Tile»:</strong> один гравець збирає кулі, решта зупиняються на 500 очках і йдуть із поля — уся група отримує максимальні нагороди.",
+            "tr": "<strong>Shugo Festa “Not This Tile”:</strong> bir koşucu küreleri toplar, diğer herkes 500 puanda durup tahtadan iner — tüm grup en üst kademe ödülleri alır.",
+            "pt-BR": "<strong> Shugo Festa \"Não Este Telha\": </strong> um corredor coleciona orbitas, todos os outros param em 500 pontos e sai do painel - todo o grupo recebe recompensas de topo."
+          }
+        },
+        {
+          "id": "macros",
+          "src": "spid",
+          "text": {
+            "en": "<strong>Set up your macro.</strong> Combat speed outgrows your fingers fast — see the Macro section of your class guide.",
+            "ru": "<strong>Настрой макрос.</strong> Скорость боя быстро обгоняет пальцы — смотри раздел «Макрос» в гайде своего класса.",
+            "uk": "<strong>Налаштуй макрос.</strong> Швидкість бою швидко обганяє пальці — дивись розділ «Макрос» у гайді свого класу.",
+            "tr": "<strong>Makronu kur.</strong> Savaş hızı parmaklarını çabuk geçer — sınıf rehberindeki Makro bölümüne bak.",
+            "pt-BR": "<strong> Configure sua macro. </strong> Velocidade de combate cresce rápido. Veja a seção Macro do seu guia de classe."
+          }
+        },
+        {
+          "id": "shugo-currency",
+          "src": "sanya",
+          "text": {
+            "en": "<strong>Shugo currency → Daevanion nodes first.</strong> With the enemy ? marks nerfed, the Shugo shop is the main early source of Daevanion nodes. Boss rifts give the same rewards: 100 contribution points = 3 reward cards — invite Chanters, Clerics and Templars for their buffs.",
+            "ru": "<strong>Шуго-валюта → узлы Daevanion в первую очередь.</strong> После нерфа вражеских знаков вопроса магазин Шуго — главный ранний источник узлов Daevanion. Босс-разломы дают те же награды: 100 очков вклада = 3 карточки — зови Чародеев, Целителей и Стражей ради их баффов.",
+            "uk": "<strong>Валюта Shugo → вузли Daevanion насамперед.</strong> Після нерфу ворожих знаків питання магазин Shugo — головне раннє джерело вузлів Daevanion. Бос-розломи дають ті самі нагороди: 100 очок внеску = 3 картки — клич Chanters, Clerics і Templars заради їхніх бафів.",
+            "tr": "<strong>Shugo parası → önce Daevanion düğümleri.</strong> Düşman ? işaretleri zayıflatıldığı için Shugo mağazası erken dönemde Daevanion düğümlerinin ana kaynağı. Boss riftleri aynı ödülleri verir: 100 katkı puanı = 3 ödül kartı — bufflar için Chanter, Cleric ve Templar davet et.",
+            "pt-BR": "<strong> Shugo moeda → Daevanion nós primeiro. </strong> Com o inimigo marcado, a loja Shugo é a principal fonte inicial de nós Daevanion. As fendas de chefe dão as mesmas recompensas: pontos de contribuição 100 = cartões de recompensa 3 - convidar Chanters, Clerics e Templários para seus fãs."
+          }
+        },
+        {
+          "id": "nightmare-45",
+          "src": "sanya",
+          "text": {
+            "en": "<strong>Nightmare from 45.</strong> Charges only start piling up at 45 — reach it before the first reset. Every boss has 10 difficulties and an entry is spent only on a kill, so you can leave and come back stronger. Greys first, then greens, then the Last Boss.",
+            "ru": "<strong>Кошмар с 45.</strong> Заряды начинают копиться только с 45 — успей до первого сброса. У каждого босса 10 сложностей, а заряд тратится только за убийство — можно уйти и вернуться сильнее. Сначала серые, потом зелёные, затем Last Boss.",
+            "uk": "<strong>Nightmare з 45.</strong> Заряди починають накопичуватися лише з 45 — встигни до першого скидання. У кожного боса 10 складностей, а заряд витрачається тільки за вбивство — можна піти й повернутися сильнішим. Спершу сірі, потім зелені, далі Last Boss.",
+            "tr": "<strong>45'ten itibaren Nightmare.</strong> Haklar ancak 45'te birikmeye başlar — ilk sıfırlamadan önce oraya ulaş. Her bossun 10 zorluğu var ve giriş yalnızca öldürmede harcanır, yani çıkıp daha güçlü dönebilirsin. Önce griler, sonra yeşiller, sonra Last Boss.",
+            "pt-BR": "<strong> Pesadelo do 45. As cargas </strong> só começam a acumular-se em 45 - chegar até ele antes da primeira reinicialização. Todo chefe tem dificuldades 10 e uma entrada é gasta apenas em uma morte, então você pode sair e voltar mais forte. Cinzas primeiro, depois verdes, depois o último chefe."
+          }
+        },
+        {
+          "id": "contracts",
+          "src": "sanya",
+          "text": {
+            "en": "<strong>Daily contracts: judge by the first slots.</strong> Only the first reward is guaranteed; the rest are a chance that drops the further along the list they are. Take the ones with a key in slots 1–4, otherwise the most rainbow and pet stones; a gold item at the end is almost always a trap.",
+            "ru": "<strong>Ежедневные контракты: смотри на первые слоты.</strong> Гарантирована только первая награда, остальные — шанс, который падает к концу списка. Бери с ключом в слотах 1–4, иначе — с наибольшим числом радужных и камней питомцев; золотая вещь в конце почти всегда обман.",
+            "uk": "<strong>Щоденні контракти: дивись на перші слоти.</strong> Гарантована лише перша нагорода, решта — шанс, що падає до кінця списку. Бери з ключем у слотах 1–4, інакше — з найбільшою кількістю райдужних каменів і каменів петів; золота річ наприкінці майже завжди обман.",
+            "tr": "<strong>Günlük kontratlar: ilk slotlara göre karar ver.</strong> Yalnızca ilk ödül garanti; geri kalanı listede ilerledikçe düşen bir şans. 1–4. slotlarda anahtar olanları al, yoksa en çok gökkuşağı ve evcil hayvan taşı olanları; sondaki altın eşya neredeyse her zaman tuzaktır.",
+            "pt-BR": "<strong> Contmouses diários: julgar pelas primeiras vagas. </strong> Só a primeira recompensa é garantida, o resto é uma chance que deixa mais longe ao longo da lista que eles são. Pegue os que têm uma chave em slots 1 – 4, caso contrário, o arco-íris e pedras de estimação; um item de ouro no final é quase sempre uma armadilha."
+          }
+        },
+        {
+          "id": "pass-boxes",
+          "src": "sanya",
+          "text": {
+            "en": "<strong>Keep Daily Dungeon and trial pass boxes closed</strong> if they are handed out at launch. These modes are being reworked and are best run at the end of the week, at your strongest — rewards depend on your kill speed.",
+            "ru": "<strong>Не открывай коробки с проходками в Daily Dungeon и испытания</strong>, если их раздадут на старте. Эти режимы переделывают, и выгоднее всего идти туда в конце недели на пике силы — награда зависит от скорости убийства мобов.",
+            "uk": "<strong>Не відкривай коробки з перепустками в Daily Dungeon і випробування</strong>, якщо їх роздадуть на старті. Ці режими переробляють, і найвигідніше йти туди наприкінці тижня на піку сили — нагорода залежить від швидкості вбивства мобів.",
+            "tr": "Çıkışta dağıtılırsa <strong>Daily Dungeon ve deneme geçiş kutularını kapalı tut</strong>. Bu modlar yeniden düzenleniyor ve en iyisi hafta sonunda, en güçlü hâlinde girmek — ödüller öldürme hızına bağlı.",
+            "pt-BR": "<strong> Mantenha a Dungeon Diária e as caixas de teste fechadas </strong> se forem entregues no lançamento. Esses modos estão sendo retrabalhados e são melhores no final da semana, no seu mais forte - recompensas dependem de sua velocidade de morte."
+          }
+        },
+        {
+          "id": "world-bosses",
+          "src": "titan",
+          "text": {
+            "en": "<strong>Kill every world boss once</strong> — a chance at a drop and a participation title. Timers are on the map and on the <a href=\"../bosses/\">World bosses</a> page.",
+            "ru": "<strong>Убей каждого мирового босса по разу</strong> — шанс на дроп и титул за участие. Таймеры — на карте и на странице <a href=\"../bosses/\">Мировые боссы</a>.",
+            "uk": "<strong>Убий кожного світового боса по разу</strong> — шанс на дроп і титул за участь. Таймери — на мапі та на сторінці <a href=\"../bosses/\">Світові боси</a>.",
+            "tr": "<strong>Her dünya bossunu bir kez öldür</strong> — düşüş şansı ve katılım unvanı. Zamanlayıcılar haritada ve <a href=\"../bosses/\">Dünya bossları</a> sayfasında.",
+            "pt-BR": "<strong>Mate cada chefe mundial uma vez.</strong> - uma chance de uma queda e um título de participação. Os timers estão no mapa e no <a href=\"../bosses/\">Chefes mundiais.</a> Page."
+          }
+        }
+      ]
+    }
+  ],
+  "sources": {
+    "spid": {
+      "name": "Spid — 14 Tips I Wish I Knew Before Starting",
+      "url": "https://www.youtube.com/watch?v=gwMMpH-OY9c"
+    },
+    "lfg": {
+      "name": "LittleFattyGG — Don't Waste Your First Week",
+      "url": "https://youtu.be/DVQWMJa7jq0"
+    },
+    "sanya": {
+      "name": "Sanya Jacuzzi — New leveling plan after 45 (datamine)",
+      "url": "https://www.youtube.com/watch?v=a8zVweGN--4"
+    },
+    "titan": {
+      "name": "TitanTheF — AION 2 progression sheet",
+      "url": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQ0C3iKFteGvIbgqNDnQq7bmwIaU23DvjbPa0HPSVAdOOiCeBkEq69Cn8jVMJhToJcztCRylYeTYfOk/pubhtml#gid=53494555"
+    }
+  }
+}

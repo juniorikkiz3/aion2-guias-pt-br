@@ -1,0 +1,187 @@
+{#
+  Content macros. Content files import them with:
+    {% from "macros.html" import section, skill, loadout, core, passives with context %}
+#}
+
+{# A guide section, shown only in the listed modes ("pve", "pvp", "lvl", or several). #}
+{% macro section(id, title, modes) -%}
+<section id="{{ id }}" class="g-section" data-only="{{ modes }}" aria-labelledby="h-{{ id }}">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-{{ id }}">{{ title }}</h2>{% set tip = t.macro_tip if id.startswith('macro') else (t.skills_tip if id.startswith('skills') else '') %}{% if tip %}<span class="sec-tip" tabindex="0" aria-label="{{ tip }}">?<span class="sec-tip-box" role="tooltip">{{ tip }}</span></span>{% endif %}</div>
+  {{ caller() }}
+  {% if id == 'stigmas' %}<details class="dvb-sum src-box">
+    <summary><b>270 ×</b> {{ it(t.st_src_sum) }} <span>{{ t.st_src_show }}</span></summary>
+    <ul>{{ it(t.st_src_list) }}</ul>
+  </details>{% endif %}
+  {% if id.startswith('intro') %}<p class="guide-origin"><b>{{ t.guide_patch }} {{ t.patch_s1 if cls.patch == 'S1' else cls.patch }}.</b> {{ t.guide_origin_s1 if cls.patch == 'S1' else (t.guide_origin_kr if 'KR' in (cls.patch or '') else t.guide_origin) }}</p>{% endif %}
+</section>
+{%- endmacro %}
+
+{#
+  Skill card.
+  kind:   must | opt | skip
+  badge:  text for the badge (target level or a short label)
+  picks:  for active skills, indexes of specializations to take (see data/skills/<class>.json)
+  upto:   for stigmas, the target stigma level — tiers up to it are highlighted
+#}
+{#- then = picks for the third slot at skill level 20 (shown as a separate, dashed chip) -#}
+{% macro skill(slug, kind, badge, picks=[], upto=0, then=[]) -%}
+{% set sk = skill_data(slug) %}
+{% set L = sk[lang] %}
+<li class="skill" data-sk-card="{{ slug }}">
+  <img class="skill-icon" data-sk="{{ slug }}" src="{{ icon_url(slug) }}" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">{{ L.name }} <span class="badge {{ kind }}">{% for part in badge.split('→') %}{{ part }}{% if not loop.last %}<svg class="arr" viewBox="0 0 12 8" aria-label="→"><path d="M1 4h9M7 1l3 3-3 3"/></svg>{% endif %}{% endfor %}</span></div>
+    <div class="skill-desc">{{ caller() }}</div>
+    {% set chosen = [] %}
+    {% for sp in L.specs %}{% if loop.index0 in picks or (upto and sp.level <= upto) %}{% do chosen.append(sp) %}{% endif %}{% endfor %}
+    {% if chosen %}
+    <ul class="spec-chips">
+      {% for sp in chosen %}<li><span class="spec-lv">{{ sp.level }}</span>{{ sp.text }}</li>{% endfor %}
+      {% for sp in L.specs %}{% if loop.index0 in then %}<li class="is-next" title="{{ t.spec_at20 }}"><span class="spec-lv">20</span>{{ sp.text }}</li>{% endif %}{% endfor %}
+    </ul>
+    {% endif %}
+    {% if L.specs %}
+    <details class="spec-all">
+      <summary>{{ t.all_specs }}</summary>
+      <ul>
+        {% for sp in L.specs %}
+        <li class="{{ 'on' if (loop.index0 in picks or (upto and sp.level <= upto)) else ('next' if loop.index0 in then) }}"><span class="spec-lv">{{ sp.level }}</span>{{ sp.text }}</li>
+        {% endfor %}
+      </ul>
+    </details>
+    {% endif %}
+  </div>
+</li>
+{%- endmacro %}
+
+{# Row of skill icons with a level badge each: items = [(slug, "20"), ...] #}
+{% macro core(items) -%}
+<ul class="core-row">
+  {% for slug, lvl in items %}
+  <li data-sk="{{ slug }}">
+    <img src="{{ icon_url(slug) }}" width="52" height="52" alt="{{ skill_data(slug)[lang].name }}" loading="lazy">
+    <span class="core-lv{{ ' is-range' if '→' in lvl }}">{% for part in lvl.split('→') %}{{ part|trim }}{% if not loop.last %}<svg class="arr" viewBox="0 0 12 8" aria-label="→"><path d="M1 4h9M7 1l3 3-3 3"/></svg>{% endif %}{% endfor %}</span>
+    <span class="core-name">{{ skill_data(slug)[lang].name }}</span>
+  </li>
+  {% endfor %}
+</ul>
+{%- endmacro %}
+
+{# In-game style stigma slots: items = [(slug, level), ...]; None = flexible slot #}
+{% macro loadout(items) -%}
+<ol class="loadout">
+  {% for it in items %}
+  {% if it %}
+  {% set slug, lvl = it %}
+  <li class="slot" data-sk="{{ slug }}">
+    <img src="{{ icon_url(slug) }}" width="56" height="56" alt="{{ skill_data(slug)[lang].name }}" loading="lazy">
+    <span class="slot-lv">{{ t.lv }} {{ lvl }}</span>
+    <span class="slot-name">{{ skill_data(slug)[lang].name }}</span>
+  </li>
+  {% else %}
+  <li class="slot slot-empty"><span class="slot-name">{{ t.slot_empty }}</span></li>
+  {% endif %}
+  {% endfor %}
+</ol>
+{%- endmacro %}
+
+{# Passive names as chips: items = [slug, ...] #}
+{% macro passives(items) -%}
+<ul class="passive-row">
+  {% for slug in items %}<li data-sk="{{ slug }}"><img src="{{ icon_url(slug) }}" width="24" height="24" alt="" loading="lazy">{{ skill_data(slug)[lang].name }}</li>{% endfor %}
+</ul>
+{%- endmacro %}
+
+{# The "build at a glance" panel for a mode #}
+{% macro glance(modes) -%}
+<aside class="glance" data-only="{{ modes }}" aria-label="{{ t.build_at_glance }}">
+  <p class="glance-title">{{ t.build_at_glance }}</p>
+  {{ caller() }}
+</aside>
+{%- endmacro %}
+
+{#
+  Hotbar line: one hotbar button holding several skills.
+  slugs: skills in PRIORITY order (first = fires first). AION 2 gives the BOTTOM slot of a line the
+  highest priority, so the list is drawn in in-game order (top -> bottom) with the priority number
+  on each row. opt: optional skills, lowest priority (drawn at the top, dashed).
+#}
+{% macro hotline(key, name, slugs, opt=[]) -%}
+{% set rows = slugs + opt %}
+<div class="hotline">
+  <div class="hotline-head"><span class="key">{{ key }}</span><span class="hotline-name">{{ name }}</span></div>
+  <ol class="hotline-skills" reversed>
+    {% for slug in rows|reverse %}
+    <li class="{{ 'is-opt' if slug in opt }}{{ ' is-first' if loop.last }}" data-sk="{{ slug }}">
+      <span class="hl-n">{{ rows|length - loop.index0 }}</span>
+      <img src="{{ icon_url(slug) }}" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">{{ skill_data(slug)[lang].name }}</span>
+    </li>
+    {% endfor %}
+  </ol>
+  <p class="hotline-order">{{ t.hl_order }}</p>
+  {% set note = caller() if caller is defined else '' %}
+  {% if note|trim %}<p class="hotline-note">{{ note }}</p>{% endif %}
+</div>
+{%- endmacro %}
+
+{#- Example hotbar, drawn like the game's: icons only, no names. cols = [(key, [slugs in priority order]), ...];
+    None makes a gap between groups. A line holds up to 4 skills stacked upward (the first slug is the bottom slot,
+    which fires first). Keys in `macro` are the lines the in-game macro presses (gold). own_keys: the author binds
+    unusual keys (side mouse buttons, numpad) - the note says the line matters, not the key. Hover an icon for the skill. -#}
+{% macro hotbar(cols, macro=[], own_keys=false) -%}
+{% set tpl = [] %}{% for c in cols %}{% do tpl.append('.35fr' if c is none else 'minmax(30px,1fr)') %}{% endfor %}
+<figure class="hbar">
+  <figcaption class="hbar-title">{{ t.hb_title }}</figcaption>
+  <div class="hbar-scroll"><div class="hbar-grid" style="grid-template-columns:{{ tpl|join(' ') }}">
+    {% for c in cols %}{% if c is none %}<span class="hbar-gap" aria-hidden="true"></span>{% else %}{% set key, slugs = c %}
+    <div class="hbar-col{{ ' is-macro' if key in macro }}">
+      {% for r in range(3, -1, -1) %}{% if slugs|length > r %}<span class="hbar-slot" data-sk="{{ slugs[r] }}"><img src="{{ icon_url(slugs[r]) }}" width="56" height="56" alt="{{ skill_data(slugs[r])[lang].name }}" loading="lazy"></span>{% else %}<span class="hbar-slot is-empty" aria-hidden="true"></span>{% endif %}{% endfor %}
+      <span class="hbar-key" title="{{ key }}">{{ key }}</span>
+    </div>{% endif %}{% endfor %}
+  </div></div>
+  <p class="hbar-note">{{ t.hb_note }}{% if own_keys %} {{ t.hb_own_keys }}{% endif %}</p>
+</figure>
+{%- endmacro %}
+
+{# In-game macro slots: steps = [(label, detail), ...] in slot order. #}
+{% macro macroseq(steps) -%}
+<ol class="macroseq">
+  {% for label, detail in steps %}
+  <li><span class="ms-n">{{ loop.index }}</span><span class="ms-label">{{ label }}</span>{% if detail %}<span class="ms-detail">{{ detail }}</span>{% endif %}</li>
+  {% endfor %}
+</ol>
+{%- endmacro %}
+
+
+{# Daevanion route for one guide mode (data/boards/<class>.json + presets.json), static; the board tabs switch in site.js. #}
+{% macro dv_board(mode) -%}
+{% if cls.slug in BOARDS %}
+{% set V = board_view(cls.slug, mode) %}
+<div class="dvb" data-dvb>
+  <div class="dvb-tabs" role="tablist" aria-label="{{ t.dv_boards }}">
+    {% for b in V.boards %}<button type="button" role="tab" class="dvb-tab" id="dvt-{{ mode }}-{{ b.id }}" aria-controls="dvp-{{ mode }}-{{ b.id }}" aria-selected="{{ 'true' if loop.first else 'false' }}"{% if not loop.first %} tabindex="-1"{% endif %}><b>{{ b.name }}</b><span>{{ t.dv_lv }} {{ b.lv }} · <i><em data-dvb-t>{{ b.cost }}</em> {{ t.dv_pts }}</i></span></button>{% endfor %}
+  </div>
+  {% for b in V.boards %}
+  <div class="dvb-panel" role="tabpanel" id="dvp-{{ mode }}-{{ b.id }}" aria-labelledby="dvt-{{ mode }}-{{ b.id }}"{% if not loop.first %} hidden{% endif %}>
+    <label class="dvb-range"><span>{{ t.dv_spent }}: <b data-dvb-v>{{ b.cost }}</b> / {{ b.max }}</span><input type="range" min="0" max="{{ b.max }}" value="{{ b.cost }}" data-dvb-range><button type="button" class="dvb-reset" data-dvb-reset="{{ b.cost }}" disabled>{{ t.dv_reset }}</button></label>
+    <div class="dvb-frame"><div class="dvb-stage" style="aspect-ratio:{{ b.cols }} / {{ b.rows }}">
+      <svg class="dvb-svg" viewBox="0 0 {{ b.cols }} {{ b.rows }}" preserveAspectRatio="none" aria-hidden="true">{% for l in b.lines %}<line x1="{{ l.x1 }}" y1="{{ l.y1 }}" x2="{{ l.x2 }}" y2="{{ l.y2 }}" data-c="{{ [l.a, l.b]|max }}"{% if l.on %} class="on"{% endif %}/>{% endfor %}</svg>
+      {% for n in b.nodes %}<span class="dvb-n g{{ n.g }}{% if n.on %} on{% endif %}{% if n.start %} start{% elif not n.icon %} st{% endif %}" style="left:{{ '%.2f'|format(n.x) }}%;top:{{ '%.2f'|format(n.y) }}%" data-sk="{{ n.tip }}" data-c="{{ n.cum }}">{% if n.icon %}<img src="{{ root }}{{ n.icon }}" alt="{{ n.name }}" loading="lazy">{% endif %}</span>{% endfor %}
+    </div></div>
+  </div>
+  {% endfor %}
+  <details class="dvb-sum">
+    <summary><b>{{ V.total }}</b> {{ t.dv_total }} <span>{{ t.dv_show_levels }}</span></summary>
+    {% if V.key %}<p class="dvb-lvs">{% for s, n, lv in V.key %}<span class="dvb-lv" data-sk="{{ s }}">{{ n }} <b>+{{ lv }}</b></span>{% endfor %}</p>{% endif %}
+    {% if V.other %}<p class="dvb-lvs dvb-other"><span>{{ t.dv_on_way }}:</span>{% for s, n, lv in V.other %}<span class="dvb-lv" data-sk="{{ s }}">{{ n }} +{{ lv }}</span>{% endfor %}</p>{% endif %}
+  </details>
+  {% if mode != 'pvp' %}<details class="dvb-sum dvb-src">
+    <summary><b>416 ×</b> {{ it(t.dv_src_sum) }} <span>{{ t.dv_src_show }}</span></summary>
+    <ul>{{ it(t.dv_src_list) }}</ul>
+  </details>{% endif %}
+  <p class="dvb-hint">{{ t.dv_order_hint|safe }}</p>
+  <p class="dvb-legend"><span class="dvb-key g11"></span>{{ t.dv_k_stat }} · 1 <span class="dvb-key g21"></span>{{ t.dv_k_passive }} · 2 <span class="dvb-key g31"></span>{{ t.dv_k_skill }} · 3 <span class="dvb-key g41"></span>{{ t.dv_k_special }} · 4 {% if V.big_stats %}<span class="dvb-key st g21"></span><span class="dvb-key st g31"></span>{{ t.dv_k_stat }} · 2–3 {% endif %}<span class="dvb-key on"></span>{{ t.dv_k_route }}</p>
+</div>
+{% endif %}
+{%- endmacro %}

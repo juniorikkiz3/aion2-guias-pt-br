@@ -1,0 +1,289 @@
+{% from "macros.html" import section, skill, core, loadout, passives, glance, hotline, macroseq, hotbar, dv_board with context %}
+
+{# ===== PvE and PvP: each PvP block follows its PvE counterpart, so both modes read in the same order; shared sections are 'pve pvp' ===== #}
+{% call glance('pve') %}
+  <h3>{{ t.core_skills }}</h3>
+  {{ core([('judgment', '20'), ('punishment', '20'), ('pummel', '20'), ('annihilate', '16'), ('shield-smite', '16')]) }}
+  <h3>{{ t.stigma_loadout }}</h3>
+  {{ loadout([('empyrean-lords-punishment', 15), ('battlefield-banner', 15), ('doom-shield', 15), ('taunt', 5)]) }}
+  <h3>{{ t.key_passives }}</h3>
+  {{ passives(['fury', 'punishing-benediction', 'insulting-roar', 'ironclad-defense']) }}
+{% endcall %}
+
+{% call glance('pvp') %}
+  <h3>{{ t.core_skills }}</h3>
+  {{ core([('judgment', '20'), ('punishment', '20'), ('pummel', '20'), ('annihilate', '20')]) }}
+  <h3>{{ t.stigma_loadout }}</h3>
+  {{ loadout([('executing-blade', 10), ('empyrean-lords-punishment', 15), ('doom-shield', 15), ('nezekans-shield', 15)]) }}
+  <h3>{{ t.key_passives }}</h3>
+  {{ passives(['fury', 'punishing-benediction', 'ironclad-defense', 'survival-willpower']) }}
+{% endcall %}
+
+{% call section('intro', 'Обзор', 'pve') %}
+  <p>Страж — главный танк AION 2, и при этом он наносит заметный урон. Весь билд держится на <strong>«святой троице»</strong> скиллов, которые нужно как можно быстрее довести до 20 и использовать при любой возможности: {{ s('judgment') }}, {{ s('punishment') }} и {{ s('pummel') }}. Стража ограничивает не живучесть, а урон.</p>
+  <div class="callout accent">
+    <h3>Билд в одном предложении</h3>
+    <p>Скиллы щита запускают {{ s('judgment') }}: держи макрос — он открывает бой {{ s('doom-shield') }}, поддерживает Суд и заполняет паузы Градом ударов и его проками, — заряжай {{ s('punishment') }} по откату и блокируй сильные удары, чтобы {{ s('fury') }} висела на группе.</p>
+  </div>
+  <p class="note">Гайд построен на глобальном билде Стража от SolAshur (solashur.com, 27 сентября) и его видеоразбору (29 сентября); 30 сентября сверен с кадрами видео.</p>
+{% endcall %}
+
+{% call section('intro-pvp', 'Обзор', 'pvp') %}
+  <p>В PvP у Стража та же «троица» и тот же цикл Суда; меняются стигмы. {{ s('executing-blade') }} даёт преимущество в каждой дуэли, а {{ s('annihilate') }} на 20 превращается в массовое сбивание с ног.</p>
+  <p>Ближнего бойца кайтят — сильное оружие мало что даёт, если не можешь достать цель, поэтому играй от рывков и Щита погибели.</p>
+  <p class="note">Отдельные PvP-сеты из Кореи и Тайваня для глобала не подтверждены, поэтому план — PvX-экипировка из вкладки PvE. Если PvP-экипировка появится: сначала прокачай PvP-стигмы и только потом трать ресурсы на PvP-оружие или броню.</p>
+{% endcall %}
+
+{% call section('global', 'Глобальный 1 сезон: что меняется', 'pve pvp') %}
+  <p>Глобальные серверы открылись <strong>5 октября 2026</strong> (ранний доступ для Founder's Pack — с 30 сентября). Что это значит для Стража:</p>
+  <div class="callout">
+    <ul>
+      <li><strong>4 стигмы на 45 уровне.</strong> На Тайване у SolAshur было шесть; для глобалки он убирает по две в каждом профиле (см. «Стигмы»).</li>
+      <li><strong>Сделай три пресета скиллов</strong> — PvX, PvP и PvE, — чтобы переключаться в один клик.</li>
+      <li><strong>Собирай осколки очков навыков с самого начала</strong>: от них зависит, как быстро «троица» дойдёт до 20.</li>
+      <li><strong>Вступи в легион</strong> — фарм Бездны в одиночку неэффективен.</li>
+      <li>Названия части стигм в глобальном клиенте отличаются от тайваньских — сверяйся с игрой.</li>
+    </ul>
+  </div>
+{% endcall %}
+
+{% call section('skills', 'Скиллы', 'pve') %}
+  <p>Сначала «троица» до <strong>20</strong>. Очками навыков скилл качается до 10, Daevanion даёт до 14, дальше «троицу» поднимают кольца и арканы. Особенности ниже — как у SolAshur.</p>
+  <ul class="skill-grid">
+    {% call skill('judgment', 'must', '20', [4, 3, 2]) %}Основной урон: его запускают Удар щитом, Кара хранителя, рывок щитом и Щит погибели, а на 16 у него пропадает перезарядка.{% endcall %}
+    {% call skill('punishment', 'must', '20', [1, 4, 2]) %}Заряжаемый бурст — урон со временем, гарантированный крит сквозь блок и +30% скорости умения. Особенности «в движении» и поглощение ОЗ не бери: при достаточной скорости атаки это «пустышки».{% endcall %}
+    {% call skill('pummel', 'must', '20', [1, 2, 4]) %}Филлер и ошеломление. У SolAshur все особенности идут в Удар возмездия — он лечит и бьёт сильнее; особенность на −1 сек. перезарядки Кровавой мести он не берёт. Доведи до 20 как можно раньше. trueeevil берёт как раз её: Кровавая месть откатывается быстрее — честная замена поглощению ОЗ, если лечение не нужно. Leonis тоже её берёт: Кровавая месть даёт +20% урона в PvE на 20 сек., а с этой особенностью её перезарядка падает ниже 20 сек., так что бонус не спадает — на манекене у него DPS вырос примерно с 22k до 26k.{% endcall %}
+    {% call skill('annihilate', 'must', '16 → 20', [2, 3], then=[0]) %}+100% урона по боссам с иммунитетом к контролю, −10 сек. перезарядки. Альтернативный билд качает его до 20 ради массового сбивания с ног. Третий слот открывается на 20: мультиудар для боссов.{% endcall %}
+    {% call skill('shield-smite', 'must', '16', [3, 2]) %}Запускает Суд; −2 сек. перезарядки и шанс 50% активировать Удар изнеможения.{% endcall %}
+    {% call skill('debilitating-smash', 'opt', '12', [3, 0]) %}Прок после блока или Удара щитом; игнорирует блок и уклонение.{% endcall %}
+    {% call skill('warding-strike', 'opt', '12', [1, 3]) %}Запускает Суд; блок и стойкость к урону во время Протекции.{% endcall %}
+    {% call skill('flash-rampage', 'opt', '12 → 16', [4, 3]) %}Только по ошеломлённым целям; −1 сек. ко всем перезарядкам за удар. Из PvE-линии убран: Leonis вынул его как чистую потерю DPS — паузы лучше закрывает Град ударов. Узлы Daevanion на него тоже не бери. Особенность на −1 сек. открывается на 16; на 12 бери мультиудар и восстановление маны.{% endcall %}
+    {% call skill('shield-rush', 'opt', '12', [3, 1]) %}Уклонение → рывок, запускает Суд; −10 сек. перезарядки и +10 м дальности.{% endcall %}
+    {% call skill('vicious-strike', 'opt', '10', []) %}Базовая атака на ЛКМ; хватит 10 уровня от очков навыков.{% endcall %}
+  </ul>
+{% endcall %}
+
+{% call section('skills-pvp', 'Скиллы', 'pvp') %}
+  <ul class="skill-grid">
+    {% call skill('judgment', 'must', '20', [4, 3, 2]) %}Тот же цикл, что и в PvE: его запускают скиллы щита.{% endcall %}
+    {% call skill('punishment', 'must', '20', [1, 4, 2]) %}Бурст сквозь блок и уклонение.{% endcall %}
+    {% call skill('pummel', 'must', '20', [1, 2, 4]) %}Филлер между проками Суда; Удар возмездия лечит и наносит доп. урон.{% endcall %}
+    {% call skill('annihilate', 'must', '20', [2, 3, 4]) %}Альтернативный билд: на 20 бьёт до четырёх оглушённых или сбитых с ног врагов с шансом 30% сбить с ног — массовое сбивание, которое с особенностью −10 сек. можно спамить.{% endcall %}
+    {% call skill('shield-smite', 'opt', '16', [3, 2]) %}Запуск Суда и источник оглушения.{% endcall %}
+  </ul>
+{% endcall %}
+
+{% call section('passives', 'Пассивки', 'pve') %}
+  <div class="table-wrap"><table>
+    <thead><tr><th>#</th><th>Пассивка</th><th>Зачем</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>{{ s('fury') }}</td><td>+урон в PvE тебе <em>и группе</em> после каждого блока — за это Стража и берут в группу.</td></tr>
+      <tr><td>2</td><td>{{ s('punishing-benediction') }}</td><td>Шанс крита и доп. урон при попадании; её роллит аркана Колокол.</td></tr>
+      <tr><td>3</td><td>{{ s('insulting-roar') }}</td><td>Враждебность и атака при ударах спереди.</td></tr>
+      <tr><td>4</td><td>{{ s('ironclad-defense') }}</td><td>Защита и выносливость — основа билда на выносливость. У персонажа SolAshur (+6 уровней) она даёт +37% защиты и +16% выносливости.</td></tr>
+    </tbody>
+  </table></div>
+{% endcall %}
+
+{% call section('gear', 'Путь экипировки', 'pve') %}
+  <p>Если начинаешь в первый день, маршрут такой:</p>
+  <ol>
+    <li><strong>Сет Holy Spirit</strong> ({{ it('{i:holyspirit_torso}') }} у Элийцев, в Verteron и Eltnen; у Асмодиан та же экипировка — сет <strong>Spectral</strong>, {{ it('{i:spectral_torso}') }}, в Altgard и Morheim. Вещи Элийцев и Асмодиан одинаковые, отличаются только названия; наведи на предмет, чтобы сравнить статы) — фарми в нижней Бездне (за убийство AP, петы и шанс золотых дропов, плюс появляются боссы) или где угодно в открытом мире. Цель — около <strong>1600 боевой мощи</strong>.</li>
+    <li><strong>Первый тир подземелий пропусти</strong>: <strong>Urugugu Canyon</strong> — за мечом Aulamus Longsword (уровень предмета 76, атака 308–385, привязывается при получении), <strong>Vakron Sky Island</strong> — за наручами Vakron Guard (уровень предмета 76) и броней Vakron. Улучшай вещи Vakron, пока не потянешь Fire Temple.</li>
+    <li>Через <strong>Transcendence</strong> подготовься к <strong>Fire Temple</strong> — меч Enraged Kromede Sword (уровень предмета 84, атака 340–425, увеличенная дальность) — и <strong>Ferocious Horn</strong> (броня Nuakum). Nuakum фармить надёжнее: почти каждая вещь — апгрейд, а из сундука с оружием может выпасть оружие другого класса.</li>
+    <li><strong>Цель</strong> — PvE: сначала меч White Dragon Lord, потом наручи, потом бижутерия, броня — Nuakum (полный сет брони White Dragon даёт только стойкость в PvE, это для «китов»). PvX, вариант для большинства: меч Enraged Kromede, наручи White Dragon, броня Nuakum, бижутерия White Dragon.</li>
+  </ol>
+  <p><strong>Крылья:</strong> сначала Dark Veil (бонус к атаке, урон), позже Talisra — атака 60, защита 400, точность 35 и 4% сокращения перезарядки. Сокращение перезарядки собирай как можно раньше: чем короче откаты скиллов щита, тем больше проков Суда. Остальные крылья тоже собирай — их эффекты «в коллекции» и сила полёта помогают на фарме в Бездне.</p>
+{% endcall %}
+
+{% call section('stats', 'Статы, связывание души, петы', 'pve pvp') %}
+  <p>Два варианта статов, по тому, как они усиливают друг друга:</p>
+  <div class="callout"><ul>
+    <li><strong>A · Блок + уклонение + ловкость</strong> — ранняя и средняя игра, против противников без высокой точности. Ловкость даёт и блок, и уклонение. Выбор SolAshur на старт.</li>
+    <li><strong>B · Блок + выносливость + Несокрушимая защита</strong> — поздняя игра: при 100% выносливости удар наносит на 50% меньше урона.</li>
+  </ul></div>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Слот</th><th>Уникальная строка</th><th>Дальше</th></tr></thead>
+    <tbody>
+      <tr><td>Оружие, наручи</td><td>Скорость боя + урон оружия</td><td>Мощь + мультиудар; точность, если не дотягиваешь до капа</td></tr>
+      <tr><td>Шлем</td><td>Входящее исцеление</td><td>Атака, Мощь, шанс крита, точность</td></tr>
+      <tr><td>Наплечники</td><td>Крит. урон</td><td>Атака, Мощь, точность, шанс идеального удара</td></tr>
+      <tr><td>Нагрудник</td><td>Увеличение урона</td><td>Атака, Мощь, шанс крита, телосложение</td></tr>
+      <tr><td>Перчатки</td><td>Скорость боя</td><td>Шанс идеального удара, атака, Мощь, мультиудар</td></tr>
+      <tr><td>Поножи</td><td>Шанс идеального удара</td><td>Стойкость к урону, атака, Мощь, телосложение</td></tr>
+      <tr><td>Сапоги</td><td>Скорость передвижения</td><td>Шанс идеального удара, атака, Мощь, ловкость</td></tr>
+      <tr><td>Плащ</td><td>Стойкость к крит. урону</td><td>Шанс идеального удара, стойкость к урону, атака</td></tr>
+      <tr><td>Кольца / серьги / ожерелье</td><td colspan="2">Кольца: 4 главных активных скилла · Серьги: 4 главные пассивки · Ожерелье: 2 активных скилла + атака, шанс крита, урон оружия</td></tr>
+    </tbody>
+  </table></div>
+  <p><strong>Петы (Genus Insight)</strong> — не пропускай: через пару недель именно они решают, попадаешь ты или нет. Обычный инсайт даёт атаку и точность, особый — атаку и увеличение урона. Подними Genus до <strong>10</strong> как можно раньше — значения будут выше. Закрепление — первая крупная трата кинар: закрепляй только важные статы, которым выпал уникальный максимум 50%, а не всё подряд. Порядок слотов: <strong>4 → 7 → 2 и 8</strong> → остальные (атака, точность, крит. удар).</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Слот</th><th>Обычный инсайт</th><th>Особый инсайт</th></tr></thead>
+    <tbody>
+      <tr><td>1, 4, 7</td><td>Шанс крита, точность, блок (или уклонение)</td><td>Макс. атака, бонус атаки</td></tr>
+      <tr><td>2, 5, 8</td><td>Макс. атака, бонус атаки</td><td>Макс. атака, бонус атаки</td></tr>
+      <tr><td>3</td><td colspan="2">Увеличение урона, урон оружия, двойной шанс или шанс идеального удара</td></tr>
+      <tr><td>6</td><td>Шанс крита, точность, стойкость к урону</td><td>Стойкость к урону, стойкость к урону оружия</td></tr>
+      <tr><td>9</td><td>Увеличение урона, урон оружия, двойной шанс или шанс идеального удара</td><td>Увеличение урона или шанс идеального удара</td></tr>
+    </tbody>
+  </table></div>
+  <p><strong>Pantheon:</strong> сначала Wisdom (двойной шанс), Space (блок); затем <span data-only="pve">Illusion (сокращение перезарядки) для PvE</span><span data-only="pvp">Time (скорость атаки) для PvP</span>. Портреты не форсируй и ресурсы на них не трать — они откроются сами по ходу игры.</p>
+{% endcall %}
+
+{% call section('arcana', 'Арканы', 'pve') %}
+  <div class="table-wrap"><table>
+    <thead><tr><th>Карта</th><th>Что ловить</th></tr></thead>
+    <tbody>
+      <tr><td>Кубок</td><td>{{ s('pummel') }}, {{ s('punishment') }}</td></tr>
+      <tr><td>Свиток</td><td>{{ s('judgment') }}, {{ s('punishment') }}</td></tr>
+      <tr><td>Компас</td><td>{{ s('pummel') }}, {{ s('shield-smite') }}</td></tr>
+      <tr><td>Колокол</td><td>{{ s('fury') }}, {{ s('punishing-benediction') }}</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">Бери бонусы сетов на урон, а не на живучесть — живучести Стражу и так хватает.</p>
+{% endcall %}
+
+{% call section('daevanion', 'Доски Daevanion', 'pve pvp') %}
+  <p>Daevanion поднимает скиллы с 10 до 14 и даёт статы. Каждый синий узел — <strong>+1 уровень</strong> его скилла.</p>
+  <div class="callout"><ul>
+    <li><strong>Приоритет:</strong> синие узлы {{ s('judgment') }}, {{ s('punishment') }}, {{ s('pummel') }}, затем {{ s('shield-smite') }} и {{ s('annihilate') }}; дальше оранжевые узлы.</li>
+    <li><strong>Пропускай:</strong> узлы маны (очки — в атаку), узлы {{ s('flash-rampage') }} и зелёные узлы Священного щита / щита стража, если нет лишних очков.</li>
+    <li data-only="pve"><strong>В глобале нет Ariel:</strong> досок пять, и доска 45 уровня, Azphel, даёт только урон и стойкость в PvP — в PvE закрывай первые четыре.</li>
+    <li data-only="pvp"><strong>Azphel</strong> (45 уровень) — сплошь урон и стойкость в PvP: бери его.</li>
+  </ul></div>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Доска</th><th>Открытие</th><th>Оранжевые узлы</th></tr></thead>
+    <tbody>
+      <tr><td>Nezekan</td><td>Ур. 12</td><td>Скорость боя, сокращение перезарядки</td></tr>
+      <tr><td>Zikel</td><td>Ур. 20</td><td>Увеличение урона, стойкость к урону</td></tr>
+      <tr><td>Vaizel</td><td>Ур. 30</td><td>Увеличение крит. урона и стойкость к нему</td></tr>
+      <tr><td>Triniel</td><td>Ур. 40</td><td>Шанс мультиудара и сопротивление ему</td></tr>
+      <tr><td>Azphel</td><td>Ур. 45</td><td>Урон и стойкость в PvP — узлов скиллов нет</td></tr>
+    </tbody>
+  </table></div>
+  <h3>Маршрут на досках</h3>
+  <p>Настоящие доски глобала из данных игры. Золотом отмечен самый дешёвый путь от старта к узлам, которые берёт этот гайд, — синим узлам пяти приоритетных скиллов и оранжевым узлам; наведи на любой узел, чтобы увидеть, что он даёт.</p>
+  <div data-only="pve">{{ dv_board('pve') }}</div>
+  <div data-only="pvp">{{ dv_board('pvp') }}</div>
+  <p class="note">Доски и стоимость узлов — из данных глобального клиента (questlog.gg); путь рассчитан, а не взят из видео. Значения характеристик на запуске могут измениться — сверься с доской в игре, прежде чем вкладывать весь маршрут.</p>
+{% endcall %}
+
+{% call section('stigmas', 'Стигмы', 'pve') %}
+  <p><strong>Сначала вширь, потом вглубь:</strong> по 1 очку во все четыре, затем Кару Владыки Эмпирея и Боевое знамя до 5, дальше пороги — Кара Владыки 10 → 15, Знамя 10 → 15, Щит погибели 15.</p>
+  <ul class="skill-grid">
+    {% call skill('empyrean-lords-punishment', 'must', 'Ур. 15', upto=15) %}АоЕ-урон с большим ошеломлением (+50 на 10); на 15 +10% к урону в PvE. Нужна на боссах с механикой ошеломления.{% endcall %}
+    {% call skill('battlefield-banner', 'must', 'Ур. 15', upto=15) %}Твой бафф урона: мультиудар, урон оружия и атака от защиты. Лучшие ступени — 10 и 15.{% endcall %}
+    {% call skill('doom-shield', 'must', 'Ур. 15', upto=15) %}Главный запуск Суда. На 15 сбрасывается при убийстве — очень важно для PvX и фарма петов.{% endcall %}
+    {% call skill('taunt', 'must', 'Ур. 5', upto=5) %}Агро в групповом контенте. В соло ставь вместо неё Щит Неджакана.{% endcall %}
+    {% call skill('nezekans-shield', 'opt', 'альт.', upto=15) %}Замена ради живучести; до 15 слабый.{% endcall %}
+    {% call skill('comrade-in-arms', 'opt', 'группа', upto=15) %}Замена ради живучести в подземельях — вместо Щита погибели. В соло бесполезна.{% endcall %}
+    {% call skill('executing-blade', 'opt', 'соло · старт', upto=10) %}Выбор trueeevil для PvE в первые дни: −30% защиты цели, а на 10 — Уязвимость. Открывай им, потом {{ s('punishment') }}. Соло и на старте — замена {{ s('empyrean-lords-punishment') }} или {{ s('taunt') }}.{% endcall %}
+    {% call skill('shield-of-protection', 'opt', 'безопасная замена', upto=10) %}Замена Leonis вместо Кары Владыки Эмпирея, если хил слабый или бой незнакомый: полный блок, который гасит урон и немного лечит; на 10 можно двигаться, пока он активен.{% endcall %}
+    {% call skill('noble-armor', 'opt', 'соло · старт', upto=5) %}Макс. ОЗ и защита на 2 минуты при перезарядке 2 минуты — висит всегда. trueeevil играет с ней соло; в группе важнее {{ s('taunt') }} и стигма на ошеломление.{% endcall %}
+  </ul>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Профиль</th><th>4 стигмы</th><th>Замены</th></tr></thead>
+    <tbody>
+      <tr><td>PvE</td><td>Кара Владыки Эмпирея, Боевое знамя, Щит погибели, Провокация</td><td>Щит Неджакана, Плечом к плечу</td></tr>
+      <tr><td>PvE, соло</td><td>Кара Владыки Эмпирея, Боевое знамя, Щит погибели, Щит Неджакана</td><td>Одному агро и групповые скиллы не нужны</td></tr>
+      <tr><td>PvE, подземелье с упором на живучесть</td><td>Кара Владыки Эмпирея, Боевое знамя, Провокация, Плечом к плечу</td><td>Теряешь проки Суда от Щита погибели</td></tr>
+      <tr><td>PvX (универсальный)</td><td>Кара Владыки Эмпирея, Меч наказания, Боевое знамя, Щит погибели</td><td>Щит Неджакана, Плечом к плечу, Двойные доспехи</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">Любая замена чего-то стоит: без Щита погибели теряешь проки Суда, без Кары Владыки — ошеломление, без Знамени — урон. Если нужна живучесть, снимай Щит погибели, когда бою не нужна его мобильность.</p>
+{% endcall %}
+
+{% call section('stigmas-pvp', 'Стигмы', 'pvp') %}
+  <ul class="skill-grid">
+    {% call skill('executing-blade', 'must', 'Ур. 10', upto=10) %}Лучшая для 1 на 1: снижает защиту цели (Уязвимость на 10). Главный приоритет очков стигм для дуэлей.{% endcall %}
+    {% call skill('empyrean-lords-punishment', 'must', 'Ур. 15', upto=15) %}Чистый контроль и АоЕ-урон.{% endcall %}
+    {% call skill('doom-shield', 'must', 'Ур. 15', upto=15) %}Рывок, сбивание с ног и запуск Суда.{% endcall %}
+    {% call skill('nezekans-shield', 'must', 'Ур. 15', upto=15) %}Против физического урона. До 15 слабый.{% endcall %}
+    {% call skill('second-skin', 'opt', 'против магов', upto=10) %}Против магического урона — ставь вместо Кары Владыки Эмпирея, когда нужно выжить.{% endcall %}
+    {% call skill('comrade-in-arms', 'opt', 'групповое PvP', upto=20) %}В групповом PvP ставь вместо Щита Неджакана; лучше всего на 20.{% endcall %}
+    {% call skill('assault-fury', 'opt', 'поздняя игра') %}Замена на поздней стадии, когда экипировка уже собрана: дальний АоЕ-удар с шансом оглушения. Ставь вместо самого слабого слота.{% endcall %}
+  </ul>
+{% endcall %}
+
+{% call section('macro', 'Макрос и ротация', 'pve') %}
+  <p>В AION 2 есть два разных инструмента:</p>
+  <ul>
+    <li><strong>Линия на кнопке</strong> — несколько скиллов на <em>одной</em> кнопке панели. Нажатие кастует готовый скилл с наивысшим приоритетом, и в AION 2 <strong>наивысший приоритет у нижнего слота</strong>. Карточки показывают линии сверху вниз, как в игре.</li>
+    <li><strong>Встроенный макрос</strong> — пока ты держишь его клавишу, он по очереди нажимает линии и отменяет хвосты анимаций. Скиллы на перезарядке пропускаются.</li>
+  </ul>
+  <p>Глобальная схема Leonis (видео от 5 октября, кадр 0:57): две линии на кнопках, которые нажимает встроенный макрос, остальное вручную. Теперь макрос начинается со Щита погибели; по его словам, обновлённая схема даёт примерно на 20% больше урона.</p>
+  {{ hotbar([('1', ['poach']), ('2', ['punishment', 'empyrean-lords-punishment']), ('3', ['debilitating-smash', 'annihilate', 'pummel']), ('Боковая', []), None, ('X', []), ('R', []), ('Боковая 2', []), ('', []), None, ('Q', ['shield-rush']), ('E', ['battlefield-banner', 'noble-armor']), ('ЛКМ', ['vicious-strike']), ('—', ['doom-shield', 'judgment', 'shield-smite', 'warding-strike'])], macro=['—', '3'], own_keys=true) }}
+
+  <h3>1. Линии на кнопках</h3>
+  <div class="hotlines">
+    {% call hotline('—', 'Линия Щита погибели', ['doom-shield', 'judgment', 'shield-smite', 'warding-strike']) %}Первый шаг макроса. {{ s('doom-shield') }} открывает бой (рывок и гарантированное сбивание с ног на NPC, которое открывает {{ s('annihilate') }}), а на 15 уровне сбрасывается при убийстве — это главное для PvX и фарма петов. Между его применениями линия спамит Суд и скиллы щита, которые его запускают.{% endcall %}
+    {% call hotline('3', 'Линия Града ударов', ['debilitating-smash', 'annihilate', 'pummel']) %}Второй шаг макроса. Проки срабатывают, как только загораются; Град ударов закрывает каждую паузу — а с особенностью −1 сек. Кровавой мести каждый Град ударов приближает её откат. {{ s('flash-rampage') }} убран: в тесте Leonis линия без него наносит больше урона. У SolAshur первым стоит Истребление.{% endcall %}
+    {% call hotline('Боковая', 'Линия Суда (SolAshur)', ['judgment', 'shield-smite', 'warding-strike', 'doom-shield']) %}Вариант SolAshur, вне макроса: Суд всегда в приоритете, Щит погибели последним. Он вешает её на <span class="key">R</span>, а мышь повторяет R примерно 10 раз в секунду.{% endcall %}
+  </div>
+
+  <h3>2. Встроенный макрос и кнопки</h3>
+  {{ macroseq([('Линия Щита погибели', '10 мс'), ('Линия Града ударов', '3 · 10 мс')]) }}
+  <ul class="presslist">
+    <li><span class="press-how">ЛКМ</span><span class="press-what">{{ s('vicious-strike') }} (быстрый слот 1).</span></li>
+    <li><span class="press-how">ПКМ</span><span class="press-what">Встроенный макрос. Leonis держит обе кнопки мыши весь бой.</span></li>
+    <li><span class="press-how">Вариант</span><span class="press-what">Линия Суда SolAshur на боковой кнопке вместо Щита погибели в макросе (см. выше).</span></li>
+    <li><span class="press-how">Вручную</span><span class="press-what">Заряженная {{ s('punishment') }} по откату, {{ s('battlefield-banner') }}, {{ s('empyrean-lords-punishment') }} для ошеломления, {{ s('taunt') }}.</span></li>
+  </ul>
+  <p class="note">Полную раскладку клавиш SolAshur показывает в отдельном видео про макросы; часть внутриигровых клавиш придётся переназначить.</p>
+{% endcall %}
+
+{% call section('recap', 'Итог', 'pve') %}
+  <div class="callout accent"><ul>
+    <li><strong>Скиллы:</strong> сначала Суд, Кровавая месть, Град ударов до 20; Истребление и Удар щитом 16; остальное 12.</li>
+    <li><strong>Стигмы:</strong> Кара Владыки Эмпирея, Боевое знамя, Щит погибели, Провокация — по 1 очку в каждую, потом пороги.</li>
+    <li><strong>Статы:</strong> блок + уклонение + ловкость на старте, блок + выносливость позже; не пропускай петов.</li>
+    <li><strong>Экипировка:</strong> Holy Spirit / Spectral → Urugugu / Vakron → Fire Temple и Ferocious Horn → оружие, наручи и бижутерия White Dragon.</li>
+  </ul></div>
+{% endcall %}
+
+{% call section('recap-pvp', 'Итог', 'pvp') %}
+  <div class="callout accent"><ul>
+    <li><strong>Скиллы:</strong> та же «троица» на 20 плюс Истребление 20 ради массового сбивания.</li>
+    <li><strong>Стигмы:</strong> Меч наказания, Кара Владыки Эмпирея, Щит погибели, Щит Неджакана (Двойные доспехи против магов, Плечом к плечу в группе).</li>
+    <li><strong>Pantheon:</strong> Time (скорость атаки) вместо Illusion.</li>
+  </ul></div>
+{% endcall %}
+
+{# ============================ Leveling ============================ #}
+{% call section('fight-lvl', t.lvl_combat, 'lvl') %}
+  <div class="callout"><ul>
+    <li><strong>Пачки:</strong> {{ s('poach') }} одного (убийство сбрасывает перезарядку) → {{ s('warding-strike') }} → зажми {{ s('vicious-strike') }} + макрос с {{ s('pummel') }}.</li>
+    <li><strong>Элитки:</strong> заряженная {{ s('punishment') }} → {{ s('shield-smite') }} (оглушение) → {{ s('judgment') }} → {{ s('annihilate') }}.</li>
+    <li><strong>Мана:</strong> Жестокий удар восполняет ману, Град ударов её тратит — чередуй их, и мана не кончится.</li>
+    <li><strong>Мало ОЗ:</strong> Кара хранителя лечит и режет урон; каждый блок лечит через Священный щит.</li>
+  </ul></div>
+{% endcall %}
+
+{% call section('macro-lvl', 'Макрос на прокачке', 'lvl') %}
+  <p>Упрощённая настройка для прокачки и первых дней на капе — из ранних макросов Grobs. В макрос идут только скиллы, которые спамишь; баффы, стигмы на бурст и сближения — на отдельных клавишах.</p>
+  <div class="hotlines">
+    {{ hotline('1', 'Линия 1', ['doom-shield', 'debilitating-smash', 'judgment', 'shield-smite'], []) }}
+    {{ hotline('2', 'Линия 2', ['warding-strike', 'pummel'], []) }}
+  </div>
+  <p>Встроенный макрос: Линия 1 → Линия 2, у каждого задержка 10 мс. Держи базовую атаку {{ s('vicious-strike') }} на ЛКМ <strong>и</strong> клавишу макроса вместе.</p>
+  <p class="note">Когда скиллы дойдут до 12–16 и особенности изменят перезарядки, переходи на полную настройку во вкладке PvE.</p>
+{% endcall %}
+
+{# ============================ Sources ============================ #}
+<section class="sources" aria-labelledby="h-sources">
+  <h2 id="h-sources">{{ t.sources }}</h2>
+  <ul>
+    <li><a href="https://solashur.com/builds/templar-global-build.html" target="_blank" rel="noopener">SolAshur — глобальный билд Стража AION 2</a> и <a href="https://www.youtube.com/watch?v=ayyzLdGOaNc" target="_blank" rel="noopener">его видеоразбор</a> — на нём построен гайд (скиллы, стигмы по профилям, макрос, путь экипировки, статы, петы, Pantheon, арканы); особенности — из <a href="https://questlog.gg/aion-2/en/character-builder/QuickCobraLifeBanish" target="_blank" rel="noopener">его билдов на questlog</a></li>
+    <li><a href="https://www.youtube.com/watch?v=JEWRiaOb9JY" target="_blank" rel="noopener">NoBS Game Guides — Aion 2 Templar Guide: Skills Introduction + Early Game Macro</a> (основа обзора скиллов и макроса на прокачке)</li>
+    <li><a href="https://questlog.gg/aion-2/ru/db/skills/templar" target="_blank" rel="noopener">questlog.gg</a> — данные скиллов и стигм из глобального клиента</li>
+    <li><a href="https://www.inven.co.kr/board/aion2/6438/12803" target="_blank" rel="noopener">Inven</a> — корейские особенности, стигмы и макрос Стража</li>
+    <li><a href="https://vortexgaming.io/postdetail/977999" target="_blank" rel="noopener">Vortex Gaming</a> — корейская PvE-сборка (уровни скиллов, статы) и <a href="https://vortexgaming.io/postdetail/836552" target="_blank" rel="noopener">направления PvP-сборки</a></li>
+    <li><a href="https://www.inven.co.kr/board/aion2/6438/7621" target="_blank" rel="noopener">Inven</a> и <a href="https://www.fmkorea.com/9447817669" target="_blank" rel="noopener">FM Korea</a> — выбор PvP-стигм</li>
+    <li><a href="https://mmo-codex.com/articles/aion-2-templar-guide/" target="_blank" rel="noopener">MMO Codex</a> — порядок скиллов на прокачке, приоритет пассивок</li>
+    <li><a href="https://nemobek.github.io/aion2-guide/" target="_blank" rel="noopener">nemobek.github.io/aion2-guide</a> (таблица TitanTheF) — маршрут прокачки</li>
+    <li><a href="https://www.youtube.com/watch?v=HMod6Z4GrE0" target="_blank" rel="noopener">Grobs — AION 2 Macro Guide</a> — как работают линии и встроенный макрос</li>
+    <li><a href="https://www.youtube.com/watch?v=ZQVq7IYbLy8" target="_blank" rel="noopener">trueeevil — Ultimate Templar Guide for Aion 2: Skills, Stigmas, Rotations, Daevanion Board Explained</a> — настройка второго дня на глобале: Меч наказания и Благородная кольчуга для соло-PvE, особенность −1 сек. Кровавой мести на Граде ударов, порядок пассивок</li>
+    <li><a href="https://www.youtube.com/watch?v=0_Fu1DlEKPc" target="_blank" rel="noopener">Leonis — How I'm Top DPS as Templar | Build Guide Update</a> — особенность −1 сек. Кровавой мести на Граде ударов, Flash Rampage из линии, Shield of Protection как безопасная замена</li>
+  </ul>
+  <p class="sources-all"><a href="{{ root }}{{ lang }}/sources/">{{ t.src_all }} →</a></p>
+</section>

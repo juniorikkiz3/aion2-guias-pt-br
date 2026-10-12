@@ -1,0 +1,2156 @@
+{
+  "command-proxy": {
+    "id": "16170000",
+    "category": "stigma",
+    "icon": "command-proxy.webp",
+    "cooldown": 60000,
+    "en": {
+      "name": "Command: Proxy",
+      "desc": "Increases the Spirit's PvE Damage Tolerance by 20% and PvP Damage Tolerance by 10% for 4s, and redirects damage taken each time the Spiritmaster is attacked, sharing 50% to the Spiritmaster and 50% to the Spirit.\nThis effect is applied to the summoned Spirit with the highest HP. If HP is equal, it will be applied to the closer target. Damage is only shared if the Spirit is within 25m.\n\nUnaffected by cooldown increase effects.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "+2s Command: Proxy duration"
+        },
+        {
+          "level": 10,
+          "text": "+10% PVP Damage Tolerance increase and +5% PvP Damage Tolerance increase to Spirit"
+        },
+        {
+          "level": 15,
+          "text": "x1.5 [Spirit Protection] effect during Command: Proxy"
+        },
+        {
+          "level": 20,
+          "text": "Restores 3% of Spirit's HP every 1s for Command: Proxy duration"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Свиток приказа: Жертва духа",
+      "desc": "Дает духу увеличение стойкости к урону в PvE на 20% и стойкости к урону в PvP на 10% на 4s, а также перенаправляет урон при каждой атаке на персонажа, распределяя 50% на персонажа и 50% на духа.\nЭффект применяется к призванному духу с макс. ОЗ. При одинаковом уровне ОЗ эффект применяется к ближайшей цели. Урон распределяется только при расстоянии до духа не более 25 м.\n\nЭффекты увеличения времени перезарядки не действуют.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Длительность [Свиток приказа: Жертва духа] +2 сек."
+        },
+        {
+          "level": 10,
+          "text": "Стойкость к урону в PvE духа доп. +10%, стойкость к урону в PvP духа доп. +5%"
+        },
+        {
+          "level": 15,
+          "text": "Эффект [Защита стихии] x1,5 во время действия [Приказа: Замена]"
+        },
+        {
+          "level": 20,
+          "text": "Восстанавливает 3% ОЗ духа каждую секунду на протяжении действия Свитка приказа: Замена"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Command: Proxy",
+      "desc": "Aumenta a tolerância de danos PvE do Espírito por 20% e PvP por danos 10% por 4s, e redireciona os danos tomados cada vez que o Mestre do Espírito é atacado, compartilhando 50% para o Mestre do Espírito e 50% para o Espírito. Este efeito é aplicado ao Espírito convocado com o HP mais alto. Se HP for igual, será aplicado ao alvo mais próximo. Os danos só são compartilhados se o Espírito estiver dentro do 25m. Não afetado pelo efeito de recarga.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "+ 2s Command: Proxy duração"
+        },
+        {
+          "level": 10,
+          "text": "+ 10% PVP Aumento da tolerância aos danos e + 5% PvP Aumento da tolerância aos danos para o espírito"
+        },
+        {
+          "level": 15,
+          "text": "x1.5 [Spirit ProtectionEfeito durante Command: Proxy"
+        },
+        {
+          "level": 20,
+          "text": "Restaura 3% do Espírito HP a cada 1s para Command: Proxy duração"
+        }
+      ]
+    }
+  },
+  "cold-shock": {
+    "id": "16010000",
+    "category": "active",
+    "icon": "cold-shock.webp",
+    "cooldown": 0,
+    "en": {
+      "name": "Cold Shock",
+      "desc": "Deals {se_dmg:1601000011:SkillUIMinDmgsum}-{se_dmg:1601000011:SkillUIMaxDmgsum} Water damage to a target within 20m and restores 100 MP.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "+20% MP restored"
+        },
+        {
+          "level": 8,
+          "text": "Absorbs 1% HP"
+        },
+        {
+          "level": 8,
+          "text": "+50% Multi-Hit on hit"
+        },
+        {
+          "level": 12,
+          "text": "+2% Attack on landing [Earth Tremor] (Up to 5 stacks)"
+        },
+        {
+          "level": 16,
+          "text": "10% chance to remove 1 buff on landing [Earth Tremor]"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Шоковая заморозка",
+      "desc": "Наносит {se_dmg:1601000011:SkillUIMinDmgsum}-{se_dmg:1601000011:SkillUIMaxDmgsum} урона стихии воды цели в радиусе 20 м и восстанавливает 100 ОМ.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Восстановление ОМ +20%"
+        },
+        {
+          "level": 8,
+          "text": "Поглощение 1% ОЗ"
+        },
+        {
+          "level": 8,
+          "text": "Шанс мультиудара +50% при попадании"
+        },
+        {
+          "level": 12,
+          "text": "АТК +2% при попадании [Дрожи земли] (макс. 5 зарядов)"
+        },
+        {
+          "level": 16,
+          "text": "Шанс 10% снять 1 полож. эффект с цели при попадании [Дрожи земли]"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Cold Shock",
+      "desc": "De acordo com {se_dmg:1601000011:SkillUIMinDmgsum} - {se_dmg:1601000011:SkillUIMaxDmgsum} Danos de água em um alvo dentro 20m e restaura 100 MP.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "+ 20% MP restaurado."
+        },
+        {
+          "level": 8,
+          "text": "Absorve 1% HP"
+        },
+        {
+          "level": 8,
+          "text": "+ 50% Multi-Hit no hit"
+        },
+        {
+          "level": 12,
+          "text": "+2% Ataque na aterrissagem 5 - Não, não."
+        },
+        {
+          "level": 16,
+          "text": "10% chance de remover 1 em pouso."
+        }
+      ]
+    }
+  },
+  "combustion": {
+    "id": "16040000",
+    "category": "active",
+    "icon": "combustion.webp",
+    "cooldown": 0,
+    "en": {
+      "name": "Combustion",
+      "desc": "Selects a target within 20m and deals {se_dmg:1604000011:SkillUIMinDmgsum}-{se_dmg:1604000011:SkillUIMaxDmgsum} Fire damage to up to 4 enemies within 4m of the target.\n\n3 Stagger Gauge Damage",
+      "specs": [
+        {
+          "level": 8,
+          "text": "-20% MP consumed"
+        },
+        {
+          "level": 8,
+          "text": "Deals up to 12% more damage when less targets are hit"
+        },
+        {
+          "level": 8,
+          "text": "+100 Skill Accuracy"
+        },
+        {
+          "level": 12,
+          "text": "+20% Skill Speed"
+        },
+        {
+          "level": 16,
+          "text": "Adds [Ashy Call] Chain Skill"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Воспламенение",
+      "desc": "Наносит {se_dmg:1604000011:SkillUIMinDmgsum}-{se_dmg:1604000011:SkillUIMaxDmgsum} урона стихии огня врагам (макс. 4) в радиусе 4 м вокруг цели, находящейся в радиусе 20 м.\n\nУрон по шкале ошеломления — 3 ед.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Затрата ОМ -20%"
+        },
+        {
+          "level": 8,
+          "text": "Чем меньше целей попадания, тем больше увеличение урона (макс. до 12%)"
+        },
+        {
+          "level": 8,
+          "text": "Меткость +100"
+        },
+        {
+          "level": 12,
+          "text": "СКР умений +20%"
+        },
+        {
+          "level": 16,
+          "text": "Добавление 2-й комбинации [Зов пепла]"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Combustion",
+      "desc": "Seleciona um alvo dentro do 20m e lida com danos {se_dmg:1604000011:SkillUIMinDmgsum}-{se_dmg:1604000011:SkillUIMaxDmgsum} de fogo para até inimigos 4 dentro do 4m do alvo. 3 Stagger Gauge Danos",
+      "specs": [
+        {
+          "level": 8,
+          "text": "- 20% MP consumido."
+        },
+        {
+          "level": 8,
+          "text": "Comprou até 12% mais danos quando menos alvos foram atingidos."
+        },
+        {
+          "level": 8,
+          "text": "+ 100 Habilidade Precisão"
+        },
+        {
+          "level": 12,
+          "text": "+ 20% Velocidade de Habilidade"
+        },
+        {
+          "level": 16,
+          "text": "Adiciona a habilidade da corrente."
+        }
+      ]
+    }
+  },
+  "siphon": {
+    "id": "16060000",
+    "category": "stigma",
+    "icon": "siphon.webp",
+    "cooldown": 30000,
+    "en": {
+      "name": "Siphon",
+      "desc": "Deals {se_dmg:1606000011:SkillUIMinDmgsum}-{se_dmg:1606000011:SkillUIMaxDmgsum} damage and 300 MP damage to a target within 20m. Absorbs 10% HP and restores 300 MP.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "+20% Skill Speed"
+        },
+        {
+          "level": 10,
+          "text": "+5% HP absorbed"
+        },
+        {
+          "level": 15,
+          "text": "30% of Max HP as Protective Shield for 30s on use"
+        },
+        {
+          "level": 20,
+          "text": "Stun for 3s on hit"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Поглощение",
+      "desc": "Наносит {se_dmg:1606000011:SkillUIMinDmgsum}-{se_dmg:1606000011:SkillUIMaxDmgsum} урона и 300 урона по ОМ цели в радиусе 20 м. Поглощает 10% ОЗ и восстанавливает 300 ОМ.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "СКР умений +20%"
+        },
+        {
+          "level": 10,
+          "text": "Поглощение ОЗ +5%"
+        },
+        {
+          "level": 15,
+          "text": "Получение защитного барьера, равного 30% от макс. ОЗ, на 30s при использовании умения"
+        },
+        {
+          "level": 20,
+          "text": "Оглушение на 3s при попадании"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Siphon",
+      "desc": "Denuncia danos {se_dmg:1606000011:SkillUIMinDmgsum}-{se_dmg:1606000011:SkillUIMaxDmgsum} e 300-MP a um alvo dentro do 20m. Absorve 10% HP e restaura 300 MP.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "+ 20% Velocidade de Habilidade"
+        },
+        {
+          "level": 10,
+          "text": "+ 5% HP absorvido"
+        },
+        {
+          "level": 15,
+          "text": "30% de Max HP como escudo protetor para 30s em uso."
+        },
+        {
+          "level": 20,
+          "text": "Atordoando para 3s em sucesso"
+        }
+      ]
+    }
+  },
+  "souls-cry": {
+    "id": "16070000",
+    "category": "active",
+    "icon": "souls-cry.webp",
+    "cooldown": 45000,
+    "en": {
+      "name": "Soul's Cry",
+      "desc": "Deals {se_dmg:1607000011:SkillUIMinDmgsum}-{se_dmg:1607000011:SkillUIMaxDmgsum} damage to a target within 20m, with a 70% chance to inflict Fear for 5s.\n100% chance to inflict Fear on NPC targets. \n\n15 Stagger Gauge Damage",
+      "specs": [
+        {
+          "level": 8,
+          "text": "+50% Multi-Hit on hit"
+        },
+        {
+          "level": 8,
+          "text": "Inflicts Root for 5s"
+        },
+        {
+          "level": 8,
+          "text": "Changes to mobile skill"
+        },
+        {
+          "level": 12,
+          "text": "-10s cooldown"
+        },
+        {
+          "level": 16,
+          "text": "+2s Fear duration"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Вопль души",
+      "desc": "Наносит {se_dmg:1607000011:SkillUIMinDmgsum}-{se_dmg:1607000011:SkillUIMaxDmgsum} урона цели в радиусе 20 м и с шансом 70% повергает ее в Ужас на 5s\nДля NPC Ужас активируется гарантированно..\n\nУрон по шкале ошеломления — 15",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Шанс мультиудара +50% при попадании"
+        },
+        {
+          "level": 8,
+          "text": "Сковывание на 5s"
+        },
+        {
+          "level": 8,
+          "text": "Замена на умение с возможностью перемещения"
+        },
+        {
+          "level": 12,
+          "text": "Перезарядка -10 сек."
+        },
+        {
+          "level": 16,
+          "text": "Длительность Ужаса +2 сек."
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Soul's Cry",
+      "desc": "Lida com danos {se_dmg:1607000011:SkillUIMinDmgsum}-{se_dmg:1607000011:SkillUIMaxDmgsum} em um alvo dentro do 20m, com uma chance 70% de infligir medo para o 5s. 100% chance de infligir medo em alvos da NPC. 15 Stagger Gauge Danos",
+      "specs": [
+        {
+          "level": 8,
+          "text": "+ 50% Multi-Hit no hit"
+        },
+        {
+          "level": 8,
+          "text": "Inflige Root para 5s"
+        },
+        {
+          "level": 8,
+          "text": "Mudanças na habilidade móvel."
+        },
+        {
+          "level": 12,
+          "text": "- Arrefecer em 10s"
+        },
+        {
+          "level": 16,
+          "text": "+ 2s duração do medo"
+        }
+      ]
+    }
+  },
+  "cry-of-terror": {
+    "id": "16080000",
+    "category": "stigma",
+    "icon": "cry-of-terror.webp",
+    "cooldown": 90000,
+    "en": {
+      "name": "Cry of Terror",
+      "desc": "Selects a target within 20m and deals {se_dmg:1608000011:SkillUIMinDmgsum}-{se_dmg:1608000011:SkillUIMaxDmgsum} damage to up to 4 enemies within 4m of the target, with a 50% chance to inflict Fear for 5s.\n100% chance to inflict Fear on NPC targets.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Root for 5s on hit"
+        },
+        {
+          "level": 10,
+          "text": "Up to +20% damage when more targets hit"
+        },
+        {
+          "level": 15,
+          "text": "+2s Fear duration"
+        },
+        {
+          "level": 20,
+          "text": "+20% Fear Chance"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Крик ужаса",
+      "desc": "Наносит {se_dmg:1608000011:SkillUIMinDmgsum}-{se_dmg:1608000011:SkillUIMaxDmgsum} урона врагам (макс. 4) в радиусе 4 м вокруг цели, находящейся в радиусе 20 м, и с шансом 50% повергает их в Ужас на 5s\nДля NPC Ужас срабатывает гарантированно.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Плен на 5s при попадании"
+        },
+        {
+          "level": 10,
+          "text": "Чем больше целей попадания, тем больше увеличение урона (макс. до 20%)"
+        },
+        {
+          "level": 15,
+          "text": "Длительность Ужаса +2 сек."
+        },
+        {
+          "level": 20,
+          "text": "Шанс Ужаса +20%"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Cry of Terror",
+      "desc": "Seleciona um alvo dentro do 20m e lida com danos {se_dmg:1608000011:SkillUIMinDmgsum}-{se_dmg:1608000011:SkillUIMaxDmgsum} para até inimigos 4 dentro do 4m do alvo, com uma chance 50% de infligir medo para o 5s. 100% chance de infligir medo em alvos da NPC.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Root para 5s na batida."
+        },
+        {
+          "level": 10,
+          "text": "Dano até + 20% quando mais alvos atingirem"
+        },
+        {
+          "level": 15,
+          "text": "+ 2s duração do medo"
+        },
+        {
+          "level": 20,
+          "text": "+ 20% Medo Chance"
+        }
+      ]
+    }
+  },
+  "summon-fire-spirit": {
+    "id": "16100000",
+    "category": "active",
+    "icon": "summon-fire-spirit.webp",
+    "cooldown": 15000,
+    "en": {
+      "name": "Summon: Fire Spirit",
+      "desc": "Summons a Fire Spirit.\nThe Fire Spirit rushes towards a target within 20m and uses a skill that deals {se_dmg:1610000121:SkillUIMinDmgsum}-{se_dmg:1610000121:SkillUIMaxDmgsum} damage to up to 4 enemies within 5m.\nThe Fire Spirit fights alongside the caster using basic attacks, with a 15% chance to use its skill each time an attack lands. It is dismissed upon selecting the summon icon.\nEach skill level increases the Fire Spirit's Attack and Defense by 2%.\n\n7 Stagger Gauge Damage\nSpirit Skill Cooldown: 3s",
+      "specs": [
+        {
+          "level": 8,
+          "text": "-50% MP Cost"
+        },
+        {
+          "level": 8,
+          "text": "+20% Fire Spirit Critical Hit damage"
+        },
+        {
+          "level": 8,
+          "text": "10% chance to activate skill when Fire Spirit lands attack"
+        },
+        {
+          "level": 12,
+          "text": "5% chance to inflict Knockdown for 3s on landing Fire Spirit attack"
+        },
+        {
+          "level": 16,
+          "text": "+20% Fire Spirit Stats"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Призыв: Дух огня",
+      "desc": "Призывает духа огня.\nДух огня прорывается к цели в радиусе 20 м и использует умение, наносящее {se_dmg:1610000121:SkillUIMinDmgsum}-{se_dmg:1610000121:SkillUIMaxDmgsum} урона стихии огня врагам (макс. 4) в радиусе 5 м.\nПосле использования умения продолжает бой обычными атаками и при каждом попадании атакой с шансом 15% использует умение. При нажатии на иконку призыва призыв отменяется.\nС каждым повышением уровня умения АТК и ЗЩТ духа огня увеличиваются на 2%.\n\nУрон по шкале ошеломления — 7\nПерезарядка умения духа: 3 сек.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Затрата ОМ -50%"
+        },
+        {
+          "level": 8,
+          "text": "Крит. урон духа огня +20%"
+        },
+        {
+          "level": 8,
+          "text": "Шанс срабатывания умения +10% при попадании атакой духа огня"
+        },
+        {
+          "level": 12,
+          "text": "Шанс 5% сбить с ног на 3s при попадании атакой духа огня"
+        },
+        {
+          "level": 16,
+          "text": "Характеристики духа огня +20%"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Summon: Fire Spirit",
+      "desc": "Convoca um Espírito de Fogo. O Espírito de Fogo corre em direção a um alvo dentro do 20m e usa uma habilidade que lida com danos {se_dmg:1610000121:SkillUIMinDmgsum}-{se_dmg:1610000121:SkillUIMaxDmgsum} para até inimigos 4 dentro do 5m. O Espírito de Fogo luta ao lado do lançador usando ataques básicos, com uma chance 15% de usar sua habilidade cada vez que um ataque pousa. É descartado ao selecionar o ícone da convocação. Cada nível de habilidade aumenta o Ataque e Defesa do Espírito de Fogo em 2%. 7 Stagger Gauge Danos \"Spirit Skill Cooldown: 3s\"",
+      "specs": [
+        {
+          "level": 8,
+          "text": "- 50% MP Custo"
+        },
+        {
+          "level": 8,
+          "text": "+ 20% Fogo Espírito Crítico Atingir dano"
+        },
+        {
+          "level": 8,
+          "text": "10% chance de ativar a habilidade quando o Espírito de Fogo chegar ao ataque"
+        },
+        {
+          "level": 12,
+          "text": "5% chance de infligir Knockdown para 3s na aterrissagem ataque Espírito de Fogo"
+        },
+        {
+          "level": 16,
+          "text": "+ 20% Espírito de Fogo Stats"
+        }
+      ]
+    }
+  },
+  "summon-water-spirit": {
+    "id": "16110000",
+    "category": "active",
+    "icon": "summon-water-spirit.webp",
+    "cooldown": 15000,
+    "en": {
+      "name": "Summon: Water Spirit",
+      "desc": "Summons a Water Spirit.\nThe Water Spirit uses a skill that deals {se_dmg:1611000111:SkillUIMinDmgsum}-{se_dmg:1611000111:SkillUIMaxDmgsum} Water damage to a target within 20m.\nThe Water Spirit fights alongside the caster using basic attacks, with a 15% chance to use its skill and restoring 20 of the Spiritmaster's MP each time an attack lands. It is dismissed upon selecting the summon icon.\nEach skill level increases the Water Spirit's Attack and Critical Hit by 2%.\n\n7 Stagger Gauge Damage\nSpirit Skill Cooldown: 3s",
+      "specs": [
+        {
+          "level": 8,
+          "text": "-50% MP Cost"
+        },
+        {
+          "level": 8,
+          "text": "+10% Water Spirit Attack"
+        },
+        {
+          "level": 8,
+          "text": "10% chance to activate skill when Water Spirit lands attack"
+        },
+        {
+          "level": 12,
+          "text": "5% chance to inflict Root for 2s on landing Water Spirit attack"
+        },
+        {
+          "level": 16,
+          "text": "+20% Water Spirit Stats"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Призыв: Дух воды",
+      "desc": "Призывает духа воды.\nДух воды использует умение, наносящее {se_dmg:1611000111:SkillUIMinDmgsum}-{se_dmg:1611000111:SkillUIMaxDmgsum} урона стихии воды цели в радиусе 20 м.\nПосле использования умения продолжает бой обычными атаками. При каждом попадании атакой с шансом 15% использует умение и восстанавливает 20 ОМ призвавшего духа Заклинателя. При нажатии на иконку призыва призыв отменяется.\nС каждым повышением уровня умения АТК и крит. удар духа воды увеличиваются на 2%.\n\nУрон по шкале ошеломления — 7\nПерезарядка умения духа: 3 сек.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Затрата ОМ -50%"
+        },
+        {
+          "level": 8,
+          "text": "АТК духа воды +10%"
+        },
+        {
+          "level": 8,
+          "text": "Шанс срабатывания умения +10% при попадании атакой духа воды"
+        },
+        {
+          "level": 12,
+          "text": "Шанс 5% плена на 2s при попадании атакой духа воды"
+        },
+        {
+          "level": 16,
+          "text": "Характеристики духа воды +20%"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Summon: Water Spirit",
+      "desc": "Convoca um Espírito da Água. O Espírito da Água usa uma habilidade que lida com {se_dmg:1611000111:SkillUIMinDmgsum} - {se_dmg:1611000111:SkillUIMaxDmgsum} Danos de água em um alvo dentro do 20m. O Espírito da Água luta ao lado do lançador usando ataques básicos, com uma chance 15% de usar sua habilidade e restaurar 20 do MP do Mestre do Espírito cada vez que um ataque pousa. É descartado ao selecionar o ícone da convocação. Cada nível de habilidade aumenta o Ataque do Espírito da Água e o Ataque Crítico por 2%. 7 Stagger Gauge Danos \"Spirit Skill Cooldown: 3s\"",
+      "specs": [
+        {
+          "level": 8,
+          "text": "- 50% MP Custo"
+        },
+        {
+          "level": 8,
+          "text": "+ 10% Ataque do Espírito da Água"
+        },
+        {
+          "level": 8,
+          "text": "10% chance de ativar a habilidade quando o Espírito da Água chegar."
+        },
+        {
+          "level": 12,
+          "text": "5% chance de infligir Root para 2s no ataque do Espírito da Água."
+        },
+        {
+          "level": 16,
+          "text": "+ 20% Water Spirit Stats"
+        }
+      ]
+    }
+  },
+  "summon-wind-spirit": {
+    "id": "16120000",
+    "category": "active",
+    "icon": "summon-wind-spirit.webp",
+    "cooldown": 15000,
+    "en": {
+      "name": "Summon: Wind Spirit",
+      "desc": "Summons a Wind Spirit.\nThe Wind Spirit selects a target within 20m and uses a skill that deals {se_dmg:1612000111:SkillUIMinDmgsum}-{se_dmg:1612000111:SkillUIMaxDmgsum} Wind damage to up to 4 enemies within 5m of the target and restores 134-147 HP to the Spiritmaster.\nThe Wind Spirit fights alongside the caster using basic attacks, with a 10% chance to use its skill and restores 1.5% of the Spiritmaster's HP each time an attack lands. It is dismissed upon selecting the summon icon.\nEach skill level increases the Wind Spirit's Accuracy and Critical Hit by 2%.\n\n7 Stagger Gauge Damage\nSpirit Skill Cooldown: 3s",
+      "specs": [
+        {
+          "level": 8,
+          "text": "-50% MP Cost"
+        },
+        {
+          "level": 8,
+          "text": "+20% Wind Spirit Critical Hit"
+        },
+        {
+          "level": 8,
+          "text": "10% chance to activate skill when Wind Spirit lands attack"
+        },
+        {
+          "level": 12,
+          "text": "5% chance to reduce enemy Attack Speed by 30% for 10s on landing Wind Spirit attack"
+        },
+        {
+          "level": 16,
+          "text": "+20% Wind Spirit Stats"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Призыв: Дух воздуха",
+      "desc": "Призывает духа воздуха.\nДух воздуха использует умение, наносящее {se_dmg:1612000111:SkillUIMinDmgsum}-{se_dmg:1612000111:SkillUIMaxDmgsum} урона стихии воздуха врагам (макс. 4) в радиусе 5 м вокруг цели, находящейся в радиусе 20 м, и восстанавливающее 134-147 ОЗ Заклинателя.\nПосле использования умения продолжает бой обычными атаками. При каждом попадании атакой с шансом 10% использует умение и восстанавливает 1.5% ОЗ Заклинателя. При нажатии на иконку призыва призыв отменяется.\nС каждым повышением уровня умения меткость и крит. удар духа воздуха увеличиваются на 2%.\n\nУрон по шкале ошеломления — 7 ед.\nПерезарядка умения духа: 3 сек.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Затрата ОМ -50%"
+        },
+        {
+          "level": 8,
+          "text": "Крит. удар духа воздуха +20%"
+        },
+        {
+          "level": 8,
+          "text": "Шанс срабатывания умения +10% при попадании атакой духа воздуха"
+        },
+        {
+          "level": 12,
+          "text": "Шанс 5% снизить СКР АТК на 30% на 10s при атаке духа воздуха"
+        },
+        {
+          "level": 16,
+          "text": "Характеристики духа воздуха +20%"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Summon: Wind Spirit",
+      "desc": "Convoca um Espírito do Vento. O Espírito do Vento seleciona um alvo dentro do 20m e usa uma habilidade que lida com danos do {se_dmg:1612000111:SkillUIMinDmgsum}-{se_dmg:1612000111:SkillUIMaxDmgsum} para inimigos 4 dentro do 5m do alvo e restaura 134-147 HP para o Mestre do Espírito. O Espírito do Vento luta ao lado do lançador usando ataques básicos, com uma chance 10% de usar sua habilidade e restaurar 1.5% do HP do Mestre do Espírito cada vez que um ataque pousa. É descartado ao selecionar o ícone da convocação. Cada nível de habilidade aumenta a precisão do Espírito do Vento e o golpe crítico do 2%. 7 Danos no gauge do Stagger \"Spirit Skill Cooldown: 3s\"",
+      "specs": [
+        {
+          "level": 8,
+          "text": "- 50% MP Custo"
+        },
+        {
+          "level": 8,
+          "text": "+ 20% Espírito do Vento Ataque crítico"
+        },
+        {
+          "level": 8,
+          "text": "10% chance de ativar a habilidade quando o Espírito do Vento chegar ao ataque."
+        },
+        {
+          "level": 12,
+          "text": "5% chance de reduzir a velocidade de ataque do inimigo em 30% para 10s no ataque Wind Spirit"
+        },
+        {
+          "level": 16,
+          "text": "+ 20% Wind Spirit Stats"
+        }
+      ]
+    }
+  },
+  "summon-earth-spirit": {
+    "id": "16130000",
+    "category": "active",
+    "icon": "summon-earth-spirit.webp",
+    "cooldown": 15000,
+    "en": {
+      "name": "Summon: Earth Spirit",
+      "desc": "Summons an Earth Spirit.\nThe Earth Spirit uses a skill that deals {se_dmg:1613000121:SkillUIMinDmgsum}-{se_dmg:1613000121:SkillUIMaxDmgsum} Earth damage to a target within 20m and increases Enmity by 3750. Has a 30% chance to inflict Taunt for 2s if the target is a player.\nThe Earth Spirit fights alongside the caster using basic attacks, with a 10% chance to use its skill and increasing Enmity each time an attack lands. It is dismissed upon selecting the summon icon.\nEach skill level increases the Earth Spirit's Defense and HP by 2%.\n\n7 Stagger Gauge Damage\nSpirit Skill Cooldown: 3s",
+      "specs": [
+        {
+          "level": 8,
+          "text": "-50% MP Cost"
+        },
+        {
+          "level": 8,
+          "text": "+20% PvE Damage Tolerance and +10 PvP Damage Tolerance to Earth Spirit"
+        },
+        {
+          "level": 8,
+          "text": "10% chance to activate skill when Earth Spirit lands attack"
+        },
+        {
+          "level": 12,
+          "text": "5% chance to restore 5% of Spirit HP when landing Earth Spirit attack"
+        },
+        {
+          "level": 16,
+          "text": "+20% Earth Spirit Stats"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Призыв: Дух земли",
+      "desc": "Призывает духа земли.\nДух земли использует умение, наносящее {se_dmg:1613000121:SkillUIMinDmgsum}-{se_dmg:1613000121:SkillUIMaxDmgsum} урона стихии земли цели в радиусе 20 м и увеличивающее враждебность на 3750. Если цель — игровой персонаж, с шансом 30% провоцирует его на 2s\nПосле использования умения продолжает бой обычными атаками, при каждом попадании атакой с шансом 10% применяет умение и увеличивает враждебность. При нажатии на иконку призыва призыв отменяется.\nС каждым повышением уровня умения ЗЩТ и ОЗ духа земли увеличиваются на 2%.\n\nУрон по шкале ошеломления — 7\nПерезарядка умения духа: 3 сек.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Затрата ОМ -50%"
+        },
+        {
+          "level": 8,
+          "text": "Стойкость к урону в PvE духа земли +20%, стойкость к урону в PvP духа земли +10%"
+        },
+        {
+          "level": 8,
+          "text": "Шанс срабатывания умения +10% при попадании атакой духа земли"
+        },
+        {
+          "level": 12,
+          "text": "Шанс 5% восстановить 5% ОЗ духа при попадании атакой духа земли"
+        },
+        {
+          "level": 16,
+          "text": "Характеристики духа земли +20%"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Summon: Earth Spirit",
+      "desc": "Summons an Earth Spirit.\nThe Earth Spirit uses a skill that deals {se_dmg:1613000121:SkillUIMinDmgsum}-{se_dmg:1613000121:SkillUIMaxDmgsum} Danos na Terra em um alvo dentro 20m E aumenta a Inimidade por 3750. Tem um 30% A chance de infligir Taunt para 2s if the target is a player.\nThe Earth Spirit fights alongside the caster using basic attacks, with a 10% chance to use its skill and increasing Enmity each time an attack lands. It is dismissed upon selecting the summon icon.\nEach skill level increases the Earth Spirit's Defense and HP por 2%.\n\n7 Stagger Gauge Damage\nSpirit Skill Cooldown: 3s",
+      "specs": [
+        {
+          "level": 8,
+          "text": "- 50% MP Custo"
+        },
+        {
+          "level": 8,
+          "text": "+ 20% PvE Tolerância de danos e 10 PvP Tolerância de danos ao Espírito da Terra"
+        },
+        {
+          "level": 8,
+          "text": "10% chance de ativar a habilidade quando o Espírito da Terra chegar ao ataque"
+        },
+        {
+          "level": 12,
+          "text": "5% chance de restaurar 5% do Espírito HP quando pousar o ataque do Espírito da Terra"
+        },
+        {
+          "level": 16,
+          "text": "+ 20% Espírito da Terra Stats"
+        }
+      ]
+    }
+  },
+  "jointstrike-curse": {
+    "id": "16140000",
+    "category": "active",
+    "icon": "jointstrike-curse.webp",
+    "cooldown": 10000,
+    "en": {
+      "name": "Jointstrike: Curse",
+      "desc": "Selects a target within 20m and deals {se_dmg:1614000011:SkillUIMinDmgsum}-{se_dmg:1614000011:SkillUIMaxDmgsum} damage to up to 4 enemies within 4m of the target, and inflicts Curse.\n\nCurse: Deals {se_abe_dmg:1614000013:1614000011:SkillUIDotMinDmg:tick}-{se_abe_dmg:1614000013:1614000011:SkillUIDotMaxDmg:tick} Damage over Time every 1s and reduces damage dealt to the Spiritmaster by 10% for 5s.\n\nThe Spirit joins for a coordinated assault.\nFire: {se_dmg:1600110111:SkillUIMinDmgsum}-{se_dmg:1600110111:SkillUIMaxDmgsum} AoE damage\nWater: {se_dmg:1600110511:SkillUIMinDmgsum}-{se_dmg:1600110511:SkillUIMaxDmgsum} damage\nEarth: {se_dmg:1600111311:SkillUIMinDmgsum}-{se_dmg:1600111311:SkillUIMaxDmgsum} damage and reduces Status Effect Resist by 10%\nWind: {se_dmg:1600110911:SkillUIMinDmgsum}-{se_dmg:1600110911:SkillUIMaxDmgsum} AoE damage and {se_abe_dmg:1600110917:1600110911:SkillUIDotMinDmg:total}-{se_abe_dmg:1600110917:1600110911:SkillUIDotMaxDmg:total} Damage over Time\nAncient: {se_dmg:1600111711:SkillUIMinDmgsum}-{se_dmg:1600111711:SkillUIMaxDmgsum} AoE damage\n\n10 Stagger Gauge Damage",
+      "specs": [
+        {
+          "level": 8,
+          "text": "+2s Curse duration"
+        },
+        {
+          "level": 8,
+          "text": "+50% Multi-Hit on hit"
+        },
+        {
+          "level": 8,
+          "text": "Changes to mobile skill"
+        },
+        {
+          "level": 12,
+          "text": "-2s cooldown"
+        },
+        {
+          "level": 16,
+          "text": "[Jointstrike: Curse] ignores Block and Evasion and lands as a Critical Hit"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Кооперация: Проклятие",
+      "desc": "Выберите цель в радиусе 20 м и нанесите {se_dmg:1614000011:SkillUIMinDmgsum}–{se_dmg:1614000011:SkillUIMaxDmgsum} урона врагам (макс. 4) в радиусе 4 м от цели, наложите проклятие.\n\nПроклятие: наносит {se_abe_dmg:1614000013:1614000011:SkillUIDotMinDmg:tick}–{se_abe_dmg:1614000013:1614000011:SkillUIDotMaxDmg:tick} продолжительного урона кажд. 1 сек. и снижает наносимый Заклинателю урон на 10% на 5s\n\nДух участвует в совместной атаке.\nСтихия огня: {se_dmg:1600110111:SkillUIMinDmgsum}–{se_dmg:1600110111:SkillUIMaxDmgsum} урона по области\nСтихия воды: {se_dmg:1600110511:SkillUIMinDmgsum}–{se_dmg:1600110511:SkillUIMaxDmgsum} урона\nСтихия земли: {se_dmg:1600111311:SkillUIMinDmgsum}–{se_dmg:1600111311:SkillUIMaxDmgsum} урона и снижение сопротивления эффектам контроля на 10%\nСтихия воздуха: {se_dmg:1600110911:SkillUIMinDmgsum}–{se_dmg:1600110911:SkillUIMaxDmgsum} урона по области и {se_abe_dmg:1600110917:1600110911:SkillUIDotMinDmg:total}–{se_abe_dmg:1600110917:1600110911:SkillUIDotMaxDmg:total} продолжительного урона\nДревний дух: {se_dmg:1600111711:SkillUIMinDmgsum}–{se_dmg:1600111711:SkillUIMaxDmgsum} урона по области\n\n10 ед. урона по шкале Истощения",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Длительность Проклятия +2 сек."
+        },
+        {
+          "level": 8,
+          "text": "Шанс мультиудара +50% при попадании"
+        },
+        {
+          "level": 8,
+          "text": "Замена на умение с возможностью перемещения"
+        },
+        {
+          "level": 12,
+          "text": "Перезарядка -2 сек."
+        },
+        {
+          "level": 16,
+          "text": "[Кооперация: Проклятие] Игнорирование блока и УКЛ, попадание крит. ударом"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Jointstrike: Curse",
+      "desc": "Seleciona um alvo dentro do 20m e lida com danos {se_dmg:1614000011:SkillUIMinDmgsum}-{se_dmg:1614000011:SkillUIMaxDmgsum} para até inimigos 4 dentro do 4m do alvo, e inflige maldição. Maldição: lida com danos {se_abe_dmg:1614000013:1614000011:SkillUIDotMinDmg:tick}-{se_abe_dmg:1614000013:1614000011:SkillUIDotMaxDmg:tick} ao longo do tempo a cada 1s e reduz os danos causados ao Mestre do Espírito por 10% para 5s. O Espírito se junta para um ataque coordenado. Fogo: {se_dmg:1600110111:SkillUIMinDmgsum} - {se_dmg:1600110111:SkillUIMaxDmgsum} AoE Água: danos {se_dmg:1600110511:SkillUIMinDmgsum} - {se_dmg:1600110511:SkillUIMaxDmgsum} Terra: {se_dmg:1600111311:SkillUIMinDmgsum} - {se_dmg:1600111311:SkillUIMaxDmgsum} danos e reduz Efeito de Estado Resistir em 10% Vento: {se_dmg:1600110911:SkillUIMinDmgsum} - {se_dmg:1600110911:SkillUIMaxDmgsum} AoE dano e {se_abe_dmg:1600110917:1600110911:SkillUIDotMinDmg:total} - {se_abe_dmg:1600110917:1600110911:SkillUIDotMaxDmg:total} dano contínuo Antigo: {se_dmg:1600111711:SkillUIMinDmgsum} - {se_dmg:1600111711:SkillUIMaxDmgsum} AoE dano 10 Danos no gauge do Stagger",
+      "specs": [
+        {
+          "level": 8,
+          "text": "+ 2s duração da maldição"
+        },
+        {
+          "level": 8,
+          "text": "+ 50% Multi-Hit no hit"
+        },
+        {
+          "level": 8,
+          "text": "Mudanças na habilidade móvel."
+        },
+        {
+          "level": 12,
+          "text": "- Arrefecer em 2s"
+        },
+        {
+          "level": 16,
+          "text": "[Jointstrike: CurseIgnora Block e Evasion e pousa como um ataque crítico."
+        }
+      ]
+    }
+  },
+  "jointstrike-corrode": {
+    "id": "16150000",
+    "category": "stigma",
+    "icon": "jointstrike-corrode.webp",
+    "cooldown": 45000,
+    "en": {
+      "name": "Jointstrike: Corrode",
+      "desc": "Selects a target within 20m and deals {se_dmg:1615000011:SkillUIMinDmgsum}-{se_dmg:1615000011:SkillUIMaxDmgsum} damage to up to 4 enemies within 4m of the target, inflicting Corrode for 20s.\n\nCorrode: Increases damage taken from the Spirit by 10% and deals {se_abe_dmg:1615000013:1615000011:SkillUIDotMinDmg:tick}-{se_abe_dmg:1615000013:1615000011:SkillUIDotMaxDmg:tick} Damage over Time every 1s\n\nThe Spirit joins for a coordinated assault.\nFire: {se_dmg:1615110011:SkillUIMinDmgsum}-{se_dmg:1615110011:SkillUIMaxDmgsum} AoE damage and Knockdown\nWater: {se_dmg:1615210011:SkillUIMinDmgsum}-{se_dmg:1615210011:SkillUIMaxDmgsum} damage and Slow\nEarth: {se_dmg:1615310011:SkillUIMinDmgsum}-{se_dmg:1615310011:SkillUIMaxDmgsum} damage and Seal\nWind: {se_dmg:1615410011:SkillUIMinDmgsum}-{se_dmg:1615410011:SkillUIMaxDmgsum} AoE damage and Stun\nAncient: {se_dmg:1615510011:SkillUIMinDmgsum}-{se_dmg:1615510011:SkillUIMaxDmgsum} AoE damage and Knockdown\n\n10 Stagger Gauge Damage",
+      "specs": [
+        {
+          "level": 5,
+          "text": "+15% extra damage taken from Spirit during Corrode"
+        },
+        {
+          "level": 10,
+          "text": "-20% Combat Speed on hit for 10s"
+        },
+        {
+          "level": 15,
+          "text": "-70% Incoming Heal during Corrode"
+        },
+        {
+          "level": 20,
+          "text": "+10s Corrode effect duration"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Кооперация: Разложение",
+      "desc": "Наносит {se_dmg:1615000011:SkillUIMinDmgsum}-{se_dmg:1615000011:SkillUIMaxDmgsum} урона врагам (макс. 4) в радиусе 4 м вокруг цели, находящейся в радиусе 20 м, и накладывает на них Разложение на 20s\n\nРазложение: получ. от духов урон +10%, {se_abe_dmg:1615000013:1615000011:SkillUIDotMinDmg:tick}-{se_abe_dmg:1615000013:1615000011:SkillUIDotMaxDmg:tick} постоянного урона каждую секунду\n\nАтакует вместе с духом.\nОгонь: {se_dmg:1615110011:SkillUIMinDmgsum}-{se_dmg:1615110011:SkillUIMaxDmgsum} урона по области и Сбивание с ног\nВода: {se_dmg:1615210011:SkillUIMinDmgsum}-{se_dmg:1615210011:SkillUIMaxDmgsum} урона и Замедление\nЗемля: {se_dmg:1615310011:SkillUIMinDmgsum}-{se_dmg:1615310011:SkillUIMaxDmgsum} урона и Запечатывание\nВоздух: {se_dmg:1615410011:SkillUIMinDmgsum}-{se_dmg:1615410011:SkillUIMaxDmgsum} урона по области и Оглушение\nДревний: {se_dmg:1615510011:SkillUIMinDmgsum}-{se_dmg:1615510011:SkillUIMaxDmgsum} урона по области и Сбивание с ног\n\nУрон по шкале ошеломления — 10 ед.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "+15% доп. урона от персонажа при действии Разложения"
+        },
+        {
+          "level": 10,
+          "text": "СКР боя -20% на 10s при попадании"
+        },
+        {
+          "level": 15,
+          "text": "Получ. исцеление -70% под действием Разложения"
+        },
+        {
+          "level": 20,
+          "text": "Длительность Разложения +10 сек."
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Jointstrike: Corrode",
+      "desc": "Seleciona um alvo dentro 20m e acordos. {se_dmg:1615000011:SkillUIMinDmgsum}-{se_dmg:1615000011:SkillUIMaxDmgsum} Dano até 4 Inimigos dentro 4m do alvo, infligindo Corrode para 20s.\n\nCorrodeAumenta os danos causados pelo Espírito. 10% e acordos. {se_abe_dmg:1615000013:1615000011:SkillUIDotMinDmg:tick}-{se_abe_dmg:1615000013:1615000011:SkillUIDotMaxDmg:tick} Dano contínuo a cada 1s\n\nThe Spirit joins for a coordinated assault.\nFire: {se_dmg:1615110011:SkillUIMinDmgsum}-{se_dmg:1615110011:SkillUIMaxDmgsum} AoE damage and Knockdown\nWater: {se_dmg:1615210011:SkillUIMinDmgsum}-{se_dmg:1615210011:SkillUIMaxDmgsum} damage and Slow\nEarth: {se_dmg:1615310011:SkillUIMinDmgsum}-{se_dmg:1615310011:SkillUIMaxDmgsum} damage and Seal\nWind: {se_dmg:1615410011:SkillUIMinDmgsum}-{se_dmg:1615410011:SkillUIMaxDmgsum} AoE damage and Stun\nAncient: {se_dmg:1615510011:SkillUIMinDmgsum}-{se_dmg:1615510011:SkillUIMaxDmgsum} AoE dano e Knockdown\n\n10 Danos no gauge",
+      "specs": [
+        {
+          "level": 5,
+          "text": "+ 15% danos extra tirados do Espírito durante Corrode"
+        },
+        {
+          "level": 10,
+          "text": "- Velocidade de combate 20% na batida para 10s"
+        },
+        {
+          "level": 15,
+          "text": "- 70% chegando cura durante Corrode"
+        },
+        {
+          "level": 20,
+          "text": "+ 10s Corrode duração do efeito"
+        }
+      ]
+    }
+  },
+  "enhance-spirits-benediction": {
+    "id": "16190000",
+    "category": "stigma",
+    "icon": "enhance-spirits-benediction.webp",
+    "cooldown": 60000,
+    "en": {
+      "name": "Enhance: Spirit's Benediction",
+      "desc": "Increases PvE Damage Boost by 20%, PvP Damage Boost by 10%, PvE Damage Tolerance by 20%, PvP Damage Tolerance by 10%, and restores {se_abe_dmg:1619000011:1619000015:SkillUIHotMin:tick}-{se_abe_dmg:1619000011:1619000015:SkillUIHotMax:tick} HP every 1s for 10s to the caster and Spirit.\n\nUnaffected by cooldown increase effects.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Restores 10% of Max HP on cast"
+        },
+        {
+          "level": 10,
+          "text": "x1.5 [Spirit Strike] Damage Boost effect"
+        },
+        {
+          "level": 15,
+          "text": "x1.5 activation chance and amount healed from [Spirit Communion]"
+        },
+        {
+          "level": 20,
+          "text": "+25% PvE Damage Boost and Damage Tolerance, +12.5% PvP Damage Boost and Damage Tolerance for caster and Spirit"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Усиление: Благословение духа",
+      "desc": "Дает персонажу и духу увеличение усиления урона в PvE на 20%, усиления урона в PvP на 10%, стойкости к урону в PvE на 20%, стойкости к урону в PvP на 10%, и восстанавливает {se_abe_dmg:1619000011:1619000015:SkillUIHotMin:tick}–{se_abe_dmg:1619000011:1619000015:SkillUIHotMax:tick} ед. ОЗ каждую секунду в течение 10s.\n\nЭффекты увеличения времени перезарядки не действуют.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Восстановление 10% ОЗ при использовании умения"
+        },
+        {
+          "level": 10,
+          "text": "Эффект увелич. урона от пассивного умения [Удар элемента] x1,5"
+        },
+        {
+          "level": 15,
+          "text": "Увеличение шанса срабатывания и восстановление от [Духовное единство] x1,5"
+        },
+        {
+          "level": 20,
+          "text": "Увеличение урона в PvE и стойкости к урону в PvE для себя и духа +25%, увеличение урона в PvP и стойкость к урону в PvP +12,5%"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Enhance: Spirit's Benediction",
+      "desc": "Aumenta PvE Danos Aumentam 20%, PvP Danos Aumentam 10%, PvE Danos Tolerância 20%, PvP Danos Tolerância 10% e restaura {se_abe_dmg:1619000011:1619000015:SkillUIHotMin:tick} - {se_abe_dmg:1619000011:1619000015:SkillUIHotMax:tick} HP a cada 1s para 10s para o lançador e Espírito. Não afetado pelo efeito de recarga.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Restaura 10% de Max HP no elenco."
+        },
+        {
+          "level": 10,
+          "text": "x1.5 [Spirit StrikeDanos aumentam o efeito"
+        },
+        {
+          "level": 15,
+          "text": "x1.5 chance de ativação e quantidade curadas de [Spirit Communion]"
+        },
+        {
+          "level": 20,
+          "text": "+ 25% PvE Danos Aumentam e Danos Tolerância, + 12.5% PvP Danos Aumentam e Danos Tolerância para Caster e Espírito"
+        }
+      ]
+    }
+  },
+  "defiance": {
+    "id": "16200000",
+    "category": "active",
+    "icon": "defiance.webp",
+    "cooldown": 60000,
+    "en": {
+      "name": "Defiance",
+      "desc": "Removes Stun, Knockdown, Airborne, Grab, Frost, and Fear from the caster and grants Tenacity for 5s.\nTenacity: Grants Status Effect Immunity\n\nUnaffected by cooldown reduction effects.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Adds [Curse of Despair] Chain Skill"
+        },
+        {
+          "level": 8,
+          "text": "Restores 1000 Stamina on using [Defiance]"
+        },
+        {
+          "level": 8,
+          "text": "Restores 20% HP on using [Defiance]"
+        },
+        {
+          "level": 12,
+          "text": "+2s Tenacity duration"
+        },
+        {
+          "level": 16,
+          "text": "+50% PvE Damage Tolerance and +25% PvP Damage Tolerance for Tenacity duration"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Снятие шока",
+      "desc": "Отменяет эффекты Оглушения, Сбивания с ног, Воздушные оковы, захват, Заморозку и Ужас на 5s активирует для персонажа Непреклонность.\nНепреклонность: иммунитет к негат. эффектам\n\nЭффекты снижения времени перезарядки не действуют.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Добавляет 2-ное комбо [Проклятие отчаяния]"
+        },
+        {
+          "level": 8,
+          "text": "При использовании [Снятия шока] восстанавливает 1000 ОД"
+        },
+        {
+          "level": 8,
+          "text": "При использовании [Снятия шока] восстанавливает 20% ОЗ"
+        },
+        {
+          "level": 12,
+          "text": "Длительность Непреклонности +2 сек."
+        },
+        {
+          "level": 16,
+          "text": "Стойкость к урону в PvE +50% и стойкость к урону в PvP +25% во время действия Непреклонности"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Defiance",
+      "desc": "Remove Stun, Knockdown, Airborne, Grab, Frost e Medo do lançador e concede Tenacidade para 5s. Tenacidade: Efeito da Imunidade. Não afetado pelos efeitos de redução do recarga.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Adiciona a Habilidade da Corrente."
+        },
+        {
+          "level": 8,
+          "text": "Restaura a resistência 1000 usando o Defiance"
+        },
+        {
+          "level": 8,
+          "text": "Restaura 20% HP usando [Defiance ]"
+        },
+        {
+          "level": 12,
+          "text": "+ 2s Duração da tenacidade"
+        },
+        {
+          "level": 16,
+          "text": "+ 50% PvE Tolerância de danos e 25% PvP Tolerância de danos por duração de tenacidade"
+        }
+      ]
+    }
+  },
+  "cursed-cloud": {
+    "id": "16220000",
+    "category": "stigma",
+    "icon": "cursed-cloud.webp",
+    "cooldown": 90000,
+    "en": {
+      "name": "Cursed Cloud",
+      "desc": "Selects a target within 20m and deals {se_dmg:1622000011:SkillUIMinDmgsum}-{se_dmg:1622000011:SkillUIMaxDmgsum} damage to up to 4 enemies within 4m, and deals {se_abe_dmg:1622000012:1622000011:SkillUIDotMinDmg:tick}-{se_abe_dmg:1622000012:1622000011:SkillUIDotMaxDmg:tick} Damage over Time every 1s for 10s.\n\n20 Stagger Gauge Damage",
+      "specs": [
+        {
+          "level": 5,
+          "text": "-1000 enemy Max Stamina during Damage over Time"
+        },
+        {
+          "level": 10,
+          "text": "-20% Max HP of PC targets during Damage over Time"
+        },
+        {
+          "level": 15,
+          "text": "+10s Damage over Time duration"
+        },
+        {
+          "level": 20,
+          "text": "-30% Status Effect Resist during Damage over Time"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Облако проклятия",
+      "desc": "Наносит {se_dmg:1622000011:SkillUIMinDmgsum}-{se_dmg:1622000011:SkillUIMaxDmgsum} урона врагам (макс. 4) в радиусе 4 м вокруг цели, находящейся в пределах 20 м. В течение 10s наносит {se_abe_dmg:1622000012:1622000011:SkillUIDotMinDmg:tick}-{se_abe_dmg:1622000012:1622000011:SkillUIDotMaxDmg:tick} постоянного урона каждую секунду.\n\nУрон по шкале ошеломления — 20",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Макс. ОД -1000 под действием постоянного урона"
+        },
+        {
+          "level": 10,
+          "text": "Макс. ОЗ игрового персонажа -20% под действием постоянного урона"
+        },
+        {
+          "level": 15,
+          "text": "Длительность постоянного урона +10 сек."
+        },
+        {
+          "level": 20,
+          "text": "Сопротивление негат. эффектам -30% под действием постоянного урона"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Cursed Cloud",
+      "desc": "Seleciona um alvo dentro do 20m e lida com danos {se_dmg:1622000011:SkillUIMinDmgsum}-{se_dmg:1622000011:SkillUIMaxDmgsum} para até inimigos 4 dentro do 4m, e lida com danos {se_abe_dmg:1622000012:1622000011:SkillUIDotMinDmg:tick}-{se_abe_dmg:1622000012:1622000011:SkillUIDotMaxDmg:tick} ao longo do tempo a cada 1s para 10s. 20 Stagger Gauge Danos",
+      "specs": [
+        {
+          "level": 5,
+          "text": "- 1000 inimigo Max Stamina durante Dano contínuo"
+        },
+        {
+          "level": 10,
+          "text": "- 20% Max HP de alvos de PC durante Dano contínuo"
+        },
+        {
+          "level": 15,
+          "text": "Mais danos 10s ao longo do tempo."
+        },
+        {
+          "level": 20,
+          "text": "Efeito de status 30% Resistir durante dano contínuo"
+        }
+      ]
+    }
+  },
+  "seize-magic": {
+    "id": "16230000",
+    "category": "stigma",
+    "icon": "seize-magic.webp",
+    "cooldown": 90000,
+    "en": {
+      "name": "Seize Magic",
+      "desc": "Selects a target within 20m and deals {se_dmg:1623000013:SkillUIMinDmgsum}-{se_dmg:1623000013:SkillUIMaxDmgsum} damage to up to 4 enemies within 4m of the target, removing up to 2 buffs.\n\nDeals {se_dmg:1623000111:SkillUIMinDmgsum}-{se_dmg:1623000211:SkillUIMaxDmgsum} extra damage based on the number of buffs removed.\n\n20 Stagger Gauge Damage",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Removes up to 3 buffs"
+        },
+        {
+          "level": 10,
+          "text": "Inflicts Seal for 5s when removing 3 or more buffs"
+        },
+        {
+          "level": 15,
+          "text": "Removes up to 5 buffs"
+        },
+        {
+          "level": 20,
+          "text": "-30s cooldown"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Кража маны",
+      "desc": "Наносит {se_dmg:1623000013:SkillUIMinDmgsum}-{se_dmg:1623000013:SkillUIMaxDmgsum} урона врагам (макс. 4) в радиусе 4 м вокруг цели, находящейся в пределах 20 м, и отменяет до 2 полож. эффектов.\n\nВ зависимости от количества снятых полож. эффектов наносит {se_dmg:1623000111:SkillUIMinDmgsum}-{se_dmg:1623000211:SkillUIMaxDmgsum} доп. урона.\n\nУрон по шкале ошеломления — 20",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Отмена до 3 полож. эффектов"
+        },
+        {
+          "level": 10,
+          "text": "Запечатывание цели на 5 сек. при снятии 3 и более полож. эффектов"
+        },
+        {
+          "level": 15,
+          "text": "Снятие до 5 полож. эффектов"
+        },
+        {
+          "level": 20,
+          "text": "Перезарядка -30 сек."
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Seize Magic",
+      "desc": "Seleciona um alvo dentro do 20m e lida com danos {se_dmg:1623000013:SkillUIMinDmgsum}-{se_dmg:1623000013:SkillUIMaxDmgsum} para até inimigos 4 dentro do 4m do alvo, removendo até os 2. De acordo com {se_dmg:1623000111:SkillUIMinDmgsum}-{se_dmg:1623000211:SkillUIMaxDmgsum}, dano extra baseado no número de capangas removidos. 20 Stagger Gauge Danos",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Remove até 3 fans"
+        },
+        {
+          "level": 10,
+          "text": "Inflige selo para 5s ao remover 3 ou mais lustres"
+        },
+        {
+          "level": 15,
+          "text": "Remove até 5 fans"
+        },
+        {
+          "level": 20,
+          "text": "- Arrefecer em 30s"
+        }
+      ]
+    }
+  },
+  "jointstrike-destructive-attack": {
+    "id": "16240000",
+    "category": "stigma",
+    "icon": "jointstrike-destructive-attack.webp",
+    "cooldown": 60000,
+    "en": {
+      "name": "Jointstrike: Destructive Attack",
+      "desc": "Deals {se_dmg:1624000011:SkillUIMinDmgsum}-{se_dmg:1624000011:SkillUIMaxDmgsum} damage to a target within 20m.\n\nThe Spirit joins you in a coordinated assault.\nFire: {se_dmg:1600130111:SkillUIMinDmgsum}-{se_dmg:1600130111:SkillUIMaxDmgsum} AoE damage\nWater: {se_dmg:1600130511:SkillUIMinDmgsum}-{se_dmg:1600130511:SkillUIMaxDmgsum} damage\nEarth: {se_dmg:1600130911:SkillUIMinDmgsum}-{se_dmg:1600130911:SkillUIMaxDmgsum} damage\nWind: {se_dmg:1600131311:SkillUIMinDmgsum}-{se_dmg:1600131311:SkillUIMaxDmgsum} AoE damage\nAncient: {se_dmg:1600131711:SkillUIMinDmgsum}-{se_dmg:1600131711:SkillUIMaxDmgsum} AoE damage\n\n50 Stagger Gauge Damage",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Changes to Charge Skill, dealing up to 200% more [Jointstrike: Destructive Attack] damage"
+        },
+        {
+          "level": 10,
+          "text": "+30% Skill Speed"
+        },
+        {
+          "level": 15,
+          "text": "Critical Hit on hit"
+        },
+        {
+          "level": 20,
+          "text": "Reset [Jointstrike: Curse] and [Jointstrike: Corrode] cooldown on landing [Jointstrike: Destructive Attack] first hit"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Кооперация: Наступление погибели",
+      "desc": "Наносит {se_dmg:1624000011:SkillUIMinDmgsum}-{se_dmg:1624000011:SkillUIMaxDmgsum} урона цели в радиусе 20 м.\n\nАтакует вместе с духом.\nОгонь: {se_dmg:1600130111:SkillUIMinDmgsum}-{se_dmg:1600130111:SkillUIMaxDmgsum} урона по области\nВода: {se_dmg:1600130511:SkillUIMinDmgsum}-{se_dmg:1600130511:SkillUIMaxDmgsum} урона\nЗемля: {se_dmg:1600130911:SkillUIMinDmgsum}-{se_dmg:1600130911:SkillUIMaxDmgsum} урона\nВоздух: {se_dmg:1600131311:SkillUIMinDmgsum}-{se_dmg:1600131311:SkillUIMaxDmgsum} урона по области\nДревний: {se_dmg:1600131711:SkillUIMinDmgsum}-{se_dmg:1600131711:SkillUIMaxDmgsum} урона по области\n\nУрон по шкале ошеломления — 50",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Смена на заряжаемое умение, увеличение урона [Кооперации: Наступление погибели] макс. до 200%"
+        },
+        {
+          "level": 10,
+          "text": "СКР умений +30%"
+        },
+        {
+          "level": 15,
+          "text": "Гарантир. крит. удар при попадании"
+        },
+        {
+          "level": 20,
+          "text": "Завершение перезарядки [Кооперации: Проклятие] и [Кооперации: Разложение] при попадании первым ударом от умения [Кооперация: Наступление погибели]"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Jointstrike: Destructive Attack",
+      "desc": "De acordo com {se_dmg:1624000011:SkillUIMinDmgsum}-{se_dmg:1624000011:SkillUIMaxDmgsum} dano a um alvo dentro do 20m. O Espírito se junta a você em um ataque coordenado. Fogo: danos {se_dmg:1600130111:SkillUIMinDmgsum}-{se_dmg:1600130111:SkillUIMaxDmgsum} AoE Água: {se_dmg:1600130511:SkillUIMinDmgsum} - {se_dmg:1600130511:SkillUIMaxDmgsum} Terra: danos {se_dmg:1600130911:SkillUIMinDmgsum}-{se_dmg:1600130911:SkillUIMaxDmgsum} Vento: {se_dmg:1600131311:SkillUIMinDmgsum} - {se_dmg:1600131311:SkillUIMaxDmgsum} AoE dano Antigo: {se_dmg:1600131711:SkillUIMinDmgsum} - {se_dmg:1600131711:SkillUIMaxDmgsum} AoE dano 50 Danos no gauge do Stagger",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Mudanças para cobrar habilidades, negociando até 200% Mais.Jointstrike: Destructive AttackDano."
+        },
+        {
+          "level": 10,
+          "text": "+ 30% Velocidade de Habilidade"
+        },
+        {
+          "level": 15,
+          "text": "Ataque crítico no sucesso."
+        },
+        {
+          "level": 20,
+          "text": "Reiniciar.Jointstrike: CurseE... e...Jointstrike: CorrodeResfriamento no pouso.Jointstrike: Destructive AttackPrimeiro golpe."
+        }
+      ]
+    }
+  },
+  "summon-ancient-spirit": {
+    "id": "16250000",
+    "category": "stigma",
+    "icon": "summon-ancient-spirit.webp",
+    "cooldown": 90000,
+    "en": {
+      "name": "Summon: Ancient Spirit",
+      "desc": "Summons an Ancient Spirit for 30s and grants Four Elements status each time the Ancient Spirit uses its skill.\nThe Ancient Spirit uses a skill on a target within 20m, dealing {se_dmg:1625000111:SkillUIMinDmgsum}-{se_dmg:1625000111:SkillUIMaxDmgsum} damage to up to 4 enemies within 4m.\nThe Ancient Spirit fights alongside the caster using basic attacks and reuses its skill after 7 basic attacks. It is dismissed upon selecting the summon icon.\nEach skill level increases the Ancient Spirit's Attack, Defense, Accuracy, and Critical Hit by 2%.\n\n20 Stagger Gauge Damage",
+      "specs": [
+        {
+          "level": 5,
+          "text": "+10% Ancient Spirit Attack"
+        },
+        {
+          "level": 10,
+          "text": "x1.5 [Spirit's Descent] activation chance and damage for 30s"
+        },
+        {
+          "level": 15,
+          "text": "Ancient Spirit uses skill after 5 basic attacks"
+        },
+        {
+          "level": 20,
+          "text": "+20% Ancient Spirit Stats"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Призыв: Древний дух",
+      "desc": "Призывает древнего духа на 30 сек. Каждый раз, когда древний дух использует умение, получает эффект 4 стихий.\nДревний дух использует умение, которое наносит {se_dmg:1625000111:SkillUIMinDmgsum}-{se_dmg:1625000111:SkillUIMaxDmgsum} урона врагам (макс. 4) в радиусе 4 м вокруг цели, находящейся в пределах 20 м.\nПосле использования умения продолжает бой базовыми атаками. После 7 обычных атак снова применяет умение. При выборе значка призыва дух исчезает.\nС каждым повышением уровня умения АТК, ЗЩТ, меткость и крит. удар древнего духа увеличиваются на 2%.\n\nУрон по шкале ошеломления — 20",
+      "specs": [
+        {
+          "level": 5,
+          "text": "АТК древнего духа +10%"
+        },
+        {
+          "level": 10,
+          "text": "Увеличение шанса срабатывания и урон [Пришествия духа] x1,5 на 30s"
+        },
+        {
+          "level": 15,
+          "text": "Применение умения после использования 5 обычных атак"
+        },
+        {
+          "level": 20,
+          "text": "Характеристики древнего духа +20%"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Summon: Ancient Spirit",
+      "desc": "Convoca um Espírito Antigo para 30s e concede status de quatro elementos cada vez que o Espírito Antigo usa sua habilidade. O Espírito Antigo usa uma habilidade em um alvo dentro do 20m, lidando com danos {se_dmg:1625000111:SkillUIMinDmgsum}-{se_dmg:1625000111:SkillUIMaxDmgsum} para até inimigos 4 dentro do 4m. O Espírito Antigo luta ao lado do lançador usando ataques básicos e reutiliza sua habilidade após os ataques básicos 7. É descartado ao selecionar o ícone da convocação. Cada nível de habilidade aumenta o Ataque, Defesa, Precisão e Ataque Crítico do Espírito Antigo por 2%. 20 Stagger Gauge Danos",
+      "specs": [
+        {
+          "level": 5,
+          "text": "+ 10% Ataque do Espírito Antigo"
+        },
+        {
+          "level": 10,
+          "text": "x1.5 [Spirit's DescentAtivação chance e dano para 30s"
+        },
+        {
+          "level": 15,
+          "text": "Espírito Antigo usa habilidade após ataques básicos 5."
+        },
+        {
+          "level": 20,
+          "text": "+ 20% antigos espíritos Stats"
+        }
+      ]
+    }
+  },
+  "magic-block": {
+    "id": "16260000",
+    "category": "stigma",
+    "icon": "magic-block.webp",
+    "cooldown": 60000,
+    "en": {
+      "name": "Magic Block",
+      "desc": "Deals {se_dmg:1626000011:SkillUIMinDmgsum}-{se_dmg:1626000011:SkillUIMaxDmgsum} damage to a target within 20m, with a 75% chance to inflict Seal for 5s.\n\n20 Stagger Gauge Damage",
+      "specs": [
+        {
+          "level": 5,
+          "text": "50% chance to inflict Root for 5s on hit"
+        },
+        {
+          "level": 10,
+          "text": "-1000 enemy Max Stamina for 5s on hit"
+        },
+        {
+          "level": 15,
+          "text": "+2s Seal duration"
+        },
+        {
+          "level": 20,
+          "text": "+25% Seal chance"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Блокировка магии",
+      "desc": "Наносит {se_dmg:1626000011:SkillUIMinDmgsum}–{se_dmg:1626000011:SkillUIMaxDmgsum} урона цели в радиусе 20 м и с шансом 75% запечатывает ее на 5s.\n\nУрон по шкале ошеломления — 20 ед.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Шанс 50% плена на 5s при попадании"
+        },
+        {
+          "level": 10,
+          "text": "Макс. ОД -1000 на 5s при попадании"
+        },
+        {
+          "level": 15,
+          "text": "Длительность Запечатывания +2 сек."
+        },
+        {
+          "level": 20,
+          "text": "Шанс Запечатывания +25%"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Magic Block",
+      "desc": "Lida com danos {se_dmg:1626000011:SkillUIMinDmgsum}-{se_dmg:1626000011:SkillUIMaxDmgsum} em um alvo dentro do 20m, com uma chance 75% de infligir Seal para 5s. 20 Stagger Gauge Danos",
+      "specs": [
+        {
+          "level": 5,
+          "text": "50% chance de infligir Root para 5s em sucesso."
+        },
+        {
+          "level": 10,
+          "text": "- 1000 inimigo Max Stamina para 5s em hit"
+        },
+        {
+          "level": 15,
+          "text": "+ 2s Duração do selo"
+        },
+        {
+          "level": 20,
+          "text": "+ 25% Seal chance"
+        }
+      ]
+    }
+  },
+  "rapid-scattershot": {
+    "id": "16340000",
+    "category": "active",
+    "icon": "rapid-scattershot.webp",
+    "cooldown": 0,
+    "en": {
+      "name": "Rapid Scattershot",
+      "desc": "Deals {se_dmg:1634000011:SkillUIMinDmgsum}-{se_dmg:1634000011:SkillUIMaxDmgsum} damage to a target afflicted with Stagger within 20m.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Absorbs 5% HP"
+        },
+        {
+          "level": 8,
+          "text": "Restores 120 MP"
+        },
+        {
+          "level": 8,
+          "text": "Changes to mobile skill"
+        },
+        {
+          "level": 12,
+          "text": "Multi-Hit on hit"
+        },
+        {
+          "level": 16,
+          "text": "-1s all skill cooldowns on hit"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Беспорядочный огонь",
+      "desc": "Наносит {se_dmg:1634000011:SkillUIMinDmgsum}-{se_dmg:1634000011:SkillUIMaxDmgsum} урона цели в состоянии Ошеломления в радиусе 20 м.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Поглощение 5% ОЗ"
+        },
+        {
+          "level": 8,
+          "text": "Восстановление 120 ОМ"
+        },
+        {
+          "level": 8,
+          "text": "Замена на умение с возможностью перемещения"
+        },
+        {
+          "level": 12,
+          "text": "Гарантир. мультиудар при попадании"
+        },
+        {
+          "level": 16,
+          "text": "Перезарядка всех умений -1s при попадании"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Rapid Scattershot",
+      "desc": "De acordo com {se_dmg:1634000011:SkillUIMinDmgsum} - {se_dmg:1634000011:SkillUIMaxDmgsum} dano a um alvo atingido com Stagger dentro de 20m.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Absorve 5% HP"
+        },
+        {
+          "level": 8,
+          "text": "Restaura 120 MP"
+        },
+        {
+          "level": 8,
+          "text": "Mudanças na habilidade móvel."
+        },
+        {
+          "level": 12,
+          "text": "Multi-Hit na batida"
+        },
+        {
+          "level": 16,
+          "text": "- 1s todos os destrezas no hit"
+        }
+      ]
+    }
+  },
+  "elemental-fusion": {
+    "id": "16300000",
+    "category": "active",
+    "icon": "elemental-fusion.webp",
+    "cooldown": 0,
+    "en": {
+      "name": "Elemental Fusion",
+      "desc": "The Spiritmaster receives an element each time a Spirit uses its skill. Grants Four Elements status and the ability to use the [Elemental Fusion] skill upon reaching 4 stacks. [Elemental Fusion] can only be used when granted Four Elements, and using [Elemental Fusion] will immediately remove Four Elements. Cannot receive additional elements while in Four Elements status.\n\nDeals {se_dmg:1630000011:SkillUIMinDmgsum}-{se_dmg:1630000011:SkillUIMaxDmgsum} damage to a target within 20m.\n\n10 Stagger Gauge Damage",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Changes to AoE Skill"
+        },
+        {
+          "level": 8,
+          "text": "Extra damage after 3s on hit"
+        },
+        {
+          "level": 8,
+          "text": "+10 all Element Boost on hit"
+        },
+        {
+          "level": 12,
+          "text": "Changes to Charge Skill, dealing up to 200% more damage"
+        },
+        {
+          "level": 16,
+          "text": "25% chance to regain Four Elements"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Синтез элементов",
+      "desc": "При каждом использовании умения духом Заклинатель получает заряд элемента. При накоплении 4 зарядов на Заклинателя накладывается состояние Четырех элементов, позволяющее использовать умение [Ситез элементов]. Применить [Синтез элементов] можно только в состоянии Четырех элементов. После использования умения состояние мгновенно отменяется. В данном состоянии дополнительные заряды элементов не накапливаются.\n\nНаносит {se_dmg:1630000011:SkillUIMinDmgsum}-{se_dmg:1630000011:SkillUIMaxDmgsum} урона цели в радиусе 20 м.\n\nУрон по шкале ошеломления — 10",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Смена на массовое умение"
+        },
+        {
+          "level": 8,
+          "text": "Доп. урон через 3s при попадании"
+        },
+        {
+          "level": 8,
+          "text": "Усиление всех стихий +10% при попадании"
+        },
+        {
+          "level": 12,
+          "text": "Смена на заряжаемое умение, увеличение урона макс. до 200%"
+        },
+        {
+          "level": 16,
+          "text": "Шанс 25% повторно получить Четыре элемента"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Elemental Fusion",
+      "desc": "The Spiritmaster receives an element each time a Spirit uses its skill. Grants Four Elements status and the ability to use the [Elemental Fusion# Habilidade ao alcançar # 4 pilhas.Elemental FusionSó pode ser usado quando concedido Quatro Elementos, e usandoElemental Fusion] will immediately remove Four Elements. Cannot receive additional elements while in Four Elements status.\n\nDeals {se_dmg:1630000011:SkillUIMinDmgsum}-{se_dmg:1630000011:SkillUIMaxDmgsum} Dano a um alvo dentro 20m.\n\n10 Danos no gauge",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Mudanças para AoE Skill"
+        },
+        {
+          "level": 8,
+          "text": "Dano extra após 3s na batida."
+        },
+        {
+          "level": 8,
+          "text": "+ 10 todos os elementos aumentam em sucesso"
+        },
+        {
+          "level": 12,
+          "text": "Mudanças para carregar habilidades, lidando com mais danos 200%"
+        },
+        {
+          "level": 16,
+          "text": "25% chance de recuperar Quatro Elementos"
+        }
+      ]
+    }
+  },
+  "dimensional-control": {
+    "id": "16330000",
+    "category": "active",
+    "icon": "dimensional-control.webp",
+    "cooldown": 0,
+    "en": {
+      "name": "Dimensional Control",
+      "desc": "A skill that is triggered briefly each time a Spirit uses its skill.\nSelects a target within 20m and deals {se_dmg:1633000011:SkillUIMinDmgsum}-{se_dmg:1633000011:SkillUIMaxDmgsum} damage to up to 4 enemies within 4m of the target and inflicts Slow, reducing Move Speed by 40% for 3s on hit. Restores 100 MP.\n\n5 Stagger Gauge Damage",
+      "specs": [
+        {
+          "level": 8,
+          "text": "+20% Slow effect"
+        },
+        {
+          "level": 8,
+          "text": "Extra damage after 3s on hit"
+        },
+        {
+          "level": 8,
+          "text": "+50% Multi-Hit chance on hit"
+        },
+        {
+          "level": 12,
+          "text": "Pull in nearby targets"
+        },
+        {
+          "level": 16,
+          "text": "30% chance to inflict Root for 3s on hit"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Повелитель пространства",
+      "desc": "Активируется на короткое время каждый раз, когда дух использует умение.\nНаносит {se_dmg:1633000011:SkillUIMinDmgsum}-{se_dmg:1633000011:SkillUIMaxDmgsum} урона врагам (макс. 4) в радиусе 4 м вокруг цели, находящейся в пределах 20 м, и на 3s замедляет их, снижающее СКР движ. на 40%. Восстанавливает 100 ОМ.\n\nУрон по шкале ошеломления — 5",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Эффект Замедления +20%"
+        },
+        {
+          "level": 8,
+          "text": "Доп. урон через 3s при попадании"
+        },
+        {
+          "level": 8,
+          "text": "Шанс мультиудара +50% при попадании"
+        },
+        {
+          "level": 12,
+          "text": "Притягивание врагов к цели"
+        },
+        {
+          "level": 16,
+          "text": "Шанс 30% плена на 3s при попадании"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Dimensional Control",
+      "desc": "Uma habilidade que é desencadeada brevemente cada vez que um Espírito usa sua habilidade. Seleciona um alvo dentro do 20m e lida com danos {se_dmg:1633000011:SkillUIMinDmgsum}-{se_dmg:1633000011:SkillUIMaxDmgsum} para até inimigos 4 dentro do 4m do alvo e inflige lenta, reduzindo a velocidade de movimento em 40% para 3s no hit. Restaura 100 MP. 5 Stagger Gauge Danos",
+      "specs": [
+        {
+          "level": 8,
+          "text": "+ 20% Efeito lento"
+        },
+        {
+          "level": 8,
+          "text": "Dano extra após 3s na batida."
+        },
+        {
+          "level": 8,
+          "text": "+ 50% Multi-Hit chance em sucesso"
+        },
+        {
+          "level": 12,
+          "text": "Puxem os alvos próximos."
+        },
+        {
+          "level": 16,
+          "text": "30% chance de infligir Root para 3s em sucesso."
+        }
+      ]
+    }
+  },
+  "kaisinels-power": {
+    "id": "16360000",
+    "category": "stigma",
+    "icon": "kaisinels-power.webp",
+    "cooldown": 60000,
+    "en": {
+      "name": "Kaisinel's Power",
+      "desc": "Increases Status Effect Chance by 20% and Status Effect Resist by 20% for the caster for 10s.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "+150 Block and Evasion"
+        },
+        {
+          "level": 10,
+          "text": "+15% Status Effect Resist"
+        },
+        {
+          "level": 15,
+          "text": "+150 Accuracy"
+        },
+        {
+          "level": 20,
+          "text": "+15% Status Effect Chance"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Сила Кайсинеля",
+      "desc": "На 10s увеличивает активация негат. эффектов на 20%, сопротивление негат. эффектам  — на 20%.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Блок и УКЛ +150"
+        },
+        {
+          "level": 10,
+          "text": "Сопротивление негат. эффектам +15%"
+        },
+        {
+          "level": 15,
+          "text": "Меткость +150"
+        },
+        {
+          "level": 20,
+          "text": "Активация негат. эффектов +15%"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Kaisinel's Power",
+      "desc": "Aumenta a chance do efeito de status em 20% e o efeito de status em 20% para o lançador em 10s.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "+ Bloco 150 e Evasão"
+        },
+        {
+          "level": 10,
+          "text": "+ 15% Status Effect Resist"
+        },
+        {
+          "level": 15,
+          "text": "+ Exatidão 150"
+        },
+        {
+          "level": 20,
+          "text": "+ 15% Status Effect Chance"
+        }
+      ]
+    }
+  },
+  "flame-blessing": {
+    "id": "16370000",
+    "category": "stigma",
+    "icon": "flame-blessing.webp",
+    "cooldown": 60000,
+    "en": {
+      "name": "Flame Blessing",
+      "desc": "Has a 50% chance to deal {se_dmg:1637000111:SkillUIMinDmgsum}-{se_dmg:1637000111:SkillUIMaxDmgsum} extra damage to enemies on landing an attack for 10s.\n\nCooldown: 1s",
+      "specs": [
+        {
+          "level": 5,
+          "text": "+100 Accuracy"
+        },
+        {
+          "level": 10,
+          "text": "+100 Critical Hit"
+        },
+        {
+          "level": 15,
+          "text": "+10% Critical Damage Boost"
+        },
+        {
+          "level": 20,
+          "text": "-50% extra damage cooldown"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Благословение пламени",
+      "desc": "В течение 10s при каждой атаке с шансом 50% наносит врагу {se_dmg:1637000111:SkillUIMinDmgsum}-{se_dmg:1637000111:SkillUIMaxDmgsum} доп. урона.\n\nПерезарядка: 1s",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Меткость +100"
+        },
+        {
+          "level": 10,
+          "text": "Крит. удар +100"
+        },
+        {
+          "level": 15,
+          "text": "Увеличение крит. урона +10%"
+        },
+        {
+          "level": 20,
+          "text": "Перезарядка доп. урона -50%"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Flame Blessing",
+      "desc": "Tem uma chance 50% para causar dano {se_dmg:1637000111:SkillUIMinDmgsum}-{se_dmg:1637000111:SkillUIMaxDmgsum} extras aos inimigos ao pousar um ataque para 10s. Recarga: 1s",
+      "specs": [
+        {
+          "level": 5,
+          "text": "+ Exatidão 100"
+        },
+        {
+          "level": 10,
+          "text": "+ 100 Ataque Crítico"
+        },
+        {
+          "level": 15,
+          "text": "+ 10% Os dano crítico aumentam."
+        },
+        {
+          "level": 20,
+          "text": "-50% Esfriamento de danos extra"
+        }
+      ]
+    }
+  },
+  "assault-terror": {
+    "id": "16700000",
+    "category": "stigma",
+    "icon": "assault-terror.webp",
+    "cooldown": 120000,
+    "en": {
+      "name": "Assault Terror",
+      "desc": "Selects a target within 20m and deals {se_dmg:1670000021:SkillUIMinDmgsum}-{se_dmg:1670000021:SkillUIMaxDmgsum} damage to up to 4 enemies within 4m of the target, with a 30% chance to inflict Fear for 5s.\n100% chance to inflict Fear on NPC targets.\n\nIncreases Defense by up to 20% proportional to the number of targets hit.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "+20% caster's Attack for 5s"
+        },
+        {
+          "level": 10,
+          "text": "500 MP damage on hit"
+        },
+        {
+          "level": 15,
+          "text": "+10m range"
+        },
+        {
+          "level": 20,
+          "text": "+20% Fear Chance"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Внезапный ужас",
+      "desc": "Наносит {se_dmg:1670000021:SkillUIMinDmgsum}-{se_dmg:1670000021:SkillUIMaxDmgsum} урона врагам (макс. 4) в радиусе 4 м вокруг цели, находящейся в радиусе 20 м, и с шансом 30% повергает их в Ужас на 5s\nДля NPC Ужас срабатывает гарантированно.\n\nУвеличивает ЗЩТ пропорционально количеству целей попадания (макс. до 20%).",
+      "specs": [
+        {
+          "level": 5,
+          "text": "АТК +20% на 5s"
+        },
+        {
+          "level": 10,
+          "text": "500 урона по ОМ при попадании"
+        },
+        {
+          "level": 15,
+          "text": "Дальность атаки +10 м"
+        },
+        {
+          "level": 20,
+          "text": "Шанс Ужаса +20%"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Assault Terror",
+      "desc": "Seleciona um alvo dentro do 20m e lida com danos {se_dmg:1670000021:SkillUIMinDmgsum}-{se_dmg:1670000021:SkillUIMaxDmgsum} para até inimigos 4 dentro do 4m do alvo, com uma chance 30% de infligir medo para o 5s. 100% chance de infligir medo em alvos da NPC. Aumenta a defesa em até 20% proporcional ao número de alvos atingidos.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "+ Ataque 20% do lançador para 5s"
+        },
+        {
+          "level": 10,
+          "text": "Dano 500 MP no ataque."
+        },
+        {
+          "level": 15,
+          "text": "+ Alcance 10m"
+        },
+        {
+          "level": 20,
+          "text": "+ 20% Medo Chance"
+        }
+      ]
+    }
+  },
+  "spirit-strike": {
+    "id": "16710000",
+    "category": "passive",
+    "icon": "spirit-strike.webp",
+    "cooldown": 0,
+    "en": {
+      "name": "Spirit Strike",
+      "desc": "Increases the caster's PvE Damage Boost by 6%, PvP Damage Boost by 3%, and Perfect Chance by 0.4%. Increases the Spirit's PvE Damage Boost by 6%, PvP Damage Boost by 3%, and Perfect Chance 0.4%.",
+      "specs": []
+    },
+    "ru": {
+      "name": "Удар элемента",
+      "desc": "Увеличивает эскалацию урона в PvE на 6%, эскалацию урона в PvP — на 3%, Совершенный удар — на 0.4%, а также увеличивает эскалацию урона духа в PvE на 6%, эскалацию урона духа в PvP — на 3% и Совершенный удар духа — на 0.4%.",
+      "specs": []
+    },
+    "pt-BR": {
+      "name": "Spirit Strike",
+      "desc": "Aumenta o aumento de danos PvE do lançador em 6%, PvP em 3%, e Perfect Chance em 0.4%. Aumenta os danos PvE do Espírito em 6%, PvP em 3% e Perfect Chance 0.4%.",
+      "specs": []
+    }
+  },
+  "spirit-protection": {
+    "id": "16720000",
+    "category": "passive",
+    "icon": "spirit-protection.webp",
+    "cooldown": 0,
+    "en": {
+      "name": "Spirit Protection",
+      "desc": "Increases the caster's Defense by 2% and Spirit's Defense by 2%.",
+      "specs": []
+    },
+    "ru": {
+      "name": "Защита стихии",
+      "desc": "Увеличивает ЗЩТ на 2%, ЗЩТ духа — на 2%.",
+      "specs": []
+    },
+    "pt-BR": {
+      "name": "Spirit Protection",
+      "desc": "Aumenta a defesa do lançador em 2% e a defesa do Espírito em 2%.",
+      "specs": []
+    }
+  },
+  "spirits-descent": {
+    "id": "16730000",
+    "category": "passive",
+    "icon": "spirits-descent.webp",
+    "cooldown": 0,
+    "en": {
+      "name": "Spirit's Descent",
+      "desc": "Has a 50% chance to deal {se_dmg:1673000111:SkillUIMinDmgsum}-{se_dmg:1673000111:SkillUIMaxDmgsum} extra damage whenever the Spiritmaster's attacks land within 10 seconds of summoning a Spirit. Duration is increased to 30s when an Ancient Spirit is summoned.\n\nCooldown: 1s",
+      "specs": []
+    },
+    "ru": {
+      "name": "Пришествие духа",
+      "desc": "С шансом 50% наносит {se_dmg:1673000111:SkillUIMinDmgsum}–{se_dmg:1673000111:SkillUIMaxDmgsum} доп. урона каждый раз, когда атаки персонажа попадают по врагу в течение 10 сек. после призыва духа. При призыве Древнего духа длительность увеличивается до 30 сек.\n\nВремя перезарядки: 1 сек.",
+      "specs": []
+    },
+    "pt-BR": {
+      "name": "Spirit's Descent",
+      "desc": "Tem uma chance 50% para causar dano extras {se_dmg:1673000111:SkillUIMinDmgsum}-{se_dmg:1673000111:SkillUIMaxDmgsum} sempre que os ataques do Mestre do Espírito pousarem dentro de 10 segundos após convocar um Espírito. A duração é aumentada para 30s quando um Espírito Antigo é convocado. Recarga: 1s",
+      "specs": []
+    }
+  },
+  "corrode": {
+    "id": "16740000",
+    "category": "passive",
+    "icon": "corrode.webp",
+    "cooldown": 0,
+    "en": {
+      "name": "Corrode",
+      "desc": "Increases the caster's Critical Hit by 100, with a 50% chance to deal {se_dmg:1674000111:SkillUIMinDmgsum}-{se_dmg:1674000111:SkillUIMaxDmgsum} damage on landing a Critical Hit.\n\nCooldown: 1s",
+      "specs": []
+    },
+    "ru": {
+      "name": "Порча",
+      "desc": "Дает персонажу увеличение крит. удара на 100 и с шансом 50% наносит {se_dmg:1674000111:SkillUIMinDmgsum}–{se_dmg:1674000111:SkillUIMaxDmgsum} доп. урона при крит. ударе.\n\nВремя перезарядки: 1 с",
+      "specs": []
+    },
+    "pt-BR": {
+      "name": "Corrode",
+      "desc": "Aumenta o impacto crítico do lançador por 100, com uma chance 50% de causar dano {se_dmg:1674000111:SkillUIMinDmgsum}-{se_dmg:1674000111:SkillUIMaxDmgsum} ao pousar um sucesso crítico. Recarga: 1s",
+      "specs": []
+    }
+  },
+  "spirit-revitalization": {
+    "id": "16750000",
+    "category": "passive",
+    "icon": "spirit-revitalization.webp",
+    "cooldown": 30000,
+    "en": {
+      "name": "Spirit Revitalization",
+      "desc": "Has a 11% chance to reduce the cooldown of Spirit summon skills by 1s on hit. Immediately heals the Spirit for 12% of its Max HP when its HP is 50% or less.\n\nCooldown: 1s\nSpirit Healing Cooldown: 30s",
+      "specs": []
+    },
+    "ru": {
+      "name": "Оживление духа",
+      "desc": "С шансом 11% уменьшает время перезарядки умений призыва духа на 1s при попадании. Мгновенно восстанавливает духу 12% макс. ОЗ при уровне ОЗ 50% или меньше.\n\nВремя перезарядки: 1 с\nВремя перезарядки исцеления духа: 30 с",
+      "specs": []
+    },
+    "pt-BR": {
+      "name": "Spirit Revitalization",
+      "desc": "Tem uma chance 11% para reduzir o recarga das habilidades de invocação do Espírito por 1s em sucesso. Cura imediatamente o Espírito para 12% de seu Max HP quando seu HP é 50% ou menos. Frio: 1s O Espírito Curando Recarga 30s",
+      "specs": []
+    }
+  },
+  "mental-focus": {
+    "id": "16760000",
+    "category": "passive",
+    "icon": "mental-focus.webp",
+    "cooldown": 0,
+    "en": {
+      "name": "Mental Focus",
+      "desc": "Increases the caster's Mental-type Chance(s) by 11% and Double Chance by 0.3%.",
+      "specs": []
+    },
+    "ru": {
+      "name": "Чистый разум",
+      "desc": "Увеличивает попадание псих. эффектами на 11%, мощный удар — на 0.3%.",
+      "specs": []
+    },
+    "pt-BR": {
+      "name": "Mental Focus",
+      "desc": "Aumenta a chance mental do lançador por 11% e dupla chance por 0.3%.",
+      "specs": []
+    }
+  },
+  "spirit-communion": {
+    "id": "16770000",
+    "category": "passive",
+    "icon": "spirit-communion.webp",
+    "cooldown": 0,
+    "en": {
+      "name": "Spirit Communion",
+      "desc": "Increases the caster's Accuracy by 100. Has a 10% chance to restore the caster's and Spirit's HP by 182-200 when landing an attack.\n\nCooldown: 1s",
+      "specs": []
+    },
+    "ru": {
+      "name": "Духовное единство",
+      "desc": "Увеличивает Меткость персонажа на 100. С шансом 10% восстанавливает ОЗ персонажа и духа на 182–200 ед. при успешной атаке.\n\nВремя перезарядки: 1 с",
+      "specs": []
+    },
+    "pt-BR": {
+      "name": "Spirit Communion",
+      "desc": "Aumenta a precisão do lançador em 100. Tem uma chance 10% de restaurar o HP do lançador e do Espírito por 182-200 ao pousar um ataque. Recarga: 1s",
+      "specs": []
+    }
+  },
+  "element-unification": {
+    "id": "16780000",
+    "category": "passive",
+    "icon": "element-unification.webp",
+    "cooldown": 0,
+    "en": {
+      "name": "Element Unification",
+      "desc": "Increases Critical Damage Boost by 1.1% for the caster and Spirit for 10s upon landing a Spirit skill attack. Stacks up to 5 times.\n\nCooldown: 1s",
+      "specs": []
+    },
+    "ru": {
+      "name": "Слияние стихий",
+      "desc": "Дает персонажу и духу увеличение усиления крит. урона на 1.1% на 10s при атаке умением духа.\n\nВремя перезарядки: 1 с",
+      "specs": []
+    },
+    "pt-BR": {
+      "name": "Element Unification",
+      "desc": "Aumenta os dano crítico em 1.1% para o lançador e o Espírito para 10s ao pousar um ataque de habilidade espiritual. Empilha até 5 vezes. Recarga: 1s",
+      "specs": []
+    }
+  },
+  "revitalization-contract": {
+    "id": "16790000",
+    "category": "passive",
+    "icon": "revitalization-contract.webp",
+    "cooldown": 0,
+    "en": {
+      "name": "Revitalization Contract",
+      "desc": "Increases the caster's Status Effect Resist by 17%. Increases Status Effect Resist by 10% for 5s when hit while afflicted with Stun, Knockdown, Airborne, Frost, or Fear (up to 10 stacks).\nImmediately restores 35% Max HP when HP is 10% or less.\n\nHealing Cooldown: 60s\nStatus Effect Resist Cooldown: 1s",
+      "specs": []
+    },
+    "ru": {
+      "name": "Контракт оживления",
+      "desc": "Увеличивает сопротивление негат. эффектам  на 17%. Увеличивает сопротивление негат. эффектам  на 10% на 5s при получении удара в состоянии Оглушения, Сбивания с ног, Воздушных оков, Заморозки или Ужаса (суммируется не более 10 раз).\nПри падении ОЗ до 10% и ниже мгновенно восстанавливает 35% макс. ОЗ.\n\nВремя перезарядки исцеления: 60s\nВремя перезарядки сопротивления негат. эффектам: 1s",
+      "specs": []
+    },
+    "pt-BR": {
+      "name": "Revitalization Contract",
+      "desc": "Aumenta o Efeito de Estado do lançador em 17%. Aumenta o Efeito de Estado Resistir ao 10% para 5s quando atingido com Stun, Knockdown, Airborne, Frost, ou Medo (até 10 pilhas). Imediatamente restaura 35% Max HP quando HP é 10% ou menos. \"Curando o Recarga: 60s\" Efeito Status Resistir Resistir Recarga: 1s",
+      "specs": []
+    }
+  },
+  "consecutive-countercurrent": {
+    "id": "16800000",
+    "category": "passive",
+    "icon": "consecutive-countercurrent.webp",
+    "cooldown": 0,
+    "en": {
+      "name": "Consecutive Countercurrent",
+      "desc": "Has a 50% chance to deal {se_dmg:1680000111:SkillUIMinDmgsum}-{se_dmg:1680000111:SkillUIMaxDmgsum} extra damage on landing an attack on a target that is taking Damage over Time.\n\nCooldown: 1s",
+      "specs": []
+    },
+    "ru": {
+      "name": "Обратный поток",
+      "desc": "С шансом 50% наносит {se_dmg:1680000111:SkillUIMinDmgsum}–{se_dmg:1680000111:SkillUIMaxDmgsum} доп. урона при атаке цели, получающей постоянный урон.\n\nВремя перезарядки: 1 сек.",
+      "specs": []
+    },
+    "pt-BR": {
+      "name": "Consecutive Countercurrent",
+      "desc": "Tem uma chance 50% para causar dano {se_dmg:1680000111:SkillUIMinDmgsum}-{se_dmg:1680000111:SkillUIMaxDmgsum} extra ao pousar um ataque a um alvo que está tomando Danos sobre o Tempo. Recarga: 1s",
+      "specs": []
+    }
+  }
+}

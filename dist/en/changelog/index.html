@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="en" data-mode="pve">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Changelog — AION 2 Global - Guides</title>
+<meta name="description" content="Everything that changed on the site, newest first.">
+<link rel="canonical" href="https://aion2-guias-br.juniorikkix.chatgpt.site/en/changelog/">
+<link rel="alternate" hreflang="pt-BR" href="https://aion2-guias-br.juniorikkix.chatgpt.site/pt-BR/changelog/">
+<link rel="alternate" hreflang="en" href="https://aion2-guias-br.juniorikkix.chatgpt.site/en/changelog/">
+<link rel="alternate" hreflang="x-default" href="https://aion2-guias-br.juniorikkix.chatgpt.site/pt-BR/changelog/">
+<meta name="theme-color" content="#0b0e14">
+<meta name="color-scheme" content="dark light">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AION 2 Global - Guides">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Changelog — AION 2 Global - Guides">
+<meta property="og:description" content="Everything that changed on the site, newest first.">
+<meta property="og:url" content="https://aion2-guias-br.juniorikkix.chatgpt.site/en/changelog/">
+<meta property="og:image" content="https://aion2-guias-br.juniorikkix.chatgpt.site/assets/og/changelog-en.jpg?v=190a0472">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image"><link rel="icon" href="../../favicon.ico" sizes="48x48">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-96.png" type="image/png" sizes="96x96">
+<link rel="icon" href="../../assets/favicon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Yeseva+One&family=JetBrains+Mono:wght@500;700&display=swap&subset=cyrillic">
+<script>
+  // Theme + guide mode before first paint (no flash).
+  (function (r) {
+    try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') r.dataset.theme = t; } catch (e) {}
+    var off = (r.getAttribute('data-off') || '').split(' ');
+    var modes = ['pve', 'pvp', 'lvl'].filter(function (x) { return off.indexOf(x) < 0; });
+    var m = new URLSearchParams(location.search).get('mode');
+    if (modes.indexOf(m) < 0) { try { m = localStorage.getItem('mode'); } catch (e) {} }
+    if (modes.indexOf(m) >= 0) r.dataset.mode = m;
+    else if (modes.indexOf(r.dataset.mode) < 0) r.dataset.mode = modes[0];
+  })(document.documentElement);
+</script>
+<link rel="stylesheet" href="../../assets/css/site.css?v=190a0472">
+</head>
+<body class="page-changelog">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="../../en/">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3c1.8 4.6 5.6 7.2 12 8-4.4 2.2-6.8 5.6-7.4 10.6L16 29l-4.6-7.4C10.8 16.6 8.4 13.2 4 11c6.4-.8 10.2-3.4 12-8z" fill="currentColor"/></svg><span class="brand-text"><b>AION 2 Global</b><small><span class="sr-only"> - </span>Guides</small></span>
+    </a>
+    <details class="class-menu">
+      <summary class="class-menu-btn">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="4" y="4" width="6" height="6" rx="1.5"/><rect x="14" y="4" width="6" height="6" rx="1.5"/><rect x="4" y="14" width="6" height="6" rx="1.5"/><rect x="14" y="14" width="6" height="6" rx="1.5"/></svg><span>Classes</span>        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      </summary>
+      <nav class="class-menu-panel" aria-label="Classes">
+        <a href="../../en/gladiator/" class="cm-item accent-crimson">
+          <img src="../../assets/classes/gladiator.webp" width="44" height="44" alt=""><span class="cm-name">Gladiator</span><span class="cm-role">Melee DPS · bruiser</span>
+        </a>
+        <a href="../../en/ranger/" class="cm-item accent-emerald">
+          <img src="../../assets/classes/ranger.webp" width="44" height="44" alt=""><span class="cm-name">Ranger</span><span class="cm-role">Ranged DPS · kiter</span>
+        </a>
+        <a href="../../en/templar/" class="cm-item accent-sapphire">
+          <img src="../../assets/classes/templar.webp" width="44" height="44" alt=""><span class="cm-name">Templar</span><span class="cm-role">Tank · party buffer</span>
+        </a>
+        <a href="../../en/assassin/" class="cm-item accent-violet">
+          <img src="../../assets/classes/assassin.webp" width="44" height="44" alt=""><span class="cm-name">Assassin</span><span class="cm-role">Melee DPS · burst</span>
+        </a>
+        <a href="../../en/sorcerer/" class="cm-item accent-frost">
+          <img src="../../assets/classes/sorcerer.webp" width="44" height="44" alt=""><span class="cm-name">Sorcerer</span><span class="cm-role">Ranged magic DPS</span>
+        </a>
+        <a href="../../en/elementalist/" class="cm-item accent-spirit">
+          <img src="../../assets/classes/elementalist.webp" width="44" height="44" alt=""><span class="cm-name">Elementalist</span><span class="cm-role">Summoner · magic DPS</span>
+        </a>
+        <a href="../../en/cleric/" class="cm-item accent-sunlight">
+          <img src="../../assets/classes/cleric.webp" width="44" height="44" alt=""><span class="cm-name">Cleric</span><span class="cm-role">Healer · earth and lightning damage</span>
+        </a>
+        <a href="../../en/chanter/" class="cm-item accent-amber">
+          <img src="../../assets/classes/chanter.webp" width="44" height="44" alt=""><span class="cm-name">Chanter</span><span class="cm-role">Melee support · buffer</span>
+        </a>
+      </nav>
+    </details>
+    <div class="topbar-tools">      <span class="rift-timer" data-anchor="2026-10-02T18:00:00Z" data-every="3" data-tz="Europe/Kyiv" data-open-min="10" data-open="Rift is open" title="Rift — portal to the enemy zone, opens every 3 hours; the entrance stays open for 10 minutes, inside you can stay about an hour. Next">
+        <svg class="rt-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><ellipse cx="12" cy="12" rx="7.5" ry="10.5"/><path d="M11 13C10.2 11.4 11.4 10 12.8 10.4C14.6 11 14.6 14 12.8 15.6C11.4 16.8 9.6 16.8 8.6 16"/><path d="M12.4 6.6C14.8 6.4 17 8.6 17 12"/><g transform="rotate(180 12 12)"><path d="M11 13C10.2 11.4 11.4 10 12.8 10.4C14.6 11 14.6 14 12.8 15.6C11.4 16.8 9.6 16.8 8.6 16"/><path d="M12.4 6.6C14.8 6.4 17 8.6 17 12"/></g></svg><span class="rt-name">Rift</span><b class="rt-time">--:--</b>
+      </span>
+      <a class="wr-chip" href="../../en/weekly/" data-anchor="2026-09-30T07:00:00Z" data-tz="Europe/Kyiv" data-units="d,h,m,s" title="Weekly reset in">
+        <svg class="wr-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11a8 8 0 1 0-2.3 5.7"/><path d="M20 4v7h-7"/></svg><span class="wr-name">Reset</span><b class="wr-time">--</b>
+      </a>
+      <a class="top-timer" href="../../en/" title="Timers" data-events='[{"at": "2026-10-05T13:00:00Z", "n": "Global launch", "o": "Servers are open"}]' data-units="d,h,m,s" data-open="live">
+        <span class="tt-dot" aria-hidden="true"></span><span class="tt-name"></span><b class="tt-time">--:--:--</b>
+      </a>
+      <details class="class-menu nav-menu">
+        <summary class="class-menu-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10"/></svg><span>Guides</span>
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <nav class="nav-menu-panel" aria-label="Guides">
+          <div class="nm-col">
+            <p class="nm-group">Progress</p>
+            <a href="../../en/week-1/" class="nm-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21V4M5 4h11l-2 4 2 4H5"/></svg>
+              <span class="nm-name">Week 1</span><span class="nm-desc">What to finish before the first reset</span>
+            </a>
+            <a href="../../en/progression/" class="nm-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20h4v-6H3zM10 20h4V9h-4zM17 20h4V4h-4z"/></svg>
+              <span class="nm-name">After 45</span><span class="nm-desc">Item level route to the raid</span>
+            </a>
+            <a href="../../en/crafting/" class="nm-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0 5 5L21 13l-8 8-3-3 1.3-1.3a4 4 0 0 0-5-5L3 10l3-3 3 3 1.3-1.3a4 4 0 0 1 4.4-2.4z"/></svg>
+              <span class="nm-name">Gathering and crafting</span><span class="nm-desc">Professions and gold blanks</span>
+            </a>
+            <a href="../../en/settings/" class="nm-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h10M18 6h2M4 12h4M12 12h8M4 18h12M20 18h0"/><circle cx="16" cy="6" r="2"/><circle cx="10" cy="12" r="2"/><circle cx="18" cy="18" r="2"/></svg>
+              <span class="nm-name">Game settings</span><span class="nm-desc">Controls, keys, FPS and mass PvP</span>
+            </a>
+            <a href="../../en/dungeons/" class="nm-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V10l9-7 9 7v11"/><path d="M9 21v-6a3 3 0 0 1 6 0v6"/></svg>
+              <span class="nm-name">Dungeons</span><span class="nm-desc">Boss mechanics with arena diagrams</span>
+            </a>
+            <a href="../../en/tier-list/" class="nm-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h4M4 12h4M4 19h4"/><path d="M11 5h9M11 12h6M11 19h3"/></svg>
+              <span class="nm-name">Tier list</span><span class="nm-desc">Classes ranked by content</span>
+            </a>
+          </div>
+          <div class="nm-col">
+            <p class="nm-group">Trackers</p>
+            <a href="../../en/weekly/" class="nm-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M8.5 15l2 2 4-4"/></svg>
+              <span class="nm-name">Weekly</span><span class="nm-desc">Weekly entries and energy</span>
+            </a>
+            <a href="../../en/bosses/" class="nm-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c-4.4 0-8 3.1-8 7.5 0 2.6 1.3 4.4 3 5.5V20h2v-2h2v2h2v-2h2v2h2v-4c1.7-1.1 3-2.9 3-5.5C20 6.1 16.4 3 12 3z"/><circle cx="9" cy="11" r="1.5"/><circle cx="15" cy="11" r="1.5"/></svg>
+              <span class="nm-name">World bosses</span><span class="nm-desc">Kill tracker and timers</span>
+            </a>
+          </div>
+          <div class="nm-foot">
+            <a href="../../en/sources/" class="nm-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h12v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5M8 7h6M8 11h6"/></svg>
+              <span class="nm-name">Sources &amp; credits</span><span class="nm-desc">Everyone this site builds on</span>
+            </a>
+          </div>
+        </nav>
+      </details>      <details class="lang-menu">
+        <summary class="lang-switch" title="Language"><span aria-hidden="true">EN</span><span class="sr-only">Language</span></summary>
+        <nav class="lang-panel" aria-label="Language">
+<a href="../../pt-BR/changelog/" hreflang="pt-BR" lang="pt-BR" data-keep-query><b>BR</b>Português do Brasil</a><a href="../../en/changelog/" hreflang="en" lang="en" aria-current="true" data-keep-query><b>EN</b>English</a>        </nav>
+      </details>
+      <button class="icon-btn search-open" type="button" aria-label="Search (Ctrl+K)" title="Search (Ctrl+K)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      </button>
+<a class="icon-btn wn-top" href="../../en/changelog/" aria-current="page" aria-label="Changelog" title="Changelog">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.2a2.6 2.6 0 0 1 5 .9c0 1.7-2.5 2.3-2.5 3.9"/><path d="M12 17h.01"/></svg>
+      </a>      <button class="icon-btn theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
+        <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main" data-changelog-seen="ptbr-2026-10-12">
+  <section class="page-hero has-art" style="--hero-art:url('../../assets/art/hero-changelog.webp');--hero-pos:50% 45%">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="All classes"><a href="../../en/">All classes</a><span aria-hidden="true">/</span><span>Changelog</span></nav>
+      <h1>Changelog</h1>
+      <p class="lead">Everything that changed on the site, newest first.</p>
+    </div>
+  </section>
+  <div class="wrap cl-page">
+    <section class="wn-entry cl-entry" aria-label="Oct 12, 2026">
+      <time class="wn-date" datetime="2026-10-12">Oct 12, 2026</time>
+      <ul>
+        <li><span>Independent Brazilian Portuguese edition: translated guides and interface, with the English version available for comparison.</span></li>
+        <li><span>Interface and key Cleric sections reviewed. Other long-form content uses machine translation with partial review.</span></li>
+        <li><span>Original mechanics, build choices, Daevanion routes and local progress tracking preserved. Original project: Couga54 / AION 2 Guides.</span></li>
+      </ul>
+    </section>
+    <section class="wn-entry cl-entry" aria-label="Oct 10, 2026">
+      <time class="wn-date" datetime="2026-10-10">Oct 10, 2026</time>
+      <ul>
+        <li><span><strong>Daevanion boards: a slider for the leveling path</strong> — drag the slider under a board tab to see the order to take the nodes in: first the guide's route, then the rest of the board (suggested by a site visitor).</span></li>
+        <li><span><strong>Where to get Stigma Shards</strong> — under Stigmas in every class guide: the Abyss, Nightmare and Shugo shops with their limits and full prices (about 270 per character), plus a few from levels and the story.</span></li>
+        <li><span><strong>How many Daevanion crystals you can get</strong> — under the route board of every class: levels, sealed dungeons, regional quests and the Shugo and Nightmare shops (with the full price in their currencies) give about 416 for the four PvE boards, which cost 570 — so the route takes the nodes that count first.</span></li>
+        <li><span><strong>Ranger: Fubgun's hotbar as in the game</strong> — Rotation &amp; macro now shows a full skill bar from his global endgame guide (Gale line and Drill line in the macro, buffs on one key by hand) next to Whelps' lines; Explosive Arrow over Griffon Arrow until Griffon reaches 15, Deadshot and Gale Arrow picks for more damage, starter stigma levels 15 / 10 / 10 / 5, bow and guard at +10.</span></li>
+      </ul>
+    </section>
+    <section class="wn-entry cl-entry" aria-label="Oct 9, 2026">
+      <time class="wn-date" datetime="2026-10-09">Oct 9, 2026</time>
+      <ul>
+        <li><span><strong>Gladiator: stats and a second macro from Ulfhednar's global guide</strong> — Gear &amp; stats now lists the gear lines, the soul binds for weapon and guard, the stats, Genus Insight and where to get mana; Macro &amp; rotation has his hotbar as another option (Rending Blow shares a line with Sword Aura Rampage, Blade Toss instead of Focused Block). The gear sections of Gladiator, Ranger and Elementalist are renamed to match the other classes.</span></li>
+      </ul>
+    </section>
+    <section class="wn-entry cl-entry" aria-label="Oct 8, 2026">
+      <time class="wn-date" datetime="2026-10-08">Oct 8, 2026</time>
+      <ul>
+        <li><span><strong>Cleric checked against Whelps' global guide</strong> — a second macro option with his hotbar (three Earth Punishment steps for every debuff step) and a Combat Analysis check, his order on the Daevanion boards, specialization options for Bolt, Divine Aura and Chain of Torment, stigma swaps for support; in Leveling: which stigma goes into each new slot and his starter macro. Kaeria's Taiwan macro is gone.</span></li>
+      </ul>
+    </section>
+    <section class="wn-entry cl-entry" aria-label="Oct 7, 2026">
+      <time class="wn-date" datetime="2026-10-07">Oct 7, 2026</time>
+      <ul>
+        <li><span><strong>Templar: Leonis' macro</strong> — the in-game macro now opens with the Doom Shield line, then the Pummel line with Debilitating Smash first; SolAshur's Judgment line stays as an option.</span></li>
+        <li><span><strong>Example hotbar layout for Chanter, Assassin and Templar</strong> — the author's bar as in the game, read from their videos (Grobs, Arthars, Leonis). Where the author uses side mouse buttons or the numpad, the note under the bar says to copy the lines, not the keys.</span></li>
+        <li><span><strong>Ranger: new Leveling mode</strong> — from Moxsy's guide (made with JohnPal): how to pull packs, what to level first with the early skill picks, his hotbar and four-step macro, links to JohnPal's leveling planner and Allyria's written guide. Burst Arrow in PvE now takes +50% Multi-Hit.</span></li>
+        <li><span><strong>Example hotbar layout</strong> — the Cleric and Ranger guides show the author's skill bar as in the game: all keys and slots, the macro lines in gold, a skill tooltip on every icon. A <strong>?</strong> next to every Macro section says where to bind the macro key.</span></li>
+        <li><span><strong>Templar: Asmodian gear</strong> — the Holy Spirit set drops only on Elyos maps; Asmodians farm the same gear as the Spectral set in Altgard and Morheim. Hover the items to compare the stats.</span></li>
+      </ul>
+    </section>
+    <section class="wn-entry cl-entry" aria-label="Oct 6, 2026">
+      <time class="wn-date" datetime="2026-10-06">Oct 6, 2026</time>
+      <ul>
+        <li><span><strong>Cleric, Chanter and Templar checked against fresh global guides</strong> — Lucia (World's First Rank 1 Cleric), Grobs and Leonis. New main macros: Lucia's two-step macro for the Cleric and Grobs' line for the Chanter, with the rest of their hotbars; Flash Rampage out of the Templar's Pummel line. Plus skill-pick options, stigma levels, Cleric gear lines, Genus Insight and wings.</span></li>
+        <li><span><strong>Cleric: new PvP mode</strong> — from Lucia's guide: stigmas for duels, group fights and the Abyss (Voice of Doom against healers, Yustiel's Power against bursts), the crowd-control picks, Genus Insight for PvP and a PvP route on the Daevanion boards.</span></li>
+        <li><span><strong>After 45: SywoGG's gear route</strong> — item level milestones from 700, clash runes, the story bracelet, belt and amulet, arcana math, Fire Temple, gear past +15 and where else combat power comes from. Also fixed for global: Shugo cards by place, Nightmare attempts and the Nightmare shop.</span></li>
+        <li><span><strong>Fixed skill data and guides</strong> — skill specializations re-checked against the live client for all classes. Cleric: Radiant Recovery now has +1 consecutive use and the guide takes it at 16. Assassin (Shadowstrike), Sorcerer (Flame Arrow) and Templar (Pummel): the guide texts now match what the options do.</span></li>
+        <li><span><strong>New page: Dungeons</strong> — the bosses of Krao Cave, Draupnir, Urugugu Canyon, Vakron Sky Island, Fire Temple, Ferocious Horn Den, both Transcendence dungeons and Zikel in Nightmare: the mechanics that wipe a group, with arena diagrams and links to the moment in the video. In the Guides menu.</span></li>
+        <li><span><strong>New page: Tier list</strong> (not final, subjective) — trueeevil, XifanGG, Kanon and KaidWOW side by side for PvE, mass PvP, solo PvP and pure DPS, with the average, plus how your ping changes the choice.</span></li>
+        <li><span><strong>Suggest a change</strong> — every class guide now starts with a box that opens the feedback form; modes still built on Korean guides and classes without a PvP guide ask for a link to a global one.</span></li>
+        <li><span><strong>Home page timers</strong> — next to “Global launch started”: the next Rift opening and the weekly reset.</span></li>
+        <li><span><strong>World bosses by faction</strong> — tabs for Elyos, Asmodians and the Abyss; the page remembers yours. The site is now called AION 2 Global - Guides.</span></li>
+      </ul>
+    </section>
+    <section class="wn-entry cl-entry" aria-label="Oct 4, 2026">
+      <time class="wn-date" datetime="2026-10-04">Oct 4, 2026</time>
+      <ul>
+        <li><span><strong>Turkish version</strong> — the whole site is now also in Turkish: guides, pages and trackers. As on the Ukrainian pages, skill and item names stay in English. The translation is made with AI — if you spot a mistake, use "Report a mistake" or open an issue on GitHub.</span></li>
+      </ul>
+    </section>
+    <section class="wn-entry cl-entry" aria-label="Oct 3, 2026">
+      <time class="wn-date" datetime="2026-10-03">Oct 3, 2026</time>
+      <ul>
+        <li><span><strong>Gathering and crafting</strong> — the page is rewritten for global and made visual: the Essence Extraction skill tree (Proficient Handling and Delicate Touch to 10, Lady Luck at most 5, Odyle plus your weapon's resource), what each branch is for, Odyle morphing into any resource, and the crafting chain from grey to gold.</span></li>
+        <li><span><strong>Elementalist: PvE and PvP</strong> — the class now has full PvE and PvP modes for Season 1, built on Evripides' global Spirit Master guide (aion2sm.com) and checked against DankRNG and aLuckyRO: skills and specializations, stigmas, passives, the buff-before-summon rule, rotation, macro, matchups and the Daevanion route.</span></li>
+        <li><span><strong>World bosses</strong> — all 48 field bosses of Verteron and Altgard with their respawn timers: mark a kill and the page shows when the boss is back (and notifies you, if notifications are on). Every boss now shows where it spawns.</span></li>
+        <li><span><strong>Sorcerer</strong> — skill priority rebuilt on a global level-45 Sorcerer (EUTOPIA): Hellfire and Firestorm are now core, Ice Chain is optional, Frost and Frost Burst leave the bar.</span></li>
+        <li><span><strong>Chanter</strong> — from two Chanter mains on global (notXeon, WallyJTV): Recuperation 12 is enough, Power of the Storm is a core stigma, Inspiring Spell moves up, plus a macro tip for before Dark Crush 16.</span></li>
+        <li><span><strong>Gladiator, Ranger, Templar, Assassin, Cleric</strong> — checked against the first global guides (aLuckyRO, Sen, LordRobson, trueeevil): day-one picks and alternatives added — Keen Strike and Aerial Snare on bosses, Explosive Arrow as an equal fourth stigma, Executing Blade for solo Templars, Determination over Impact Hit, early Cleric passives.</span></li>
+        <li><span><strong>Leveling checklist</strong> — the stigma slots open one at a time at levels 22, 27, 32 and 37.</span></li>
+      </ul>
+    </section>
+    <section class="wn-entry cl-entry" aria-label="Oct 1, 2026">
+      <time class="wn-date" datetime="2026-10-01">Oct 1, 2026</time>
+      <ul>
+        <li><span><strong>Ukrainian version</strong> — the whole site is now also in Ukrainian: guides, pages and trackers. Skill and item names stay in English there, since the game data has no Ukrainian. Switch languages with the button in the top bar.</span></li>
+      </ul>
+    </section>
+    <section class="wn-entry cl-entry" aria-label="Sep 30, 2026">
+      <time class="wn-date" datetime="2026-09-30">Sep 30, 2026</time>
+      <ul>
+        <li><a href="../../en/settings/"><strong>New page: Game settings</strong> — what to change on day one, from Whelps' and Grobs' videos: control mode and targeting, the macro key (it has none by default), a separate key for Defiance, buff scrolls only in combat, boss orientation and aggro range, FPS and the options for mass PvP. In the Guides menu.</a></li>
+        <li><a href="../../en/sorcerer/"><strong>Sorcerer PvE rewritten</strong> — a setup for the first days at 45 from aLuckyRO's video: which specialization to take at skill level 8–10, four hotbar lines and one macro that keeps mana above 50%, target mode, Daevanion order. The guide is no longer marked as work in progress.</a></li>
+        <li><span><strong>Where the builds come from</strong> — the Overview of every class guide now says it plainly: the guides are based on creators' videos from the Taiwanese servers (patch: TW), cut down to global Season 1. The “work in progress” marks are gone from all guides.</span></li>
+        <li><a href="../../en/assassin/"><strong>Assassin PvE rebuilt on Arthars Gaming's video</strong> — what to expect from the class in Season 1, new skill levels (Storm Rampage 16, Savage Roar only a filler), stigmas all in buffs (Illusive Clone, Swift Contract, Savage Fang, Triniel's Dagger), one damage line and the burst order.</a></li>
+        <li><a href="../../en/assassin/"><strong>Assassin: arcana and passives</strong> — a new arcana section (Illusion on the Mirror is a must) and passive priority for gear.</a></li>
+        <li><span><strong>Specialization slots fixed</strong> — a skill has two slots from level 12 and the third only at 20. Gladiator, Templar, Sorcerer and Cleric cards no longer show three picks at level 16; each card says what the third slot takes at 20.</span></li>
+        <li><a href="../../en/chanter/"><strong>Chanter PvE rebuilt on Arthars Gaming's video guide</strong> — how Dark Crush opens, a new hotbar line and a two-step macro, skill levels and specializations, stigmas for four slots (Marchutan's Wrath 1, Focused Defense 5), passive priority.</a></li>
+        <li><a href="../../en/chanter/"><strong>Chanter: arcana</strong> — a new section: which stat, set and skills to look for on each of the five cards.</a></li>
+        <li><a href="../../en/cleric/"><strong>Cleric PvE: the macro in full</strong> — the three hotbar lines and the in-game macro steps read from Kaeria's video frame by frame, with the keys to hold and what to do on stagger. The guide is no longer marked as work in progress.</a></li>
+        <li><a href="../../en/cleric/"><strong>Cleric: Daevanion and arcana</strong> — the board route now skips the orange nodes that do nothing in PvE, set bonuses for arcana, Death as an extra stat, Benevolence as a healing swap, Voice of Doom corrected.</a></li>
+        <li><span><strong>Daevanion boards in five more guides</strong> — Ranger, Assassin, Chanter, Sorcerer and Cleric now show the real global boards with the route to the nodes the guide takes and a tooltip on every node.</span></li>
+        <li><span><strong>PvP guides in the same order as PvE</strong> — Gladiator and Templar PvP now start with the build at a glance, and the Daevanion boards sit between gear and stigmas.</span></li>
+        <li><a href="../../en/templar/"><strong>Templar guide re-checked against SolAshur's video, frame by frame</strong> — Pummel specializations corrected, stigma sets for solo PvE and for dungeons, Assault Fury as a late PvP swap.</a></li>
+        <li><a href="../../en/templar/"><strong>Templar: pets and gear</strong> — what to look for in each of the nine pet slots, item levels and attack of the weapons on the gear path, wing numbers, a note on PvP gear.</a></li>
+        <li><a href="../../en/templar/"><strong>Templar: Daevanion boards</strong> — the real global boards with the route for PvE and PvP, and a tooltip on every node.</a></li>
+        <li><span><strong>Daevanion in all guides</strong> — corrected for global: five boards, no Ariel; the level-45 board Azphel gives only PvP Damage Boost and Tolerance.</span></li>
+        <li><a href="../../en/gladiator/"><strong>Gladiator: Daevanion boards</strong> — the real global boards with the route for PvE, PvP and leveling (Grobs' 65-point route). Global has no Ariel board, only Azphel (PvP) — the guide is corrected.</a></li>
+        <li><a href="../../en/gladiator/"><strong>Board tooltips</strong> — hover (or tap) any node on a Daevanion board to see the stat it gives and its cost, the same way as a skill.</a></li>
+        <li><a href="../../en/gladiator/"><strong>Gladiator guide updated</strong> — boss opener, the boss orientation setting, Focused Block charges, Sword Aura Rampage, leveling priorities and arcana cards with tooltips.</a></li>
+        <li><span><strong>New top menu</strong> — all pages are now in the <strong>Guides</strong> menu on the right; the class picker shows the full class name.</span></li>
+        <li><span><strong>Who to watch</strong> on class pages — players of that class from the guide's sources and streamers, in your language.</span></li>
+      </ul>
+    </section>
+    <section class="wn-entry cl-entry" aria-label="Sep 29, 2026">
+      <time class="wn-date" datetime="2026-09-29">Sep 29, 2026</time>
+      <ul>
+        <li><a href="../../en/progression/#titan"><strong>After level 45: TitanTheF's route</strong> — Abyss farm, a crafted T1 weapon, the economic route and alts; plus <strong>how gear upgrades work</strong> (enhancement limits, manastones, Theostones, Soul Binding, titles, season).</a></li>
+        <li><a href="../../en/crafting/"><strong>New page: Gathering and crafting</strong> — which profession to pick, leveling on sapphires and Odyle, gold blanks and how much you need.</a></li>
+        <li><a href="../../en/week-1/"><strong>First week</strong>: Shugo at 45, world bosses once each, alts advice. <strong>Sources</strong>: who to watch per class.</a></li>
+        <li><a href="../../en/progression/"><strong>New page: After level 45</strong> — the item level route from 45 to the 2,800 dragon raid: what changes on global, Shugo, Nightmare, Draupnir, Vakron, Transcendence, a hardcore route and daily contract tips. Every block links to its moment in the video.</a></li>
+        <li><a href="../../en/progression/"><strong>Item tooltips</strong> — hover an item on that page to see its description, item level, stats and arcana set bonuses.</a></li>
+        <li><a href="../../en/week-1/#h-w1-route"><strong>After 45: the item level route</strong> — on the first-week page, from 45 to the 2,800 raid step by step (Shugo, Nightmare, Drupnir, Vakron, Transcendence). Based on the global datamine, so it is marked until confirmed.</a></li>
+        <li><a href="../../en/week-1/"><strong>First week updated</strong> — enemy-side rifts and feathers are no longer a priority on global; new tips on Shugo currency, Nightmare, daily contracts and pass boxes.</a></li>
+        <li><a href="../../en/bosses/"><strong>Notifications per boss</strong> — a bell next to each world boss turns its alerts on or off.</a></li>
+        <li><a href="../../en/templar/"><strong>Templar rebuilt on SolAshur's global build</strong> — the Judgment / Punishment / Pummel trinity, stigmas per profile, macro, gear path, stats, pets, Pantheon and arcana. No longer WIP.</a></li>
+        <li><a href="../../en/cleric/"><strong>Cleric PvE (WIP)</strong> — from Kaeria's guide: a healer that deals damage, Earth Punishment + Condemnation, stigmas and arcana.</a></li>
+      </ul>
+    </section>
+    <section class="wn-entry cl-entry" aria-label="Sep 28, 2026">
+      <time class="wn-date" datetime="2026-09-28">Sep 28, 2026</time>
+      <ul>
+        <li><a href="../../en/cleric/"><strong>Cleric and Elementalist (WIP)</strong> — leveling guides with Grobs' early macros; PvE and PvP come once there is a real global source.</a></li>
+        <li><span><strong>Search</strong> — press Ctrl+K (or /) to find a class, skill, boss or guide section.</span></li>
+        <li><span><strong>Skill tooltips</strong> — hover any skill in a guide to see its description, cooldown and all specializations.</span></li>
+        <li><a href="../../en/weekly/"><strong>Notifications</strong> — the weekly tracker and the boss page can notify you when energy is full or a boss may be up (while the tab is open).</a></li>
+        <li><span><strong>Sources with dates and error reports</strong> — every guide mode shows where its info comes from and when it was checked; "Report a mistake" opens a GitHub issue.</span></li>
+        <li><span><strong>A livelier site</strong> — the home landscape drifts slowly with rising aether sparks; each class page has its own element particles, a breathing portrait and a glow in the class colour, and guide blocks fade in as you scroll.</span></li>
+        <li><a href="../../en/bosses/"><strong>World bosses</strong> — the global Season 1 field bosses (Verteron, Altgard, Lower Reshanta) with a kill tracker. Respawn timers come after launch.</a></li>
+        <li><a href="../../en/ranger/"><strong>Ranger PvE rebuilt on Whelps' guide</strong> — Deadshot and Gale Arrow to 20, Vaizel's Authority first, the two-line macro, soul binds, accuracy and arcana.</a></li>
+        <li><span><strong>Only sourced guides</strong> — PvP for Ranger, Assassin, Chanter and Sorcerer is off until launch (no reliable source yet); modes built on Korean data carry a WIP note.</span></li>
+        <li><span><strong>Smoother site</strong> — modes switch with a fade, the header folds smoothly, the class menu animates, class figures step out of their cards on hover, and the theme button shows a sun or a moon.</span></li>
+        <li><a href="../../en/sorcerer/"><strong>Sorcerer guide (WIP)</strong> — fire &amp; ice build, stigmas, macro and leveling, assembled from Korean guides until proper global builds appear.</a></li>
+      </ul>
+    </section>
+    <section class="wn-entry cl-entry" aria-label="Sep 27, 2026">
+      <time class="wn-date" datetime="2026-09-27">Sep 27, 2026</time>
+      <ul>
+        <li><a href="../../en/chanter/"><strong>Chanter guide</strong> — TitanTheF's global build: skills, stigmas, mantras and the simple starting macro.</a></li>
+        <li><a href="../../en/assassin/"><strong>Assassin guide</strong> — Insignias, Heart Gore and the Illusive Clone burst window, with TitanTheF's global build.</a></li>
+        <li><a href="../../en/ranger/"><strong>Ranger reworked for global</strong> — realistic skill levels (16), the global stigma set and arcana targets instead of the Korean endgame.</a></li>
+        <li><a href="../../en/gladiator/"><strong>Macros fixed</strong> — the bottom slot of a hotbar line has the highest priority; leveling macros for every class (Grobs).</a></li>
+        <li><a href="../../en/templar/"><strong>Templar guide</strong> — PvE, PvP and leveling: skills, stigmas for global's 4 slots and a macro setup.</a></li>
+        <li><a href="../../en/week-1/"><strong>First week</strong> — what to finish before the first weekly reset and the one-time goals that are easy to miss.</a></li>
+        <li><a href="../../en/weekly/"><strong>Weekly tracker</strong> — weekly entries and Odyle energy for all your characters, with a reset timer. The checklist clears itself every week.</a></li>
+      </ul>
+    </section>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-in">
+    <div>
+      <a class="brand brand-sm" href="../../en/">AION 2 Global - Guides</a>
+      <p>Unofficial fan site, not affiliated with NCSOFT. AION 2 and its skill icons are © NCSOFT.</p>
+      <p class="foot-credit">Guides are collected from content creators — all credit goes to them; the site is put together with the help of Claude (AI).</p><p class="foot-credit">Independent PT-BR adaptation. Original project: <a href="https://github.com/Couga54/aion2-guides" target="_blank" rel="noopener">Couga54 / AION 2 Guides</a>.</p>
+      <p>Last checked: <time datetime="2026-10-10">Oct 10, 2026</time>.</p>
+      <p><a href="../../en/sources/">All sources and creators</a> · <a href="../../en/changelog/">Changelog</a></p>
+    </div>
+  </div>
+</footer>
+<dialog class="search-dlg" aria-label="Search" data-index="../../en/search.json" data-base="../../en/" data-empty="Nothing found"
+  data-kinds="{&#34;boss&#34;: &#34;Boss&#34;, &#34;class&#34;: &#34;Class&#34;, &#34;page&#34;: &#34;Page&#34;, &#34;section&#34;: &#34;Section&#34;, &#34;skill&#34;: &#34;Skill&#34;}" data-root="../../">
+  <div class="search-in">
+    <div class="search-bar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      <input type="search" class="search-q" placeholder="Class, skill, boss, section…" aria-label="Search" autocomplete="off" spellcheck="false">
+      <kbd>Esc</kbd>
+    </div>
+    <ul class="search-res" role="listbox"></ul>
+  </div>
+</dialog>
+<dialog class="whatsnew" data-id="ptbr-2026-10-12" aria-labelledby="wn-title">
+  <form method="dialog" class="wn-in">
+    <div class="wn-head">
+      <h2 id="wn-title">What&#39;s new</h2>
+      <button class="icon-btn wn-x" value="close" aria-label="Got it">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <section class="wn-entry">
+      <time class="wn-date" datetime="2026-10-12">Oct 12, 2026</time>
+      <ul>
+        <li><span>Independent Brazilian Portuguese edition: translated guides and interface, with the English version available for comparison.</span></li>
+        <li><span>Interface and key Cleric sections reviewed. Other long-form content uses machine translation with partial review.</span></li>
+        <li><span>Original mechanics, build choices, Daevanion routes and local progress tracking preserved. Original project: Couga54 / AION 2 Guides.</span></li>
+      </ul>
+    </section>
+    <button class="btn btn-primary wn-ok" value="close">Got it</button>
+    <p class="wn-all"><a href="../../en/changelog/">Full changelog →</a></p>
+  </form>
+</dialog>
+<script src="../../assets/js/site.js?v=190a0472" defer></script>
+<script src="../../assets/js/fx.js?v=190a0472" defer></script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+{#
+  Shared pieces of the first-week and weekly pages. assets/js/tracker.js fills them in;
+  everything the script needs comes from the JSON block in tracker_config().
+#}
+
+{% macro reset_box() -%}
+<div class="reset-box" aria-live="off">
+  <span class="reset-label">{{ t.reset_in }}</span>
+  <div class="reset-timer">{% for u in t.units %}<span><b>--</b><i>{{ u }}</i></span>{% endfor %}</div>
+  <time class="reset-when" datetime=""></time>
+  {% if not SITE.weekly_reset.confirmed %}<p class="reset-note">{{ t.reset_placeholder }}</p>{% endif %}
+</div>
+{%- endmacro %}
+
+{% macro charbar() -%}
+<section class="charbar" aria-label="{{ t.chars }}">
+  <div class="char-tabs" role="tablist"></div>
+  <details class="char-manage">
+    <summary>{{ t.char_add }} · {{ t.char_rename }}</summary>
+    <form class="char-form char-form-edit">
+      <input name="cname" maxlength="24" required placeholder="{{ t.char_name_ph }}" aria-label="{{ t.char_name_ph }}">
+      <select name="cls" aria-label="{{ t.char_class }}">
+        <option value="">{{ t.char_class_none }}</option>
+        {% for c in classes %}<option value="{{ c.slug }}">{{ c.name[lang] }}</option>{% endfor %}
+      </select>
+      <button type="submit" class="btn btn-sm">{{ t.char_save }}</button>
+      <button type="button" class="btn btn-ghost btn-sm char-del">{{ t.char_delete }}</button>
+    </form>
+    <form class="char-form char-form-add">
+      <input name="cname" maxlength="24" required placeholder="{{ t.char_name_ph }}" aria-label="{{ t.char_name_ph }}">
+      <select name="cls" aria-label="{{ t.char_class }}">
+        <option value="">{{ t.char_class_none }}</option>
+        {% for c in classes %}<option value="{{ c.slug }}">{{ c.name[lang] }}</option>{% endfor %}
+      </select>
+      <button type="submit" class="btn btn-primary btn-sm">{{ t.char_add }}</button>
+    </form>
+  </details>
+  <p class="note local-note">{{ t.local_note }}</p>
+</section>
+{%- endmacro %}
+
+{% macro tracker_config() -%}
+<script type="application/json" id="tracker-config">{{ {
+  "lang": lang,
+  "root": root,
+  "reset": SITE.weekly_reset,
+  "energy": SITE.energy,
+  "t": {
+    "units": t.units, "char_default": t.char_default, "char_delete_confirm": t.char_delete_confirm,
+    "energy_next": t.energy_next, "energy_full": t.energy_full, "energy_at_cap": t.energy_at_cap, "notify_energy": t.notify_energy
+  }
+}|tojson }}</script>
+<script src="{{ root }}assets/js/tracker.js?v={{ ASSET_V }}" defer></script>
+{%- endmacro %}
+
+{% macro notify_toggle() -%}
+<div class="notify-box">
+  <button type="button" class="btn btn-ghost btn-sm notify-toggle" aria-pressed="false"
+    data-t-on="{{ t.notify_on }}" data-t-off="{{ t.notify_off }}" data-t-denied="{{ t.notify_denied }}" data-t-unsupported="{{ t.notify_unsupported }}">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg>
+    <span class="notify-label">{{ t.notify_off }}</span>
+  </button>
+  <span class="notify-note">{{ t.notify_note }}</span>
+</div>
+<script src="{{ root }}assets/js/notify.js?v={{ ASSET_V }}" defer></script>
+{%- endmacro %}

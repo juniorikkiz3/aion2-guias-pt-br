@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+{% block og %}sources{% endblock %}
+{% block title %}{{ t.src_title }} — {{ t.site_name }}{% endblock %}
+{% block desc %}{{ t.src_desc }}{% endblock %}
+{% block body_class %}page-sources{% endblock %}
+
+{% macro icon(type) %}
+{%- if type == 'youtube' or type == 'video' -%}
+<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="4" fill="currentColor"/><path d="M10 9l5 3-5 3z" fill="var(--surface)"/></svg>
+{%- elif type == 'twitch' -%}
+<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3L3 7v12h5v3h3l3-3h4l4-4V3zm15 11l-3 3h-4l-3 3v-3H6V5h14z" fill="currentColor"/><path d="M11 8h2v5h-2zm5 0h2v5h-2z" fill="currentColor"/></svg>
+{%- elif type == 'discord' -%}
+<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 5.5A16 16 0 0 0 15 4l-.5 1a14 14 0 0 0-5 0L9 4a16 16 0 0 0-4 1.5C2.5 9.3 2 13 2.2 16.6A16 16 0 0 0 7 19l1-1.6a10 10 0 0 1-1.6-.8l.4-.3a11 11 0 0 0 10.4 0l.4.3a10 10 0 0 1-1.6.8L17 19a16 16 0 0 0 4.8-2.4c.4-4.2-.6-7.9-2.8-11.1zM9 14.3c-.9 0-1.7-.9-1.7-1.9S8 10.5 9 10.5s1.7.9 1.7 1.9-.8 1.9-1.7 1.9zm6 0c-.9 0-1.7-.9-1.7-1.9s.8-1.9 1.7-1.9 1.7.9 1.7 1.9-.8 1.9-1.7 1.9z" fill="currentColor"/></svg>
+{%- elif type == 'telegram' -%}
+<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.5 4.3L2.9 11.4c-1.1.4-1.1 1.1 0 1.4l4.7 1.5 1.8 5.6c.2.6.4.8.9.8.4 0 .6-.2.9-.5l2.3-2.2 4.7 3.5c.9.5 1.5.2 1.7-.8l3.1-14.6c.3-1.3-.5-1.8-1.5-1.4zM9.2 14l9-5.7-7.1 6.6-.3 3.1z" fill="currentColor"/></svg>
+{%- elif type == 'github' -%}
+<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.3-3.4-1.3-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.3 1.1 2.9.8.1-.6.4-1.1.6-1.3-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.7 1a9.4 9.4 0 0 1 5 0c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9V21c0 .3.2.6.7.5A10 10 0 0 0 12 2z" fill="currentColor"/></svg>
+{%- else -%}
+<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z"/></svg>
+{%- endif -%}
+{% endmacro %}
+
+{% block main %}
+<main id="main">
+  <section class="page-hero has-art" style="--hero-art:url('{{ root }}assets/art/hero-sources.webp');--hero-pos:50% 62%">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="{{ t.back_home }}"><a href="{{ root }}{{ lang }}/">{{ t.back_home }}</a><span aria-hidden="true">/</span><span>{{ t.sources }}</span></nav>
+      <h1>{{ t.src_h1 }}</h1>
+      <p class="lead">{{ t.src_lead }}</p>
+    </div>
+  </section>
+
+  <div class="wrap src-page">
+    {% for g in sources %}
+    <section class="src-group" id="{{ g.id }}" aria-labelledby="h-{{ g.id }}">
+      <h2 id="h-{{ g.id }}" class="section-title">{{ g.title[lang] }}</h2>
+      {% if g.get('lead') %}<p class="src-lead">{{ g.lead[lang] }}</p>{% endif %}
+      <ul class="src-grid{% if g.id in ('creators', 'watch') %} src-grid-creators{% endif %}">
+        {% for it in g['items'] %}
+        <li class="src-card">
+          <h3>{{ it.name[lang] if it.name is mapping else it.name }}</h3>
+          <p>{{ it.what[lang] }}</p>
+          <p class="src-used"><span>{{ t.src_class if g.id == 'watch' else t.src_used }}:</span>
+            {% for u in it.used %}
+            {% if u == 'site' %}<span class="chip">{{ t.src_site }}</span>
+            {% else %}{% for c in classes if c.slug == u %}<a class="chip accent-{{ c.accent }}" href="{{ root }}{{ lang }}/{{ c.slug }}/">{{ c.name[lang] }}</a>{% endfor %}{% endif %}
+            {% endfor %}
+          </p>
+          {% if it.links %}
+          <div class="src-links">
+            {% for l in it.links %}
+            <a class="src-link src-{{ l.type }}" href="{{ l.url }}" target="_blank" rel="noopener">{{ icon(l.type) }}<span>{{ l.label[lang] if l.label is mapping else l.label }}</span></a>
+            {% endfor %}
+          </div>
+          {% endif %}
+        </li>
+        {% endfor %}
+      </ul>
+    </section>
+    {% endfor %}
+
+    <section class="src-about" aria-labelledby="h-about">
+      <h2 id="h-about">{{ t.src_ai_title }}</h2>
+      <p>{{ t.src_ai }}</p>
+      <p>{% if SITE.get('feedback_url') %}<button type="button" class="link-btn report-open">{{ t.src_ai_fix }}</button>{% else %}<a href="{{ SITE.repo }}/issues" target="_blank" rel="noopener">{{ t.src_ai_fix }}</a>{% endif %}</p>
+    </section>
+  </div>
+</main>
+{% endblock %}

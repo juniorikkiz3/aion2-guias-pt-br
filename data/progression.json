@@ -1,0 +1,1439 @@
+{
+  "_note": "Progression page (/<lang>/progression/): the item level route after 45. Source: Sanya Jacuzzi's video a8zVweGN--4 (RU, global datamine the day before launch) — facts read from the video frames (timestamps in 'at'). Sections/blocks may set 'src' (a key of 'sources'; default: the page 'src'); 'at' = timestamp in a video source. Text may reference items as {i:key}; the keys are listed in 'items' and fetched by tools/fetch_items.py into data/items.json + assets/icons/items/. Blocks: p (text), list (items), table (head + rows), tip (callout).",
+  "meta": {
+    "title": "pg_title",
+    "h1": "pg_h1",
+    "lead": "pg_lead",
+    "desc": "pg_desc",
+    "note": "pg_note",
+    "nav": "nav_progression",
+    "hero": "hero-progression",
+    "pos": "50% 60%",
+    "og": "progression",
+    "tag": "w1_datamine",
+    "back": {
+      "path": "week-1/",
+      "label": "pg_open_week1"
+    }
+  },
+  "sources": {
+    "sanya": {
+      "name": "Sanya Jacuzzi — Они всё изменили! Мой новый план прокачки после 45 уровня",
+      "url": "https://www.youtube.com/watch?v=a8zVweGN--4",
+      "video": true
+    },
+    "sywo": {
+      "name": "SywoGG — AION 2: UPDATED Gear Progression Guide for GLOBAL",
+      "url": "https://www.youtube.com/watch?v=J8WVY3FxPQM",
+      "video": true
+    },
+    "titan": {
+      "name": "TitanTheF — AION 2 progression sheet",
+      "url": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQ0C3iKFteGvIbgqNDnQq7bmwIaU23DvjbPa0HPSVAdOOiCeBkEq69Cn8jVMJhToJcztCRylYeTYfOk/pubhtml#gid=53494555"
+    }
+  },
+  "src": "sanya",
+  "items": {
+    "wings": "Ultimate Daeva Wings (Bound)",
+    "bracelet": "Ascension Bracelet",
+    "trace": "Empyrean Trace: Altgard (Bound)",
+    "dcrystal": "Daevanion Crystal (Bound)",
+    "dcrystal_azphel": "Daevanion Crystal: Azphel (Bound)",
+    "wisdom": "Wisdom Stone (Bound)",
+    "clashrune": "Clash Rune Chest (Bound)",
+    "beltscroll": "Noble Belt Enhance Scroll (Bound)",
+    "shugokey": "Shugo Festival Reward Key (Bound)",
+    "shugocoin": "Centuryroot Token",
+    "nmcoin": "Phantasmal Fragment",
+    "abysspts": "Abyss Points",
+    "bakarma": "Bakarma Breastplate",
+    "voucher": "Gear Change Voucher: Vakron Sky Island (Bound)",
+    "vakronguard": "Vakron Guard",
+    "mana_sup": "Superior Manastone (Bound)",
+    "mana_int": "Intermediate Manastone (Bound)",
+    "mana_less": "Lesser Manastone (Bound)",
+    "theostone": "Theostone: Jumentis's Dexterity (Bound)",
+    "enhance": "Enhance Stone",
+    "bell_green": {
+      "name": "Bell of Vigor",
+      "grade": 21
+    },
+    "mirror_green": {
+      "name": "Mirror of Magic",
+      "grade": 21
+    },
+    "compass_grey": {
+      "name": "Compass of Magic",
+      "grade": 11
+    },
+    "chalice_grey": {
+      "name": "Chalice of Magic",
+      "grade": 11
+    },
+    "mirror_gold": {
+      "name": "Mirror of Vigor",
+      "grade": 41
+    },
+    "transfer_w": "Transfer Stone: Weapon (Unique) (Bound)",
+    "transfer_a": "Transfer Stone: Armor (Unique) (Bound)",
+    "stigmashard": "Stigma Shard (Bound)",
+    "amplify": "Amplify Stone (Unique) (Bound)",
+    "amplify_frag": "Amplify Stone Fragment (Unique) (Bound)",
+    "sync": "Sync Stone (Unique) (Bound)"
+  },
+  "sections": [
+    {
+      "id": "global",
+      "title": {
+        "en": "What changes on global",
+        "ru": "Что меняется на глобалке",
+        "uk": "Що змінюється на глобалі",
+        "tr": "Global'de ne değişiyor",
+        "pt-BR": "O que muda no global"
+      },
+      "lead": {
+        "en": "From the datamine of the global client. This is why the Korean route no longer works as is.",
+        "ru": "По датамайну глобального клиента. Из-за этого корейский маршрут больше не работает как есть.",
+        "uk": "За датамайном глобального клієнта. Через це корейський маршрут більше не працює як є.",
+        "tr": "Global istemcinin datamine'ından. Kore rotasının artık olduğu gibi işlememesinin nedeni bu.",
+        "pt-BR": "Da mina de dados do cliente global. É por isso que a rota coreana não funciona mais como está."
+      },
+      "blocks": [
+        {
+          "type": "table",
+          "at": "3:42",
+          "head": {
+            "en": [
+              "Map point",
+              "On your map",
+              "On the enemy map"
+            ],
+            "ru": [
+              "Точка на карте",
+              "На своей карте",
+              "На вражеской карте"
+            ],
+            "uk": [
+              "Точка на мапі",
+              "На своїй мапі",
+              "На ворожій мапі"
+            ],
+            "tr": [
+              "Harita noktası",
+              "Kendi haritanda",
+              "Düşman haritasında"
+            ],
+            "pt-BR": [
+              "Ponto do mapa.",
+              "No seu mapa.",
+              "No mapa inimigo."
+            ]
+          },
+          "rows": [
+            {
+              "en": [
+                "Sealed dungeon (?)",
+                "{i:dcrystal} ×2, 2 skill points, wing / statue material",
+                "Kina, 1,000 AP, 2,500 {i:enhance}"
+              ],
+              "ru": [
+                "Запечатанное подземелье (?)",
+                "{i:dcrystal} ×2, 2 очка навыков, материал для крыльев / статуи",
+                "Кина, 1000 AP, 2500 {i:enhance}"
+              ],
+              "uk": [
+                "Запечатане підземелля (?)",
+                "{i:dcrystal} ×2, 2 очки навичок, матеріал для крил / статуї",
+                "Кіна, 1 000 AP, 2 500 {i:enhance}"
+              ],
+              "tr": [
+                "Mühürlü zindan (?)",
+                "{i:dcrystal} ×2, 2 yetenek puanı, kanat / heykel malzemesi",
+                "Kina, 1.000 AP, 2.500 {i:enhance}"
+              ],
+              "pt-BR": [
+                "Masmorra selada (?)",
+                "{i:dcrystal} × 2 , pontos de habilidade 2, asa / material estátua",
+                "Kina, 1,000 AP, 2,500 {i:enhance}"
+              ]
+            },
+            {
+              "en": [
+                "Stronghold",
+                "{i:beltscroll} ×2",
+                "AP"
+              ],
+              "ru": [
+                "Крепость",
+                "{i:beltscroll} ×2",
+                "AP"
+              ],
+              "uk": [
+                "Фортеця",
+                "{i:beltscroll} ×2",
+                "AP"
+              ],
+              "tr": [
+                "Kale",
+                "{i:beltscroll} ×2",
+                "AP"
+              ],
+              "pt-BR": [
+                "Stronghold.",
+                "{i:beltscroll} ×2",
+                "AP"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            {
+              "en": "<strong>Enemy ? marks lost the Daevanion crystals</strong> — they used to be the top goal at launch; now clear them at your own pace.",
+              "ru": "<strong>Вражеские знаки вопроса лишились кристаллов Daevanion</strong> — раньше это была цель номер один на старте, теперь закрывай в своём темпе.",
+              "uk": "<strong>Ворожі знаки питання втратили кристали Daevanion</strong> — раніше це була ціль номер один на старті, тепер закривай у своєму темпі.",
+              "tr": "<strong>Düşman ? işaretleri Daevanion kristallerini kaybetti</strong> — eskiden çıkışta en önemli hedefti; artık kendi hızında temizle.",
+              "pt-BR": "<strong> Inimigo? Marcas perderam os cristais Daevanion </strong> - eles costumavam ser o objetivo principal no lançamento, agora limpá-los em seu próprio ritmo."
+            },
+            {
+              "en": "<strong>Feathers ({i:trace}) are nerfed</strong> — collect them all, but last.",
+              "ru": "<strong>Перья ({i:trace}) понерфили</strong> — собирай все, но в последнюю очередь.",
+              "uk": "<strong>Пір'я ({i:trace}) понерфили</strong> — збирай усе, але в останню чергу.",
+              "tr": "<strong>Tüyler ({i:trace}) zayıflatıldı</strong> — hepsini topla, ama en son.",
+              "pt-BR": "<strong> Penas ({i:trace} ) são nerfed </strong> - recolher todos eles, mas por último."
+            },
+            {
+              "en": "<strong>Gear has a lower item level on global</strong> (for example True Dragon Lord Greatsword: 70 on KR/TW, 62 on global) — lower item level means cheaper enhancement.",
+              "ru": "<strong>У экипировки на глобалке ниже уровень предмета</strong> (например, True Dragon Lord Greatsword: 70 на KR/TW, 62 на глобалке) — чем ниже уровень, тем дешевле заточка.",
+              "uk": "<strong>В екіпірування на глобалі нижчий рівень предмета</strong> (наприклад, True Dragon Lord Greatsword: 70 на KR/TW, 62 на глобалі) — чим нижчий рівень, тим дешевша заточка.",
+              "tr": "<strong>Global'de ekipmanın item level'ı daha düşük</strong> (örneğin True Dragon Lord Greatsword: KR/TW'de 70, global'de 62) — düşük item level daha ucuz güçlendirme demek.",
+              "pt-BR": "<strong> Gear tem um nível de item mais baixo no global </strong> (por exemplo, verdadeiro Senhor Dragão Grande espada: 70 em KR/TW, 62 em global) - nível de item mais baixo significa melhoria mais barata."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s45",
+      "gs": "45",
+      "title": {
+        "en": "Story, regional quests and your map",
+        "ru": "Сюжет, региональные квесты и своя карта",
+        "uk": "Сюжет, регіональні квести й своя мапа",
+        "tr": "Hikâye, bölge görevleri ve kendi haritan",
+        "pt-BR": "História, missões regionais e seu mapa"
+      },
+      "blocks": [
+        {
+          "type": "tip",
+          "src": "sywo",
+          "at": "0:46",
+          "text": {
+            "en": "<strong>Milestones.</strong> You reach 45 at about 700 item level. The last step of the main story (in the Abyss) asks for about 1,000 — if it doesn't let you in, do the steps below first and come back: Daevanion crystals, clash runes, belt and amulet, Exploration: Draupnir.",
+            "ru": "<strong>Ориентиры.</strong> К 45 уровню у тебя около 700 уровня предмета. Последний шаг основного сюжета (в Бездне) просит около 1000 — если не пускает, сначала сделай шаги ниже и возвращайся: кристаллы Daevanion, руны столкновения, пояс и амулет, Исследование Друпнира.",
+            "uk": "<strong>Орієнтири.</strong> На 45 у тебе близько 700 рівня предмета. Останній крок основного сюжету (у Безодні) просить близько 1000 — якщо не пускає, спершу зроби кроки нижче й повертайся: кристали Daevanion, clash runes, пояс і амулет, Exploration: Draupnir.",
+            "tr": "<strong>Kilometre taşları.</strong> 45'e yaklaşık 700 eşya seviyesiyle ulaşırsın. Ana hikâyenin son adımı (Abyss'te) yaklaşık 1000 ister — seni almıyorsa önce aşağıdaki adımları yap ve geri dön: Daevanion kristalleri, clash runes, kemer ve muska, Exploration: Draupnir.",
+            "pt-BR": "<strong> Milestones. </strong> Você alcança 45 em nível de item 700. O último passo da história principal (no Abismo) pede sobre 1,000 - se não deixar você entrar, faça os passos abaixo primeiro e volte: cristais Daevanion, runas de choque, cinto e amuleto, Exploração: Draupnir."
+          }
+        },
+        {
+          "type": "list",
+          "at": "1:27",
+          "items": [
+            {
+              "en": "<strong>Finish the main story first.</strong> It gives a gold weapon for your class, {i:bracelet} and {i:wings} (equipped: HP 500, MP 250, Penetration 500, Critical Hit 35; owned: Penetration 100, Accuracy +20, Attack +10).",
+              "ru": "<strong>Сначала добей сюжет.</strong> Он даёт золотое оружие твоего класса, {i:bracelet} и {i:wings} (надетые: HP 500, MP 250, пробивание 500, крит 35; во владении: пробивание 100, точность +20, атака +10).",
+              "uk": "<strong>Спершу добий сюжет.</strong> Він дає золоту зброю твого класу, {i:bracelet} і {i:wings} (одягнені: HP 500, MP 250, пробиття 500, крит 35; у володінні: пробиття 100, точність +20, атака +10).",
+              "tr": "<strong>Önce ana hikâyeyi bitir.</strong> Sınıfına altın bir silah, {i:bracelet} ve {i:wings} verir (kuşanılınca: HP 500, MP 250, Penetration 500, Critical Hit 35; sahip olunca: Penetration 100, Accuracy +20, Attack +10).",
+              "pt-BR": "<strong> Termine a história principal primeiro. </strong> Ele dá uma arma de ouro para sua classe, {i:bracelet} e {i:wings} (equipado: HP 500, MP 250, penetração 500, ataque crítico 35; propriedade: penetração 100, precisão + 20, ataque + 10)."
+            },
+            {
+              "en": "<strong>Regional quests</strong> (Journal → Regional): two rings, two earrings and a necklace (blue), plus two PvE runes. They also give titles and Theostone chests.",
+              "ru": "<strong>Региональные квесты</strong> (Журнал → Регион): два кольца, две серьги и ожерелье (синие), плюс две PvE-руны. Ещё дают титулы и сундуки с Теостоунами.",
+              "uk": "<strong>Регіональні квести</strong> (Journal → Regional): два кільця, дві сережки й намисто (сині), плюс дві PvE-руни. Ще дають титули та скрині з Theostone.",
+              "tr": "<strong>Bölge görevleri</strong> (Journal → Regional): iki yüzük, iki küpe ve bir kolye (mavi), artı iki PvE rünü. Ayrıca unvanlar ve Theostone sandıkları verir.",
+              "pt-BR": "<strong> Buscas Regionais </strong> (Journal → Regional): dois anéis, dois brincos e um colar (azul), mais duas runas PvE. Eles também dão títulos e peitos de Theostone."
+            },
+            {
+              "en": "Enhance a little, set up your PvE macro and clear <strong>every ? on your own map</strong>: each sealed dungeon gives {i:dcrystal} ×2 and 2 skill points, each stronghold {i:beltscroll} ×2.",
+              "ru": "Немного заточись, настрой PvE-макрос и закрой <strong>все знаки вопроса на своей карте</strong>: каждое запечатанное подземелье даёт {i:dcrystal} ×2 и 2 очка навыков, каждая крепость — {i:beltscroll} ×2.",
+              "uk": "Трохи заточись, налаштуй PvE-макрос і закрий <strong>усі знаки питання на своїй мапі</strong>: кожне запечатане підземелля дає {i:dcrystal} ×2 і 2 очки навичок, кожна фортеця — {i:beltscroll} ×2.",
+              "tr": "Biraz güçlendir, PvE makronu kur ve <strong>kendi haritandaki her ?'i</strong> temizle: her mühürlü zindan {i:dcrystal} ×2 ve 2 yetenek puanı, her kale {i:beltscroll} ×2 verir.",
+              "pt-BR": "Melhore um pouco, configure sua macro PvE e <strong> limpo a cada um em seu próprio mapa </strong>: cada masmorra selada dá {i:dcrystal} × 2 e 2 pontos de habilidade, cada fortaleza {i:beltscroll} × 2."
+            },
+            {
+              "en": "Then the remaining regional quests and the feathers: <strong>at least 95 {i:trace}</strong> take the Monolith to level 11, which upgrades the amulet from green to blue.",
+              "ru": "Потом оставшиеся региональные квесты и перья: <strong>минимум 95 {i:trace}</strong> поднимают Монолит до 11 уровня — это улучшает амулет с зелёного до синего.",
+              "uk": "Потім решта регіональних квестів і пір'я: <strong>мінімум 95 {i:trace}</strong> піднімають Monolith до 11 рівня — це покращує амулет із зеленого до синього.",
+              "tr": "Sonra kalan bölge görevleri ve tüyler: <strong>en az 95 {i:trace}</strong> Monolith'i 11. seviyeye çıkarır, bu da muskayı yeşilden maviye yükseltir.",
+              "pt-BR": "Então as missões regionais restantes e as penas <strong> pelo menos 95 {i:trace} </strong> levam o Monolito para o nível 11, que atualiza o amuleto de verde para azul."
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "src": "sywo",
+          "at": "2:32",
+          "items": [
+            {
+              "en": "<strong>Clash runes</strong> ({i:clashrune}): 60 item level each, so the pair is +120. They come from green quests around the map, or buy them in the Nightmare shop (Growth tab) with the currency from first clears. Don't enhance them past +1 unless you have a spare.",
+              "ru": "<strong>Руны столкновения</strong> ({i:clashrune}): по 60 уровня предмета каждая, то есть пара даёт +120. Берутся из зелёных квестов по карте или в магазине Кошмара (вкладка «Рост») за валюту с первых убийств. Не точи их выше +1, если нет запасной.",
+              "uk": "<strong>Clash runes</strong> ({i:clashrune}): по 60 рівня предмета кожна, тобто пара дає +120. Беруться із зелених квестів по мапі або в магазині Nightmare (вкладка Growth) за валюту з перших проходжень. Не заточуй їх вище +1, якщо немає запасної.",
+              "tr": "<strong>Clash runes</strong> ({i:clashrune}): her biri 60 eşya seviyesi, yani ikisi +120. Haritadaki yeşil görevlerden gelir ya da ilk geçişlerin parasıyla Nightmare mağazasından (Growth sekmesi) alınır. Yedeğin yoksa +1'in üstüne basma.",
+              "pt-BR": "<strong> Clash runas </strong> ({i:clashrune} ): 60 nível de item cada, então o par é + 120. Eles vêm de missões verdes ao redor do mapa, ou comprá-los na loja Nightmare (Crescer tab) com a moeda da primeira liberação. Não os melhore além do 1 a menos que tenha um sobressalente."
+            },
+            {
+              "en": "<strong>The story bracelet</strong> ({i:bracelet}) stays with you for months: take it to +10–11 — it adds attack and defense too — and put your one {i:mana_sup} in it: two gold rolls give the most item level. The second bracelet comes from a quest of your own faction (item level 43).",
+              "ru": "<strong>Браслет из сюжета</strong> ({i:bracelet}) останется с тобой на месяцы: доведи его до +10–11 — он даёт ещё и атаку с защитой — и вставь в него свой единственный {i:mana_sup}: два золотых бонуса дают больше всего уровня предмета. Второй браслет — из квеста твоей фракции (уровень предмета 43).",
+              "uk": "<strong>Браслет із сюжету</strong> ({i:bracelet}) лишиться з тобою на місяці: доведи його до +10–11 — він дає ще й атаку та захист — і встав у нього свій єдиний {i:mana_sup}: два золоті бонуси дають найбільше рівня предмета. Другий браслет — із квесту твоєї фракції (рівень предмета 43).",
+              "tr": "<strong>Hikâye bileziği</strong> ({i:bracelet}) aylarca seninle kalır: +10–11'e çıkar — saldırı ve savunma da verir — ve tek {i:mana_sup}'unu ona tak: iki altın bonus en çok eşya seviyesini verir. İkinci bilezik kendi fraksiyonunun bir görevinden gelir (eşya seviyesi 43).",
+              "pt-BR": "<strong> A pulseira da história </strong> ({i:bracelet} ) fica com você por meses: levá-lo para + 10 - 11 - acrescenta ataque e defesa também - e colocar o seu um {i:mana_sup} nele: dois rolos de ouro dar o nível mais item. O segundo bracelete vem de uma busca da sua própria facção (nível 43)."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s1400",
+      "gs": "1400",
+      "title": {
+        "en": "To 1,400: Shugo, Nightmare, Draupnir",
+        "ru": "До 1400: Шуго, Кошмар, Друпнир",
+        "uk": "До 1 400: Shugo, Nightmare, Draupnir",
+        "tr": "1.400'e: Shugo, Nightmare, Draupnir",
+        "pt-BR": "Para 1,400Shugo, Nightmare, Draupnir"
+      },
+      "lead": {
+        "en": "Without the enemy ? marks you end up around 1,279 — about 121 short of the 1,400 needed for the tier 2 dungeons. This is how to close the gap.",
+        "ru": "Без вражеских знаков вопроса выходит около 1279 — примерно на 121 меньше, чем нужно для подземелий второго тира (1400). Вот чем закрыть разницу.",
+        "uk": "Без ворожих знаків питання виходить близько 1 279 — приблизно на 121 менше, ніж потрібно для підземель другого тіру (1 400). Ось чим закрити різницю.",
+        "tr": "Düşman ? işaretleri olmadan 1.279 civarında kalırsın — 2. kademe zindanlar için gereken 1.400'e yaklaşık 121 eksik. Aradaki fark böyle kapanır.",
+        "pt-BR": "Sem o inimigo, você acaba em torno de 1,279 - cerca de 121 menos do 1,400 necessário para as masmorras de nível 2. É assim que se fecha a lacuna."
+      },
+      "blocks": [
+        {
+          "type": "h",
+          "text": {
+            "en": "Shugo Festival and boss rifts",
+            "ru": "Шуго-фестиваль и босс-разломы",
+            "uk": "Shugo Festival і бос-розломи",
+            "tr": "Shugo Festival ve boss riftleri",
+            "pt-BR": "Shugo Festival e chefe fendas"
+          }
+        },
+        {
+          "type": "p",
+          "at": "5:06",
+          "text": {
+            "en": "Mini-games with a reward card at the end. Your place decides how many cards you open. If you placed badly you can skip the reward — the {i:shugokey} is only spent when you take it. Keys: 7 by default, +1 a day, up to 30 more stored — don't let them cap.",
+            "ru": "Мини-игры с карточкой наград в конце. От места зависит, сколько карточек откроешь. Если занял плохое место, от награды можно отказаться — {i:shugokey} тратится, только когда забираешь. Ключи: 7 по умолчанию, +1 в день, ещё до 30 в запасе — не упирайся в лимит.",
+            "uk": "Міні-ігри з карткою нагород наприкінці. Від місця залежить, скільки карток відкриєш. Якщо посів погане місце, від нагороди можна відмовитися — {i:shugokey} витрачається лише тоді, коли забираєш. Ключі: 7 за замовчуванням, +1 на день, ще до 30 у запасі — не впирайся в ліміт.",
+            "tr": "Sonunda ödül kartı olan mini oyunlar. Kaç kart açacağını sıralaman belirler. Kötü bir sıra aldıysan ödülü atlayabilirsin — {i:shugokey} yalnızca ödülü aldığında harcanır. Anahtarlar: varsayılan 7, günde +1, 30'a kadar fazlası birikir — sınıra dolmasına izin verme.",
+            "pt-BR": "Mini-jogos com um cartão de recompensa no final. Sua casa decide quantas cartas você abre. Se você se colocou mal você pode pular a recompensa - o {i:shugokey} só é gasto quando você levá-lo. Chaves: 7 por padrão, + 1 por dia, até 30 mais armazenados - não deixe que cap."
+          }
+        },
+        {
+          "type": "table",
+          "at": "5:24",
+          "head": {
+            "en": [
+              "Place",
+              "Cards"
+            ],
+            "ru": [
+              "Место",
+              "Карточек"
+            ],
+            "uk": [
+              "Місце",
+              "Карток"
+            ],
+            "tr": [
+              "Sıra",
+              "Kart"
+            ],
+            "pt-BR": [
+              "Lugar",
+              "Cartas"
+            ]
+          },
+          "rows": [
+            {
+              "en": [
+                "1st",
+                "4"
+              ],
+              "ru": [
+                "1-е",
+                "4"
+              ],
+              "uk": [
+                "1-ше",
+                "4"
+              ],
+              "tr": [
+                "1.",
+                "4"
+              ],
+              "pt-BR": [
+                "1st",
+                "4"
+              ]
+            },
+            {
+              "en": [
+                "2nd, 3rd",
+                "3"
+              ],
+              "ru": [
+                "2-е, 3-е",
+                "3"
+              ],
+              "uk": [
+                "2-ге, 3-тє",
+                "3"
+              ],
+              "tr": [
+                "2., 3.",
+                "3"
+              ],
+              "pt-BR": [
+                "2ND, 3rd",
+                "3"
+              ]
+            },
+            {
+              "en": [
+                "4th and lower",
+                "2"
+              ],
+              "ru": [
+                "4-е и ниже",
+                "2"
+              ],
+              "uk": [
+                "4-те й нижче",
+                "2"
+              ],
+              "tr": [
+                "4. ve aşağısı",
+                "2"
+              ],
+              "pt-BR": [
+                "4 th e mais baixo",
+                "2"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "at": "5:54",
+          "text": {
+            "en": "<strong>Boss rifts</strong> (e.g. Beritra Air Raid): hold off the waves, then kill the mini-boss. <strong>100 contribution points = 3 cards</strong>, the same rewards as Shugo. Invite Chanters, Clerics and Templars right at the portal — their party buffs make 100 points easy.",
+            "ru": "<strong>Босс-разломы</strong> (например, Beritra Air Raid): отбиваешься от волн, потом бьёшь мини-босса. <strong>100 очков вклада = 3 карточки</strong>, награды те же, что в Шуго. Зови Чародеев, Целителей и Стражей прямо у портала — с их групповыми баффами 100 очков набираются легко.",
+            "uk": "<strong>Бос-розломи</strong> (наприклад, Beritra Air Raid): відбиваєшся від хвиль, потім б'єш міні-боса. <strong>100 очок внеску = 3 картки</strong>, нагороди ті самі, що в Shugo. Клич Chanters, Clerics і Templars просто біля порталу — з їхніми груповими бафами 100 очок набираються легко.",
+            "tr": "<strong>Boss riftleri</strong> (örn. Beritra Air Raid): dalgaları durdur, sonra mini bossu öldür. <strong>100 katkı puanı = 3 kart</strong>, Shugo ile aynı ödüller. Chanter, Cleric ve Templar'ları hemen portalda davet et — grup bufflarıyla 100 puan kolaylaşır.",
+            "pt-BR": "<strong> Boss rifts </strong> (por exemplo. Beritra Air Raid: segure as ondas, e depois mate o mini-chefe. <strong> 100 pontos de contribuição = 3 cartões </strong>, as mesmas recompensas que Shugo. Convide Chanters, Clerics e Templários bem no portal. Seus fãs da festa facilitam o 100."
+          }
+        },
+        {
+          "type": "tip",
+          "at": "6:36",
+          "text": {
+            "en": "The main prize is Shugo currency: spend all of it on {i:dcrystal} in the Festival Shop — per character, price goes up in steps: 50 (×10), 100 (×10), 200 (×15), 400 (×15) — {i:shugocoin} ×10,500 in total.",
+            "ru": "Главное — шуго-валюта: трать её всю на {i:dcrystal} в магазине фестиваля — на персонажа, цена растёт ступенями: 50 (×10), 100 (×10), 200 (×15), 400 (×15) — всего {i:shugocoin} ×10 500.",
+            "uk": "Головне — валюта Shugo: витрачай її всю на {i:dcrystal} у магазині фестивалю — на персонажа, ціна зростає сходинками: 50 (×10), 100 (×10), 200 (×15), 400 (×15) — усього {i:shugocoin} ×10 500.",
+            "tr": "Asıl ödül Shugo parası: hepsini Festival Shop'ta {i:dcrystal} için harca — karakter başına, fiyat kademeli artar: 50 (×10), 100 (×10), 200 (×15), 400 (×15) — toplam {i:shugocoin} ×10.500.",
+            "pt-BR": "O prêmio principal é moeda Shugo: gastar tudo isso em {i:dcrystal} na loja do festival - por personagem, o preço sobe em etapas: 50 (× 10 ), 100 (× 10 ), 200 (× 15 ), 400 (× 15 ) - {i:shugocoin} × 10,500 no total."
+          }
+        },
+        {
+          "type": "h",
+          "text": {
+            "en": "Nightmare",
+            "ru": "Кошмар",
+            "uk": "Nightmare",
+            "tr": "Nightmare",
+            "pt-BR": "Pesadelo."
+          }
+        },
+        {
+          "type": "list",
+          "at": "7:06",
+          "items": [
+            {
+              "en": "Solo boss dungeon. 14 base attempts that refill on their own (+2 a day), plus a second pool of up to 30 that you fill with tickets; charges start piling up at <strong>level 45</strong> — reach it before the first reset.",
+              "ru": "Соло-подземелье с боссом. 14 базовых попыток, которые пополняются сами (+2 в день), плюс второй запас до 30, который пополняется билетами; заряды начинают копиться <strong>с 45 уровня</strong> — успей до первого сброса.",
+              "uk": "Соло-підземелля з босом. 14 базових спроб, які поповнюються самі (+2 на день), плюс другий запас до 30, який поповнюється квитками; заряди починають накопичуватися <strong>з 45 рівня</strong> — встигни до першого скидання.",
+              "tr": "Solo boss zindanı. Kendiliğinden dolan 14 temel deneme (günde +2), artı biletlerle doldurduğun 30'a kadar ikinci bir havuz; haklar <strong>45. seviyede</strong> birikmeye başlar — ilk sıfırlamadan önce oraya ulaş.",
+              "pt-BR": "Masmorra de chefe solitário. A base 14 tenta reabastecer por conta própria (+ 2 por dia), mais uma segunda piscina de até 30 que você enche com ingressos; cargas começam a acumular-se no nível <strong> 45 </strong> - chegar até ele antes da primeira reinicialização."
+            },
+            {
+              "en": "Every boss has 10 challenge levels; kill each on all of them. An attempt is spent only on a kill, so leave and come back stronger. Greys first, then greens, then the Last Boss.",
+              "ru": "У каждого босса 10 уровней сложности — убей каждого на всех. Попытка тратится только за убийство, так что можно уйти и вернуться сильнее. Сначала серые, потом зелёные, затем Last Boss.",
+              "uk": "У кожного боса 10 рівнів складності — убий кожного на всіх. Спроба витрачається лише за вбивство, тож можна піти й повернутися сильнішим. Спершу сірі, потім зелені, далі Last Boss.",
+              "tr": "Her bossun 10 zorluk seviyesi var; her birini hepsinde öldür. Deneme yalnızca öldürmede harcanır, o yüzden çıkıp daha güçlü dön. Önce griler, sonra yeşiller, sonra Last Boss.",
+              "pt-BR": "Todo chefe tem níveis de desafio 10, matar cada um em todos eles. Uma tentativa é gasta apenas em uma morte, então saia e volte mais forte. Cinzas primeiro, depois verdes, depois o último chefe."
+            },
+            {
+              "en": "First clear gives {i:nmcoin} ×500, repeats 100. Shop, Growth tab: {i:dcrystal} for 300 (×50 per character), {i:stigmashard} for 1,500 (×35), {i:clashrune} for 500. Keep 14,000 for the statue.",
+              "ru": "Первое убийство — {i:nmcoin} ×500, повторные — 100. Магазин, вкладка «Рост»: {i:dcrystal} за 300 (×50 на персонажа), {i:stigmashard} за 1500 (×35), {i:clashrune} за 500. Оставь 14 000 на статую.",
+              "uk": "Перше вбивство — {i:nmcoin} ×500, повторні — 100. Магазин, вкладка Growth: {i:dcrystal} за 300 (×50 на персонажа), {i:stigmashard} за 1 500 (×35), {i:clashrune} за 500. Залиш 14 000 на статую.",
+              "tr": "İlk geçiş {i:nmcoin} ×500, tekrarlar 100 verir. Mağaza, Growth sekmesi: 300'e {i:dcrystal} (karakter başına ×50), 1.500'e {i:stigmashard} (×35), 500'e {i:clashrune}. Heykel için 14.000 sakla.",
+              "pt-BR": "O primeiro limpinho dá {i:nmcoin} × 500, repete 100. Loja, guia de crescimento: {i:dcrystal} para 300 (50 por personagem), {i:stigmashard} para 1,500 (35), {i:clashrune} para 500. Fique com o 14,000 para a estátua."
+            }
+          ]
+        },
+        {
+          "type": "h",
+          "text": {
+            "en": "Expedition: Conquest — Draupnir",
+            "ru": "Экспедиция: Завоевание — Друпнир",
+            "uk": "Експедиція: Conquest — Draupnir",
+            "tr": "Expedition: Conquest — Draupnir",
+            "pt-BR": "Expedição: Conquista - Draupnir"
+          }
+        },
+        {
+          "type": "list",
+          "at": "7:45",
+          "items": [
+            {
+              "en": "Run it up to the <strong>guarantee: 14 chest openings</strong> (7 with premium), 40 Odyle energy each. The goal is two gold pieces from drops and a third from the guarantee — you pick which Bakarma piece ({i:bakarma}, helm, pauldrons, gloves, greaves, boots).",
+              "ru": "Ходи до <strong>гаранта: 14 открытий сундука</strong> (7 с премиумом), по 40 энергии Odyle. Цель — две золотые вещи из дропа и третья с гаранта: часть сета Bakarma выбираешь сам ({i:bakarma}, шлем, наплечники, перчатки, поножи, сапоги).",
+              "uk": "Ходи до <strong>гаранту: 14 відкриттів скрині</strong> (7 з преміумом), по 40 енергії Odyle. Мета — дві золоті речі з дропу й третя з гаранту: частину сету Bakarma обираєш сам ({i:bakarma}, шолом, наплічники, рукавиці, поножі, чоботи).",
+              "tr": "<strong>Garantiye kadar koş: 14 sandık açma</strong> (premium ile 7), her biri 40 Odyle enerjisi. Hedef düşüşlerden iki altın parça ve garantiden üçüncüsü — hangi Bakarma parçasını alacağını sen seçersin ({i:bakarma}, kask, omuzluk, eldiven, dizlik, bot).",
+              "pt-BR": "Passe para a garantia <strong>: 14 peito abre </strong> (7 com prêmio), 40 Odyle energia cada. O objetivo são duas peças de ouro de gotas e um terço da garantia - você escolhe qual peça Bakarma ({i:bakarma}, leme, pauldrons, luvas, torresmos, botas)."
+            },
+            {
+              "en": "Collect every {i:trace} in Chaotic Lower Reshanta: the Monolith resonance levels give Daevanion crystals such as {i:dcrystal_azphel}.",
+              "ru": "Собери все {i:trace} в Хаотической нижней Бездне: уровни резонанса Монолита дают кристаллы Daevanion, например {i:dcrystal_azphel}.",
+              "uk": "Збери всі {i:trace} у Chaotic Lower Reshanta: рівні резонансу Monolith дають кристали Daevanion, наприклад {i:dcrystal_azphel}.",
+              "tr": "Chaotic Lower Reshanta'daki her {i:trace}'i topla: Monolith rezonans seviyeleri {i:dcrystal_azphel} gibi Daevanion kristalleri verir.",
+              "pt-BR": "Recolha todos os {i:trace} em Caótica Baixa Reshanta: os níveis de ressonância Monolítica dão cristais Daevanion, como {i:dcrystal_azphel}."
+            },
+            {
+              "en": "Still short? Three runs of <strong>Exploration: Draupnir</strong> guarantee another gold piece — take any you don't have and put an {i:mana_int} in it.",
+              "ru": "Не хватает — три <strong>Исследования Друпнира</strong> дают гарантом ещё одну золотую вещь: бери любую, которой нет, и вставь в неё {i:mana_int}.",
+              "uk": "Не вистачає — три <strong>Exploration: Draupnir</strong> дають гарантом ще одну золоту річ: бери будь-яку, якої немає, і встав у неї {i:mana_int}.",
+              "tr": "Hâlâ eksik mi? Üç <strong>Exploration: Draupnir</strong> koşusu bir altın parça daha garantiler — sende olmayan herhangi birini al ve içine bir {i:mana_int} tak.",
+              "pt-BR": "Ainda é curto? Três corridas de Exploração <strong>: Draupnir </strong> garante outra peça de ouro - pegue qualquer que você não tem e coloque um {i:mana_int} nela."
+            }
+          ]
+        },
+        {
+          "type": "h",
+          "text": {
+            "en": "Enhancement at 1,400",
+            "ru": "Заточка на 1400",
+            "uk": "Заточка на 1400",
+            "tr": "1.400'de güçlendirme",
+            "pt-BR": "Melhoramento em 1,400"
+          }
+        },
+        {
+          "type": "table",
+          "at": "8:09",
+          "head": {
+            "en": [
+              "Slot",
+              "Level",
+              "Manastone"
+            ],
+            "ru": [
+              "Слот",
+              "Заточка",
+              "Манастоун"
+            ],
+            "uk": [
+              "Слот",
+              "Заточка",
+              "Манастоун"
+            ],
+            "tr": [
+              "Slot",
+              "Seviye",
+              "Manastone"
+            ],
+            "pt-BR": [
+              "Fenda.",
+              "Nível.",
+              "Manastone."
+            ]
+          },
+          "rows": [
+            {
+              "en": [
+                "Gold weapon and bracelets",
+                "+10",
+                "{i:mana_sup} ×1"
+              ],
+              "ru": [
+                "Золотое оружие и браслеты",
+                "+10",
+                "{i:mana_sup} ×1"
+              ],
+              "uk": [
+                "Золота зброя й браслети",
+                "+10",
+                "{i:mana_sup} ×1"
+              ],
+              "tr": [
+                "Altın silah ve bilezikler",
+                "+10",
+                "{i:mana_sup} ×1"
+              ],
+              "pt-BR": [
+                "Arma de ouro e pulseiras.",
+                "+10",
+                "{i:mana_sup} ×1"
+              ]
+            },
+            {
+              "en": [
+                "Gold armor from Draupnir",
+                "+10",
+                "{i:mana_int} ×1"
+              ],
+              "ru": [
+                "Золотая броня из Друпнира",
+                "+10",
+                "{i:mana_int} ×1"
+              ],
+              "uk": [
+                "Золота броня з Draupnir",
+                "+10",
+                "{i:mana_int} ×1"
+              ],
+              "tr": [
+                "Draupnir'den altın zırh",
+                "+10",
+                "{i:mana_int} ×1"
+              ],
+              "pt-BR": [
+                "Armadura de ouro de Draupnir",
+                "+10",
+                "{i:mana_int} ×1"
+              ]
+            },
+            {
+              "en": [
+                "Blue armor, earrings, necklace, rings",
+                "+5",
+                "{i:mana_less}"
+              ],
+              "ru": [
+                "Синяя броня, серьги, ожерелье, кольца",
+                "+5",
+                "{i:mana_less}"
+              ],
+              "uk": [
+                "Синя броня, сережки, намисто, кільця",
+                "+5",
+                "{i:mana_less}"
+              ],
+              "tr": [
+                "Mavi zırh, küpeler, kolye, yüzükler",
+                "+5",
+                "{i:mana_less}"
+              ],
+              "pt-BR": [
+                "Armadura azul, brincos, colar, anéis",
+                "+5",
+                "{i:mana_less}"
+              ]
+            },
+            {
+              "en": [
+                "Belt, amulet",
+                "+3",
+                "—"
+              ],
+              "ru": [
+                "Пояс, амулет",
+                "+3",
+                "—"
+              ],
+              "uk": [
+                "Пояс, амулет",
+                "+3",
+                "—"
+              ],
+              "tr": [
+                "Kemer, muska",
+                "+3",
+                "—"
+              ],
+              "pt-BR": [
+                "Cinto, amuleto.",
+                "+3",
+                "—"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "at": "8:27",
+          "text": {
+            "en": "Plus a green Theostone in the weapon (for example {i:theostone}) — the regional quests hand one out. Done right, that is exactly 1,400.",
+            "ru": "Плюс зелёный Теостоун в оружие (например, {i:theostone}) — его дают региональные квесты. Если всё сделано правильно, выходит ровно 1400.",
+            "uk": "Плюс зелений Theostone у зброю (наприклад, {i:theostone}) — його дають регіональні квести. Якщо все зроблено правильно, виходить рівно 1 400.",
+            "tr": "Artı silaha yeşil bir Theostone (örneğin {i:theostone}) — bölge görevleri bir tane verir. Doğru yapılırsa tam 1.400 eder.",
+            "pt-BR": "Além de uma Theostone verde na arma (por exemplo {i:theostone}) - as missões regionais distribuem uma. Feito certo, isso é exatamente 1,400."
+          }
+        },
+        {
+          "type": "h",
+          "text": {
+            "en": "Belt, amulet and Odyle energy",
+            "ru": "Пояс, амулет и энергия Odyle",
+            "uk": "Пояс, амулет і енергія Odyle",
+            "tr": "Kemer, muska ve Odyle enerjisi",
+            "pt-BR": "Cinto, amuleto e energia Odyle"
+          }
+        },
+        {
+          "type": "list",
+          "src": "sywo",
+          "at": "6:24",
+          "items": [
+            {
+              "en": "Belt and amulet: green → blue in Substance Morph, then up to gold — a big jump in item level. Enhancing them eats enhancement stones: the enemy ? marks (through the Rift, every 3 hours) give 2,500 {i:enhance} each — see the table at the top.",
+              "ru": "Пояс и амулет: зелёный → синий в Substance Morph, дальше до золотого — большой скачок уровня предмета. Заточка ест камни: вражеские знаки вопроса (через Rift, каждые 3 часа) дают по 2500 {i:enhance} — см. таблицу вверху.",
+              "uk": "Пояс і амулет: зелений → синій у Substance Morph, далі до золотого — великий стрибок рівня предмета. Заточка їсть камені: ворожі знаки питання (через Rift, кожні 3 години) дають по 2500 {i:enhance} — див. таблицю вгорі.",
+              "tr": "Kemer ve muska: Substance Morph'ta yeşil → mavi, sonra altına kadar — eşya seviyesinde büyük bir sıçrama. Basmak güçlendirme taşı yer: düşman ? işaretleri (Rift üzerinden, her 3 saatte) her biri 2.500 {i:enhance} verir — yukarıdaki tabloya bak.",
+              "pt-BR": "Cinto e amuleto: verde → azul em Substância Morph, então até o ouro — um grande salto no nível do item. Aumentando-os come pedras de aprimoramento: o inimigo marca (através da fenda, a cada 3 horas) dar 2,500 {i:enhance} cada - ver a mesa no topo."
+            },
+            {
+              "en": "Spend Odyle energy with care: after each new piece enhance it, add manastones, check your item level, and only then decide where to go next — another run of the same dungeon or something you haven't done yet.",
+              "ru": "Трать энергию Odyle с умом: после каждой новой вещи заточи её, вставь манастоуны, посмотри на уровень предмета и только тогда решай, куда дальше — ещё раз то же подземелье или то, что ты ещё не делал.",
+              "uk": "Витрачай енергію Odyle з розумом: після кожної нової речі заточи її, встав манастоуни, глянь на рівень предмета і лише тоді вирішуй, куди далі — ще раз те саме підземелля чи те, чого ти ще не робив.",
+              "tr": "Odyle enerjisini dikkatli harca: her yeni parçadan sonra onu bas, manastone tak, eşya seviyene bak ve ancak sonra nereye gideceğine karar ver — aynı zindana bir tur daha mı, yoksa henüz yapmadığın bir şey mi.",
+              "pt-BR": "Gastar energia Odyle com cuidado: depois de cada nova peça melhorá-lo, adicionar manastones, verificar o seu nível de item, e só então decidir para onde ir a seguir - outra corrida da mesma masmorra ou algo que você ainda não fez."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s1900",
+      "gs": "1900",
+      "title": {
+        "en": "To 1,900: Vakron",
+        "ru": "До 1900: Вакрон",
+        "uk": "До 1 900: Vakron",
+        "tr": "1.900'e: Vakron",
+        "pt-BR": "Para 1,900: Vakron"
+      },
+      "blocks": [
+        {
+          "type": "list",
+          "at": "9:06",
+          "items": [
+            {
+              "en": "Farm <strong>Vakron Sky Island</strong> (2–5 players, 40 energy a chest) until you have almost the whole armor set. Weapon and accessories are best crafted later, so Urugugu Canyon (weapon, accessories) can wait.",
+              "ru": "Фарми <strong>Vakron Sky Island</strong> (2–5 игроков, 40 энергии за сундук), пока не соберёшь почти весь сет брони. Оружие и бижутерию лучше потом скрафтить, так что Urugugu Canyon (оружие, бижутерия) подождёт.",
+              "uk": "Фарми <strong>Vakron Sky Island</strong> (2–5 гравців, 40 енергії за скриню), поки не збереш майже весь сет броні. Зброю й біжутерію краще потім скрафтити, тож Urugugu Canyon (зброя, біжутерія) зачекає.",
+              "tr": "Zırh setinin neredeyse tamamı olana kadar <strong>Vakron Sky Island</strong>'ı farmla (2–5 oyuncu, sandık başına 40 enerji). Silah ve aksesuarları sonra üretmek daha iyi, yani Urugugu Canyon (silah, aksesuarlar) bekleyebilir.",
+              "pt-BR": "Fazenda <strong> Vakron Sky Island </strong> (2 - 5 jogadores, 40 energia um peito) até que você tenha quase todo o conjunto de armaduras. Armas e acessórios são melhor elaborados depois, então o Urugugu Canyon (arma, acessórios) pode esperar."
+            },
+            {
+              "en": "{i:vakronguard} has no real alternative early. If it doesn't drop: every 21st chest gives {i:voucher}; two of them + 1,500,000 kina make the guard in Substance Morph.",
+              "ru": "Альтернатив {i:vakronguard} на старте нет. Если не выпал: каждый 21-й сундук даёт {i:voucher}; два таких + 1 500 000 кины — и наручи делаются в Substance Morph.",
+              "uk": "Альтернатив {i:vakronguard} на старті немає. Якщо не випав: кожна 21-ша скриня дає {i:voucher}; два такі + 1 500 000 кіни — і наручі робляться в Substance Morph.",
+              "tr": "{i:vakronguard}'ın erken dönemde gerçek bir alternatifi yok. Düşmezse: her 21. sandık {i:voucher} verir; ikisi + 1.500.000 kina Substance Morph'ta korumayı yapar.",
+              "pt-BR": "{i:vakronguard} não tem alternativa antes. Se não cair, cada tórax 21s t dá {i:voucher}; dois deles + 1,500,000 kina fazem o guarda na substância Morph."
+            },
+            {
+              "en": "Take the set to +10. If you bought every Daevanion crystal, you should be around 1,900. Short? Manastones, or one run on each boss of ★1 Transcendence — grey arcana add about 40.",
+              "ru": "Заточи сет на +10. Если выкупал все кристаллы Daevanion, выйдет около 1900. Не хватает — манастоуны или по разу на каждого босса Трансцендентности ★1: серые арканы дают ещё около 40.",
+              "uk": "Заточи сет на +10. Якщо викупав усі кристали Daevanion, вийде близько 1 900. Не вистачає — манастоуни або по разу на кожного боса Transcendence ★1: сірі аркани дають ще близько 40.",
+              "tr": "Seti +10'a çıkar. Her Daevanion kristalini aldıysan 1.900 civarında olmalısın. Eksik mi? Manastone'lar ya da ★1 Transcendence'ın her bossuna bir koşu — gri arcana yaklaşık 40 ekler.",
+              "pt-BR": "Leve o set para + 10. Se você comprou cada cristal Daevanion, você deve estar em torno de 1,900. Curto? Manastones, ou uma corrida em cada chefe da Transcendência 1 - cinza arcana adicionar cerca de 40."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s2100",
+      "gs": "2100",
+      "title": {
+        "en": "To 2,100: ★2 Transcendence",
+        "ru": "До 2100: Трансцендентность ★2",
+        "uk": "До 2 100: Transcendence ★2",
+        "tr": "2.100'e: ★2 Transcendence",
+        "pt-BR": "Para 2,100: ★ 2 Transcendência"
+      },
+      "blocks": [
+        {
+          "type": "p",
+          "at": "9:57",
+          "text": {
+            "en": "Run ★2 Transcendence until you have the two green slots — bell and mirror ({i:bell_green}, {i:mirror_green}, item level 40 each). Fill the other slots with grey arcana ({i:compass_grey}, {i:chalice_grey} — item level 20). Bonuses don't matter yet, only item level.",
+            "ru": "Ходи в Трансцендентность ★2, пока не выбьешь два зелёных слота — колокол и зеркало ({i:bell_green}, {i:mirror_green}, по 40 уровня предмета). Остальные слоты забей серыми арканами ({i:compass_grey}, {i:chalice_grey} — по 20). Бонусы пока неважны, важен только уровень предметов.",
+            "uk": "Ходи в Transcendence ★2, поки не виб'єш два зелені слоти — дзвін і дзеркало ({i:bell_green}, {i:mirror_green}, по 40 рівня предмета). Решту слотів забий сірими арканами ({i:compass_grey}, {i:chalice_grey} — по 20). Бонуси поки неважливі, важливий лише рівень предметів.",
+            "tr": "İki yeşil slot olana kadar ★2 Transcendence koş — çan ve ayna ({i:bell_green}, {i:mirror_green}, her biri item level 40). Diğer slotları gri arcana ile doldur ({i:compass_grey}, {i:chalice_grey} — item level 20). Bonuslar henüz önemli değil, yalnızca item level.",
+            "pt-BR": "Corra ★ 2 Transcendência até que você tenha as duas fendas verdes - sino e espelho ({i:bell_green}, {i:mirror_green}, item nível 40 cada). Encha as outras slots com arco cinza ({i:compass_grey}, {i:chalice_grey} - nível de item 20). Bônus não importam ainda, só o nível do item."
+          }
+        },
+        {
+          "type": "list",
+          "src": "sywo",
+          "at": "8:46",
+          "items": [
+            {
+              "en": "Transcendence opens at 1,600. Five arcana slots: a grey card gives 20 item level, green 40, blue 60. A full green set is +200 (1,600 → 1,800), swapping it for blue is another +100.",
+              "ru": "Трансцендентность открывается с 1600. Пять слотов аркан: серая карта даёт 20 уровня предмета, зелёная 40, синяя 60. Полный зелёный набор — это +200 (1600 → 1800), замена на синие — ещё +100.",
+              "uk": "Transcendence відкривається з 1600. П'ять слотів аркан: сіра карта дає 20 рівня предмета, зелена 40, синя 60. Повний зелений набір — це +200 (1600 → 1800), заміна на сині — ще +100.",
+              "tr": "Transcendence 1600'de açılır. Beş arcana yuvası: gri kart 20 eşya seviyesi verir, yeşil 40, mavi 60. Tam yeşil set +200 (1600 → 1800), maviyle değiştirmek bir +100 daha.",
+              "pt-BR": "A transcendência começa no 1,600. Cinco caça-níqueis arcana: um cartão cinza dá nível de item 20, 40 verde, 60 azul. Um conjunto verde completo é + 200 (1,600 → 1,800 ), trocá-lo por azul é outro + 100."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s2500",
+      "gs": "2500",
+      "title": {
+        "en": "To 2,500: Ferocious Horn Den",
+        "ru": "До 2500: Ferocious Horn Den",
+        "uk": "До 2500: Ferocious Horn Den",
+        "tr": "2.500'e: Ferocious Horn Den",
+        "pt-BR": "Para 2,500: Ferocious Horn Den"
+      },
+      "blocks": [
+        {
+          "type": "p",
+          "at": "10:18",
+          "text": {
+            "en": "Go straight to <strong>Ferocious Horn Den</strong> (the RU community calls it “the Dog”) and stay until you have most of its armor set. Move your Vakron enhancement into the new pieces with Gear Transfer.",
+            "ru": "Сразу иди в <strong>Ferocious Horn Den</strong> («Собака») и сиди там, пока не соберёшь почти весь сет брони. Заточку с вещей Вакрона перенеси на новые через перенос экипировки.",
+            "uk": "Одразу йди в <strong>Ferocious Horn Den</strong> (російськомовна спільнота кличе його «Собака») і сиди там, поки не збереш майже весь сет броні. Заточку з речей Vakron перенеси на нові через перенесення екіпірування.",
+            "tr": "Doğrudan <strong>Ferocious Horn Den</strong>'e git (RU topluluğu ona “Köpek” der) ve zırh setinin çoğu olana kadar orada kal. Vakron güçlendirmeni Gear Transfer ile yeni parçalara aktar.",
+            "pt-BR": "Vá direto para <strong> Ferocious Horn Den </strong> (a comunidade da RU chama de \"o cão\") e fique até que você tenha a maioria de suas armaduras. Mova seu aprimoramento Vakron para as novas peças com a transferência de engrenagens."
+          }
+        },
+        {
+          "type": "p",
+          "src": "sywo",
+          "at": "11:16",
+          "text": {
+            "en": "Fire Temple, the other dungeon of this tier, drops the weapon and accessories.",
+            "ru": "Храм огня, второе подземелье этого тира, даёт оружие и аксессуары.",
+            "uk": "Fire Temple, друге підземелля цього тіру, дає зброю та аксесуари.",
+            "tr": "Bu kademenin diğer zindanı Fire Temple, silah ve aksesuar düşürür.",
+            "pt-BR": "O Templo de Fogo, a outra masmorra desta camada, larga a arma e os acessórios."
+          }
+        }
+      ]
+    },
+    {
+      "id": "s2800",
+      "gs": "2800",
+      "title": {
+        "en": "To 2,800: gold arcana and the raid",
+        "ru": "До 2800: золотые арканы и рейд",
+        "uk": "До 2 800: золоті аркани й рейд",
+        "tr": "2.800'e: altın arcana ve raid",
+        "pt-BR": "Para 2,800: arco de ouro e o ataque"
+      },
+      "blocks": [
+        {
+          "type": "p",
+          "at": "10:30",
+          "text": {
+            "en": "Farm gold arcana in ★4 Transcendence and roll the skills you need for your PvE and PvP setups (for example {i:mirror_gold} +5 with the Primal Vigor set). At 2,800 the <strong>10-player dragon raid</strong> opens — the hardest PvE of Season 1 and a source of resources for the next update.",
+            "ru": "Фарми золотые арканы в Трансцендентности ★4 и выкатывай нужные скиллы под PvE- и PvP-сетапы (например, {i:mirror_gold} +5 с сетом Primal Vigor). На 2800 открывается <strong>рейд на дракона на 10 человек</strong> — самый сложный PvE 1 сезона и источник ресурсов на следующее обновление.",
+            "uk": "Фарми золоті аркани в Transcendence ★4 і викочуй потрібні скіли під PvE- і PvP-сетапи (наприклад, {i:mirror_gold} +5 із сетом Primal Vigor). На 2 800 відкривається <strong>рейд на дракона на 10 людей</strong> — найскладніше PvE 1 сезону й джерело ресурсів на наступне оновлення.",
+            "tr": "★4 Transcendence'ta altın arcana farmla ve PvE ve PvP düzenlerin için gereken yetenekleri çevir (örneğin Primal Vigor setiyle {i:mirror_gold} +5). 2.800'de <strong>10 kişilik ejderha raidi</strong> açılır — Season 1'in en zor PvE'si ve bir sonraki güncelleme için kaynak kaynağı.",
+            "pt-BR": "Arcona de ouro fazenda em ★ 4 Transcendência e rolar as habilidades que você precisa para suas configurações PvE e PvP (por exemplo {i:mirror_gold} + 5 com o conjunto de vigor primal). No 2,800 o <strong> 10-jogador de dragões o </strong> se abre, o PvE mais difícil da temporada 1 e uma fonte de recursos para a próxima atualização."
+          }
+        },
+        {
+          "type": "p",
+          "src": "sywo",
+          "at": "11:32",
+          "text": {
+            "en": "From here +10–11 is not enough: gear goes past +15 towards +20, and above +15 that needs {i:amplify}. Don't take all dungeon gear to +20 — crafted gear (item level 94 and 102 against 86 from drops) is what is worth +20 and fine-tuned manastones.",
+            "ru": "Отсюда +10–11 уже мало: вещи идут за +15 к +20, а выше +15 для этого нужен {i:amplify}. Не тяни все вещи из подземелий на +20 — на +20 и точную настройку манастоунов стоит крафт (уровень предмета 94 и 102 против 86 у дропа).",
+            "uk": "Звідси +10–11 уже мало: речі йдуть за +15 до +20, а вище +15 для цього потрібен {i:amplify}. Не тягни всі речі з підземель на +20 — на +20 і точне налаштування манастоунів варте скрафчене (рівень предмета 94 і 102 проти 86 у дропу).",
+            "tr": "Buradan sonra +10–11 yetmez: ekipman +15'i geçip +20'ye gider ve +15'in üstü için {i:amplify} gerekir. Bütün zindan ekipmanını +20'ye çıkarma — +20'ye ve ince manastone ayarına değen, üretilmiş ekipmandır (düşenlerde 86'ya karşı eşya seviyesi 94 ve 102).",
+            "pt-BR": "A partir daqui + 10 - 11 não é suficiente: o equipamento passa + 15 para + 20, e acima + 15 que precisa de {i:amplify}. Não leve todo o equipamento do calabouço para + 20 - artes artesanais (nível de itens 94 e 102 contra 86 de gotas) é o que vale + 20 e manastones bem ajustados."
+          }
+        }
+      ]
+    },
+    {
+      "id": "hardcore",
+      "title": {
+        "en": "Hardcore route: enhance a cheap blank, then transfer",
+        "ru": "Хардкорный путь: точи дешёвую болванку, потом переноси",
+        "uk": "Хардкорний шлях: точи дешеву заготовку, потім переноси",
+        "tr": "Hardcore rota: ucuz bir taslağı güçlendir, sonra aktar",
+        "pt-BR": "Rota Hardcore: melhorar um branco bamouse, em seguida, transferir"
+      },
+      "lead": {
+        "en": "Same steps as above, but saving every enhancement stone and kina. Depends on the datamine holding up — if transfers are limited at launch, skip this.",
+        "ru": "Те же шаги, но с экономией каждого камня заточки и кины. Держится на датамайне — если на старте перенос ограничат, пропусти.",
+        "uk": "Ті самі кроки, але з економією кожного каменя заточки й кіни. Тримається на датамайні — якщо на старті перенесення обмежать, пропусти.",
+        "tr": "Yukarıdakiyle aynı adımlar, ama her güçlendirme taşını ve kinayı biriktirerek. Datamine'ın doğru çıkmasına bağlı — çıkışta aktarımlar sınırlıysa bunu atla.",
+        "pt-BR": "Os mesmos passos de cima, mas salvando cada pedra e kina. Depende da mina de dados se aguentar. Se as transferências forem limitadas no lançamento, pule isso."
+      },
+      "blocks": [
+        {
+          "type": "list",
+          "at": "11:48",
+          "items": [
+            {
+              "en": "Enhancement cost grows with item level (Vakron Cloak, 76: 380 stones and 9,500 kina a try; Abyssal Bracelet, 84: 420 and 10,500). After +10 the chance drops (+13 → +14: 25%, +5% after each fail) and a try at the top costs about 2 million kina.",
+              "ru": "Цена заточки растёт с уровнем предмета (Vakron Cloak, 76: 380 камней и 9500 кины за попытку; Abyssal Bracelet, 84: 420 и 10 500). После +10 шанс падает (+13 → +14: 25%, +5% после каждой неудачи), а попытка на верхних уровнях стоит около 2 млн кины.",
+              "uk": "Ціна заточки росте з рівнем предмета (Vakron Cloak, 76: 380 каменів і 9 500 кіни за спробу; Abyssal Bracelet, 84: 420 і 10 500). Після +10 шанс падає (+13 → +14: 25%, +5% після кожної невдачі), а спроба на верхніх рівнях коштує близько 2 млн кіни.",
+              "tr": "Güçlendirme maliyeti item level ile artar (Vakron Cloak, 76: deneme başına 380 taş ve 9.500 kina; Abyssal Bracelet, 84: 420 ve 10.500). +10'dan sonra şans düşer (+13 → +14: %25, her başarısızlıktan sonra +%5) ve tepede bir deneme yaklaşık 2 milyon kina tutar.",
+              "pt-BR": "O custo do aumento aumenta com o nível de item (Vakron Cloak, 76: 380 pedras e 9,500 kina uma tentativa; Abismo Pulseira, 84: 420 e 10,500 ). Depois de + 10 a chance cai (+ 13 → + 14:25%, + 5% após cada falha) e uma tentativa no custo máximo sobre 2 milhões de kina."
+            },
+            {
+              "en": "A transfer stone ({i:transfer_w}, {i:transfer_a}) moves the enhancement level and rolled stats to any item — even from the cheapest gold piece to the best one. Made in Substance Morph from gold gear.",
+              "ru": "Камень переноса ({i:transfer_w}, {i:transfer_a}) переносит уровень заточки и выпавшие статы на любую вещь — даже с самой дешёвой золотой на топовую. Делается в Substance Morph из золотой экипировки.",
+              "uk": "Камінь перенесення ({i:transfer_w}, {i:transfer_a}) переносить рівень заточки й статі, що випали, на будь-яку річ — навіть із найдешевшої золотої на топову. Робиться в Substance Morph із золотої екіпіровки.",
+              "tr": "Aktarım taşı ({i:transfer_w}, {i:transfer_a}) güçlendirme seviyesini ve çevrilmiş statları herhangi bir eşyaya taşır — en ucuz altın parçadan en iyisine bile. Altın ekipmandan Substance Morph'ta yapılır.",
+              "pt-BR": "Uma pedra de transferência ({i:transfer_w}, {i:transfer_a}) move o nível de realce e rola estatísticas para qualquer item - mesmo da peça de ouro mais barata para a melhor. Feito em Substância Morph de equipamento de ouro."
+            },
+            {
+              "en": "Plan: wear the lowest item level gold gear, don't enhance new drops. When a long-term upgrade drops, take a cheap blank for that slot to +15 and transfer it. Works for weapon, armor and guard, not accessories (no cheap sources).",
+              "ru": "План: ходи в самой низкоуровневой золотой экипировке и не точи новый дроп. Когда выпала вещь надолго — точи дешёвую болванку этого слота до +15 и переноси. Работает для оружия, брони и наручей, но не для бижутерии (нет дешёвых источников).",
+              "uk": "План: ходи в найнижчорівневій золотій екіпіровці й не точи новий дроп. Коли випала річ надовго — точи дешеву заготовку цього слота до +15 і переноси. Працює для зброї, броні й наручів, але не для біжутерії (немає дешевих джерел).",
+              "tr": "Plan: en düşük item level'lı altın ekipmanı giy, yeni düşenleri güçlendirme. Uzun vadeli bir yükseltme düştüğünde o slot için ucuz bir taslağı +15'e çıkar ve aktar. Silah, zırh ve koruma için çalışır, aksesuarlar için değil (ucuz kaynağı yok).",
+              "pt-BR": "Plano: use o equipamento de ouro mais baixo, não aumente novas gotas. Quando uma atualização de longo prazo cair, pegue um espaço bamouse para a slot + 15 e transfira. Trabalha para armas, armaduras e guardas, não acessórios (sem fontes baratas)."
+            },
+            {
+              "en": "It is slow without alts: 3–4 extra characters bring the additional enhancement stones.",
+              "ru": "Без твинков это долго: 3–4 дополнительных персонажа приносят дополнительные камни заточки.",
+              "uk": "Без твінків це довго: 3–4 додаткові персонажі приносять додаткові камені заточки.",
+              "tr": "Alt karakterler olmadan yavaştır: 3–4 ek karakter fazladan güçlendirme taşı getirir.",
+              "pt-BR": "É lento sem alts: 3 – 4 extra personagens trazer as pedras de realce adicionais."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "titan",
+      "src": "titan",
+      "title": {
+        "en": "TitanTheF's route: Abyss farm and a crafted weapon",
+        "ru": "Путь TitanTheF: фарм Бездны и крафтовое оружие",
+        "uk": "Шлях TitanTheF: фарм Безодні й крафтова зброя",
+        "tr": "TitanTheF'in rotası: Abyss farmı ve üretilmiş silah",
+        "pt-BR": "Rota do TitanTheF: fazenda de Abismo e uma arma trabalhada"
+      },
+      "lead": {
+        "en": "Another route from TitanTheF's progression sheet (Taiwan experience): less waiting for dungeons, more Abyss and crafting. Needs a lot of play time.",
+        "ru": "Другой маршрут из таблицы прогрессии TitanTheF (опыт Тайваня): меньше ожидания данжей, больше Бездны и крафта. Нужно много игрового времени.",
+        "uk": "Інший маршрут із таблиці прогресії TitanTheF (досвід Тайваню): менше очікування данжів, більше Безодні й крафту. Потрібно багато ігрового часу.",
+        "tr": "TitanTheF'in ilerleme tablosundan başka bir rota (Tayvan deneyimi): zindanlar için daha az bekleme, daha çok Abyss ve üretim. Çok oyun süresi ister.",
+        "pt-BR": "Outra rota da folha de progressão do TitanTheF (experiência Taiwan): menos espera por masmorras, mais abismo e fabricação. Precisa de muito tempo para brincar."
+      },
+      "blocks": [
+        {
+          "type": "h",
+          "text": {
+            "en": "Right after 45",
+            "ru": "Сразу после 45",
+            "uk": "Одразу після 45",
+            "tr": "45'ten hemen sonra",
+            "pt-BR": "Logo após 45"
+          }
+        },
+        {
+          "type": "list",
+          "items": [
+            {
+              "en": "<strong>Every Shugo Festival.</strong> Only at level 45 do you get the full rewards — including gold gear and craft materials; global also added {i:stigmashard}. Chests and jumping games; skip the tiles — newcomers ruin them.",
+              "ru": "<strong>Все Шуго-фестивали.</strong> Только на 45 уровне дают полные награды — включая золотую экипировку и крафтовые ресурсы; на глобалке туда добавили {i:stigmashard}. Сундуки и прыжки; плитки пропускай — новички их руинят.",
+              "uk": "<strong>Усі Shugo Festival.</strong> Лише на 45 рівні дають повні нагороди — зокрема золоту екіпіровку й крафтові ресурси; на глобалі туди додали {i:stigmashard}. Скрині та стрибки; плитки пропускай — новачки їх руйнують.",
+              "tr": "<strong>Her Shugo Festival.</strong> Tam ödülleri ancak 45. seviyede alırsın — altın ekipman ve üretim malzemeleri dahil; global ayrıca {i:stigmashard} ekledi. Sandıklar ve zıplama oyunları; karoları atla — yeni gelenler onları mahvediyor.",
+              "pt-BR": "<strong> Todo Festival de Shugo. </strong> Só no nível 45 você recebe as recompensas completas, incluindo equipamentos de ouro e materiais artesanais; global também acrescentou {i:stigmashard}. Chests e jogos de salto; pular as telhas - recém-chegados arruiná-los."
+            },
+            {
+              "en": "<strong>Clear the map</strong>: every ? and campfire, the green side quests, and pick up hidden cubes and feathers on the way. Together with your levels that is about <strong>316 of 570</strong> Daevanion points (levels 136, sealed dungeons 122, regional quests 58); Shugo and Nightmare add 50 each. Feathers take the altar to level 30 and give a title.",
+              "ru": "<strong>Закрой карту</strong>: все знаки вопроса и костры, зелёные сайд-квесты, по пути собирай скрытые кубы и перья. Вместе с уровнями это около <strong>316 из 570</strong> очков Daevanion (уровни 136, запечатанные подземелья 122, региональные квесты 58); Шуго и Кошмар добавят ещё по 50. Перья поднимают алтарь до 30 уровня и дают титул.",
+              "uk": "<strong>Закрий мапу</strong>: усі знаки питання й вогнища, зелені сайд-квести, дорогою збирай приховані куби й пір'я. Разом із рівнями це близько <strong>316 із 570</strong> очок Daevanion (рівні 136, запечатані підземелля 122, регіональні квести 58); Shugo і Nightmare додадуть ще по 50. Пір'я піднімає вівтар до 30 рівня й дає титул.",
+              "tr": "<strong>Haritayı temizle</strong>: her ? ve kamp ateşi, yeşil yan görevler, yolda gizli küpleri ve tüyleri al. Seviyelerinle birlikte bu, 570 Daevanion puanının yaklaşık <strong>316</strong>'sı eder (seviyeler 136, mühürlü zindanlar 122, bölge görevleri 58); Shugo ve Nightmare her biri 50 daha ekler. Tüyler sunağı 30. seviyeye çıkarır ve unvan verir.",
+              "pt-BR": "<strong> Limpar o mapa </strong>: cada um e fogueira, as missões lado verde, e pegar cubos escondidos e penas no caminho. Juntamente com seus níveis que é cerca de <strong> 316 de 570 </strong> Daevanion pontos (nível 136, calabouços selados 122, missões regionais 58); Shugo e Nightmare adicionam 50 cada. Penas levam o altar ao nível 30 e dão um título."
+            },
+            {
+              "en": "Then one of three: kill mobs until every pet is level 3 (all pets together give 55k combat power), go to the Abyss (the same pets plus wings), or get a party for <strong>3–4 runs of Draupnir</strong>. TitanTheF picks Draupnir — first gear, kina and enhancement.",
+              "ru": "Дальше одно из трёх: бей мобов, пока все питомцы не станут 3 уровня (все вместе дают 55 тыс. боевой мощи), иди в Бездну (те же питомцы плюс крылья) или собери группу на <strong>3–4 забега в Друпнир</strong>. TitanTheF выбирает Друпнир — первая экипировка, кина и заточка.",
+              "uk": "Далі одне з трьох: бий мобів, поки всі пети не стануть 3 рівня (усі разом дають 55 тис. бойової могутності), іди в Безодню (ті самі пети плюс крила) або збери групу на <strong>3–4 забіги в Draupnir</strong>. TitanTheF обирає Draupnir — перша екіпіровка, кіна й заточка.",
+              "tr": "Sonra üçünden biri: her evcil hayvan 3. seviye olana kadar mob kes (tüm evcil hayvanlar birlikte 55k savaş gücü verir), Abyss'e git (aynı evcil hayvanlar artı kanatlar) ya da <strong>3–4 Draupnir koşusu</strong> için grup bul. TitanTheF Draupnir'i seçiyor — ilk ekipman, kina ve güçlendirme.",
+              "pt-BR": "Então, um dos três: matar multidões até que cada animal de estimação esteja no nível 3 (todos os animais juntos dão poder de combate 55 k), ir para o Abismo (os mesmos animais de estimação mais asas), ou obter uma festa para <strong> 3 – 4 corridas de Draupnir </strong>. TitanTheF pega Draupnir - primeira marcha, kina e aprimoramento."
+            },
+            {
+              "en": "Spend the daily Nightmare entry. One run of the first Transcendence for white arcana is enough — you only need to open floor 2. Watch the market for T1 dungeon materials and pick up everything for the season shop.",
+              "ru": "Трать ежедневную попытку Кошмара. Одного забега в первую Трансцендентность за белыми арканами хватит — нужно только открыть 2 этаж. Следи за рынком на ресурсы T1-данжей и забирай всё для сезонного магазина.",
+              "uk": "Витрачай щоденну спробу Nightmare. Одного забігу в першу Transcendence за білими арканами вистачить — потрібно лише відкрити 2 поверх. Стеж за ринком на ресурси T1-данжів і забирай усе для сезонного магазину.",
+              "tr": "Günlük Nightmare girişini harca. Beyaz arcana için ilk Transcendence'a bir koşu yeterli — yalnızca 2. katı açman gerekiyor. T1 zindan malzemeleri için pazarı izle ve sezon mağazası için her şeyi topla.",
+              "pt-BR": "Passe a entrada diária de Pesadelo. Uma corrida da primeira Transcendência para Arcana branca é suficiente. Você só precisa abrir o 2. Veja o mercado de materiais de calabouço T 1 e pegue tudo para a loja da temporada."
+            },
+            {
+              "en": "The goal of the first days: currency for a <strong>crafted T1 weapon</strong> — it is the one you will enhance and roll stats on.",
+              "ru": "Цель первых дней — валюта на <strong>крафтовое T1-оружие</strong>: именно его ты будешь точить и на нём роллить статы.",
+              "uk": "Мета перших днів — валюта на <strong>крафтову T1-зброю</strong>: саме її ти точитимеш і на ній ролитимеш статі.",
+              "tr": "İlk günlerin hedefi: <strong>üretilmiş bir T1 silah</strong> için para — güçlendireceğin ve stat çevireceğin silah bu.",
+              "pt-BR": "O objetivo dos primeiros dias: moeda para uma <strong> criada T 1 arma </strong> - é o que você vai melhorar e rolar estatísticas sobre."
+            }
+          ]
+        },
+        {
+          "type": "h",
+          "text": {
+            "en": "Farming the Abyss",
+            "ru": "Фарм Бездны",
+            "uk": "Фарм Безодні",
+            "tr": "Abyss farmı",
+            "pt-BR": "Fazendo o Abismo"
+          }
+        },
+        {
+          "type": "list",
+          "items": [
+            {
+              "en": "At launch you won't just stand on a spot. Buy the quest scrolls from the NPC at the Abyss base — all of them, white to gold (about 1.4 million kina) — and do the white, green and blue ones.",
+              "ru": "На старте просто встать на спот не получится. Купи свитки заданий у НПС на базе Бездны — все, от белых до золотых (около 1,4 млн кины) — и выполняй белые, зелёные и синие.",
+              "uk": "На старті просто стати на спот не вийде. Купи сувої завдань у NPC на базі Безодні — усі, від білих до золотих (близько 1,4 млн кіни) — і виконуй білі, зелені та сині.",
+              "tr": "Çıkışta öylece bir noktada durmayacaksın. Abyss üssündeki NPC'den görev parşömenlerini al — hepsini, beyazdan altına (yaklaşık 1,4 milyon kina) — ve beyaz, yeşil ve mavileri yap.",
+              "pt-BR": "No lançamento, você não vai ficar em um lugar. Compre os pergaminhos da busca do NPC na base Abyss - todos eles, branco para ouro (cerca de 1.4 milhões de kina) - e faça os brancos, verdes e azuis."
+            },
+            {
+              "en": "Tag along with players doing the same quests and skip the fights — they pay less. Reroll quests towards gold materials or PvP boards, but watch the currency. Then the gold quests in the centre, then a side island to farm.",
+              "ru": "Прибивайся к игрокам, которые делают те же задания, и пропускай драки — за них дают меньше. Перекидывай задания на золотые ресурсы или PvP-плитки, но следи за валютой. Потом золотые задания в центре, потом боковой остров на фарм.",
+              "uk": "Прибивайся до гравців, які роблять ті самі завдання, і пропускай бійки — за них дають менше. Перекидай завдання на золоті ресурси чи PvP-плитки, але стеж за валютою. Потім золоті завдання в центрі, потім боковий острів на фарм.",
+              "tr": "Aynı görevleri yapan oyunculara takıl ve savaşları atla — daha az veriyorlar. Görevleri altın malzemelere veya PvP panolarına doğru yeniden çevir, ama parayı izle. Sonra merkezdeki altın görevler, sonra farm için yan bir ada.",
+              "pt-BR": "Juntamente com os jogadores fazendo as mesmas missões e pular as lutas - eles pagam menos. Rebole as buscas por materiais de ouro ou placas PvP, mas cuidado com a moeda. Então as missões de ouro no centro, depois uma ilha lateral para plantar."
+            },
+            {
+              "en": "Go in pairs: two players get more AP and materials, then split the gold gear. If farming is impossible, do the same quests in the world — there is a merchant in every big city. And don't forget Shugo.",
+              "ru": "Ходи вдвоём: в паре больше AP и ресурсов, золотую экипировку потом делите. Если фармить невозможно — делай такие же задания в мире, торговцы есть в каждом крупном городе. И не забывай про Шуго.",
+              "uk": "Ходи вдвох: у парі більше AP і ресурсів, золоту екіпіровку потім ділите. Якщо фармити неможливо — роби такі самі завдання у світі, торговці є в кожному великому місті. І не забувай про Shugo.",
+              "tr": "İkili git: iki oyuncu daha çok AP ve malzeme alır, sonra altın ekipmanı paylaşır. Farm imkânsızsa aynı görevleri dünyada yap — her büyük şehirde bir tüccar var. Ve Shugo'yu unutma.",
+              "pt-BR": "Vão em pares: dois jogadores ganham mais AP e materiais, e depois dividem o equipamento de ouro. Se a agricultura é impossível, faça as mesmas buscas no mundo - há um mercador em todas as grandes cidades. E não se esqueça de Shugo."
+            },
+            {
+              "en": "Kill every <strong>world boss</strong> once — a chance at a drop plus a participation title. The timers are on the map; there is one in almost every zone.",
+              "ru": "Убей каждого <strong>мирового босса</strong> по разу — шанс на дроп и титул за участие. Таймеры есть на карте, боссы почти в каждой локации.",
+              "uk": "Убий кожного <strong>світового боса</strong> по разу — шанс на дроп і титул за участь. Таймери є на мапі, боси майже в кожній локації.",
+              "tr": "Her <strong>dünya bossunu</strong> bir kez öldür — düşüş şansı artı katılım unvanı. Zamanlayıcılar haritada; neredeyse her bölgede bir tane var.",
+              "pt-BR": "Matar todos os chefes do mundo <strong> </strong> uma vez, uma chance de uma queda mais um título de participação. Os cronômetros estão no mapa, há um em quase todas as zonas."
+            }
+          ]
+        },
+        {
+          "type": "h",
+          "text": {
+            "en": "The crafted weapon and after",
+            "ru": "Крафтовое оружие и дальше",
+            "uk": "Крафтова зброя й далі",
+            "tr": "Üretilmiş silah ve sonrası",
+            "pt-BR": "A arma trabalhada e depois"
+          }
+        },
+        {
+          "type": "list",
+          "items": [
+            {
+              "en": "As soon as your item level allows, clear floor 2 of Transcendence as well (different arcana). Then Vakron and Urugugu (T2 dungeons) — watch your energy, sell what you don't need and buy T1 materials.",
+              "ru": "Как только позволит уровень предметов — закрой и 2 этаж Трансцендентности (другие арканы). Дальше Вакрон и Урогугу (T2-данжи): следи за энергией, продавай ненужное и скупай T1-ресурсы.",
+              "uk": "Щойно дозволить рівень предметів — закрий і 2 поверх Transcendence (інші аркани). Далі Vakron і Urugugu (T2-данжі): стеж за енергією, продавай непотрібне й скуповуй T1-ресурси.",
+              "tr": "Item level'ın izin verir vermez Transcendence'ın 2. katını da temizle (farklı arcana). Sonra Vakron ve Urugugu (T2 zindanlar) — enerjini izle, ihtiyacın olmayanı sat ve T1 malzemeleri al.",
+              "pt-BR": "Assim que o nível do item permitir, limpo o andar 2 da Transcendência também. Então Vakron e Urugugu (Tumbas T 2) - Cuidado com sua energia, venda o que você não precisa e compre materiais T 1."
+            },
+            {
+              "en": "With enough T1 materials, level your crafting (about 2 million kina, see <a href=\"../crafting/\">Gathering and crafting</a>). Craft at least one gold level 60 blank — don't wear or enhance it. Then the T1 weapon: in the first days it should come out at no more than about 30 million kina.",
+              "ru": "Когда наберёшь T1-ресурсов — качай крафт (около 2 млн кины, смотри <a href=\"../crafting/\">Сбор и крафт</a>). Скрафти хотя бы одну золотую болванку 60 уровня — не надевай и не точи. Потом T1-оружие: в первые дни оно должно выйти не дороже примерно 30 млн кины.",
+              "uk": "Коли набереш T1-ресурсів — качай крафт (близько 2 млн кіни, дивись <a href=\"../crafting/\">Збір і крафт</a>). Скрафти хоча б одну золоту заготовку 60 рівня — не одягай і не точи. Потім T1-зброю: у перші дні вона має вийти не дорожче приблизно 30 млн кіни.",
+              "tr": "Yeterli T1 malzemeyle üretimini geliştir (yaklaşık 2 milyon kina, bkz. <a href=\"../crafting/\">Toplama ve üretim</a>). En az bir altın 60. seviye taslak üret — giyme ve güçlendirme. Sonra T1 silah: ilk günlerde yaklaşık 30 milyon kinayı geçmemeli.",
+              "pt-BR": "Com bastante T 1, nivele sua criação (cerca de 2 milhões de kina, veja <a href=\"../crafting/\"> Reunindo e crafting </a> ). Crie pelo menos um nível de ouro 60 em branco - não o use ou melhore. Então a arma T 1: nos primeiros dias, ela deve ser lançada em não mais do que cerca de 30 milhões de kina."
+            },
+            {
+              "en": "Don't take the weapon above +10 yet — next are the rings (three times cheaper than weapons). Try ★3 Transcendence if energy and gear allow, otherwise kill more mobs. The solo dungeon with enhancement stones: go only for the stones, and only after raising your item level — more mobs killed, bigger reward.",
+              "ru": "Не точи оружие выше +10 — дальше кольца (они в три раза дешевле оружия). Пробуй Трансцендентность ★3, если хватает энергии и экипировки, иначе добивай мобов. Соло-данж с заточкой: иди только за камнями и только подняв уровень предметов — чем больше мобов, тем больше награда.",
+              "uk": "Не точи зброю вище +10 — далі кільця (утричі дешевші за зброю). Пробуй Transcendence ★3, якщо вистачає енергії й екіпіровки, інакше добивай мобів. Соло-данж із заточкою: іди лише за каменями й лише піднявши рівень предметів — чим більше мобів, тим більша нагорода.",
+              "tr": "Silahı henüz +10'un üstüne çıkarma — sırada yüzükler var (silahlardan üç kat ucuz). Enerji ve ekipman izin verirse ★3 Transcendence'ı dene, yoksa daha çok mob kes. Güçlendirme taşlı solo zindan: yalnızca taşlar için git ve yalnızca item level'ını yükselttikten sonra — ne kadar çok mob, o kadar büyük ödül.",
+              "pt-BR": "Não pegue a arma acima de + 10 ainda - a seguir são os anéis (três vezes mais bamouses do que armas). Tente a transcendência 3 se a energia e o equipamento permitirem, caso contrário matará mais multidões. O calabouço solo com pedras de reforço: ir apenas para as pedras, e só depois de elevar o nível do seu item - mais multidões mortas, maior recompensa."
+            },
+            {
+              "en": "Back to the Abyss: not the centre — a corner with a small pack of mobs. 8–10 hours of this gives a pile of AP, kina, gear and materials; nothing pays better in the first days.",
+              "ru": "Снова в Бездну: не в центр, а в угол с небольшим паком мобов. 8–10 часов такого фарма дают кучу AP, кины, экипировки и ресурсов — в первые дни выгоднее ничего нет.",
+              "uk": "Знову в Безодню: не в центр, а в кут із невеликим паком мобів. 8–10 годин такого фарму дають купу AP, кіни, екіпіровки й ресурсів — у перші дні вигіднішого немає.",
+              "tr": "Abyss'e geri dön: merkeze değil — küçük bir mob grubunun olduğu bir köşeye. Bunun 8–10 saati bir yığın AP, kina, ekipman ve malzeme verir; ilk günlerde hiçbir şey daha iyi kazandırmaz.",
+              "pt-BR": "De volta ao Abismo, não no centro, um canto com um pequeno bando de mafiosos. 8 - 10 horas disso dá uma pilha de AP, kina, equipamentos e materiais; nada paga melhor nos primeiros dias."
+            },
+            {
+              "en": "Finish the ring, then arcana; with blue arcana and enhanced gear try the T3 dungeons. <strong>Roll stats only on T3 dungeon gear.</strong> When the energy runs out, roll the genus (about 10 million kina for all of it): don't lock stats before level 10; hidden cubes give 1,000 crystals — enough for level 10.",
+              "ru": "Докрафти кольцо, потом арканы; с синими арканами и заточенной экипировкой пробуй T3-данжи. <strong>Статы роллить только на экипировке из T3-данжей.</strong> Когда кончится энергия — роллируй генусы (около 10 млн кины на всё): не лочь статы до 10 уровня; за скрытые кубы дают по 1000 кристаллов — на 10 уровень хватит.",
+              "uk": "Докрафти кільце, потім аркани; із синіми арканами й заточеною екіпіровкою пробуй T3-данжі. <strong>Статі ролити лише на екіпіровці з T3-данжів.</strong> Коли скінчиться енергія — ролимо генуси (близько 10 млн кіни на все): не лочи статі до 10 рівня; за приховані куби дають по 1 000 кристалів — на 10 рівень вистачить.",
+              "tr": "Yüzüğü bitir, sonra arcana; mavi arcana ve güçlendirilmiş ekipmanla T3 zindanları dene. <strong>Statları yalnızca T3 zindan ekipmanında çevir.</strong> Enerji bitince genus'u çevir (hepsi için yaklaşık 10 milyon kina): 10. seviyeden önce statları kilitleme; gizli küpler 1.000 kristal verir — 10. seviye için yeterli.",
+              "pt-BR": "Termine o anel, depois arcana, com arco azul e equipamento melhorado tente o T3 Masmorras. <strong>Role estatísticas apenas em T.3 Equipamento de masmorra.</strong> Quando a energia acabar, role o gênero (sobre 10 Não bloqueie as estatísticas antes do nível. 10Cubos escondidos dão 1,000 Cristais, o suficiente para o nível. 10."
+            },
+            {
+              "en": "Don't spend unbound kina on enhancement — only on buying materials.",
+              "ru": "Не сливай непривязанную кину на заточку — только на докупку ресурсов.",
+              "uk": "Не зливай неприв'язану кіну на заточку — лише на докупівлю ресурсів.",
+              "tr": "Bağlı olmayan kinayı güçlendirmeye harcama — yalnızca malzeme almaya.",
+              "pt-BR": "Não gaste kina livre em melhorias, só em comprar materiais."
+            },
+            {
+              "en": "Later: energy into T3 dungeons, ★4 Transcendence with a good party, arcana up to level 20. After 2–3 days Abyss kills pay well; buying the necklace for Abyss points and enhancing it is fine, but not the whole Abyss set at the start — the first AP go into stigmas. Don't skip Abyss activities, weekly bosses and artifact battles — they give medals for the PvP set. Earrings can come from Kromede; the next upgrade is a crafted guard.",
+              "ru": "Дальше: энергия в T3-данжи, Трансцендентность ★4 с хорошей группой, арканы до 20 уровня. Через 2–3 дня за убийства в Бездне начнут нормально давать; купить ожерелье за очки Бездны и точить его — не ошибка, но весь сет Бездны на старте не нужен: первые AP — в стигмы. Не пропускай активности Бездны, недельных боссов и битвы за артефакты — за них дают медали для PvP-сета. Серьги можно с Кромеды, следующий апгрейд — крафтовые наручи.",
+              "uk": "Далі: енергія в T3-данжі, Transcendence ★4 із хорошою групою, аркани до 20 рівня. За 2–3 дні за вбивства в Безодні почнуть нормально давати; купити намисто за очки Безодні й точити його — не помилка, але весь сет Безодні на старті не потрібен: перші AP — у стигми. Не пропускай активності Безодні, тижневих босів і битви за артефакти — за них дають медалі для PvP-сету. Сережки можна з Kromede, наступний апгрейд — крафтові наручі.",
+              "tr": "Sonra: enerji T3 zindanlara, iyi bir grupla ★4 Transcendence, arcana 20. seviyeye kadar. 2–3 gün sonra Abyss öldürmeleri iyi kazandırır; Abyss puanıyla kolyeyi alıp güçlendirmek iyi, ama başta tüm Abyss setini değil — ilk AP stigmalara gider. Abyss etkinliklerini, haftalık bossları ve artifact savaşlarını atlama — PvP seti için madalya verirler. Küpeler Kromede'den gelebilir; sonraki yükseltme üretilmiş bir koruma.",
+              "pt-BR": "Mais tarde: energia para as masmorras T 3, transcendência 4 com uma boa festa, arcana até o nível 20. Depois de 2 - 3 dias Abyss mata pagar bem; comprar o colar para pontos Abyss e melhorá-lo é bom, mas não todo o Abyss definido no início - o primeiro AP entrar em estigmas. Não ignore as atividades de Abyss, chefes semanais e batalhas de artefatos. Eles dão medalhas para o jogo PvP. Brincos podem vir de Kromede, a próxima atualização é um guarda criado."
+            }
+          ]
+        },
+        {
+          "type": "h",
+          "text": {
+            "en": "The economic route",
+            "ru": "Экономический путь",
+            "uk": "Економічний шлях",
+            "tr": "Ekonomik rota",
+            "pt-BR": "A rota econômica"
+          }
+        },
+        {
+          "type": "p",
+          "text": {
+            "en": "For those who can play 10 hours a day: Shugo as usual, the rest of the time gathering. Priority — Odyle and wood, also sapphires, rubies and diamonds; level gathering fast and forget your item level. People who know the game buy gold materials and materials in general, and crafting gets easier for you too. You can also buy kuna for kina on the auction house and flip paintings, materials and leather (cheap now, ten times more a week later). Bots are a risk here.",
+            "ru": "Для тех, кто может играть по 10 часов в день: Шуго как обычно, остальное время — сбор. Приоритет — одилия и дерево, ещё сапфиры, рубины и алмазы; быстро качай сбор и забей на уровень предметов. Знающие игроки скупают золотые ресурсы и ресурсы вообще, да и самому крафтить станет проще. Ещё можно скупать куну за кину на аукционе и флипать картины, ресурсы и кожу (сейчас копейки, через неделю в десять раз дороже). Риск тут — боты.",
+            "uk": "Для тих, хто може грати по 10 годин на день: Shugo як зазвичай, решту часу — збір. Пріоритет — Odyle і дерево, ще сапфіри, рубіни й алмази; швидко качай збір і забий на рівень предметів. Досвідчені гравці скуповують золоті ресурси й ресурси взагалі, та й самому крафтити стане простіше. Ще можна скуповувати куну за кіну на аукціоні й фліпати картини, ресурси й шкіру (зараз копійки, за тиждень удесятеро дорожче). Ризик тут — боти.",
+            "tr": "Günde 10 saat oynayabilenler için: Shugo her zamanki gibi, kalan zaman toplama. Öncelik — Odyle ve odun, ayrıca safir, yakut ve elmas; toplamayı hızlı geliştir ve item level'ını unut. Oyunu bilenler altın malzemeleri ve genel olarak malzemeleri satın alır, üretim de senin için kolaylaşır. Açık artırma evinde kina karşılığı kuna alıp tablo, malzeme ve deri de çevirebilirsin (şimdi ucuz, bir hafta sonra on kat). Burada botlar bir risk.",
+            "pt-BR": "Para aqueles que podem jogar 10 horas por dia, Shugo como de costume, o resto do tempo reunindo. Prioridade: Odyle e madeira, também safiras, rubis e diamantes, nível se juntando rápido e esquecer o nível do item. As pessoas que conhecem o jogo compram materiais de ouro e materiais em geral, e o fabricação fica mais fácil para você também. Você também pode comprar kuna para kina na casa de leilões e virar pinturas, materiais e couro (bamouse agora, dez vezes mais por semana depois). Bots são um risco aqui."
+          }
+        },
+        {
+          "type": "h",
+          "text": {
+            "en": "Alts",
+            "ru": "Твинки",
+            "uk": "Твінки",
+            "tr": "Alt karakterler",
+            "pt-BR": "Alts."
+          }
+        },
+        {
+          "type": "p",
+          "text": {
+            "en": "With 10–16 hours at launch, put the time into your main and start alts after 1–2 days, when the starting zones are emptier. With less time, take 4 characters to level 22 first and only then finish the main — by then the alts' energy is full.",
+            "ru": "Если на старте есть 10–16 часов — вкладывай их в мейна, а твинками занимайся через 1–2 дня, когда начальные локации освободятся. Если времени меньше — сначала качни 4 персонажей до 22 и только потом докачивай мейна: к тому моменту у твинков будет полная энергия.",
+            "uk": "Якщо на старті є 10–16 годин — вкладай їх у мейна, а твінками займайся через 1–2 дні, коли стартові локації звільняться. Якщо часу менше — спершу прокачай 4 персонажів до 22 і лише потім докачуй мейна: на той момент у твінків буде повна енергія.",
+            "tr": "Çıkışta 10–16 saatin varsa zamanı ana karakterine ver ve başlangıç bölgeleri boşalınca 1–2 gün sonra altlara başla. Daha az vaktin varsa önce 4 karakteri 22. seviyeye çıkar, ana karakteri ancak sonra bitir — o zamana kadar altların enerjisi dolmuş olur.",
+            "pt-BR": "Com 10 - 16 horas no lançamento, coloque o tempo em seu principal e comece alts após 1 - 2 dias, quando as zonas de partida estão mais vazias. Com menos tempo, leve os caracteres 4 para o nível 22 primeiro e só então termine o principal - até então a energia dos alts está cheia."
+          }
+        }
+      ]
+    },
+    {
+      "id": "enhance",
+      "src": "titan",
+      "title": {
+        "en": "How gear upgrades work",
+        "ru": "Как работает улучшение",
+        "uk": "Як працює покращення",
+        "tr": "Ekipman yükseltmeleri nasıl işler",
+        "pt-BR": "Como as mudanças funcionam."
+      },
+      "lead": {
+        "en": "The five Enhancement tabs in short: Enhance, Manastone, Theostone, Soul Binding and Transfer.",
+        "ru": "Пять вкладок улучшения коротко: заточка, манастоуны, Теостоуны, наследие (Soul Binding) и перенос.",
+        "uk": "П'ять вкладок покращення коротко: заточка, манастоуни, Theostone, спадок (Soul Binding) і перенесення.",
+        "tr": "Beş Enhancement sekmesi kısaca: Enhance, Manastone, Theostone, Soul Binding ve Transfer.",
+        "pt-BR": "As cinco abas de reforço em resumo: \"Enhance\", Manastone, Theostone, Soul Binding and Transfer\"."
+      },
+      "blocks": [
+        {
+          "type": "table",
+          "head": {
+            "en": [
+              "Gear grade",
+              "Max enhancement"
+            ],
+            "ru": [
+              "Качество",
+              "Максимальная заточка"
+            ],
+            "uk": [
+              "Якість",
+              "Максимальна заточка"
+            ],
+            "tr": [
+              "Ekipman kalitesi",
+              "Maks. güçlendirme"
+            ],
+            "pt-BR": [
+              "Classe de engrenagem.",
+              "Melhoramento máximo."
+            ]
+          },
+          "rows": [
+            {
+              "en": [
+                "Blue",
+                "+15"
+              ],
+              "ru": [
+                "Синее",
+                "+15"
+              ],
+              "uk": [
+                "Синя",
+                "+15"
+              ],
+              "tr": [
+                "Mavi",
+                "+15"
+              ],
+              "pt-BR": [
+                "Azul",
+                "+15"
+              ]
+            },
+            {
+              "en": [
+                "Gold",
+                "+20"
+              ],
+              "ru": [
+                "Золотое",
+                "+20"
+              ],
+              "uk": [
+                "Золота",
+                "+20"
+              ],
+              "tr": [
+                "Altın",
+                "+20"
+              ],
+              "pt-BR": [
+                "Ouro",
+                "+20"
+              ]
+            },
+            {
+              "en": [
+                "Orange",
+                "+25"
+              ],
+              "ru": [
+                "Оранжевое",
+                "+25"
+              ],
+              "uk": [
+                "Помаранчева",
+                "+25"
+              ],
+              "tr": [
+                "Turuncu",
+                "+25"
+              ],
+              "pt-BR": [
+                "Laranja",
+                "+25"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            {
+              "en": "<strong>Enhance.</strong> Gold gear has a 100% chance up to +10, after that it drops. A fail never breaks the item — only the materials and kina are spent. Above +15 you also need {i:amplify}, made in Substance Morph from {i:amplify_frag} and {i:enhance}.",
+              "ru": "<strong>Заточка.</strong> Золотая экипировка до +10 точится со 100% шансом, дальше шанс падает. При неудаче вещь не ломается — тратятся только ресурсы и кина. Выше +15 нужен ещё {i:amplify}, он делается в Substance Morph из {i:amplify_frag} и {i:enhance}.",
+              "uk": "<strong>Заточка.</strong> Золота екіпіровка до +10 точиться зі 100% шансом, далі шанс падає. При невдачі річ не ламається — витрачаються лише ресурси й кіна. Вище +15 потрібен ще {i:amplify}, він робиться в Substance Morph із {i:amplify_frag} і {i:enhance}.",
+              "tr": "<strong>Enhance.</strong> Altın ekipmanın +10'a kadar %100 şansı var, sonra düşer. Başarısızlık eşyayı asla kırmaz — yalnızca malzemeler ve kina harcanır. +15'in üstünde ayrıca {i:amplify} gerekir; Substance Morph'ta {i:amplify_frag} ve {i:enhance}'ten yapılır.",
+              "pt-BR": "<strong> Melhorar. </strong> Equipamento de ouro tem uma chance 100% até + 10, depois disso ele cai. Uma falha nunca quebra o item - apenas os materiais e kina são gastos. Acima de + 15 você também precisa de {i:amplify}, feito em substância Morph de {i:amplify_frag} e {i:enhance}."
+            },
+            {
+              "en": "<strong>Manastones.</strong> The number of slots depends on the rarity: white 1, green 2 and so on. There are two kinds — for weapons and armor, and for accessories — each in a normal and a PvP version ({i:mana_sup}).",
+              "ru": "<strong>Манастоуны.</strong> Число слотов зависит от редкости: белая — 1, зелёная — 2 и так далее. Бывают двух видов — для оружия и брони и для бижутерии — и каждый в обычной и PvP-версии ({i:mana_sup}).",
+              "uk": "<strong>Манастоуни.</strong> Кількість слотів залежить від рідкості: біла — 1, зелена — 2 і так далі. Бувають двох видів — для зброї й броні та для біжутерії — і кожен у звичайній і PvP-версії ({i:mana_sup}).",
+              "tr": "<strong>Manastone'lar.</strong> Slot sayısı nadirliğe bağlı: beyaz 1, yeşil 2 ve böyle devam. İki türü var — silah ve zırh için, aksesuarlar için — her biri normal ve PvP sürümüyle ({i:mana_sup}).",
+              "pt-BR": "<strong> Manastones. </strong> O número de slots depende da raridade: 1 branco, 2 verde e assim por diante. Existem dois tipos, para armas e armaduras, e para acessórios, cada um em uma versão normal e PvP ({i:mana_sup})."
+            },
+            {
+              "en": "<strong>Theostones</strong> go into the weapon and the guard: damage, damage over time or control. They trigger with a chance on attack — the higher your combat speed, the more often ({i:theostone}).",
+              "ru": "<strong>Теостоуны</strong> вставляются в оружие и наручи: урон, урон со временем или контроль. Срабатывают с шансом при атаке — чем выше скорость боя, тем чаще ({i:theostone}).",
+              "uk": "<strong>Theostone</strong> вставляються у зброю й наручі: шкода, шкода з часом або контроль. Спрацьовують із шансом під час атаки — чим вища швидкість бою, тим частіше ({i:theostone}).",
+              "tr": "<strong>Theostone'lar</strong> silaha ve korumaya takılır: hasar, zamanla hasar veya kontrol. Saldırıda bir şansla tetiklenirler — savaş hızın ne kadar yüksekse o kadar sık ({i:theostone}).",
+              "pt-BR": "<strong> Theostones </strong> vão para a arma e o guarda: danos, dano contínuo ou controle. Eles disparam com uma chance de ataque. Quanto maior a sua velocidade de combate, mais frequentemente ({i:theostone} )."
+            },
+            {
+              "en": "<strong>Soul Binding.</strong> Tab 1 raises the quality of the stats, tab 2 rerolls them — with any unneeded gold gear or reroll items — tab 3 uses books. {i:sync} comes from the battle pass, hard dungeons and dungeons from 2,800.",
+              "ru": "<strong>Наследие (Soul Binding).</strong> Первая вкладка отвечает за качество статов, вторая их перекидывает — любой ненужной золотой экипировкой или предметами для ролла, третья — книгами. {i:sync} берётся из боевого пропуска, хард-данжей и данжей от 2800.",
+              "uk": "<strong>Спадок (Soul Binding).</strong> Перша вкладка відповідає за якість статів, друга їх перекидає — будь-якою непотрібною золотою екіпіровкою чи предметами для ролу, третя — книгами. {i:sync} береться з бойового пропуску, хард-данжів і данжів від 2 800.",
+              "tr": "<strong>Soul Binding.</strong> 1. sekme statların kalitesini yükseltir, 2. sekme onları yeniden çevirir — gereksiz herhangi bir altın ekipmanla veya çevirme eşyalarıyla — 3. sekme kitap kullanır. {i:sync} battle pass'ten, zor zindanlardan ve 2.800'den itibaren zindanlardan gelir.",
+              "pt-BR": "<strong> Soul Binding. </strong> Tab 1 aumenta a qualidade das estatísticas, tab 2 rerolls - com qualquer equipamento de ouro desnecessário ou itens de reroll - tab 3 usa livros. {i:sync} vem do passe de batalha, masmorras duras e masmorras do 2,800."
+            },
+            {
+              "en": "<strong>Transfer</strong> moves enhancement and stats to another item — see the hardcore route above.",
+              "ru": "<strong>Перенос</strong> переносит заточку и статы на другую вещь — смотри хардкорный путь выше.",
+              "uk": "<strong>Перенесення</strong> переносить заточку й статі на іншу річ — дивись хардкорний шлях вище.",
+              "tr": "<strong>Transfer</strong> güçlendirmeyi ve statları başka bir eşyaya taşır — yukarıdaki hardcore rotaya bak.",
+              "pt-BR": "<strong> Transfer </strong> move realce e estatísticas para outro item - ver a rota hardcore acima."
+            },
+            {
+              "en": "<strong>Titles</strong> each give passive stats; the title info shows how to get one.",
+              "ru": "<strong>Титулы</strong> — каждый даёт пассивные статы; как получить, видно в информации о титуле.",
+              "uk": "<strong>Титули</strong> — кожен дає пасивні статі; як отримати, видно в інформації про титул.",
+              "tr": "<strong>Unvanların</strong> her biri pasif stat verir; unvan bilgisi nasıl alınacağını gösterir.",
+              "pt-BR": "<strong> Títulos </strong> cada um dá estatísticas passivas, a informação do título mostra como obter um."
+            },
+            {
+              "en": "<strong>The season</strong> lasts 2–3 months. Season points buy crafting materials in the season shop.",
+              "ru": "<strong>Сезон</strong> длится 2–3 месяца. За сезонные очки в сезонном магазине покупаются материалы для крафта.",
+              "uk": "<strong>Сезон</strong> триває 2–3 місяці. За сезонні очки в сезонному магазині купуються матеріали для крафту.",
+              "tr": "<strong>Sezon</strong> 2–3 ay sürer. Sezon puanlarıyla sezon mağazasından üretim malzemesi alınır.",
+              "pt-BR": "<strong> A temporada </strong> dura 2 – 3 meses. Pontos da temporada compram materiais de fabricação na loja da temporada."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "all",
+      "title": {
+        "en": "Tips for everyone",
+        "ru": "Советы для всех",
+        "uk": "Поради для всіх",
+        "tr": "Herkes için ipuçları",
+        "pt-BR": "Dicas para todos."
+      },
+      "blocks": [
+        {
+          "type": "p",
+          "at": "14:18",
+          "text": {
+            "en": "<strong>Daily contracts</strong> (Journal → Duty → Mission) reset every day. Only the first random reward is guaranteed; the others are a chance that drops along the list — 100%, 50%, 33%, 25%, 10%.",
+            "ru": "<strong>Ежедневные контракты</strong> (Журнал → Служба → Задания) обновляются каждый день. Гарантирована только первая случайная награда, остальные — шанс, который падает по списку: 100%, 50%, 33%, 25%, 10%.",
+            "uk": "<strong>Щоденні контракти</strong> (Journal → Duty → Mission) оновлюються щодня. Гарантована лише перша випадкова нагорода, решта — шанс, що падає за списком: 100%, 50%, 33%, 25%, 10%.",
+            "tr": "<strong>Günlük kontratlar</strong> (Journal → Duty → Mission) her gün sıfırlanır. Yalnızca ilk rastgele ödül garanti; diğerleri listede düşen bir şans — %100, %50, %33, %25, %10.",
+            "pt-BR": "<strong> Contmouses diários </strong> (Journal → Duty → Missão) reiniciam todos os dias. Apenas a primeira recompensa aleatória é garantida, os outros são uma chance que cai ao longo da lista - 100%, 50%, 33%, 25%, 10%."
+          }
+        },
+        {
+          "type": "list",
+          "items": [
+            {
+              "en": "Take every contract with the <strong>golden key</strong> in slots 1–4.",
+              "ru": "Бери каждый контракт, где <strong>золотой ключ</strong> стоит в слотах 1–4.",
+              "uk": "Бери кожен контракт, де <strong>золотий ключ</strong> стоїть у слотах 1–4.",
+              "tr": "1–4. slotlarda <strong>altın anahtar</strong> olan her kontratı al.",
+              "pt-BR": "Pegue todos os contmouses com a chave dourada <strong> </strong> em slots 1 - 4."
+            },
+            {
+              "en": "No key: short on enhancement stones — the one with the most stones; otherwise the one with the most rainbow and other pet stones.",
+              "ru": "Ключа нет: не хватает камней заточки — бери с наибольшим числом камней; иначе — с наибольшим числом радужных и других камней питомцев.",
+              "uk": "Ключа немає: бракує каменів заточки — бери з найбільшою кількістю каменів; інакше — з найбільшою кількістю райдужних та інших каменів петів.",
+              "tr": "Anahtar yoksa: güçlendirme taşın azsa en çok taş olanı; değilse en çok gökkuşağı ve diğer evcil hayvan taşı olanı.",
+              "pt-BR": "Sem chave: falta de pedras de realce, a que tem mais pedras, caso contrário, a que tem mais arco-íris e outras pedras de estimação."
+            },
+            {
+              "en": "A gold item or resource at the end of the list is almost always a trap — skip those.",
+              "ru": "Золотая вещь или ресурс в конце списка — почти всегда обман, пропускай.",
+              "uk": "Золота річ або ресурс наприкінці списку — майже завжди обман, пропускай.",
+              "tr": "Listenin sonundaki altın eşya veya kaynak neredeyse her zaman tuzaktır — onları atla.",
+              "pt-BR": "Um item ou recurso dourado no final da lista é quase sempre uma armadilha - pule esses."
+            }
+          ]
+        },
+        {
+          "type": "tip",
+          "src": "titan",
+          "text": {
+            "en": "<strong>Hidden cubes</strong> give 1,000 crystals each — pick up every one you pass. <strong>Unbound kina</strong> is for buying materials, not for enhancement.",
+            "ru": "<strong>Скрытые кубы</strong> дают по 1000 кристаллов — забирай каждый по пути. <strong>Непривязанная кина</strong> — на докупку ресурсов, не на заточку.",
+            "uk": "<strong>Приховані куби</strong> дають по 1 000 кристалів — забирай кожен дорогою. <strong>Неприв'язана кіна</strong> — на докупівлю ресурсів, не на заточку.",
+            "tr": "<strong>Gizli küplerin</strong> her biri 1.000 kristal verir — yanından geçtiğin her birini al. <strong>Bağlı olmayan kina</strong> malzeme almak içindir, güçlendirme için değil.",
+            "pt-BR": "<strong> Cubos ocultos </strong> dão cristais 1,000 cada - pegue cada um que você passar. <strong> Unbound kina </strong> é para comprar materiais, não para melhorar."
+          }
+        },
+        {
+          "type": "tip",
+          "at": "15:21",
+          "text": {
+            "en": "<strong>Daily Dungeon and the trials:</strong> don't touch them and don't open their pass boxes if they are handed out at launch. They are being reworked, rewards depend on your score (kill speed), and they refresh only at the end of the week — go then, at your strongest. Weekly world and Abyss rewards are being reworked too; wait for the live numbers.",
+            "ru": "<strong>Daily Dungeon и испытания:</strong> не трогай и не открывай коробки с проходками, если их раздадут на старте. Их переделывают, награда зависит от очков (скорости убийства мобов), а обновляются они только в конце недели — иди туда тогда, на пике силы. Недельные награды в мире и Бездне тоже переделывают — жди живых цифр.",
+            "uk": "<strong>Daily Dungeon і випробування:</strong> не чіпай і не відкривай коробки з перепустками, якщо їх роздадуть на старті. Їх переробляють, нагорода залежить від очок (швидкості вбивства мобів), а оновлюються вони лише наприкінці тижня — іди туди тоді, на піку сили. Тижневі нагороди у світі й Безодні теж переробляють — чекай живих цифр.",
+            "tr": "<strong>Daily Dungeon ve denemeler:</strong> çıkışta dağıtılırsa onlara dokunma ve geçiş kutularını açma. Yeniden düzenleniyorlar, ödüller puanına (öldürme hızına) bağlı ve yalnızca hafta sonunda yenileniyorlar — o zaman, en güçlü hâlinde git. Haftalık dünya ve Abyss ödülleri de yeniden düzenleniyor; canlı sayıları bekle.",
+            "pt-BR": "<strong> Daily Dungeon e os testes: </strong> não os toquem e não abram suas caixas de passe se forem entregues no lançamento. Eles estão sendo retrabalhados, recompensas dependem da sua pontuação (velocidade de morte), e eles se refrescar apenas no final da semana - vá então, em seu mais forte. O mundo semanal e as recompensas de Abyss também estão sendo retrabalhadas. Espere pelos números ao vivo."
+          }
+        },
+        {
+          "type": "h",
+          "text": {
+            "en": "Where else combat power comes from",
+            "ru": "Откуда ещё берётся боевая мощь",
+            "uk": "Звідки ще береться combat power",
+            "tr": "Combat power başka nereden gelir",
+            "pt-BR": "De onde mais vem o poder de combate?"
+          }
+        },
+        {
+          "type": "list",
+          "src": "sywo",
+          "at": "13:20",
+          "items": [
+            {
+              "en": "Stigmas and their levels — the biggest single jump.",
+              "ru": "Стигмы и их уровни — самый большой скачок за раз.",
+              "uk": "Стигми та їхні рівні — найбільший стрибок за раз.",
+              "tr": "Stigmalar ve seviyeleri — tek seferdeki en büyük sıçrama.",
+              "pt-BR": "Estigmas e seus níveis, o maior salto individual."
+            },
+            {
+              "en": "Soul Binding: reroll the stats on your weapon, guard and accessories towards better ones (for example Critical Hit → Attack Speed).",
+              "ru": "Наследие (Soul Binding): перекидывай бонусы на оружии, наручах и аксессуарах на лучшие (например, Critical Hit → Attack Speed).",
+              "uk": "Soul Binding: перекидай бонуси на зброї, guard і аксесуарах на кращі (наприклад, Critical Hit → Attack Speed).",
+              "tr": "Soul Binding: silahındaki, guard'ındaki ve aksesuarlarındaki statları daha iyilerine yeniden çevir (örneğin Critical Hit → Attack Speed).",
+              "pt-BR": "Liga de Almas: rerole as estatísticas de sua arma, guarda e acessórios para melhores (por exemplo, Ataque Crítico → Velocidade de Ataque)."
+            },
+            {
+              "en": "Offensive items past +15 — each step adds Attack %.",
+              "ru": "Атакующие вещи выше +15 — каждый шаг добавляет Attack %.",
+              "uk": "Атакуючі речі вище +15 — кожен крок додає Attack %.",
+              "tr": "+15'in üstündeki saldırı eşyaları — her adım Attack % ekler.",
+              "pt-BR": "Itens ofensivos passados + 15 - cada passo adiciona Ataque %."
+            },
+            {
+              "en": "Titles, Pantheon decorations (Illusion and Wisdom have the best stats) and wings — Vakron or Nightmare wings are great.",
+              "ru": "Титулы, украшения Pantheon (лучшие бонусы у Illusion и Wisdom) и крылья — Вакрона или Кошмара.",
+              "uk": "Титули, прикраси Pantheon (найкращі бонуси в Illusion і Wisdom) і крила — Vakron або Nightmare.",
+              "tr": "Unvanlar, Pantheon süslemeleri (en iyi statlar Illusion ve Wisdom'da) ve kanatlar — Vakron ya da Nightmare kanatları çok iyi.",
+              "pt-BR": "Títulos, decorações Pantheon (Ilusão e Sabedoria têm as melhores estatísticas) e asas - Vakron ou Nightmare asas são grandes."
+            },
+            {
+              "en": "Rerolling the stats on the Pet / Genus Insight branch, and fine-tuning manastones and soulstones towards offensive stats.",
+              "ru": "Перекидывание бонусов на ветке Pet / Genus Insight и настройка манастоунов и soulstone'ов на атакующие бонусы.",
+              "uk": "Перекидання бонусів на гілці Pet / Genus Insight і налаштування манастоунів та soulstone'ів на атакуючі бонуси.",
+              "tr": "Pet / Genus Insight dalındaki statları yeniden çevirmek ve manastone ile soulstone'ları saldırı statlarına göre ayarlamak.",
+              "pt-BR": "Rebobinando as estatísticas do ramo Pet/Genus Insight, e afinando as pedras e as pedras da alma para estatísticas ofensivas."
+            },
+            {
+              "en": "Weapon skins: dismantle them on alts and use Combine on your main — every weapon you unlock adds damage with that weapon type.",
+              "ru": "Скины оружия: разбирай их на твинках и собирай через Combine на мейне — каждое открытое оружие добавляет урона этим типом оружия.",
+              "uk": "Скіни зброї: розбирай їх на альтах і збирай через Combine на мейні — кожна відкрита зброя додає шкоди цим типом зброї.",
+              "tr": "Silah görünümleri: alt karakterlerde parçala ve main'de Combine kullan — açtığın her silah o silah türüyle verdiğin hasarı artırır.",
+              "pt-BR": "Peles de armas: desmontá-las em alts e usar combinar em seu principal - cada arma que você desbloquear adiciona danos com esse tipo de arma."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

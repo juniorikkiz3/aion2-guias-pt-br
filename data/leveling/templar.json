@@ -1,0 +1,247 @@
+{
+  "_note": "Templar leveling steps. [[slug]] = localized skill name, [[slug#N]] = its N-th specialization (data/skills/templar.json). Skill points cap skills at 10 while leveling; specializations unlock at skill level 8. Sources: NoBS Game Guides video, MMO Codex skill order.",
+  "steps": [
+    {
+      "id": "templar-clicks",
+      "order": 2,
+      "skills": [
+        "vicious-strike",
+        "pummel"
+      ],
+      "when": {
+        "en": "Lv 1",
+        "ru": "Ур. 1",
+        "uk": "Рів. 1",
+        "tr": "Sv 1",
+        "pt-BR": "LV 1"
+      },
+      "text": {
+        "en": "All points into [[vicious-strike]] and [[pummel]]. Put Pummel in an in-game macro (10 ms) and hold it together with Vicious Strike — they alternate, and Vicious Strike refills the MP Pummel spends.",
+        "ru": "Все очки в [[vicious-strike]] и [[pummel]]. Поставь Град ударов во встроенный макрос (10 мс) и держи его вместе с Жестоким ударом — они чередуются, и Жестокий удар восполняет ману, которую тратит Град ударов.",
+        "uk": "Усі очки в [[vicious-strike]] і [[pummel]]. Постав Pummel у вбудований макрос (10 мс) і тримай його разом із Vicious Strike — вони чергуються, і Vicious Strike поповнює ману, яку витрачає Pummel.",
+        "tr": "Tüm puanlar [[vicious-strike]] ve [[pummel]]'a. Pummel'ı oyun içi makroya koy (10 ms) ve Vicious Strike ile birlikte basılı tut — sırayla çalışırlar ve Vicious Strike, Pummel'ın harcadığı MP'yi doldurur.",
+        "pt-BR": "Todos os pontos em [[vicious-strike]] e [[pummel]]. Coloque Pummel em uma macro no jogo (10 ms) e mantenha-o junto com Vicious Strike - eles alternam, e Vicious Strike reabastece o MP Pummel gasta."
+      }
+    },
+    {
+      "id": "templar-poach",
+      "order": 3,
+      "skills": [
+        "poach",
+        "warding-strike"
+      ],
+      "when": {
+        "en": "Lv 1–8",
+        "ru": "Ур. 1–8",
+        "uk": "Рів. 1–8",
+        "tr": "Sv 1–8",
+        "pt-BR": "Lv 1 - 8"
+      },
+      "text": {
+        "en": "Then [[poach]] and [[warding-strike]]. At 8 take [[poach#2]] — pull, kill, pull the next one.",
+        "ru": "Дальше [[poach]] и [[warding-strike]]. На 8 бери [[poach#2]] — притянул, убил, тянешь следующего.",
+        "uk": "Далі [[poach]] і [[warding-strike]]. На 8 бери [[poach#2]] — притягнув, убив, тягнеш наступного.",
+        "tr": "Sonra [[poach]] ve [[warding-strike]]. 8'de [[poach#2]] al — çek, öldür, sonrakini çek.",
+        "pt-BR": "Então [[poach]] e [[warding-strike]]. No 8 pegue o [[poach#2]]... puxe, mate, puxe o próximo."
+      }
+    },
+    {
+      "id": "templar-judgment",
+      "order": 90,
+      "skills": [
+        "judgment",
+        "shield-smite"
+      ],
+      "when": {
+        "en": "Judgment unlocked",
+        "ru": "Открыт Суд",
+        "uk": "Відкрито Judgment",
+        "tr": "Judgment açıldı",
+        "pt-BR": "Judgment destrancado."
+      },
+      "text": {
+        "en": "[[judgment]] fires after [[shield-smite]], [[warding-strike]] and Shield Rush. Early on it has a 5s cooldown — space those triggers out and follow each with Judgment.",
+        "ru": "[[judgment]] срабатывает после [[shield-smite]], [[warding-strike]] и рывка щитом. Сначала у него перезарядка 5 сек. — разноси эти триггеры по времени и после каждого жми Суд.",
+        "uk": "[[judgment]] спрацьовує після [[shield-smite]], [[warding-strike]] і Shield Rush. Спершу в нього перезарядка 5 с — розноси ці тригери в часі й після кожного тисни Judgment.",
+        "tr": "[[judgment]], [[shield-smite]], [[warding-strike]] ve Shield Rush'tan sonra tetiklenir. Başta 5 sn bekleme süresi var — bu tetikleyicileri arayla kullan ve her birinin ardından Judgment bas.",
+        "pt-BR": "[[judgment]] dispara após [[shield-smite]], [[warding-strike]] e Shield Rush. No início, ele tem uma recarga 5s - espaço esses gatilhos para fora e siga cada um com Judgment ."
+      }
+    },
+    {
+      "id": "templar-daevanion",
+      "order": 121,
+      "skills": [
+        "judgment",
+        "vicious-strike",
+        "pummel"
+      ],
+      "when": {
+        "en": "Lv 12",
+        "ru": "Ур. 12",
+        "uk": "Рів. 12",
+        "tr": "Sv 12",
+        "pt-BR": "LV 12"
+      },
+      "text": {
+        "en": "Daevanion blue nodes: [[judgment]], [[vicious-strike]] and [[pummel]] first, then [[punishment]].",
+        "ru": "Синие узлы Daevanion: сначала [[judgment]], [[vicious-strike]] и [[pummel]], затем [[punishment]].",
+        "uk": "Сині вузли Daevanion: спершу [[judgment]], [[vicious-strike]] і [[pummel]], потім [[punishment]].",
+        "tr": "Daevanion mavi düğümleri: önce [[judgment]], [[vicious-strike]] ve [[pummel]], sonra [[punishment]].",
+        "pt-BR": "Daevanion nós azuis: [[judgment]], [[vicious-strike]] e [[pummel]] primeiro, depois [[punishment]]."
+      }
+    },
+    {
+      "id": "templar-punishment",
+      "order": 140,
+      "skills": [
+        "punishment"
+      ],
+      "when": {
+        "en": "Lv 14",
+        "ru": "Ур. 14",
+        "uk": "Рів. 14",
+        "tr": "Sv 14",
+        "pt-BR": "LV 14"
+      },
+      "text": {
+        "en": "Start raising [[punishment]]: charge it to stage 3 and open every elite with it.",
+        "ru": "Начинай качать [[punishment]]: заряжай до 3-й стадии и открывай ею каждую элитку.",
+        "uk": "Починай качати [[punishment]]: заряджай до 3-ї стадії й відкривай нею кожну елітку.",
+        "tr": "[[punishment]]'ı yükseltmeye başla: 3. aşamaya şarj et ve her elite onunla başla.",
+        "pt-BR": "Comece a aumentar [[punishment]]: carregue-o para o estágio 3 e abra todas as elites com ele."
+      }
+    },
+    {
+      "id": "templar-specs",
+      "order": 190,
+      "skills": [
+        "vicious-strike",
+        "pummel"
+      ],
+      "when": {
+        "en": "Lv 19",
+        "ru": "Ур. 19",
+        "uk": "Рів. 19",
+        "tr": "Sv 19",
+        "pt-BR": "LV 19"
+      },
+      "text": {
+        "en": "First specializations: [[vicious-strike#0]] and [[pummel#0]]. Mana is tight while leveling; swap to the damage picks from the PvE tab at the cap.",
+        "ru": "Первые особенности: [[vicious-strike#0]] и [[pummel#0]]. На прокачке маны мало; на капе переключись на особенности на урон из вкладки PvE.",
+        "uk": "Перші спеціалізації: [[vicious-strike#0]] і [[pummel#0]]. На прокачці мани мало; на капі перемкнися на спеціалізації на шкоду з вкладки PvE.",
+        "tr": "İlk uzmanlıklar: [[vicious-strike#0]] ve [[pummel#0]]. Seviye atlarken mana kısıtlı; sınırda PvE sekmesindeki hasar seçimlerine geç.",
+        "pt-BR": "Primeiras especializações: [[vicious-strike#0]] e [[pummel#0]]. Mana está firme enquanto nivela, troque para os danos da aba PvE na tampa."
+      }
+    },
+    {
+      "id": "templar-fury",
+      "order": 210,
+      "skills": [
+        "fury"
+      ],
+      "when": {
+        "en": "Lv 21",
+        "ru": "Ур. 21",
+        "uk": "Рів. 21",
+        "tr": "Sv 21",
+        "pt-BR": "LV 21"
+      },
+      "text": {
+        "en": "[[fury]] can take all ten levels — every block buffs you and the party.",
+        "ru": "[[fury]] можно вкачать на все десять уровней — каждый блок баффает тебя и группу.",
+        "uk": "[[fury]] можна вкачати на всі десять рівнів — кожен блок бафає тебе й групу.",
+        "tr": "[[fury]] on seviyenin hepsini alabilir — her blok seni ve grubu bufflar.",
+        "pt-BR": "[[fury]] pode aguentar todos os dez níveis - cada bloco de lustra você ea festa."
+      }
+    },
+    {
+      "id": "templar-stigmas",
+      "order": 221,
+      "skills": [
+        "doom-shield",
+        "battlefield-banner",
+        "taunt"
+      ],
+      "when": {
+        "en": "Lv ~22",
+        "ru": "~Ур. 22",
+        "uk": "~Рів. 22",
+        "tr": "Sv ~22",
+        "pt-BR": "LV ~ 22"
+      },
+      "text": {
+        "en": "Stigmas: [[doom-shield]] first (it triggers Judgment), then [[battlefield-banner]]; add [[taunt]] as soon as you tank dungeons.",
+        "ru": "Стигмы: сначала [[doom-shield]] (запускает Суд), затем [[battlefield-banner]]; [[taunt]] — как только начнёшь танковать данжи.",
+        "uk": "Стигми: спершу [[doom-shield]] (запускає Judgment), потім [[battlefield-banner]]; [[taunt]] — щойно почнеш танкувати данжі.",
+        "tr": "Stigmalar: önce [[doom-shield]] (Judgment'ı tetikler), sonra [[battlefield-banner]]; zindan tanklamaya başlar başlamaz [[taunt]] ekle.",
+        "pt-BR": "Estigmas: [[doom-shield]] primeiro (ele desencadeia Judgment), depois [[battlefield-banner]]; adicione [[taunt]] assim que você afundar masmorras."
+      }
+    },
+    {
+      "id": "templar-clicks10",
+      "order": 250,
+      "skills": [
+        "vicious-strike",
+        "pummel"
+      ],
+      "when": {
+        "en": "Lv 25",
+        "ru": "Ур. 25",
+        "uk": "Рів. 25",
+        "tr": "Sv 25",
+        "pt-BR": "LV 25"
+      },
+      "text": {
+        "en": "[[vicious-strike]] and [[pummel]] reach 10.",
+        "ru": "[[vicious-strike]] и [[pummel]] доходят до 10.",
+        "uk": "[[vicious-strike]] і [[pummel]] доходять до 10.",
+        "tr": "[[vicious-strike]] ve [[pummel]] 10'a ulaşır.",
+        "pt-BR": "[[vicious-strike]] e [[pummel]] alcancem 10."
+      }
+    },
+    {
+      "id": "templar-punish10",
+      "order": 320,
+      "skills": [
+        "punishment"
+      ],
+      "when": {
+        "en": "Lv 32–38",
+        "ru": "Ур. 32–38",
+        "uk": "Рів. 32–38",
+        "tr": "Sv 32–38",
+        "pt-BR": "Lv 32 - 38"
+      },
+      "text": {
+        "en": "[[punishment]] to 8 at 32 and to 10 at 38.",
+        "ru": "[[punishment]] до 8 к 32 и до 10 к 38.",
+        "uk": "[[punishment]] до 8 на 32 і до 10 на 38.",
+        "tr": "[[punishment]] 32'de 8'e ve 38'de 10'a.",
+        "pt-BR": "[[punishment]] para 8 em 32 e 10 em 38."
+      }
+    },
+    {
+      "id": "templar-cap",
+      "order": 455,
+      "skills": [
+        "judgment",
+        "vicious-strike",
+        "pummel"
+      ],
+      "when": {
+        "en": "Cap",
+        "ru": "Кап",
+        "uk": "Кап",
+        "tr": "Sınır",
+        "pt-BR": "Cap."
+      },
+      "text": {
+        "en": "Core to 10 before anything else: [[judgment]], [[vicious-strike]], [[pummel]], [[punishment]]. Then switch to the PvE tab.",
+        "ru": "Основу до 10 раньше всего: [[judgment]], [[vicious-strike]], [[pummel]], [[punishment]]. Дальше — вкладка PvE.",
+        "uk": "Основу до 10 раніше за все: [[judgment]], [[vicious-strike]], [[pummel]], [[punishment]]. Далі — вкладка PvE.",
+        "tr": "Her şeyden önce temel 10'a: [[judgment]], [[vicious-strike]], [[pummel]], [[punishment]]. Sonra PvE sekmesine geç.",
+        "pt-BR": "Núcleo para 10 antes de qualquer outra coisa: [[judgment]], [[vicious-strike]], [[pummel]], [[punishment]]. Então mude para a aba PvE."
+      }
+    }
+  ]
+}

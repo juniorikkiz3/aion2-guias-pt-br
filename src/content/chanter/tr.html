@@ -1,0 +1,226 @@
+{% from "macros.html" import section, skill, core, loadout, passives, glance, hotline, macroseq, hotbar, dv_board with context %}
+
+{# ============================== PvE ============================== #}
+{% call glance('pve') %}
+  <h3>{{ t.core_skills }}</h3>
+  {{ core([('dark-crush', '16 → 20'), ('onslaught', '16 → 20'), ('spinning-strike', '16 → 20'), ('incandescent-blow', '16'), ('recuperation', '12')]) }}
+  <h3>{{ t.stigma_loadout }}</h3>
+  {{ loadout([('undefeated-mantra', 20), ('power-of-the-storm', 5), ('marchutans-wrath', 1), ('focused-defense', 5)]) }}
+  <h3>{{ t.key_passives }}</h3>
+  {{ passives(['attack-preparation', 'inspiring-spell', 'winds-promise', 'impact-hit']) }}
+{% endcall %}
+
+{% call section('intro', 'Genel bakış', 'pve') %}
+  <p>Chanter asayla yakın dövüşte savaşır ve aynı anda tüm grubu güçlendirir: her grubun istediği bir buffer ve yedek şifacı. En yüksek hasarı bekleme — eşit ekipmanla Chanter ve Cleric en düşük hasar veren iki sınıf — ama grup daha sert vurur, daha az ölür ve debuffları temizlenir.</p>
+  <div class="callout accent">
+    <h3>Tek cümlede build</h3>
+    <p>{{ s('undefeated-mantra') }}'yı açık tut ve makroyu {{ s('spinning-strike') }}, {{ s('marchutans-wrath') }} ve {{ s('impactful-crush') }}'ın {{ s('dark-crush') }}'ı tekrar tekrar açtığı satırda basılı tut; her vuruşun arasına {{ s('onslaught') }}'u ör.</p>
+  </div>
+  <p><strong>Dark Crush nasıl çalışır:</strong> yalnızca menzilli bir yetenekten sonra kısa bir süre kullanılabilir — {{ s('spinning-strike') }} veya {{ s('impactful-crush') }}'tan sonra 2 saniye, {{ s('marchutans-wrath') }}'tan sonra 3 saniye. Yetenek seviyesi 16'da kendi bekleme süresi kalkar, böylece o pencerede ona tekrar tekrar basarsın. Builddeki her şey o pencereyi açık tutmakla ilgili.</p>
+  <p class="note">PvE modu, Arthars Gaming'in global çıkış için Chanter başlangıç rehberini (video, 26 Eylül; Tayvan sunucusunda sınıfta sekiz ay) kare kare izliyor. Grobs'un Chanter PvE rehberiyle (İngilizce, global, 5 Ekim) karşılaştırıldı.</p>
+{% endcall %}
+
+{% call section('global', 'Global Season 1: neler değişiyor', 'pve pvp') %}
+  <p>Global sunucular <strong>5 Ekim 2026</strong>'da açılıyor (Founder erken erişimi 30 Eylül'den itibaren). Bunun Chanter için anlamı:</p>
+  <div class="callout">
+    <ul>
+      <li><strong>4 stigma slotu, sınır 20.</strong> Chanter'ın slottan fazla işe yarar stigması var, bu yüzden aldığın dördü gerçek bir seçim (Stigmalar'a bak).</li>
+      <li><strong>Başta az bekleme süresi azaltma ve savaş hızı.</strong> Bekleme süresini kısaltan her uzmanlık daha değerli ve dövüşler Tayvan'dakinden uzun sürer.</li>
+      <li><strong>Season 1'de yetenek seviyesi 20'ye ulaşmak zor.</strong> Önce ana yeteneklerde 16'yı planla; 20 sonra arcana'dan gelir.</li>
+      <li><strong>Daha büyük gruplar</strong> (5 kişilik expeditionlar, 10 kişilik sanctuary'ler): grupta Cleric varsa mantran Light of Protection ile üst üste binmez (aynı seviyede seninki kazanır) ve Wave Blow'un debuffı Cleric'in Debilitating Mark'ıyla üst üste binmez.</li>
+      <li data-only="pvp"><strong>PvP:</strong> herkes aynı sınırlı ekipmanla başlar ve henüz bir meta oluşmadı.</li>
+    </ul>
+  </div>
+  <p class="note">Aktif yetenekler ve pasifler global ve KR/TW verilerinde aynı; stigmalar 25. seviye kademesini kaybediyor.</p>
+{% endcall %}
+
+{% call section('skills', 'Yetenekler', 'pve') %}
+  <p>Yalnızca üç yetenek seviyesi önemli: <strong>12, 16 ve 20</strong> — yeni bir uzmanlığın veya slotun açıldığı yerler; aradaki bir seviye neredeyse hiçbir şey eklemez. Yetenek puanları 10, Daevanion +4, iki yüzük +2, arcana geri kalanını verir. Önce ana yetenekleri <strong>16</strong>'ya çıkar.</p>
+  <ul class="skill-grid">
+    {% call skill('dark-crush', 'must', '16 → 20', [3, 4], then=[2]) %}Ana hasarın ve 16'ya çıkarılacak ilk yetenek: bekleme süresi kalkmadan sınıf çalışmaz. 20'de garantili kritiği ekle — o zaman her Dark Crush tam Wind's Promise bonusunu alır.{% endcall %}
+    {% call skill('onslaught', 'must', '16 → 20', [3, 4], then=[2]) %}Her şeyin arasına ördüğün temel saldırı: MP yeniler, Spinning Strike'ın bekleme süresini kısaltır ve 16'da Storm Chain ekler. 20'deki üçüncü seçim senin: hasar veya HP emme.{% endcall %}
+    {% call skill('spinning-strike', 'must', '16 → 20', [0, 2], then=[4]) %}En sert vuruşlarından biri: 30 sn boyunca biriken +%15 Critical Damage, ve Dark Crush'ı açar. 20'de Block ve Evasion'ı yok sayan ve hep kritik vuran seçimi ekle. İyileştirme artışını atla — ana şifacı sen değilsin. Grobs bu seçimi daha 16'da alıyor ve −5 sn'yi bırakıyor.{% endcall %}
+    {% call skill('incandescent-blow', 'must', '16', [2, 4]) %}Dark Crush kapalıyken dolgu: tek hedefte +%12 ve Multi-Hit. İyi bir üçüncü seçim yok, bu yüzden 16 yeterli.{% endcall %}
+    {% call skill('recuperation', 'must', '12', [0, 3]) %}Stigmalar dışındaki tek iyileştirmen ve temizleyicin. 12 yeterli (notXeon, WallyJTV): +%5 HP — temel iyileştirme sabit bir sayı — ve ikinci bir hak. Debuff ağırlıklı dövüşlerde hakkı iki debuff temizlemeyle değiştir; −3 sn için 16'ya yalnızca tek şifacıysan çık. Grobs 16'ya çıkıp +%5 HP yerine −3 sn alıyor.{% endcall %}
+    {% call skill('defiance', 'must', '16', [3, 4]) %}Kontrol kırıcı: tüm süre boyunca %50 hasar toleransıyla +2 sn Tenacity — mekaniklerin içinde durabileceğin yedi saniye.{% endcall %}
+    {% call skill('impactful-crush', 'opt', '12', [2, 3]) %}Dark Crush'ı açan menzilli yetenek; hareketli ve daha hızlı. 12 yeterli — 16. seviye seçimi PvP için.{% endcall %}
+    {% call skill('wave-blow', 'opt', '12', [1, 3]) %}10 sn boyunca bossa −%15 hasar ve 10 m erişim. Animasyonu kötü örülür: yalnızca bir boşluk olduğunda bas, asla Dark Crush yerine.{% endcall %}
+    {% call skill('rushing-smash', 'opt', '12', [2, 3]) %}Öldürmede sıfırlanan mesafe kapatıcı — gruptan gruba atıl. Şarj seçimini asla alma: şarjlı yetenekler hasar kaybıdır.{% endcall %}
+    {% call skill('tremor-crush', 'opt', '12', [0, 1]) %}Stamina'sını geri ödeyen kaçınma ve 20 m mesafe kapatıcı.{% endcall %}
+    {% call skill('heat-wave-blow', 'opt', '12', [2, 3]) %}Sert vurur, ama rotasyonu Dark Crush taşıdığından PvE'de ona nadiren vakit bulursun.{% endcall %}
+    {% call skill('gust-rampage', 'skip', '0–8') %}Yalnızca Stagger'daki hedeflerde ve bir boss dövüş başına iki üç kez stagger'a girer — Season 1'de puanlara değmez.{% endcall %}
+  </ul>
+{% endcall %}
+
+{% call section('passives', 'Pasifler', 'pve') %}
+  <p>Neredeyse her pasifi maksimuma çıkaracak kadar yetenek puanı var. Ekipman satırları kıt, o yüzden ilk üçüne koy.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Pasif</th><th>Öncelik</th><th>Neden</th></tr></thead>
+    <tbody>
+      <tr><td>{{ s('attack-preparation') }}</td><td>1 · maks</td><td>Sabit PvE Damage Boost, Defense ve Accuracy — her zaman çalışır.</td></tr>
+      <tr><td>{{ s('inspiring-spell') }}</td><td>2 · maks</td><td>Critical Hit ve Perfect Chance. Wind's Promise yalnızca kritiklerde karşılığını verir, bu yüzden bu önce gelir (notXeon, WallyJTV).</td></tr>
+      <tr><td>{{ s('winds-promise') }}</td><td>3 · maks</td><td>Critical Damage Boost ve ek hasar; Dark Crush'ın garantili kritiğiyle eşleşir. Seviye kapısı yok — eline geçer geçmez maksimuma çıkar.</td></tr>
+      <tr><td>{{ s('impact-hit') }}</td><td>4 · maks</td><td>Double Chance — doğrudan hasar artışı.</td></tr>
+      <tr><td>{{ s('protection-circle') }}</td><td>maks</td><td>HP'n yarının altına düşünce büyük bir kalkan ve her vuruşta grup için küçük bir kalkan — en iyi savunma pasifi ve hasar pasiflerinden sonraki ilki.</td></tr>
+      <tr><td>{{ s('earths-promise') }}</td><td>5</td><td>Hedefte −PvE Damage Tolerance, ama zamanın yaklaşık yarısında açık ve Cleric'in Chain of Torment'ıyla örtüşüyor.</td></tr>
+      <tr><td>{{ s('blessing-of-life') }}, {{ s('survival-willpower') }}</td><td>yalnızca puanlar</td><td>Yetenek puanlarıyla bedava maksimuma çıkar; ekipman satırı harcama.</td></tr>
+      <tr><td>{{ s('crossguard') }}, {{ s('raging-spell') }}</td><td>atla</td><td>PvE'de neredeyse hiçbir şey yapmazlar — ekipmanından çevirip at.</td></tr>
+    </tbody>
+  </table></div>
+{% endcall %}
+
+{% call section('gear', 'Ekipman ve statlar', 'pve') %}
+  <div class="callout"><ul>
+    <li><strong>Yüzükler:</strong> aktif yeteneklerin tek yeri — ana yetenekleri 14'ten 16'ya çıkaran dört beş satır (üretilmiş yüzüklerde bir fazla).</li>
+    <li><strong>Silah ve koruma:</strong> oraya asla yetenek koyma — hasar satırları daha değerli.</li>
+    <li><strong>Pasifler</strong> diğer parçalardan gelir. Global ekipmanda orada Might, Precision ve Combat Speed de çıkıyor, bu yüzden Tayvan'dakinden daha az pasif satırı bekle.</li>
+    <li><strong>Accuracy</strong> başta kısa: onsuz bosslara arkadan vurmak zorunda kalırsın ve parry yersin.</li>
+    <li><strong>Manastone'lar:</strong> Attack, Critical Hit, Accuracy. <strong>Koruma</strong> (yan el) +10'a.</li>
+  </ul></div>
+{% endcall %}
+
+{% call section('arcana', 'Arcana', 'pve') %}
+  <p>Season 1'de beş kart ve iki set var. Arthars'ın seçimi üç Primal Vigor kartı artı Magic Armor'dan Bell ve Mirror; dört Primal Vigor kartı (+150 PvE Attack) da çalışır.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Kart</th><th>Stat</th><th>Set</th><th>Neyi çevirmeli</th></tr></thead>
+    <tbody>
+      <tr><td>Chalice</td><td>Time (Combat Speed)</td><td>Primal Vigor</td><td>Hâlâ 20'nin altında olan ana yetenek</td></tr>
+      <tr><td>Parchment</td><td>Life</td><td>Primal Vigor</td><td>{{ s('dark-crush') }}, {{ s('onslaught') }}, {{ s('spinning-strike') }}</td></tr>
+      <tr><td>Compass</td><td>Freedom (Accuracy)</td><td>Primal Vigor</td><td>{{ s('incandescent-blow') }}, {{ s('recuperation') }}; {{ s('defiance') }} da olur</td></tr>
+      <tr><td>Bell</td><td>Destruction (Attack)</td><td>Magic Armor</td><td>{{ s('attack-preparation') }}</td></tr>
+      <tr><td>Mirror</td><td>Wisdom (Double Chance)</td><td>Magic Armor</td><td>{{ s('impact-hit') }}, {{ s('winds-promise') }}</td></tr>
+    </tbody>
+  </table></div>
+  <p>Bir kartı geliştirmek yeteneklerine rastgele +4'e kadar ekler — yaklaşık <strong>+2</strong> planla. Bu yeterli: puanlardan 10, Daevanion'dan 4 ve bir karttan 2 eder 16, yüzük satırları da başka yeteneklere gider.</p>
+  <p class="note">Bu kartlara fazla harcama: Season 2 yeni kartlar getirir getirmez değişirler. Mirror'da Illusion (bekleme süreleri), Wisdom'a tam destek alternatifi.</p>
+{% endcall %}
+
+{% call section('daevanion', 'Daevanion panoları', 'pve pvp') %}
+  <p>Daevanion yeteneklerini 10'dan 14'e çıkarır ve stat ekler. Her mavi düğüm yeteneğine <strong>+1 seviye</strong> verir.</p>
+  <div class="callout"><ul>
+    <li data-only="pve"><strong>Öncelik:</strong> {{ s('dark-crush') }}, {{ s('onslaught') }}, {{ s('spinning-strike') }} ve {{ s('incandescent-blow') }} için mavi düğümler, sonra turuncu düğümler.</li>
+    <li data-only="pvp"><strong>Öncelik:</strong> {{ s('impactful-crush') }}, {{ s('wave-blow') }}, {{ s('defiance') }} için mavi düğümler.</li>
+    <li data-only="pve"><strong>Global'de Ariel yok:</strong> beş pano var ve 45. seviyedeki Azphel yalnızca PvP Damage Boost ve Tolerance veriyor — PvE'de ilk dördünü bitir.</li>
+    <li data-only="pvp"><strong>Azphel</strong> (45. seviye) tamamen PvP Damage Boost ve Tolerance — al, Triniel'i de daha erken.</li>
+  </ul></div>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Pano</th><th>Açılış</th><th>Turuncu düğümler</th></tr></thead>
+    <tbody>
+      <tr><td>Nezekan</td><td>Sv 12</td><td>Combat Speed, Cooldown Reduction</td></tr>
+      <tr><td>Zikel</td><td>Sv 20</td><td>Damage Boost, Damage Tolerance</td></tr>
+      <tr><td>Vaizel</td><td>Sv 30</td><td>Critical Damage Boost ve Tolerance</td></tr>
+      <tr><td>Triniel</td><td>Sv 40</td><td>Multi-Hit Chance ve Resist</td></tr>
+      <tr><td>Azphel</td><td>Sv 45</td><td>PvP Damage Boost ve Tolerance — yetenek düğümü yok</td></tr>
+    </tbody>
+  </table></div>
+  <h3>Panolardaki rota</h3>
+  <p>Oyun verilerinden gerçek global panolar. Altın renk, Start'tan bu rehberin aldığı düğümlere — öncelikli yeteneklerin mavi düğümleri ve turuncu düğümler — giden en ucuz yolu gösterir; ne verdiğini görmek için herhangi bir düğümün üzerine gel.</p>
+  <div data-only="pve">{{ dv_board('pve') }}</div>
+  <div data-only="pvp">{{ dv_board('pvp') }}</div>
+  <p class="note">Panolar ve maliyetler global istemci verilerinden (questlog.gg) geliyor; yol videodan alınmadı, hesaplandı. Stat değerleri çıkışta hâlâ değişebilir — tam bir rotaya girmeden önce oyundaki panoyu kontrol et.</p>
+{% endcall %}
+
+{% call section('stigmas', 'Stigmalar', 'pve') %}
+  <p>Üçü sabit; dördüncüsü bir seçim. Onları bu sırayla geliştir — Undefeated Mantra 20 her şeyden önce gelir.</p>
+  <ul class="skill-grid">
+    {% call skill('undefeated-mantra', 'must', 'Sv 20', upto=20) %}Bir grubun Chanter almasının nedeni: herkese PvE hasarı ve toleransı, Critical Hit, Accuracy, Critical Damage ve Double Chance. Önce 20'ye ve çubuğundan asla çıkmaz.{% endcall %}
+    {% call skill('marchutans-wrath', 'must', 'Sv 1', upto=1) %}Dark Crush'ı 3 saniye açan üçüncü bir menzilli yetenek — Dark Crush süreni neredeyse ikiye katlar. Bir puan yeterli: üst kademeler PvP için.{% endcall %}
+    {% call skill('focused-defense', 'must', 'Sv 5', upto=5) %}5. seviyede iki haklı bir blok. Hafife alınıyor: bir yakın dövüşçünün kaçmak yerine saldırıların çoğunda bossta kalmasını sağlar.{% endcall %}
+    {% call skill('sprint-mantra', 'opt', 'Sv 10', upto=10) %}Hareket hızı, +%10 gelen iyileştirme ve stamina yenilenmesi, böylece grup neredeyse sınırsız kaçınabilir — notXeon zindanlarda ve farmda kullanıyor, PvP'de çıkarıyor. İyileştirmesi önemsiz — 10'un üstüne çıkarma. Grobs onu hep, Focused Defense yerine kullanıyor: Chanter'la grup saldırıların çoğundan çıkar ve her vuruşun %15 şansla grubu iyileştirme ihtimali var.{% endcall %}
+    {% call skill('power-of-the-storm', 'must', 'Sv 5 → 20', upto=20) %}10 sn boyunca +%20 Combat Speed ve −%20 bekleme süreleri (grup +%20 ve −%10 alır). notXeon her tür içerikte alıyor: kimsenin Combat Speed'i yokken en büyük hasar bufflarından biri. 5. seviye bekleme süresini 30 sn kısaltır; 20 sana ve gruba Attack ekler. Grobs'un sırası: bunu 5'e, sonra Undefeated Mantra'yı 20'ye, sonra geri kalanı.{% endcall %}
+    {% call skill('healing-touch', 'opt', 'Cleric yoksa', upto=15) %}Güçlü acil iyileştirme: düşük HP'de daha fazla ve 15'te beş debuff kaldırır. Tek şifacı sensen veya dövüş debuff ağırlıklıysa al. Grobs o zaman bile almıyor: 30 saniyelik bekleme süresi için çok az iyileştirir — daha çok hasar ve buff gruba daha çok yardım eder.{% endcall %}
+    {% call skill('impeding-authority', 'opt', 'ilerleme', upto=15) %}Grup için bir kalkan — grup hâlâ bir dövüşü öğrenirken daha fazla etkili HP.{% endcall %}
+    {% call skill('guardian-blessing', 'opt', 'slot yok', upto=15) %}15'te ×1,5 Wind's Promise gerçek bir hasar kazancı, ama dört slotla Season 1'de ona yer yok.{% endcall %}
+    {% call skill('obliterate', 'opt', 'stagger', upto=5) %}Seviye atlarken gruplar için alan yere düşürmesi. WallyJTV stagger kontrolü olan bosslar için sınırda tutuyor: grubun ihtiyacı olduğunda 50 Stagger Gauge Damage.{% endcall %}
+  </ul>
+  <p class="note">Mantralar aç/kapa yetenekler: bir kez aç ve hiçbir makroya koyma — ikinci basış onları kapatır. {{ s('barrier-spell') }}, {{ s('ensnaring-mark') }}, ve {{ s('assault-shock') }}'un PvE'de yeri yok. {{ s('fracturing-blow') }}, sezon başında hazır kurulmuş bir grup için Grobs'un seçimi: Defense sabit bir azaltma, bu yüzden ekipman zayıfken onu düşürmek en değerlisi.</p>
+{% endcall %}
+
+{% call section('macro', 'Makro ve rotasyon', 'pve') %}
+  <p>AION 2'de iki ayrı araç var:</p>
+  <ul>
+    <li><strong>Hızlı erişim satırı</strong> — <em>tek</em> bir hızlı erişim düğmesine üst üste dizilmiş birkaç yetenek. Basınca hazır olan en yüksek öncelikli yeteneği kullanır ve AION 2'de <strong>en alttaki slot en yüksek önceliğe sahiptir</strong>. Kartlar her satırı oyundaki gibi yukarıdan aşağıya gösterir.</li>
+    <li><strong>Oyun içi makro</strong> — tuşunu basılı tuttuğun sürece hızlı erişim düğmelerine sırayla basar ve animasyon kuyruklarını iptal eder. Bekleme süresindeki yetenekler atlanır.</li>
+  </ul>
+  {{ hotbar([('1', []), ('2', []), ('3', ['undefeated-mantra']), ('4', ['sprint-mantra']), None, ('Q', ['recuperation']), ('E', ['power-of-the-storm']), ('R', []), ('F', ['rushing-smash', 'tremor-crush']), None, ('Yan 2', []), ('Yan', ['dark-crush', 'spinning-strike', 'marchutans-wrath', 'impactful-crush']), ('LMB', ['onslaught']), ('—', ['incandescent-blow'])], macro=['Yan', '—'], own_keys=true) }}
+
+  <h3>1. Kısayol satırları</h3>
+  <p>Grobs'un global düzeni (kare 19:05): üç açıcı da en altta {{ s('dark-crush') }} olan tek bir satırda, böylece her açıcıdan sonra satır doğrudan Dark Crush'a döner; Incandescent Blow'un kendi satırı var.</p>
+  <div class="hotlines">
+    {% call hotline('Yan', 'Dark Crush satırı', ['dark-crush', 'spinning-strike', 'marchutans-wrath', 'impactful-crush']) %}Penceresi açıkken Dark Crush; kapanınca onu yine Spinning Strike açar, sonra Marchutan's Wrath, sonra Impactful Crush.{% endcall %}
+    {{ hotline('—', 'Dolgu', ['incandescent-blow']) }}
+  </div>
+  <p>Makronun dışında — çubuğunun geri kalanı:</p>
+  <div class="hotlines">
+    {% call hotline('F', 'Atılma satırı', ['rushing-smash', 'tremor-crush']) %}Rushing Smash (öldürmede sıfırlanır), o bekleme süresindeyken Tremor Crush.{% endcall %}
+  </div>
+  <ul class="presslist">
+    <li><span class="press-how">Kendi tuşları</span><span class="press-what"><span class="key">LMB</span> {{ s('onslaught') }}, <span class="key">3</span> {{ s('undefeated-mantra') }} ve <span class="key">4</span> {{ s('sprint-mantra') }} (aç/kapa — bir kez aç), <span class="key">Q</span> {{ s('recuperation') }}, <span class="key">E</span> {{ s('power-of-the-storm') }}.</span></li>
+  </ul>
+  <p class="note">Dark Crush 16'ya ulaşmadan önce bekleme süresi bu satırı bozar: makro, Dark Crush hâlâ beklemedeyken açıcıları harcar ve 3 saniyelik pencere boşa gider. notXeon'un o zamana kadarki çözümü: bir açıcıyı kendi tuşunda tut ve Dark Crush yeniden hazır olduğu anda kendin bas.</p>
+
+  <h3>2. Oyun içi makro</h3>
+  <p>İki adım, her biri <strong>10 ms</strong>, sürekli basılı tutabileceğin bir tuşta (çoğu oyuncu <span class="key">RMB</span> kullanır):</p>
+  {{ macroseq([('Dark Crush satırı', '10 ms'), ('Dolgu', '10 ms')]) }}
+
+  <h3>3. Gerçekte neye basıyorsun</h3>
+  <ul class="presslist">
+    <li><span class="press-how">Açılış</span><span class="press-what">Önce {{ s('power-of-the-storm') }}, boss'a {{ s('rushing-smash') }}, sonra makro.</span></li>
+    <li><span class="press-how">Basılı tut</span><span class="press-what">Makro tuşunu <span class="key">LMB</span>'deki {{ s('onslaught') }} ile birlikte — Onslaught her adımın arasına örülür. Bütün açıcılar bekleme süresindeyken makro Incandescent Blow'a geçer.</span></li>
+    <li><span class="press-how">Elle</span><span class="press-what">Grup HP kaybedince ya da temizlik gerekince {{ s('recuperation') }}, yalnızca boşlukta {{ s('wave-blow') }}, atılmalar.</span></li>
+  </ul>
+
+  <h3>Diğer seçenek: Arthars'ın satırı</h3>
+  <p>İçinde Incandescent Blow olan tek bir satır ve kendi tuşunda {{ s('marchutans-wrath') }}; makro satıra, sonra Onslaught'a basar.</p>
+  <div class="hotlines">
+    {% call hotline('E', 'Dark Crush satırı', ['dark-crush', 'spinning-strike', 'impactful-crush', 'incandescent-blow']) %}Dark Crush penceresi her açık olduğunda tetiklenir. Kapanınca Spinning Strike onu yeniden açar, sonra Impactful Crush; ikisi de bekleme süresindeyken Incandescent Blow doldurur.{% endcall %}
+  </div>
+  <p class="note">{{ s('marchutans-wrath') }}'ı bu satırın <strong>dışında</strong> tut. Kendi tuşunda o senin yedeğin: iki menzilli yetenek de bekleme süresindeyken veya bosstan uzaklaşmak zorunda kaldıktan hemen sonra Dark Crush'ı açmanın bir yolu. Satırda olsaydı Incandescent Blow'u rotasyondan iterdi.</p>
+  {{ macroseq([('Dark Crush satırı', '10 ms'), (skill_data('onslaught')[lang].name, '10 ms')]) }}
+  <p class="note">Bu satırla Onslaught'u ve satır tuşunu kendin de spamla — basışların makronun adımları arasına düşer; büyük vuruşlarda {{ s('focused-defense') }}.</p>
+  <p class="note">Arthars'ın testinde hasar nereden geliyor: Dark Crush ve Piercing Strike devamı yaklaşık %40, sonra Bursting Blow, Storm Chain, Incandescent Blow ve Spinning Strike her biri yaklaşık %10. Dark Crush'ın önce 16'ya gitmesi ve Onslaught'un Storm Chain'e ihtiyaç duyması bu yüzden.</p>
+{% endcall %}
+
+{% call section('recap', 'Özet', 'pve') %}
+  <div class="callout accent"><ul>
+    <li><strong>Yetenekler:</strong> Dark Crush, Onslaught, Spinning Strike 16 → 20; Incandescent Blow, Defiance 16; Recuperation ve geri kalanı 12.</li>
+    <li><strong>Stigmalar:</strong> Undefeated Mantra 20, Power of the Storm 5 → 20, Marchutan's Wrath 1, Focused Defense 5; zindanlarda Sprint Mantra, stagger kontrolleri için Obliterate.</li>
+    <li><strong>Pasifler:</strong> Attack Preparation, Inspiring Spell, Wind's Promise, Impact Hit; Protection Circle maksimuma.</li>
+    <li><strong>Makro:</strong> üç açıcının hepsiyle Dark Crush satırı → Incandescent Blow, Onslaught LMB'de basılı.</li>
+  </ul></div>
+{% endcall %}
+
+{# ============================ Leveling ============================ #}
+{% call section('fight-lvl', t.lvl_combat, 'lvl') %}
+  <div class="callout"><ul>
+    <li><strong>Gruplar:</strong> {{ s('rushing-smash') }} ile gir (öldürmede sıfırlanır) → {{ s('obliterate') }} → Crush satırı + {{ s('onslaught') }}.</li>
+    <li><strong>Elitler:</strong> {{ s('impactful-crush') }} (sersemletme) → {{ s('dark-crush') }} → {{ s('wave-blow') }} → {{ s('spinning-strike') }} → yeniden Dark Crush.</li>
+    <li><strong>Mana:</strong> Onslaught her vuruşta MP yeniler — araya örmeyi asla bırakma.</li>
+    <li><strong>Düşük HP:</strong> {{ s('recuperation') }}, ve Sprint Mantra vuruşlarda iyileştirir.</li>
+  </ul></div>
+{% endcall %}
+
+{% call section('macro-lvl', 'Seviye makrosu', 'lvl') %}
+  <p>Seviye atlarken, Dark Crush 16'ya ulaşmadan önce daha basit bir düzen 1. seviyeden çalışır: RMB'de Crush satırı, LMB'de Onslaught ve orta fare tuşunda oyun içi makro (Power of the Storm → Onslaught → Wave satırı → Onslaught). 1–45 erken build: Onslaught, Incandescent Blow, Spinning Strike ve Rushing Smash 12'ye, geri kalan her şey 8'e.</p>
+  <div class="hotlines">
+    {{ hotline('RMB', 'Crush satırı', ['impactful-crush', 'dark-crush', 'spinning-strike', 'incandescent-blow']) }}
+  </div>
+  <p><strong>Grobs'un erken düzeni:</strong> tek satır — Dark Crush, Spinning Strike, Incandescent Blow — <span class="key">LMB</span> ve makro birlikte basılı. Dark Crush yeniden hazır olur olmaz {{ s('impactful-crush') }}'a kendin bas, böylece makro Spinning Strike'ı beklemez. Onslaught HP emme ve Multi-Hit alır; Impactful Crush'a mobil seçimle 8. seviye yeter.</p>
+  <p><a href="https://aion2t.com/ru/simulator?job=9&amp;b=S5RCtE" target="_blank" rel="noopener">1–45 başlangıç buildi (aion2t) →</a> · <a href="https://aion2t.com/ru/simulator?job=9&amp;b=yDzsiQ" target="_blank" rel="noopener">45+ hedef buildi →</a></p>
+{% endcall %}
+
+{# ============================ Sources ============================ #}
+<section class="sources" aria-labelledby="h-sources">
+  <h2 id="h-sources">{{ t.sources }}</h2>
+  <ul>
+    <li><a href="https://www.youtube.com/watch?v=7qMgsnSsmIU" target="_blank" rel="noopener">Arthars Gaming — The ULTIMATE AION 2 Chanter Starter Guide! (Global Launch)</a> — PvE modu: yetenek seviyeleri ve uzmanlıklar, pasifler, arcana, stigmalar, hızlı erişim satırı ve makro</li>
+    <li><a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ0C3iKFteGvIbgqNDnQq7bmwIaU23DvjbPa0HPSVAdOOiCeBkEq69Cn8jVMJhToJcztCRylYeTYfOk/pubhtml" target="_blank" rel="noopener">TitanTheF — AION 2 progression sheet</a> (Chanter sekmesi) — seviye buildi ve makro, manastone'lar</li>
+    <li><a href="https://aion2t.com/ru/simulator?job=9&amp;b=yDzsiQ" target="_blank" rel="noopener">aion2t.com</a> — TitanTheF'in başlangıç ve 45+ buildleri (yetenek seviyeleri, uzmanlıklar, stigmalar, pasifler)</li>
+    <li><a href="https://questlog.gg/aion-2/en/db/skills/chanter" target="_blank" rel="noopener">questlog.gg</a> — global istemciden yetenek verileri</li>
+    <li><a href="https://www.youtube.com/watch?v=HMod6Z4GrE0" target="_blank" rel="noopener">Grobs — AION 2 Macro Guide</a> — hızlı erişim satırları ve oyun içi makro nasıl çalışır</li>
+    <li><a href="https://www.youtube.com/watch?v=aqv5kWXqtIw" target="_blank" rel="noopener">notXeon — The ONLY Chanter Skill Guide You'll Ever Need</a> — önce 16'ya ne alınır, pasif önceliği, her tür içerik için stigmalar, Dark Crush 16'dan önceki makro ipucu</li>
+    <li><a href="https://www.youtube.com/watch?v=2qTjfkuzdj4" target="_blank" rel="noopener">Grobs — The Only Chanter PVE Guide You Need</a> — 16'da global seçimler, Sprint Mantra, stigma sırası, kısayol satırı ve erken düzen</li>
+    <li><a href="https://www.youtube.com/watch?v=zxq03c3NhEw" target="_blank" rel="noopener">WallyJTV — Aion 2 CHANTER Global Skill Guide</a> — global değişiklikler, PvE ve PvP için uzmanlıklar, stagger kontrolleri için Obliterate'li stigmalar</li>
+  </ul>
+  <p class="sources-all"><a href="{{ root }}{{ lang }}/sources/">{{ t.src_all }} →</a></p>
+</section>

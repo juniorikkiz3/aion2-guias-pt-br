@@ -1,0 +1,2156 @@
+{
+  "shadowstep": {
+    "id": "13140000",
+    "category": "stigma",
+    "icon": "shadowstep.webp",
+    "cooldown": 45000,
+    "en": {
+      "name": "Shadowstep",
+      "desc": "Deals {se_dmg:1314000021:SkillUIMinDmgsum}-{se_dmg:1314000021:SkillUIMaxDmgsum} damage to a target within 4m. The caster moves back and gains Stealth for 3s.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "40% chance to rotate and inflict Stun for 3s on hit"
+        },
+        {
+          "level": 10,
+          "text": "Engraves 5 Insignias for 10s on hit"
+        },
+        {
+          "level": 15,
+          "text": "+200 Evasion for 10s on use"
+        },
+        {
+          "level": 20,
+          "text": "-15s cooldown"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Танец теней",
+      "desc": "Наносит {se_dmg:1314000021:SkillUIMinDmgsum}-{se_dmg:1314000021:SkillUIMaxDmgsum} урона цели в радиусе 4 м. Перемещается назад и на 3s переходит в состояние невидимости.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Шанс 40% развернуть и оглушить цель на 3s при попадании"
+        },
+        {
+          "level": 10,
+          "text": "Привязка 5 эмблем на 10s при попадании"
+        },
+        {
+          "level": 15,
+          "text": "УКЛ +200 на 10s при использовании"
+        },
+        {
+          "level": 20,
+          "text": "Перезарядка -15 сек."
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Shadowstep",
+      "desc": "De acordo com {se_dmg:1314000021:SkillUIMinDmgsum}-{se_dmg:1314000021:SkillUIMaxDmgsum} dano a um alvo dentro do 4m. O lançador se move para trás e ganha Stealth para 3s.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "40% chance de girar e infligir Stun para 3s em sucesso"
+        },
+        {
+          "level": 10,
+          "text": "Grava o 5 Insignias para o 10s no hit."
+        },
+        {
+          "level": 15,
+          "text": "+ Evasão 200 para 10s em uso"
+        },
+        {
+          "level": 20,
+          "text": "- Arrefecer em 15s"
+        }
+      ]
+    }
+  },
+  "quick-slice": {
+    "id": "13010000",
+    "category": "active",
+    "icon": "quick-slice.webp",
+    "cooldown": 0,
+    "en": {
+      "name": "Quick Slice",
+      "desc": "Deals {se_dmg:1301000011:SkillUIMinDmgsum}-{se_dmg:1301000011:SkillUIMaxDmgsum} damage to up to 4 enemies within 4m and restores 100 MP.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "+20% MP restored"
+        },
+        {
+          "level": 8,
+          "text": "Absorbs 0.7% HP"
+        },
+        {
+          "level": 8,
+          "text": "+50% Multi-Hit on hit"
+        },
+        {
+          "level": 12,
+          "text": "-1s [Insignia Explosion] cooldown on hit"
+        },
+        {
+          "level": 16,
+          "text": "Ignores Block and Evasion and lands as a Critical Hit"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Быстрый разрез",
+      "desc": "Наносит {se_dmg:1301000011:SkillUIMinDmgsum}-{se_dmg:1301000011:SkillUIMaxDmgsum} урона врагам (макс. 4) в радиусе 4 м и восстанавливает 100 ОМ.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Восстановление ОМ +20%"
+        },
+        {
+          "level": 8,
+          "text": "Поглощение 0.7% ОЗ"
+        },
+        {
+          "level": 8,
+          "text": "Шанс мультиудара +50% при попадании"
+        },
+        {
+          "level": 12,
+          "text": "Перезарядка [Взрыва эмблемы] -1s при попадании"
+        },
+        {
+          "level": 16,
+          "text": "Крит. удар, несмотря на блок и уклонение"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Quick Slice",
+      "desc": "Danos {se_dmg:1301000011:SkillUIMinDmgsum}-{se_dmg:1301000011:SkillUIMaxDmgsum} para até inimigos 4 dentro do 4m e restaura 100 MP.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "+ 20% MP restaurado."
+        },
+        {
+          "level": 8,
+          "text": "Absorve 0.7% HP"
+        },
+        {
+          "level": 8,
+          "text": "+ 50% Multi-Hit no hit"
+        },
+        {
+          "level": 12,
+          "text": "- 1s [Insignia Explosion ] arrefecer no hit"
+        },
+        {
+          "level": 16,
+          "text": "Ignora bloqueio e evacuação e aterrissa como um ataque crítico"
+        }
+      ]
+    }
+  },
+  "throw-shadowblade": {
+    "id": "13020000",
+    "category": "stigma",
+    "icon": "throw-shadowblade.webp",
+    "cooldown": 30000,
+    "en": {
+      "name": "Throw Shadowblade",
+      "desc": "Deals {se_dmg:1302000011:SkillUIMinDmgsum}-{se_dmg:1302000011:SkillUIMaxDmgsum} damage to a target within 20m and inflicts Slow, which reduces Move Speed by 40% for 5s.\n\n15 Stagger Gauge Damage",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Adds [Shadowblade Pursuit] Chain Skill"
+        },
+        {
+          "level": 10,
+          "text": "Resets cooldown on defeating an enemy"
+        },
+        {
+          "level": 15,
+          "text": "Critical Hit on hit"
+        },
+        {
+          "level": 20,
+          "text": "Changes to AoE Skill"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Кинжал тьмы",
+      "desc": "Наносит {se_dmg:1302000011:SkillUIMinDmgsum}-{se_dmg:1302000011:SkillUIMaxDmgsum} урона цели в радиусе 20 м и на 5s замедляет ее, снижая СКР движ. на 40%.\n\nУрон по шкале ошеломления — 15 ед.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Добавление 2-й комбинации [Поиск темного кинжала]"
+        },
+        {
+          "level": 10,
+          "text": "Завершение перезарядки при уничтожении врага"
+        },
+        {
+          "level": 15,
+          "text": "Гарантир. крит. удар при попадании"
+        },
+        {
+          "level": 20,
+          "text": "Смена на массовое умение"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Throw Shadowblade",
+      "desc": "De acordo com {se_dmg:1302000011:SkillUIMinDmgsum} - {se_dmg:1302000011:SkillUIMaxDmgsum} dano a um alvo dentro de 20m e inflige lento, o que reduz a velocidade de movimento em 40% para 5s. 15 Stagger Gauge Danos",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Adiciona a Habilidade da Corrente"
+        },
+        {
+          "level": 10,
+          "text": "Reinicia o recarga na derrota de um inimigo."
+        },
+        {
+          "level": 15,
+          "text": "Ataque crítico no sucesso."
+        },
+        {
+          "level": 20,
+          "text": "Mudanças para AoE Skill"
+        }
+      ]
+    }
+  },
+  "flash-slice": {
+    "id": "13050000",
+    "category": "active",
+    "icon": "flash-slice.webp",
+    "cooldown": 10000,
+    "en": {
+      "name": "Flash Slice",
+      "desc": "Moves to the opposite side of a target within 4m and deals {se_dmg:1305000021:SkillUIMinDmgsum}-{se_dmg:1305000021:SkillUIMaxDmgsum} damage to up to 4 enemies, with a 40% chance to inflict Blind for 3s.\n100% chance to inflict Blind on NPC targets.\n\n7 Stagger Gauge Damage",
+      "specs": [
+        {
+          "level": 8,
+          "text": "+2s Blind duration"
+        },
+        {
+          "level": 8,
+          "text": "+6m Range"
+        },
+        {
+          "level": 8,
+          "text": "Up to +20% damage when more targets hit"
+        },
+        {
+          "level": 12,
+          "text": "+1 consecutive use"
+        },
+        {
+          "level": 16,
+          "text": "50% chance to rotate and inflict Stun for 3s on hitting a target afflicted with Blind"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Ослепляющий разрез",
+      "desc": "Перемещается в противоположную сторону от цели, находящейся в радиусе 4 м, наносит {se_dmg:1305000021:SkillUIMinDmgsum}-{se_dmg:1305000021:SkillUIMaxDmgsum} урона врагам (макс. 4) и с шансом 40% ослепляет их на 3s\nДля NPC слепота активируется гарантированно.\n\nУрон по шкале ошеломления — 7",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Длительность Слепоты +2 сек."
+        },
+        {
+          "level": 8,
+          "text": "Дальность атаки +6 м"
+        },
+        {
+          "level": 8,
+          "text": "Чем больше целей попадания, тем больше увеличение урона (макс. до 20%)"
+        },
+        {
+          "level": 12,
+          "text": "Непрерывное использование +1 раз"
+        },
+        {
+          "level": 16,
+          "text": "Шанс 50% развернуть и оглушить на 3s при попадании по ослепленной цели"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Flash Slice",
+      "desc": "Move-se para o lado oposto de um alvo dentro do 4m e lida com danos {se_dmg:1305000021:SkillUIMinDmgsum}-{se_dmg:1305000021:SkillUIMaxDmgsum} para até inimigos 4, com uma chance 40% de infligir Cegos para o 3s. 100% chance de infligir Blind em alvos da NPC. 7 Stagger Gauge Danos",
+      "specs": [
+        {
+          "level": 8,
+          "text": "+ 2s Duração cega"
+        },
+        {
+          "level": 8,
+          "text": "+ Faixa 6m"
+        },
+        {
+          "level": 8,
+          "text": "Dano até + 20% quando mais alvos atingirem"
+        },
+        {
+          "level": 12,
+          "text": "+ 1 uso consecutivo"
+        },
+        {
+          "level": 16,
+          "text": "50% chance de girar e infligir Stun para 3s em bater em um alvo atingido com cegos"
+        }
+      ]
+    }
+  },
+  "ambush": {
+    "id": "13060000",
+    "category": "active",
+    "icon": "ambush.webp",
+    "cooldown": 10000,
+    "en": {
+      "name": "Ambush",
+      "desc": "Deals {se_dmg:1306000011:SkillUIMinDmgsum}-{se_dmg:1306000011:SkillUIMaxDmgsum} damage to a target within 4m. Increases damage by 30% on landing as a Back attack.\n\n7 Stagger Gauge Damage",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Engraves 2 Insignias for 10s on landing as a Back attack"
+        },
+        {
+          "level": 8,
+          "text": "Absorbs 3% HP"
+        },
+        {
+          "level": 8,
+          "text": "Breaks Protective Shields on hit"
+        },
+        {
+          "level": 12,
+          "text": "50% chance to trigger [Whirlwind Slice] on hit"
+        },
+        {
+          "level": 16,
+          "text": "+2 consecutive uses"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Внезапное нападение",
+      "desc": "Наносит {se_dmg:1306000011:SkillUIMinDmgsum}-{se_dmg:1306000011:SkillUIMaxDmgsum} урона цели в радиусе 4 м. При атаке с тыла увеличивает урон на 30%.\n\nУрон по шкале ошеломления — 7",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Привязка 2 эмблем на 10s при попадании с тыла"
+        },
+        {
+          "level": 8,
+          "text": "Поглощение 3% ОЗ"
+        },
+        {
+          "level": 8,
+          "text": "Разрушение защитной оболочки при попадании"
+        },
+        {
+          "level": 12,
+          "text": "Шанс 50% активировать [Удар торнадо] при попадании"
+        },
+        {
+          "level": 16,
+          "text": "Непрерывное использование +2 р."
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Ambush",
+      "desc": "De acordo com {se_dmg:1306000011:SkillUIMinDmgsum}-{se_dmg:1306000011:SkillUIMaxDmgsum} dano a um alvo dentro do 4m. Aumenta os danos em 30% ao pousar como um ataque de volta. 7 Stagger Gauge Danos",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Grava o 2 Insignias para o 10s na aterrissagem como um ataque de volta."
+        },
+        {
+          "level": 8,
+          "text": "Absorve 3% HP"
+        },
+        {
+          "level": 8,
+          "text": "Quebra escudos protetores em hit"
+        },
+        {
+          "level": 12,
+          "text": "50% A chance de disparar.Whirlwind Slice# No hit"
+        },
+        {
+          "level": 16,
+          "text": "+ 2 usos consecutivos"
+        }
+      ]
+    }
+  },
+  "shadow-walk": {
+    "id": "13180000",
+    "category": "stigma",
+    "icon": "shadow-walk.webp",
+    "cooldown": 120000,
+    "en": {
+      "name": "Shadow Walk",
+      "desc": "Grants Stealth for 20s.\nCannot be used in combat and the effect is removed upon entering combat.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Critical Hit on attack during Stealth"
+        },
+        {
+          "level": 10,
+          "text": "+20% Move Speed for the duration"
+        },
+        {
+          "level": 15,
+          "text": "Available in combat"
+        },
+        {
+          "level": 20,
+          "text": "Resets cooldown on player kill assists"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Поступь тени",
+      "desc": "На 20s активирует невидимость.\nНельзя использовать во время боя, при вступлении в бой во время использования эффект отменяется.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Гарантированный крит. удар при атаке в состоянии невидимости"
+        },
+        {
+          "level": 10,
+          "text": "СКР движ. +20% во время действия умения"
+        },
+        {
+          "level": 15,
+          "text": "Можно использовать во время боя"
+        },
+        {
+          "level": 20,
+          "text": "Сбрасывает время перезарядки при содействии в убийстве игрока"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Shadow Walk",
+      "desc": "Concede Stealth para 20s. Não pode ser usado em combate e o efeito é removido ao entrar em combate.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Ataque crítico durante Stealth."
+        },
+        {
+          "level": 10,
+          "text": "+ 20% Move Speed para a duração."
+        },
+        {
+          "level": 15,
+          "text": "Disponível em combate."
+        },
+        {
+          "level": 20,
+          "text": "Reinicia o recarga no jogador Kill Assistas."
+        }
+      ]
+    }
+  },
+  "shadowstrike": {
+    "id": "13070000",
+    "category": "active",
+    "icon": "shadowstrike.webp",
+    "cooldown": 20000,
+    "en": {
+      "name": "Shadowstrike",
+      "desc": "Moves behind a target within 20m and deals {se_dmg:1307000021:SkillUIMinDmgsum}-{se_dmg:1307000021:SkillUIMaxDmgsum} damage, rotates, and inflicts Stun for 3s.\n\n10 Stagger Gauge Damage",
+      "specs": [
+        {
+          "level": 8,
+          "text": "+1s Stun duration"
+        },
+        {
+          "level": 8,
+          "text": "+20% caster Critical Damage Boost for 10s on hit"
+        },
+        {
+          "level": 8,
+          "text": "50% chance to inflict Seal for 5s on hit"
+        },
+        {
+          "level": 12,
+          "text": "50% chance to inflict Root for 5s on hit"
+        },
+        {
+          "level": 16,
+          "text": "Changes to AoE Skill"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Удар из сумрака",
+      "desc": "Перемещается за цель, находящуюся в радиусе 20 м, наносит {se_dmg:1307000021:SkillUIMinDmgsum}-{se_dmg:1307000021:SkillUIMaxDmgsum} урона, на 3s разворачивает ее и оглушает.\n\nУрон по шкале ошеломления — 10",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Длительность Оглушения +1 сек."
+        },
+        {
+          "level": 8,
+          "text": "Увеличение крит. урона +20% на 10s при попадании"
+        },
+        {
+          "level": 8,
+          "text": "Шанс 50% наложить Запечатывание на 5s при попадании"
+        },
+        {
+          "level": 12,
+          "text": "Шанс 50% взять врага в плен на 5s при попадании"
+        },
+        {
+          "level": 16,
+          "text": "Смена на массовое умение"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Shadowstrike",
+      "desc": "Move-se para trás de um alvo dentro do 20m e lida com danos {se_dmg:1307000021:SkillUIMinDmgsum}-{se_dmg:1307000021:SkillUIMaxDmgsum}, gira e inflige Stun para o 3s. 10 Stagger Gauge Danos",
+      "specs": [
+        {
+          "level": 8,
+          "text": "+ 1s duração de choque"
+        },
+        {
+          "level": 8,
+          "text": "+ 20% lançador de dano crítico aumenta para 10s em sucesso"
+        },
+        {
+          "level": 8,
+          "text": "50% chance de infligir Seal para 5s em sucesso."
+        },
+        {
+          "level": 12,
+          "text": "50% chance de infligir Root para 5s em sucesso."
+        },
+        {
+          "level": 16,
+          "text": "Mudanças para AoE Skill"
+        }
+      ]
+    }
+  },
+  "evasion-stance": {
+    "id": "13080000",
+    "category": "stigma",
+    "icon": "evasion-stance.webp",
+    "cooldown": 20000,
+    "en": {
+      "name": "Evasion Stance",
+      "desc": "Grants guaranteed evasion of all damage for a brief duration. Restores 110 MP and Stamina once on Evasion.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "+1 consecutive use"
+        },
+        {
+          "level": 10,
+          "text": "Changes to mobile skill"
+        },
+        {
+          "level": 15,
+          "text": "+20% Move Speed for 3s on Evasion"
+        },
+        {
+          "level": 20,
+          "text": "Restore 10% HP once after successfully evading"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Стойка уклонения",
+      "desc": "В течение определенного времени гарантированно уклоняется от всего урона. При успешном уклонении восстанавливает 110 ОМ и ОД 1 раз",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Непрерывное использование +1 раз"
+        },
+        {
+          "level": 10,
+          "text": "Замена на умение с возможностью перемещения"
+        },
+        {
+          "level": 15,
+          "text": "СКР движ. +20% на 3s при успешном уклонении"
+        },
+        {
+          "level": 20,
+          "text": "Восстановление 10% ОЗ 1 раз при успешном уклонении"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Evasion Stance",
+      "desc": "Grants garantiu a evasão de todos os danos por uma curta duração. Restaura 110 MP e Stamina uma vez na Evasão.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "+ 1 uso consecutivo"
+        },
+        {
+          "level": 10,
+          "text": "Mudanças na habilidade móvel."
+        },
+        {
+          "level": 15,
+          "text": "+ 20% Mova a velocidade para 3s na Evasão"
+        },
+        {
+          "level": 20,
+          "text": "Restaure 10% HP uma vez depois de escapar com sucesso."
+        }
+      ]
+    }
+  },
+  "savage-roar": {
+    "id": "13100000",
+    "category": "active",
+    "icon": "savage-roar.webp",
+    "cooldown": 0,
+    "en": {
+      "name": "Savage Roar",
+      "desc": "Deals {se_dmg:1310000011:SkillUIMinDmgsum}-{se_dmg:1310000011:SkillUIMaxDmgsum} damage to up to 4 enemies within 4m and engraves 1 Insignia for 10s.\n\n2 Stagger Gauge Damage",
+      "specs": [
+        {
+          "level": 8,
+          "text": "-20% MP consumed"
+        },
+        {
+          "level": 8,
+          "text": "+20% Skill Speed"
+        },
+        {
+          "level": 8,
+          "text": "Deals up to 12% more damage when less targets are hit"
+        },
+        {
+          "level": 12,
+          "text": "-1s [Shadowstrike] cooldown on hit"
+        },
+        {
+          "level": 16,
+          "text": "Pulls nearby targets on using [Savage Smash]"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Рев зверя",
+      "desc": "Наносит {se_dmg:1310000011:SkillUIMinDmgsum}-{se_dmg:1310000011:SkillUIMaxDmgsum} урона врагам (макс. 4) в радиусе 4 м и на 10s привязывает 1 эмблему.\n\nУрон по шкале ошеломления — 2 ед.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Затрата ОМ -20%"
+        },
+        {
+          "level": 8,
+          "text": "СКР умений +20%"
+        },
+        {
+          "level": 8,
+          "text": "Чем меньше целей попадания, тем больше увеличение урона (макс. до 12%)"
+        },
+        {
+          "level": 12,
+          "text": "Перезарядка [Удара из сумрака] -1s при попадании"
+        },
+        {
+          "level": 16,
+          "text": "Притягивание целей поблизости при использовании [Хлестания хищника]"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Savage Roar",
+      "desc": "Danos {se_dmg:1310000011:SkillUIMinDmgsum}-{se_dmg:1310000011:SkillUIMaxDmgsum} para inimigos 4 dentro do 4m e grava Insígnia 1 para o 10s. 2 Stagger Gauge Danos",
+      "specs": [
+        {
+          "level": 8,
+          "text": "- 20% MP consumido."
+        },
+        {
+          "level": 8,
+          "text": "+ 20% Velocidade de Habilidade"
+        },
+        {
+          "level": 8,
+          "text": "Comprou até 12% mais danos quando menos alvos foram atingidos."
+        },
+        {
+          "level": 12,
+          "text": "- 1s [Shadowstrike ] arrefecer no hit"
+        },
+        {
+          "level": 16,
+          "text": "Puxa alvos próximos usando [Savage Smash]"
+        }
+      ]
+    }
+  },
+  "insignia-explosion": {
+    "id": "13130000",
+    "category": "active",
+    "icon": "insignia-explosion.webp",
+    "cooldown": 10000,
+    "en": {
+      "name": "Insignia Explosion",
+      "desc": "Selects a target within 20m and deals {se_dmg:1313000011:SkillUIMinDmgsum}-{se_dmg:1313000011:SkillUIMaxDmgsum} damage to up to 4 enemies within 4m, inflicting Stun for 3s.\nStun chance is doubled on NPC targets.\n\nDamage and Stun chance increase based on Insignia stacks.\n1 stack: {se_dmg:1313000013:SkillUIMinDmgsum}-{se_dmg:1313000013:SkillUIMaxDmgsum} damage, 10% Stun chance\n2 stacks: {se_dmg:1313000015:SkillUIMinDmgsum}-{se_dmg:1313000015:SkillUIMaxDmgsum} damage, 20% Stun chance\n3 stacks: {se_dmg:1313000017:SkillUIMinDmgsum}-{se_dmg:1313000017:SkillUIMaxDmgsum} damage, 30% Stun chance\n4 stacks: {se_dmg:1313000019:SkillUIMinDmgsum}-{se_dmg:1313000019:SkillUIMaxDmgsum} damage, 40% Stun chance\n5 stacks: {se_dmg:1313000021:SkillUIMinDmgsum}-{se_dmg:1313000021:SkillUIMaxDmgsum} damage, 50% Stun chance\n\n7 Stagger Gauge Damage",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Adds rotate effect"
+        },
+        {
+          "level": 8,
+          "text": "+50% Multi-Hit on hit"
+        },
+        {
+          "level": 8,
+          "text": "Keep 2 stacks of Insignias after [Insignia Explosion]"
+        },
+        {
+          "level": 12,
+          "text": "+1s Stun duration"
+        },
+        {
+          "level": 16,
+          "text": "-3s cooldown"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Взрыв эмблемы",
+      "desc": "Наносит {se_dmg:1313000011:SkillUIMinDmgsum}-{se_dmg:1313000011:SkillUIMaxDmgsum} урона врагам (макс. 4) в радиусе 4 м вокруг цели, находящейся в радиусе 20 м, и оглушает их на 3s\nЕсли цель – NPC, увеличивает шанс Оглушения в 2 раза\n\nУрон и шанс Оглушения увеличиваются в зависимости от количества зарядов эмблемы.\n1 заряд: {se_dmg:1313000013:SkillUIMinDmgsum}-{se_dmg:1313000013:SkillUIMaxDmgsum} урона, Оглушение с шансом 10%\n2 заряда: {se_dmg:1313000015:SkillUIMinDmgsum}-{se_dmg:1313000015:SkillUIMaxDmgsum} урона, Оглушение с шансом 20%\n3 заряда: {se_dmg:1313000017:SkillUIMinDmgsum}-{se_dmg:1313000017:SkillUIMaxDmgsum} урона, Оглушение с шансом 30%\n4 заряда: {se_dmg:1313000019:SkillUIMinDmgsum}-{se_dmg:1313000019:SkillUIMaxDmgsum} урона, Оглушение с шансом 40%\n5 зарядов: {se_dmg:1313000021:SkillUIMinDmgsum}-{se_dmg:1313000021:SkillUIMaxDmgsum} урона, Оглушение с шансом 50%\n\nУрон по шкале ошеломления — 7 ед.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Добавление эффекта вращения"
+        },
+        {
+          "level": 8,
+          "text": "Шанс мультиудара +50% при попадании"
+        },
+        {
+          "level": 8,
+          "text": "Сохранение привязки 2 эмблем после [Взрыва эмблемы]"
+        },
+        {
+          "level": 12,
+          "text": "Длительность Оглушения +1 сек."
+        },
+        {
+          "level": 16,
+          "text": "Перезарядка -3 сек."
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Insignia Explosion",
+      "desc": "Seleciona um alvo dentro 20m e acordos. {se_dmg:1313000011:SkillUIMinDmgsum}-{se_dmg:1313000011:SkillUIMaxDmgsum} Dano até 4 Inimigos dentro 4m, infligindo Stun para 3s. A chance é dobrada em alvos da NPC. Danos e chance de atordoar aumentam com base em pilhas de Insignia.\n1 Pilha: {se_dmg:1313000013:SkillUIMinDmgsum}-{se_dmg:1313000013:SkillUIMaxDmgsum} Dano, 10% Que sorte!\n2 Pilha: {se_dmg:1313000015:SkillUIMinDmgsum}-{se_dmg:1313000015:SkillUIMaxDmgsum} Dano, 20% Que sorte!\n3 Pilha: {se_dmg:1313000017:SkillUIMinDmgsum}-{se_dmg:1313000017:SkillUIMaxDmgsum} Dano, 30% Que sorte!\n4 Pilha: {se_dmg:1313000019:SkillUIMinDmgsum}-{se_dmg:1313000019:SkillUIMaxDmgsum} Dano, 40% Que sorte!\n5 Pilha: {se_dmg:1313000021:SkillUIMinDmgsum}-{se_dmg:1313000021:SkillUIMaxDmgsum} Dano, 50% Que sorte!\n\n7 Danos no gauge",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Adiciona efeito de rotação"
+        },
+        {
+          "level": 8,
+          "text": "+ 50% Multi-Hit no hit"
+        },
+        {
+          "level": 8,
+          "text": "Continue. 2 pilhas de insígnias depois [Insignia Explosion]"
+        },
+        {
+          "level": 12,
+          "text": "+ 1s duração de choque"
+        },
+        {
+          "level": 16,
+          "text": "- Arrefecer em 3s"
+        }
+      ]
+    }
+  },
+  "whirlwind-slice": {
+    "id": "13210000",
+    "category": "active",
+    "icon": "whirlwind-slice.webp",
+    "cooldown": 10000,
+    "en": {
+      "name": "Whirlwind Slice",
+      "desc": "Deals {se_dmg:1321000011:SkillUIMinDmgsum}-{se_dmg:1321000011:SkillUIMaxDmgsum} damage to a target within 4m with a 40% chance to rotate and inflict Stun for 3s on Evasion.\n100% to inflict Stun on NPC targets.\n\n7 Stagger Gauge Damage",
+      "specs": [
+        {
+          "level": 8,
+          "text": "+50% Multi-Hit on hit"
+        },
+        {
+          "level": 8,
+          "text": "Changes to AoE damage"
+        },
+        {
+          "level": 8,
+          "text": "+16m range"
+        },
+        {
+          "level": 12,
+          "text": "+20% Stun Chance"
+        },
+        {
+          "level": 16,
+          "text": "25% chance to reset [Whirlwind Slice] cooldown on Evasion"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Удар торнадо",
+      "desc": "При успешном уклонении наносит {se_dmg:1321000011:SkillUIMinDmgsum}-{se_dmg:1321000011:SkillUIMaxDmgsum} урона цели в радиусе 4 м, с шансом 40% на 3s разворачивает ее и оглушает.\nДля NPC оглушение срабатывает гарантированно.\n\nУрон по шкале ошеломления — 7 ед.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Шанс мультиудара +50% при попадании"
+        },
+        {
+          "level": 8,
+          "text": "Смена на урон по области"
+        },
+        {
+          "level": 8,
+          "text": "Дальность атаки +16 м"
+        },
+        {
+          "level": 12,
+          "text": "Шанс Оглушения +20%"
+        },
+        {
+          "level": 16,
+          "text": "Шанс 25% сбросить время перезарядки [Удара торнадо] при успешном уклонении"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Whirlwind Slice",
+      "desc": "Lida com danos {se_dmg:1321000011:SkillUIMinDmgsum}-{se_dmg:1321000011:SkillUIMaxDmgsum} em um alvo dentro do 4m com uma chance 40% de girar e infligir Stun para 3s na Evasão. 100% para infligir Stun em alvos da NPC. 7 Stagger Gauge Danos",
+      "specs": [
+        {
+          "level": 8,
+          "text": "+ 50% Multi-Hit no hit"
+        },
+        {
+          "level": 8,
+          "text": "Mudanças no dano ao AoE."
+        },
+        {
+          "level": 8,
+          "text": "+ Alcance 16m"
+        },
+        {
+          "level": 12,
+          "text": "+ 20% Stun Chance"
+        },
+        {
+          "level": 16,
+          "text": "25% A chance de reiniciar.Whirlwind SliceResfriamento na Evasão"
+        }
+      ]
+    }
+  },
+  "shadow-fall": {
+    "id": "13220000",
+    "category": "active",
+    "icon": "shadow-fall.webp",
+    "cooldown": 20000,
+    "en": {
+      "name": "Shadow Fall",
+      "desc": "Moves to a target afflicted with Stun within 10m, deals {se_dmg:1322000041:SkillUIMinDmgsum}-{se_dmg:1322000041:SkillUIMaxDmgsum} damage, and inflicts Knockdown for 3s.\nHas a 5% chance to trigger on attacking a target with Incapacitated Immunity.\n\n10 Stagger Gauge Damage",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Absorbs 10% HP"
+        },
+        {
+          "level": 8,
+          "text": "Engraves 3 Insignias for 10s on hit"
+        },
+        {
+          "level": 8,
+          "text": "-5s cooldown"
+        },
+        {
+          "level": 12,
+          "text": "+1s Knockdown duration"
+        },
+        {
+          "level": 16,
+          "text": "Can be used on targets afflicted with Blind"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Бросок тени",
+      "desc": "Перемещается к оглушенной цели в радиусе 10 м, наносит {se_dmg:1322000041:SkillUIMinDmgsum}-{se_dmg:1322000041:SkillUIMaxDmgsum} урона и сбивает ее с ног на 3s\nАктивируется с шансом 5% при атаке цели с иммунитетом к обездвиживанию.\n\nУрон по шкале ошеломления — 10 ед.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Поглощение 10% ОЗ"
+        },
+        {
+          "level": 8,
+          "text": "Привязка 3 эмблем на 10s при попадании"
+        },
+        {
+          "level": 8,
+          "text": "Перезарядка -5 сек."
+        },
+        {
+          "level": 12,
+          "text": "Длительность Сбивания с ног +1 сек."
+        },
+        {
+          "level": 16,
+          "text": "Можно использовать на ослепленной цели"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Shadow Fall",
+      "desc": "Se move para um alvo atingido com o Stun dentro do 10m, lida com danos {se_dmg:1322000041:SkillUIMinDmgsum}-{se_dmg:1322000041:SkillUIMaxDmgsum}, e inflige Knockdown para o 3s. Tem uma chance 5% de disparar para atacar um alvo com imunidade incapacitada. 10 Stagger Gauge Danos",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Absorve 10% HP"
+        },
+        {
+          "level": 8,
+          "text": "Grava o 3 Insignias para o 10s no hit."
+        },
+        {
+          "level": 8,
+          "text": "- Arrefecer em 5s"
+        },
+        {
+          "level": 12,
+          "text": "+ 1s Knockdown duração"
+        },
+        {
+          "level": 16,
+          "text": "Pode ser usado em alvos afetados com cegos."
+        }
+      ]
+    }
+  },
+  "smoke-bomb": {
+    "id": "13250000",
+    "category": "stigma",
+    "icon": "smoke-bomb.webp",
+    "cooldown": 30000,
+    "en": {
+      "name": "Smoke Bomb",
+      "desc": "Deals {se_dmg:1325000011:SkillUIMinDmgsum}-{se_dmg:1325000011:SkillUIMaxDmgsum} to a target within 10m and inflicts Blind for 5s.\n\n15 Stagger Gauge Damage",
+      "specs": [
+        {
+          "level": 5,
+          "text": "+10m range"
+        },
+        {
+          "level": 10,
+          "text": "Changes to AoE Skill"
+        },
+        {
+          "level": 15,
+          "text": "Inflicts Slow for 5s on hit"
+        },
+        {
+          "level": 20,
+          "text": "+1 consecutive use"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Дымовая шашка",
+      "desc": "Наносит {se_dmg:1325000011:SkillUIMinDmgsum}-{se_dmg:1325000011:SkillUIMaxDmgsum} урона цели в радиусе 10 м и ослепляет ее на 5s\n\nУрон по шкале ошеломления — 15",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Дальность атаки +10 м"
+        },
+        {
+          "level": 10,
+          "text": "Смена на массовое умение"
+        },
+        {
+          "level": 15,
+          "text": "Замедление на 5s при попадании"
+        },
+        {
+          "level": 20,
+          "text": "Непрерывное использование +1 раз"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Smoke Bomb",
+      "desc": "Distribui {se_dmg:1325000011:SkillUIMinDmgsum}-{se_dmg:1325000011:SkillUIMaxDmgsum} para um alvo dentro do 10m e inflige Cego para 5s. 15 Stagger Gauge Danos",
+      "specs": [
+        {
+          "level": 5,
+          "text": "+ Alcance 10m"
+        },
+        {
+          "level": 10,
+          "text": "Mudanças para AoE Skill"
+        },
+        {
+          "level": 15,
+          "text": "Inflige lentamente para 5s em sucesso."
+        },
+        {
+          "level": 20,
+          "text": "+ 1 uso consecutivo"
+        }
+      ]
+    }
+  },
+  "aerial-bind": {
+    "id": "13230000",
+    "category": "stigma",
+    "icon": "aerial-bind.webp",
+    "cooldown": 120000,
+    "en": {
+      "name": "Aerial Bind",
+      "desc": "Deals {se_dmg:1323000021:SkillUIMinDmgsum}-{se_dmg:1323000021:SkillUIMaxDmgsum} damage to a target within 4m, with a 50% chance to inflict Airborne for 3s. Has a 100% chance to inflict Airborne for 3s on targets with 5 stacks of Insignia.\n100% chance to inflict Airborne on NPC targets.\n\n20 Stagger Gauge Damage",
+      "specs": [
+        {
+          "level": 5,
+          "text": "+16m [Aerial Bind] range"
+        },
+        {
+          "level": 10,
+          "text": "Adds [Aerial Slaughter] Chain Skill"
+        },
+        {
+          "level": 15,
+          "text": "x1.5 [Ambush Stance] effect for 10s on first strike of [Aerial Bind]"
+        },
+        {
+          "level": 20,
+          "text": "-30s cooldown"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Сковывание в полете",
+      "desc": "Наносит {se_dmg:1323000021:SkillUIMinDmgsum}-{se_dmg:1323000021:SkillUIMaxDmgsum} урона цели в радиусе 4 м, с шансом 50% активирует Воздушные оковы на 3s. С шансом 100% на 3s активирует Воздушные оковы на цель с 5 зарядами эмблемы.\nДля NPC воздушные оковы срабатывают гарантированно.\n\nУрон по шкале ошеломления — 20 ед.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Дальность атаки [Сковывания в полете] +16 м"
+        },
+        {
+          "level": 10,
+          "text": "Добавление 2-го комбо [Смертоносный полет]"
+        },
+        {
+          "level": 15,
+          "text": "Эффект [Внезапная атака] x1,5 на 10s при попадании первым ударом [Сковывания в полете]"
+        },
+        {
+          "level": 20,
+          "text": "Перезарядка -30 сек."
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Aerial Bind",
+      "desc": "De acordo com {se_dmg:1323000021:SkillUIMinDmgsum}-{se_dmg:1323000021:SkillUIMaxDmgsum} dano a um alvo dentro de 4m, com uma chance 50% para infligir Airborne para 3s. Tem uma chance 100% de infligir Airborne para 3s em alvos com pilhas 5 de Insignia. 100% chance de infligir Airborne em alvos da NPC. 20 Stagger Gauge Danos",
+      "specs": [
+        {
+          "level": 5,
+          "text": "+ 16m [Aerial Bind ] alcance"
+        },
+        {
+          "level": 10,
+          "text": "Acorrentando a habilidade"
+        },
+        {
+          "level": 15,
+          "text": "x1.5 [Ambush StanceEfeito para 10s na primeira greve de [Aerial Bind]"
+        },
+        {
+          "level": 20,
+          "text": "- Arrefecer em 30s"
+        }
+      ]
+    }
+  },
+  "rear-smite": {
+    "id": "13740000",
+    "category": "passive",
+    "icon": "rear-smite.webp",
+    "cooldown": 0,
+    "en": {
+      "name": "Rear Smite",
+      "desc": "Increases the caster's Back Attack Damage Boost by 3%, PvE Damage Boost by 3%, and PvP Damage Boost by 1.5%.",
+      "specs": []
+    },
+    "ru": {
+      "name": "Удар с тыла",
+      "desc": "Увеличение урона от атаки с тыла +3%, Увеличение урона в PvE +3%, Увеличение урона в PvP +1.5%.",
+      "specs": []
+    },
+    "pt-BR": {
+      "name": "Rear Smite",
+      "desc": "Aumenta o ataque de trás do lançador aumenta o dano de 3%, PvE aumenta o dano de 3% e PvP aumenta o dano de 1.5%.",
+      "specs": []
+    }
+  },
+  "defiance": {
+    "id": "13260000",
+    "category": "active",
+    "icon": "defiance.webp",
+    "cooldown": 60000,
+    "en": {
+      "name": "Defiance",
+      "desc": "Removes Stun, Knockdown, Airborne, Grab, Frost, and Fear from the caster and grants Tenacity for 5s.\nTenacity: Grants Status Effect Immunity\n\nUnaffected by cooldown reduction effects.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Adds [Storm Slice] Chain Skill"
+        },
+        {
+          "level": 8,
+          "text": "Restores 1000 Stamina on using [Defiance]"
+        },
+        {
+          "level": 8,
+          "text": "Restores 20% HP on using [Defiance]"
+        },
+        {
+          "level": 12,
+          "text": "+2s Tenacity duration"
+        },
+        {
+          "level": 16,
+          "text": "+50% PvE Damage Tolerance and +25% PvP Damage Tolerance for Tenacity duration"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Снятие шока",
+      "desc": "Отменяет эффекты Оглушения, Сбивания с ног, Воздушные оковы, захват, Заморозку и Ужас на 5s активирует для персонажа Непреклонность.\nНепреклонность: иммунитет к негат. эффектам\n\nЭффекты снижения времени перезарядки не действуют.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Добавляет 2-ное комбо [Ураганный взмах]"
+        },
+        {
+          "level": 8,
+          "text": "При использовании [Снятия шока] восстанавливает 1000 ОД"
+        },
+        {
+          "level": 8,
+          "text": "При использовании [Снятия шока] восстанавливает 20% ОЗ"
+        },
+        {
+          "level": 12,
+          "text": "Длительность Непреклонности +2 сек."
+        },
+        {
+          "level": 16,
+          "text": "Стойкость к урону в PvE +50% и стойкость к урону в PvP +25% во время действия Непреклонности"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Defiance",
+      "desc": "Remove Stun, Knockdown, Airborne, Grab, Frost e Medo do lançador e concede Tenacidade para 5s. Tenacidade: Efeito da Imunidade. Não afetado pelos efeitos de redução do recarga.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Adiciona a habilidade da corrente."
+        },
+        {
+          "level": 8,
+          "text": "Restaura a resistência 1000 usando o Defiance"
+        },
+        {
+          "level": 8,
+          "text": "Restaura 20% HP usando [Defiance ]"
+        },
+        {
+          "level": 12,
+          "text": "+ 2s Duração da tenacidade"
+        },
+        {
+          "level": 16,
+          "text": "+ 50% PvE Tolerância de danos e 25% PvP Tolerância de danos por duração de tenacidade"
+        }
+      ]
+    }
+  },
+  "savage-fang": {
+    "id": "13270000",
+    "category": "stigma",
+    "icon": "savage-fang.webp",
+    "cooldown": 60000,
+    "en": {
+      "name": "Savage Fang",
+      "desc": "Deals {se_dmg:1327000011:SkillUIMinDmgsum}-{se_dmg:1327000011:SkillUIMaxDmgsum} damage to up to 4 enemies within 4m and engraves 5 Insignias for 10s.\n\n50 Stagger Gauge Damage",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Up to +20% damage when more targets hit"
+        },
+        {
+          "level": 10,
+          "text": "+50 Stagger Gauge Damage"
+        },
+        {
+          "level": 15,
+          "text": "+10% PvE Damage Boost and +5% PvP Damage Boost for 10s on hit"
+        },
+        {
+          "level": 20,
+          "text": "Critical Hit on hit"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Клык хищника",
+      "desc": "Наносит {se_dmg:1327000011:SkillUIMinDmgsum}-{se_dmg:1327000011:SkillUIMaxDmgsum} урона врагам (макс. 4) в радиусе 4 м и на 10s привязывает 5 эмблем.\n\nУрон по шкале ошеломления — 50",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Чем больше целей попадания, тем больше увеличение урона (макс. до 20%)"
+        },
+        {
+          "level": 10,
+          "text": "Урон по шкале Ошеломления +50"
+        },
+        {
+          "level": 15,
+          "text": "Увеличение урона в PvE +10%, Увеличение урона в PvP +5% на 10s при попадании"
+        },
+        {
+          "level": 20,
+          "text": "Гарантир. крит. удар при попадании"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Savage Fang",
+      "desc": "Danos {se_dmg:1327000011:SkillUIMinDmgsum}-{se_dmg:1327000011:SkillUIMaxDmgsum} para até inimigos 4 dentro do 4m e grava Insígnias 5 para o 10s. 50 Stagger Gauge Danos",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Dano até + 20% quando mais alvos atingirem"
+        },
+        {
+          "level": 10,
+          "text": "+ Dano 50 Stagger Gauge"
+        },
+        {
+          "level": 15,
+          "text": "+ 10% PvE Danos Aumentam e + 5% PvP Danos Aumentam para 10s em sucesso"
+        },
+        {
+          "level": 20,
+          "text": "Ataque crítico no sucesso."
+        }
+      ]
+    }
+  },
+  "spiral-slice": {
+    "id": "13280000",
+    "category": "stigma",
+    "icon": "spiral-slice.webp",
+    "cooldown": 90000,
+    "en": {
+      "name": "Spiral Slice",
+      "desc": "Rushes to a target within 20m and deals {se_dmg:1328000021:SkillUIMinDmgsum}-{se_dmg:1328000021:SkillUIMaxDmgsum} damage, removing 1 buff.\n\nDeals {se_dmg:1328000711:SkillUIMinDmgsum}-{se_dmg:1328000711:SkillUIMaxDmgsum} extra damage based on the number of buffs removed.\n\n20 Stagger Gauge Damage",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Removes up to 2 buffs"
+        },
+        {
+          "level": 10,
+          "text": "Rotates and inflicts Stun for 3s when removing 2 or more buffs"
+        },
+        {
+          "level": 15,
+          "text": "Removes up to 3 buffs"
+        },
+        {
+          "level": 20,
+          "text": "-30s cooldown"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Спиральный разрез",
+      "desc": "Совершает рывок к цели в радиусе 20 м, наносит {se_dmg:1328000021:SkillUIMinDmgsum}-{se_dmg:1328000021:SkillUIMaxDmgsum} урона и отменяет до 1 полож. эффектов.\n\nВ зависимости от количества отменных полож. эффектов наносит {se_dmg:1328000711:SkillUIMinDmgsum}-{se_dmg:1328000711:SkillUIMaxDmgsum} доп. урона.\n\nУрон по шкале ошеломления — 20 ед.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Отмена до 2 маг. усилений"
+        },
+        {
+          "level": 10,
+          "text": "Вращение и Оглушение цели на 3s при снятии 2 и более полож. эффектов"
+        },
+        {
+          "level": 15,
+          "text": "Отмена до 3 полож. эффектов"
+        },
+        {
+          "level": 20,
+          "text": "Перезарядка -30 сек."
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Spiral Slice",
+      "desc": "Corre para um alvo dentro do 20m e lida com danos {se_dmg:1328000021:SkillUIMinDmgsum}-{se_dmg:1328000021:SkillUIMaxDmgsum}, removendo o 1. De acordo com {se_dmg:1328000711:SkillUIMinDmgsum} - {se_dmg:1328000711:SkillUIMaxDmgsum} dano extra baseado no número de capangas removidos. 20 Stagger Gauge Danos",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Remove até 2 fans"
+        },
+        {
+          "level": 10,
+          "text": "Rotata e inflige Stun para 3s ao remover 2 ou mais fãs"
+        },
+        {
+          "level": 15,
+          "text": "Remove até 3 fans"
+        },
+        {
+          "level": 20,
+          "text": "- Arrefecer em 30s"
+        }
+      ]
+    }
+  },
+  "triniels-dagger": {
+    "id": "13300000",
+    "category": "stigma",
+    "icon": "triniels-dagger.webp",
+    "cooldown": 45000,
+    "en": {
+      "name": "Triniel's Dagger",
+      "desc": "Deals {se_dmg:1330000011:SkillUIMinDmgsum}-{se_dmg:1330000011:SkillUIMaxDmgsum} damage to a target within 4m and increases all of the target's skill cooldowns by 5% of their duration. Increases damage by 30% if attacking from behind the target.\n\n20 Stagger Gauge Damage",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Changes to mobile skill"
+        },
+        {
+          "level": 10,
+          "text": "-10% all skill cooldowns on hit"
+        },
+        {
+          "level": 15,
+          "text": "Resets cooldown on defeating an enemy with [Triniel's Dagger]"
+        },
+        {
+          "level": 20,
+          "text": "+3% all skill cooldowns"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Кинжал Триниэля",
+      "desc": "Наносит {se_dmg:1330000011:SkillUIMinDmgsum}-{se_dmg:1330000011:SkillUIMaxDmgsum} урона цели в радиусе 4 м и увеличивает время перезарядки всех ее умений на 5%. При атаке цели с тыла увеличивает урон на 30%.\n\nУрон по шкале ошеломления — 20",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Замена на умение с возможностью перемещения"
+        },
+        {
+          "level": 10,
+          "text": "Перезарядка всех умений -10% при попадании"
+        },
+        {
+          "level": 15,
+          "text": "Завершение перезарядки умения при уничтожении врага умением [Кинжал Триниэля]"
+        },
+        {
+          "level": 20,
+          "text": "Перезарядка всех умений +3%"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Triniel's Dagger",
+      "desc": "De acordo com {se_dmg:1330000011:SkillUIMinDmgsum} - {se_dmg:1330000011:SkillUIMaxDmgsum} dano a um alvo dentro de 4m e aumenta todas as habilidades do alvo recarga em 5% de sua duração. Aumenta o dano em 30% se atacar por trás do alvo. 20 Stagger Gauge Danos",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Mudanças na habilidade móvel."
+        },
+        {
+          "level": 10,
+          "text": "- 10% todos os destrezas no hit"
+        },
+        {
+          "level": 15,
+          "text": "Reinicia o recarga na derrota de um inimigo com...Triniel's Dagger]"
+        },
+        {
+          "level": 20,
+          "text": "+ 3% todas as habilidades de recarga"
+        }
+      ]
+    }
+  },
+  "illusive-clone": {
+    "id": "13310000",
+    "category": "stigma",
+    "icon": "illusive-clone.webp",
+    "cooldown": 90000,
+    "en": {
+      "name": "Illusive Clone",
+      "desc": "Removes [Heart Gore] cooldown and deals 20% of damage dealt as extra damage for 10s.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "+10% Status Effect Chance for the duration"
+        },
+        {
+          "level": 10,
+          "text": "+20% Critical Damage Boost for the duration"
+        },
+        {
+          "level": 15,
+          "text": "x1.5 [Exploit Weakness] effect for the duration"
+        },
+        {
+          "level": 20,
+          "text": "50% chance to deal extra damage on Critical Hit for the duration"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Иллюзорный двойник",
+      "desc": "Убирает перезарядку умения [Пронзание сердца] на 10s и наносит доп. урон, равный 20% от АТК.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Успешная активация негат. эффектов +10% во время действия умения"
+        },
+        {
+          "level": 10,
+          "text": "На время действия эффекта: Увеличение крит. урона +20%"
+        },
+        {
+          "level": 15,
+          "text": "Эффект [Выжидания момента] во время действия умения x1,5"
+        },
+        {
+          "level": 20,
+          "text": "Шанс 50% нанести доп. урон при крит. ударе во время действия"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Illusive Clone",
+      "desc": "Remove-se.Heart GoreResfriamento e acordos. 20% de danos causados como danos extras para 10s.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "+ 10% Status Effect Chance para a duração"
+        },
+        {
+          "level": 10,
+          "text": "+ 20% Os dano crítico aumentam por toda a duração."
+        },
+        {
+          "level": 15,
+          "text": "x1.5 [Exploit WeaknessEfeito para a duração"
+        },
+        {
+          "level": 20,
+          "text": "50% chance de causar dano extras em Critical Hit durante a duração."
+        }
+      ]
+    }
+  },
+  "assault-stance": {
+    "id": "13750000",
+    "category": "passive",
+    "icon": "assault-stance.webp",
+    "cooldown": 0,
+    "en": {
+      "name": "Assault Stance",
+      "desc": "Increases the caster's Critical Damage Boost by 6%.",
+      "specs": []
+    },
+    "ru": {
+      "name": "Стойка нападения",
+      "desc": "Увеличение крит. урона +6%.",
+      "specs": []
+    },
+    "pt-BR": {
+      "name": "Assault Stance",
+      "desc": "Aumenta o aumento de dano crítico do lançador em 6%.",
+      "specs": []
+    }
+  },
+  "storm-rampage": {
+    "id": "13340000",
+    "category": "active",
+    "icon": "storm-rampage.webp",
+    "cooldown": 0,
+    "en": {
+      "name": "Storm Rampage",
+      "desc": "Deals {se_dmg:1334000011:SkillUIMinDmgsum}-{se_dmg:1334000011:SkillUIMaxDmgsum} damage to a target afflicted with Stagger within 4m.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Absorbs 5% HP"
+        },
+        {
+          "level": 8,
+          "text": "Restores 120 MP on hit"
+        },
+        {
+          "level": 8,
+          "text": "Changes to mobile skill"
+        },
+        {
+          "level": 12,
+          "text": "Multi-Hit on hit"
+        },
+        {
+          "level": 16,
+          "text": "-1s all skill cooldowns on hit"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Неистовый шквал",
+      "desc": "Наносит {se_dmg:1334000011:SkillUIMinDmgsum}-{se_dmg:1334000011:SkillUIMaxDmgsum} урона цели в состоянии Ошеломления в радиусе 4 м.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Поглощение 5% ОЗ"
+        },
+        {
+          "level": 8,
+          "text": "Восстановление 120 ОМ при попадании"
+        },
+        {
+          "level": 8,
+          "text": "Замена на умение с возможностью перемещения"
+        },
+        {
+          "level": 12,
+          "text": "Гарантир. мультиудар при попадании"
+        },
+        {
+          "level": 16,
+          "text": "Перезарядка всех умений -1s при попадании"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Storm Rampage",
+      "desc": "De acordo com {se_dmg:1334000011:SkillUIMinDmgsum} - {se_dmg:1334000011:SkillUIMaxDmgsum} dano a um alvo atingido com Stagger dentro de 4m.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Absorve 5% HP"
+        },
+        {
+          "level": 8,
+          "text": "Restaura 120 MP no hit"
+        },
+        {
+          "level": 8,
+          "text": "Mudanças na habilidade móvel."
+        },
+        {
+          "level": 12,
+          "text": "Multi-Hit na batida"
+        },
+        {
+          "level": 16,
+          "text": "- 1s todos os destrezas no hit"
+        }
+      ]
+    }
+  },
+  "heart-gore": {
+    "id": "13350000",
+    "category": "active",
+    "icon": "heart-gore.webp",
+    "cooldown": 5000,
+    "en": {
+      "name": "Heart Gore",
+      "desc": "Triggers on landing a Critical Hit, dealing {se_dmg:1335000011:SkillUIMinDmgsum}-{se_dmg:1335000011:SkillUIMaxDmgsum} damage to up to 4 enemies within 4m and restores 100 MP.\n\n5 Stagger Gauge Damage",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Absorbs 0.7% HP"
+        },
+        {
+          "level": 8,
+          "text": "Engraves 1 Insignia for 10s on hit"
+        },
+        {
+          "level": 8,
+          "text": "Up to +20% Critical Hit when less targets hit"
+        },
+        {
+          "level": 12,
+          "text": "Multi-Hit on hit"
+        },
+        {
+          "level": 16,
+          "text": "Resets [Heart Gore] cooldown on landing a Critical Hit"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Пронзание сердца",
+      "desc": "Активируется при попадании крит. ударом, наносит {se_dmg:1335000011:SkillUIMinDmgsum}-{se_dmg:1335000011:SkillUIMaxDmgsum} урона врагам (макс. 4) в радиусе 4 м и восстанавливает 100 ОМ.\n\nУрон по шкале ошеломления — 5",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Поглощение 0.7% ОЗ"
+        },
+        {
+          "level": 8,
+          "text": "Привязка 1 эмблемы на 10s при попадании"
+        },
+        {
+          "level": 8,
+          "text": "Чем меньше целей попадания, тем больше увеличение шанса крит. удара (макс. до 20%)"
+        },
+        {
+          "level": 12,
+          "text": "Гарантир. мультиудар при попадании"
+        },
+        {
+          "level": 16,
+          "text": "Завершение перезарядки [Пронзания сердца] при попадании крит. ударом"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Heart Gore",
+      "desc": "Dispara para pousar um ataque crítico, lidando com danos {se_dmg:1335000011:SkillUIMinDmgsum}-{se_dmg:1335000011:SkillUIMaxDmgsum} para até inimigos 4 dentro do 4m e restaura 100 MP. 5 Stagger Gauge Danos",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Absorve 0.7% HP"
+        },
+        {
+          "level": 8,
+          "text": "Grava 1 Insignia para 10s em sucesso."
+        },
+        {
+          "level": 8,
+          "text": "Até + 20% Ataque crítico quando menos alvos atingem"
+        },
+        {
+          "level": 12,
+          "text": "Multi-Hit na batida"
+        },
+        {
+          "level": 16,
+          "text": "Resets [ Heart Gore ] recarga na aterrissagem de um hit crítico"
+        }
+      ]
+    }
+  },
+  "infiltrate": {
+    "id": "13360000",
+    "category": "active",
+    "icon": "infiltrate.webp",
+    "cooldown": 20000,
+    "en": {
+      "name": "Infiltrate",
+      "desc": "Moves behind a target within 10m and deals {se_dmg:1336000021:SkillUIMinDmgsum}-{se_dmg:1336000021:SkillUIMaxDmgsum} damage with a 50% chance to inflict Blind for 3s after using [Dodge] or while flying.\n100% chance to inflict Blind on NPC targets.\n\n10 Stagger Gauge Damage",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Restores 300 Stamina on landing [Infiltrate]"
+        },
+        {
+          "level": 8,
+          "text": "+10m [Infiltrate] range"
+        },
+        {
+          "level": 8,
+          "text": "Breaks Protective Shields on landing [Infiltrate]"
+        },
+        {
+          "level": 12,
+          "text": "Adds [Dark Strike] Chain Skill"
+        },
+        {
+          "level": 16,
+          "text": "+20% [Infiltrate] Blind Chance"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Вторжение",
+      "desc": "При использовании [Срочного уклонения] или в состоянии полета перемещается за спину цели в радиусе 10 м, наносит {se_dmg:1336000021:SkillUIMinDmgsum}-{se_dmg:1336000021:SkillUIMaxDmgsum} урона и с шансом 50% ослепляет ее на 3s\nДля NPC слепота активируется гарантированно.\n\nУрон по шкале ошеломления — 10 ед.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Восстановление 300 ОД при попадании [Вторжением]"
+        },
+        {
+          "level": 8,
+          "text": "Дальность атаки [Вторжения] +10 м"
+        },
+        {
+          "level": 8,
+          "text": "Разрушение защитной оболочки при попадании [Вторжением]"
+        },
+        {
+          "level": 12,
+          "text": "Добавление 2-й комбинации [Скрытная атака]"
+        },
+        {
+          "level": 16,
+          "text": "Шанс Ослепления от [Вторжения] +20%"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Infiltrate",
+      "desc": "Move-se para trás de um alvo dentro do 10m e lida com danos {se_dmg:1336000021:SkillUIMinDmgsum}-{se_dmg:1336000021:SkillUIMaxDmgsum} com uma chance 50% de infligir Cego para 3s depois de usar [Dodge] ou enquanto voa. 100% chance de infligir Blind em alvos da NPC. 10 Stagger Gauge Danos",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Restaurações 300 Estância na aterrissagem.Infiltrate]"
+        },
+        {
+          "level": 8,
+          "text": "+ 10m [Infiltrate ] alcance"
+        },
+        {
+          "level": 8,
+          "text": "Quebra escudos protetores na aterrissagemInfiltrate]"
+        },
+        {
+          "level": 12,
+          "text": "Adiciona a habilidade da corrente"
+        },
+        {
+          "level": 16,
+          "text": "+ 20% [Infiltrate] Cego Chance"
+        }
+      ]
+    }
+  },
+  "evasion-contract": {
+    "id": "13370000",
+    "category": "stigma",
+    "icon": "evasion-contract.webp",
+    "cooldown": 90000,
+    "en": {
+      "name": "Evasion Contract",
+      "desc": "Removes Slow and Root from the caster and increases the caster's Evasion by 200 for 10s. Grants Slow and Root Immunity.\n\nUnaffected by cooldown increase effects.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "25% chance of Projectile Immunity for the duration"
+        },
+        {
+          "level": 10,
+          "text": "+30% Move Speed for the duration"
+        },
+        {
+          "level": 15,
+          "text": "50% chance to reduce all skill cooldowns by 1s on Evasion for the duration"
+        },
+        {
+          "level": 20,
+          "text": "+100 Evasion increase"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Обет уклонения",
+      "desc": "Снимает с себя Замедление и Сковывание и увеличивает УКЛ на 200 в теч. 10s Получает иммунитет к Замедлению и Плену.\n\nЭффекты увеличения времени перезарядки не действуют.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Шанс 25% получить иммунитет к снарядам во время действия умения"
+        },
+        {
+          "level": 10,
+          "text": "СКР движ. +30% во время действия умения"
+        },
+        {
+          "level": 15,
+          "text": "Шанс 50% сократить время перезарядки всех умений на 1s при уклонении во время действия умения"
+        },
+        {
+          "level": 20,
+          "text": "УКЛ доп. +100"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Evasion Contract",
+      "desc": "Remove lento e Root do lançador e aumenta a Evasão do lançador em 200 para 10s. Concede Imunidade lenta e Root. Não afetado pelo efeito de recarga.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "25% chance de imunidade projétil para a duração"
+        },
+        {
+          "level": 10,
+          "text": "+ 30% Move Speed para a duração."
+        },
+        {
+          "level": 15,
+          "text": "50% chance de reduzir todos os recargas de habilidade em 1s na Evasão para a duração"
+        },
+        {
+          "level": 20,
+          "text": "+ Aumento de Evasão 100"
+        }
+      ]
+    }
+  },
+  "swift-contract": {
+    "id": "13390000",
+    "category": "stigma",
+    "icon": "swift-contract.webp",
+    "cooldown": 60000,
+    "en": {
+      "name": "Swift Contract",
+      "desc": "Increases the caster's Combat Speed by 20% for 10s.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "-20% MP Cost for the duration"
+        },
+        {
+          "level": 10,
+          "text": "x1.5 [Rear Smite] effect for the duration"
+        },
+        {
+          "level": 15,
+          "text": "x1.5 [Assault Stance] effect for the duration"
+        },
+        {
+          "level": 20,
+          "text": "+10% additional Combat Speed"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Обет ускорения",
+      "desc": "На 10s увеличивает СКР боя на 20%.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Затрата ОМ -20% во время действия умения"
+        },
+        {
+          "level": 10,
+          "text": "Эффект [Удара с тыла] во время действия умения x1,5"
+        },
+        {
+          "level": 15,
+          "text": "Эффект [Стойки нападения] во время действия умения x1,5"
+        },
+        {
+          "level": 20,
+          "text": "+10% к СКР боя"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Swift Contract",
+      "desc": "Aumenta a velocidade de combate do lançador em 20% para 10s.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "- 20% MP Custo para a duração"
+        },
+        {
+          "level": 10,
+          "text": "x1.5 [Rear SmiteEfeito para a duração"
+        },
+        {
+          "level": 15,
+          "text": "x1.5 [Assault StanceEfeito para a duração"
+        },
+        {
+          "level": 20,
+          "text": "+ 10% adicional de velocidade de combate"
+        }
+      ]
+    }
+  },
+  "assault-ambush": {
+    "id": "13700000",
+    "category": "stigma",
+    "icon": "assault-ambush.webp",
+    "cooldown": 120000,
+    "en": {
+      "name": "Assault Ambush",
+      "desc": "Selects a target within 20m and deals {se_dmg:1370000021:SkillUIMinDmgsum}-{se_dmg:1370000021:SkillUIMaxDmgsum} damage to up to 4 enemies within 4m, with a 30% chance to inflict Blind for 5s.\n100% chance to inflict Blind on NPC targets.\n\nIncreases Defense by up to 20% proportional to the number of targets hit.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "+20% Attack for 5s on hit"
+        },
+        {
+          "level": 10,
+          "text": "500 MP damage on hit"
+        },
+        {
+          "level": 15,
+          "text": "+10m range"
+        },
+        {
+          "level": 20,
+          "text": "+20% Blind Chance"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Вероломная атака",
+      "desc": "Наносит {se_dmg:1370000021:SkillUIMinDmgsum}-{se_dmg:1370000021:SkillUIMaxDmgsum} урона врагам (макс. 4) в радиусе 4 м вокруг цели, находящейся в радиусе 20 м, и с шансом 30% ослепляет их на 5s\nДля NPC слепота активируется гарантированно.\n\nУвеличивает ЗЩТ пропорционально количеству целей попадания (макс. до 20%).",
+      "specs": [
+        {
+          "level": 5,
+          "text": "АТК +20% на 5s при попадании"
+        },
+        {
+          "level": 10,
+          "text": "500 урона по ОМ при попадании"
+        },
+        {
+          "level": 15,
+          "text": "Дальность атаки +10 м"
+        },
+        {
+          "level": 20,
+          "text": "Шанс Ослепления +20%"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Assault Ambush",
+      "desc": "Seleciona um alvo dentro do 20m e lida com danos {se_dmg:1370000021:SkillUIMinDmgsum}-{se_dmg:1370000021:SkillUIMaxDmgsum} para até inimigos 4 dentro do 4m, com uma chance 30% de infligir Cegos para o 5s. 100% chance de infligir Blind em alvos da NPC. Aumenta a defesa em até 20% proporcional ao número de alvos atingidos.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "+ 20% Ataque para 5s em sucesso"
+        },
+        {
+          "level": 10,
+          "text": "Dano 500 MP no ataque."
+        },
+        {
+          "level": 15,
+          "text": "+ Alcance 10m"
+        },
+        {
+          "level": 20,
+          "text": "+ 20% Cego Chance"
+        }
+      ]
+    }
+  },
+  "heightened-sixth-sense": {
+    "id": "13710000",
+    "category": "passive",
+    "icon": "heightened-sixth-sense.webp",
+    "cooldown": 0,
+    "en": {
+      "name": "Heightened Sixth Sense",
+      "desc": "Increases the caster's Evasion by 200 and HP by 150. Increases Max HP by an extra 6% and restores 85-102 HP on Evasion.\n\nCooldown: 3s",
+      "specs": []
+    },
+    "ru": {
+      "name": "Шестое чувство",
+      "desc": "Увеличивает УКЛ на 200 и ОЗ на 150. Дополнительно увеличивает макс. ОЗ на 6% и восстанавливает 85–102 ОЗ при уклонении.\n\nВремя перезарядки: 3s",
+      "specs": []
+    },
+    "pt-BR": {
+      "name": "Heightened Sixth Sense",
+      "desc": "Aumenta a Evasão do lançador em 200 e HP em 150. Aumenta Max HP em um 6% extra e restaura 85 - 102 HP em Evasão. Recarga: 3s",
+      "specs": []
+    }
+  },
+  "exploit-weakness": {
+    "id": "13720000",
+    "category": "passive",
+    "icon": "exploit-weakness.webp",
+    "cooldown": 0,
+    "en": {
+      "name": "Exploit Weakness",
+      "desc": "Increases caster's Critical Hit by 100. Has a 25% chance to increase Attack by 5.5% for 10s, and a 7% chance to summon up to 5 clones on landing a Critical Hit. Each clone deals {se_dmg:1372000711:SkillUIMinDmgsum}-{se_dmg:1372000711:SkillUIMaxDmgsum} damage and inflicts Insignia that lasts for 10s (up to 5 Insignia stacks).\n\nClone cooldown: 1s\nAttack increase cooldown: 1s",
+      "specs": []
+    },
+    "ru": {
+      "name": "Выжидание момента",
+      "desc": "Увеличивает крит. удар на 100. Шанс 25% увеличить АТК на 5.5% на 10s и шанс 7% призвать до 5 двойников при попадании крит. ударом. Каждый двойник наносит {se_dmg:1372000711:SkillUIMinDmgsum}–{se_dmg:1372000711:SkillUIMaxDmgsum} ед. урона и накладывает Эмблему на 10s (Эмблема суммируется не более 5 раз)\n\nВремя перезарядки двойника: 1s\nВремя перезарядки увеличения АТК: 1s",
+      "specs": []
+    },
+    "pt-BR": {
+      "name": "Exploit Weakness",
+      "desc": "Aumenta o impacto crítico do lançador por 100. Tem uma chance 25% para aumentar o ataque 5.5% para 10s, e uma chance 7% para convocar até clones 5 para pousar um Ataque Crítico. Cada clone lida com danos {se_dmg:1372000711:SkillUIMinDmgsum}-{se_dmg:1372000711:SkillUIMaxDmgsum} e inflige Insignia que dura para 10s (até 5 Insignia stacks). Esfriamento do clone: 1s Ataque, aumento de recarga: 1s.",
+      "specs": []
+    }
+  },
+  "apply-poison": {
+    "id": "13730000",
+    "category": "passive",
+    "icon": "apply-poison.webp",
+    "cooldown": 0,
+    "en": {
+      "name": "Apply Poison",
+      "desc": "Has a 15% chance to reduce the target's Incoming Heal by 12% and inflict Poison for 10s on landing an attack. Poison deals {se_abe_dmg:1373000711:1373000712:SkillUIDotMinDmg:tick}~{se_abe_dmg:1373000711:1373000712:SkillUIDotMaxDmg:tick} Damage over Time every 1s.\n\nCooldown: 1s",
+      "specs": []
+    },
+    "ru": {
+      "name": "Нанесение яда",
+      "desc": "При каждом попадании атаки с шансом 15% снижает получ. исцеление цели на 12% и активирует Отравление в теч. 10s Отравление наносит {se_abe_dmg:1373000711:1373000712:SkillUIDotMinDmg:tick}–{se_abe_dmg:1373000711:1373000712:SkillUIDotMaxDmg:tick} ед. постоянного урона каждую секунду.\n\nВремя перезарядки: 1s",
+      "specs": []
+    },
+    "pt-BR": {
+      "name": "Apply Poison",
+      "desc": "Tem uma chance 15% de reduzir a cura do alvo para 12% e infligir veneno para 10s ao pousar um ataque. Veneno lida com danos {se_abe_dmg:1373000711:1373000712:SkillUIDotMinDmg:tick} ~ {se_abe_dmg:1373000711:1373000712:SkillUIDotMaxDmg:tick} ao longo do tempo a cada 1s. Frio: 1s",
+      "specs": []
+    }
+  },
+  "impact-hit": {
+    "id": "13760000",
+    "category": "passive",
+    "icon": "impact-hit.webp",
+    "cooldown": 0,
+    "en": {
+      "name": "Impact Hit",
+      "desc": "Increases the caster's Impact-type Chance by 11.2% and Double Chance by 0.3%.",
+      "specs": []
+    },
+    "ru": {
+      "name": "Попадание шоком",
+      "desc": "Увеличивает попадание шок. эффектами на 11.2%, Мощный удар — на 0.3%.",
+      "specs": []
+    },
+    "pt-BR": {
+      "name": "Impact Hit",
+      "desc": "Aumenta a chance de impacto do lançador por 11.2% e dupla chance por 0.3%.",
+      "specs": []
+    }
+  },
+  "ambush-stance": {
+    "id": "13770000",
+    "category": "passive",
+    "icon": "ambush-stance.webp",
+    "cooldown": 0,
+    "en": {
+      "name": "Ambush Stance",
+      "desc": "Grants Ambush Stance for 10s when using skills that rush or involve movement.\nAmbush Stance: Has a 50% chance to deal {se_dmg:1377000811:SkillUIMinDmgsum}-{se_dmg:1377000811:SkillUIMaxDmgsum} damage on landing an attack.\n\nCooldown: 1s",
+      "specs": []
+    },
+    "ru": {
+      "name": "Внезапная атака",
+      "desc": "При использовании Рывка или умений, связанных с передвижением, получает эффект Внезапной атаки на 10 сек.\nВнезапная атака: с вероятностью 50% наносит {se_dmg:1377000811:SkillUIMinDmgsum}–{se_dmg:1377000811:SkillUIMaxDmgsum} ед. урона при попадании атакой.\n\nВремя перезарядки: 1s",
+      "specs": []
+    },
+    "pt-BR": {
+      "name": "Ambush Stance",
+      "desc": "Grants. Ambush Stance para 10s quando usa habilidades que apressam ou envolvem movimento.\nAmbush StanceTem um 50% chance de negociar. {se_dmg:1377000811:SkillUIMinDmgsum}-{se_dmg:1377000811:SkillUIMaxDmgsum} Danos ao pousar um ataque. Recarga: 1s",
+      "specs": []
+    }
+  },
+  "defense-break": {
+    "id": "13780000",
+    "category": "passive",
+    "icon": "defense-break.webp",
+    "cooldown": 0,
+    "en": {
+      "name": "Defense Break",
+      "desc": "Reduces the target's Defense by 12% and Status Effect Resist by 11% for 10s when landing an attack on a target afflicted with Stagger or an Impact-type status.\n\nCooldown: 20s",
+      "specs": []
+    },
+    "ru": {
+      "name": "Брешь в защите",
+      "desc": "Уменьшает ЗЩТ цели на 12% и сопротивление негат. эффектам на 11% в теч. 10s при каждой успешной атаке врага под действием шок. эффекта.\n\nВремя перезарядки: 20s",
+      "specs": []
+    },
+    "pt-BR": {
+      "name": "Defense Break",
+      "desc": "Reduz a defesa do alvo em 12% e Efeito de Estado Resista em 11% para 10s ao pousar um ataque em um alvo afetado com Stagger ou um estado de impacto. Recarga: 20s",
+      "specs": []
+    }
+  },
+  "revitalization-contract": {
+    "id": "13790000",
+    "category": "passive",
+    "icon": "revitalization-contract.webp",
+    "cooldown": 0,
+    "en": {
+      "name": "Revitalization Contract",
+      "desc": "Increases the caster's Status Effect Resist by 17%. Increases Status Effect Resist by 10% for 5s when hit while afflicted with Stun, Knockdown, Airborne, Frost, or Fear (up to 10 stacks).\nImmediately restores 35% Max HP when HP is 10% or less.\n\nHealing Cooldown: 60s\nStatus Effect Resist Cooldown: 1s",
+      "specs": []
+    },
+    "ru": {
+      "name": "Контракт оживления",
+      "desc": "Увеличивает сопротивление негат. эффектам  на 17%. Увеличивает сопротивление негат. эффектам  на 10% на 5s при получении удара в состоянии Оглушения, Сбивания с ног, Воздушных оков, Заморозки или Ужаса (суммируется не более 10 раз).\nПри падении ОЗ до 10% и ниже мгновенно восстанавливает 35% макс. ОЗ.\n\nВремя перезарядки исцеления: 60s\nВремя перезарядки сопротивления негат. эффектам: 1s",
+      "specs": []
+    },
+    "pt-BR": {
+      "name": "Revitalization Contract",
+      "desc": "Aumenta o Efeito de Estado do lançador em 17%. Aumenta o Efeito de Estado Resistir ao 10% para 5s quando atingido com Stun, Knockdown, Airborne, Frost, ou Medo (até 10 pilhas). Imediatamente restaura 35% Max HP quando HP é 10% ou menos. \"Curando o Recarga: 60s\" Efeito Status Resistir Resistir Recarga: 1s",
+      "specs": []
+    }
+  },
+  "determination": {
+    "id": "13800000",
+    "category": "passive",
+    "icon": "determination.webp",
+    "cooldown": 0,
+    "en": {
+      "name": "Determination",
+      "desc": "Deals {se_dmg:1380000711:SkillUIMinDmgsum}-{se_dmg:1380000711:SkillUIMaxDmgsum} damage when landing an attack on a target with 30% HP or less.\n\nCooldown: 1s",
+      "specs": []
+    },
+    "ru": {
+      "name": "Готовность",
+      "desc": "Наносит {se_dmg:1380000711:SkillUIMinDmgsum}–{se_dmg:1380000711:SkillUIMaxDmgsum} ед. урона при каждом попадании атакой по цели с показателем ОЗ 30% или ниже.\n\nВремя перезарядки: 1s",
+      "specs": []
+    },
+    "pt-BR": {
+      "name": "Determination",
+      "desc": "Lida com danos {se_dmg:1380000711:SkillUIMinDmgsum}-{se_dmg:1380000711:SkillUIMaxDmgsum} ao pousar um ataque em um alvo com 30% HP ou menos. Recarga: 1s",
+      "specs": []
+    }
+  }
+}

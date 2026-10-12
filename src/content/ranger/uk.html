@@ -1,0 +1,265 @@
+{% from "macros.html" import section, skill, core, loadout, passives, glance, hotline, macroseq, hotbar, dv_board with context %}
+
+{# ============================== PvE ============================== #}
+{% call glance('pve') %}
+  <h3>{{ t.core_skills }}</h3>
+  {{ core([('deadshot', '20'), ('gale-arrow', '20'), ('drill-dart', '16'), ('snipe', '16'), ('tempest-shot', '16')]) }}
+  <h3>{{ t.stigma_loadout }}</h3>
+  {{ loadout([('vaizels-authority', 20), ('bow-of-blessing', 10), ('supporting-fire', 10), ('griffon-arrow', 10)]) }}
+  <h3>{{ t.key_passives }}</h3>
+  {{ passives(['focused-eye', 'hunters-resolve', 'hunters-soul', 'concentrated-fire']) }}
+{% endcall %}
+
+{% call section('intro', 'Огляд', 'pve') %}
+  <p>Ranger — DPS із луком, що б'ється приблизно з <strong>20 метрів</strong> — це дальність майже всіх його скілів. Шкода в нього топова, але живучість і корисність для групи низькі, тож позиціювання вирішує все.</p>
+  <div class="callout accent">
+    <h3>Білд одним реченням</h3>
+    <p>Бафнись, тримай {{ s('marking-shot') }} (Precision: +300 криту й +35% шкоди {{ s('deadshot', False) }}) на цілі й тримай затиснутими три кнопки: {{ s('snipe') }}, макрос і заряджений {{ s('deadshot') }}.</p>
+  </div>
+  <p class="note">Гайд іде за Whelps — мейном Ranger з 1 млн CP на корейських серверах, який грав і на глобальному тесті, — і його PvE-білдом на ендгейм 1 сезону на questlog.</p>
+{% endcall %}
+
+{% call section('global', 'Глобальний 1 сезон: що змінюється', 'pve pvp') %}
+  <p>Глобальні сервери відкриваються <strong>5 жовтня 2026</strong> (ранній доступ Founder's — з 30 вересня). Що це означає для Ranger:</p>
+  <div class="callout">
+    <ul>
+      <li><strong>Чотири стигми на 37 рівні.</strong> Глобальний тест зупинився на 37; п'ятий слот на 45 імовірний, але не підтверджений — якщо з'явиться, туди піде {{ s('explosive-arrow') }}.</li>
+      <li><strong>До 20 доходять лише кілька скілів.</strong> Очками скіли качаються до 10; Daevanion додає 4, кільця 2, аркани до 4. У 1 сезоні плануй Deadshot і Gale Arrow на 20, а третій — якщо аркани добре випадуть.</li>
+      <li><strong>Кап точності невідомий.</strong> У Кореї для Ludra це було близько 1 300; глобальні цифри з'являться на запуску.</li>
+      <li data-only="pvp"><strong>PvP:</strong> усі починають в однаковому обмеженому спорядженні, мета ще не склалася.</li>
+    </ul>
+  </div>
+{% endcall %}
+
+{% call section('skills', 'Скіли', 'pve') %}
+  <p>Слоти спеціалізацій відкриваються на <strong>8</strong>, <strong>12</strong> і <strong>20</strong> (16 додає новий варіант, але не слот) — кожен із цих рівнів дає приріст сили. Спершу качай активні скіли, пасивки потім.</p>
+  <ul class="skill-grid">
+    {% call skill('deadshot', 'must', '20', [1, 2, 4]) %}Заряджений нюк — завжди повністю заряджений і завжди під Precision. До 20 бери перші дві; міняй спеціалізацію на рух на +50% шкоди, якщо під час заряду не треба рухатися. Fubgun (глобал) натомість іде по найбільші крити: на 16 — Skill Speed та ігнор блоку й ухилення, на 20 — шкода; рух — лише там, де цього вимагає бій.{% endcall %}
+    {% call skill('gale-arrow', 'must', '20', [2, 3, 4]) %}Баф швидкості бою й шкоди. До 20 бери Combat Speed і −10 с перезарядки (до 16 — +5 с тривалості): Fubgun не бере рух до третього слота, бо без нього баф висить постійно.{% endcall %}
+    {% call skill('drill-dart', 'must', '16', [4, 2]) %}Щонайменше 16. Для боса, де потрібна живучість, бери поглинання HP замість швидкості скілів.{% endcall %}
+    {% call skill('snipe', 'must', '16', [3, 4]) %}Базова атака: скорочує Deadshot і додає ланцюжок Tempest Arrow. На 20 додай мультиудар.{% endcall %}
+    {% call skill('tempest-shot', 'must', '16', [2, 4]) %}Один із головних джерел шкоди, але 16 вистачить — ти й так упрешся в кап криту. PvP-гравці доводять до 20 заради відкидання.{% endcall %}
+    {% call skill('snare-shot', 'opt', '12', [1, 2]) %}12 приходить майже безкоштовно з дошки Daevanion.{% endcall %}
+    {% call skill('marking-shot', 'opt', '12', [0, 2]) %}+5% шансу ідеального удару, +5 с тривалості.{% endcall %}
+    {% call skill('burst-arrow', 'opt', '12', [1, 3], then=[4]) %}+50% мультиудару поверх власних 50% — кожен удар проходить мультиударом (Moxsy), і +20% шкоди по одній цілі. На 20 додай шанс скидання перезарядки.{% endcall %}
+    {% call skill('explosion-trap', 'opt', '12', [0, 2]) %}Лише щоб стягувати треш (наприклад, у забігах Transcendence).{% endcall %}
+    {% call skill('suppressing-arrow', 'opt', '12', [0, 2]) %}Лише заради оглушення — годиться на прокачці, в ендгейм-PvE не використовується.{% endcall %}
+    {% call skill('defiance', 'opt', '12', [2, 1]) %}На 16: третя й п'ята спеціалізації.{% endcall %}
+    {% call skill('arrow-scattershot', 'opt', 'старт 12', [2, 3]) %}Працює лише по приголомшених босах. Whelps його не качає: в його ендгейм-ротації решта скілів дає більше. aLuckyRO і LordRobson у перший день беруть його до 12 заради мультиудару у вікні стагера — нормально, поки очки дешеві, і перше, що прибирати згодом.{% endcall %}
+  </ul>
+{% endcall %}
+
+{% call section('passives', 'Пасивки', 'pve') %}
+  <p>{{ s('focused-eye') }} (бонус до шкоди) і {{ s('hunters-resolve') }} (крит. шкода) — єдині, що справді важливі; {{ s('hunters-soul') }} третя.</p>
+  <div class="callout"><ul>
+    <li>Далі атакувальні: {{ s('concentrated-fire') }}, {{ s('rooting-eye') }}, {{ s('melee-fire') }}.</li>
+    <li>Потім {{ s('vigilant-eye') }} (максимум HP) і {{ s('revitalization-contract') }} (лікування на 10% HP).</li>
+    <li>{{ s('unyielding-resolve') }} і {{ s('wind-vigor') }} майже марні — качай залишками очок.</li>
+  </ul></div>
+{% endcall %}
+
+{% call section('gear', 'Спорядження й статі', 'pve') %}
+  <p>Зі спорядженням просто: бери найвищий рівень предмета. Ендгейм — це крафтові зброя, наручі й аксесуари, браслети Ludra і броня з данжів.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Слот</th><th>Обов'язкові прив'язки душі</th></tr></thead>
+    <tbody>
+      <tr><td>Зброя, наручі</td><td>Швидкість бою, бонус до шкоди зброї, бонус до шкоди, Might (+ мультиудар, якщо крафтова)</td></tr>
+      <tr><td>Шолом, плащ</td><td>Шанс подвійного удару, приріст атаки</td></tr>
+      <tr><td>Наплічники</td><td>Шанс подвійного удару, бонус до крит. шкоди</td></tr>
+      <tr><td>Нагрудник</td><td>Бонус до шкоди</td></tr>
+      <tr><td>Поножі</td><td>Приріст атаки, стійкість до шкоди</td></tr>
+      <tr><td>Рукавиці / чоботи</td><td>Швидкість бою / швидкість руху</td></tr>
+      <tr><td>Сережки / намисто</td><td>Швидкість руху + Might / швидкість бою + Might</td></tr>
+      <tr><td>Кільця</td><td>Рівні {{ s('deadshot') }} і {{ s('gale-arrow') }} (потім Drill Dart чи Snipe); інакше Might</td></tr>
+    </tbody>
+  </table></div>
+  <div class="callout"><ul>
+    <li><strong>Точність — другий стат.</strong> Парирувані удари втрачають понад половину шкоди, а Ranger не завжди може бити зі спини. Цілься в ~1 100–1 200 (саппорти додають +100).</li>
+    <li>Решта слотів: атака, крит чи Focused Eye — лишай те, що випало першим. Крит Ranger легше закапити (+300 від Marking Shot).</li>
+    <li><strong>Манастоуни:</strong> однієї жовтої лінії атаки вистачить на 1 сезон; за сетами на атаку спереду/ззаду не ганяйся.</li>
+    <li>Роли прив'язки душі лише на броні, де вже є одна з обов'язкових.</li>
+    <li><strong>Лук і guard на +10</strong> завжди, і базові манастоуни в усі речі (N → Manastones) — дешеві чисті стати (Fubgun).</li>
+  </ul></div>
+{% endcall %}
+
+{% call section('arcana', 'Аркани', 'pve') %}
+  <p>Аркани — це те, що піднімає скіли вище 16. Мета — <strong>+4 на {{ s('deadshot') }} і {{ s('gale-arrow') }}</strong>; ролл +4 на {{ s('snipe') }} дає третій скіл на 20.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Карта</th><th>Тип</th><th>Що ролити</th></tr></thead>
+    <tbody>
+      <tr><td>Grail</td><td>Vigor</td><td>Deadshot, Gale Arrow (джокер: може випасти будь-що)</td></tr>
+      <tr><td>Parchment</td><td>Vigor</td><td>Snipe, Tempest Shot (Drill Dart, Burst Arrow як заповнювач)</td></tr>
+      <tr><td>Compass</td><td>Death або Freedom</td><td>Deadshot, Gale Arrow</td></tr>
+      <tr><td>Bell</td><td>Destruction</td><td>Hunter's Resolve</td></tr>
+      <tr><td>Mirror</td><td>Wisdom</td><td>Focused Eye</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">Аркани падають із 4 стадії Transcendence, і це чистий рандом — не переймайся; систему, ймовірно, змінять у 2 сезоні.</p>
+{% endcall %}
+
+{% call section('daevanion', 'Дошки Daevanion', 'pve pvp') %}
+  <p>Зрештою ти заповниш майже всі дошки, тож не переплановуй. Кожен синій вузол дає <strong>+1 рівень</strong> своєму скілу.</p>
+  <div class="callout"><ul>
+    <li data-only="pve"><strong>1.</strong> Сині вузли, що піднімають активні скіли до 12 (відкриває другу спеціалізацію): {{ s('deadshot') }}, {{ s('snipe') }}, {{ s('gale-arrow') }}, {{ s('drill-dart') }}, {{ s('burst-arrow') }}.</li>
+    <li data-only="pve"><strong>2.</strong> Атакувальні помаранчеві вузли в кутах дошок — швидкість бою, скорочення перезарядок. Іди найкоротшим шляхом і бери скіли дорогою.</li>
+    <li data-only="pve"><strong>3.</strong> Вузли атаки, криту, {{ s('focused-eye') }} і {{ s('hunters-resolve') }}; потім решта (захист: захист, HP, опір криту).</li>
+    <li data-only="pve">У самому кінці обходь вузли MP+50. Скинути дошку дешево.</li>
+    <li data-only="pvp"><strong>Пріоритет:</strong> сині вузли {{ s('deadshot') }}, {{ s('snare-shot') }}, {{ s('suppressing-arrow') }}, {{ s('marking-shot') }}, {{ s('defiance') }}.</li>
+    <li data-only="pve"><strong>На глобалі немає Ariel:</strong> дошок п'ять, і дошка 45 рівня, Azphel, дає лише шкоду й стійкість у PvP — у PvE закривай перші чотири.</li>
+    <li data-only="pvp"><strong>Azphel</strong> (45 рівень) — суцільно шкода й стійкість у PvP: бери його, а раніше — Triniel.</li>
+  </ul></div>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Дошка</th><th>Відкривається</th><th>Помаранчеві вузли</th></tr></thead>
+    <tbody>
+      <tr><td>Nezekan</td><td>Рів. 12</td><td>Швидкість бою, скорочення перезарядок</td></tr>
+      <tr><td>Zikel</td><td>Рів. 20</td><td>Бонус до шкоди, стійкість до шкоди</td></tr>
+      <tr><td>Vaizel</td><td>Рів. 30</td><td>Бонус і стійкість до крит. шкоди</td></tr>
+      <tr><td>Triniel</td><td>Рів. 40</td><td>Шанс мультиудару й опір йому</td></tr>
+      <tr><td>Azphel</td><td>Рів. 45</td><td>Шкода й стійкість у PvP — вузлів скілів немає</td></tr>
+    </tbody>
+  </table></div>
+  <h3>Маршрут на дошках</h3>
+  <p>Справжні глобальні дошки з даних гри. Золотом позначено найдешевший шлях від Start до вузлів, які бере цей гайд, — сині вузли пріоритетних скілів і помаранчеві; наведи на будь-який вузол, щоб побачити, що він дає.</p>
+  <div data-only="pve">{{ dv_board('pve') }}</div>
+  <div data-only="pvp">{{ dv_board('pvp') }}</div>
+  <p class="note">Дошки й вартість — із даних глобального клієнта (questlog.gg); шлях розраховано, а не взято з відео. Значення статів ще можуть змінитися на запуску — перевір дошку в грі, перш ніж вкладати повний маршрут.</p>
+{% endcall %}
+
+{% call section('stigmas', 'Стигми', 'pve') %}
+  <p>Спершу качай рівно — 5 / 5 / 5, потім 10, — щоб брати кожен поріг. Щойно матимеш очки на <strong>Vaizel's Authority 20</strong>, скинь і вклади туди першою: тоді Ranger і розкривається. Далі по черзі Bow of Blessing, Supporting Fire і Griffon Arrow до 20.</p>
+  <p class="note">Fubgun (глобал): почни з 15 / 10 / 10 / 5 (Vaizel's Authority, Bow of Blessing, Supporting Fire, Explosive Arrow); після Vaizel's Authority 20 наступні очки він вкладає в Bow of Blessing до 15. Vaizel's Authority 20 окупається лише з достатнім Critical Hit — перевір на манекені, перш ніж вкладатися.</p>
+  <ul class="skill-grid">
+    {% call skill('vaizels-authority', 'must', 'Рів. 20', upto=20) %}×1,5 Focused Eye і Hunter's Soul; на 20 кожен крит із шансом 50% скорочує <em>всі</em> перезарядки на 1 с — величезний стрибок DPS.{% endcall %}
+    {% call skill('bow-of-blessing', 'must', 'Рів. 10 → 20', upto=20) %}Мультиудар, атака від криту, крит. шкода й шанс подвійного удару.{% endcall %}
+    {% call skill('supporting-fire', 'must', 'Рів. 10 → 20', upto=20) %}Сфера, що стріляє поруч із тобою; та сама перезарядка, що й у Vaizel's, тож можуть ділити одну кнопку.{% endcall %}
+    {% call skill('griffon-arrow', 'must', 'Рів. 10 → 20', upto=20) %}Шкода з часом Crimson Flames; відкриває лінію макросу.{% endcall %}
+    {% call skill('explosive-arrow', 'opt', 'альт. · 4-й слот', upto=10) %}Рівноцінна заміна Griffon Arrow: LordRobson оцінює їхню шкоду приблизно однаково, а aLuckyRO в перший день ставить Explosive Arrow на 5 (−15 с перезарядки) замість Griffon. У наборі Moxsy для прокачки вона теж є. Fubgun: Explosive Arrow сильніша, поки Griffon Arrow не дійде до 15, а на глобалі це довго. Якщо на 45 відкриється п'ятий слот, бери обидві.{% endcall %}
+    {% call skill('arrow-storm', 'opt', 'прокачка', upto=5) %}АоЕ по пачках на прокачці.{% endcall %}
+  </ul>
+{% endcall %}
+
+{% call section('macro', 'Ротація й макрос', 'pve') %}
+  <p>В AION 2 є два окремі інструменти, і білд використовує обидва:</p>
+  <ul>
+    <li><strong>Лінія на кнопці</strong> — кілька скілів на <em>одній</em> кнопці панелі. Натискання кастує готовий скіл із найвищим пріоритетом, і в AION 2 <strong>найвищий пріоритет у нижнього слота</strong>. Картки показують лінії згори донизу, як у грі.</li>
+    <li><strong>Вбудований макрос</strong> — поки тримаєш його клавішу, він по черзі натискає лінії й скасовує хвости анімацій. Скіли на перезарядці пропускаються.</li>
+  </ul>
+
+  <h3>1. Лінії на кнопках</h3>
+  <p>Важливі лише ці дві лінії; вони можуть стояти в будь-яких слотах панелі.</p>
+  <div class="hotlines">
+    {% call hotline('1', 'Лінія Griffon', ['griffon-arrow', 'snare-shot', 'burst-arrow']) %}Snare Shot сповільнює ціль, щоб Burst Arrow міг влучити.{% endcall %}
+    {% call hotline('2', 'Лінія Gale', ['gale-arrow', 'drill-dart', 'tempest-shot']) %}Tempest Shot заповнює кожну паузу.{% endcall %}
+  </div>
+
+  <h3>2. Вбудований макрос</h3>
+  <p>Вікно скілів → <strong>Macro</strong>: додай лінію Griffon, потім лінію Gale, по <strong>10 мс</strong> (дехто знаходить оптимум між 10 і 20 мс — потестуй). Признач макрос на <span class="key">ПКМ</span> у Settings → Key Settings → General → Macro.</p>
+  {{ macroseq([('Лінія Griffon', '1 · 10 мс'), ('Лінія Gale', '2 · 10 мс')]) }}
+  <div class="callout"><ul>
+    <li>Грай у <strong>режимі керування AION 2</strong> — у режимі AION 1 вбудований макрос обмежений.</li>
+    <li>Увімкни <strong>чергу скілів</strong> у налаштуваннях керування в бою.</li>
+    <li>Дай {{ s('deadshot') }} другу клавішу в Key Settings → Quickslot (бічна кнопка миші).</li>
+  </ul></div>
+
+  <h3>3. Що ти насправді тиснеш</h3>
+  <ul class="presslist">
+    <li><span class="press-how">Початок</span><span class="press-what">Бафи вручну — {{ s('bow-of-blessing') }}, {{ s('supporting-fire') }} + {{ s('vaizels-authority') }} (одна кнопка, однакова перезарядка) — потім {{ s('marking-shot') }} і повністю заряджений {{ s('deadshot') }}.</span></li>
+    <li><span class="press-how">Тримати</span><span class="press-what">{{ s('snipe') }} на <span class="key">ЛКМ</span>, макрос на <span class="key">ПКМ</span> і {{ s('deadshot') }} на бічній кнопці — усі три одночасно.</span></li>
+    <li><span class="press-how">Підтримувати</span><span class="press-what">{{ s('marking-shot') }} — перекастовуй, коли Precision лишається менше ~3 с (дивись на панель бафів). Precision: +5% шансу ідеального удару, +300 криту, +35% шкоди Deadshot. Діє 15 с — оновлювати частіше означає втрачати шкоду.</span></li>
+    <li><span class="press-how">За відкатом</span><span class="press-what">Знову бафи.</span></li>
+  </ul>
+
+  <h3>Інший варіант: макрос Fubgun (глобал)</h3>
+  <p>Панель Fubgun (відео від 9 жовтня, кадри 2:10 і 3:00): Burst Arrow переїжджає в лінію Drill, {{ s('explosive-arrow') }} замінює Griffon Arrow, а бафи стоять на одній клавіші, яку тиснеш сам.</p>
+  {{ hotbar([('1', ['vaizels-authority', 'bow-of-blessing', 'supporting-fire']), ('2', ['marking-shot']), ('3', ['deadshot']), ('4', ['explosion-trap']), None, ('5', ['suppressing-arrow']), ('6', []), ('7', []), ('8', []), None, ('Q', ['gale-arrow', 'snare-shot', 'explosive-arrow']), ('E', []), ('ЛКМ', ['snipe']), ('T', ['drill-dart', 'burst-arrow', 'tempest-shot'])], macro=['Q', 'T']) }}
+  <div class="hotlines">
+    {% call hotline('Q', 'Лінія Gale', ['gale-arrow', 'snare-shot', 'explosive-arrow']) %}Gale Arrow по КД, Snare Shot для сповільнення, Explosive Arrow згори.{% endcall %}
+    {% call hotline('T', 'Лінія Drill', ['drill-dart', 'burst-arrow', 'tempest-shot']) %}Спершу Drill Dart, потім Burst Arrow; Tempest Shot заповнює паузи.{% endcall %}
+  </div>
+  {{ macroseq([('Лінія Gale', 'Q · 10 мс'), ('Лінія Drill', 'T · 10 мс')]) }}
+  <ul class="presslist">
+    <li><span class="press-how">Тримати</span><span class="press-what">{{ s('snipe') }} на <span class="key">ЛКМ</span> і макрос на <span class="key">ПКМ</span> разом, увесь бій. Саму клавішу T не тиснеш — її натискає лише макрос.</span></li>
+    <li><span class="press-how">Вручну</span><span class="press-what">Лінію бафів на <span class="key">1</span> у потрібний момент, {{ s('marking-shot') }} раз на 15 с, {{ s('deadshot') }} за відкатом.</span></li>
+  </ul>
+  <p class="note">Лінивий варіант для відкритого світу й легких підземель: постав Burst Arrow у нижній слот лінії бафів на 1 і додай цю лінію в макрос — бафи спрацьовуватимуть самі. Тиснути їх самому — більше шкоди, і в рейдах це важливо.</p>
+{% endcall %}
+
+{% call section('recap', 'Підсумок', 'pve') %}
+  <div class="callout accent"><ul>
+    <li><strong>Скіли:</strong> Deadshot і Gale Arrow 20; Drill Dart, Snipe, Tempest Shot 16; решта 12; Explosion Trap і Suppressing Arrow — лише за потреби (стягнути мобів, оглушення), в ендгейм-PvE їх можна не качати; Arrow Scattershot узагалі ні.</li>
+    <li><strong>Стигми:</strong> спершу Vaizel's Authority 20, потім Bow of Blessing, Supporting Fire, Griffon Arrow; Explosive Arrow, якщо відкриється 5-й слот.</li>
+    <li><strong>Пасивки:</strong> Focused Eye, Hunter's Resolve, потім Hunter's Soul.</li>
+    <li><strong>Статі:</strong> точність до капу, потім атака / крит.</li>
+    <li><strong>Аркани:</strong> +4 на Deadshot і Gale Arrow.</li>
+  </ul></div>
+{% endcall %}
+
+{# ============================ Leveling ============================ #}
+{% call section('fight-lvl', t.lvl_combat, 'lvl') %}
+  <p>Прокачка й перші дні на 45 — за гайдом Moxsy по Ranger (глобал, 5 жовтня), зробленим за допомогою JohnPal — Ranger з досвідом Кореї й Тайваню.</p>
+  <div class="callout"><ul>
+    <li><strong>Пачки:</strong> більшість скілів Ranger б'ють лише в радіусі 4 м від цілі, тож не вбивай мобів по одному. Зачепи кількох {{ s('snipe') }}, щоб стягнути, потім {{ s('marking-shot') }} і {{ s('explosion-trap') }}, щоб зібрати їх докупи, потім макрос.</li>
+    <li><strong>Елітки:</strong> спершу {{ s('marking-shot') }} — Precision тримається весь бій, — потім макрос і повністю заряджений {{ s('deadshot') }} у найтовщу ціль. Не витрачай Deadshot на дрібноту, поки поруч елітка.</li>
+    <li><strong>Оглушення:</strong> {{ s('suppressing-arrow') }}, коли бос майже оглушений. {{ s('arrow-scattershot') }} пропускай: затискати його на оглушеному босі слабше за звичайну ротацію.</li>
+    <li><strong>Мана:</strong> {{ s('snipe') }} відновлює MP — вплітай його постійно.</li>
+  </ul></div>
+{% endcall %}
+
+{% call section('skills-lvl', 'Що качати першим', 'lvl') %}
+  <ul class="skill-grid">
+    {% call skill('snipe', 'must', '8 → 12', [0, 3]) %}Базова атака: +20% відновлення MP на 8, −1 с перезарядки Deadshot за влучання на 12. Качай разом з Tempest Shot.{% endcall %}
+    {% call skill('tempest-shot', 'must', '12', [1, 2]) %}Шкода на старті: +10% криту вміння й +12% по одній цілі. Качай разом зі Snipe.{% endcall %}
+    {% call skill('deadshot', 'must', '12 → 16', [1, 2]) %}Вкладай у нього кожен доступний рівень — мобільність і +30% швидкості вміння дають величезний приріст шкоди. Заряджуваний скіл: кастуй вручну, макрос випускає лише перший заряд.{% endcall %}
+    {% call skill('gale-arrow', 'must', '12', [2, 3]) %}Мобільний і спеціалізація на швидкість бою — швидкість головний стат Ranger.{% endcall %}
+    {% call skill('drill-dart', 'must', '12', [3, 2]) %}Б'є сильно, на криті відновлює MP, вішає кровотечу й лікує, перезарядка коротка. Гарантований мультиудар і +20% швидкості вміння, коли він проходить.{% endcall %}
+    {% call skill('burst-arrow', 'must', '12', [1, 2]) %}Сильний удар: з +50% мультиудару поверх своїх 50% завжди проходить мультиударом; мобільний; сповільнює й знерухомлює.{% endcall %}
+  </ul>
+  <div class="callout"><ul>
+    <li><strong>Порядок:</strong> Snipe і Tempest Shot порівну, потім Drill Dart, Gale Arrow і Burst Arrow в міру відкриття; Deadshot — щоразу, коли доступний рівень.</li>
+    <li><strong>Пасивки</strong> після скілів: спершу {{ s('focused-eye') }} і {{ s('hunters-resolve') }}, потім {{ s('hunters-soul') }}, {{ s('rooting-eye') }} і {{ s('concentrated-fire') }} — дві останні живляться твоїми сповільненнями, знерухомленнями й шкодою з часом.</li>
+    <li><strong>Стигми:</strong> {{ s('vaizels-authority') }}, {{ s('bow-of-blessing') }}, {{ s('supporting-fire') }} і {{ s('explosive-arrow') }} порівну до 5. Після 45 скидання безкоштовне: усе у Vaizel's Authority, поки вона не дійде до 20, — найбільший стрибок сили Ranger.</li>
+    <li><strong>Daevanion:</strong> спершу вузли скілів головної шкоди, потім решта скілів, потім пасивки; вузли опору криту пропускай.</li>
+  </ul></div>
+  <p>Покроково: <a href="https://ranger.tgustafsson.se/#board=zikel-59" target="_blank" rel="noopener">планувальник прокачки й дошок Daevanion від JohnPal →</a> · <a href="https://docs.google.com/document/d/1evrt_6e6WSHRT1vMem2i3O7ZlfANJbqyZoSn66IFrBo/edit?tab=t.0" target="_blank" rel="noopener">текстовий гайд по Ranger від Allyria →</a></p>
+{% endcall %}
+
+{% call section('macro-lvl', 'Макрос на прокачці', 'lvl') %}
+  <p>Схема Moxsy (кадр 13:32): бафи й бурсти стоять у двох лініях, які натискає макрос, Snipe і Deadshot — на миші.</p>
+  {{ hotbar([('1', ['suppressing-arrow']), ('2', ['explosion-trap']), ('3', ['marking-shot']), ('4', ['drill-dart', 'tempest-shot']), None, ('5', []), ('6', []), ('7', []), ('8', ['burst-arrow', 'vaizels-authority', 'bow-of-blessing', 'supporting-fire']), None, ('Q', ['gale-arrow', 'explosive-arrow', 'snare-shot']), ('E', ['arrow-scattershot']), ('ЛКМ', ['snipe']), ('ПКМ', ['deadshot'])], macro=['Q', '4', '8']) }}
+  <div class="hotlines">
+    {% call hotline('8', 'Лінія Burst Arrow', ['burst-arrow', 'vaizels-authority', 'bow-of-blessing', 'supporting-fire']) %}Спершу Burst Arrow; поки він на перезарядці, кожен баф спрацьовує, щойно готовий.{% endcall %}
+    {% call hotline('Q', 'Лінія Gale Arrow', ['gale-arrow', 'explosive-arrow', 'snare-shot']) %}Gale Arrow, Explosive Arrow і Snare Shot — сповільнення, потрібне Burst Arrow.{% endcall %}
+    {% call hotline('4', 'Лінія Drill Dart', ['drill-dart', 'tempest-shot']) %}Drill Dart за відкатом, Tempest Shot заповнює паузи.{% endcall %}
+  </div>
+  <p>Вбудований макрос, кожен крок із затримкою <strong>10 мс</strong>:</p>
+  {{ macroseq([('Лінія Gale Arrow', 'Q'), ('Лінія Drill Dart', '4'), ('Лінія Burst Arrow', '8'), ('Лінія Drill Dart', '4')]) }}
+  <p class="note">Другий крок із Drill Dart поки нічого не додає — у тесті Moxsy шкода та сама, — але окупиться, коли стигми дійдуть до 15. Тримай {{ s('snipe') }} на ЛКМ разом з макросом; {{ s('deadshot') }} заряджай вручну.</p>
+  <h3>Інший варіант: ранні лінії Grobs</h3>
+  <div class="hotlines">
+    {{ hotline('1', 'Лінія 1', ['griffon-arrow', 'explosive-arrow'], []) }}
+    {{ hotline('2', 'Лінія 2', ['drill-dart', 'gale-arrow', 'tempest-shot'], []) }}
+  </div>
+  <p>Вбудований макрос: Лінія 1 → Лінія 2, по 10 мс. Коли скіли дійдуть до 12–16, переходь на повну схему у вкладці PvE.</p>
+{% endcall %}
+
+{# ============================ Sources ============================ #}
+<section class="sources" aria-labelledby="h-sources">
+  <h2 id="h-sources">{{ t.sources }}</h2>
+  <ul>
+    <li><a href="https://www.youtube.com/watch?v=wKOm6yKuu_I" target="_blank" rel="noopener">Whelps — гайд на Ranger AION 2</a> і його <a href="https://questlog.gg/aion-2/en/character-builder/AelonCommandAndTheSharpMerchant?build-id=8655" target="_blank" rel="noopener">PvE-білд на ендгейм 1 сезону на questlog</a> — білд, за яким іде цей гайд (скіли, стигми, макрос, спорядження, аркани)</li>
+    <li><a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ0C3iKFteGvIbgqNDnQq7bmwIaU23DvjbPa0HPSVAdOOiCeBkEq69Cn8jVMJhToJcztCRylYeTYfOk/pubhtml" target="_blank" rel="noopener">TitanTheF — таблиця прогресії AION 2</a> (вкладка Ranger) і його <a href="https://aion2t.com/ru/simulator?job=4&amp;b=8QbCF0" target="_blank" rel="noopener">білд 45+ на aion2t</a> — ранній глобальний білд (рівні скілів, прокачка)</li>
+    <li><a href="https://questlog.gg/aion-2/en/db/skills/ranger" target="_blank" rel="noopener">questlog.gg</a> — дані скілів і стигм із глобального клієнта</li>
+    <li><a href="https://7mmo.com/threads/guide-ranger-aion-2-build-pve-complet-sorts-stigmas-stuff.5771/" target="_blank" rel="noopener">7MMO</a> — повний корейський PvE-білд (скіли, стигми, макрос)</li>
+    <li><a href="https://vortexgaming.io/postdetail/722757" target="_blank" rel="noopener">Vortex Gaming</a> — корейські стигми після патча</li>
+    <li><a href="https://game8.co/games/Aion-2/archives/613085" target="_blank" rel="noopener">Game8</a> — рівні відкриття скілів, основи ротації</li>
+    <li><a href="https://gamerstogether.cz/en/aion-2-ranger-build-guide/" target="_blank" rel="noopener">Gamers Together</a> — підхід до PvP</li>
+    <li>Галерея AION 2 на DCInside — пости корейських гравців про поточну мету й стигми (анонімні автори, окремого посилання немає)</li>
+    <li><a href="https://nemobek.github.io/aion2-guide/" target="_blank" rel="noopener">nemobek.github.io/aion2-guide</a> (таблиця TitanTheF) — маршрут прокачки</li>
+    <li><a href="https://www.youtube.com/watch?v=HMod6Z4GrE0" target="_blank" rel="noopener">Grobs — AION 2 Macro Guide</a> — як працюють лінії на кнопках і вбудований макрос</li>
+    <li><a href="https://www.youtube.com/watch?v=VsvTt5JkEzY" target="_blank" rel="noopener">Moxsy — ULTIMATE RANGER GUIDE! (Leveling, Macros, Rotation &amp; More!)</a> — режим «Прокачка»: збір мобів, що качати першим, його панель і макрос (разом з JohnPal)</li>
+    <li><a href="https://www.youtube.com/watch?v=UOuiJT9E1xA" target="_blank" rel="noopener">aLuckyRO — AION 2 Latest Ranger PVE Build for Global</a> — ранні спеціалізації, Explosive Arrow замість Griffon Arrow, зв'язка Marking Shot → Gale Arrow → Deadshot</li>
+    <li><a href="https://www.youtube.com/watch?v=fGABxC3QKd8" target="_blank" rel="noopener">LordRobson — Aion 2 Ranger - Build, Skills, Stigmas and Macros</a> — підтверджує стигми (четверта — Griffon Arrow або Explosive Arrow), Deadshot до 16 першим, тривалість Marking Shot</li>
+    <li><a href="https://www.youtube.com/watch?v=GdAakaOGPLo" target="_blank" rel="noopener">Fubgun — Endgame Ranger Guide. Macro/Stigma skills/daevanion board</a> — другий варіант макросу з його панеллю, Explosive Arrow замість Griffon Arrow, вибір для Deadshot і Gale Arrow, стартові рівні стигм, лук і guard на +10</li>
+  </ul>
+  <p class="sources-all"><a href="{{ root }}{{ lang }}/sources/">{{ t.src_all }} →</a></p>
+</section>

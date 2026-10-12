@@ -1,0 +1,299 @@
+{% from "macros.html" import section, skill, core, loadout, passives, glance, hotline, macroseq, hotbar, dv_board with context %}
+
+{# PvE from Kaeria's video guide; PvP stays off (site.json modes_off) until there is a real source. #}
+
+{# ============================== PvE ============================== #}
+{% call glance('pve') %}
+  <h3>{{ t.core_skills }}</h3>
+  {{ core([('condemnation', '16 → 20'), ('divine-aura', '16 → 20'), ('bolt', '16 → 20'), ('judgment-thunder', '16'), ('lightning-strike-scattershot', '16')]) }}
+  <h3>{{ t.stigma_loadout }}</h3>
+  {{ loadout([('earth-punishment', 20), ('light-of-protection', 20), ('prayer-of-amplification', 20), ('noble-aura', 10)]) }}
+  <h3>{{ t.key_passives }}</h3>
+  {{ passives(['empyrean-lords-grace', 'earths-grace', 'healing-enhancement', 'radiant-benediction']) }}
+{% endcall %}
+
+{% call glance('pvp') %}
+  <h3>{{ t.core_skills }}</h3>
+  {{ core([('condemnation', '16 → 20'), ('radiant-recovery', '16 → 20'), ('judgment-thunder', '16'), ('bolt', '16'), ('chain-of-torment', '14')]) }}
+  <h3>{{ t.stigma_loadout }}</h3>
+  {{ loadout([('prayer-of-amplification', 20), ('light-of-protection', 20), ('yustiels-power', 15), ('voice-of-doom', 10)]) }}
+  <h3>{{ t.key_passives }}</h3>
+  {{ passives(['empyrean-lords-grace', 'healing-enhancement', 'earths-grace', 'survival-willpower']) }}
+{% endcall %}
+
+{% call section('intro', 'Visão geral', 'pve') %}
+<p>Nas masmorras de AION 2, o Clérigo é um curador que <strong>também precisa causar dano</strong>. Segundo as fontes deste guia, as recompensas dependem da contribuição, e apenas curar pode não ser suficiente. O grupo conta com esquivas e habilidades de invulnerabilidade: recupere a vida de quem acabou de sofrer dano e aproveite o restante do tempo para atacar.</p>
+<div class="callout accent"><h3>A build em uma frase</h3><p>{{ s('earth-punishment') }} faz {{ s('condemnation') }} sempre causar acerto crítico, que reinicia sua recarga. Enquanto você repete Condemnation, {{ s('divine-aura') }}, {{ s('bolt') }} e {{ s('noble-aura') }} acrescentam dano.</p></div>
+<p class="note">Baseado no guia PvE de Kaeria, em russo, gravado em Taiwan em 28 de setembro e indicado por ela para o Global. O projeto original o conferiu em 30 de setembro e o comparou ao guia Global de Lucia, de 5 de outubro, que apresenta um Clérigo com nível de item 2160. As escolhas de habilidades podem ser alteradas gratuitamente; arcana consome recursos.</p>
+{% endcall %}
+
+{% call section('intro-pvp', 'Visão geral', 'pvp') %}
+<p>No PvP, o Clérigo mantém a base do PvE: {{ s('condemnation') }} com reinício por acerto crítico, {{ s('judgment-thunder') }} e as curas. Os estigmas e algumas especializações passam a priorizar controle de grupo, redução da cura inimiga e sobrevivência durante o dano concentrado do adversário.</p>
+<div class="callout accent"><h3>A build em uma frase</h3><p>Use {{ s('prayer-of-amplification') }} e {{ s('light-of-protection') }} como buffs, aplique {{ s('voice-of-doom') }} no curador ou tanque que seu grupo está atacando e guarde {{ s('yustiels-power') }} para o momento de maior pressão inimiga.</p></div>
+<p class="note">Baseado na parte PvP do guia Global de Lucia, de 5 de outubro: estigmas para duelos e grupos, com as especializações que ela troca no PvP. A rotação apresentada ainda segue a base PvE enquanto não há um vídeo específico de combos PvP.</p>
+{% endcall %}
+
+{% call section('global', 'Global — Temporada 1: o que muda', 'pve pvp') %}
+<p>O projeto original informa lançamento Global em <strong>5 de outubro de 2026</strong>, com acesso antecipado em 30 de setembro. Para o Clérigo, destaca:</p>
+<div class="callout"><ul>
+<li><strong>4 espaços de estigma, com limite de nível 20.</strong> A barra de Taiwan de Kaeria tem mais espaços. Os quatro deste guia são suas escolhas para o Global. Efeitos de nível 25, como Double Chance em Light of Protection, ficam de fora.</li>
+<li><strong>Dano contribui para as recompensas.</strong> A proposta é atacar enquanto você mantém o grupo vivo.</li>
+<li><strong>Grupos maiores:</strong> expedições de 5 jogadores e santuários de 10. Com um Chanter no grupo, os mantras não se acumulam; substitua Light of Protection.</li>
+<li><strong>Ping menor que em Taiwan pode facilitar o cancelamento de animações</strong> e permitir mais ataques básicos entre as habilidades da macro.</li>
+</ul></div>
+<p class="note">Segundo os dados usados pelo projeto original, habilidades ativas e passivas coincidem entre Global e KR/TW; os estigmas perdem o estágio de nível 25. O vídeo de referência foi gravado em Taiwan com nomes de habilidades em inglês.</p>
+{% endcall %}
+
+{% call section('skills', 'Habilidades', 'pve') %}
+<p>Priorize dano e leve as curas principais, Healing Light e Radiant Recovery, ao nível 16.</p>
+<p><strong>Ordem de evolução de Lucia:</strong> {{ s('earths-retribution') }} e {{ s('judgment-thunder') }}, depois {{ s('condemnation') }} e as curas. Após as missões regionais do nível 45, busque nível 12 ou mais nas habilidades; depois, ajuste as especializações e melhore as curas.</p>
+<ul class="skill-grid">
+    {% call skill('condemnation', 'must', '16 → 20', [1, 3], then=[4]) %}Habilidade central da barra: +12% contra alvo único e reinício de recarga ao causar crítico. No nível 20, escolha MP se faltar mana; caso contrário, Multi-Hit.{% endcall %}
+    {% call skill('divine-aura', 'must', '16 → 20', [2, 4], then=[3]) %}Causa dano junto com você, então duração maior ajuda. No 16, Lucia escolhe velocidade de ataque da aura e −10 s de recarga; no 20, acrescenta +3 s de duração. Kaeria usa +3 s no lugar da velocidade no 16. Para farm, aLuckyRO escolhe dano em área, atingindo até quatro inimigos. Whelps usa área e −10 s no 16 e as três opções no 20.{% endcall %}
+    {% call skill('bolt', 'must', '16 → 20', [1, 2], then=[4]) %}Seu ataque mais forte: carregue completamente. Lucia usa +300 Skill Accuracy e +30% de velocidade da habilidade; no 20, acrescenta crítico garantido. Se sua precisão já for alta, Kaeria prefere +20% contra alvo único. Whelps usa velocidade e crítico no 16, adicionando alvo único no 20.{% endcall %}
+    {% call skill('judgment-thunder', 'must', '16', [1, 4]) %}Dano constante e cancelamento de animações. A especialização Divine Punishment aumenta bastante o dano. No 20, acrescente −20% de custo de MP.{% endcall %}
+    {% call skill('lightning-strike-scattershot', 'must', '16', [3, 4]) %}Só pode ser usada durante Stagger. Cada acerto reduz todas as suas recargas em 1 s.{% endcall %}
+    {% call skill('healing-light', 'must', '16', [0, 3]) %}Cura rápida com pouca recarga: +2 usos e +2% de HP, com benefício de aumento de cura. No 20, acrescente −2 s.{% endcall %}
+    {% call skill('radiant-recovery', 'must', '16 → 20', [2, 4]) %}Sua cura mais forte fora dos estigmas, com remoção de um debuff. Lucia usa −3 s de recarga e +10% Incoming Heal até o 16; depois, −3 s e +5% HP. Leve ao 20 cedo. Alternativa: +1 uso consecutivo no lugar de −3 s, para duas curas grandes seguidas.{% endcall %}
+    {% call skill('earths-retribution', 'opt', '12 → 16', [1, 3], then=[2]) %}Ataque básico usado para cancelar animações. Escolha chance de Discharge e redução de 7 s na recarga de Bolt quando Discharge ativa. No 20, acrescente Multi-Hit.{% endcall %}
+    {% call skill('debilitating-mark', 'opt', '12', [1, 2]) %}Reduz a Defense do chefe em 15% enquanto durar o dano contínuo. Lucia usa a chance de 20% de atordoar para controle em Transcendence. Outra opção reduz o dano do chefe, mas Lucia não confirma se funciona como descrito.{% endcall %}
+    {% call skill('chain-of-torment', 'opt', '14', [2, 3]) %}Permite usar Condemnation e reduz em 10% a tolerância a dano PvE do chefe. Lucia escolhe 20% de chance de derrubar para Transcendence. Se não precisar do controle, +3 s de dano contínuo é alternativa. No 16, Whelps usa redução de tolerância e redução pela metade do intervalo entre os danos.{% endcall %}
+    {% call skill('light-of-regeneration', 'opt', '12–16', [2, 4]) %}Reaplique assim que a recarga terminar. Escolha +5% Incoming Heal. Antes do 16, a segunda opção é +20% de cura abaixo de 50% HP; no 16, escolha 5% de tolerância.{% endcall %}
+    {% call skill('defiance', 'opt', '12', [2, 3]) %}Remove controle de grupo. As escolhas acrescentam 10% HP e +2 s de imunidade.{% endcall %}
+  </ul>
+{% endcall %}
+
+{% call section('skills-pvp', 'Habilidades', 'pvp') %}
+  Os níveis de habilidade <p> e a maioria das picaretas são os mesmos do PvE. O que muda para PvP: </p>
+  <ul class="skill-grid">
+    {% call skill('earths-retribution', 'opt', '16 → 20', [1, 3], then=[4]) %}Mantenha Discharge e −7 s de recarga de Bolt. No 20, escolha ignorar Block e Evasion para garantir que o ataque básico acerte.{% endcall %}
+    {% call skill('chain-of-torment', 'must', '14', [2, 3]) %}Chance de 20% de derrubar, além de −5% de tolerância a dano PvP. O controle vale mais que aumentar o dano contínuo.{% endcall %}
+    {% call skill('debilitating-mark', 'opt', '12', [1, 2]) %}−15% Defense e chance de 20% de atordoar.{% endcall %}
+    {% call skill('bolt', 'must', '16', [1, 2]) %}+300 Skill Accuracy é ainda mais importante contra jogadores com Evasion.{% endcall %}
+    {% call skill('light-of-regeneration', 'opt', '16', [2, 4]) %}A especialização de tolerância concede 2,5% de resistência a dano PvP durante a cura.{% endcall %}
+    {% call skill('defiance', 'must', '16', [2, 3]) %}Resposta a atordoamentos e derrubadas, decisiva no PvP. Segundo Lucia, a diferença entre as especializações é pequena.{% endcall %}
+  </ul>
+{% endcall %}
+
+{% call section('passives', 'Passivas', 'pve') %}
+  <div class="callout"><ul>
+    <li> {{ s('empyrean-lords-grace') }} - o mais importante: dano crítico, dupla chance e danos extras em cada batida. O mais alto que puder. </li>
+    <li> {{ s('earths-grace') }} - usado para polir a festa, agora só você, ainda vale a pena nivelar. </li>
+    <li> {{ s('healing-enhancement') }} - curar impulso como uma parte de seu ataque, então um Cleric constrói ataque em vez de defesa. </li>
+    <li> {{ s('radiant-benediction') }} - cura aliados próximos em ataques; tome-o se você for all-in em danos. </li>
+    <li> {{ s('warm-benediction') }} e {{ s('immortal-veil') }} estão bem para ter, {{ s('empyrean-lords-benediction') }} é para PvP. </li>
+  </ul></div>
+  <p> Lucia nivela estes três primeiro, antes de qualquer outro passivo: {{ s('empyrean-lords-grace') }}, {{ s('healing-enhancement') }} e {{ s('earths-grace') }}. O {{ s('immortal-veil') }} ajuda cedo e cai quando a armadura balança. </p>
+  <p class="note"> Primeiros dias (aLuckyRO): nível {{ s('radiant-benediction') }} - cura toda a festa a cada segundos enquanto eles batem - e {{ s('healing-enhancement') }} primeiro. Os críticos passivos só compensam uma vez que seu equipamento dá o Ataque Crítico, até então você mal faz o Crítico. </p>
+{% endcall %}
+
+{% call section('gear', 'Equipamentos e atributos', 'pve') %}
+<div class="callout"><ul>
+<li><strong>Atributos dos equipamentos:</strong> Might, que ajuda no ataque e na cura; Combat Speed e Damage Boost. Weapon Damage Boost e Precision também são fortes. Para PvE, o guia evita resistências a efeitos, evasão e atributos defensivos.</li>
+<li><strong>Arma e guard, segundo Lucia:</strong> Weapon Damage Boost, Might, Combat Speed e Precision. Luvas: Combat Speed. Botas: Movement Speed. Acessórios: Combat Speed, Might e Precision, além de uma linha para Earth's Grace ou Empyrean Lord's Grace.</li>
+<li><strong>Anéis:</strong> fabrique assim que puder. Os fabricados têm uma linha adicional para habilidades ativas. Priorize Condemnation, Radiant Recovery, Judgment Thunder e Healing Light ou Divine Aura.</li>
+<li><strong>Atributos especiais:</strong> Destruction, Wisdom (Double Chance), Illusion (recargas), Time (Combat Speed), Freedom (precisão) e Death (Critical Hit), escolhido por Kaeria. Também Might, Precision e Constitution. Lucia prioriza Time, Illusion, Space e Destruction.</li>
+<li><strong>Para a raid de Ludra:</strong> a fonte recomenda pelo menos 1000 Accuracy e 1000 Critical Hit.</li>
+<li><strong>Asas:</strong> Talisra Wings, da loja da temporada, por aproximadamente 250.000 pontos. Atributos citados: Attack 60, Defense 400, Accuracy 35 e −4% de recarga. Guarde pontos para elas.</li>
+</ul></div>
+<h3>Genus Insight</h3><p>Leve os pets ao nível 3 no início. Abater criaturas correspondentes aos pets evoluídos fornece cristais para esses atributos. Escolhas de Lucia por posição:</p>
+<div class="table-wrap"><table><thead><tr><th>Posição</th><th>Escolha</th></tr></thead><tbody>
+<tr><td>1, 5</td><td>Attack Bonus; na posição 5, Max Attack é uma alternativa</td></tr>
+<tr><td>2, 8</td><td>HP</td></tr><tr><td>3, 6, 9</td><td>Accuracy; use Block se sua precisão já estiver alta</td></tr>
+<tr><td>4</td><td>Atributo de dano daquele painel: Damage Boost, Perfect Chance ou Back Attack Damage</td></tr>
+<tr><td>7</td><td>Regeneration ou Endurance</td></tr><tr><td>Especial</td><td>Double Chance</td></tr>
+</tbody></table></div><p class="note">Busque os valores mais altos e trave uma linha apenas quando estiver perto do máximo, nunca antes de o painel atingir nível 9–10.</p>
+{% endcall %}
+
+{% call section('gear-pvp', 'Equipamentos e atributos', 'pvp') %}
+<div class="callout"><ul>
+<li><strong>Equipamentos:</strong> os mesmos atributos de PvE: Weapon Damage Boost, Might, Combat Speed e Precision na arma e no guard; Combat Speed, Might e Precision nos acessórios.</li>
+<li><strong>Genus Insight:</strong> Critical Hit Resist no lugar de HP na posição 2, e Front Attack Damage Boost na posição de dano correspondente, porque no PvP você costuma atacar de frente.</li>
+<li><strong>Azphel:</strong> o painel Daevanion de nível 45 oferece bônus de dano e resistência para PvP.</li>
+</ul></div>
+{% endcall %}
+
+{% call section('arcana', 'Arcana', 'pve') %}
+<div class="table-wrap"><table><thead><tr><th>Arcana</th><th>Conjunto / atributo</th><th>Habilidades desejadas</th></tr></thead><tbody>
+<tr><td>Chalice</td><td>Vigor (Combat Speed)</td><td>Bônus que levem suas habilidades principais do nível 16 ao 20</td></tr>
+<tr><td>Parchment</td><td>Destiny ou Life</td><td>Condemnation, Radiant Recovery, Earth's Retribution, Bolt</td></tr>
+<tr><td>Compass</td><td>Death ou Freedom</td><td>Lightning Strike Scattershot, Healing Light, Divine Aura, Judgment Thunder</td></tr>
+<tr><td>Bell</td><td>Destruction</td><td>Empyrean Lord's Grace; evite Survival Willpower</td></tr>
+<tr><td>Mirror</td><td>Wisdom para dano ou Illusion para recargas</td><td>Earth's Grace, Healing Enhancement</td></tr>
+</tbody></table></div>
+<p><strong>Bônus de conjunto:</strong> combine 2 + 2 cartas ou quatro de Primal Vigor. O conjunto oferece +60 PvE Attack com duas e +150 com quatro enquanto seu HP estiver em 70% ou mais. No início, habilidades corretas valem mais que o conjunto correto; ajuste os conjuntos depois.</p>
+{% endcall %}
+
+{% call section('daevanion', 'Painéis Daevanion', 'pve pvp') %}
+<p>Daevanion leva habilidades do nível 10 ao 14 e acrescenta atributos. Cada nó azul concede <strong>+1 nível</strong> à habilidade correspondente.</p>
+<div class="callout"><ul>
+<li><strong>Prioridade geral:</strong> nós laranja de Cooldown Reduction e Combat Speed, depois Attack e Critical Hit, nós azuis de habilidades, nós laranja defensivos e, por último, passivas.</li>
+<li>Segundo a fonte, Critical Damage Tolerance e Multi-Hit Resist não ajudam no PvE porque chefes não causam críticos nem multiacertos.</li>
+<li>O guia considera barato reiniciar os painéis; você pode refazer a rota conforme sua build evolui.</li>
+<li><strong>Ordem de Lucia:</strong> em Nezekan e Zikel, pegue os quatro cantos e suas habilidades. Em Vaizel e Triniel, pule os cantos e vá direto às habilidades ativas usadas na build.</li>
+<li><strong>Ordem de Whelps:</strong> primeiro os nós azuis que levam as ativas ao nível 12 e liberam o segundo espaço de especialização. Depois, nós laranja ofensivos: Combat Speed, Cooldown Reduction, Damage Boost, Critical Damage Boost e Multi-Hit Chance. Em seguida, Empyrean Lord's Grace, Earth's Grace, Attack e Critical Hit. Deixe Damage Tolerance, Critical Damage Tolerance, HP e Defense para depois. Evite nós de MP +50 quando possível.</li>
+<li data-only="pvp"><strong>Azphel, nível 45:</strong> bônus de dano e resistência para PvP. Invista nele para esse modo.</li>
+<li data-only="pve"><strong>Sem Ariel no Global descrito pelo guia:</strong> são cinco painéis, e Azphel oferece bônus de PvP. Para PvE, priorize os quatro primeiros.</li>
+</ul></div>
+<div class="table-wrap"><table><thead><tr><th>Painel</th><th>Liberação</th><th>Nós laranja</th></tr></thead><tbody>
+<tr><td>Nezekan</td><td>Nv. 12</td><td>Combat Speed, Cooldown Reduction</td></tr>
+<tr><td>Zikel</td><td>Nv. 20</td><td>Damage Boost, Damage Tolerance</td></tr>
+<tr><td>Vaizel</td><td>Nv. 30</td><td>Critical Damage Boost e Tolerance</td></tr>
+<tr><td>Triniel</td><td>Nv. 40</td><td>Multi-Hit Chance e Resist</td></tr>
+<tr><td>Azphel</td><td>Nv. 45</td><td>PvP Damage Boost e Tolerance; sem nós de habilidades</td></tr>
+</tbody></table></div>
+<h3>Rota nos painéis</h3><p>Os painéis abaixo usam os dados do cliente Global. O dourado marca o caminho de menor custo desde Start até as habilidades prioritárias e os nós laranja úteis ao PvE. Passe o mouse sobre um nó para ver os efeitos.</p>
+<div data-only="pve">{{ dv_board('pve') }}</div><div data-only="pvp">{{ dv_board('pvp') }}</div>
+<p class="note">Painéis e custos vêm dos dados Global do Questlog. A rota é calculada pelo site; não foi copiada de um vídeo. Confira os valores no painel do jogo antes de gastar seus cristais.</p>
+{% endcall %}
+
+{% call section('stigmas', 'Estigmas', 'pve') %}
+  <ul class="skill-grid">
+    {% call skill('earth-punishment', 'must', 'Nv. 15 → 20', upto=20) %}Faz Condemnation sempre causar crítico, reiniciando sua recarga. Também concede Defense, Attack e Double Chance ao grupo. É uma das habilidades centrais da build.{% endcall %}
+    {% call skill('light-of-protection', 'must', 'Nv. 20', upto=20) %}Seu mantra: cura recebida, precisão, +10% HP e Perfect Chance, sem recarga. Não acumula com o mantra do Chanter; substitua quando houver um no grupo. Ative uma vez e deixe fora das colunas e da macro para não desligá-lo.{% endcall %}
+    {% call skill('prayer-of-amplification', 'must', 'Nv. 10 → 20', upto=20) %}+20% Attack e fortalecimento de Empyrean Lord's Grace e Earth's Grace. Use sempre que disponível. É um dos três primeiros estigmas que Lucia leva ao 20, junto com Earth Punishment e Light of Protection.{% endcall %}
+    {% call skill('noble-aura', 'must', 'Nv. 10+', upto=10) %}Invoca um orbe que ataca ao seu lado. A fonte estima uma grande contribuição de dano; quanto maior o nível, melhor.{% endcall %}
+    {% call skill('absolution', 'opt', 'com Chanter', upto=15) %}Estigma de cura mais forte, especialmente no 15+: +5% HP recuperado, curas estimadas de 15–20 mil e recarga de 1 minuto a partir do nível 5. Lucia o usa no lugar de Light of Protection quando há Chanter.{% endcall %}
+    {% call skill('benevolence', 'opt', 'santuário', upto=15) %}Cura contínua para todo o grupo. Assim como Absolution, o guia recomenda reservar um espaço a partir do nível 15.{% endcall %}
+    {% call skill('yustiels-power', 'opt', 'santuário', upto=15) %}Tolerância a dano para o grupo por 10 s. Alternativa para santuários no lugar de Noble Aura ou Prayer.{% endcall %}
+    {% call skill('summon-resurrection', 'opt', 'Nv. 5', upto=5) %}Mantenha no 5 no início e use se o grupo morrer muito. Lucia dispensa em grupos aleatórios: se a pessoa usar uma pedra para reviver, o estigma ainda entra em recarga de 2 minutos.{% endcall %}
+    {% call skill('salvation', 'skip', 'dispensar') %}Invulnerabilidade de 3 s, com recarga longa. Segundo a fonte, ataques vermelhos ainda atravessam o efeito; priorize a esquiva.{% endcall %}
+  </ul>
+  <p class="note"> com um Chanter no partido: substituir Light of Protection por Absolution, outra cura ou Summon Resurrection. Voice of Doom (- 200 Critical Hit Resist on the boss em 15 ) é uma opção em santuários com um segundo curandeiro, principalmente cedo, enquanto todos são curtos em crit; Power Burst apenas onde a barra cambaleante tem que ser quebrado e ninguém mais pode fazê-lo (Nightmare). {{ s('root') }} e {{ s('assault-mark') }} não têm utilidade em PvE. </p>
+  <p class="note"> Whelps: nível Earth Punishment para 20 primeiro, depois os outros uniformemente, Light of Protection último. Para uma troca de papéis Noble Aura para {{ s('summon-resurrection') }} ou {{ s('yustiels-power') }}; com uma troca Light of Protection para um deles. Ele mantém duas habilidades predefinidas, com e sem um Chanter - cada predefinição tem seus próprios níveis de habilidade. </p>
+{% endcall %}
+
+{% call section('stigmas-pvp', 'Estigmas', 'pvp') %}
+  <div class="table-wrap"><table>
+    <thead> <tr> <th> Luta </th> <th> Stigmas </th> </tr> </thead>
+    <tbody>
+      <tr> <td> Duels, lutas pequenas </td> <td> Prayer of Amplification, Light of Protection, Yustiel's Power, Voice of Doom </td> </tr>
+      <tr> <td> Grupo PvP </td> <td> Absolution no lugar de Voice of Doom - a limpeza e o grande cura </td> </tr>
+      <tr> <td> Abyss, mundo aberto </td> <td> Summon Resurrection às vezes, no lugar de Absolution </td> </tr>
+    </tbody>
+  </table></div>
+  <ul class="skill-grid">
+    {% call skill('prayer-of-amplification', 'must', 'Nv. 20', upto=20) %}+20% Attack e fortalecimento das passivas de crítico, ajudando tanto no dano quanto na cura.{% endcall %}
+    {% call skill('light-of-protection', 'must', 'Nv. 20', upto=20) %}Bônus de dano e tolerância PvP para o grupo, precisão e HP máximo. É um efeito alternável: ative uma vez.{% endcall %}
+    {% call skill('yustiels-power', 'must', 'Nv. 15', upto=15) %}10 s de tolerância a dano para o grupo, com escudo, Block e Evasion. Use quando o inimigo concentrar suas habilidades ofensivas.{% endcall %}
+    {% call skill('voice-of-doom', 'must', 'Nv. 10', upto=10) %}Reduz em 60% a cura recebida e a recuperação de poções do alvo por 20 s. Pressiona Clérigos, Chanters e as autocuras de Gladiadores e Templários. No nível 10, também remove escudos. O bônus de 20% ao atingir mais alvos ajuda em lutas de grupo.{% endcall %}
+    {% call skill('absolution', 'opt', 'PvP em grupo', upto=15) %}Estigma de cura mais forte. A partir do nível 10, remove todos os debuffs. Escolha de Lucia para lutas em grupo.{% endcall %}
+    {% call skill('summon-resurrection', 'opt', 'Abyss', upto=5) %}Útil no Abyss e no mundo aberto, onde uma ressurreição pode mudar a luta.{% endcall %}
+  </ul>
+{% endcall %}
+
+{% call section('macro', 'Macro', 'pve') %}
+  A configuração global de Lucia <p>: apenas a macro do jogo, dois passos, e duas linhas de barras quentes lidas de sua barra de habilidades (quadro 13:10). Em AION 2, a fenda inferior <strong> de uma linha tem a maior prioridade </strong>; as cartas mostram cada linha de cima a baixo como no jogo. </p>
+  {{ hotbar([('1', ['lightning-strike-scattershot', 'debilitating-mark']), ('2', []), ('3', ['radiant-recovery']), ('4', ['bolt']), None, ('5', ['light-of-protection']), ('6', []), ('7', []), ('8', ['noble-aura']), None, ('Q', ['prayer-of-amplification', 'earth-punishment', 'chain-of-torment', 'condemnation']), ('E', ['light-of-regeneration', 'healing-light']), ('LMB', ['earths-retribution']), ('T', ['divine-aura', 'judgment-thunder'])], macro=['Q', 'T']) }}
+
+  <h3> 1. Linhas de barras </h3>
+  <div class="hotlines">
+    {% call hotline('Q', 'Prayer line', ['prayer-of-amplification', 'earth-punishment', 'chain-of-torment', 'condemnation']) %} Oração sempre que estiver pronto, então Earth Punishment e Chain of Torment, então cada Condemnation crits e reinicia. Mantenha o {{ s('light-of-protection') }} fora da linha: é um interruptor, e cada segundo de pressão iria desligá-lo. {% endcall %}
+    {% call hotline('T', 'Divine Aura line', ['divine-aura', 'judgment-thunder']) %} A aura quando estiver pronta, Judgment Thunder no meio - depois de cada Judgment Thunder Condemnation pode fazer o acerto crítico e reiniciar novamente. {% endcall %}
+  </div>
+  <p> Fora da macro - o resto de seu bar: </p>
+  <div class="hotlines">
+    {% call hotline('1', 'Debuff line', ['lightning-strike-scattershot', 'debilitating-mark']) %} Lightning Strike Scattershot em um chefe escalonado, caso contrário Debilitating Mark - pressione-o no esfriamento. {% endcall %}
+    {% call hotline('E', 'Heal line', ['light-of-regeneration', 'healing-light']) %} Light of Regeneration sempre que estiver pronto, Healing Light (três cargas) para o resto. {% endcall %}
+  </div>
+  <ul class="presslist">
+    <li> <span class="press-how"> Chaves próprias </span> <span class="press-what"> <span class="key"> LMB </span> {{ s('earths-retribution') }}, <span class="key"> 3 </span> {{ s('radiant-recovery') }}, <span class="key"> 4 </span> {{ s('bolt') }}, <span class="key"> 5 </span> {{ s('light-of-protection') }} (uma alavanca - ligue uma vez), <span class="key"> 8 </span> {{ s('noble-aura') }}. </span> </li>
+  </ul>
+
+  <h3> 2. No jogo macro </h3>
+  <p> Em <span class="key"> RMB </span>, cada passo com um atraso <strong> 10 ms </strong>: </p>
+  {{ macroseq([('Prayer line', 'Prayer of Amplification'), ('Divine Aura line', 'Divine Aura')]) }}
+
+  <h3> 3. Chaves </h3>
+  <ul class="presslist">
+    <li> <span class="press-how"> Segure </span> <span class="press-what"> A macro em <span class="key"> RMB </span> juntamente com {{ s('earths-retribution') }} em <span class="key"> LMB </span> - o ataque básico, Judgment Thunder e Condemnation tecer até que a sequência começa novamente. </span> </li>
+    <li> <span class="press-how"> pela mão </span> <span class="press-what"> A linha Debuff na recarga, a linha Heal e {{ s('radiant-recovery') }} quando alguém acabou de levar um golpe, totalmente carregado {{ s('bolt') }}; {{ s('noble-aura') }} na recarga. </span> </li>
+  </ul>
+  <p class="note"> Lucia observa que uma macro de terceiros faz mais, mas ela se mantém no jogo. </p>
+
+  <h3> Outra opção: macro (global) </h3> de Whelps
+  <p> Whelps' setup (vídeo de outubro 5, quadros 3:35 e 4:28): uma vez que {{ s('condemnation') }} atinge 12 e reinicia em um crit, o macro spams a linha Earth Punishment três vezes para cada imprensa da linha de debuff. </p>
+  {{ hotbar([('1', []), ('2', ['healing-light']), ('3', ['radiant-recovery']), ('4', ['bolt']), None, ('Z', []), ('X', []), ('C', ['noble-aura']), ('V', ['light-of-protection']), None, ('Q', ['debilitating-mark', 'divine-aura', 'light-of-regeneration', 'judgment-thunder']), ('E', ['lightning-strike-scattershot']), ('LMB', ['earths-retribution']), ('—', ['earth-punishment', 'prayer-of-amplification', 'condemnation', 'chain-of-torment'])], macro=['—', 'Q']) }}
+  <div class="hotlines">
+    {% call hotline('—', 'Earth Punishment line', ['earth-punishment', 'prayer-of-amplification', 'condemnation', 'chain-of-torment']) %} Earth Punishment e Oração sempre que estão prontos, então Condemnation sempre crits e resets; Chain of Torment mantém a marca acima. A linha não tem chave, só a macro pressiona. {% endcall %}
+    {% call hotline('Q', 'Debuff line', ['debilitating-mark', 'divine-aura', 'light-of-regeneration', 'judgment-thunder']) %} O debufo, a aura e a cura ao longo do tempo no recarga; Judgment Thunder enche o resto. {% endcall %}
+  </div>
+  {{ macroseq([('Earth Punishment line', '10 ms'), ('Earth Punishment line', '10 ms'), ('Earth Punishment line', '10 ms'), ('Debuff line', 'Q · 10 ms')]) }}
+  <ul class="presslist">
+    <li> <span class="press-how"> Segure </span> <span class="press-what"> A macro em <span class="key"> RMB </span> e {{ s('earths-retribution') }} em <span class="key"> LMB </span>; Carregue totalmente {{ s('bolt') }} quando estiver pronto. </span> </li>
+    <li> <span class="press-how"> à mão </span> <span class="press-what"> {{ s('healing-light') }} para pequenas curas, {{ s('radiant-recovery') }} para grandes. </span> </li>
+    <li> <span class="press-how"> Check </span> <span class="press-what"> Em análise de combate, Condemnation deve atingir tantas vezes quanto Judgment Thunder ou mais. Se bater menos, adicione outro passo de linha Earth Punishment - no equipamento de Whelps que é 26 k DPS em vez de 22 k. </span> </li>
+  </ul>
+{% endcall %}
+
+{% call section('recap', 'Resumo', 'pve') %}
+<div class="callout accent"><ul>
+<li><strong>Habilidades:</strong> Condemnation, Radiant Recovery, Divine Aura e Bolt do 16 ao 20. Judgment Thunder, Lightning Strike Scattershot e Healing Light no 16. As demais entre 12 e 14.</li>
+<li><strong>Estigmas:</strong> Earth Punishment, Light of Protection e Prayer of Amplification no 20, além de Noble Aura. Com Chanter no grupo, troque Light of Protection por Absolution.</li>
+<li><strong>Como jogar:</strong> contribua com dano e cure quem acabou de ser atingido.</li>
+</ul></div>
+{% endcall %}
+
+{% call section('recap-pvp', 'Resumo', 'pvp') %}
+<div class="callout accent"><ul>
+<li><strong>Habilidades:</strong> base PvE, com especializações de controle em Chain of Torment e Debilitating Mark. Earth's Retribution ignora Block e Evasion no nível 20.</li>
+<li><strong>Estigmas:</strong> Prayer of Amplification, Light of Protection, Yustiel's Power e Voice of Doom. No PvP em grupo, Absolution substitui Voice of Doom.</li>
+<li><strong>Equipamentos:</strong> atributos da build PvE; no Genus Insight, Critical Hit Resist e Front Attack Damage. Invista no painel Azphel.</li>
+</ul></div>
+{% endcall %}
+
+{% call section('intro-lvl', 'Visão geral', 'lvl') %}
+<p>O Clérigo cura, mas durante a evolução joga como uma classe de dano à distância: {{ s('chain-of-torment') }} marca o alvo, {{ s('condemnation') }} ataca e {{ s('radiant-benediction') }} cura você e o grupo enquanto você acerta. Use curas diretas quando necessário.</p>
+<div class="callout accent"><h3>Evolução em uma frase</h3><p>Mantenha {{ s('earths-retribution') }} para recuperar mana, repita a coluna de Chain com a macro do jogo e priorize pontos nas habilidades de ataque.</p></div>
+{% endcall %}
+
+{% call section('fight-lvl', t.lvl_combat, 'lvl') %}
+<div class="callout"><ul>
+<li><strong>Grupos de inimigos:</strong> {{ s('chain-of-torment') }}, que atinge até 4 alvos → {{ s('condemnation') }} → {{ s('divine-aura') }} com especialização em área → {{ s('judgment-thunder') }}.</li>
+<li><strong>Elites:</strong> {{ s('debilitating-mark') }} para reduzir a defesa → {{ s('chain-of-torment') }} → {{ s('bolt') }} totalmente carregado → {{ s('condemnation') }}.</li>
+<li><strong>Mana:</strong> use o modo de alvo e intercale {{ s('earths-retribution') }}, que recupera MP a cada uso.</li>
+<li><strong>Pouco HP:</strong> use {{ s('healing-light') }}. {{ s('radiant-benediction') }} continua curando enquanto você ataca.</li>
+<li><strong>Chefes desequilibrados:</strong> {{ s('lightning-strike-scattershot') }} só funciona enquanto o alvo está em Stagger.</li>
+<li><strong>Pontos:</strong> ataques primeiro, curas depois. Segundo Whelps, os pontos restantes vão para {{ s('empyrean-lords-grace') }} e {{ s('earths-grace') }}.</li>
+</ul></div>
+{% endcall %}
+
+{% call section('macro-lvl', 'Macro para subir de nível', 'lvl') %}
+  <p> Grobs está no início do jogo: uma linha de hotbar e uma macro de um lote no jogo. Em AION 2, a fenda inferior <strong> de uma linha tem a maior prioridade </strong> - a carta mostra a linha de cima para baixo como no jogo. </p>
+  <div class="hotlines">
+    {% call hotline('RMB', 'Chain line', ['chain-of-torment', 'debilitating-mark', 'condemnation', 'judgment-thunder']) %} Chain of Torment vai primeiro para que Condemnation possa bater, Judgment Thunder não tem recarga e preenche as lacunas. {% endcall %}
+  </div>
+  <p> No jogo macro (Skill window → Macro), atraso <strong> 10 ms </strong> : </p>
+  {{ macroseq([('Chain line', '10 ms')]) }}
+  <ul class="presslist">
+    <li> <span class="press-how"> Segure </span> <span class="press-what"> {{ s('earths-retribution') }} em <span class="key"> LMB </span> e a tecla da macro juntos. </span> </li>
+    <li> <span class="press-how"> pela mão </span> <span class="press-what"> {{ s('bolt') }} (habilidade carregada - mantê-lo fora da macro), cura, estigmas. </span> </li>
+  </ul>
+  <p class="note"> Whelps' começa do nível 4: duas linhas na macro em RMB - uma com {{ s('condemnation') }} na parte inferior, uma com {{ s('debilitating-mark') }}. Assim que Condemnation chegar ao 12 e reiniciar em um crit, mude para sua macro PvE (PvE tab). </p>
+{% endcall %}
+
+{% call section('stigmas-lvl', 'Estigmas durante a evolução', 'lvl') %}
+  <p> Stigmas desbloqueiam no nível 22. A ordem dos whelps para cada novo slot: 22 {{ s('earth-punishment') }} (na parte inferior da linha Condemnation, então Condemnation sempre crits), 27 {{ s('light-of-protection') }}, 32 {{ s('noble-aura') }}, 37 {{ s('prayer-of-amplification') }}. </p>
+  <ul class="skill-grid">
+    {% call skill('summon-resurrection', 'must', 'Nv. 1', upto=1) %} Um ponto é o suficiente no início, nível 5 corta o tempo de elenco mais tarde. {% endcall %}
+    {% call skill('noble-aura', 'must', 'Nv. 5', upto=5) %} Uma aura que luta ao seu lado por 5 minutos - danos livres. {% endcall %}
+    Dano {% call skill('earth-punishment', 'must', 'Nv. 5', upto=5) %} ao longo do tempo, nível 5 faz Condemnation crit. {% endcall %}
+    {% call skill('benevolence', 'must', 'Nv. 5', upto=5) %} Cure ao longo do tempo para 20s - manter entre os pacotes. {% endcall %}
+    {% call skill('absolution', 'opt', 'Nv. 5', upto=5) %} Grande cura e remoção de debufa. {% endcall %}
+  </ul>
+{% endcall %}
+
+{# ============================ Sources ============================ #}
+<section class="sources" aria-labelledby="h-sources">
+  <h2 id="h-sources">{{ t.sources }}</h2>
+  <ul>
+    <li> <a href="https://www.youtube.com/watch?v=7LjTwlZ4v_s" target="_blank" rel="noopener"> Kaeria - Guia Cleric PvE (em russo) </a> - o modo PvE: níveis de habilidade e especialização, estigmas, passivos, estatísticas, Daevanion, arcana </li>
+    <li> <a href="https://www.youtube.com/watch?v=HMod6Z4GrE0" target="_blank" rel="noopener"> Grobs - AION 2 Macro Guide </a> - o slide macro do início do jogo (linha de barras elétricas e macro) </li>
+    <li> <a href="https://mmo-codex.com/articles/aion-2-cleric-guide/" target="_blank" rel="noopener"> MMO Codex - Aion 2 Cleric guide </a> - ordem de habilidade e especialização ao nivelar, estigmas em 22 </li>
+    <li> <a href="https://questlog.gg/aion-2/en/db/skills/cleric" target="_blank" rel="noopener"> questlog.gg </a> - dados de habilidade do cliente global </li>
+    <li> <a href="https://www.youtube.com/watch?v=A3pZDSt4ceU" target="_blank" rel="noopener"> aLuckyRO — AION 2 Ultimate Cleric PVE Build for Global </a> — especialização inicial (Divine Aura para agricultura e chefes, Earth's Retribution para mana), troca de estigmas para calabouços, o Chain of Torment → Condemnation combo, passivos iniciais </li>
+    <li> <a href="https://www.youtube.com/watch?v=KptUtnv35vk" target="_blank" rel="noopener"> Lucia - Aion 2 Cleric Guide de um Worlds 1s t Rank 1 </a> - escolhas globais de habilidade, níveis de estigma, uma macro de dois passos, linhas de engrenagem, Genus Insight, asas; o modo PvP </li>
+    <li> <a href="https://www.youtube.com/watch?v=3g1Wc_3_TSM" target="_blank" rel="noopener"> Whelps - Guia de Iniciação Clérrica - Habilidades, Macro, Daevanion Board </a> - uma macro global com três passos Earth Punishment e a análise de combate, especialização, ordem estigma enquanto nivela, troca estigma, a ordem de administração </li>
+  </ul>
+  <p class="sources-all"><a href="{{ root }}{{ lang }}/sources/">{{ t.src_all }} →</a></p>
+</section>

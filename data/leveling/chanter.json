@@ -1,0 +1,137 @@
+{
+  "_note": "Chanter leveling steps from TitanTheF's starting build (aion2t S5RCtE). [[slug]] = localized skill name, [[slug#N]] = its N-th specialization.",
+  "steps": [
+    {
+      "id": "chanter-core",
+      "order": 2,
+      "skills": [
+        "onslaught",
+        "incandescent-blow"
+      ],
+      "when": {
+        "en": "Lv 1",
+        "ru": "Ур. 1",
+        "uk": "Рів. 1",
+        "tr": "Sv 1",
+        "pt-BR": "LV 1"
+      },
+      "text": {
+        "en": "First points into [[onslaught]] (restores MP) and [[incandescent-blow]]. At 8: [[onslaught#0]] and [[incandescent-blow#1]].",
+        "ru": "Первые очки в [[onslaught]] (восполняет ману) и [[incandescent-blow]]. На 8: [[onslaught#0]] и [[incandescent-blow#1]].",
+        "uk": "Перші очки в [[onslaught]] (поповнює ману) і [[incandescent-blow]]. На 8: [[onslaught#0]] і [[incandescent-blow#1]].",
+        "tr": "İlk puanlar [[onslaught]] (MP yeniler) ve [[incandescent-blow]]'a. 8'de: [[onslaught#0]] ve [[incandescent-blow#1]].",
+        "pt-BR": "Primeiros pontos em [[onslaught]] (restaura MP) e [[incandescent-blow]]. Em 8: [[onslaught#0]] e [[incandescent-blow#1]]."
+      }
+    },
+    {
+      "id": "chanter-crush",
+      "order": 4,
+      "skills": [
+        "impactful-crush",
+        "dark-crush"
+      ],
+      "when": {
+        "en": "Lv 1–8",
+        "ru": "Ур. 1–8",
+        "uk": "Рів. 1–8",
+        "tr": "Sv 1–8",
+        "pt-BR": "Lv 1 - 8"
+      },
+      "text": {
+        "en": "[[impactful-crush]] stuns and unlocks [[dark-crush]] for 2s — put both in one line with Impactful Crush at the bottom.",
+        "ru": "[[impactful-crush]] оглушает и открывает [[dark-crush]] на 2 сек. — поставь оба в одну линию, Дробящий удар внизу.",
+        "uk": "[[impactful-crush]] оглушує й відкриває [[dark-crush]] на 2 с — постав обидва в одну лінію, Impactful Crush унизу.",
+        "tr": "[[impactful-crush]] sersemletir ve [[dark-crush]]'ı 2 sn açar — ikisini bir satıra koy, Impactful Crush en altta.",
+        "pt-BR": "[[impactful-crush]] atordoa e destrava [[dark-crush]] para 2s - coloque ambos em uma linha com Impactful Crush na parte inferior."
+      }
+    },
+    {
+      "id": "chanter-rush",
+      "order": 80,
+      "skills": [
+        "rushing-smash"
+      ],
+      "when": {
+        "en": "Lv 8",
+        "ru": "Ур. 8",
+        "uk": "Рів. 8",
+        "tr": "Sv 8",
+        "pt-BR": "LV 8"
+      },
+      "text": {
+        "en": "[[rushing-smash]] → 12: [[rushing-smash#3]] — dash to the next mob after every kill.",
+        "ru": "[[rushing-smash]] → 12: [[rushing-smash#3]] — рывок к следующему мобу после каждого убийства.",
+        "uk": "[[rushing-smash]] → 12: [[rushing-smash#3]] — ривок до наступного моба після кожного вбивства.",
+        "tr": "[[rushing-smash]] → 12: [[rushing-smash#3]] — her öldürmeden sonra sonraki moba atıl.",
+        "pt-BR": "[[rushing-smash]] → 12 : [[rushing-smash#3]] - correr para a próxima multidão depois de cada morte."
+      }
+    },
+    {
+      "id": "chanter-spin",
+      "order": 130,
+      "skills": [
+        "spinning-strike"
+      ],
+      "when": {
+        "en": "Lv 13",
+        "ru": "Ур. 13",
+        "uk": "Рів. 13",
+        "tr": "Sv 13",
+        "pt-BR": "LV 13"
+      },
+      "text": {
+        "en": "[[spinning-strike]] → 12 with [[spinning-strike#0]]: stacking Critical Damage and another Dark Crush trigger.",
+        "ru": "[[spinning-strike]] → 12 с [[spinning-strike#0]]: складывающийся крит. урон и ещё один запуск Удара скалы.",
+        "uk": "[[spinning-strike]] → 12 з [[spinning-strike#0]]: крит. шкода, що складається, і ще один запуск Dark Crush.",
+        "tr": "[[spinning-strike]] → [[spinning-strike#0]] ile 12: biriken Critical Damage ve bir Dark Crush tetikleyicisi daha.",
+        "pt-BR": "[[spinning-strike]] → 12 com [[spinning-strike#0]]: empilhando dano crítico e outro gatilho Dark Crush."
+      }
+    },
+    {
+      "id": "chanter-stigmas",
+      "order": 221,
+      "skills": [
+        "undefeated-mantra",
+        "power-of-the-storm",
+        "obliterate"
+      ],
+      "when": {
+        "en": "Lv ~22",
+        "ru": "~Ур. 22",
+        "uk": "~Рів. 22",
+        "tr": "Sv ~22",
+        "pt-BR": "LV ~ 22"
+      },
+      "text": {
+        "en": "Stigmas: [[undefeated-mantra]] first (to 10), then [[power-of-the-storm]], [[sprint-mantra]] and [[obliterate]] for packs. Switch the mantras on once — never put them in a macro.",
+        "ru": "Стигмы: сначала [[undefeated-mantra]] (до 10), затем [[power-of-the-storm]], [[sprint-mantra]] и [[obliterate]] для пачек. Мантры включи один раз — никогда не ставь их в макрос.",
+        "uk": "Стигми: спершу [[undefeated-mantra]] (до 10), потім [[power-of-the-storm]], [[sprint-mantra]] і [[obliterate]] для пачок. Мантри ввімкни один раз — ніколи не став їх у макрос.",
+        "tr": "Stigmalar: önce [[undefeated-mantra]] (10'a), sonra [[power-of-the-storm]], [[sprint-mantra]] ve gruplar için [[obliterate]]. Mantraları bir kez aç — asla makroya koyma.",
+        "pt-BR": "Stigmas: [[undefeated-mantra]] Primeiro, para 10), então [[power-of-the-storm]], [[sprint-mantra]] e [[obliterate]] Para pacotes. Ligue os mantras uma vez, nunca coloque em um macro."
+      }
+    },
+    {
+      "id": "chanter-cap",
+      "order": 455,
+      "skills": [
+        "onslaught",
+        "dark-crush",
+        "spinning-strike"
+      ],
+      "when": {
+        "en": "Cap",
+        "ru": "Кап",
+        "uk": "Кап",
+        "tr": "Sınır",
+        "pt-BR": "Cap."
+      },
+      "text": {
+        "en": "Start build done: Onslaught, Incandescent Blow, Spinning Strike, Rushing Smash at 12. Next: [[onslaught]], [[dark-crush]], [[spinning-strike]] toward 20 — see the PvE tab.",
+        "ru": "Стартовый билд готов: Разгром, Раскалённый удар, Удар с вращением, Скачок на 12. Дальше [[onslaught]], [[dark-crush]], [[spinning-strike]] к 20 — вкладка PvE.",
+        "uk": "Стартовий білд готовий: Onslaught, Incandescent Blow, Spinning Strike, Rushing Smash на 12. Далі [[onslaught]], [[dark-crush]], [[spinning-strike]] до 20 — вкладка PvE.",
+        "tr": "Başlangıç buildi tamam: Onslaught, Incandescent Blow, Spinning Strike, Rushing Smash 12'de. Sonra: [[onslaught]], [[dark-crush]], [[spinning-strike]] 20'ye doğru — PvE sekmesine bak.",
+        "pt-BR": "Começar build feita: Onslaught, Incandescent Blow, Spinning Strike, Rushing Smash em 12. Próximo: [[onslaught]], [[dark-crush]], [[spinning-strike]] em direção ao 20. Veja a aba PvE."
+      }
+    }
+  ]
+}

@@ -1,0 +1,242 @@
+{
+  "600001": {
+    "en": "Krao Cave",
+    "ru": "Пещера крао",
+    "players": 5,
+    "energy": 40,
+    "bosses": [
+      {
+        "id": "2300104",
+        "en": "Enhanced Harcon",
+        "ru": "Усиленный Харкон",
+        "icon": true,
+        "pt-BR": "Harcon Melhorado"
+      },
+      {
+        "id": "2300108",
+        "en": "Neglected Gadioton",
+        "ru": "Брошенный Гадиотон",
+        "icon": true,
+        "pt-BR": "Gadioton negligenciado."
+      },
+      {
+        "id": "2300171",
+        "en": "Ultimate Berk",
+        "ru": "Завершенная форма Берка",
+        "icon": true,
+        "pt-BR": "Berk final."
+      }
+    ],
+    "pt-BR": "Caverna Krao"
+  },
+  "600031": {
+    "en": "Draupnir",
+    "ru": "Драупнир",
+    "players": 5,
+    "energy": 40,
+    "bosses": [
+      {
+        "id": "2310401",
+        "en": "Phantasmal Lakshmi",
+        "ru": "Лакшми видения",
+        "icon": true,
+        "pt-BR": "Phantasmal Lakshmi"
+      },
+      {
+        "id": "2310403",
+        "en": "Predator Saraswati",
+        "ru": "Хищница Сарасвати",
+        "icon": true,
+        "pt-BR": "Predador Saraswati"
+      },
+      {
+        "id": "2310471",
+        "en": "Transcendent Bakarma",
+        "ru": "Возвышенный Бакрам",
+        "icon": true,
+        "pt-BR": "\"Bakarma Transcendente\""
+      }
+    ],
+    "pt-BR": "Draupnir"
+  },
+  "600011": {
+    "en": "Urugugu Canyon",
+    "ru": "Ущелье ауругу",
+    "players": 5,
+    "energy": 20,
+    "bosses": [
+      {
+        "id": "2310206",
+        "en": "Guardian Captain Raur",
+        "ru": "Капитан охраны Лаур",
+        "icon": true,
+        "pt-BR": "Capitão Raur."
+      },
+      {
+        "id": "2310207",
+        "en": "Judge Urahum",
+        "ru": "Судья Урахум",
+        "icon": true,
+        "pt-BR": "Juiz Urahum."
+      },
+      {
+        "id": "2310218",
+        "en": "Divine Auldor",
+        "ru": "Священный Аулдор",
+        "icon": true,
+        "pt-BR": "Divino Aldor."
+      }
+    ],
+    "pt-BR": "Cânion de Urugugu"
+  },
+  "600071": {
+    "en": "Vakron Sky Island",
+    "ru": "Парящий остров Вакрона",
+    "players": 5,
+    "energy": 40,
+    "bosses": [
+      {
+        "id": "2310811",
+        "en": "Thamon",
+        "ru": "Тамон",
+        "icon": true,
+        "pt-BR": "Thamon."
+      },
+      {
+        "id": "2310810",
+        "en": "Tiere",
+        "ru": "Тие",
+        "icon": true,
+        "pt-BR": "Tiere."
+      },
+      {
+        "id": "2310812",
+        "en": "Vakron",
+        "ru": "Вакрон",
+        "icon": true,
+        "pt-BR": "Vakron."
+      }
+    ],
+    "pt-BR": "Ilha do Céu de Vakron"
+  },
+  "600021": {
+    "en": "Fire Temple",
+    "ru": "Храм огня",
+    "players": 5,
+    "energy": 30,
+    "bosses": [
+      {
+        "id": "2310311",
+        "en": "Red Spark Ignus",
+        "ru": "Игнус красного языка пламени",
+        "icon": true,
+        "pt-BR": "Faísca Vermelha Ignus"
+      },
+      {
+        "id": "2310312",
+        "en": "Black Smoke Murute",
+        "ru": "Мурт черного дыма",
+        "icon": true,
+        "pt-BR": "Murute de fumaça preta"
+      },
+      {
+        "id": "2310371",
+        "en": "Kromede's Desire",
+        "ru": "Желание Кромед",
+        "icon": true,
+        "pt-BR": "Desejo de Kromede"
+      }
+    ],
+    "pt-BR": "Templo de Fogo"
+  },
+  "600091": {
+    "en": "Ferocious Horn Den",
+    "ru": "Логово Свирепого Рога",
+    "players": 5,
+    "energy": 40,
+    "bosses": [
+      {
+        "id": "2310908",
+        "en": "Watchdog Kwapo",
+        "ru": "Сторожевой пес Кухапу",
+        "icon": true,
+        "pt-BR": "Cão de guarda Kwapo"
+      },
+      {
+        "id": "2310909",
+        "en": "Necromancer Duanka",
+        "ru": "Некромант Дванка",
+        "icon": true,
+        "pt-BR": "Necromancer Duanka"
+      },
+      {
+        "id": "2310910",
+        "en": "Ferocious Horn Nuakum",
+        "ru": "Нуакум свирепого рога",
+        "icon": true,
+        "pt-BR": "Nuakum, o Horn Feroz"
+      }
+    ],
+    "pt-BR": "Horn Den Feroz"
+  },
+  "600053": {
+    "en": "Deus Research Base",
+    "ru": "Исследовательская база Деус",
+    "players": 5,
+    "energy": 40,
+    "bosses": [
+      {
+        "id": "2320615",
+        "en": "Nazmun",
+        "ru": "Назмун",
+        "icon": true,
+        "pt-BR": "Nazmun."
+      },
+      {
+        "id": "2320616",
+        "en": "Gelcos",
+        "ru": "Гелькос",
+        "icon": true,
+        "pt-BR": "Gelcos."
+      },
+      {
+        "id": "2320601",
+        "en": "Atiel",
+        "ru": "Атиэль",
+        "icon": true,
+        "pt-BR": "Atiel."
+      }
+    ],
+    "pt-BR": "Base de Pesquisa de Deus."
+  },
+  "600063": {
+    "en": "Shattered Arkanis",
+    "ru": "Расколотый Арканис",
+    "players": 5,
+    "energy": 40,
+    "bosses": [
+      {
+        "id": "2330707",
+        "en": "Siliator of Deceit",
+        "ru": "Силиатор лжи",
+        "icon": true,
+        "pt-BR": "Siliador da Enganação"
+      },
+      {
+        "id": "2330708",
+        "en": "Ruthilis of Pain",
+        "ru": "Руталис боли",
+        "icon": true,
+        "pt-BR": "Ruthilis da Dor"
+      },
+      {
+        "id": "2330709",
+        "en": "Talisra of the Void",
+        "ru": "Талира пустоты",
+        "icon": true,
+        "pt-BR": "Talisra do Vazio"
+      }
+    ],
+    "pt-BR": "Arkanis despedaçados"
+  }
+}

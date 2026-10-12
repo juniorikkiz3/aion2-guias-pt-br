@@ -1,0 +1,213 @@
+{% from "macros.html" import section, skill, core, loadout, passives, glance, hotline, macroseq, hotbar, dv_board with context %}
+
+{# ============================== PvE ============================== #}
+{% call glance('pve') %}
+  <h3>{{ t.core_skills }}</h3>
+  {{ core([('heart-gore', '16 → 20'), ('insignia-explosion', '16 → 20'), ('quick-slice', '16 → 20'), ('ambush', '16'), ('storm-rampage', '16')]) }}
+  <h3>{{ t.stigma_loadout }}</h3>
+  {{ loadout([('illusive-clone', 20), ('swift-contract', 15), ('savage-fang', 15), ('triniels-dagger', 10)]) }}
+  <h3>{{ t.key_passives }}</h3>
+  {{ passives(['rear-smite', 'exploit-weakness', 'assault-stance', 'determination']) }}
+{% endcall %}
+
+{% call section('intro', 'Overview', 'pve') %}
+  <p>The Assassin is a dagger burst class that lives on buffs. Hits engrave <strong>Insignias</strong> on the target, {{ s('insignia-explosion') }} cashes them in, and {{ s('heart-gore') }} fires on crits and resets itself on the next crit. The biggest damage bonus comes from hitting the target in the back, so positioning matters more than on any other class.</p>
+  <div class="callout accent">
+    <h3>The build in one sentence</h3>
+    <p>Stay behind the boss, weave {{ s('quick-slice') }} all the time, press {{ s('insignia-explosion') }} the moment it is ready and {{ s('heart-gore') }} on every crit — and put everything you have into the 20 seconds of {{ s('illusive-clone') }}, when Heart Gore has no cooldown at all.</p>
+  </div>
+  <div class="callout">
+    <h3>What to expect in Season 1</h3>
+    <ul>
+      <li><strong>Burst, then a gap.</strong> On KR/TW the level-25 tier of Illusive Clone lets good players keep it up permanently. Global stops at 20: about 20 seconds of burst on a 1 min 30 s cooldown, and between windows you play fillers while Heart Gore depends on crit luck.</li>
+      <li><strong>The buffs don't line up.</strong> Swift Contract and Savage Fang come back in a minute, Illusive Clone in a minute and a half — you keep deciding whether to wait or to press.</li>
+      <li><strong>Back uptime is damage.</strong> On a dummy it is 100%; in a real fight expect 60–80%, and every hit from the front loses the Rear Smite bonus.</li>
+      <li><strong>Fragile.</strong> No block, little defense — mistakes that a Gladiator survives kill you.</li>
+    </ul>
+    <p>Arthars' verdict: a fun, high-skill class that needs several times more work than a Gladiator or a Sorcerer for the same damage or less. Pick it because you like the playstyle, not for the numbers.</p>
+  </div>
+  <p class="note">The PvE mode follows Arthars Gaming's Assassin video for the global launch (September 30, recorded on the Taiwan server), read frame by frame; the video has no captions, so its text was taken from the audio by speech recognition and every name and number checked against the screen.</p>
+{% endcall %}
+
+{% call section('global', 'Global Season 1: what changes', 'pve pvp') %}
+  <p>Global servers open on <strong>October 5, 2026</strong> (Founder's early access from September 30). What that means for the Assassin:</p>
+  <div class="callout">
+    <ul>
+      <li><strong>4 stigma slots, capped at 20.</strong> All four go to damage: Illusive Clone, Swift Contract, Savage Fang and Triniel's Dagger.</li>
+      <li><strong>No permanent Illusive Clone.</strong> The tier that shortens its cooldown on back crits is level 25 — not in global.</li>
+      <li><strong>Little cooldown reduction at the start.</strong> That is why Storm Rampage goes to 16 and Triniel's Dagger is used as a cooldown tool, not for its damage.</li>
+      <li><strong>Longer fights.</strong> Bosses that die in 30 seconds on Taiwan will take minutes — you will see several burst windows and the gaps between them.</li>
+      <li data-only="pvp"><strong>PvP:</strong> everyone starts on the same limited gear and no meta has formed yet.</li>
+    </ul>
+  </div>
+  <p class="note">Active skills and passives are identical in the global and KR/TW data; stigmas lose their level-25 tier.</p>
+{% endcall %}
+
+{% call section('skills', 'Skills', 'pve') %}
+  <p>Only three skill levels matter: <strong>12, 16 and 20</strong>. Skill points give 10, Daevanion +4, the two rings +2, arcana the rest. Get the five key skills to <strong>16</strong> first, then push Heart Gore and Insignia Explosion to 20.</p>
+  <ul class="skill-grid">
+    {% call skill('heart-gore', 'must', '16 → 20', [0, 4], then=[3]) %}Your most important skill. It needs 16: a crit resets its cooldown, otherwise it waits 5 seconds. HP absorb keeps you alive; at 20 add Multi-Hit. If you are short on Critical Hit early, the +20% crit pick is an option instead of the absorb.{% endcall %}
+    {% call skill('insignia-explosion', 'must', '16 → 20', [2, 4], then=[1]) %}The other half of your damage. −3s cooldown and two Insignias kept after each explosion — press it every time it is ready, don't wait for stacks. At 20 add Multi-Hit.{% endcall %}
+    {% call skill('quick-slice', 'must', '16 → 20', [3, 4], then=[2]) %}The basic attack you weave between everything: guaranteed crit and −1s on Insignia Explosion per hit. At 20 the third slot is your choice — HP absorb or Multi-Hit.{% endcall %}
+    {% call skill('ambush', 'must', '16', [0, 4]) %}Your first filler when Heart Gore is closed: two extra uses at 16 and two Insignias per back hit. If it reaches 20, add the HP absorb.{% endcall %}
+    {% call skill('storm-rampage', 'must', '16', [3, 4]) %}On other classes this is skippable; here it is not. While the boss is staggered every hit takes 1s off all cooldowns — it brings your buffs back, and this class does no damage without buffs.{% endcall %}
+    {% call skill('defiance', 'opt', '12 → 16', [2, 3]) %}CC break: the heal and +2s Tenacity at 12; at 16 swap the heal for the damage tolerance.{% endcall %}
+    {% call skill('savage-roar', 'opt', '12', [1, 3]) %}The last filler in the line: faster, and every hit shortens Shadowstrike. Not worth more than 12–16.{% endcall %}
+    {% call skill('shadowstrike', 'opt', '12', [1]) %}Teleport behind the target and +20% Critical Damage for 10s — a buff and your best way to the back. Keep it for repositioning instead of spending it on cooldown; the other picks are for PvP.{% endcall %}
+    {% call skill('flash-slice', 'opt', '12', [1, 3]) %}A second way to get behind the target: 10m range and two uses.{% endcall %}
+    {% call skill('infiltrate', 'opt', '12', [0, 1]) %}Dodge → behind the target, and it pays the stamina back. Never take the follow-up chain.{% endcall %}
+    {% call skill('whirlwind-slice', 'opt', '12', [0, 2]) %}Long-range gap-closer. Hits hard on paper, but the animation is long — not part of the rotation.{% endcall %}
+    {% call skill('shadow-fall', 'opt', '12', [0, 2]) %}A PvP skill; in PvE only an emergency 10% heal.{% endcall %}
+  </ul>
+{% endcall %}
+
+{% call section('passives', 'Passives', 'pve') %}
+  <p>Skill points max almost all passives while you level. Gear lines are the scarce part: the class wants four passives there and only two or three fit.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Passive</th><th>Priority on gear</th><th>Why</th></tr></thead>
+    <tbody>
+      <tr><td>{{ s('rear-smite') }}</td><td>1</td><td>Back attack and PvE damage boost — the strongest passive; it gives damage even from the front.</td></tr>
+      <tr><td>{{ s('exploit-weakness') }}</td><td>2</td><td>Critical Hit and an Attack buff that is up almost all the time in combat; Illusive Clone multiplies it.</td></tr>
+      <tr><td>{{ s('assault-stance') }}</td><td>2</td><td>Critical Damage Boost; Swift Contract multiplies it.</td></tr>
+      <tr><td>{{ s('determination') }}</td><td>3</td><td>Extra damage on a low-HP target — aLuckyRO counts it among the most important: every boss spends the end of the fight there.</td></tr>
+      <tr><td>{{ s('impact-hit') }}</td><td>4</td><td>Double Chance — only 3.3% at level 10, next to nothing in PvE (aLuckyRO). Keep it for PvP; on PvE gear take Determination first.</td></tr>
+      <tr><td>{{ s('ambush-stance') }}, {{ s('heightened-sixth-sense') }}</td><td>points only</td><td>Maxed by skill points; not worth a gear line.</td></tr>
+      <tr><td>{{ s('apply-poison') }}, {{ s('defense-break') }}</td><td>skip</td><td>Poison is under 1% of your damage; Defense Break is a PvP passive. {{ s('revitalization-contract') }} only with spare points.</td></tr>
+    </tbody>
+  </table></div>
+{% endcall %}
+
+{% call section('gear', 'Gear & stats', 'pve') %}
+  <div class="callout"><ul>
+    <li><strong>Rings:</strong> the only place for active skills — {{ s('heart-gore') }}, {{ s('quick-slice') }}, {{ s('insignia-explosion') }}, {{ s('ambush') }}. They take the key skills from 14 to 16.</li>
+    <li><strong>Weapon and guard:</strong> never put skills there — their damage lines are worth more than one skill level.</li>
+    <li><strong>Other pieces:</strong> Rear Smite first; any of the next three passives is fine. Don't chase a perfect set in Season 1 — global gear has one line less and also rolls Might, Precision and Combat Speed there.</li>
+    <li><strong>Critical Hit</strong> matters more than on other classes: Heart Gore resets only on a crit.</li>
+    <li><strong>Manastones:</strong> Attack, Critical Hit, Accuracy.</li>
+  </ul></div>
+{% endcall %}
+
+{% call section('arcana', 'Arcana', 'pve') %}
+  <p>Season 1 has five cards and two sets. The Assassin is the one class that <strong>must</strong> take Illusion (cooldowns) on the Mirror, which makes four Primal Vigor cards the natural set.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Card</th><th>Stat</th><th>Set</th><th>Roll for</th></tr></thead>
+    <tbody>
+      <tr><td>Chalice</td><td>Time (Combat Speed)</td><td>Primal Vigor</td><td>Whichever of the three key skills is still short of 20</td></tr>
+      <tr><td>Parchment</td><td>Life</td><td>Primal Vigor</td><td>{{ s('quick-slice') }}, {{ s('heart-gore') }}, {{ s('insignia-explosion') }} — all three</td></tr>
+      <tr><td>Compass</td><td>Freedom (Accuracy)</td><td>Primal Vigor</td><td>{{ s('storm-rampage') }}, {{ s('ambush') }}, {{ s('savage-roar') }} — to reach 16</td></tr>
+      <tr><td>Mirror</td><td>Illusion (cooldowns)</td><td>Primal Vigor</td><td>{{ s('rear-smite') }}, {{ s('exploit-weakness') }}; {{ s('impact-hit') }}</td></tr>
+      <tr><td>Bell</td><td>Destruction (Attack)</td><td>Magic Armor</td><td>{{ s('assault-stance') }}</td></tr>
+    </tbody>
+  </table></div>
+  <p><strong>The Parchment is the grind.</strong> All three skills you want at 20 sit on this one card, and a Season 1 card lets you choose only two of its four lines. Leveling the card adds four random +1s — hope for an even spread (+2 on each) rather than +4 on one: the Chalice can then add the missing +2. If it doesn't work out, keep Heart Gore and Insignia Explosion at 20 and leave Quick Slice at 16.</p>
+  <p class="note">The Compass and the Bell are relaxed: nothing on them has to reach 20. All these cards are replaced when Season 2 brings new ones.</p>
+{% endcall %}
+
+{% call section('daevanion', 'Daevanion boards', 'pve pvp') %}
+  <p>Daevanion takes your skills from 10 to 14 and adds stats. Each blue node gives <strong>+1 level</strong> to its skill.</p>
+  <div class="callout"><ul>
+    <li data-only="pve"><strong>Priority:</strong> blue nodes for {{ s('heart-gore') }}, {{ s('insignia-explosion') }}, {{ s('quick-slice') }}, then {{ s('ambush') }} and {{ s('storm-rampage') }}; orange nodes next.</li>
+    <li data-only="pve"><strong>Critical Damage early:</strong> for an Assassin the Vaizel orange Critical Damage Boost pays off from the start — it crits from day one, unlike most classes (aLuckyRO).</li>
+    <li data-only="pvp"><strong>Priority:</strong> blue nodes for {{ s('shadowstrike') }}, {{ s('flash-slice') }}, {{ s('defiance') }}.</li>
+    <li data-only="pve"><strong>No Ariel on global:</strong> there are five boards, and the level-45 one, Azphel, gives only PvP Damage Boost and Tolerance — in PvE finish the first four.</li>
+    <li data-only="pvp"><strong>Azphel</strong> (level 45) is all PvP Damage Boost and Tolerance — take it, and Triniel earlier.</li>
+  </ul></div>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Board</th><th>Unlock</th><th>Orange nodes</th></tr></thead>
+    <tbody>
+      <tr><td>Nezekan</td><td>Lv 12</td><td>Combat Speed, Cooldown Reduction</td></tr>
+      <tr><td>Zikel</td><td>Lv 20</td><td>Damage Boost, Damage Tolerance</td></tr>
+      <tr><td>Vaizel</td><td>Lv 30</td><td>Critical Damage Boost and Tolerance</td></tr>
+      <tr><td>Triniel</td><td>Lv 40</td><td>Multi-Hit Chance and Resist</td></tr>
+      <tr><td>Azphel</td><td>Lv 45</td><td>PvP Damage Boost and Tolerance — no skill nodes</td></tr>
+    </tbody>
+  </table></div>
+  <h3>The route on the boards</h3>
+  <p>The real global boards from the game data. Gold marks the cheapest path from Start to the nodes this guide takes — the blue nodes of the priority skills and the orange nodes; hover any node to see what it gives.</p>
+  <div data-only="pve">{{ dv_board('pve') }}</div>
+  <div data-only="pvp">{{ dv_board('pvp') }}</div>
+  <p class="note">Boards and costs come from the global client data (questlog.gg); the path is calculated, not taken from a video. Stat values may still change at launch — check the in-game board before committing a full route.</p>
+{% endcall %}
+
+{% call section('stigmas', 'Stigmas', 'pve') %}
+  <p>All four slots are buffs. Level Illusive Clone to 20 first — it eats most of your stigma shards — then the rest.</p>
+  <ul class="skill-grid">
+    {% call skill('illusive-clone', 'must', 'Lv 20', upto=20) %}Your burst: for 20 seconds Heart Gore has no cooldown and you deal 20% extra damage, with +20% Critical Damage and ×1.5 Exploit Weakness on top. Cooldown 1 min 30 s. Most of your damage happens inside it — use it on the boss, never on trash. aLuckyRO: essential until Heart Gore reaches 16; with enough crits Heart Gore resets by itself and the slot can be swapped for a while, but at 20 it comes back for its damage boost.{% endcall %}
+    {% call skill('swift-contract', 'must', 'Lv 15 → 20', upto=15) %}+20% Combat Speed, and ×1.5 Rear Smite and Assault Stance for the duration. 15 is enough to start; 20 adds 10% more Combat Speed.{% endcall %}
+    {% call skill('savage-fang', 'must', 'Lv 15', upto=15) %}Five Insignias at once, big stagger damage and, at 15, +10% PvE Damage Boost for 10s. Same one-minute cooldown as Swift Contract — press them together.{% endcall %}
+    {% call skill('triniels-dagger', 'must', 'Lv 10', upto=10) %}Not for its damage: at 10 a hit cuts the <em>remaining</em> cooldown of all your skills by 10%. Press it right after your buffs, when their cooldowns are longest.{% endcall %}
+    {% call skill('evasion-stance', 'opt', 'Lv 5–10', upto=10) %}Guaranteed evasion of a big hit; two charges at 5, mobile at 10. The safe swap for one of the buffs while you learn a fight — the class is fragile.{% endcall %}
+    {% call skill('throw-shadowblade', 'opt', 'farming', upto=10) %}20m throw that resets on a kill at 10 — for open-world farming, not for bosses.{% endcall %}
+  </ul>
+{% endcall %}
+
+{% call section('macro', 'Macro & rotation', 'pve') %}
+  <p>AION 2 has two separate tools:</p>
+  <ul>
+    <li><strong>Hotbar line</strong> — several skills stacked on <em>one</em> hotbar button. Pressing it casts the highest-priority skill that's ready, and in AION 2 the <strong>bottom slot has the highest priority</strong>. The cards show each line top to bottom as in the game.</li>
+    <li><strong>In-game macro</strong> — while you hold its key, it presses your hotbar buttons in order and cancels animation tails. Skills on cooldown are skipped.</li>
+  </ul>
+  {{ hotbar([('N2', ['shadowstrike']), ('Side', []), ('3', ['flash-slice']), ('4', []), None, ('5', []), ('N4', []), ('6', []), ('7', ['illusive-clone', 'swift-contract', 'savage-fang', 'triniels-dagger']), None, ('N1', ['whirlwind-slice', 'infiltrate', 'shadow-fall']), ('N5', ['storm-rampage']), ('1', ['quick-slice']), ('E', ['insignia-explosion', 'heart-gore', 'ambush', 'savage-roar'])], macro=['E', '1'], own_keys=true) }}
+
+  <h3>1. Hotbar lines</h3>
+  <div class="hotlines">
+    {% call hotline('E', 'Damage line', ['insignia-explosion', 'heart-gore', 'ambush', 'savage-roar']) %}Insignia Explosion fires every time it is ready, Heart Gore on every crit. When neither is available the line falls to the fillers: Ambush first, Savage Roar last.{% endcall %}
+    {% call hotline('7', 'Buff line', ['illusive-clone', 'swift-contract', 'savage-fang', 'triniels-dagger']) %}Arthars keeps all four stigmas on one button and presses it by hand — never from the macro, or the buffs go off out of sync.{% endcall %}
+  </div>
+
+  <h3>2. In-game macro</h3>
+  <p>Two steps, <strong>10 ms</strong> each, on a key you can hold all the time:</p>
+  {{ macroseq([('Damage line', '10 ms'), (skill_data('quick-slice')[lang].name, '10 ms')]) }}
+  <p class="note">The video shows the hotbar but not the macro window: this macro follows the setup from Arthars' Chanter guide (the main line, then the basic attack). The lines and keys are read from his hotbar.</p>
+
+  <h3>3. What you actually press</h3>
+  <ul class="presslist">
+    <li><span class="press-how">Hold</span><span class="press-what">The macro key, and spam {{ s('quick-slice') }} yourself — every hit shortens Insignia Explosion.</span></li>
+    <li><span class="press-how">Burst</span><span class="press-what">{{ s('illusive-clone') }} + {{ s('swift-contract') }} + {{ s('savage-fang') }} together, then {{ s('triniels-dagger') }} straight away to cut their cooldowns. For the next 20 seconds it is Heart Gore after Heart Gore.</span></li>
+    <li><span class="press-how">Between windows</span><span class="press-what">Swift Contract and Savage Fang come back before Illusive Clone. Either hold them for the next Clone (bigger burst) or use them on cooldown (steadier damage) — there is no agreed answer; on short fights hold them.</span></li>
+    <li><span class="press-how">Stagger</span><span class="press-what">{{ s('storm-rampage') }} on a staggered boss, weaving Quick Slice — it pulls every cooldown down by seconds.</span></li>
+    <li><span class="press-how">Position</span><span class="press-what">{{ s('shadowstrike') }}, {{ s('flash-slice') }} and {{ s('infiltrate') }} all put you behind the target. Use them to stay there, not as damage buttons.</span></li>
+  </ul>
+  <p class="note">Where the damage comes from in Arthars' test on a dummy: Heart Gore about 30%, Insignia Explosion about 25%, everything else 6% or less each.</p>
+{% endcall %}
+
+{% call section('recap', 'Recap', 'pve') %}
+  <div class="callout accent"><ul>
+    <li><strong>Skills:</strong> Heart Gore, Insignia Explosion, Quick Slice 16 → 20; Ambush and Storm Rampage 16; the rest 12.</li>
+    <li><strong>Stigmas:</strong> Illusive Clone 20, Swift Contract 15 → 20, Savage Fang 15, Triniel's Dagger 10.</li>
+    <li><strong>Passives on gear:</strong> Rear Smite, then Exploit Weakness, Assault Stance, Impact Hit.</li>
+    <li><strong>Play:</strong> stay behind the boss, burst inside Illusive Clone, Triniel's Dagger right after the buffs.</li>
+  </ul></div>
+{% endcall %}
+
+{# ============================ Leveling ============================ #}
+{% call section('fight-lvl', t.lvl_combat, 'lvl') %}
+  <div class="callout"><ul>
+    <li><strong>Packs:</strong> {{ s('savage-fang') }} (5 Insignias) → {{ s('insignia-explosion') }} → {{ s('whirlwind-slice') }}; {{ s('throw-shadowblade') }} resets on a kill for the next pull.</li>
+    <li><strong>Elites:</strong> get behind → {{ s('ambush') }} → {{ s('savage-roar') }} to stack Insignias → Insignia Explosion → {{ s('heart-gore') }} on crits.</li>
+    <li><strong>Mana:</strong> {{ s('quick-slice') }} restores MP — keep it on LMB.</li>
+    <li><strong>Low HP:</strong> {{ s('shadow-fall') }} absorbs HP; {{ s('defiance') }} heals when you're stuck.</li>
+  </ul></div>
+{% endcall %}
+
+{% call section('macro-lvl', 'Leveling macro', 'lvl') %}
+  <p>While leveling, before Heart Gore reaches 16, a simpler setup works from level 1: the Insignia line in the in-game macro on the middle mouse button, Quick Slice on LMB and Heart Gore on Q. For farming mobs use Throw Shadowblade (2) and RMB. Early build at 1–45: Quick Slice, Savage Roar, Insignia Explosion and Heart Gore to 12, everything else to 8.</p>
+  <div class="hotlines">
+    {{ hotline('MMB', 'Insignia line', ['insignia-explosion', 'whirlwind-slice', 'ambush', 'savage-roar']) }}
+  </div>
+  <p><a href="https://aion2t.com/ru/simulator?job=5&amp;b=iUjpcy" target="_blank" rel="noopener">Starting build 1–45 (aion2t) →</a> · <a href="https://aion2t.com/ru/simulator?job=5&amp;b=MeyRht" target="_blank" rel="noopener">45+ goal build →</a></p>
+{% endcall %}
+
+{# ============================ Sources ============================ #}
+<section class="sources" aria-labelledby="h-sources">
+  <h2 id="h-sources">{{ t.sources }}</h2>
+  <ul>
+    <li><a href="https://www.youtube.com/watch?v=UpvUVK1vnt8" target="_blank" rel="noopener">Arthars Gaming — The Brutal Truth About Assassin in Aion 2 Global Launch</a> — the PvE mode: skill levels and specializations, passives, arcana, stigmas, hotbar lines, how the class plays in Season 1</li>
+    <li><a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ0C3iKFteGvIbgqNDnQq7bmwIaU23DvjbPa0HPSVAdOOiCeBkEq69Cn8jVMJhToJcztCRylYeTYfOk/pubhtml" target="_blank" rel="noopener">TitanTheF — AION 2 progression sheet</a> (Assassin tab) — builds, hotbar, macro, stats</li>
+    <li><a href="https://aion2t.com/ru/simulator?job=5&amp;b=MeyRht" target="_blank" rel="noopener">aion2t.com</a> — TitanTheF's start and 45+ builds (skill levels, specializations, stigmas, passives)</li>
+    <li><a href="https://questlog.gg/aion-2/en/db/skills/assassin" target="_blank" rel="noopener">questlog.gg</a> — skill data from the global client</li>
+    <li><a href="https://www.youtube.com/watch?v=HMod6Z4GrE0" target="_blank" rel="noopener">Grobs — AION 2 Macro Guide</a> — how hotbar lines and the in-game macro work</li>
+    <li><a href="https://www.youtube.com/watch?v=DNfd1lZtQkI" target="_blank" rel="noopener">aLuckyRO — AION 2 Latest Assassin PVE Build for Global</a> — early specializations (Quick Slice MP, Storm Rampage Multi-Hit), passive priority, Illusive Clone before Heart Gore 16, Throw Shadowblade for farming</li>
+  </ul>
+  <p class="sources-all"><a href="{{ root }}{{ lang }}/sources/">{{ t.src_all }} →</a></p>
+</section>

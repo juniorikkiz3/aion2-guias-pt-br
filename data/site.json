@@ -1,0 +1,461 @@
+{
+  "base_url": "https://aion2-guias-br.juniorikkix.chatgpt.site/",
+  "langs": [
+    "pt-BR",
+    "en"
+  ],
+  "_author_main": "The site owner's main class (Mimisaki, Asmodian, Zikel): a heart on its home card and an easter egg star at the end of its guide.",
+  "author_main": null,
+  "launch_utc": "2026-10-05T13:00:00Z",
+  "_weekly_reset": "Weekly reset: Wednesday 10:00 Kyiv time (from the user, Oct 1). anchor = the first reset (UTC); every next one is 7 days later at the same local time in tz, so the reset keeps its wall-clock hour across daylight saving changes. confirmed=false shows the 'not announced' note.",
+  "weekly_reset": {
+    "anchor": "2026-09-30T07:00:00Z",
+    "tz": "Europe/Kyiv",
+    "confirmed": true
+  },
+  "_rift": "Rift portal to the enemy zone: opens every `every_h` hours from `anchor` (UTC); from the user, Oct 2: every 3 hours, the next at 21:00 Kyiv. Like the weekly reset it keeps its wall-clock hour in `tz` across daylight saving (00:00, 03:00 … 21:00 Kyiv). The entrance stays open `open_min` minutes (inside you can stay about an hour); the top bar counts down to the next opening on every page and, while the entrance is open, shows how long it stays open.",
+  "rift": {
+    "anchor": "2026-10-02T18:00:00Z",
+    "every_h": 3,
+    "tz": "Europe/Kyiv",
+    "open_min": 10
+  },
+  "_energy": "Odyle energy defaults (EU test client): +15 every 180 min, base cap 840. Players can edit value and cap per character.",
+  "energy": {
+    "regen": 15,
+    "interval_min": 180,
+    "cap": 840,
+    "chest": 40
+  },
+  "_art": "art_pos: where the figure stands in its render (x y, CSS object-position); x also centres the pop-out figure on home cards. art_up: lift the pop-out figure (share of the image height).",
+  "_src": "classes[].src: per guide mode, [who the info comes from, date it was checked]; shown in the class hero.",
+  "repo": "https://github.com/Couga54/aion2-guides",
+  "_feedback": "Report form: the page POSTs to this Cloudflare Worker (tools/feedback-worker/worker.js), which sends the text to the owner in Telegram. Empty string = the report buttons open a GitHub issue instead.",
+  "feedback_url": "",
+  "_ga": "Google Analytics 4 measurement ID; the tag is added to every page by base.html (not loaded on localhost). Empty string = analytics off.",
+  "ga": "",
+  "_events": "Home timers. at=null -> 'date TBA'. confirmed=false -> date is official, hour is not. delayed=true -> a small 'delayed' mark next to the time. celebrate=true -> the site celebrates when it starts (assets/js/celebrate.js, once per visitor within 24 h; ?celebrate=1 previews it). acc_label=false hides the access mark; ongoing=true keeps a started event from being greyed out. cycle=rift / weekly_reset: a repeating timer (the next Rift opening or weekly reset) driven by site.json rift / weekly_reset, the same as the top bar chips (since Oct 5, when pre-download and Early Access left the schedule).",
+  "events": [
+    {
+      "id": "launch",
+      "access": "all",
+      "acc_label": false,
+      "ongoing": true,
+      "at": "2026-10-05T13:00:00Z",
+      "confirmed": true
+    },
+    {
+      "id": "rift",
+      "cycle": "rift"
+    },
+    {
+      "id": "reset",
+      "cycle": "weekly_reset",
+      "href": "weekly/"
+    }
+  ],
+  "updated": "2026-10-10",
+  "classes": [
+    {
+      "slug": "gladiator",
+      "status": "ready",
+      "src": {
+        "pve": [
+          "Arthars Gaming · aLuckyRO · Sen · Ulfhednar",
+          "2026-10-09"
+        ],
+        "pvp": [
+          "Vortex Gaming (KR)",
+          "2026-09-27"
+        ],
+        "lvl": [
+          "Grobs",
+          "2026-09-30"
+        ]
+      },
+      "updated": "2026-10-09",
+      "patch": "S1",
+      "accent": "crimson",
+      "art_pos": "40% 8%",
+      "name": {
+        "en": "Gladiator",
+        "ru": "Гладиатор",
+        "uk": "Gladiator",
+        "tr": "Gladiator",
+        "pt-BR": "Gladiador"
+      },
+      "role": {
+        "en": "Melee DPS · bruiser",
+        "ru": "Ближний бой · брузер",
+        "uk": "Ближній бій · брузер",
+        "tr": "Yakın dövüş DPS · bruiser",
+        "pt-BR": "Dano corpo a corpo"
+      },
+      "weapon": {
+        "en": "Greatsword",
+        "ru": "Двуручный меч",
+        "uk": "Дворучний меч",
+        "tr": "Greatsword",
+        "pt-BR": "Arma de duas mãos"
+      },
+      "difficulty": 1,
+      "pitch": {
+        "en": "Front-loaded damage, a pseudo-tank toolkit and near-permanent cooldowns off one stigma.",
+        "ru": "Мощный фронтальный урон, полутанковый набор и почти вечные перезарядки от одной стигмы.",
+        "uk": "Потужна фронтальна шкода, напівтанковий набір і майже вічні перезарядки від однієї стигми.",
+        "tr": "Önden yüklenen hasar, yarı-tank araç seti ve tek bir stigma sayesinde neredeyse sürekli hazır bekleme süreleri.",
+        "pt-BR": "Combate corpo a corpo com ataques em área e forte pressão ofensiva."
+      }
+    },
+    {
+      "slug": "ranger",
+      "status": "ready",
+      "src": {
+        "pve": [
+          "Whelps · aLuckyRO · LordRobson · Fubgun",
+          "2026-10-10"
+        ],
+        "lvl": [
+          "Moxsy · Grobs",
+          "2026-10-07"
+        ]
+      },
+      "modes_off": [
+        "pvp"
+      ],
+      "updated": "2026-10-10",
+      "patch": "S1",
+      "accent": "emerald",
+      "art_pos": "28% 6%",
+      "art_up": "4%",
+      "name": {
+        "en": "Ranger",
+        "ru": "Стрелок",
+        "uk": "Ranger",
+        "tr": "Ranger",
+        "pt-BR": "Ranger"
+      },
+      "role": {
+        "en": "Ranged DPS · kiter",
+        "ru": "Дальний бой · кайт",
+        "uk": "Дальній бій · кайт",
+        "tr": "Menzilli DPS · kiter",
+        "pt-BR": "Dano físico à distância"
+      },
+      "weapon": {
+        "en": "Bow",
+        "ru": "Лук",
+        "uk": "Лук",
+        "tr": "Bow",
+        "pt-BR": "Arco"
+      },
+      "difficulty": 2,
+      "pitch": {
+        "en": "20-metre burst built on buffs, charged Deadshots and bleeds — and the best zoning tools in PvP.",
+        "ru": "Урон с 20 метров на баффах, заряженных Прицельных выстрелах и кровотечениях — и лучший контроль дистанции в PvP.",
+        "uk": "Шкода з 20 метрів на бафах, заряджених Deadshot і кровотечах — і найкращий контроль дистанції в PvP.",
+        "tr": "Bufflar, şarjlı Deadshot'lar ve kanamalar üzerine kurulu 20 metrelik patlama hasarı — ve PvP'de en iyi alan kontrolü araçları.",
+        "pt-BR": "Ataque à distância, controle o espaço e combine mobilidade com dano."
+      }
+    },
+    {
+      "slug": "templar",
+      "status": "ready",
+      "src": {
+        "pve": [
+          "SolAshur · trueeevil · Leonis",
+          "2026-10-07"
+        ],
+        "pvp": [
+          "SolAshur",
+          "2026-09-30"
+        ],
+        "lvl": [
+          "NoBS Game Guides",
+          "2026-09-27"
+        ]
+      },
+      "updated": "2026-10-07",
+      "patch": "S1",
+      "accent": "sapphire",
+      "name": {
+        "en": "Templar",
+        "ru": "Страж",
+        "uk": "Templar",
+        "tr": "Templar",
+        "pt-BR": "Templário"
+      },
+      "role": {
+        "en": "Tank · party buffer",
+        "ru": "Танк · баффер группы",
+        "uk": "Танк · бафер групи",
+        "tr": "Tank · grup bufferı",
+        "pt-BR": "Tanque"
+      },
+      "weapon": {
+        "en": "Sword & shield",
+        "ru": "Меч и щит",
+        "uk": "Меч і щит",
+        "tr": "Sword & shield",
+        "pt-BR": "Espada e escudo"
+      },
+      "difficulty": 2,
+      "pitch": {
+        "en": "The main tank: blocks buff the whole party, Judgment turns every shield skill into damage, and more crowd control than anyone in PvP.",
+        "ru": "Главный танк: блоки баффают всю группу, Суд превращает каждый удар щитом в урон, а контроля в PvP больше, чем у всех.",
+        "uk": "Головний танк: блоки бафають усю групу, Judgment перетворює кожен удар щитом на шкоду, а контролю в PvP більше, ніж у всіх.",
+        "tr": "Ana tank: bloklar tüm grubu bufflar, Judgment her kalkan yeteneğini hasara çevirir ve PvP'de herkesten fazla kitle kontrolü vardır.",
+        "pt-BR": "Proteja o grupo, controle inimigos e resista aos ataques mais fortes."
+      }
+    },
+    {
+      "slug": "assassin",
+      "status": "ready",
+      "src": {
+        "pve": [
+          "Arthars Gaming (TW client) · aLuckyRO",
+          "2026-10-03"
+        ],
+        "lvl": [
+          "Grobs",
+          "2026-09-27"
+        ]
+      },
+      "modes_off": [
+        "pvp"
+      ],
+      "updated": "2026-10-07",
+      "patch": "S1",
+      "accent": "violet",
+      "name": {
+        "en": "Assassin",
+        "ru": "Убийца",
+        "uk": "Assassin",
+        "tr": "Assassin",
+        "pt-BR": "Assassino"
+      },
+      "role": {
+        "en": "Melee DPS · burst",
+        "ru": "Ближний бой · бурст",
+        "uk": "Ближній бій · берст",
+        "tr": "Yakın dövüş DPS · patlama",
+        "pt-BR": "Dano corpo a corpo"
+      },
+      "weapon": {
+        "en": "Daggers",
+        "ru": "Кинжалы",
+        "uk": "Кинджали",
+        "tr": "Daggers",
+        "pt-BR": "Duas armas"
+      },
+      "difficulty": 3,
+      "pitch": {
+        "en": "Insignia stacks, crits that fire Heart Gore and a clone that removes its cooldown — the highest burst in melee, if you stay behind the target.",
+        "ru": "Стаки эмблем, криты, запускающие Пронзание сердца, и двойник, который снимает с него перезарядку — самый сильный бурст в ближнем бою, если держишься за спиной цели.",
+        "uk": "Стаки емблем, крити, що запускають Heart Gore, і двійник, який знімає з нього перезарядку — найсильніший берст у ближньому бою, якщо тримаєшся за спиною цілі.",
+        "tr": "Insignia yükleri, Heart Gore'u tetikleyen kritikler ve bekleme süresini sıfırlayan bir klon — hedefin arkasında kalırsan yakın dövüşteki en yüksek patlama hasarı.",
+        "pt-BR": "Combine mobilidade e ataques rápidos para eliminar alvos prioritários."
+      }
+    },
+    {
+      "slug": "sorcerer",
+      "status": "ready",
+      "src": {
+        "pve": [
+          "EUTOPIA · aLuckyRO",
+          "2026-10-03"
+        ],
+        "lvl": [
+          "MMO Codex · Grobs",
+          "2026-09-28"
+        ]
+      },
+      "modes_off": [
+        "pvp"
+      ],
+      "updated": "2026-10-06",
+      "patch": "S1",
+      "accent": "frost",
+      "name": {
+        "en": "Sorcerer",
+        "ru": "Волшебник",
+        "uk": "Sorcerer",
+        "tr": "Sorcerer",
+        "pt-BR": "Feiticeiro"
+      },
+      "role": {
+        "en": "Ranged magic DPS",
+        "ru": "Магический урон издалека",
+        "uk": "Магічна шкода здалеку",
+        "tr": "Menzilli büyü DPS",
+        "pt-BR": "Dano mágico à distância"
+      },
+      "weapon": {
+        "en": "Spellbook",
+        "ru": "Гримуар",
+        "uk": "Гримуар",
+        "tr": "Spellbook",
+        "pt-BR": "Orbe"
+      },
+      "difficulty": 2,
+      "pitch": {
+        "en": "A glass-cannon caster that mixes fire and ice: Fire Mark and Blaze for damage, Frost and roots for control, and huge burst behind Element Enhancement.",
+        "ru": "Хрупкий кастер огня и льда: Огненная метка и Зарево на урон, Заморозка и корни на контроль и огромный бурст под Усилением стихий.",
+        "uk": "Крихкий кастер вогню й льоду: Fire Mark і Blaze на шкоду, Frost і корені на контроль і величезний берст під Element Enhancement.",
+        "tr": "Ateş ve buzu karıştıran cam top bir büyücü: hasar için Fire Mark ve Blaze, kontrol için Frost ve köklemeler, Element Enhancement arkasında devasa patlama hasarı.",
+        "pt-BR": "Use magia à distância, controle de grupo e combinações de alto dano."
+      }
+    },
+    {
+      "slug": "elementalist",
+      "status": "ready",
+      "src": {
+        "pve": [
+          "Evripides (aion2sm.com) · DankRNG · aLuckyRO",
+          "2026-10-03"
+        ],
+        "pvp": [
+          "Evripides (aion2sm.com)",
+          "2026-10-03"
+        ],
+        "lvl": [
+          "Grobs · MMO Codex",
+          "2026-09-28"
+        ]
+      },
+      "updated": "2026-10-09",
+      "patch": "S1",
+      "accent": "spirit",
+      "name": {
+        "en": "Elementalist",
+        "ru": "Заклинатель",
+        "uk": "Elementalist",
+        "tr": "Elementalist",
+        "pt-BR": "Elementalista"
+      },
+      "role": {
+        "en": "Summoner · magic DPS",
+        "ru": "Призыватель · магический урон",
+        "uk": "Призивач · магічна шкода",
+        "tr": "Çağırıcı · büyü DPS",
+        "pt-BR": "Dano mágico e invocações"
+      },
+      "weapon": {
+        "en": "Orb",
+        "ru": "Сфера",
+        "uk": "Сфера",
+        "tr": "Orb",
+        "pt-BR": "Grimório"
+      },
+      "difficulty": 3,
+      "pitch": {
+        "en": "The only summoner: spirits of fire, water, earth and wind fight for you, every spirit skill charges Elemental Fusion, and curses tick on the target.",
+        "ru": "Единственный призыватель: духи огня, воды, земли и воздуха сражаются за тебя, каждый их скилл заряжает Синтез элементов, а проклятия тикают на цели.",
+        "uk": "Єдиний призивач: духи вогню, води, землі й повітря б'ються за тебе, кожен їхній скіл заряджає Elemental Fusion, а прокляття тікають на цілі.",
+        "tr": "Tek çağırıcı sınıf: ateş, su, toprak ve rüzgâr ruhları senin için savaşır, her ruh yeteneği Elemental Fusion'ı doldurur ve lanetler hedefte işlemeye devam eder.",
+        "pt-BR": "Lute ao lado de espíritos e combine invocações com dano mágico."
+      }
+    },
+    {
+      "slug": "cleric",
+      "status": "ready",
+      "src": {
+        "pve": [
+          "Kaeria (TW client) · aLuckyRO · Lucia · Whelps",
+          "2026-10-08"
+        ],
+        "pvp": [
+          "Lucia",
+          "2026-10-06"
+        ],
+        "lvl": [
+          "Grobs · MMO Codex · Kaeria · Whelps",
+          "2026-10-08"
+        ]
+      },
+      "updated": "2026-10-08",
+      "patch": "S1",
+      "accent": "sunlight",
+      "art_pos": "37% 8%",
+      "name": {
+        "en": "Cleric",
+        "ru": "Целитель",
+        "uk": "Cleric",
+        "tr": "Cleric",
+        "pt-BR": "Clérigo"
+      },
+      "role": {
+        "en": "Healer · earth and lightning damage",
+        "ru": "Лекарь · урон землёй и молнией",
+        "uk": "Лікар · шкода землею й блискавкою",
+        "tr": "Şifacı · toprak ve şimşek hasarı",
+        "pt-BR": "Cura e dano mágico"
+      },
+      "weapon": {
+        "en": "Mace",
+        "ru": "Булава",
+        "uk": "Булава",
+        "tr": "Mace",
+        "pt-BR": "Maça e escudo"
+      },
+      "difficulty": 2,
+      "pitch": {
+        "en": "The healer who levels by hitting: Chain of Torment marks the target, Condemnation punishes it, and every hit heals the party.",
+        "ru": "Лекарь, который качается уроном: Цепь боли метит цель, Приговор добивает её, а каждый удар лечит группу.",
+        "uk": "Лікар, який качається шкодою: Chain of Torment мітить ціль, Condemnation добиває її, а кожен удар лікує групу.",
+        "tr": "Vurarak seviye atlayan şifacı: Chain of Torment hedefi işaretler, Condemnation onu cezalandırır ve her vuruş grubu iyileştirir.",
+        "pt-BR": "Cure seu grupo e mantenha o dano com ataques mágicos e reinícios de recarga."
+      }
+    },
+    {
+      "slug": "chanter",
+      "status": "ready",
+      "src": {
+        "pve": [
+          "Arthars Gaming (TW client) · notXeon · WallyJTV · Grobs",
+          "2026-10-06"
+        ],
+        "lvl": [
+          "Grobs",
+          "2026-09-27"
+        ]
+      },
+      "modes_off": [
+        "pvp"
+      ],
+      "updated": "2026-10-07",
+      "patch": "S1",
+      "accent": "amber",
+      "art_up": "8%",
+      "name": {
+        "en": "Chanter",
+        "ru": "Чародей",
+        "uk": "Chanter",
+        "tr": "Chanter",
+        "pt-BR": "Chanter"
+      },
+      "role": {
+        "en": "Melee support · buffer",
+        "ru": "Поддержка ближнего боя · баффер",
+        "uk": "Підтримка ближнього бою · бафер",
+        "tr": "Yakın dövüş destek · buffer",
+        "pt-BR": "Suporte e combate corpo a corpo"
+      },
+      "weapon": {
+        "en": "Staff",
+        "ru": "Посох",
+        "uk": "Посох",
+        "tr": "Staff",
+        "pt-BR": "Bastão"
+      },
+      "difficulty": 2,
+      "pitch": {
+        "en": "A staff fighter who buffs the whole party: mantras for damage and speed, Power of the Storm for cooldowns, and a Dark Crush combo that still hits hard.",
+        "ru": "Боец с посохом, который баффает всю группу: мантры на урон и скорость, Повелитель бурь на перезарядки и комбо Удара скалы, которое всё равно бьёт больно.",
+        "uk": "Боєць із посохом, який бафає всю групу: мантри на шкоду й швидкість, Power of the Storm на перезарядки і комбо Dark Crush, яке все одно б'є боляче.",
+        "tr": "Tüm grubu bufflayan asa savaşçısı: hasar ve hız için mantralar, bekleme süreleri için Power of the Storm ve hâlâ sert vuran bir Dark Crush kombosu.",
+        "pt-BR": "Fortaleça o grupo com mantras, cura e dano corpo a corpo."
+      }
+    }
+  ]
+}

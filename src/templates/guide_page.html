@@ -1,0 +1,158 @@
+{#- Data-driven guide page (/progression/, /crafting/): `prog` = data/<page>.json, its "meta" names the i18n keys and the header art. -#}
+{% extends "base.html" %}
+{% set M = prog.meta %}
+{% block og %}{{ M.og }}{% endblock %}
+{% block title %}{{ t[M.title] }} — {{ t.site_name }}{% endblock %}
+{% block desc %}{{ t[M.desc] }}{% endblock %}
+{% block body_class %}page-guide page-{{ M.og }}{% endblock %}
+{#- Timestamp in a video source, or a chip that names the source. -#}
+{#- Text with "→": the glyph comes from a fallback font and sits low in the heading and mono fonts, so it is drawn as an SVG. -#}
+{% macro arr(text) -%}
+{% for part in text.split('→') %}{{ part|trim }}{% if not loop.last %} <svg class="arr" viewBox="0 0 12 8" aria-label="→"><path d="M1 4h9M7 1l3 3-3 3"/></svg> {% endif %}{% endfor %}
+{%- endmacro %}
+{% macro src_link(key, at=None) -%}
+{% set S = prog.sources[key] %}
+{%- if at and S.get('video') -%}
+{% set p = at.split(':') %}<a class="pg-at" href="{{ S.url }}&t={{ p[0]|int * 60 + p[1]|int }}s" target="_blank" rel="noopener" title="{{ t.pg_watch }}">▶ {% if key != prog.src %}{{ S.name.split(' — ')[0] }} {% endif %}{{ at }}</a>
+{%- else -%}
+<a class="pg-at" href="{{ S.url }}" target="_blank" rel="noopener" title="{{ S.name }}">{{ S.name.split(' — ')[0] }}</a>
+{%- endif -%}
+{%- endmacro %}
+{#- A block shows its timestamp, or its source when it differs from the section's. -#}
+{% macro block_src(b, sec_src) -%}
+{%- if b.get('at') %} {{ src_link(b.get('src', sec_src), b.at) }}{% elif b.get('src') and b.src != sec_src %} {{ src_link(b.src) }}{% endif -%}
+{%- endmacro %}
+{% block main %}
+<main id="main">
+  <section class="page-hero has-art" style="--hero-art:url('{{ root }}assets/art/{{ M.hero }}.webp');--hero-pos:{{ M.pos }}">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="{{ t.back_home }}"><a href="{{ root }}{{ lang }}/">{{ t.back_home }}</a><span aria-hidden="true">/</span><span>{{ t[M.nav] }}</span></nav>
+      <h1>{{ t[M.h1] }}</h1>
+      <p class="lead">{{ t[M.lead] }}</p>
+    </div>
+  </section>
+
+  <div class="wrap guide-layout pg-layout">
+  {#- Section menu on the left, like on class pages; below 960px it hides and the chips above the text take over. -#}
+  <aside class="toc-side pg-side" aria-label="{{ t.on_this_page }}">
+    <p class="toc-title">{{ t.on_this_page }}</p>
+    <nav class="toc-list">
+      {% for sec in prog.sections %}<a href="#{{ sec.id }}">{% if sec.get('gs') %}<b>{{ sec.gs }}</b>{% endif %}{{ sec.title[lang] }}</a>{% endfor %}
+    </nav>
+  </aside>
+  <div class="pg-page">
+    <p class="pg-note">{% if M.get('tag') %}<span class="wip-tag">{{ t[M.tag] }}</span> {% endif %}{{ t[M.note] }}
+      {% for key, S in prog.sources.items() %}<a class="w1-src" href="{{ S.url }}" target="_blank" rel="noopener" title="{{ S.name }}">{{ S.name.split(' — ')[0] }}</a>{% endfor %}</p>
+
+    <ol class="pg-toc" aria-label="{{ t.pg_toc }}">
+      {% for sec in prog.sections %}
+      <li><a href="#{{ sec.id }}">{% if sec.get('gs') %}<b>{{ sec.gs }}</b>{% endif %}<span>{{ sec.title[lang] }}</span></a></li>
+      {% endfor %}
+    </ol>
+
+    {% for sec in prog.sections %}
+    {% set ssrc = sec.get('src', prog.src) %}
+    <section class="pg-sec{% if sec.get('gs') %} has-gs{% endif %}" id="{{ sec.id }}" aria-labelledby="h-{{ sec.id }}">
+      {% if sec.get('gs') %}<span class="pg-gs" aria-hidden="true">{{ sec.gs }}</span>{% endif %}
+      <h2 id="h-{{ sec.id }}" class="section-title">{{ arr(sec.title[lang]) }}</h2>
+      {% if ssrc != prog.src %}<p class="pg-sec-src">{{ t.guide_src }}: {{ src_link(ssrc) }}</p>{% endif %}
+      {% if sec.get('lead') %}<p class="pg-lead">{{ it(sec.lead[lang]) }}</p>{% endif %}
+      {% for b in sec.blocks %}
+        {% if b.type == 'h' %}
+      <h3 class="pg-h">{{ b.text[lang] }}</h3>
+        {% elif b.type == 'p' %}
+      <p class="pg-p">{{ it(b.text[lang]) }}{{ block_src(b, ssrc) }}</p>
+        {% elif b.type == 'tip' %}
+      <div class="callout pg-tip" role="note"><p>{{ it(b.text[lang]) }}{{ block_src(b, ssrc) }}</p></div>
+        {% elif b.type == 'list' %}
+      <ul class="pg-list">
+        {% for x in b['items'] %}<li>{{ it(x[lang]) }}{% if loop.first %}{{ block_src(b, ssrc) }}{% endif %}</li>{% endfor %}
+      </ul>
+        {% elif b.type == 'opts' %}
+      {% if b.get('label') %}<p class="st-label">{{ arr(b.label[lang]) }}</p>{% endif %}
+      <div class="st-opts">
+        {% for r in b.rows %}{% set c = r[lang] %}
+        <div class="st-row"><p class="st-name">{{ it(c[0]) }}</p><div class="st-body"><p class="st-val">{{ chips(it(c[1])) }}</p><p class="st-why">{{ it(c[2]) }}</p></div></div>
+        {% endfor %}
+      </div>
+      {% if b.get('at') %}<p class="pg-table-at">{{ block_src(b, ssrc) }}{% for a in b.get('also', []) %} {{ src_link(a.src, a.at) }}{% endfor %}</p>{% endif %}
+        {% elif b.type == 'tree' %}
+      {#- Gathering skill tree: the three common skills in a triangle as in the game, then the branches; marked branches are the ones to max.
+          Every skill, node and resource icon has a hover tooltip (data-sk, texts in the block). -#}
+      <div class="ct-tree">
+        <div class="ct-common">
+          <span class="ct-ring" aria-hidden="true"></span>
+          {% for c in b.common %}
+          <div class="ct-skill ct-s{{ loop.index }}{% if c.get('hi') %} is-hi{% endif %}" data-sk="g:{{ c.id }}" tabindex="0">
+            <span class="ct-lvl">{{ c.lvl }}</span><span class="ct-sname">{{ c.name[lang] }}</span><span class="ct-snote">{{ c.note[lang] }}</span>
+          </div>
+          {% endfor %}
+        </div>
+        <div class="ct-branches">
+          {% for r in b.branches %}
+          {#- One branch as in the game: its name, then Seeker — Plentiful Harvest — Appraiser on a line; maxed branches are lit. -#}
+          <div class="ct-branch{% if r.get('mark') %} is-on is-{{ r.mark }}{% endif %}">
+            <p class="ct-bname"><span aria-hidden="true">✦</span> {{ r.name[lang] }}{% if r.get('mark') %} <em>{{ b.marks[r.mark][lang] }}</em>{% endif %}</p>
+            <div class="ct-nodes">
+              {% set labels = [r.seeker[lang], b.harvest[lang], r.appraiser[lang]] %}
+              {% for n in b.nodes %}
+              <div class="ct-node" data-sk="g:{{ n.id }}">
+                <span class="ct-ico">{% if loop.index == 2 %}<img src="{{ root }}assets/icons/items/{{ r.key }}.webp" width="40" height="40" alt=""><b>×2</b>{% else %}<img src="{{ root }}assets/icons/items/{{ r.key }}.webp" width="40" height="40" alt="">{% endif %}<i>{{ n.pts }}</i></span>
+                <span class="ct-nlabel">{{ labels[loop.index0] }}</span>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+          {% endfor %}
+          <p class="ct-legend">{{ b.legend[lang] }}</p>
+        </div>
+      </div>
+        {% elif b.type == 'cards' %}
+      <div class="ct-cards{% if b.get('cols') %} cols-{{ b.cols }}{% endif %}">
+        {% for c in b['items'] %}
+        <div class="ct-card{% if c.get('hi') %} is-hi{% endif %}">
+          {% if c.get('icon') %}<img src="{{ root }}assets/icons/items/{{ c.icon }}.webp" width="40" height="40" alt="">{% elif c.get('sym') %}<span class="ct-sym">{{ c.sym }}</span>{% endif %}
+          <div><p class="ct-ctitle">{{ c.title[lang] }}</p><p class="ct-ctext">{{ it(c.text[lang]) }}</p></div>
+        </div>
+        {% endfor %}
+      </div>
+        {% elif b.type == 'chain' %}
+      {#- Crafting chain: grade tiles with the chance on each arrow. -#}
+      <div class="ct-chain">
+        {% for st in b.steps %}
+        <div class="ct-tile g{{ st.g }}"><span>{{ st.label[lang] }}</span></div>
+        {% if not loop.last %}<div class="ct-arrow"><span>{{ b.arrows[loop.index0][lang] }}</span><svg viewBox="0 0 24 10" aria-hidden="true"><path d="M1 5h20M17 1l4 4-4 4"/></svg></div>{% endif %}
+        {% endfor %}
+      </div>
+      {% if b.get('note') %}<p class="ct-cnote">{{ it(b.note[lang]) }}</p>{% endif %}
+        {% elif b.type == 'morph' %}
+      <div class="ct-morph">
+        <div class="ct-from"><img src="{{ root }}assets/icons/items/{{ b['from'] }}.webp" width="52" height="52" alt=""><span>{{ b.from_label[lang] }}</span></div>
+        <div class="ct-arrow"><span>{{ b.label[lang] }}</span><svg viewBox="0 0 24 10" aria-hidden="true"><path d="M1 5h20M17 1l4 4-4 4"/></svg></div>
+        <div class="ct-to">{% for k in b.to %}<img src="{{ root }}assets/icons/items/{{ k }}.webp" width="40" height="40" alt="">{% endfor %}</div>
+      </div>
+        {% elif b.type == 'table' %}
+      <div class="pg-table-wrap">
+        <table class="pg-table">
+          <thead><tr>{% for h in b.head[lang] %}<th scope="col">{{ h }}</th>{% endfor %}</tr></thead>
+          <tbody>{% for r in b.rows %}<tr>{% for c in r[lang] %}{% if loop.first %}<th scope="row">{{ it(c) }}</th>{% else %}<td>{{ it(c) }}</td>{% endif %}{% endfor %}</tr>{% endfor %}</tbody>
+        </table>
+        {% if b.get('at') or b.get('src') %}<p class="pg-table-at">{{ block_src(b, ssrc) }}</p>{% endif %}
+      </div>
+        {% endif %}
+      {% endfor %}
+    </section>
+    {% endfor %}
+
+    {#- Tooltips of the gathering skill tree blocks, merged into the item tooltips. -#}
+    {% set gtips = {} %}
+    {% for sec in prog.sections %}{% for b in sec.blocks if b.type == 'tree' %}
+      {% for c in b.common %}{% do gtips.update({'g:' ~ c.id: {'n': c.name[lang], 'm': '', 'd': c.tip[lang], 'sp': []}}) %}{% endfor %}
+      {% for n in b.nodes %}{% do gtips.update({'g:' ~ n.id: {'n': n.name[lang], 'm': '', 'd': n.tip[lang], 'sp': []}}) %}{% endfor %}
+    {% endfor %}{% endfor %}
+    <script type="application/json" id="sk-data">{{ items_tip_json(lang, gtips) }}</script>
+    {% if M.get('back') %}<p class="w1-cta"><a class="btn btn-primary" href="{{ root }}{{ lang }}/{{ M.back.path }}">{{ t[M.back.label] }} →</a></p>{% endif %}
+  </div>
+  </div>
+</main>
+{% endblock %}

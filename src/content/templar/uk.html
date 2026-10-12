@@ -1,0 +1,289 @@
+{% from "macros.html" import section, skill, core, loadout, passives, glance, hotline, macroseq, hotbar, dv_board with context %}
+
+{# ===== PvE і PvP: кожен PvP-блок іде після свого PvE-відповідника, тож обидва режими читаються в однаковому порядку; спільні розділи — 'pve pvp' ===== #}
+{% call glance('pve') %}
+  <h3>{{ t.core_skills }}</h3>
+  {{ core([('judgment', '20'), ('punishment', '20'), ('pummel', '20'), ('annihilate', '16'), ('shield-smite', '16')]) }}
+  <h3>{{ t.stigma_loadout }}</h3>
+  {{ loadout([('empyrean-lords-punishment', 15), ('battlefield-banner', 15), ('doom-shield', 15), ('taunt', 5)]) }}
+  <h3>{{ t.key_passives }}</h3>
+  {{ passives(['fury', 'punishing-benediction', 'insulting-roar', 'ironclad-defense']) }}
+{% endcall %}
+
+{% call glance('pvp') %}
+  <h3>{{ t.core_skills }}</h3>
+  {{ core([('judgment', '20'), ('punishment', '20'), ('pummel', '20'), ('annihilate', '20')]) }}
+  <h3>{{ t.stigma_loadout }}</h3>
+  {{ loadout([('executing-blade', 10), ('empyrean-lords-punishment', 15), ('doom-shield', 15), ('nezekans-shield', 15)]) }}
+  <h3>{{ t.key_passives }}</h3>
+  {{ passives(['fury', 'punishing-benediction', 'ironclad-defense', 'survival-willpower']) }}
+{% endcall %}
+
+{% call section('intro', 'Огляд', 'pve') %}
+  <p>Templar — головний танк AION 2, і він усе одно завдає відчутної шкоди. Увесь білд тримається на <strong>«святій трійці»</strong> скілів, які якнайшвидше доводять до 20, — {{ s('judgment') }}, {{ s('punishment') }} і {{ s('pummel') }}, — і використовують якомога частіше. Templar обмежує не живучість, а шкода.</p>
+  <div class="callout accent">
+    <h3>Білд одним реченням</h3>
+    <p>Скіли щита запускають {{ s('judgment') }}: тримай макрос — він відкриває бій {{ s('doom-shield') }}, підтримує Judgment і заповнює паузи Pummel і його проками, — заряджай {{ s('punishment') }} за відкатом і блокуй великі удари, щоб тримати {{ s('fury') }} на групі.</p>
+  </div>
+  <p class="note">Гайд іде за глобальним білдом Templar від SolAshur (solashur.com, 27 вересня) і його відеорозбором (29 вересня), повторно звіреним із кадрами відео 30 вересня.</p>
+{% endcall %}
+
+{% call section('intro-pvp', 'Огляд', 'pvp') %}
+  <p>У PvP Templar зберігає ту саму святу трійцю й ту саму петлю Judgment; змінюються стигми. {{ s('executing-blade') }} дає перевагу в кожній дуелі, а {{ s('annihilate') }} на 20 перетворюється на АоЕ-збивання з ніг.</p>
+  <p>Мілі кайтять — сильна зброя важить менше, коли до цілі не дістати, тож грай від ривків і Doom Shield.</p>
+  <p class="note">Окремі PvP-сети з KR/TW для глобалу не підтверджені, тож план — PvX-спорядження з вкладки PvE. Якщо PvP-спорядження з'явиться: спершу качай PvP-стигми й лише потім витрачайся на PvP-зброю чи броню.</p>
+{% endcall %}
+
+{% call section('global', 'Глобальний 1 сезон: що змінюється', 'pve pvp') %}
+  <p>Глобальні сервери відкриваються <strong>5 жовтня 2026</strong> (ранній доступ Founder's — з 30 вересня). Що це означає для Templar:</p>
+  <div class="callout">
+    <ul>
+      <li><strong>4 стигми на 45 рівні.</strong> У тайванських наборах SolAshur їх було шість; для глобалу він прибирає по дві з кожного профілю (див. Стигми).</li>
+      <li><strong>Зроби три пресети скілів до запуску</strong> — PvX, PvP і PvE, — щоб перемикатися одним кліком.</li>
+      <li><strong>Збирай уламки очок навичок якомога раніше</strong>: від них залежить, як швидко свята трійця дійде до 20.</li>
+      <li><strong>Вступи в легіон</strong> — соло-фарм Безодні неефективний.</li>
+      <li>Перевір назви стигм на запуску: деякі в глобальному клієнті можуть перейменувати.</li>
+    </ul>
+  </div>
+{% endcall %}
+
+{% call section('skills', 'Скіли', 'pve') %}
+  <p>Свята трійця першою йде до <strong>20</strong>. Скіли доходять до 10 з очок навичок, до 14 з Daevanion, а далі кільця й аркани піднімають трійцю вище. Спеціалізації нижче — від SolAshur.</p>
+  <ul class="skill-grid">
+    {% call skill('judgment', 'must', '20', [4, 3, 2]) %}Твоя основна шкода: його запускають Shield Smite, Warding Strike, Shield Rush і Doom Shield, а на 16 його перезарядка зникає.{% endcall %}
+    {% call skill('punishment', 'must', '20', [1, 4, 2]) %}Заряджений берст — шкода з часом, гарантований крит крізь блок і +30% швидкості скілів. Ніколи не бери спеціалізації на рух чи поглинання HP: це «приманка», коли вже вистачає швидкості атаки.{% endcall %}
+    {% call skill('pummel', 'must', '20', [1, 2, 4]) %}Філер і оглушення. Усі спеціалізації SolAshur ідуть у Punishing Strike — він лікує тебе й б'є сильніше; спеціалізацію −1 с на Punishment він пропускає. Доведи до 20 якнайшвидше. trueeevil бере саме її: Punishment відкочується швидше — чесна заміна поглинанню HP, якщо лікування не потрібне. Leonis теж її бере: Punishment дає +20% шкоди в PvE на 20 с, а з цією спеціалізацією її перезарядка падає нижче 20 с, тож бонус не спадає — на манекені в нього DPS виріс приблизно з 22k до 26k.{% endcall %}
+    {% call skill('annihilate', 'must', '16 → 20', [2, 3], then=[0]) %}+100% шкоди по босах з імунітетом до контролю, −10 с перезарядки. Альтернативний білд доводить його до 20 заради спеціалізації на АоЕ-збивання. Третій слот відкривається на 20: мультиудар для босів.{% endcall %}
+    {% call skill('shield-smite', 'must', '16', [3, 2]) %}Запускає Judgment; −2 с перезарядки й шанс 50% активувати Debilitating Smash.{% endcall %}
+    {% call skill('debilitating-smash', 'opt', '12', [3, 0]) %}Прок після блоку чи Shield Smite; ігнорує блок і ухилення.{% endcall %}
+    {% call skill('warding-strike', 'opt', '12', [1, 3]) %}Запускає Judgment; блок і стійкість до шкоди під час Warding.{% endcall %}
+    {% call skill('flash-rampage', 'opt', '12 → 16', [4, 3]) %}Лише по оглушених цілях; −1 с до всіх перезарядок за удар. З PvE-лінії прибраний: Leonis вийняв його як чисту втрату DPS — паузи краще закриває Pummel. Вузли Daevanion на нього теж не бери. Спеціалізація −1 с відкривається на 16; на 12 бери мультиудар і відновлення мани.{% endcall %}
+    {% call skill('shield-rush', 'opt', '12', [3, 1]) %}Ухилення → ривок, запускає Judgment; −10 с перезарядки й +10 м дальності.{% endcall %}
+    {% call skill('vicious-strike', 'opt', '10', []) %}Базова атака на ЛКМ; вистачить 10 рівня з очок навичок.{% endcall %}
+  </ul>
+{% endcall %}
+
+{% call section('skills-pvp', 'Скіли', 'pvp') %}
+  <ul class="skill-grid">
+    {% call skill('judgment', 'must', '20', [4, 3, 2]) %}Та сама петля, що й у PvE: його запускають скіли щита.{% endcall %}
+    {% call skill('punishment', 'must', '20', [1, 4, 2]) %}Берст крізь блок і ухилення.{% endcall %}
+    {% call skill('pummel', 'must', '20', [1, 2, 4]) %}Філер між проками Judgment; Punishing Strike лікує тебе й завдає додаткової шкоди.{% endcall %}
+    {% call skill('annihilate', 'must', '20', [2, 3, 4]) %}Альтернативний білд: на 20 б'є до чотирьох оглушених чи збитих із ніг ворогів із шансом 30% збити з ніг — АоЕ-збивання, яке можна спамити зі спеціалізацією −10 с.{% endcall %}
+    {% call skill('shield-smite', 'opt', '16', [3, 2]) %}Запуск Judgment і джерело оглушення.{% endcall %}
+  </ul>
+{% endcall %}
+
+{% call section('passives', 'Пасивки', 'pve') %}
+  <div class="table-wrap"><table>
+    <thead><tr><th>#</th><th>Пасивка</th><th>Навіщо</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>{{ s('fury') }}</td><td>+бонус до шкоди в PvE для тебе <em>і групи</em> після кожного блоку — причина, з якої групи хочуть Templar.</td></tr>
+      <tr><td>2</td><td>{{ s('punishing-benediction') }}</td><td>Крит і прок додаткової шкоди з кожного удару; її ролить аркана Bell.</td></tr>
+      <tr><td>3</td><td>{{ s('insulting-roar') }}</td><td>Ворожнеча плюс атака при атаках спереду.</td></tr>
+      <tr><td>4</td><td>{{ s('ironclad-defense') }}</td><td>Захист і Endurance — основа збірки статів на Endurance. На персонажі SolAshur (+6 рівнів) вона дає +37% захисту й +16% Endurance.</td></tr>
+    </tbody>
+  </table></div>
+{% endcall %}
+
+{% call section('gear', 'Шлях екіпірування', 'pve') %}
+  <p>Якщо починаєш у перший день, маршрут такий:</p>
+  <ol>
+    <li><strong>Сет Holy Spirit</strong> ({{ it('{i:holyspirit_torso}') }} в Elyos, у Verteron і Eltnen; в Asmodian те саме спорядження — сет <strong>Spectral</strong>, {{ it('{i:spectral_torso}') }}, в Altgard і Morheim. Речі Elyos і Asmodian однакові, різняться лише назви; наведи на предмет, щоб порівняти стати) — фарми в нижній Безодні (AP, пети й золотий дроп за вбивство, плюс спавни босів) або будь-де у відкритому світі. Ціль — близько <strong>1 600 бойової могутності</strong>.</li>
+    <li><strong>Пропусти перший тір підземель</strong>: <strong>Urugugu Canyon</strong> заради Aulamus Longsword (рівень предмета 76, атака 308–385, прив'язується при підбиранні) і <strong>Vakron Sky Island</strong> заради Vakron Guard (рівень предмета 76) та броні Vakron. Покращуй речі Vakron, поки Fire Temple не стане посильним.</li>
+    <li>Використовуй <strong>Transcendence</strong>, щоб підготуватися до <strong>Fire Temple</strong> — Enraged Kromede Sword (рівень предмета 84, атака 340–425, збільшена дальність) — і <strong>Ferocious Horn</strong> (броня Nuakum). Nuakum — безпечніший фарм: майже кожна річ — апгрейд, а скриня зі зброєю може дати зброю інших класів.</li>
+    <li><strong>Кінцева мета</strong> — PvE: меч White Dragon Lord, потім наручі, потім аксесуари, з бронею Nuakum (повний сет броні White Dragon дає лише стійкість у PvE і це для китів). PvX, налаштування для більшості гравців: меч Enraged Kromede, наручі White Dragon, броня Nuakum, аксесуари White Dragon.</li>
+  </ol>
+  <p><strong>Крила:</strong> на старті Dark Veil (бонус атаки, бонус до шкоди), пізніше Talisra — атака 60, захист 400, точність 35 і 4% скорочення перезарядок. Набирай скорочення перезарядок якомога раніше: коротші перезарядки скілів щита — більше проків Judgment. Збирай і всі інші крила — їхні ефекти «у володінні» й сила польоту допомагають фармити Безодню.</p>
+{% endcall %}
+
+{% call section('stats', 'Статі, прив\'язки душі, пети', 'pve pvp') %}
+  <p>Дві збірки статів, обрані за тим, із чим статі взаємодіють:</p>
+  <div class="callout"><ul>
+    <li><strong>A · блок + ухилення + Dexterity</strong> — рання й середня гра, проти суперників без великої точності. Dexterity живить і блок, і ухилення. Вибір SolAshur на запуск.</li>
+    <li><strong>B · блок + Endurance + Ironclad Defense</strong> — пізня гра: на 100% Endurance удар завдає на 50% менше шкоди.</li>
+  </ul></div>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Слот</th><th>Унікальний рядок</th><th>Далі</th></tr></thead>
+    <tbody>
+      <tr><td>Зброя, наручі</td><td>Швидкість бою + бонус до шкоди зброї</td><td>Might + мультиудар; Precision, якщо не дотягуєш до капу точності</td></tr>
+      <tr><td>Шолом</td><td>Вхідне лікування</td><td>Атака, Might, крит, Precision</td></tr>
+      <tr><td>Наплічники</td><td>Бонус до крит. шкоди</td><td>Атака, Might, Precision, шанс ідеального удару</td></tr>
+      <tr><td>Нагрудник</td><td>Бонус до шкоди</td><td>Атака, Might, крит, Constitution</td></tr>
+      <tr><td>Рукавиці</td><td>Швидкість бою</td><td>Шанс ідеального удару, атака, Might, мультиудар</td></tr>
+      <tr><td>Поножі</td><td>Шанс ідеального удару</td><td>Стійкість до шкоди, атака, Might, Constitution</td></tr>
+      <tr><td>Чоботи</td><td>Швидкість руху</td><td>Шанс ідеального удару, атака, Might, Dexterity</td></tr>
+      <tr><td>Плащ</td><td>Стійкість до крит. шкоди</td><td>Шанс ідеального удару, стійкість до шкоди, атака</td></tr>
+      <tr><td>Кільця / сережки / намисто</td><td colspan="2">Кільця: твої топ-4 активні скіли · Сережки: топ-4 пасивки · Намисто: 2 активні + атака, крит, бонус до шкоди зброї</td></tr>
+    </tbody>
+  </table></div>
+  <p><strong>Пети (Genus Insight)</strong> — не пропускай їх; за кілька тижнів саме вони вирішують, влучаєш ти чи мажеш. Звичайний insight дає атаку й точність, особливий — атаку й бонус до шкоди. Якнайшвидше доведи Genus до <strong>10</strong> заради кращих значень. Блокування — твоя перша велика витрата кіни: блокуй лише важливі статі, що випали на унікальний максимум 50%, ніколи не заповнювачі. Блокуй слоти в такому порядку: <strong>4 → 7 → 2 і 8</strong> → решта (атака, точність, крит).</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Слот</th><th>Звичайний insight</th><th>Особливий insight</th></tr></thead>
+    <tbody>
+      <tr><td>1, 4, 7</td><td>Крит, точність, блок (або ухилення)</td><td>Макс. атака, бонус атаки</td></tr>
+      <tr><td>2, 5, 8</td><td>Макс. атака, бонус атаки</td><td>Макс. атака, бонус атаки</td></tr>
+      <tr><td>3</td><td colspan="2">Бонус до шкоди, бонус до шкоди зброї, шанс подвійного чи ідеального удару</td></tr>
+      <tr><td>6</td><td>Крит, точність, стійкість до шкоди</td><td>Стійкість до шкоди, стійкість до шкоди зброї</td></tr>
+      <tr><td>9</td><td>Бонус до шкоди, бонус до шкоди зброї, шанс подвійного чи ідеального удару</td><td>Бонус до шкоди або шанс ідеального удару</td></tr>
+    </tbody>
+  </table></div>
+  <p><strong>Pantheon:</strong> спершу Wisdom (шанс подвійного удару), Space (блок); потім <span data-only="pve">Illusion (скорочення перезарядок) для PvE</span><span data-only="pvp">Time (швидкість атаки) для PvP</span>. Не витрачай ресурси, щоб силоміць відкривати портрети на старті — вони відкриваються під час гри.</p>
+{% endcall %}
+
+{% call section('arcana', 'Аркани', 'pve') %}
+  <div class="table-wrap"><table>
+    <thead><tr><th>Карта</th><th>Що ролити</th></tr></thead>
+    <tbody>
+      <tr><td>Chalice (Grail)</td><td>{{ s('pummel') }}, {{ s('punishment') }}</td></tr>
+      <tr><td>Parchment</td><td>{{ s('judgment') }}, {{ s('punishment') }}</td></tr>
+      <tr><td>Compass</td><td>{{ s('pummel') }}, {{ s('shield-smite') }}</td></tr>
+      <tr><td>Bell</td><td>{{ s('fury') }}, {{ s('punishing-benediction') }}</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">Бери ефекти сетів на шкоду, а не на живучість — живучості Templar й так вистачає.</p>
+{% endcall %}
+
+{% call section('daevanion', 'Дошки Daevanion', 'pve pvp') %}
+  <p>Daevanion піднімає твої скіли з 10 до 14 і додає статі. Кожен синій вузол дає <strong>+1 рівень</strong> своєму скілу.</p>
+  <div class="callout"><ul>
+    <li><strong>Пріоритет:</strong> сині вузли {{ s('judgment') }}, {{ s('punishment') }}, {{ s('pummel') }}, потім {{ s('shield-smite') }} і {{ s('annihilate') }}; далі помаранчеві вузли.</li>
+    <li><strong>Пропускай:</strong> вузли мани (очки — в атаку), вузли {{ s('flash-rampage') }} і зелені вузли Warding Shield / Guardian Shield, якщо немає зайвих очок.</li>
+    <li data-only="pve"><strong>На глобалі немає Ariel:</strong> дошок п'ять, і дошка 45 рівня, Azphel, дає лише шкоду й стійкість у PvP — у PvE закривай перші чотири.</li>
+    <li data-only="pvp"><strong>Azphel</strong> (45 рівень) — суцільно шкода й стійкість у PvP: бери його.</li>
+  </ul></div>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Дошка</th><th>Відкривається</th><th>Помаранчеві вузли</th></tr></thead>
+    <tbody>
+      <tr><td>Nezekan</td><td>Рів. 12</td><td>Швидкість бою, скорочення перезарядок</td></tr>
+      <tr><td>Zikel</td><td>Рів. 20</td><td>Бонус до шкоди, стійкість до шкоди</td></tr>
+      <tr><td>Vaizel</td><td>Рів. 30</td><td>Бонус і стійкість до крит. шкоди</td></tr>
+      <tr><td>Triniel</td><td>Рів. 40</td><td>Шанс мультиудару й опір йому</td></tr>
+      <tr><td>Azphel</td><td>Рів. 45</td><td>Шкода й стійкість у PvP — вузлів скілів немає</td></tr>
+    </tbody>
+  </table></div>
+  <h3>Маршрут на дошках</h3>
+  <p>Справжні глобальні дошки з даних гри. Золотом позначено найдешевший шлях від Start до вузлів, які бере цей гайд, — сині вузли п'яти пріоритетних скілів і помаранчеві; наведи на будь-який вузол, щоб побачити, що він дає.</p>
+  <div data-only="pve">{{ dv_board('pve') }}</div>
+  <div data-only="pvp">{{ dv_board('pvp') }}</div>
+  <p class="note">Дошки й вартість — із даних глобального клієнта (questlog.gg); шлях розраховано, а не взято з відео. Значення статів ще можуть змінитися на запуску — перевір дошку в грі, перш ніж вкладати повний маршрут.</p>
+{% endcall %}
+
+{% call section('stigmas', 'Стигми', 'pve') %}
+  <p><strong>Ширина перед глибиною:</strong> спершу по 1 очку в усі чотири, потім Empyrean Lord's Punishment і Battlefield Banner до 5, потім женися за порогами — Empyrean Lord 10 → 15, Banner 10 → 15, Doom Shield 15.</p>
+  <ul class="skill-grid">
+    {% call skill('empyrean-lords-punishment', 'must', 'Рів. 15', upto=15) %}АоЕ-шкода з великим оглушенням (+50 на 10); на 15 — +10% до шкоди в PvE. Потрібна на босах із механіками оглушення.{% endcall %}
+    {% call skill('battlefield-banner', 'must', 'Рів. 15', upto=15) %}Твій баф шкоди: мультиудар, бонус до шкоди зброї й атака від захисту. Добрі рівні — 10 і 15.{% endcall %}
+    {% call skill('doom-shield', 'must', 'Рів. 15', upto=15) %}Головний запуск Judgment. На 15 скидається при вбивстві — дуже важливо для PvX і фарму петів.{% endcall %}
+    {% call skill('taunt', 'must', 'Рів. 5', upto=5) %}Агро в груповому контенті. Соло бери замість неї Nezekan's Shield.{% endcall %}
+    {% call skill('nezekans-shield', 'opt', 'альт.', upto=15) %}Заміна заради живучості; до 15 погана.{% endcall %}
+    {% call skill('comrade-in-arms', 'opt', 'група', upto=15) %}Заміна заради живучості в підземеллях, замість Doom Shield. Соло марна.{% endcall %}
+    {% call skill('executing-blade', 'opt', 'соло · старт', upto=10) %}Вибір trueeevil для PvE в перші дні: −30% захисту цілі, а на 10 — Exposed. Відкривай ним, потім Punishment. Соло й на старті — заміна Empyrean Lord's Punishment або Taunt.{% endcall %}
+    {% call skill('shield-of-protection', 'opt', 'безпечна заміна', upto=10) %}Заміна Leonis замість Empyrean Lord's Punishment, якщо хіл слабкий або бій незнайомий: повний блок, що гасить шкоду й трохи лікує; на 10 можна рухатися, поки він активний.{% endcall %}
+    {% call skill('noble-armor', 'opt', 'соло · старт', upto=5) %}Макс. HP і захист на 2 хвилини при перезарядці 2 хвилини — висить завжди. trueeevil грає з нею соло; у групі важливіші Taunt і стигма на стагер.{% endcall %}
+  </ul>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Профіль</th><th>4 стигми</th><th>Заміни</th></tr></thead>
+    <tbody>
+      <tr><td>PvE</td><td>Empyrean Lord's Punishment, Battlefield Banner, Doom Shield, Taunt</td><td>Nezekan's Shield, Comrade in Arms</td></tr>
+      <tr><td>PvE, соло</td><td>Empyrean Lord's Punishment, Battlefield Banner, Doom Shield, Nezekan's Shield</td><td>Наодинці агро й командні інструменти не потрібні</td></tr>
+      <tr><td>PvE, підземелля з більшою живучістю</td><td>Empyrean Lord's Punishment, Battlefield Banner, Taunt, Comrade in Arms</td><td>Коштує проків Judgment від Doom Shield</td></tr>
+      <tr><td>PvX (універсальний)</td><td>Empyrean Lord's Punishment, Executing Blade, Battlefield Banner, Doom Shield</td><td>Nezekan's Shield, Comrade in Arms, Second Skin</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">Кожна заміна чогось коштує: без Doom Shield втрачаєш проки Judgment, без Empyrean Lord — оглушення, без Banner — шкоду. Якщо потрібна живучість, прибирай Doom Shield, коли бою не потрібна його рухливість.</p>
+{% endcall %}
+
+{% call section('stigmas-pvp', 'Стигми', 'pvp') %}
+  <ul class="skill-grid">
+    {% call skill('executing-blade', 'must', 'Рів. 10', upto=10) %}Найкраща для 1 на 1: знижує захист цілі (Exposed на 10). Головний пріоритет для очок стигм у дуелях.{% endcall %}
+    {% call skill('empyrean-lords-punishment', 'must', 'Рів. 15', upto=15) %}Чистий контроль і АоЕ-шкода.{% endcall %}
+    {% call skill('doom-shield', 'must', 'Рів. 15', upto=15) %}Ривок, збивання з ніг і запуск Judgment.{% endcall %}
+    {% call skill('nezekans-shield', 'must', 'Рів. 15', upto=15) %}Проти фізичної шкоди. До 15 погана.{% endcall %}
+    {% call skill('second-skin', 'opt', 'проти магів', upto=10) %}Проти магічної шкоди — став замість Empyrean Lord's Punishment, коли треба вижити.{% endcall %}
+    {% call skill('comrade-in-arms', 'opt', 'групове PvP', upto=20) %}У груповому PvP заміни нею Nezekan's Shield; найкраща на 20.{% endcall %}
+    {% call skill('assault-fury', 'opt', 'пізня гра') %}Заміна на пізній стадії, коли спорядження вже сильне: дальній АоЕ-удар із шансом оглушення. Став замість найслабшого слота.{% endcall %}
+  </ul>
+{% endcall %}
+
+{% call section('macro', 'Макрос і ротація', 'pve') %}
+  <p>В AION 2 є два окремі інструменти:</p>
+  <ul>
+    <li><strong>Лінія на кнопці</strong> — кілька скілів на <em>одній</em> кнопці панелі. Натискання кастує готовий скіл із найвищим пріоритетом, і в AION 2 <strong>найвищий пріоритет у нижнього слота</strong>. Картки показують лінії згори донизу, як у грі.</li>
+    <li><strong>Вбудований макрос</strong> — поки тримаєш його клавішу, він по черзі натискає лінії й скасовує хвости анімацій. Скіли на перезарядці пропускаються.</li>
+  </ul>
+  <p>Глобальна схема Leonis (відео від 5 жовтня, кадр 0:57): дві лінії на кнопках, які натискає вбудований макрос, решта вручну. Тепер макрос починається з Doom Shield; за його словами, оновлена схема дає приблизно на 20% більше шкоди.</p>
+  {{ hotbar([('1', ['poach']), ('2', ['punishment', 'empyrean-lords-punishment']), ('3', ['debilitating-smash', 'annihilate', 'pummel']), ('Бічна', []), None, ('X', []), ('R', []), ('Бічна 2', []), ('', []), None, ('Q', ['shield-rush']), ('E', ['battlefield-banner', 'noble-armor']), ('ЛКМ', ['vicious-strike']), ('—', ['doom-shield', 'judgment', 'shield-smite', 'warding-strike'])], macro=['—', '3'], own_keys=true) }}
+
+  <h3>1. Лінії на кнопках</h3>
+  <div class="hotlines">
+    {% call hotline('—', 'Лінія Doom Shield', ['doom-shield', 'judgment', 'shield-smite', 'warding-strike']) %}Перший крок макросу. {{ s('doom-shield') }} відкриває бій — ривок і гарантоване збивання з ніг на NPC, яке відкриває {{ s('annihilate') }}, — а на 15 рівні скидається при вбивстві, це головне для PvX і фарму петів. Між його застосуваннями лінія спамить Judgment і скіли щита, що його запускають.{% endcall %}
+    {% call hotline('3', 'Лінія Pummel', ['debilitating-smash', 'annihilate', 'pummel']) %}Другий крок макросу. Проки спрацьовують, щойно загоряються; Pummel закриває кожну паузу — а зі спеціалізацією −1 с на Punishment кожен Pummel наближає її відкат. {{ s('flash-rampage') }} прибраний: у тесті Leonis лінія без нього завдає більше шкоди. У SolAshur першим стоїть Annihilate.{% endcall %}
+    {% call hotline('Бічна', 'Лінія Judgment (SolAshur)', ['judgment', 'shield-smite', 'warding-strike', 'doom-shield']) %}Варіант SolAshur, поза макросом: Judgment завжди в пріоритеті, Doom Shield останнім. Він прив'язує її до <span class="key">R</span>, а миша повторює R приблизно 10 разів на секунду.{% endcall %}
+  </div>
+
+  <h3>2. Вбудований макрос і клавіші</h3>
+  {{ macroseq([('Лінія Doom Shield', '10 мс'), ('Лінія Pummel', '3 · 10 мс')]) }}
+  <ul class="presslist">
+    <li><span class="press-how">ЛКМ</span><span class="press-what">{{ s('vicious-strike') }} (швидкий слот 1).</span></li>
+    <li><span class="press-how">ПКМ</span><span class="press-what">Вбудований макрос. Leonis тримає обидві кнопки миші весь бій.</span></li>
+    <li><span class="press-how">Варіант</span><span class="press-what">Лінія Judgment від SolAshur на бічній кнопці замість Doom Shield у макросі (див. вище).</span></li>
+    <li><span class="press-how">Вручну</span><span class="press-what">Заряджений {{ s('punishment') }} за відкатом, {{ s('battlefield-banner') }}, {{ s('empyrean-lords-punishment') }} для оглушення, {{ s('taunt') }}.</span></li>
+  </ul>
+  <p class="note">Повне налаштування клавіш SolAshur показує в ранішому відео про макроси; щоб воно збіглося, доведеться змінити кілька прив'язок клавіш у грі.</p>
+{% endcall %}
+
+{% call section('recap', 'Підсумок', 'pve') %}
+  <div class="callout accent"><ul>
+    <li><strong>Скіли:</strong> спершу Judgment, Punishment, Pummel на 20; Annihilate і Shield Smite 16; решта 12.</li>
+    <li><strong>Стигми:</strong> Empyrean Lord's Punishment, Battlefield Banner, Doom Shield, Taunt — по 1 очку в кожну, потім пороги.</li>
+    <li><strong>Статі:</strong> на старті блок + ухилення + Dexterity, пізніше блок + Endurance; петів не пропускай.</li>
+    <li><strong>Спорядження:</strong> Holy Spirit / Spectral → Urugugu / Vakron → Fire Temple і Ferocious Horn → зброя, наручі й аксесуари White Dragon.</li>
+  </ul></div>
+{% endcall %}
+
+{% call section('recap-pvp', 'Підсумок', 'pvp') %}
+  <div class="callout accent"><ul>
+    <li><strong>Скіли:</strong> та сама трійця на 20, плюс Annihilate 20 заради АоЕ-збивання.</li>
+    <li><strong>Стигми:</strong> Executing Blade, Empyrean Lord's Punishment, Doom Shield, Nezekan's Shield (Second Skin проти магів, Comrade in Arms для груп).</li>
+    <li><strong>Pantheon:</strong> Time (швидкість атаки) замість Illusion.</li>
+  </ul></div>
+{% endcall %}
+
+{# ============================ Leveling ============================ #}
+{% call section('fight-lvl', t.lvl_combat, 'lvl') %}
+  <div class="callout"><ul>
+    <li><strong>Пачки:</strong> {{ s('poach') }} тягне одного (вбивство скидає перезарядку) → {{ s('warding-strike') }} → тримай {{ s('vicious-strike') }} + макрос {{ s('pummel') }}.</li>
+    <li><strong>Елітки:</strong> заряджений {{ s('punishment') }} → {{ s('shield-smite') }} (оглушення) → {{ s('judgment') }} → {{ s('annihilate') }}.</li>
+    <li><strong>Мана:</strong> Vicious Strike відновлює MP, а Pummel витрачає — чергуй їх, і мана не закінчиться.</li>
+    <li><strong>Мало HP:</strong> Warding Strike лікує й зменшує шкоду; кожен блок лікує через Warding Shield.</li>
+  </ul></div>
+{% endcall %}
+
+{% call section('macro-lvl', 'Макрос на прокачці', 'lvl') %}
+  <p>Простіше налаштування для прокачки й перших днів на капі, з ранніх макросів Grobs. Туди йдуть лише скіли, які ти спамиш; бафи, вибухи стигм і ривки лишаються на своїх клавішах.</p>
+  <div class="hotlines">
+    {{ hotline('1', 'Лінія 1', ['doom-shield', 'debilitating-smash', 'judgment', 'shield-smite'], []) }}
+    {{ hotline('2', 'Лінія 2', ['warding-strike', 'pummel'], []) }}
+  </div>
+  <p>Вбудований макрос: Лінія 1 → Лінія 2, кожна із затримкою 10 мс. Тримай базову атаку {{ s('vicious-strike') }} на ЛКМ <strong>і</strong> клавішу макросу разом.</p>
+  <p class="note">Коли скіли дійдуть до 12–16 і спеціалізації змінять їхні перезарядки, переходь на повне налаштування з вкладки PvE.</p>
+{% endcall %}
+
+{# ============================ Sources ============================ #}
+<section class="sources" aria-labelledby="h-sources">
+  <h2 id="h-sources">{{ t.sources }}</h2>
+  <ul>
+    <li><a href="https://solashur.com/builds/templar-global-build.html" target="_blank" rel="noopener">SolAshur — глобальний білд Templar AION 2</a> і <a href="https://www.youtube.com/watch?v=ayyzLdGOaNc" target="_blank" rel="noopener">його відеорозбір</a> — білд, за яким іде цей гайд (скіли, стигми за профілями, макрос, шлях екіпірування, статі, пети, Pantheon, аркани); спеціалізації — з <a href="https://questlog.gg/aion-2/en/character-builder/QuickCobraLifeBanish" target="_blank" rel="noopener">його білдів на questlog</a></li>
+    <li><a href="https://www.youtube.com/watch?v=JEWRiaOb9JY" target="_blank" rel="noopener">NoBS Game Guides — Aion 2 Templar Guide: Skills Introduction + Early Game Macro</a> (основа огляду скілів і макросу на прокачці)</li>
+    <li><a href="https://questlog.gg/aion-2/en/db/skills/templar" target="_blank" rel="noopener">questlog.gg</a> — дані скілів і стигм із глобального клієнта</li>
+    <li><a href="https://www.inven.co.kr/board/aion2/6438/12803" target="_blank" rel="noopener">Inven</a> — корейські спеціалізації Templar, стигми й налаштування макросу</li>
+    <li><a href="https://vortexgaming.io/postdetail/977999" target="_blank" rel="noopener">Vortex Gaming</a> — корейська PvE-збірка (рівні скілів, статі спорядження) і <a href="https://vortexgaming.io/postdetail/836552" target="_blank" rel="noopener">напрями PvP-збірки</a></li>
+    <li><a href="https://www.inven.co.kr/board/aion2/6438/7621" target="_blank" rel="noopener">Inven</a> і <a href="https://www.fmkorea.com/9447817669" target="_blank" rel="noopener">FM Korea</a> — вибір PvP-стигм</li>
+    <li><a href="https://mmo-codex.com/articles/aion-2-templar-guide/" target="_blank" rel="noopener">MMO Codex</a> — порядок скілів на прокачці, пріоритет пасивок</li>
+    <li><a href="https://nemobek.github.io/aion2-guide/" target="_blank" rel="noopener">nemobek.github.io/aion2-guide</a> (таблиця TitanTheF) — маршрут прокачки</li>
+    <li><a href="https://www.youtube.com/watch?v=HMod6Z4GrE0" target="_blank" rel="noopener">Grobs — AION 2 Macro Guide</a> — як працюють лінії на кнопках і вбудований макрос</li>
+    <li><a href="https://www.youtube.com/watch?v=ZQVq7IYbLy8" target="_blank" rel="noopener">trueeevil — Ultimate Templar Guide for Aion 2: Skills, Stigmas, Rotations, Daevanion Board Explained</a> — налаштування другого дня на глобалі: Executing Blade і Noble Armor для соло-PvE, спеціалізація −1 с Punishment на Pummel, порядок пасивок</li>
+    <li><a href="https://www.youtube.com/watch?v=0_Fu1DlEKPc" target="_blank" rel="noopener">Leonis — How I'm Top DPS as Templar | Build Guide Update</a> — спеціалізація −1 с Punishment на Pummel, Flash Rampage з лінії, Shield of Protection як безпечна заміна</li>
+  </ul>
+  <p class="sources-all"><a href="{{ root }}{{ lang }}/sources/">{{ t.src_all }} →</a></p>
+</section>

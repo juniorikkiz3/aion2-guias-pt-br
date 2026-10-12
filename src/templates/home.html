@@ -1,0 +1,136 @@
+{% extends "base.html" %}
+{% block body_class %}page-home{% endblock %}
+{% block main %}
+<main id="main">
+  <section class="home-hero" data-fx="aether">
+    {% if SITE.events|selectattr('celebrate', 'defined')|list %}
+    <div class="cel-ribbon" aria-hidden="true"><span>{{ t.cel_ribbon }} · {{ t.cel_ribbon }} · {{ t.cel_ribbon }} · {{ t.cel_ribbon }} · </span></div>
+    {% endif %}
+    <div class="home-hero-art" aria-hidden="true">
+      <img src="{{ root }}assets/art/home-bg.webp" width="1920" height="1080" alt="" fetchpriority="high">
+    </div>
+    <div class="wrap home-hero-in">
+      <div class="home-hero-text">
+        <p class="kicker">{{ t.home_kicker }}</p>
+        <h1>{{ t.home_h1 }}</h1>
+        <p class="lead">{{ t.home_lead }}</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#classes">{{ t.home_cta }}</a>
+          <a class="btn btn-ghost" href="{{ root }}{{ lang }}/week-1/">{{ t.w1_h1 }} →</a>
+        </div>
+      </div>
+
+      <aside class="events" aria-labelledby="h-events" data-units="{{ t.units|join(',') }}" data-lang="{{ lang }}">
+        <h2 id="h-events" class="events-title">{{ t.events_title }}</h2>
+        <ol class="ev-list">
+          {% for ev in SITE.events %}
+          {% if ev.get('cycle') %}
+          {#- Repeating timer: the next Rift opening or weekly reset, same rules as the top bar chips (site.js). -#}
+          {% set C = SITE[ev.cycle] %}
+          <li class="ev ev-cycle ev-{{ ev.id }}" data-cycle="{{ ev.cycle }}" data-anchor="{{ C.anchor }}" data-tz="{{ C.tz }}" data-every="{{ C.get('every_h', 168) }}" data-open-min="{{ C.get('open_min', 0) }}">
+            <div class="ev-head">
+              <span class="ev-name">{% if ev.get('href') %}<a href="{{ root }}{{ lang }}/{{ ev.href }}">{{ t['ev_' ~ ev.id] }}</a>{% else %}{{ t['ev_' ~ ev.id] }}{% endif %}</span>
+              <span class="ev-acc">{{ t['ev_' ~ ev.id ~ '_note'] }}</span>
+            </div>
+            <div class="ev-timer" aria-hidden="true">{% for u in t.units %}<span><b>--</b><i>{{ u }}</i></span>{% endfor %}</div>
+            {% if ev.cycle == 'rift' %}<div class="ev-open-msg">{{ t.rift_open }}</div>{% endif %}
+            <p class="ev-when"><time></time></p>
+          </li>
+          {% else %}
+          <li class="ev ev-{{ ev.access }}{% if ev.get('ongoing') %} is-ongoing{% endif %}"{% if ev.at %} data-at="{{ ev.at }}"{% endif %}{% if ev.get('celebrate') %} data-celebrate{% endif %}>
+            <div class="ev-head">
+              <span class="ev-name">{{ t['ev_' ~ ev.id] }}</span>
+              {% if ev.get('acc_label', true) %}<span class="ev-acc">{{ t['acc_' ~ ev.access] }}</span>{% endif %}
+            </div>
+            {% if ev.at %}
+            <div class="ev-timer" aria-hidden="true">{% for u in t.units %}<span><b>--</b><i>{{ u }}</i></span>{% endfor %}</div>
+            <div class="ev-done">{{ t.ev_done }}</div>
+            {% if ev.get('celebrate') %}<div class="ev-open-msg">{{ t.cel_open }}</div>{% endif %}
+            <p class="ev-when">
+              <time datetime="{{ ev.at }}">{{ fmt_utc(ev.at, lang) }}</time>
+              <span class="ev-local"></span>
+              {% if not ev.confirmed %}<span class="ev-note">{{ t.ev_unconfirmed }}</span>{% endif %}
+              {% if ev.get('delayed') %}<span class="ev-note ev-delayed">{{ t.ev_delayed }}</span>{% endif %}
+            </p>
+            {% else %}
+            <p class="ev-tba">{{ t.ev_tba }}</p>
+            {% endif %}
+          </li>
+          {% endif %}
+          {% endfor %}
+        </ol>
+      </aside>
+    </div>
+  </section>
+
+  {#- Who made the guides: creators first, the site only collects them. -#}
+  <div class="wrap">
+    <p class="credit-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.6 1-1.1a5.5 5.5 0 0 0 0-7.7z"/></svg><span>{{ t.credit }} <a href="{{ root }}{{ lang }}/sources/">{{ t.src_all }} →</a></span></p>
+  </div>
+
+  {#- Spotlight: the guide pages people look for after launch (dungeon bosses first). -#}
+  <div class="wrap spot-grid">
+    <a class="spot spot-dungeons" href="{{ root }}{{ lang }}/dungeons/">
+      <span class="spot-art" aria-hidden="true">{% include 'diagrams/krao-rocks.svg' %}</span>
+      <span class="spot-body"><span class="spot-kicker">{{ t.nd_dungeons }}</span><span class="spot-title">{{ t.dg_h1 }} →</span><span class="spot-text">{{ t.dg_lead }}</span></span>
+    </a>
+    <a class="spot spot-tier" href="{{ root }}{{ lang }}/tier-list/">
+      <span class="spot-art spot-emblems" aria-hidden="true">{% for c in classes[:4] %}<img src="{{ root }}assets/classes/{{ c.slug }}.webp" width="40" height="40" alt="" loading="lazy">{% endfor %}</span>
+      <span class="spot-body"><span class="spot-kicker">{{ t.nd_tier }}</span><span class="spot-title">{{ t.tl_h1 }} →</span><span class="spot-text">{{ t.tl_lead }}</span></span>
+    </a>
+  </div>
+
+  <section class="wrap" id="classes" aria-labelledby="h-classes">
+    <h2 id="h-classes" class="section-title">{{ t.classes }}</h2>
+    {% macro card(c) %}
+      <li class="class-card {{ 'is-ready' if c.status == 'ready' else 'is-soon' }}{% if c.get('accent') %} accent-{{ c.accent }}{% endif %}">
+        {% if c.status == 'ready' %}<a class="class-card-link" href="{{ c.slug }}/">{% else %}<div class="class-card-link" aria-disabled="true">{% endif %}
+          <img class="class-card-art" src="{{ root }}assets/art/{{ c.slug }}.webp" alt="" loading="lazy"{% if c.get('art_pos') %} style="object-position:{{ c.art_pos }}"{% endif %}>
+          <img class="class-emblem" src="{{ root }}assets/classes/{{ c.slug }}.webp" width="72" height="72" alt="" loading="lazy">
+          <div class="class-card-body">
+            {% if c.status == 'ready' %}<span class="class-status">{% if c.get('wip') %}<span class="wip-tag">{{ t.wip }}</span> {% endif %}{{ t.guide_updated }} <time datetime="{{ c.updated }}">{{ fmt_day(c.updated, lang) }}</time></span>{% else %}<span class="class-status">{{ t.soon }}</span>{% endif %}
+            <h3>{{ c.name[lang] }}</h3>
+            <p class="class-role">{{ c.role[lang] }}{% if c.get('weapon') %} · {{ c.weapon[lang] }}{% endif %}</p>
+            {% if c.get('pitch') %}<p class="class-pitch">{{ c.pitch[lang] }}</p>{% endif %}
+            {% if c.status == 'ready' %}
+            <div class="class-meta">
+              <span class="chips">{% for m in ['pve', 'pvp', 'lvl'] if m not in c.get('modes_off', []) %}<span class="chip">{{ t['mode_' ~ m] }}</span>{% endfor %}</span>
+              <span class="diff" title="{{ t.difficulty }}: {{ t.diff[c.difficulty] }}">
+                {% for i in range(3) %}<i class="{{ 'on' if i < c.difficulty }}"></i>{% endfor %}
+                <span>{{ t.diff[c.difficulty] }}</span>
+              </span>
+            </div>
+            {% endif %}
+          </div>
+        {% if c.status == 'ready' %}</a>{% else %}</div>{% endif %}
+        {% if c.slug == SITE.get('author_main') %}<span class="my-pick" tabindex="0"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 3 4.5 6.7 4.5c2.2 0 3.6 1.3 5.3 3.2 1.7-1.9 3.1-3.2 5.3-3.2 3.7 0 5.8 3.9 4.3 7.3C19.5 16.4 12 21 12 21z"/></svg><span class="my-pick-tip"><b>{{ t.my_pick }}</b>{{ t.my_pick_note }}</span></span>{% endif %}
+        {% if c.status == 'ready' %}<div class="pop-art" aria-hidden="true"><img src="{{ root }}assets/art/{{ c.slug }}.webp" alt="" loading="lazy"{% if c.get('art_pos') or c.get('art_up') %} style="{% if c.get('art_pos') %}--fx:{{ c.art_pos.split()[0] }};{% endif %}{% if c.get('art_up') %}--fy:{{ c.art_up }};{% endif %}"{% endif %}></div>{% endif %}
+      </li>
+    {% endmacro %}
+    <ul class="class-grid class-grid-ready">
+      {% for c in classes if c.status == 'ready' %}{{ card(c) }}{% endfor %}
+    </ul>
+    <ul class="class-grid class-grid-soon">
+      {% for c in classes if c.status != 'ready' %}{{ card(c) }}{% endfor %}
+    </ul>
+  </section>
+
+  <section class="wrap features" aria-labelledby="h-features">
+    <h2 id="h-features" class="section-title">{{ t.features_title }}</h2>
+    <div class="feature-grid">
+      <div class="feature">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h10M4 17h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/></svg>
+        <h3>{{ t.feat_modes }}</h3><p>{{ t.feat_modes_d }}</p>
+      </div>
+      <div class="feature">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 4v5c0 5-3.4 8.3-8 9-4.6-.7-8-4-8-9V7z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/><path d="M8.5 12l2.5 2.5 4.5-5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+        <h3>{{ t.feat_data }}</h3><p>{{ t.feat_data_d }}</p>
+      </div>
+      <div class="feature">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3" stroke="currentColor" stroke-width="2" fill="none"/><path d="M7 12l3 3 7-7" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+        <h3>{{ t.feat_track }}</h3><p>{{ t.feat_track_d }}</p>
+      </div>
+    </div>
+  </section>
+</main>
+{% endblock %}

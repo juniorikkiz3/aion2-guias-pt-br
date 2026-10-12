@@ -1,0 +1,2156 @@
+{
+  "hibernation": {
+    "id": "15410000",
+    "category": "stigma",
+    "icon": "hibernation.webp",
+    "cooldown": 180000,
+    "en": {
+      "name": "Hibernation",
+      "desc": "Grants Hibernation to the caster for 5s. The caster becomes immune to damage and status effects while Hibernation is active.\nUsing [Remove Hibernation] while Hibernation is active immediately removes the effect, restores 20% Max HP, and moves the caster backward.\n\nCannot block certain powerful attacks and is unaffected by cooldown increase effects.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "+100% Incoming Heal"
+        },
+        {
+          "level": 10,
+          "text": "Restores 5% Max HP every 1s for the duration"
+        },
+        {
+          "level": 15,
+          "text": "+2s duration"
+        },
+        {
+          "level": 20,
+          "text": "Triggers when afflicted with Impact-type status"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Сон",
+      "desc": "Активирует эффект сна на 5s Делает персонажа невосприимчивым к урону и негат. эффектам во время Отдыха.\nИспользование [Пробуждения] во время действия эффекта немедленно снимает эффект, восстанавливает 20% макс. ОЗ и отбрасывает персонажа назад.\n\nНе может блокировать некоторые мощные атаки. Эффекты увеличения времени перезарядки не действуют.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Получ. исцеление +100%"
+        },
+        {
+          "level": 10,
+          "text": "Восстановление по 5% от макс. ОЗ каждую секунду во время действия умения"
+        },
+        {
+          "level": 15,
+          "text": "Длительность умения +2 сек."
+        },
+        {
+          "level": 20,
+          "text": "Сон при воздействии шок. эффекта"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Hibernation",
+      "desc": "Concede Hibernation para o lançador para 5s. O caster se torna imune a danos e efeitos de status enquanto Hibernation está ativo. Usando [Remover Hibernation ] enquanto Hibernation está ativo imediatamente remove o efeito, restaura 20% Max HP , e move o caster para trás. Não pode bloquear certos ataques poderosos e não é afetado por efeitos de aumento de recarga.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "+ 100% Chegando Cura"
+        },
+        {
+          "level": 10,
+          "text": "Restaura 5% Max HP a cada 1s para a duração."
+        },
+        {
+          "level": 15,
+          "text": "+ Duração 2s"
+        },
+        {
+          "level": 20,
+          "text": "Ativa quando aflita com o tipo de impacto."
+        }
+      ]
+    }
+  },
+  "flame-scattershot": {
+    "id": "15010000",
+    "category": "active",
+    "icon": "flame-scattershot.webp",
+    "cooldown": 0,
+    "en": {
+      "name": "Flame Scattershot",
+      "desc": "Deals {se_dmg:1501000011:SkillUIMinDmgsum}-{se_dmg:1501000011:SkillUIMaxDmgsum} Fire damage to a target afflicted with Stagger within 20m.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Absorbs 5% HP"
+        },
+        {
+          "level": 8,
+          "text": "Restores 120 MP"
+        },
+        {
+          "level": 8,
+          "text": "Changes to mobile skill"
+        },
+        {
+          "level": 12,
+          "text": "Multi-Hit on hit"
+        },
+        {
+          "level": 16,
+          "text": "-1s all skill cooldowns on hit"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Огненная пальба",
+      "desc": "Наносит {se_dmg:1501000011:SkillUIMinDmgsum}-{se_dmg:1501000011:SkillUIMaxDmgsum} урона стихии огня цели в состоянии Ошеломления в радиусе 20 м.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Поглощение 5% ОЗ"
+        },
+        {
+          "level": 8,
+          "text": "Восстановление 120 ОМ"
+        },
+        {
+          "level": 8,
+          "text": "Замена на умение с возможностью перемещения"
+        },
+        {
+          "level": 12,
+          "text": "Гарантир. мультиудар при попадании"
+        },
+        {
+          "level": 16,
+          "text": "Перезарядка всех умений -1s при попадании"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Flame Scattershot",
+      "desc": "Provoca danos de fogo {se_dmg:1501000011:SkillUIMinDmgsum}-{se_dmg:1501000011:SkillUIMaxDmgsum} em um alvo atingido com Stagger dentro do 20m.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Absorve 5% HP"
+        },
+        {
+          "level": 8,
+          "text": "Restaura 120 MP"
+        },
+        {
+          "level": 8,
+          "text": "Mudanças na habilidade móvel."
+        },
+        {
+          "level": 12,
+          "text": "Multi-Hit na batida"
+        },
+        {
+          "level": 16,
+          "text": "- 1s todos os destrezas no hit"
+        }
+      ]
+    }
+  },
+  "firestorm": {
+    "id": "15040000",
+    "category": "active",
+    "icon": "firestorm.webp",
+    "cooldown": 5000,
+    "en": {
+      "name": "Firestorm",
+      "desc": "Deals {se_dmg:1504000011:SkillUIMinDmgsum}-{se_dmg:1504000011:SkillUIMaxDmgsum} Fire damage to a target within 20m.\n\n5 Stagger Gauge Damage",
+      "specs": [
+        {
+          "level": 8,
+          "text": "-50% MP Cost"
+        },
+        {
+          "level": 8,
+          "text": "+20% Skill Speed"
+        },
+        {
+          "level": 8,
+          "text": "-60% Incoming Heal for 5s on hit"
+        },
+        {
+          "level": 12,
+          "text": "-2s [Hellfire] cooldown per fireball"
+        },
+        {
+          "level": 16,
+          "text": "+15% damage per fireball, up to +75%"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Огненный гарпун",
+      "desc": "Наносит {se_dmg:1504000011:SkillUIMinDmgsum}-{se_dmg:1504000011:SkillUIMaxDmgsum} урона стихии огня цели в радиусе 20 м.\n\nУрон по шкале ошеломления — 5",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Затрата ОМ -50%"
+        },
+        {
+          "level": 8,
+          "text": "СКР умений +20%"
+        },
+        {
+          "level": 8,
+          "text": "-60% получ. исцеление на 5s при попадании"
+        },
+        {
+          "level": 12,
+          "text": "Перезарядка [Адского пламени] -2 сек. за каждый снаряд"
+        },
+        {
+          "level": 16,
+          "text": "Урон +15% за каждый снаряд (макс. 75%)"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Firestorm",
+      "desc": "Provoca dano {se_dmg:1504000011:SkillUIMinDmgsum}-{se_dmg:1504000011:SkillUIMaxDmgsum} a um alvo dentro do 20m. 5 Stagger Gauge Danos",
+      "specs": [
+        {
+          "level": 8,
+          "text": "- 50% MP Custo"
+        },
+        {
+          "level": 8,
+          "text": "+ 20% Velocidade de Habilidade"
+        },
+        {
+          "level": 8,
+          "text": "- 60% chegando cura para 5s em sucesso"
+        },
+        {
+          "level": 12,
+          "text": "- 2s [Hellfire ] recarga por bola de fogo"
+        },
+        {
+          "level": 16,
+          "text": "+ 15% dano por bola de fogo, até + 75%"
+        }
+      ]
+    }
+  },
+  "blaze": {
+    "id": "15050000",
+    "category": "active",
+    "icon": "blaze.webp",
+    "cooldown": 5000,
+    "en": {
+      "name": "Blaze",
+      "desc": "Deals {se_dmg:1505000011:SkillUIMinDmgsum}-{se_dmg:1505000011:SkillUIMaxDmgsum} Fire damage to a target afflicted with Fire Mark within 20m and restores 100 MP.\n\n7 Stagger Gauge Damage",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Absorbs 3% HP"
+        },
+        {
+          "level": 8,
+          "text": "+50% MP restored"
+        },
+        {
+          "level": 8,
+          "text": "Delayed Damage after 3s"
+        },
+        {
+          "level": 12,
+          "text": "Multi-Hit on hit"
+        },
+        {
+          "level": 16,
+          "text": "-3s [Wish of Concentration] cooldown on hit"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Зарево",
+      "desc": "Наносит {se_dmg:1505000011:SkillUIMinDmgsum}-{se_dmg:1505000011:SkillUIMaxDmgsum} урона стихии огня цели с Огненной меткой в радиусе 20 м и восстанавливает 100 ОМ.\n\nУрон по шкале ошеломления — 7",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Поглощение 3% ОЗ"
+        },
+        {
+          "level": 8,
+          "text": "Восстановление ОМ +50%"
+        },
+        {
+          "level": 8,
+          "text": "Отложенный урон через 3s"
+        },
+        {
+          "level": 12,
+          "text": "Гарантир. мультиудар при попадании"
+        },
+        {
+          "level": 16,
+          "text": "Перезарядка [Истока силы] -3 сек. при попадании"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Blaze",
+      "desc": "Provoca danos {se_dmg:1505000011:SkillUIMinDmgsum}-{se_dmg:1505000011:SkillUIMaxDmgsum} a um alvo atingido com Fire Mark dentro do 20m e restaura 100 MP. 7 Stagger Gauge Danos",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Absorve 3% HP"
+        },
+        {
+          "level": 8,
+          "text": "+ 50% MP restaurado."
+        },
+        {
+          "level": 8,
+          "text": "Dano atrasado após 3s"
+        },
+        {
+          "level": 12,
+          "text": "Multi-Hit na batida"
+        },
+        {
+          "level": 16,
+          "text": "- 3s [Wish of Concentration ] arrefecer no hit"
+        }
+      ]
+    }
+  },
+  "hellfire": {
+    "id": "15060000",
+    "category": "active",
+    "icon": "hellfire.webp",
+    "cooldown": 45000,
+    "en": {
+      "name": "Hellfire",
+      "desc": "Selects a target within 20m and deals {se_dmg:1506000011:SkillUIMinDmgsum}-{se_dmg:1506000311:SkillUIMaxDmgsum} Fire damage to up to 4 enemies within 4m of the target.\n\nMax 3 Charge Levels\n20-35 Stagger Gauge Damage",
+      "specs": [
+        {
+          "level": 8,
+          "text": "+30% Skill Speed"
+        },
+        {
+          "level": 8,
+          "text": "Fire Damage over Time for 10s on hit"
+        },
+        {
+          "level": 8,
+          "text": "Changes to mobile skill"
+        },
+        {
+          "level": 12,
+          "text": "Ignores Block and Evasion and lands as Multi-Hit"
+        },
+        {
+          "level": 16,
+          "text": "-15s cooldown"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Адское пламя",
+      "desc": "Наносит {se_dmg:1506000011:SkillUIMinDmgsum}-{se_dmg:1506000311:SkillUIMaxDmgsum} урона стихии огня врагам (макс. 4) в радиусе 4 м вокруг цели, находящейся в радиусе 20 м.\n\nМакс. 3 стадии заряда\nУрон по шкале ошеломления — 20-35 ед.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "СКР умений +30%"
+        },
+        {
+          "level": 8,
+          "text": "Постоянный урон стихии огня на 10s при попадании"
+        },
+        {
+          "level": 8,
+          "text": "Замена на умение с возможностью перемещения"
+        },
+        {
+          "level": 12,
+          "text": "Игнорирование блока и УКЛ, попадание мультиударом"
+        },
+        {
+          "level": 16,
+          "text": "Перезарядка -15 сек."
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Hellfire",
+      "desc": "Seleciona um alvo dentro do 20m e lida com danos {se_dmg:1506000011:SkillUIMinDmgsum}-{se_dmg:1506000311:SkillUIMaxDmgsum} de fogo para até inimigos 4 dentro do 4m do alvo. Max 3 Nível de carga 20 - 35 Stagger Gauge Danos",
+      "specs": [
+        {
+          "level": 8,
+          "text": "+ 30% Velocidade de Habilidade"
+        },
+        {
+          "level": 8,
+          "text": "Dano de Fogo ao longo do tempo para 10s em hit"
+        },
+        {
+          "level": 8,
+          "text": "Mudanças na habilidade móvel."
+        },
+        {
+          "level": 12,
+          "text": "Ignore Block e Evasion e pouse como Multi-Hit."
+        },
+        {
+          "level": 16,
+          "text": "- Arrefecer em 15s"
+        }
+      ]
+    }
+  },
+  "ice-chain": {
+    "id": "15090000",
+    "category": "active",
+    "icon": "ice-chain.webp",
+    "cooldown": 0,
+    "en": {
+      "name": "Ice Chain",
+      "desc": "Selects a target within 20m and deals {se_dmg:1509000011:SkillUIMinDmgsum}-{se_dmg:1509000011:SkillUIMaxDmgsum} Water damage to up to 4 enemies within 4m of the target and inflicts Slow, reducing Move Speed by 40% for 5s.\n\n2 Stagger Gauge Damage",
+      "specs": [
+        {
+          "level": 8,
+          "text": "-20% MP Cost"
+        },
+        {
+          "level": 8,
+          "text": "+20% Skill Speed"
+        },
+        {
+          "level": 8,
+          "text": "Deals up to 12% more damage when less targets are hit"
+        },
+        {
+          "level": 12,
+          "text": "-1s [Winter's Shackles] cooldown on hit"
+        },
+        {
+          "level": 16,
+          "text": "5% chance to inflict Frost for 2s on landing [Cold Wave]"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Ледяная цепь",
+      "desc": "Наносит {se_dmg:1509000011:SkillUIMinDmgsum}-{se_dmg:1509000011:SkillUIMaxDmgsum} урона стихии воды врагам (макс. 4) в радиусе 4 м вокруг цели, находящейся в радиусе 20 м, и на 5s замедляет их, снижающее СКР движ. на 40%.\n\nУрон по шкале ошеломления — 2 ед.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Затрата ОМ -20%"
+        },
+        {
+          "level": 8,
+          "text": "СКР умений +20%"
+        },
+        {
+          "level": 8,
+          "text": "Чем меньше целей попадания, тем больше увелич. урона (макс. до 12%)"
+        },
+        {
+          "level": 12,
+          "text": "Перезарядка [Оков зимы] -1 сек. при попадании"
+        },
+        {
+          "level": 16,
+          "text": "Шанс 5% заморозить на 2 сек. при попадании [Волной холода]"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Ice Chain",
+      "desc": "Seleciona um alvo dentro de 20m e lida com {se_dmg:1509000011:SkillUIMinDmgsum} - {se_dmg:1509000011:SkillUIMaxDmgsum} Danos de água até aos inimigos 4 dentro de 4m do alvo e inflige Devagar, reduzindo a velocidade de movimento em 40% para 5s. 2 Stagger Gauge Danos",
+      "specs": [
+        {
+          "level": 8,
+          "text": "- 20% MP Custo"
+        },
+        {
+          "level": 8,
+          "text": "+ 20% Velocidade de Habilidade"
+        },
+        {
+          "level": 8,
+          "text": "Comprou até 12% mais danos quando menos alvos foram atingidos."
+        },
+        {
+          "level": 12,
+          "text": "- 1s [Winter's Shackles ] arrefecer no hit"
+        },
+        {
+          "level": 16,
+          "text": "5% chance de infligir Frost para 2s no pouso."
+        }
+      ]
+    }
+  },
+  "winters-shackles": {
+    "id": "15110000",
+    "category": "active",
+    "icon": "winters-shackles.webp",
+    "cooldown": 45000,
+    "en": {
+      "name": "Winter's Shackles",
+      "desc": "Selects a target within 20m and deals {se_dmg:1511000011:SkillUIMinDmgsum}-{se_dmg:1511000011:SkillUIMaxDmgsum} Water damage to up to 4 enemies within 4m. Inflicts Slow for 3s.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Changes to mobile skill"
+        },
+        {
+          "level": 8,
+          "text": "30% chance to inflict Frost for 3s on landing [Winter's Shackles]"
+        },
+        {
+          "level": 8,
+          "text": "+20% PvE Damage Boost and +10% PvP Damage Boost for 5s on landing [Winter's Shackles]"
+        },
+        {
+          "level": 12,
+          "text": "Adds [Winter's Illusion] Chain Skill"
+        },
+        {
+          "level": 16,
+          "text": "-15s [Winter's Shackles] cooldown"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Оковы зимы",
+      "desc": "Наносит {se_dmg:1511000011:SkillUIMinDmgsum}-{se_dmg:1511000011:SkillUIMaxDmgsum} урона стихии воды врагам (макс. 4) в радиусе 4 м вокруг цели, находящейся в радиусе 20 м, и замедляет их на 3s.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Замена на умение с возможностью перемещения"
+        },
+        {
+          "level": 8,
+          "text": "Шанс 30% заморозить на 3 сек. при попадании [Оковами зимы]"
+        },
+        {
+          "level": 8,
+          "text": "Увеличение урона в PvE +20%, увеличение урона в PvP +10% на 5s при попадании [Оковами зимы]"
+        },
+        {
+          "level": 12,
+          "text": "Добавление 2-й комбинации [Иллюзия зимы]"
+        },
+        {
+          "level": 16,
+          "text": "Перезарядка [Оков зимы] -15 сек."
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Winter's Shackles",
+      "desc": "Seleciona um alvo dentro do 20m e lida com danos de água {se_dmg:1511000011:SkillUIMinDmgsum}-{se_dmg:1511000011:SkillUIMaxDmgsum} para inimigos 4 dentro do 4m. Inflige devagar para 3s.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Mudanças na habilidade móvel."
+        },
+        {
+          "level": 8,
+          "text": "30% A chance de infligir Frost para 3s na aterrissagem.Winter's Shackles]"
+        },
+        {
+          "level": 8,
+          "text": "+20% PvE Danos Aumentam e +10% PvP Danos aumentam para 5s na aterrissagem.Winter's Shackles]"
+        },
+        {
+          "level": 12,
+          "text": "Adiciona a habilidade de corrente [Ilusão de Inverno]"
+        },
+        {
+          "level": 16,
+          "text": "- 15s [Winter's Shackles ] recarga"
+        }
+      ]
+    }
+  },
+  "soul-freeze": {
+    "id": "15130000",
+    "category": "stigma",
+    "icon": "soul-freeze.webp",
+    "cooldown": 60000,
+    "en": {
+      "name": "Soul Freeze",
+      "desc": "Deals {se_dmg:1513000011:SkillUIMinDmgsum}-{se_dmg:1513000011:SkillUIMaxDmgsum} Water damage to a target within 20m with a 75% chance to inflict Seal for 5s.\n100% chance to inflict Seal on NPC targets. \n\n20 Stagger Gauge Damage",
+      "specs": [
+        {
+          "level": 5,
+          "text": "50% chance to inflict Root for 5s"
+        },
+        {
+          "level": 10,
+          "text": "-1,000 Stamina"
+        },
+        {
+          "level": 15,
+          "text": "+2s Seal duration"
+        },
+        {
+          "level": 20,
+          "text": "+25% Seal chance"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Ледяная душа",
+      "desc": "Наносит {se_dmg:1513000011:SkillUIMinDmgsum}-{se_dmg:1513000011:SkillUIMaxDmgsum} урона стихии воды цели в радиусе 20 м и с шансом 75% накладывает на нее Запечатывание на 5s\nДля NPC запечатывание гарантировано.\n\nУрон по шкале ошеломления — 20",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Шанс 50% плена на 5 сек."
+        },
+        {
+          "level": 10,
+          "text": "ОД -1000"
+        },
+        {
+          "level": 15,
+          "text": "Длительность Запечатывания +2 сек."
+        },
+        {
+          "level": 20,
+          "text": "Шанс Запечатывания +25%"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Soul Freeze",
+      "desc": "De acordo com {se_dmg:1513000011:SkillUIMinDmgsum} - {se_dmg:1513000011:SkillUIMaxDmgsum} Danos de água em um alvo dentro de 20m com uma chance 75% para infligir Seal para 5s. 100% chance de infligir Seal em alvos da NPC. 20 Stagger Gauge Danos",
+      "specs": [
+        {
+          "level": 5,
+          "text": "50% chance de infligir Root para 5s"
+        },
+        {
+          "level": 10,
+          "text": "- 1,000 Stamina"
+        },
+        {
+          "level": 15,
+          "text": "+ 2s Duração do selo"
+        },
+        {
+          "level": 20,
+          "text": "+ 25% Seal chance"
+        }
+      ]
+    }
+  },
+  "glacial-smite": {
+    "id": "15120000",
+    "category": "stigma",
+    "icon": "glacial-smite.webp",
+    "cooldown": 90000,
+    "en": {
+      "name": "Glacial Smite",
+      "desc": "Selects a target within 20m and deals {se_dmg:1512000011:SkillUIMinDmgsum}-{se_dmg:1512000011:SkillUIMaxDmgsum} Water damage to up to 4 enemies within 4m of the target.\n\n20 Stagger Gauge Damage",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Up to +20% damage when more targets hit"
+        },
+        {
+          "level": 10,
+          "text": "-30s cooldown"
+        },
+        {
+          "level": 15,
+          "text": "50% chance to inflict Frost for 3s"
+        },
+        {
+          "level": 20,
+          "text": "Ignores Block and Evasion and lands as Multi-Hit"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Ледяной удар",
+      "desc": "Наносит {se_dmg:1512000011:SkillUIMinDmgsum}-{se_dmg:1512000011:SkillUIMaxDmgsum} урона стихии воды врагам (макс. 4) в радиусе 4 м вокруг цели, находящейся в радиусе 20 м.\n\nУрон по шкале ошеломления — 20 ед.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Чем больше целей попадания, тем больше увеличение урона (макс. до 20%)"
+        },
+        {
+          "level": 10,
+          "text": "Перезарядка -30 сек."
+        },
+        {
+          "level": 15,
+          "text": "Шанс 50% заморозить на 3 сек."
+        },
+        {
+          "level": 20,
+          "text": "Игнорирование блока и УКЛ, попадание мультиударом"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Glacial Smite",
+      "desc": "Seleciona um alvo dentro do 20m e lida com danos de água {se_dmg:1512000011:SkillUIMinDmgsum}-{se_dmg:1512000011:SkillUIMaxDmgsum} para inimigos 4 dentro do 4m do alvo. 20 Stagger Gauge Danos",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Dano até + 20% quando mais alvos atingirem"
+        },
+        {
+          "level": 10,
+          "text": "- Arrefecer em 30s"
+        },
+        {
+          "level": 15,
+          "text": "50% chance de infligir Frost para 3s"
+        },
+        {
+          "level": 20,
+          "text": "Ignore Block e Evasion e pouse como Multi-Hit."
+        }
+      ]
+    }
+  },
+  "curse-tree": {
+    "id": "15140000",
+    "category": "stigma",
+    "icon": "curse-tree.webp",
+    "cooldown": 90000,
+    "en": {
+      "name": "Curse: Tree",
+      "desc": "Polymorphs a target within 20m into a tree for 10s, reducing their Fire Tolerance by 20%, while the caster moves back. Polymorph is canceled if the target is attacked.\n\n20 Stagger Gauge Damage",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Increases number of hits required to remove Polymorph"
+        },
+        {
+          "level": 10,
+          "text": "-200 Block, Evasion for 10s when Polymorph ends"
+        },
+        {
+          "level": 15,
+          "text": "-20% Impact-type Resist for 10s when Polymorph ends"
+        },
+        {
+          "level": 20,
+          "text": "Inflicts debuff even if Polymorph is removed through attacks"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Проклятие: Дерево",
+      "desc": "На 10s превращает цель в радиусе 20 м в дерево, снижая ее стойкость к стихии огня на 20%, и перемещается назад. Эффект мутации исчезает при получении атаки.\n\nУрон по шкале ошеломления — 20",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Увеличение кол-ва получения атак для снятия Мутации"
+        },
+        {
+          "level": 10,
+          "text": "Блок и УКЛ -200 на 10 сек. после завершения Мутации"
+        },
+        {
+          "level": 15,
+          "text": "Сопротивление шок. эффектам -20% на 10 сек. после завершения Мутации"
+        },
+        {
+          "level": 20,
+          "text": "Активация эффекта ослабления с помощью атаки даже при завершении превращения"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Curse: Tree",
+      "desc": "Polimorfos um alvo dentro de 20m em uma árvore para 10s, reduzindo sua tolerância ao fogo em 20%, enquanto o caster se move para trás. Polimorfo é cancelado se o alvo for atacado. 20 Stagger Gauge Danos",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Aumenta o número de acessos necessários para remover Polymorph."
+        },
+        {
+          "level": 10,
+          "text": "- Bloco 200, Evasão para 10s quando Polimorfo terminar."
+        },
+        {
+          "level": 15,
+          "text": "- 20% tipo impacto Resistir para 10s quando Polymorph termina"
+        },
+        {
+          "level": 20,
+          "text": "Inflige desbuff mesmo se Polymorph é removido através de ataques"
+        }
+      ]
+    }
+  },
+  "frost": {
+    "id": "15150000",
+    "category": "active",
+    "icon": "frost.webp",
+    "cooldown": 30000,
+    "en": {
+      "name": "Frost",
+      "desc": "Selects a target within 20m and deals {se_dmg:1515000011:SkillUIMinDmgSum}-{se_dmg:1515000011:SkillUIMaxDmgSum} Water damage to up to 4 enemies within 4m of the target, with a 50% chance to inflict Frost on the target for 3s.\n100% chance to inflict Frost on NPC targets.\n\n10 Stagger Gauge Damage",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Restores 200 MP"
+        },
+        {
+          "level": 8,
+          "text": "-5s cooldown"
+        },
+        {
+          "level": 8,
+          "text": "Reset [Frost Burst] cooldown on landing Frost"
+        },
+        {
+          "level": 12,
+          "text": "+25% PC target Frost Chance"
+        },
+        {
+          "level": 16,
+          "text": "+1s Frost duration"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Заморозка",
+      "desc": "Наносит {se_dmg:1515000011:SkillUIMinDmgSum}-{se_dmg:1515000011:SkillUIMaxDmgSum} урона стихии воды врагам (макс. 4) в радиусе 4 м вокруг цели, находящейся в радиусе 20 м, и с шансом 50% замораживает их на 3s\nДля NPC заморозка срабатывает гарантированно.\n\nУрон по шкале ошеломления — 10 ед.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Восстановление 200 ОМ"
+        },
+        {
+          "level": 8,
+          "text": "Перезарядка -5 сек."
+        },
+        {
+          "level": 8,
+          "text": "Завершение перезарядки [Замораживающего взрыва] при попадании Заморозкой"
+        },
+        {
+          "level": 12,
+          "text": "Точность Заморозки по игрокам +25%"
+        },
+        {
+          "level": 16,
+          "text": "Длительность Заморозки +1 сек."
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Frost",
+      "desc": "Seleciona um alvo dentro de 20m e lida com {se_dmg:1515000011:SkillUIMinDmgSum} - {se_dmg:1515000011:SkillUIMaxDmgSum} Danos na água para até 4 inimigos dentro de 4m do alvo, com uma chance 50% de infligir Frost no alvo para 3s. 100% chance de infligir Frost em alvos da NPC. 10 Danos no gauge do Stagger",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Restaura 200 MP"
+        },
+        {
+          "level": 8,
+          "text": "- Arrefecer em 5s"
+        },
+        {
+          "level": 8,
+          "text": "Reiniciar.Frost BurstResfriamento no pouso Frost"
+        },
+        {
+          "level": 12,
+          "text": "+ 25% PC alvo Frost Chance"
+        },
+        {
+          "level": 16,
+          "text": "+ 1s Frost duração"
+        }
+      ]
+    }
+  },
+  "steel-barrier": {
+    "id": "15160000",
+    "category": "stigma",
+    "icon": "steel-barrier.webp",
+    "cooldown": 60000,
+    "en": {
+      "name": "Steel Barrier",
+      "desc": "Grants a 16% Max HP Protective Shield for 60s. Increases PvE Damage Tolerance by 10% and PvP Damage Tolerance by 5% for the shield's duration, and restores 300 Stamina when the effect ends.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "+10% Move Speed"
+        },
+        {
+          "level": 10,
+          "text": "HP Regen at fixed intervals"
+        },
+        {
+          "level": 15,
+          "text": "+10% PvE Damage Tolerance increase and +5% PvP Damage Tolerance increase"
+        },
+        {
+          "level": 20,
+          "text": "-15s cooldown"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Стальная защитная оболочка",
+      "desc": "Создает Защитную оболочку, блокирующую урон, соотв. 16% ОЗ, на 60s. Увеличивает стойкость к урону в PvE на 10% и стойкость к урону в PvP на 5% во время действия оболочки. Восстанавливает 300 ОД по окончании эффекта.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "СКР движ. +10%"
+        },
+        {
+          "level": 10,
+          "text": "Восстановление ОЗ с определенным интервалом"
+        },
+        {
+          "level": 15,
+          "text": "Стойкость к урону в PvE доп. +10%, стойкость к урону в PvP доп. +5%"
+        },
+        {
+          "level": 20,
+          "text": "Перезарядка -15 сек."
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Steel Barrier",
+      "desc": "Concede um escudo protetor 16% Max HP para 60s. Aumenta a tolerância aos danos PvE em 10% e PvP em 5% para a duração do escudo, e restaura a resistência 300 quando o efeito termina.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "+ 10% Move Speed"
+        },
+        {
+          "level": 10,
+          "text": "HP Regen em intervalos fixos"
+        },
+        {
+          "level": 15,
+          "text": "+ 10% PvE Aumento da tolerância aos danos e + 5% PvP Aumento da tolerância aos danos"
+        },
+        {
+          "level": 20,
+          "text": "- Arrefecer em 15s"
+        }
+      ]
+    }
+  },
+  "cold-storm": {
+    "id": "15200000",
+    "category": "stigma",
+    "icon": "cold-storm.webp",
+    "cooldown": 60000,
+    "en": {
+      "name": "Cold Storm",
+      "desc": "Selects a target within 20m and deals {se_dmg:1520000311:SkillUIMinDmgsum}-{se_dmg:1520000311:SkillUIMaxDmgsum} Water damage, inflicting Slow on up to 4 enemies within 5m. Summons a Cold Storm at the target's location for 7s, inflicting Frostbite.\nFrostbite: Deals {se_abe_dmg:1520000211:1520000211:SkillUIDotMinDmg:tick}-{se_abe_dmg:1520000211:1520000211:SkillUIDotMaxDmg:tick} Water Damage over Time every 1s for 10s. The Damage over Time amount increases when targets move.\n\n20 Stagger Gauge Damage",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Enhanced Frostbite - Grants extra damage when landing an attack"
+        },
+        {
+          "level": 10,
+          "text": "30% chance to inflict Root for 2s"
+        },
+        {
+          "level": 15,
+          "text": "+3s [Cold Storm] summoning duration"
+        },
+        {
+          "level": 20,
+          "text": "+10s Frostbite duration"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Метель",
+      "desc": "Наносит {se_dmg:1520000311:SkillUIMinDmgsum}-{se_dmg:1520000311:SkillUIMaxDmgsum} урона стихии воды врагам (макс. 4) в радиусе 5 м вокруг цели, находящейся в радиусе 20 м, и замедляет их. Призывает в точке нахождения цели Метель, которая действует 7 сек. и непрерывно создает эффект Обморожения.\nОбморожение: в течение 10s с интервалом 1s наносит {se_abe_dmg:1520000211:1520000211:SkillUIDotMinDmg:tick}-{se_abe_dmg:1520000211:1520000211:SkillUIDotMaxDmg:tick} постоянного урона стихии воды. Пост. урон увеличивается при передвижении.\n\nУрон по шкале ошеломления — 20 ед.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Усиление обморожения: доп. урон при атаке"
+        },
+        {
+          "level": 10,
+          "text": "Шанс 30% взять в плен на 2 сек."
+        },
+        {
+          "level": 15,
+          "text": "Время призыва [Метель] +3 сек."
+        },
+        {
+          "level": 20,
+          "text": "Длительность Обморожения +10 сек."
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Cold Storm",
+      "desc": "Seleciona um alvo dentro do 20m e lida com danos causados pela água {se_dmg:1520000311:SkillUIMinDmgsum}-{se_dmg:1520000311:SkillUIMaxDmgsum}, infligindo lentos para inimigos 4 dentro do 5m. Invoca um Cold Storm na localização do alvo para 7s, infligindo mordida de gelo. O {se_abe_dmg:1520000211:1520000211:SkillUIDotMinDmg:tick}-{se_abe_dmg:1520000211:1520000211:SkillUIDotMaxDmg:tick} danifica a água ao longo do tempo a cada 1s para 10s. O dano contínuo aumenta quando os alvos se movem. 20 Danos no gauge do Stagger",
+      "specs": [
+        {
+          "level": 5,
+          "text": "A mordida de gelo aprimorada causa danos adicionais ao aterrissar um ataque."
+        },
+        {
+          "level": 10,
+          "text": "30% chance de infligir Root para 2s"
+        },
+        {
+          "level": 15,
+          "text": "+ 3s [Cold Storm ] duração convocando"
+        },
+        {
+          "level": 20,
+          "text": "+ 10s Frostbite duração"
+        }
+      ]
+    }
+  },
+  "flame-arrow": {
+    "id": "15210000",
+    "category": "active",
+    "icon": "flame-arrow.webp",
+    "cooldown": 0,
+    "en": {
+      "name": "Flame Arrow",
+      "desc": "Deals {se_dmg:1521000011:SkillUIMinDmgsum}-{se_dmg:1521000011:SkillUIMaxDmgsum} Fire damage to a target within 20m and restores 100 MP.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "+20% MP restored"
+        },
+        {
+          "level": 8,
+          "text": "Absorbs 1% HP"
+        },
+        {
+          "level": 8,
+          "text": "+50% Multi-Hit on hit"
+        },
+        {
+          "level": 12,
+          "text": "+5% Fire Damage Boost for 10s on activating [Pyroclasm]"
+        },
+        {
+          "level": 16,
+          "text": "Reset [Blaze] cooldown on landing [Pyroclasm]"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Огненная стрела",
+      "desc": "Наносит {se_dmg:1521000011:SkillUIMinDmgsum}-{se_dmg:1521000011:SkillUIMaxDmgsum} урона стихии огня цели в радиусе 20 м и восстанавливает 100 ОМ.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Восстановление ОМ +20%"
+        },
+        {
+          "level": 8,
+          "text": "Поглощение 1% ОЗ"
+        },
+        {
+          "level": 8,
+          "text": "Шанс мультиудара +50% при попадании"
+        },
+        {
+          "level": 12,
+          "text": "При активации [Испепеления] усиление всех стихий +5% на 10s"
+        },
+        {
+          "level": 16,
+          "text": "Завершение перезарядки [Зарева] при попадании [Испепелением]"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Flame Arrow",
+      "desc": "Provoca danos {se_dmg:1521000011:SkillUIMinDmgsum}-{se_dmg:1521000011:SkillUIMaxDmgsum} em um alvo dentro do 20m e restaura o 100 MP.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "+ 20% MP restaurado."
+        },
+        {
+          "level": 8,
+          "text": "Absorve 1% HP"
+        },
+        {
+          "level": 8,
+          "text": "+ 50% Multi-Hit no hit"
+        },
+        {
+          "level": 12,
+          "text": "+ 5% Danos de Fogo Aumentam para 10s ativando."
+        },
+        {
+          "level": 16,
+          "text": "Reiniciar.BlazeResfriamento na aterrissagem"
+        }
+      ]
+    }
+  },
+  "frost-burst": {
+    "id": "15220000",
+    "category": "active",
+    "icon": "frost-burst.webp",
+    "cooldown": 10000,
+    "en": {
+      "name": "Frost Burst",
+      "desc": "Selects a target afflicted with Frost within 20m and deals {se_dmg:1522000011:SkillUIMinDmgsum}-{se_dmg:1522000011:SkillUIMaxDmgsum} Water damage to up to 4 enemies within 4m of the target. Has a 7% chance to trigger on attacking a target with Incapacitated Immunity.\n\n7 Stagger Gauge Damage",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Absorbs 7% HP"
+        },
+        {
+          "level": 8,
+          "text": "Changes to mobile skill"
+        },
+        {
+          "level": 8,
+          "text": "75% chance to Knock Back 2m"
+        },
+        {
+          "level": 12,
+          "text": "Ignores Block and Evasion and lands as a Critical Hit"
+        },
+        {
+          "level": 16,
+          "text": "50% chance to reset cooldown"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Замораживающий взрыв",
+      "desc": "Наносит {se_dmg:1522000011:SkillUIMinDmgsum}-{se_dmg:1522000011:SkillUIMaxDmgsum} урона стихии воды врагам (макс. 4) в радиусе 4 м вокруг цели в состоянии заморозки, находящейся в пределах 20 м. Активируется с шансом 7% при атаке цели с иммунитетом к обездвиживанию.\n\nУрон по шкале ошеломления — 7 ед.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Поглощение 7% ОЗ"
+        },
+        {
+          "level": 8,
+          "text": "Замена на умение с возможностью перемещения"
+        },
+        {
+          "level": 8,
+          "text": "Шанс 75% оттолкнуть на 2 м"
+        },
+        {
+          "level": 12,
+          "text": "Крит. удар, несмотря на блок и уклонение"
+        },
+        {
+          "level": 16,
+          "text": "Вероятность 50% сбросить время перезарядки"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Frost Burst",
+      "desc": "Seleciona um alvo atingido com Frost dentro do 20m e lida com {se_dmg:1522000011:SkillUIMinDmgsum} - {se_dmg:1522000011:SkillUIMaxDmgsum} Danos de água até aos inimigos 4 dentro do 4m do alvo. Tem uma chance 7% de disparar para atacar um alvo com imunidade incapacitada. 7 Stagger Gauge Danos",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Absorve 7% HP"
+        },
+        {
+          "level": 8,
+          "text": "Mudanças na habilidade móvel."
+        },
+        {
+          "level": 8,
+          "text": "75% chance de bater de volta 2m"
+        },
+        {
+          "level": 12,
+          "text": "Ignora bloqueio e evacuação e aterrissa como um ataque crítico"
+        },
+        {
+          "level": 16,
+          "text": "50% chance de reiniciar o recarga."
+        }
+      ]
+    }
+  },
+  "arctic-armor": {
+    "id": "15230000",
+    "category": "stigma",
+    "icon": "arctic-armor.webp",
+    "cooldown": 90000,
+    "en": {
+      "name": "Arctic Armor",
+      "desc": "Increases the caster's PvE Damage Tolerance by 20%, PvP Damage Tolerance by 10%, and grants a 5% chance to inflict Frost for 3s on enemies that attack the caster from within 7m for 10s. Grants Magic Displacement while MP is 50% or more for the duration.\nMagic Displacement: Damage taken by the caster is divided, directing 50% to HP and 10% to MP.\n\nUnaffected by cooldown increase effects.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "+20% Impact-type Resist"
+        },
+        {
+          "level": 10,
+          "text": "x1.5 [Absorb Essence] effect"
+        },
+        {
+          "level": 15,
+          "text": "x1.5 [Robe of Cold] effect"
+        },
+        {
+          "level": 20,
+          "text": "+20% PvE Damage Tolerance increase and +10% PvP Damage Tolerance increase"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Снежные доспехи",
+      "desc": "Увелич. стойкость к урону в PvE на 20%, стойкость к урону в PvP на 10% на 10s и с шансом 5% замораживает атакующих врагов в радиусе 7 м на 3s. При ОМ 50% или выше дарует эффект Переработки маны на срок действия.\nПереработка маны: получаемый урон делится между ОЗ (50%) и ОМ (10%).\n\nЭффекты увеличения времени перезарядки не действуют.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Сопротивление шок. эффектам +20%"
+        },
+        {
+          "level": 10,
+          "text": "Эффект [Поглощение силы] x1,5"
+        },
+        {
+          "level": 15,
+          "text": "Эффект [Пелена льда] x1,5"
+        },
+        {
+          "level": 20,
+          "text": "+20% к стойкости к урону в PvE и +10% к стойкости к урону в PvP"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Arctic Armor",
+      "desc": "Aumenta a tolerância de danos PvE do lançador em 20%, PvP em 10%, e concede uma chance 5% de infligir Frost para 3s aos inimigos que atacam o lançador de dentro 7m para 10s. Concede deslocamento mágico enquanto MP é 50% ou mais para a duração. Deslocamento Mágico: danos causados pelo lançador é dividido, direcionando 50% para HP e 10% para MP. Não afetado pelo efeito de recarga.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "+ Resistam ao tipo impacto 20%"
+        },
+        {
+          "level": 10,
+          "text": "x1.5 [Absorb EssenceEfeito"
+        },
+        {
+          "level": 15,
+          "text": "x1.5 [Robe of ColdEfeito"
+        },
+        {
+          "level": 20,
+          "text": "+ 20% PvE Aumento da tolerância aos danos e + 10% PvP Aumento da tolerância aos danos"
+        }
+      ]
+    }
+  },
+  "defiance": {
+    "id": "15240000",
+    "category": "active",
+    "icon": "defiance.webp",
+    "cooldown": 60000,
+    "en": {
+      "name": "Defiance",
+      "desc": "Removes Stun, Knockdown, Airborne, Grab, Frost, and Fear from the caster and grants Tenacity for 5s.\nTenacity: Grants Status Effect Immunity\n\nUnaffected by cooldown reduction effects.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Adds [Curse: Old Tree] Chain Skill"
+        },
+        {
+          "level": 8,
+          "text": "Restores 1000 Stamina on using [Defiance]"
+        },
+        {
+          "level": 8,
+          "text": "Restores 20% HP on using [Defiance]"
+        },
+        {
+          "level": 12,
+          "text": "+2s Tenacity duration"
+        },
+        {
+          "level": 16,
+          "text": "+50% PvE Damage Tolerance and +25% PvP Damage Tolerance for Tenacity duration"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Снятие шока",
+      "desc": "Отменяет эффекты Оглушения, Сбивания с ног, Воздушные оковы, захват, Заморозку и Ужас на 5s активирует для персонажа Непреклонность.\nНепреклонность: иммунитет к негат. эффектам\n\nЭффекты снижения времени перезарядки не действуют.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Добавляет 2-ю комбинацию [Проклятие: Вековое древо]"
+        },
+        {
+          "level": 8,
+          "text": "При использовании [Снятия шока] восстанавливает 1000 ОД"
+        },
+        {
+          "level": 8,
+          "text": "При использовании [Снятия шока] восстанавливает 20% ОЗ"
+        },
+        {
+          "level": 12,
+          "text": "Длительность Непреклонности +2 сек."
+        },
+        {
+          "level": 16,
+          "text": "Стойкость к урону в PvE +50% и стойкость к урону в PvP +25% во время действия Непреклонности"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Defiance",
+      "desc": "Remove Stun, Knockdown, Airborne, Grab, Frost e Medo do lançador e concede Tenacidade para 5s. Tenacidade: Efeito da Imunidade. Não afetado pelos efeitos de redução do recarga.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Adiciona a habilidade da corrente [Curse: árvore velha]"
+        },
+        {
+          "level": 8,
+          "text": "Restaura a resistência 1000 usando o Defiance"
+        },
+        {
+          "level": 8,
+          "text": "Restaura 20% HP usando [Defiance ]"
+        },
+        {
+          "level": 12,
+          "text": "+ 2s Duração da tenacidade"
+        },
+        {
+          "level": 16,
+          "text": "+ 50% PvE Tolerância de danos e 25% PvP Tolerância de danos por duração de tenacidade"
+        }
+      ]
+    }
+  },
+  "bittercold-wind": {
+    "id": "15280000",
+    "category": "active",
+    "icon": "bittercold-wind.webp",
+    "cooldown": 15000,
+    "en": {
+      "name": "Bittercold Wind",
+      "desc": "Selects a target within 20m and summons a Bittercold Wind lasting for 2s at their location. Deals {se_dmg:1528000211:SkillUIMinDmgsum}-{se_dmg:1528000211:SkillUIMaxDmgsum} Water damage to up to 4 enemies within 4m of the Bittercold Wind, with a 60% chance to inflict Root for 3s.\n100% chance to inflict Root on NPC targets.\n\n10 Stagger Gauge Damage",
+      "specs": [
+        {
+          "level": 8,
+          "text": "+1s [Bittercold Wind] summon duration"
+        },
+        {
+          "level": 8,
+          "text": "Changes to mobile skill"
+        },
+        {
+          "level": 8,
+          "text": "Pull effect"
+        },
+        {
+          "level": 12,
+          "text": "Ignores Block and Evasion and lands as a Critical Hit"
+        },
+        {
+          "level": 16,
+          "text": "-1s [Frost] cooldown on hit"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Леденящий ветер",
+      "desc": "Призывает к цели, находящейся в радиусе 20 м, Леденящий ветер, действующий 2 сек. Леденящий ветер наносит {se_dmg:1528000211:SkillUIMinDmgsum}-{se_dmg:1528000211:SkillUIMaxDmgsum} урона стихии воды врагам (макс. 4) в радиусе 4 м вокруг себя и с шансом 60% берет их в плен на 3s\nДля NPC плен срабатывает гарантированно.\n\nУрон по шкале ошеломления — 10 ед.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Время призыва [Леденящего ветра] +1 сек."
+        },
+        {
+          "level": 8,
+          "text": "Замена на умение с возможностью перемещения"
+        },
+        {
+          "level": 8,
+          "text": "Эффект притягивания"
+        },
+        {
+          "level": 12,
+          "text": "Крит. удар, несмотря на блок и уклонение"
+        },
+        {
+          "level": 16,
+          "text": "-1 с к времени перезарядки [Заморозки] при попадании"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Bittercold Wind",
+      "desc": "Seleciona um alvo dentro do 20m e convoca um Bittercold Wind que dura para o 2s em sua localização. De acordo com {se_dmg:1528000211:SkillUIMinDmgsum} - {se_dmg:1528000211:SkillUIMaxDmgsum} Danos na água para até 4 inimigos dentro 4m do Bittercold Wind, com uma chance 60% de infligir Root para 3s. 100% chance de infligir Root em alvos da NPC. 10 Danos no gauge do Stagger",
+      "specs": [
+        {
+          "level": 8,
+          "text": "+ 1s [Bittercold Wind ] duração da convocação"
+        },
+        {
+          "level": 8,
+          "text": "Mudanças na habilidade móvel."
+        },
+        {
+          "level": 8,
+          "text": "Efeito de tração."
+        },
+        {
+          "level": 12,
+          "text": "Ignora bloqueio e evacuação e aterrissa como um ataque crítico"
+        },
+        {
+          "level": 16,
+          "text": "- 1s [Frost ] arrefecer no hit"
+        }
+      ]
+    }
+  },
+  "lumiels-space": {
+    "id": "15300000",
+    "category": "stigma",
+    "icon": "lumiels-space.webp",
+    "cooldown": 90000,
+    "en": {
+      "name": "Lumiel's Space",
+      "desc": "Selects a target within 20m and deals {se_dmg:1530000011:SkillUIMinDmgsum}-{se_dmg:1530000011:SkillUIMaxDmgsum} damage to up to 4 enemies within 4m of the target, with a 75% chance to inflict Airborne for 3s.\n100% chance to inflict Airborne on NPC targets.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Up to +20% damage when more targets hit"
+        },
+        {
+          "level": 10,
+          "text": "Adds [The Depths] Chain Skill"
+        },
+        {
+          "level": 15,
+          "text": "+1s [The Depths] Knockdown duration"
+        },
+        {
+          "level": 20,
+          "text": "-30s [Lumiel's Space] cooldown"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Пространство Румиэль",
+      "desc": "Наносит {se_dmg:1530000011:SkillUIMinDmgsum}-{se_dmg:1530000011:SkillUIMaxDmgsum} урона врагам (макс. 4) в радиусе 4 м вокруг цели, находящейся в радиусе 20 м, и с шансом 75% накладывает на них Воздушные оковы на 3s\nДля NPC воздушные оковы срабатывают гарантированно.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Чем больше целей попадания, тем больше увеличение урона (макс. до 20%)"
+        },
+        {
+          "level": 10,
+          "text": "Добавление 2-й комбинации [Преисподняя]"
+        },
+        {
+          "level": 15,
+          "text": "Длительность Сбивания с ног от [Преисподней] +1 сек."
+        },
+        {
+          "level": 20,
+          "text": "Перезарядка [Пространства Румиэля] -30 сек."
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Lumiel's Space",
+      "desc": "Seleciona um alvo dentro do 20m e lida com danos {se_dmg:1530000011:SkillUIMinDmgsum}-{se_dmg:1530000011:SkillUIMaxDmgsum} para até inimigos 4 dentro do 4m do alvo, com uma chance 75% de infligir Airborne para o 3s. 100% chance de infligir Airborne em alvos da NPC.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Dano até + 20% quando mais alvos atingirem"
+        },
+        {
+          "level": 10,
+          "text": "Adiciona a habilidade da corrente"
+        },
+        {
+          "level": 15,
+          "text": "+ 1s [As Profundidades] Duração de derrubamento"
+        },
+        {
+          "level": 20,
+          "text": "- 30s [Lumiel's Space ] recarga"
+        }
+      ]
+    }
+  },
+  "wish-of-concentration": {
+    "id": "15310000",
+    "category": "active",
+    "icon": "wish-of-concentration.webp",
+    "cooldown": 60000,
+    "en": {
+      "name": "Wish of Concentration",
+      "desc": "Increases the caster's Attack by 10% and Accuracy by 100 for 10s.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Reduces MP Cost by 10%"
+        },
+        {
+          "level": 8,
+          "text": "+10% additional Attack"
+        },
+        {
+          "level": 8,
+          "text": "+500 Max MP"
+        },
+        {
+          "level": 12,
+          "text": "+10% Combat Speed"
+        },
+        {
+          "level": 16,
+          "text": "-10s all skill cooldowns"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Исток силы",
+      "desc": "На 10s увеличивает АТК на 10%, меткость — на 100.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Затрата ОМ -10%"
+        },
+        {
+          "level": 8,
+          "text": "АТК доп. +10%"
+        },
+        {
+          "level": 8,
+          "text": "Макс. ОМ +500"
+        },
+        {
+          "level": 12,
+          "text": "СКР боя +10%"
+        },
+        {
+          "level": 16,
+          "text": "Перезарядка всех умений -10 сек."
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Wish of Concentration",
+      "desc": "Aumenta o ataque do lançador em 10% e precisão em 100 para 10s.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Reduz o custo do MP em 10%"
+        },
+        {
+          "level": 8,
+          "text": "+ 10% Ataque adicional"
+        },
+        {
+          "level": 8,
+          "text": "+ 500 Max MP"
+        },
+        {
+          "level": 12,
+          "text": "+ Velocidade de combate 10%"
+        },
+        {
+          "level": 16,
+          "text": "- 10s todas as habilidades de recarga"
+        }
+      ]
+    }
+  },
+  "delayed-explosion": {
+    "id": "15320000",
+    "category": "stigma",
+    "icon": "delayed-explosion.webp",
+    "cooldown": 30000,
+    "en": {
+      "name": "Delayed Explosion",
+      "desc": "Deals {se_dmg:1532000711:SkillUIMinDmgsum}-{se_dmg:1532000711:SkillUIMaxDmgsum} Fire damage to a target within 20m after 4s. Increases damage taken from the caster by 15% during the delay.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Restores 200 MP"
+        },
+        {
+          "level": 10,
+          "text": "-10s [Delayed Explosion] cooldown"
+        },
+        {
+          "level": 15,
+          "text": "Changes to AoE Skill"
+        },
+        {
+          "level": 20,
+          "text": "+10% additional Damage Taken"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Замедленный взрыв",
+      "desc": "Наносит {se_dmg:1532000711:SkillUIMinDmgsum}–{se_dmg:1532000711:SkillUIMaxDmgsum} ед. урона стихии огня цели в радиусе 20 м через 4s. В течение этого времени цель получает на 15% больше урона от персонажа.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Восстановление 200 ОМ"
+        },
+        {
+          "level": 10,
+          "text": "Перезарядка [Замедленного взрыва] -10 сек."
+        },
+        {
+          "level": 15,
+          "text": "Смена на массовое умение"
+        },
+        {
+          "level": 20,
+          "text": "Получ. урон доп. +10%"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Delayed Explosion",
+      "desc": "De acordo com {se_dmg:1532000711:SkillUIMinDmgsum} - {se_dmg:1532000711:SkillUIMaxDmgsum} Dano de fogo em um alvo dentro 20m após 4s. Aumenta os danos causados pela máquina 15% durante o atraso.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Restaura 200 MP"
+        },
+        {
+          "level": 10,
+          "text": "- 10s [Delayed Explosion ] recarga"
+        },
+        {
+          "level": 15,
+          "text": "Mudanças para AoE Skill"
+        },
+        {
+          "level": 20,
+          "text": "+ 10% dano adicional levado"
+        }
+      ]
+    }
+  },
+  "divine-burst": {
+    "id": "15360000",
+    "category": "stigma",
+    "icon": "divine-burst.webp",
+    "cooldown": 60000,
+    "en": {
+      "name": "Divine Burst",
+      "desc": "Deals {se_dmg:1536000011:SkillUIMinDmgsum}-{se_dmg:1536000011:SkillUIMaxDmgsum} Fire damage to a target within 20m.\n\n50 Stagger Gauge Damage",
+      "specs": [
+        {
+          "level": 5,
+          "text": "+20% Skill Speed"
+        },
+        {
+          "level": 10,
+          "text": "Absorbs 10% HP"
+        },
+        {
+          "level": 15,
+          "text": "75% chance to inflict Knock Back"
+        },
+        {
+          "level": 20,
+          "text": "Inflict Stun for 3s after Knock Back"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Рождение звезды",
+      "desc": "Наносит {se_dmg:1536000011:SkillUIMinDmgsum}-{se_dmg:1536000011:SkillUIMaxDmgsum} урона стихии огня цели в радиусе 20 м.\n\nУрон по шкале ошеломления — 50",
+      "specs": [
+        {
+          "level": 5,
+          "text": "СКР умений +20%"
+        },
+        {
+          "level": 10,
+          "text": "Поглощение 10% ОЗ"
+        },
+        {
+          "level": 15,
+          "text": "Шанс 75% оттолкнуть"
+        },
+        {
+          "level": 20,
+          "text": "Наложение Оглушения на 3 сек. после Отталкивания"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Divine Burst",
+      "desc": "Provoca dano {se_dmg:1536000011:SkillUIMinDmgsum}-{se_dmg:1536000011:SkillUIMaxDmgsum} a um alvo dentro do 20m. 50 Stagger Gauge Danos",
+      "specs": [
+        {
+          "level": 5,
+          "text": "+ 20% Velocidade de Habilidade"
+        },
+        {
+          "level": 10,
+          "text": "Absorve 10% HP"
+        },
+        {
+          "level": 15,
+          "text": "75% chance de infligir Knock Back"
+        },
+        {
+          "level": 20,
+          "text": "Inflija o Stun para 3s depois de Knock Back"
+        }
+      ]
+    }
+  },
+  "fire-wall": {
+    "id": "15390000",
+    "category": "stigma",
+    "icon": "fire-wall.webp",
+    "cooldown": 60000,
+    "en": {
+      "name": "Fire Wall",
+      "desc": "Summon a Fire Wall that lasts for 3s at the location of a target within 20m. Deals {se_dmg:1539000211:SkillUIMinDmgSum}-{se_dmg:1539000211:SkillUIMaxDmgSum} Fire damage and inflicts Embers on up to 4 enemies within the Fire Wall area (1x10m) for 10s.\nEmbers: Deals {se_abe_dmg:1539000212:1539000011:SkillUIDotMinDmg:tick}-{se_abe_dmg:1539000212:1539000011:SkillUIDotMaxDmg:tick} Fire Damage over Time every 1s for 10s. Damage over Time amount increases when targets move.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Enhanced Embers - Grants extra damage when landing an attack"
+        },
+        {
+          "level": 10,
+          "text": "+2m wall width"
+        },
+        {
+          "level": 15,
+          "text": "+2s [Fire Wall] summoning duration"
+        },
+        {
+          "level": 20,
+          "text": "+10s Embers duration"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Стена огня",
+      "desc": "Призывает к цели в радиусе 20 м Стену огня, действующую 3 сек. Наносит {se_dmg:1539000211:SkillUIMinDmgSum}-{se_dmg:1539000211:SkillUIMaxDmgSum} урона врагам (макс. 4) в радиусе действия Стены огня (1x10 м) и активирует Догорающее пламя на 10s\nДогорающее пламя: в теч. 10s с интервалом 1s наносит {se_abe_dmg:1539000212:1539000011:SkillUIDotMinDmg:tick}-{se_abe_dmg:1539000212:1539000011:SkillUIDotMaxDmg:tick} постоянного урона стихии огня и, когда цель перемещается, увеличивает постоянный урон.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Усиление: Догорающее пламя: доп. урон при атаке"
+        },
+        {
+          "level": 10,
+          "text": "Ширина барьера +2 м"
+        },
+        {
+          "level": 15,
+          "text": "Время призыва [Стены огня] +2 сек."
+        },
+        {
+          "level": 20,
+          "text": "Длительность Догорающего пламени +10 сек."
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Fire Wall",
+      "desc": "Chame um Fire Wall que dure para 3s no local de um alvo dentro do 20m. Lida com o {se_dmg:1539000211:SkillUIMinDmgSum}-{se_dmg:1539000211:SkillUIMaxDmgSum} de dano ao fogo e inflige Embers em até inimigos 4 dentro da área Fire Wall (1 x 10m) para 10s. De acordo com o {se_abe_dmg:1539000212:1539000011:SkillUIDotMinDmg:tick}, {se_abe_dmg:1539000212:1539000011:SkillUIDotMaxDmg:tick}, dano ao fogo ao longo do tempo, a cada 1s, para 10s. Dano contínuo aumentam quando os alvos se movem.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Embers melhorados... concede danos adicionais ao pousar um ataque."
+        },
+        {
+          "level": 10,
+          "text": "+ 2m largura da parede"
+        },
+        {
+          "level": 15,
+          "text": "+ 2s [Fire Wall ] duração convocando"
+        },
+        {
+          "level": 20,
+          "text": "+ 10s Embers duração"
+        }
+      ]
+    }
+  },
+  "element-enhancement": {
+    "id": "15400000",
+    "category": "stigma",
+    "icon": "element-enhancement.webp",
+    "cooldown": 60000,
+    "en": {
+      "name": "Element Enhancement",
+      "desc": "Increases the caster's Fire Attack by 20% and Water Attack by 20% for 10s.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "+200 Accuracy"
+        },
+        {
+          "level": 10,
+          "text": "x1.5 [Robe of Flame] effect"
+        },
+        {
+          "level": 15,
+          "text": "x1.5 [Grace of Enhancement] effect"
+        },
+        {
+          "level": 20,
+          "text": "+10% additional Fire and Water Attack"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Усиление стихий",
+      "desc": "На 10s увеличивает АТК стихии огня на 20%, АТК стихии воды — на 20%.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Меткость +200"
+        },
+        {
+          "level": 10,
+          "text": "[Аура пламени] Пассивный эффект x1,5"
+        },
+        {
+          "level": 15,
+          "text": "Пасс. эффект [Дара усиления] x1,5"
+        },
+        {
+          "level": 20,
+          "text": "АТК стихии огня и стихии воды доп. +10%"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Element Enhancement",
+      "desc": "Aumenta o ataque de fogo do lançador em 20% e o ataque de água em 20% em 10s.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "+ Exatidão 200"
+        },
+        {
+          "level": 10,
+          "text": "x1.5 [Robe of FlameEfeito"
+        },
+        {
+          "level": 15,
+          "text": "x1.5 [Grace of EnhancementEfeito"
+        },
+        {
+          "level": 20,
+          "text": "+ 10% adicional Ataque de Fogo e Água"
+        }
+      ]
+    }
+  },
+  "assault-bombardment": {
+    "id": "15700000",
+    "category": "stigma",
+    "icon": "assault-bombardment.webp",
+    "cooldown": 120000,
+    "en": {
+      "name": "Assault Bombardment",
+      "desc": "Selects a target within 20m and deals {se_dmg:1570000021:SkillUIMinDmgSum}-{se_dmg:1570000021:SkillUIMaxDmgSum} damage to up to 4 enemies within 4m, with a 30% chance to inflict Frost for 3s.\n100% chance to land Frost on NPC targets.\n\nIncreases Defense by up to 20% proportional to the number of targets hit.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "+20% Attack for 5s on hit"
+        },
+        {
+          "level": 10,
+          "text": "500 MP damage on hit"
+        },
+        {
+          "level": 15,
+          "text": "+10m range"
+        },
+        {
+          "level": 20,
+          "text": "+20% Frost Chance"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Сокрушительный налет",
+      "desc": "Наносит {se_dmg:1570000021:SkillUIMinDmgSum}-{se_dmg:1570000021:SkillUIMaxDmgSum} урона врагам (макс. 4) в радиусе 4 м вокруг цели, находящейся в радиусе 20 м, и с шансом 30% замораживает их на 3s\nДля NPC заморозка срабатывает гарантированно.\n\nУвеличивает ЗЩТ пропорционально количеству целей попадания (макс. до 20%).",
+      "specs": [
+        {
+          "level": 5,
+          "text": "АТК +20% на 5s при попадании"
+        },
+        {
+          "level": 10,
+          "text": "500 урона по ОМ при попадании"
+        },
+        {
+          "level": 15,
+          "text": "Дальность атаки +10 м"
+        },
+        {
+          "level": 20,
+          "text": "Шанс Заморозки +20%"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Assault Bombardment",
+      "desc": "Seleciona um alvo dentro do 20m e lida com danos {se_dmg:1570000021:SkillUIMinDmgSum}-{se_dmg:1570000021:SkillUIMaxDmgSum} para até inimigos 4 dentro do 4m, com uma chance 30% de infligir Frost para o 3s. 100% chance de pousar Frost em alvos NPC. Aumenta a defesa em até 20% proporcional ao número de alvos atingidos.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "+ 20% Ataque para 5s em sucesso"
+        },
+        {
+          "level": 10,
+          "text": "Dano 500 MP no ataque."
+        },
+        {
+          "level": 15,
+          "text": "+ Alcance 10m"
+        },
+        {
+          "level": 20,
+          "text": "+ 20% Frost Chance"
+        }
+      ]
+    }
+  },
+  "robe-of-flame": {
+    "id": "15740000",
+    "category": "passive",
+    "icon": "robe-of-flame.webp",
+    "cooldown": 0,
+    "en": {
+      "name": "Robe of Flame",
+      "desc": "Increases the caster's Accuracy by 100, PvE Damage Boost by 1%, PvP Damage Boost by 0.5%, and Double Chance by 0.2%.",
+      "specs": []
+    },
+    "ru": {
+      "name": "Аура пламени",
+      "desc": "Увеличивает меткость на 100, эскалацию урона в PvE — на 1%, эскалацию урона в PvP — на 0.5%, Мощный удар — на 0.2%.",
+      "specs": []
+    },
+    "pt-BR": {
+      "name": "Robe of Flame",
+      "desc": "Aumenta a precisão do lançador em 100, PvE aumenta os danos em 1%, PvP aumenta os danos em 0.5%, e dupla chance em 0.2%.",
+      "specs": []
+    }
+  },
+  "fire-mark": {
+    "id": "15710000",
+    "category": "passive",
+    "icon": "fire-mark.webp",
+    "cooldown": 0,
+    "en": {
+      "name": "Fire Mark",
+      "desc": "Inflicts Fire Mark for 5s on landing a Fire attack.\nFire Mark: Has a 20% chance to take {se_dmg:1571000811:SkillUIMinDmgsum}-{se_dmg:1571000811:SkillUIMaxDmgsum} extra damage when taking Fire damage while afflicted with Fire Mark.\n\nCooldown: 1s",
+      "specs": []
+    },
+    "ru": {
+      "name": "Огненная метка",
+      "desc": "Накладывает Метку огня на 5s при каждом попадании стихии огня.\nМетка огня: с шансом 20% наносит {se_dmg:1571000811:SkillUIMinDmgsum}–{se_dmg:1571000811:SkillUIMaxDmgsum} доп. урона при получении урона стихии огня под действием Метки огня.\n\nВремя перезарядки: 1s",
+      "specs": []
+    },
+    "pt-BR": {
+      "name": "Fire Mark",
+      "desc": "Inflições Fire Mark para 5s ao pousar um ataque de incêndio.\nFire MarkTem um 20% A chance de tomar {se_dmg:1571000811:SkillUIMinDmgsum}-{se_dmg:1571000811:SkillUIMaxDmgsum} Dano extra quando se causa dano ao fogo enquanto sofre com Fire Mark.\n\nCooldown: 1s",
+      "specs": []
+    }
+  },
+  "robe-of-earth": {
+    "id": "15720000",
+    "category": "passive",
+    "icon": "robe-of-earth.webp",
+    "cooldown": 0,
+    "en": {
+      "name": "Robe of Earth",
+      "desc": "Increases Max MP by 7% and Natural MP Regen by 5. Increases Critical Hit by 105 when MP is 50% or more.",
+      "specs": []
+    },
+    "ru": {
+      "name": "Мантия",
+      "desc": "Увеличивает макс. ОМ на 7% и естественное восстановление ОМ на 5. Увеличивает крит. удар на 105 при ОМ 50% или выше.",
+      "specs": []
+    },
+    "pt-BR": {
+      "name": "Robe of Earth",
+      "desc": "Aumenta Max MP em 7% e Natural MP Regen em 5. Aumenta o impacto crítico em 105 quando MP é 50% ou mais.",
+      "specs": []
+    }
+  },
+  "cold-snap": {
+    "id": "15730000",
+    "category": "passive",
+    "icon": "cold-snap.webp",
+    "cooldown": 0,
+    "en": {
+      "name": "Cold Snap",
+      "desc": "Has a 50% chance to deal {se_dmg:1573000711:SkillUIMinDmgsum}-{se_dmg:1573000711:SkillUIMaxDmgsum} extra damage when landing an attack on a target afflicted with Slow.\n\nCooldown: 1s",
+      "specs": []
+    },
+    "ru": {
+      "name": "Призыв холода",
+      "desc": "С шансом 50% наносит {se_dmg:1573000711:SkillUIMinDmgsum}–{se_dmg:1573000711:SkillUIMaxDmgsum} доп. урона при атаке цели с эффектом Замедления.\n\nВремя перезарядки: 1s",
+      "specs": []
+    },
+    "pt-BR": {
+      "name": "Cold Snap",
+      "desc": "Tem uma chance 50% de causar dano adicionais {se_dmg:1573000711:SkillUIMinDmgsum}-{se_dmg:1573000711:SkillUIMaxDmgsum} ao pousar um ataque a um alvo atingido por Lento. Recarga: 1s",
+      "specs": []
+    }
+  },
+  "robe-of-cold": {
+    "id": "15750000",
+    "category": "passive",
+    "icon": "robe-of-cold.webp",
+    "cooldown": 0,
+    "en": {
+      "name": "Robe of Cold",
+      "desc": "Increases the caster's Defense by 1% and Critical Hit Resist by 55 and inflicts Slow on an enemy when struck by them, reducing the enemy's Move Speed by 25% for 2s.\n\nCooldown: 10s",
+      "specs": []
+    },
+    "ru": {
+      "name": "Пелена льда",
+      "desc": "Увеличивает ЗЩТ персонажа на 1% и Сопротивление крит. удару на 55. При получении атаки замедляет врага, снижая СКР движ. цели на 25% на 2s.\n\nВремя перезарядки: 10s",
+      "specs": []
+    },
+    "pt-BR": {
+      "name": "Robe of Cold",
+      "desc": "Aumenta a defesa do lançador em 1% e o ataque crítico resiste em 55 e inflige lentamente a um inimigo quando atingido por eles, reduzindo a velocidade de movimento do inimigo em 25% para 2s. Recarga: 10s",
+      "specs": []
+    }
+  },
+  "absorb-essence": {
+    "id": "15760000",
+    "category": "passive",
+    "icon": "absorb-essence.webp",
+    "cooldown": 0,
+    "en": {
+      "name": "Absorb Essence",
+      "desc": "Increases Ailment-type and Mental-type Chance by 10.7% and restores 25 MP on landing an attack.\n\nCooldown: 1s",
+      "specs": []
+    },
+    "ru": {
+      "name": "Поглощение силы",
+      "desc": "Увеличивает Точность физ. эффектов и Точность псих. эффектов на 10.7% и восстанавливает 25 ОМ при атаке.\n\nВремя перезарядки: 1s",
+      "specs": []
+    },
+    "pt-BR": {
+      "name": "Absorb Essence",
+      "desc": "Aumenta o tipo de doença e o tipo mental Chance por 10.7% e restaura 25 MP ao pousar um ataque. Recarga: 1s",
+      "specs": []
+    }
+  },
+  "grace-of-resistance": {
+    "id": "15770000",
+    "category": "passive",
+    "icon": "grace-of-resistance.webp",
+    "cooldown": 0,
+    "en": {
+      "name": "Grace of Resistance",
+      "desc": "Increases the caster's Mental-type Resist and Impact-type Resist by 11.2%.",
+      "specs": []
+    },
+    "ru": {
+      "name": "Благословение стойкости",
+      "desc": "Увеличивает сопротивление псих. эффектам и сопротивление шок. эффектам на 11.2%.",
+      "specs": []
+    },
+    "pt-BR": {
+      "name": "Grace of Resistance",
+      "desc": "Aumenta a resistência mental do lançador e a resistência do tipo impacto em 11.2%.",
+      "specs": []
+    }
+  },
+  "grace-of-enhancement": {
+    "id": "15780000",
+    "category": "passive",
+    "icon": "grace-of-enhancement.webp",
+    "cooldown": 0,
+    "en": {
+      "name": "Grace of Enhancement",
+      "desc": "Increases the caster's PvE Damage Boost by 20% and PvP Damage Boost by 10% when the caster's MP is 25% or more, and has a 50% chance to deal {se_dmg:1578000711:SkillUIMinDmgsum}-{se_dmg:1578000711:SkillUIMaxDmgsum} damage on landing an attack.\n\nCooldown: 1s",
+      "specs": []
+    },
+    "ru": {
+      "name": "Дар усиления",
+      "desc": "Дает персонажу увеличение усиления урона в PvE на 20% и усиления урона в PvP на 10% при ОМ 25% и выше, а также с шансом 50% наносит {se_dmg:1578000711:SkillUIMinDmgsum}–{se_dmg:1578000711:SkillUIMaxDmgsum} доп. урона при атаке.\n\nВремя перезарядки: 1s",
+      "specs": []
+    },
+    "pt-BR": {
+      "name": "Grace of Enhancement",
+      "desc": "Aumenta o aumento de danos PvE do lançador em 20% e PvP aumenta em 10% quando MP é 25% ou mais, e tem uma chance 50% para causar dano {se_dmg:1578000711:SkillUIMinDmgsum}-{se_dmg:1578000711:SkillUIMaxDmgsum} ao pousar um ataque. Recarga: 1s",
+      "specs": []
+    }
+  },
+  "revitalization-contract": {
+    "id": "15790000",
+    "category": "passive",
+    "icon": "revitalization-contract.webp",
+    "cooldown": 0,
+    "en": {
+      "name": "Revitalization Contract",
+      "desc": "Increases the caster's Status Effect Resist by 17%. Increases Status Effect Resist by 10% for 5s when hit while afflicted with Stun, Knockdown, Airborne, Frost, or Fear (up to 10 stacks).\nImmediately restores 35% Max HP when HP is 10% or less.\n\nHealing Cooldown: 60s\nStatus Effect Resist Cooldown: 1s",
+      "specs": []
+    },
+    "ru": {
+      "name": "Контракт оживления",
+      "desc": "Увеличивает сопротивление негат. эффектам  на 17%. Увеличивает сопротивление негат. эффектам  на 10% на 5s при получении удара в состоянии Оглушения, Сбивания с ног, Воздушных оков, Заморозки или Ужаса (суммируется не более 10 раз).\nПри падении ОЗ до 10% и ниже мгновенно восстанавливает 35% макс. ОЗ.\n\nВремя перезарядки исцеления: 60s\nВремя перезарядки сопротивления негат. эффектам: 1s",
+      "specs": []
+    },
+    "pt-BR": {
+      "name": "Revitalization Contract",
+      "desc": "Aumenta o Efeito de Estado do lançador em 17%. Aumenta o Efeito de Estado Resistir ao 10% para 5s quando atingido com Stun, Knockdown, Airborne, Frost, ou Medo (até 10 pilhas). Imediatamente restaura 35% Max HP quando HP é 10% ou menos. \"Curando o Recarga: 60s\" Efeito Status Resistir Resistir Recarga: 1s",
+      "specs": []
+    }
+  },
+  "vitality-evaporation": {
+    "id": "15800000",
+    "category": "passive",
+    "icon": "vitality-evaporation.webp",
+    "cooldown": 0,
+    "en": {
+      "name": "Vitality Evaporation",
+      "desc": "Deals {se_dmg:1580000711:SkillUIMinDmgsum}-{se_dmg:1580000711:SkillUIMaxDmgsum} damage on hit if the target's HP is above 70%.\n\nCooldown: 1s",
+      "specs": []
+    },
+    "ru": {
+      "name": "Угасание",
+      "desc": "Если показатель ОЗ врага превышает 70%, при попадании наносит {se_dmg:1580000711:SkillUIMinDmgsum}-{se_dmg:1580000711:SkillUIMaxDmgsum} урона.\n\nОграничение повт. исп.: 1s",
+      "specs": []
+    },
+    "pt-BR": {
+      "name": "Vitality Evaporation",
+      "desc": "De acordo {se_dmg:1580000711:SkillUIMinDmgsum} - {se_dmg:1580000711:SkillUIMaxDmgsum} dano no alvo se o HP está acima do 70%. Recarga: 1s",
+      "specs": []
+    }
+  }
+}

@@ -1,0 +1,366 @@
+{% from "macros.html" import section, skill, core, loadout, passives, glance, hotline, macroseq, hotbar, dv_board with context %}
+
+{# ===== PvE and PvP: each PvP block follows its PvE counterpart, so both modes read in the same order; shared sections are 'pve pvp' ===== #}
+{% call glance('pve') %}
+  <h3>{{ t.core_skills }}</h3>
+  {{ core([('overhead-slam', '20'), ('rending-blow', '20'), ('ruinous-blow', '16')]) }}
+  <h3>{{ t.stigma_loadout }}</h3>
+  {{ loadout([('lunge-stance', 20), ('focused-block', 5), ('rage-burst', 5), ('zikels-blessing', 10)]) }}
+  <h3>{{ t.key_passives }}</h3>
+  {{ passives(['attack-preparation', 'experienced-counterstrike', 'murderous-burst', 'impact-hit']) }}
+{% endcall %}
+
+{% call glance('pvp') %}
+  <h3>{{ t.core_skills }}</h3>
+  {{ core([('overhead-slam', '20'), ('mocking-blade', '16'), ('defiance', '16'), ('aerial-snare', '16')]) }}
+  <h3>{{ t.stigma_loadout }} · Abyss</h3>
+  {{ loadout([('lunge-stance', 20), ('armor-of-balance', 5), ('tenaciousness', 10), ('blade-toss', 5)]) }}
+  <h3>{{ t.key_passives }}</h3>
+  {{ passives(['attack-preparation', 'survival-willpower', 'survival-stance', 'impact-hit']) }}
+{% endcall %}
+
+{% call section('intro', 'Genel bakış', 'pve') %}
+  <p>Gladiator, NCSoft'un amiral gemisi sınıfı ve Kore ile Tayvan sunucularında S kademesinde kaldı. Grubu bufflar, yarı tanklık yapar ve diğer sınıflardan daha az karar vererek devasa hasar çıkarır. Sabit kuklada Sorcerer ve Assassin onu biraz geçer ama Gladiator hemen arkalarındadır ve oynaması çok daha basittir.</p>
+  <div class="callout accent">
+    <h3>Tek cümlede build</h3>
+    <p>16–20'de {{ s('overhead-slam') }}, stigma seviyesi 20'de {{ s('lunge-stance') }} ve Overhead Slam'i tetiklemek için {{ s('rage-burst') }}. Geri kalan her şey destek.</p>
+  </div>
+{% endcall %}
+
+{% call section('intro-pvp', 'Genel bakış', 'pvp') %}
+  <p>PvP'de Gladiator <strong>dayanıklı bir dalıcıdır</strong>: mesafeyi kapatır, hedefi yere düşürür ve düşürmeyi Overhead Slam ile cezalandırır. Dövüşün ortasında hayatta kalacak kadar HP'si, bloğu ve kendini iyileştirmesi vardır. En popüler PvP sınıflarından biri, o yüzden ayna maçları bekle.</p>
+  <p>Sırasıyla öncelikler: <strong>kontrol karşıtı</strong> → <strong>yapışkanlık</strong> → savunmaları düştüğünde <strong>patlama hasarı</strong>.</p>
+  <p class="note">Henüz global bir PvP metası yok. Bu mod Kore/Tayvan PvP buildlerini global istemcinin yetenek verileriyle birleştiriyor — bir başlangıç noktası olarak gör.</p>
+{% endcall %}
+
+{% call section('global', 'Global Season 1: neler değişiyor', 'pve pvp') %}
+  <p>Global sunucular Kore/Tayvan sunucularından ayrı olarak <strong>5 Ekim 2026</strong>'da açılıyor (Founder erken erişimi 30 Eylül'den itibaren). Bunun Gladiator için anlamı:</p>
+  <div class="callout">
+    <ul>
+      <li>6 yerine <strong>4 stigma slotu</strong> (yalnızca Season 1 için bekleniyor).</li>
+      <li><strong>Stigmalar 20. seviyede sınırlı</strong> — 25. seviye kademesi global istemcide yok.</li>
+      <li>Season 1'de <strong>Heroic ekipman yok</strong>, bu yüzden ekipmanda pasifler için daha az bonus satırı var.</li>
+      <li>Tayvan'dakinden <strong>daha zayıf Daevanion bonusları</strong>: dövüşler daha uzun sürer, bu yüzden sürekli vuruş daha önemli.</li>
+      <li><strong>Daha büyük gruplar</strong>: 5 kişilik expeditionlar ve 10 kişilik sanctuary'ler, Elyos ve Asmodian'lar birlikte sıraya girebilir. Grup buffları daha değerli.</li>
+      <li data-only="pvp"><strong>PvP:</strong> herkes aynı sınırlı ekipmanla başlar ve henüz bir meta oluşmadı.</li>
+    </ul>
+  </div>
+  <p class="note">Aktif yetenekler ve pasifler global ve KR/TW verilerinde aynı. Yalnızca stigmalar 25. seviye kademesini kaybediyor.</p>
+{% endcall %}
+
+{% call section('skills', 'Yetenekler', 'pve') %}
+  <p>Yalnızca üç yeteneğin yükselmesi gerekiyor: <strong>Overhead Slam → Rending Blow → Ruinous Blow</strong>. Yetenekler yetenek puanlarıyla <strong>10</strong>'a, Daevanion ile <strong>14</strong>'e, iki yüzükle (her biri +1) <strong>16</strong>'ya ve arcana ile <strong>20</strong>'ye ulaşır. Uzmanlıklar 8, 12 ve 16'da açılır.</p>
+  <ul class="skill-grid">
+    {% call skill('overhead-slam', 'must', '16 → 20', [2, 4], then=[3]) %}1 numaralı hasar kaynağın. Rage Burst ve Lunge Stance ile fiilen hep hazır. 20'de üçüncü slot garantili kritiğe gider.{% endcall %}
+    {% call skill('rending-blow', 'must', '16 → 20', [3, 4], then=[2]) %}İkinci en büyük hasar kaynağı ve mana motorun. 20'de hareket seçimini ekle.{% endcall %}
+    {% call skill('ruinous-blow', 'must', '16', [2, 3]) %}Prepare for Battle veren büyük bomba (+%20 PvE hasarı, 20 sn). Grobs 8'de Skill Critical Hit yerine +%20 Skill Speed alıyor.{% endcall %}
+    {% call skill('leaping-slam', 'opt', '12', [0, 2]) %}Ana mesafe kapatıcı; Ruinous Blow'dan önceki 3 sn Prepare for Battle onu uzatır.{% endcall %}
+    {% call skill('rush-strike', 'opt', '12', [1, 0]) %}Kaçınmadan atılmaya geçiş. Lunge Stance'in bekleme süresi tetiklemeleriyle Stamina, −10 sn bekleme süresinden iyi.{% endcall %}
+    {% call skill('mocking-blade', 'opt', '12', [0, 1]) %}Acil iyileşme düğmesi: bosslardan %15 HP emilimi.{% endcall %}
+    {% call skill('ankle-slice', 'opt', '12', [2, 3]) %}Yedek mesafe kapatıcı. Ankle Smash zincirini atla — rotasyonunu yavaşlatır.{% endcall %}
+    {% call skill('crushing-wave', 'skip', '12', [0, 3]) %}Bosslar için fazla yavaş; çöp moblarda alan hasarı ve kendini iyileştirme.{% endcall %}
+    {% call skill('defiance', 'opt', 'puan artarsa 16', [4]) %}Kontrol kırıcı. Raidlerde güzel, öncelik değil.{% endcall %}
+    {% call skill('sword-aura-rampage', 'opt', 'puan artarsa 16', [2, 4]) %}Yalnızca Stagger'daki hedeflere vurur, ama 16'da her vuruş <em>tüm</em> bekleme sürelerinden 1 sn düşer — stigmalar dahil. Stagger penceresinde spamlanırsa güçlü; dışında hasar kaybı (Grobs). Öncelik değil.{% endcall %}
+    {% call skill('keen-strike', 'opt', '12', [0, 3]) %}Temel saldırı: vuruş başına +%20 MP yenileme ve −1 sn Ruinous Blow bekleme süresi — aLuckyRO ve Sen, manın az olduğu ilk gün ikisi de 12'ye çıkarıyor. Overhead Slam ve Rending Blow 16 olunca basılı tutmayı bırak (Grobs, bkz. Seviye).{% endcall %}
+    {% call skill('aerial-snare', 'opt', 'bosslar · 12', [2, 3]) %}Yalnızca yere düşürülmüş hedeflere vurur — ama bosslar istisna. aLuckyRO kontrole bağışık hedeflere (her boss) +%100 hasar ve Forced Fall zinciri için 12'ye çıkarıyor ve Nightmare zindanlarında kullanıyor. Grobs ve Arthars almıyor; eklersen ana satıra değil, kendi tuşuna koy.{% endcall %}
+  </ul>
+{% endcall %}
+
+{% call section('skills-pvp', 'Yetenekler', 'pvp') %}
+  <div class="callout accent">
+    <h3>Önemli olan tek mekanik: Knockdown</h3>
+    <p>{{ s('overhead-slam') }} ve {{ s('aerial-snare') }} yalnızca <strong>Knockdown</strong> etkisindeki hedefe vurur (bosslar istisna, o yüzden PvE'de hiç önemli değil). Her patlama penceresi bir yere düşürmeyle başlar: Mocking Blade (garantili), kaçınmadan sonra Rush Strike, Ankle Slice. İstisna, hedefinde 10 sn boyunca Overhead Slam'i açan {{ s('rage-burst') }}.</p>
+  </div>
+  <ul class="skill-grid">
+    {% call skill('overhead-slam', 'must', '16 → 20', [2, 4], then=[3]) %}Yere düşürülmüş hedeflerdeki cezalandırman. Kore PvP rehberleri 20. seviyedeki garantili kritiği şart sayıyor. 20'de açılan üçüncü slotu alır.{% endcall %}
+    {% call skill('mocking-blade', 'must', '16', [3, 4]) %}Garantili 3 sn Knockdown — ana açılışın. 16'da: Block ve Evasion'ı yok sayan daha uzun Knockdown; iki ek vuruş 20'deki üçüncü slotu bekler.{% endcall %}
+    {% call skill('defiance', 'must', '16', [3, 4]) %}Stun, Knockdown, Airborne, Grab, Frost ve Fear'ı kırar. Zorunlu. 16'da: hasar toleransıyla +2 sn Tenacity; %20 HP seçimi üçüncü slot, 20'de.{% endcall %}
+    {% call skill('aerial-snare', 'must', '16', [3, 4]) %}Yere düşürülmüş hedefi havaya fırlatan devam hamlesi. PvE'de işe yaramaz, burada temel. 16'da: Forced Fall zinciri ve yarı bekleme süresi; Airborne şansı üçüncü slot, 20'de.{% endcall %}
+    {% call skill('rush-strike', 'opt', '12–16', [1, 3]) %}Kaçın → Knockdown şanslı atılma. 16'da menzil seçimini +%25 Knockdown Chance ile değiştirebilirsin.{% endcall %}
+    {% call skill('rending-blow', 'opt', '16', [2, 4]) %}Hâlâ dolgu yeteneğin ve mana motorun.{% endcall %}
+    {% call skill('ruinous-blow', 'opt', '12–16', [1, 4]) %}Üçüncü bir mesafe kapatıcı; Block/Evasion'ı yok saymak Templar'lara karşı güçlü. Bu seçim 16. seviye ister; 12'de menzili ve ek hasarı al.{% endcall %}
+    {% call skill('crushing-wave', 'opt', '16', [3, 4]) %}Çekiş, bir şifacıyı veya büyücüyü arka hattından çıkarır.{% endcall %}
+    {% call skill('ankle-slice', 'opt', '12', [2, 0]) %}Yere düşürme penceresine girmenin bir yolu daha.{% endcall %}
+    {% call skill('leaping-slam', 'opt', '12', [1, 3]) %}Bir grubun içine inse bile hayatta kalan 20 m sıçrama.{% endcall %}
+  </ul>
+{% endcall %}
+
+{% call section('passives', 'Pasifler', 'pve') %}
+  <p>Pasif puanı bol — çoğu pasif düşünmeden maksimuma çıkar. Bir tuzak ve bir geç seçim:</p>
+  <div class="callout">
+    <ul>
+      <li>{{ s('protection-armor') }} — blokta minicik bir iyileşme. Bunu çeviren ekipmanı ve kartları yeniden çevir.</li>
+      <li>{{ s('destructive-impulse') }} — yalnızca Stagger'daki hedeflerde ek hasar. Tuzak değil: aLuckyRO ve Sen, {{ s('sword-aura-rampage') }} ile üst üste bindiği stagger penceresi için geliştiriyor. Ana pasiflerden sonra al.</li>
+    </ul>
+  </div>
+  <p>{{ s('blood-absorption') }} yatırım istemez: her vuruşta %50 iyileşme şansı, artı %50 HP'ye düşünce büyük anlık bir iyileşme. Gladiator'ın şifacısız idare etmesinin nedeni bu.</p>
+{% endcall %}
+
+{% call section('passives-pvp', 'Pasifler', 'pvp') %}
+  <div class="table-wrap"><table>
+    <thead><tr><th>Pasif</th><th>PvP değeri</th></tr></thead>
+    <tbody>
+      <tr><td>{{ s('attack-preparation') }}</td><td>Hâlâ 1 numara: PvP Damage Boost, Defense, Accuracy.</td></tr>
+      <tr><td>{{ s('survival-willpower') }}</td><td>Durum direnci artı kontrol altındayken tolerans. PvE'de ölü ağırlık, burada harika.</td></tr>
+      <tr><td>{{ s('survival-stance') }}</td><td>HP ve PvP Damage Tolerance.</td></tr>
+      <tr><td>{{ s('impact-hit') }}</td><td>Daha fazla Impact şansı — yere düşürmelerin daha sık tutar.</td></tr>
+      <tr><td>{{ s('destructive-impulse') }}</td><td>Yere düşürülmüş hedeflerde ek hasar — PvE tuzağı burada işe yarar.</td></tr>
+    </tbody>
+  </table></div>
+{% endcall %}
+
+{% call section('gear', 'Ekipman ve statlar', 'pve') %}
+  <p>Heroic ekipman olmadığı için saldırı hızı, hareket hızı, Might ve Precision bonus satırlarının çoğunu alır, pasiflere 1–2 kalır. Öncelik:</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>#</th><th>Pasif</th><th>Neden</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>{{ s('attack-preparation') }}</td><td>Sabit PvE Damage Boost, Defense ve Accuracy. Koşulsuz.</td></tr>
+      <tr><td>2</td><td>{{ s('experienced-counterstrike') }}</td><td>Her zaman önden hasar, artı her blokta sana <em>ve gruba</em> 20 sn PvE Damage Boost. Templar'ın Fury'siyle üst üste binmez ama Templar'sız bir grubu kapsar.</td></tr>
+      <tr><td>3</td><td>{{ s('murderous-burst') }} / {{ s('impact-hit') }}</td><td>Her 5 vuruş = alan patlaması + kritik hasar / daha fazla Impact ve Double şansı.</td></tr>
+    </tbody>
+  </table></div>
+  <p>Silah ve ön/arka hasar artışları en güçlü türler ve Gladiator her zaman önden savaşır. Season 1'de mükemmel manastone çevirmelerinin peşine düşme — TW'de her çevirme kabaca 200–300k tutuyor.</p>
+  <h3>Statlar (Ulfhednar, global)</h3>
+  <div class="callout"><ul>
+    <li><strong>Ekipman satırları:</strong> hasar yazan her şey — Critical Hit, Damage Boost.</li>
+    <li><strong>Silah ve guard'da soul bind:</strong> Weapon Damage Boost, Combat Speed, Damage Boost, Might — bu sırayla.</li>
+    <li><strong>Statlar:</strong> Wisdom (Double Chance), Time (Combat Speed), Destruction (hasar), artı biraz Accuracy — eksik olursa bosslar Gladiator'ı savuşturur.</li>
+    <li><strong>Genus Insight:</strong> saldırı satırlarını çevir. Savaş gücünü yükseltirler; gruplar seni zindana çağırmadan önce bu sayıya bakar.</li>
+    <li><strong>Mana:</strong> yetmiyorsa Max MP ve MP yenilenme satırları, Daevanion levhalarındaki +50 MP düğümleri ve mana iksirleri (Crafting → Alchemy).</li>
+  </ul></div>
+{% endcall %}
+
+{% call section('gear-pvp', 'Ekipman ve statlar', 'pvp') %}
+  <p>Season 1'in sınırlı ekipmanıyla henüz ayrı bir PvP seti kurma — PvE ekipmanını tut ve pasifleri, stigmaları ve Daevanion'u değiştir.</p>
+  <div class="callout"><ul>
+    <li><strong>Accuracy</strong> — oyuncular bosslardan çok daha fazla Block ve Evade yapar.</li>
+    <li><strong>Critical Hit ve Combat Speed</strong> — kritikler Lunge Stance'in bekleme süresi tetiklemelerini sürer.</li>
+    <li>Bir slot sunduğu her yerde PvE sürümleri yerine <strong>PvP Damage Boost / Tolerance</strong>.</li>
+    <li><strong>Arcana:</strong> önce Overhead Slam 20'ye, sonra Mocking Blade, Defiance ve Aerial Snare 16'ya.</li>
+  </ul></div>
+{% endcall %}
+
+{% call section('arcana', 'Arcana', 'pve') %}
+  <p>5'e çıkarılmış bir kart, çevirebildiği rastgele bir yeteneğe ortalama yaklaşık <strong>+2</strong> verir.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Kart</th><th>Neye bakmalı</th></tr></thead>
+    <tbody>
+      <tr><td>{{ it('{i:parchment_vigor}') }}</td><td>{{ s('overhead-slam') }} ve {{ s('ruinous-blow') }} — altı yeteneğinden önemli olan yalnızca bu ikisi.</td></tr>
+      <tr><td>{{ it('{i:compass_vigor}') }}</td><td>Yalnızca {{ s('rending-blow') }}. Accuracy için Freedom sürümünü kullan — boss önündeki parry'ler kaybedilen hasardır.</td></tr>
+      <tr><td>{{ it('{i:chalice_vigor}') }}</td><td>Herhangi bir yeteneği çevirir; üretimle ikisini seçebilirsin. Hâlâ 20'nin altında olanı tamamla.</td></tr>
+    </tbody>
+  </table></div>
+  <p>Ortalama şansla: Overhead Slam'de 14 + 2 (yüzük) + 2 + 2 = <strong>20</strong>. Yalnızca bir yetenek daha 20'ye çıkabiliyorsa Ruinous Blow yerine Rending Blow'u seç.</p>
+  <div class="callout">
+    <h3>Setler ve pasif kartlar</h3>
+    <p>4 parça <strong>Primal Vigor</strong> hedefle (yukarıdaki tüm Vigor kartları — set bonusu için birinin üzerine gel). Gladiator'ın asla CDR'ye (Illusion) ihtiyacı yok. Season 1 saldırı hızında MP biterse 2 parça <strong>Magic Armor</strong>'a geç ({{ it('{i:mirror_magic_gold}') }} ve diğer Magic kartları). Pasif kartlar: önce {{ s('attack-preparation') }}, sonra herhangi bir karışımla Experienced Counterstrike &gt; Murderous Burst &gt; Impact Hit &gt; Identify Weakness.</p>
+  </div>
+{% endcall %}
+
+{% call section('daevanion', 'Daevanion panoları', 'pve pvp') %}
+  <p>Daevanion yeteneklerini 10'dan 14'e çıkarır ve bir yığın stat ekler. Her mavi düğüm yeteneğine <strong>+1 seviye</strong> verir.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Pano</th><th>Açılış</th><th>Odak</th></tr></thead>
+    <tbody>
+      <tr><td>Nezekan</td><td>Sv 12</td><td>Combat Speed, Cooldown Reduction</td></tr>
+      <tr><td>Zikel</td><td>Sv 20</td><td>Damage Boost, Damage Tolerance</td></tr>
+      <tr><td>Vaizel</td><td>Sv 30</td><td>Critical Damage Boost ve Tolerance</td></tr>
+      <tr><td>Triniel</td><td>Sv 40</td><td>Multi-Hit Chance ve Resist</td></tr>
+      <tr><td>Azphel</td><td>Sv 45</td><td>PvP Damage Boost ve Tolerance — yetenek düğümü yok</td></tr>
+    </tbody>
+  </table></div>
+  <div class="callout">
+    <ul>
+      <li>Düğüm maliyetleri: gri stat 1, yeşil pasif 2, mavi yetenek 3, turuncu özel 4.</li>
+      <li data-only="pve"><strong>Öncelik:</strong> {{ s('overhead-slam') }}, {{ s('rending-blow') }}, {{ s('ruinous-blow') }} için mavi düğümler, sonra turuncu düğümler, sonra statlar.</li>
+      <li data-only="pvp"><strong>Öncelik:</strong> {{ s('overhead-slam') }}, {{ s('mocking-blade') }}, {{ s('defiance') }}, {{ s('aerial-snare') }} için mavi düğümler, sonra turuncu düğümler.</li>
+      <li data-only="pve"><strong>Global'de Ariel yok:</strong> global istemcide beş pano var — KR/TW'deki PvE panosu Ariel burada yok. Azphel yalnızca PvP, bu yüzden PvE'de önce ilk dört panoyu bitir.</li>
+      <li data-only="pvp"><strong>Azphel</strong> (45. seviye) tamamen PvP Damage Boost / Tolerance — al, Triniel'i de daha erken: çoklu vuruş bir PvP statı.</li>
+    </ul>
+  </div>
+  <h3>Panolardaki rota</h3>
+  <p>Oyun verilerinden gerçek global panolar. Altın renk, Start'tan bu rehberin aldığı düğümlere giden en ucuz yolu gösterir; ne verdiğini görmek için herhangi bir düğümün üzerine gel.</p>
+  <div data-only="pve">{{ dv_board('pve') }}</div>
+  <div data-only="pvp">{{ dv_board('pvp') }}</div>
+  <p class="note">Panolar ve maliyetler global istemci verilerinden (questlog.gg) geliyor. Stat değerleri çıkışta hâlâ değişebilir — tam bir rotaya girmeden önce oyundaki panoyu kontrol et.</p>
+{% endcall %}
+
+{% call section('stigmas', 'Stigmalar', 'pve') %}
+  <p>Üç stigma sabit, dördüncüsü grubuna bağlı. PvE'de Wrath Wave, Armor of Balance, Forced Restraint, Assault Strike ve Fracturing Rush'ı atla; Blade Toss yalnızca grupta (aşağıda).</p>
+  <ul class="skill-grid">
+    {% call skill('lunge-stance', 'must', 'Sv 20', upto=20) %}20. seviye tetiklemesi kritiklerde tüm bekleme sürelerini kısaltır: kalıcı Overhead Slam, Rage Burst, blok ve mesafe kapatıcılar. Maksimuma çıkarılacak ilk stigma.{% endcall %}
+    {% call skill('focused-block', 'must', 'Sv 5', upto=5) %}Garantili Parry. Her blok Experienced Counterstrike'ın grup buffını tetikler — bloklamak bufflamaktır. 5. seviyede art arda iki kez kullanılabilir. Seviye atlarken önce bunu al.{% endcall %}
+    {% call skill('rage-burst', 'must', 'Sv 5', upto=5) %}Hedefte 10 sn boyunca Overhead Slam'i tetikler, +%10 PvE Damage Boost ve bossa −%10 Attack.{% endcall %}
+    {% call skill('zikels-blessing', 'opt', 'Sv 10', upto=10) %}Varsayılan 4. slot: +%20 Attack, grubunun ne kadar iyi oynadığına bağlı değil.{% endcall %}
+    {% call skill('lifestealing-blade', 'opt', 'Sv 20', upto=20) %}Organize bir grup için 4. slot: Predation herkesin vuruşlarını güçlendirir. Ancak 20'de değer.{% endcall %}
+    {% call skill('blade-toss', 'opt', 'grup', upto=5) %}aLuckyRO'nun grup seçimi: bossta 10 sn boyunca −%30 Defense, böylece tüm grup onu daha hızlı öldürür. Yarı tank oynadığında organize bir grupta Zikel's Blessing yerine al.{% endcall %}
+    {% call skill('wave-armor', 'skip', 'Sv 15', upto=15) %}Yalnızca Templar yokken. Güçlü 25. seviye kademesi global'de yok.{% endcall %}
+  </ul>
+  <p>Stigma kaynakları: Nightmare mağazası, Shugo Festa mağazası ve kademeli Abyss mağazası. Gladiator'a o kadar az gerekiyor ki ilk günlerde tamamlanır.</p>
+{% endcall %}
+
+{% call section('stigmas-pvp', 'Stigmalar', 'pvp') %}
+  <p>Kore PvP buildleri tam dört stigma kullanıyor, bu yüzden global'in slotlarına olduğu gibi uyuyor.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Mod</th><th>Stigmalar</th></tr></thead>
+    <tbody>
+      <tr><td>Abyss</td><td>Lunge Stance, Armor of Balance, Blade Toss, Tenaciousness</td></tr>
+      <tr><td>Arena</td><td>Lunge Stance, Armor of Balance, Tenaciousness, Focused Block</td></tr>
+    </tbody>
+  </table></div>
+  <ul class="skill-grid">
+    {% call skill('lunge-stance', 'must', 'Sv 20', upto=20) %}Kritik bekleme süresi tetiklemeleri Tenaciousness ve Defiance'ı da daha hızlı geri getirir.{% endcall %}
+    {% call skill('armor-of-balance', 'must', 'Sv 5+', upto=5) %}10 sn boyunca yere düşürülmesi zor. Kontrol ağırlıklı bir gruba dalmadan <em>önce</em> aç.{% endcall %}
+    {% call skill('tenaciousness', 'must', 'Sv 10+', upto=10) %}Hasara ve durum etkilerine 3 sn bağışıklık, sonra bir iyileşme. 20'de Impact kontrolünde kendiliğinden tetiklenir.{% endcall %}
+    {% call skill('blade-toss', 'opt', 'Abyss', upto=5) %}20 m fırlatma: 10 sn boyunca −%30 Defense ve alınan iyileştirmede −%50. Şifacılara ve kaçanlara cevabın.{% endcall %}
+    {% call skill('focused-block', 'opt', 'Arena', upto=5) %}1v1'de büyük hasar yeteneklerini blokla. Kontrole harcama.{% endcall %}
+    {% call skill('forced-restraint', 'opt', 'alt.', upto=5) %}Overhead Slam penceresinde hedefi kilitlemek için Seal (susturma).{% endcall %}
+    {% call skill('rage-burst', 'opt', 'alt.', upto=5) %}10 sn boyunca yere düşürme olmadan Overhead Slam'i açar.{% endcall %}
+  </ul>
+{% endcall %}
+
+{% call section('macro', 'Makro ve rotasyon', 'pve') %}
+  <p>AION 2'de iki ayrı araç var ve build ikisini de kullanıyor:</p>
+  <ul>
+    <li><strong>Hızlı erişim satırı</strong> — <em>tek</em> bir hızlı erişim düğmesine üst üste dizilmiş birkaç yetenek. Basınca hazır olan en yüksek öncelikli yeteneği kullanır ve AION 2'de <strong>en alttaki slot en yüksek önceliğe sahiptir</strong>. Aşağıdaki kartlar her satırı oyundaki gibi yukarıdan aşağıya, her yetenekte öncelik numarasıyla gösterir.</li>
+    <li><strong>Oyun içi makro</strong> — tuşunu basılı tuttuğun sürece hızlı erişim satırlarına sırayla basar ve animasyon kuyruklarını iptal eder. Bekleme süresindeki yetenekler atlanır. Temel saldırını (LMB) makroya koymak yerine makro tuşuyla <em>birlikte</em> basılı tut — oyun onu böyle daha iyi örer ve iptal eder.</li>
+  </ul>
+  <p>Gladiator'a <strong>3 düğmede 6 yetenek</strong> gerekiyor: 4 hasar yeteneği ve 2 buff.</p>
+
+  <h3>1. Hızlı erişim satırları</h3>
+  <div class="hotlines">
+    {% call hotline('RMB', 'Ana satır', ['rage-burst', 'overhead-slam', 'rending-blow']) %}Rage Burst <strong>en alttaki</strong> slotta — aşağıya bak.{% endcall %}
+    {% call hotline('E', 'Ruinous satırı', ['ruinous-blow'], ['lifestealing-blade']) %}Combat Ready verir. Lifestealing Blade'i yalnızca stigmalarındaysa ekle.{% endcall %}
+    {% call hotline('R', 'Buff satırı', ['lunge-stance', 'zikels-blessing']) %}Lunge Stance'in bekleme süresi kısaltmaları sayesinde ikisi de kendini açık tutar.{% endcall %}
+  </div>
+
+  <h3>2. Oyun içi makro</h3>
+  <p>Yetenek penceresi → <strong>Macro</strong>. Üç satırı bu sırayla koy ve her <strong>Delay'i 10 ms</strong> yap (düğmeler arasındaki duraklama, ping'in değil). Makroyu Settings → Key Settings → General → Gameplay → <strong>Macro</strong>'da ata — yan fare tuşu ideal, çünkü basılı tutuyorsun.</p>
+  {{ macroseq([('Ana satır', 'RMB · 10 ms'), ('Ruinous satırı', 'E · 10 ms'), ('Buff satırı', 'R · 10 ms')]) }}
+
+  <p class="note">Season 1 ipucu (Grobs): çıkışta bekleme süreleri yavaş, bu yüzden bufflar zamanlanınca daha değerli — buff satırını makrodan çıkarıp bir bosstan veya büyük bir gruptan hemen önce kendin basabilirsin.</p>
+
+  <h3>3. Gerçekte neye basıyorsun</h3>
+  <ul class="presslist">
+    <li><span class="press-how">Basılı tut</span><span class="press-what">Tüm dövüş boyunca <span class="key">Makro tuşu</span>.</span></li>
+    <li><span class="press-how">Spamla</span><span class="press-what"><span class="key">RMB</span> ana satır ve üstüne <span class="key">E</span> Ruinous satırı — iki satır örülebilmeleri için ayrı kalmalı.</span></li>
+    <li><span class="press-how">Elle</span><span class="press-what">{{ s('focused-block') }} (blok = grup buffı), {{ s('mocking-blade') }} (yere düşürme + iyileşme), {{ s('leaping-slam') }} (mesafe kapatıcı), gruplarda {{ s('crushing-wave') }}.</span></li>
+  </ul>
+
+  <div class="callout accent">
+    <h3>Bossa açılış</h3>
+    <div class="combo">{{ s('lunge-stance') }} + {{ s('zikels-blessing') }}<span class="arrow">→</span>{{ s('leaping-slam') }} ile gir<span class="arrow">→</span>{{ s('ruinous-blow') }}<span class="arrow">→</span>makroyu basılı tut</div>
+    <p>Bossun <strong>ilk saldırısını</strong> {{ s('focused-block') }} ile blokla — Experienced Counterstrike tüm grubu hemen bufflar. Her boss farklı açılır: bazılarında önce dalıp bloklamak ve ancak sonra bufflamak daha iyi. Bossları öğren ve bloğu yerleştir.</p>
+    <p class="note">Faydalı ayar (Grobs): Esc → Settings → Info Display → Combat → <strong>Display boss orientation indicator</strong>. Bossun önünün nerede olduğunu gösterir — Gladiator her zaman önden vurmak ister.</p>
+  </div>
+  <div class="callout">
+    <h3>Rage Burst neden en altta</h3>
+    <p>Rage Burst her zaman açık olması gereken bir buff, bu yüzden en alttaki slotu — en yüksek önceliği — alır ve bekleme süresi her dolduğunda tetiklenir. Overhead Slam'in üstüne koyarsan hiç tetiklenmez: Lunge Stance Overhead Slam'i sürekli hazır tutar ve alttaki slot her zaman kazanır. Ana satıra daha fazla yetenek doldurma: makro zamanlaması kare hızına bağlı ve Overhead Slam'deki her gecikme, ek yeteneğin kattığından fazlasına mal olur.</p>
+  </div>
+  <div class="callout">
+    <h3>Hasar nereden geliyor</h3>
+    <p>Bir dakikalık kukla ölçümünde: Overhead Slam (Upward Strike dahil) &gt; Rending Blow &gt; Ruinous Blow &gt; Lunge Stance &gt; Murderous Burst &gt; Rage Burst.</p>
+  </div>
+  <p>Makro tempoyu tutar — senin yerine oynamaz. Ne zaman bloklayacağına, ne zaman mesafe kapatacağına ve ne zaman kendini iyileştireceğine hâlâ sen karar verirsin. Season 1'in zayıf statları birkaç dakikalık boss dövüşleri demek, bu yüzden kaybedilen her saniye önemli.</p>
+  <p class="note">Tuşlar Arthars'ın aksiyon modu düzeni (RMB / E); hedef modunda spamlayabileceğin herhangi iki tuşu kullan. Makro slot sırası Kore buildlerinin kullandığı satır satır şemayı izler.</p>
+
+  <h3>Diğer seçenek: Ulfhednar'ın makrosu (global)</h3>
+  <p>Ulfhednar'ın çubuğu (6 Ekim videosu, 3:04 ve 3:12 kareleri). Rage Burst ve Overhead Slam yukarıdaki gibi aynı satırda, ama Rending Blow {{ s('sword-aura-rampage') }} ile aynı satırda; o altta durur ve boss Stagger'dayken önce çalışır, ve Ruinous Blow buff satırının en üstüne çıkıyor. Focused Block yerine {{ s('blade-toss') }} kullanıyor (düşmanın savunması 10 sn −%30, grup için debuff).</p>
+  {{ hotbar([('1', ['leaping-slam']), ('2', ['mocking-blade']), ('3', ['rush-strike', 'aerial-snare']), ('4', ['ankle-slice']), None, ('Caps', []), ('—', ['crushing-wave']), ('F', []), ('9', []), None, ('Q', ['zikels-blessing', 'lunge-stance', 'blade-toss', 'ruinous-blow']), ('E', ['sword-aura-rampage', 'rending-blow']), ('LMB', ['keen-strike']), ('RMB', ['rage-burst', 'overhead-slam'])], macro=['Q', 'RMB', 'E'], own_keys=true) }}
+  <div class="hotlines">
+    {% call hotline('Q', 'Buff satırı', ['zikels-blessing', 'lunge-stance', 'blade-toss', 'ruinous-blow']) %}Bufflar ve debuff bekleme süresi dolunca; hepsi açıkken Ruinous Blow çalışır.{% endcall %}
+    {% call hotline('RMB', 'Ana satır', ['rage-burst', 'overhead-slam']) %}Rage Burst en alttaki slotta, Overhead Slam onun üstünde.{% endcall %}
+    {% call hotline('E', 'Stagger satırı', ['sword-aura-rampage', 'rending-blow']) %}Sword Aura Rampage yalnızca Stagger'daki hedeflere vurur, bu yüzden geri kalan zamanda satır Rending Blow kullanır.{% endcall %}
+  </div>
+  {{ macroseq([('Buff satırı', 'Q · 10 ms'), ('Ana satır', 'RMB · 10 ms'), ('Stagger satırı', 'E · 10 ms')]) }}
+  <ul class="presslist">
+    <li><span class="press-how">Basılı tut</span><span class="press-what"><span class="key">LMB</span>'de {{ s('keen-strike') }} ve makro tuşu — oyun içi makroyu <span class="key">C</span>'ye atıyor. Keen Strike manayı tutar ve her vuruşta Ruinous Blow'un bekleme süresini kısaltır.</span></li>
+    <li><span class="press-how">Elle</span><span class="press-what">1–4'te mesafe kapatıcılar ve {{ s('mocking-blade') }}, gruplarda {{ s('crushing-wave') }}.</span></li>
+  </ul>
+  <p class="note">Bunun üstüne bir fare yazılımı makrosu kullanıyor: aynı tuşları spamlıyor (her biri 10 ms, LMB 15 ms) ve çalışırken oyun içi makro tuşuna basıp daha fazla saldırı örüyor. Başlangıç için düz bir oyun içi makro yeterli.</p>
+{% endcall %}
+
+{% call section('combos-pvp', 'Kombolar ve oyun', 'pvp') %}
+  <div class="callout">
+    <h3>Yere düşürme cezası</h3>
+    <div class="combo">{{ s('mocking-blade') }}<span class="arrow">→</span>{{ s('overhead-slam') }} × N<span class="arrow">→</span>{{ s('aerial-snare') }}<span class="arrow">→</span>Forced Fall</div>
+  </div>
+  <div class="callout">
+    <h3>Menzilden giriş</h3>
+    <div class="combo">{{ s('blade-toss') }}<span class="arrow">→</span>kaçınma + {{ s('rush-strike') }} / {{ s('leaping-slam') }}<span class="arrow">→</span>yere düşürme cezası</div>
+    <p>Yere düşürme tutmadı mı? {{ s('rage-burst') }} veya {{ s('forced-restraint') }} pencereyi yine de açar.</p>
+  </div>
+  <div class="callout">
+    <h3>Hayatta kalmak</h3>
+    <ul>
+      <li>{{ s('defiance') }} ilk sert kontrolü kırar; {{ s('tenaciousness') }}'u devam zinciri için sakla.</li>
+      <li>{{ s('armor-of-balance') }} yere düştükten sonra değil, dalmadan önce açılır.</li>
+      <li>Şifacılara karşı: önce Blade Toss, sonra Crushing Wave çekişi.</li>
+    </ul>
+  </div>
+{% endcall %}
+
+{% call section('recap', 'Özet', 'pve') %}
+  <div class="callout accent"><ul>
+    <li><strong>Yetenekler:</strong> Overhead Slam 20, Rending Blow 16→20, Ruinous Blow 16; geri kalan her şey 12 veya altı.</li>
+    <li><strong>Seviyeler nereden:</strong> Daevanion (+4) → yüzükler (+2) → arcana (+4).</li>
+    <li><strong>Stigmalar:</strong> Lunge Stance 20, Focused Block 5, Rage Burst 5, Zikel's Blessing 10 (veya Lifestealing Blade 20).</li>
+    <li><strong>Pasifler:</strong> Attack Preparation &gt; Experienced Counterstrike &gt; Murderous Burst / Impact Hit.</li>
+  </ul></div>
+{% endcall %}
+
+{% call section('recap-pvp', 'Özet', 'pvp') %}
+  <div class="callout accent"><ul>
+    <li><strong>Yetenekler:</strong> Overhead Slam 16→20, Mocking Blade 16, Defiance 16, Aerial Snare 16.</li>
+    <li><strong>Stigmalar:</strong> Lunge Stance 20 + Armor of Balance + Tenaciousness + Blade Toss (Abyss) veya Focused Block (Arena).</li>
+    <li><strong>Daevanion:</strong> Azphel'i (PvP Damage Boost ve Tolerance) al, Triniel'i daha erken.</li>
+    <li><strong>Oyun:</strong> yere düşürme → Overhead Slam; kontrolü Defiance ile kır, Tenaciousness'u sakla.</li>
+  </ul></div>
+{% endcall %}
+
+{# ============================ Leveling ============================ #}
+{% call section('fight-lvl', t.lvl_combat, 'lvl') %}
+  <div class="callout"><ul>
+    <li><strong>Gruplar:</strong> {{ s('leaping-slam') }} ile gir → {{ s('crushing-wave') }} → {{ s('rending-blow') }}. Bir öldürme Leaping Slam'i sıfırlar → sonraki grup.</li>
+    <li><strong>Elitler:</strong> {{ s('mocking-blade') }} (yere düşürme) → {{ s('overhead-slam') }} spamla → bekleme süresi dolunca {{ s('ruinous-blow') }}. Kaçın → {{ s('rush-strike') }} de NPC'leri yere düşürür.</li>
+    <li><strong>Düşük HP:</strong> Mocking Blade ve Crushing Wave HP emer; Blood Absorption %50'de iyileştirir. Çöp moblarda iksire gerek yok.</li>
+  </ul></div>
+{% endcall %}
+
+{% call section('macro-lvl', 'Seviye makrosu', 'lvl') %}
+  <p>Grobs'un erken oyun makrolarından, seviye atlama ve sınırdaki ilk günler için daha basit bir düzen. Yalnızca spamladığın yetenekler girer; bufflar, stigma patlamaları ve mesafe kapatıcılar kendi tuşlarında kalır.</p>
+  <div class="hotlines">
+    {{ hotline('1', 'Satır 1', ['rage-burst', 'overhead-slam', 'rending-blow'], []) }}
+  </div>
+  <p>Oyun içi makro: Satır 1, her biri 10 ms gecikmeyle. Temel saldırın {{ s('keen-strike') }}'u LMB'de <strong>ve</strong> makro tuşunu birlikte basılı tut.</p>
+  <div class="callout">
+    <h3>Seviye atlarken öncelikler (Grobs)</h3>
+    <ul>
+      <li><strong>Pasifler:</strong> önce {{ s('experienced-counterstrike') }}, sonra {{ s('attack-preparation') }} — şu an önemli olan yalnızca bu ikisi.</li>
+      <li><strong>Daevanion:</strong> yetenek puanları yetenekleri 10'a çıkarır; ondan sonra panolar. 65 puanlık bir rota dört ana hasar yeteneğine +2 verir, böylece hızla 12'ye ve ikinci uzmanlığa ulaşırlar — aşağıdaki panolara bak.</li>
+      <li><strong>16'da:</strong> Overhead Slam ve Rending Blow 16 olunca LMB'yi basılı tutmayı bırak — {{ s('keen-strike') }} hasar kaybı olur. Yalnızca makroyu basılı tut ve mana için Rending Blow'un "Restores 50 MP on a Critical Hit" seçimini al.</li>
+    </ul>
+  </div>
+  <p class="note">Yeteneklerin 12–16'ya ulaşıp uzmanlıklar bekleme sürelerini değiştirince PvE sekmesindeki tam düzene geç.</p>
+  <h3>Daevanion panolarında seviye rotası (Grobs, 65 puan)</h3>
+  <p>Overhead Slam, Rending Blow, Ruinous Blow ve Keen Strike'a +2 — 12'de Nezekan, sonra 20'de Zikel.</p>
+  {{ dv_board('lvl') }}
+{% endcall %}
+
+{# ============================ Sources ============================ #}
+<section class="sources" aria-labelledby="h-sources">
+  <h2 id="h-sources">{{ t.sources }}</h2>
+  <ul>
+    <li><a href="https://www.youtube.com/watch?v=xRPr30JetyY" target="_blank" rel="noopener">Grobs — The Only Gladiator PVE Guide You Need</a> — bu rehberin buildini, stigmalarını ve makrosunu doğruluyor</li>
+    <li><a href="https://www.youtube.com/watch?v=tYTZ8VucMXw" target="_blank" rel="noopener">Arthars Gaming — The ULTIMATE AION 2 Gladiator Starter Guide</a> (PvE, TW sunucusundan)</li>
+    <li><a href="https://questlog.gg/aion-2/en/db/skills/gladiator" target="_blank" rel="noopener">questlog.gg</a> — global istemciden yetenek ve stigma verileri</li>
+    <li><a href="https://vortexgaming.io/en/postdetail/611533" target="_blank" rel="noopener">Vortex Gaming</a> — Kore PvP buildleri (Abyss / Arena)</li>
+    <li><a href="https://www.iggm.com/news/aion-2-global-servers-dungeon-gameplay-changes-expeditions-gear-progression-stigma-slots" target="_blank" rel="noopener">IGGM</a> — global Season 1 değişiklikleri</li>
+    <li><a href="https://nemobek.github.io/aion2-guide/" target="_blank" rel="noopener">nemobek.github.io/aion2-guide</a> (TitanTheF'in tablosu) — seviye rotası</li>
+    <li><a href="https://www.youtube.com/watch?v=HMod6Z4GrE0" target="_blank" rel="noopener">Grobs — AION 2 Macro Guide</a> — hızlı erişim satırları ve oyun içi makro nasıl çalışır</li>
+    <li><a href="https://www.youtube.com/watch?v=WlxLOTs62dM" target="_blank" rel="noopener">aLuckyRO — AION 2 Latest Gladiator PVE Build for Global</a> — erken uzmanlıklar (Keen Strike, bosslarda Aerial Snare), stigmalar, Daevanion önceliği, önden boss rotasyonu</li>
+    <li><a href="https://www.youtube.com/watch?v=t-B-5lR_GIs" target="_blank" rel="noopener">Sen — AION 2 Progression Guide (+ Gladiator guide)</a> — bu rehberin yeteneklerini, stigmalarını ve pasiflerini global sunucularda doğruluyor</li>
+    <li><a href="https://www.youtube.com/watch?v=zrdG1XDYUtE" target="_blank" rel="noopener">Ulfhednar — AION 2 Gladiator PvE DPS Build</a> — onun kısayol çubuğuyla ikinci makro seçeneği (Sword Aura Rampage satırı, Blade Toss), ekipman satırları, soul bind, statlar, Genus Insight, mana</li>
+  </ul>
+  <p class="sources-all"><a href="{{ root }}{{ lang }}/sources/">{{ t.src_all }} →</a></p>
+</section>

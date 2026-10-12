@@ -1,0 +1,383 @@
+{
+  "_note": "Class tier list page (/<lang>/tier-list/). boards[].lists = one author's tiers for that kind of content (class slugs per letter, read from the video frames, `at` = the moment the finished board is on screen). The page averages S=4 … D=0 per class and places it by the rounded average. Not ours: every letter is the author's.",
+  "meta": {
+    "hero": "tier-list",
+    "pos": "50% 78%"
+  },
+  "sources": {
+    "trueeevil": {
+      "name": "trueeevil — Ultimate Class Tier List for Aion 2 Global Launch",
+      "url": "https://www.youtube.com/watch?v=TupssWSk8GQ",
+      "date": "2026-10-04"
+    },
+    "xifan": {
+      "name": "XifanGG — Global Tier List (PvP, PvE, F2P & ZvZ)",
+      "url": "https://www.youtube.com/watch?v=YlYUst_BJD8",
+      "date": "2026-09-29"
+    },
+    "kaid": {
+      "name": "KaidWOW — Ranking Best Classes After First Days of Release",
+      "url": "https://www.youtube.com/watch?v=2UHSUVB9Ipc",
+      "date": "2026-10-04"
+    },
+    "kanon": {
+      "name": "Kanon — Updated DPS Tierlist & Rankings (Across All Content)",
+      "url": "https://www.youtube.com/watch?v=ra-uMi9Whhs",
+      "date": "2026-09-28"
+    }
+  },
+  "boards": [
+    {
+      "id": "pve",
+      "tab": {
+        "en": "PvE",
+        "ru": "PvE",
+        "uk": "PvE",
+        "tr": "PvE",
+        "pt-BR": "PvE"
+      },
+      "title": {
+        "en": "PvE: dungeons and progression",
+        "ru": "PvE: подземелья и прогресс",
+        "uk": "PvE: підземелля й прогрес",
+        "tr": "PvE: zindanlar ve ilerleme",
+        "pt-BR": "PvE: masmorras e progressão"
+      },
+      "lead": {
+        "en": "What a group wants from you while learning dungeons. Healers and tanks rank high because groups need them; damage dealers are close to each other.",
+        "ru": "Что группа хочет от тебя, пока изучает подземелья. Хилы и танки высоко, потому что без них группа не идёт; у бойцов разница небольшая.",
+        "uk": "Що група хоче від тебе, поки вчить підземелля. Хіли й танки високо, бо без них група не йде; у бійців різниця невелика.",
+        "tr": "Zindanları öğrenirken grubun senden ne istediği. Şifacılar ve tanklar üst sıralarda çünkü gruplar onlara muhtaç; hasar verenler birbirine yakın.",
+        "pt-BR": "O que um grupo quer de você enquanto aprende masmorras. Curadores e tanques são altos porque os grupos precisam deles, negociantes de danos estão próximos um do outro."
+      },
+      "lists": [
+        {
+          "src": "trueeevil",
+          "at": "13:15",
+          "tiers": {
+            "S": [
+              "cleric"
+            ],
+            "A": [
+              "gladiator",
+              "templar",
+              "elementalist",
+              "ranger",
+              "sorcerer",
+              "assassin"
+            ],
+            "C": [
+              "chanter"
+            ]
+          }
+        },
+        {
+          "src": "xifan",
+          "at": "1:40",
+          "tiers": {
+            "S": [
+              "cleric",
+              "templar"
+            ],
+            "A": [
+              "gladiator",
+              "chanter"
+            ],
+            "B": [
+              "sorcerer",
+              "elementalist",
+              "ranger",
+              "assassin"
+            ]
+          }
+        }
+      ],
+      "note": {
+        "en": "XifanGG flips this for late game, once groups know the fights and bosses die in 30–40 seconds: Assassin and Chanter go to S, Templar and Cleric drop to B. trueeevil puts Chanter low because groups looking for a healer want a Cleric.",
+        "ru": "XifanGG в позднем PvE всё переворачивает: когда группа знает бои и боссы умирают за 30–40 секунд, Убийца и Чародей идут в S, Страж и Целитель падают в B. trueeevil ставит Чародея низко, потому что группы, которым нужен хил, ищут Целителя.",
+        "uk": "XifanGG у пізньому PvE все перевертає: коли група знає бої й боси вмирають за 30–40 секунд, Assassin і Chanter ідуть у S, Templar і Cleric падають у B. trueeevil ставить Chanter низько, бо групи, яким потрібен хіл, шукають Cleric.",
+        "tr": "XifanGG geç oyunda bunu tersine çeviriyor: gruplar dövüşleri bilip bosslar 30–40 saniyede ölünce Assassin ve Chanter S'ye çıkıyor, Templar ve Cleric B'ye düşüyor. trueeevil Chanter'ı alt sıraya koyuyor çünkü şifacı arayan gruplar Cleric istiyor.",
+        "pt-BR": "XifanGG vira isso para o final do jogo, uma vez que os grupos sabem que as lutas e chefes morrem em 30 - 40 segundos: Assassino e Chanter vão para S, Templário e Cleric cair para B. Trueeeevil coloca Chanter baixo porque grupos procurando um curandeiro querem um Cleric."
+      }
+    },
+    {
+      "id": "mass",
+      "tab": {
+        "en": "Mass PvP",
+        "ru": "Массовое PvP",
+        "uk": "Масове PvP",
+        "tr": "Toplu PvP",
+        "pt-BR": "Mass PvP"
+      },
+      "title": {
+        "en": "Mass PvP: Abyss sieges and ZvZ",
+        "ru": "Массовое PvP: осады Бездны и ZvZ",
+        "uk": "Масове PvP: облоги Abyss і ZvZ",
+        "tr": "Toplu PvP: Abyss kuşatmaları ve ZvZ",
+        "pt-BR": "Mass PvP: Abyss cercos e ZvZ"
+      },
+      "lead": {
+        "en": "Hundreds of players around an artifact or a boss. Ranged classes and healers do the work; melee gets melted if it walks into the blob.",
+        "ru": "Сотни игроков вокруг артефакта или босса. Работают дальники и хилы; ближний бой, зашедший в толпу, тает.",
+        "uk": "Сотні гравців навколо артефакту чи боса. Працюють дальні класи й хіли; ближній бій, що зайшов у натовп, тане.",
+        "tr": "Bir artifact veya bossun etrafında yüzlerce oyuncu. İşi menzilli sınıflar ve şifacılar yapar; kalabalığa dalan yakın dövüşçü erir.",
+        "pt-BR": "Centenas de jogadores em torno de um artefato ou um chefe. Aulas e curandeiros fazem o trabalho, melee é derretida se entrar na bolha."
+      },
+      "lists": [
+        {
+          "src": "trueeevil",
+          "at": "7:21",
+          "tiers": {
+            "S": [
+              "templar",
+              "cleric"
+            ],
+            "A": [
+              "elementalist",
+              "ranger",
+              "sorcerer",
+              "chanter"
+            ],
+            "B": [
+              "gladiator",
+              "assassin"
+            ]
+          }
+        },
+        {
+          "src": "xifan",
+          "at": "8:22",
+          "tiers": {
+            "S": [
+              "cleric",
+              "sorcerer",
+              "elementalist",
+              "ranger"
+            ],
+            "A": [
+              "chanter"
+            ],
+            "B": [
+              "templar"
+            ],
+            "C": [
+              "assassin",
+              "gladiator"
+            ]
+          }
+        }
+      ],
+      "note": {
+        "en": "They disagree on the Templar: trueeevil plays it in sieges and rates its pulls into the enemy line; XifanGG thinks a melee can't safely hit a contested boss or artifact.",
+        "ru": "Расходятся по Стражу: trueeevil играет им в осадах и ценит его притягивания из вражеского строя; XifanGG считает, что ближний бой не может безопасно бить спорного босса или артефакт.",
+        "uk": "Розходяться щодо Templar: trueeevil грає ним в облогах і цінує його притягування з ворожого строю; XifanGG вважає, що ближній бій не може безпечно бити спірного боса чи артефакт.",
+        "tr": "Templar'da ayrışıyorlar: trueeevil kuşatmalarda onu oynuyor ve düşman hattından çekişlerini değerli buluyor; XifanGG ise yakın dövüşçünün tartışmalı bir bossa veya artifact'a güvenle vuramayacağını düşünüyor.",
+        "pt-BR": "Eles discordam do Templário: o verdadeiro mal a coloca em cercos e avalia suas forças na linha inimiga, Xifangg acha que um melee não pode acertar com segurança um chefe ou artefato contestado."
+      }
+    },
+    {
+      "id": "duel",
+      "tab": {
+        "en": "Solo PvP",
+        "ru": "Соло PvP",
+        "uk": "Соло PvP",
+        "tr": "Solo PvP",
+        "pt-BR": "Solo PvP"
+      },
+      "title": {
+        "en": "Solo PvP: 1v1 and roaming",
+        "ru": "Соло PvP: 1 на 1 и роуминг",
+        "uk": "Соло PvP: 1 на 1 і роумінг",
+        "tr": "Solo PvP: 1v1 ve roaming",
+        "pt-BR": "Solo PvP: 1 v 1 e roaming"
+      },
+      "lead": {
+        "en": "Fights you pick yourself in the Abyss. The classes that are worst in sieges are the best here.",
+        "ru": "Бои, которые ты выбираешь сам в Бездне. Худшие классы в осадах здесь лучшие.",
+        "uk": "Бої, які ти обираєш сам в Abyss. Найгірші класи в облогах тут найкращі.",
+        "tr": "Abyss'te kendi seçtiğin dövüşler. Kuşatmalarda en kötü olan sınıflar burada en iyisi.",
+        "pt-BR": "Luta você se escolhe no Abismo. As classes que são piores em cercos são as melhores aqui."
+      },
+      "lists": [
+        {
+          "src": "trueeevil",
+          "at": "17:27",
+          "tiers": {
+            "S": [
+              "assassin",
+              "gladiator"
+            ],
+            "A": [
+              "templar",
+              "ranger",
+              "elementalist",
+              "sorcerer"
+            ],
+            "B": [
+              "chanter",
+              "cleric"
+            ]
+          }
+        },
+        {
+          "src": "xifan",
+          "at": "2:50",
+          "tiers": {
+            "S": [
+              "assassin",
+              "gladiator"
+            ],
+            "A": [
+              "ranger",
+              "chanter",
+              "elementalist",
+              "templar"
+            ],
+            "B": [
+              "sorcerer",
+              "cleric"
+            ]
+          }
+        }
+      ],
+      "note": {
+        "en": "The two lists almost match. XifanGG's small-group PvP list is different again: Cleric S, Sorcerer C.",
+        "ru": "Списки почти совпадают. У XifanGG в групповом PvP иначе: Целитель S, Волшебник C.",
+        "uk": "Списки майже збігаються. У XifanGG у груповому PvP інакше: Cleric S, Sorcerer C.",
+        "tr": "İki liste neredeyse aynı. XifanGG'nin küçük grup PvP listesi yine farklı: Cleric S, Sorcerer C.",
+        "pt-BR": "As duas listas quase batem. A lista PvP de Xifangg é diferente, Cleric S, Feiticeiro C."
+      }
+    },
+    {
+      "id": "dps",
+      "tab": {
+        "en": "DPS",
+        "ru": "DPS",
+        "uk": "DPS",
+        "tr": "DPS",
+        "pt-BR": "DPS"
+      },
+      "title": {
+        "en": "Pure damage (DPS)",
+        "ru": "Чистый урон (DPS)",
+        "uk": "Чистий урон (DPS)",
+        "tr": "Saf hasar (DPS)",
+        "pt-BR": "Dano puro.DPS)"
+      },
+      "lead": {
+        "en": "Only the damage meter, with equal gear and good play — not what a class brings to the group.",
+        "ru": "Только счётчик урона при равной экипировке и хорошей игре — без учёта того, что класс даёт группе.",
+        "uk": "Лише лічильник урону за рівного спорядження й хорошої гри — без урахування того, що клас дає групі.",
+        "tr": "Yalnızca hasar ölçer, eşit ekipman ve iyi oyunla — bir sınıfın gruba kattıkları sayılmaz.",
+        "pt-BR": "Só o medidor de danos, com equipamento igual e bom jogo - não o que uma classe traz para o grupo."
+      },
+      "lists": [
+        {
+          "src": "kaid",
+          "tiers": {
+            "S": [
+              "gladiator",
+              "assassin",
+              "ranger"
+            ],
+            "A": [
+              "sorcerer"
+            ],
+            "B": [
+              "elementalist"
+            ],
+            "C": [
+              "chanter",
+              "cleric"
+            ],
+            "D": [
+              "templar"
+            ]
+          }
+        },
+        {
+          "src": "kanon",
+          "at": "10:54",
+          "tiers": {
+            "S": [
+              "sorcerer"
+            ],
+            "A": [
+              "elementalist",
+              "ranger",
+              "assassin"
+            ],
+            "B": [
+              "gladiator",
+              "templar",
+              "chanter"
+            ],
+            "C": [
+              "cleric"
+            ]
+          }
+        }
+      ],
+      "note": {
+        "en": "Kanon's list is averaged from real parses (top 25% on notmeter.com) across the latest Korean raids, Transcendence and Conquest dungeons — ranged classes lead there because they build Front Attack Damage Boost. KaidWOW ranks the damage ceiling and puts Gladiator first. Balance on global starts from scratch, so take both as a direction.",
+        "ru": "Список Kanon усреднён по реальным парсам (лучшие 25% на notmeter.com) в последних корейских рейдах, Transcendence и Conquest — там лидируют дальники, потому что собирают урон при атаке спереди. KaidWOW оценивает потолок урона и ставит первым Гладиатора. Баланс на глобале начинается с нуля, так что оба списка — лишь направление.",
+        "uk": "Список Kanon усереднено за реальними парсами (найкращі 25% на notmeter.com) в останніх корейських рейдах, Transcendence і Conquest — там лідирують дальні класи, бо збирають урон під час атаки спереду. KaidWOW оцінює стелю урону й ставить першим Gladiator. Баланс на глобалі починається з нуля, тож обидва списки — лише напрям.",
+        "tr": "Kanon'un listesi son Kore raidleri, Transcendence ve Conquest zindanlarındaki gerçek ölçümlerden (notmeter.com'da en iyi %25) ortalanmış — orada menzilli sınıflar önde çünkü Front Attack Damage Boost topluyorlar. KaidWOW hasar tavanını sıralıyor ve Gladiator'ı birinci koyuyor. Global'de denge sıfırdan başlıyor, ikisini de bir yön olarak gör.",
+        "pt-BR": "A lista de Kanon é média de reais parses (topo 25% em notmeter.com) através dos últimos ataques coreanos, Transcendência e masmorras de conquista - variadas classes levam lá porque eles constroem Frente Ataque Danos Boost. KaidWOW ocupa o teto de danos e coloca Gladiator primeiro. O equilíbrio global começa do zero, então tome ambos como uma direção."
+      }
+    }
+  ],
+  "ping": {
+    "title": {
+      "en": "Your ping matters more than the tier",
+      "ru": "Твой пинг важнее тира",
+      "uk": "Твій пінг важливіший за тир",
+      "tr": "Ping'in tier'dan daha önemli",
+      "pt-BR": "Seu ping importa mais do que o nível"
+    },
+    "lead": {
+      "en": "trueeevil's fourth list, and he calls it the most important one: with friends on far servers he measured up to 40% less damage on the fast weaving classes. Pick from the row that matches your ping (ms).",
+      "ru": "Четвёртый список trueeevil, и он называет его самым важным: с друзьями на дальних серверах он намерил до 40% меньше урона у классов с быстрым чередованием скиллов. Выбирай из ряда, который подходит твоему пингу (мс).",
+      "uk": "Четвертий список trueeevil, і він називає його найважливішим: із друзями на далеких серверах він наміряв до 40% менше урону в класів зі швидким чергуванням скілів. Обирай із ряду, що підходить твоєму пінгу (мс).",
+      "tr": "trueeevil'in dördüncü listesi ve en önemlisi olduğunu söylüyor: uzak sunuculardaki arkadaşlarıyla hızlı yetenek ören sınıflarda %40'a kadar daha az hasar ölçtü. Ping'ine (ms) uyan satırdan seç.",
+      "pt-BR": "A quarta lista do Trueeevil, e ele chama de a mais importante: com amigos em servidores distantes ele mediu até 40% menos danos nas aulas de tecelagem rápida. Escolha na linha que combina com o seu ping (ms)."
+    },
+    "src": "trueeevil",
+    "tab": {
+      "en": "Ping",
+      "ru": "Пинг",
+      "uk": "Пінг",
+      "tr": "Ping",
+      "pt-BR": "Ping."
+    },
+    "at": "24:12",
+    "rows": [
+      {
+        "label": "50+",
+        "tone": "s",
+        "classes": [
+          "elementalist",
+          "sorcerer"
+        ]
+      },
+      {
+        "label": "30–50",
+        "tone": "a",
+        "classes": [
+          "cleric",
+          "chanter",
+          "templar"
+        ]
+      },
+      {
+        "label": "0–30",
+        "tone": "b",
+        "classes": [
+          "gladiator",
+          "ranger",
+          "assassin"
+        ]
+      }
+    ]
+  }
+}

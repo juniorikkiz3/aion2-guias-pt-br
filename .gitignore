@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+*.py[cod]
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+.claude/settings.local.json
+
+# source material (guide videos, transcripts, frames, screenshots): local only, never committed
+frames/

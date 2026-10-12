@@ -1,0 +1,119 @@
+{% extends "base.html" %}
+{% block title %}{{ cls.name[lang] }} — {{ t.site_name }} ({% for m in ['pve', 'pvp', 'lvl'] if m not in cls.get('modes_off', []) %}{{ t['mode_' ~ m] }}{{ ', ' if not loop.last }}{% endfor %}){% endblock %}
+{% block desc %}{{ cls.pitch[lang] }}{% endblock %}
+{% block og %}{{ cls.slug }}{% endblock %}
+{% block html_attrs %} data-class="{{ cls.slug }}"{% if cls.get('modes_off') %} data-off="{{ cls.modes_off|join(' ') }}"{% endif %}{% endblock %}
+{% block body_class %}page-class accent-{{ cls.accent }}{% endblock %}
+{% block main %}
+<div class="class-backdrop" aria-hidden="true" style="--art:url('{{ root }}assets/art/{{ cls.slug }}.webp')"></div>
+<section class="class-hero" data-fx="{{ cls.slug }}">
+  <div class="hero-glow" aria-hidden="true"></div>
+  <img class="class-hero-art" src="{{ root }}assets/art/{{ cls.slug }}.webp" alt="" aria-hidden="true" fetchpriority="high">
+  <div class="wrap class-hero-in">
+    <nav class="crumbs" aria-label="{{ t.back_home }}"><a href="{{ root }}{{ lang }}/">{{ t.back_home }}</a><span aria-hidden="true">/</span><span>{{ cls.name[lang] }}</span></nav>
+    <div class="class-hero-main">
+      <img class="class-hero-emblem" src="{{ root }}assets/classes/{{ cls.slug }}.webp" width="96" height="96" alt="">
+      <div>
+        <p class="kicker"><span data-only="pve">{{ t.mode_pve }}</span><span data-only="pvp">{{ t.mode_pvp }}</span><span data-only="lvl">{{ t.mode_lvl }}</span> · {{ t.home_kicker }}</p>
+        <h1>{{ cls.name[lang] }}</h1>
+        <p class="class-hero-pitch">{{ cls.pitch[lang] }}</p>
+        <p class="guide-ver"><span>{{ t.guide_updated }}: <time datetime="{{ cls.updated }}">{{ fmt_day(cls.updated, lang) }}</time></span><span>{{ t.guide_patch }}: <b>{{ t.patch_s1 if cls.patch == 'S1' else (cls.patch or t.patch_tbd) }}</b></span>{% if cls.get('wip') %}<span class="wip-tag">{{ t.wip }}</span>{% endif %}</p>
+        {% if cls.get('src') %}<p class="guide-src">{% for m, v in cls.src.items() %}<span data-only="{{ m }}">{{ t.guide_src }}: <b>{{ v[0] }}</b></span>{% endfor %}</p>{% endif %}
+        {% set watch = watch_for(cls, lang) %}
+        {% if watch %}<p class="guide-watch">{{ t.guide_watch }}:
+          {% for st in watch %}<a href="{{ st.url }}" target="_blank" rel="noopener" title="{{ st.title }}" class="gw-{{ st.type }}">{% if st.type == 'twitch' %}<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3L3 7v12h5v3h3l3-3h4l4-4V3zm15 11l-3 3h-4l-3 3v-3H6V5h14z" fill="currentColor"/><path d="M11 8h2v5h-2zm5 0h2v5h-2z" fill="currentColor"/></svg>{% else %}<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="4" fill="currentColor"/><path d="M10 9l5 3-5 3z" fill="var(--bg-2)"/></svg>{% endif %}{{ st.name }}</a>{% endfor %}
+          <a class="guide-watch-all" href="{{ root }}{{ lang }}/sources/">{{ t.guide_watch_all }}</a></p>{% endif %}
+      </div>
+    </div>
+    <dl class="class-facts">
+      <div><dt>{{ t.role }}</dt><dd>{{ cls.role[lang] }}</dd></div>
+      <div><dt>{{ t.weapon }}</dt><dd>{{ cls.weapon[lang] }}</dd></div>
+      <div><dt>{{ t.difficulty }}</dt><dd class="diff">{% for i in range(3) %}<i class="{{ 'on' if i < cls.difficulty }}"></i>{% endfor %}<span>{{ t.diff[cls.difficulty] }}</span></dd></div>
+    </dl>
+  </div>
+</section>
+
+<div class="guidebar">
+  <div class="wrap guidebar-in">
+    <div class="mode-switch" role="radiogroup" aria-label="{{ t.mode_label }}">
+      {% for m in ['pve', 'pvp', 'lvl'] %}
+      <button type="button" role="radio" data-set-mode="{{ m }}" aria-checked="false"{% if m in cls.get('modes_off', []) %} class="is-off" aria-disabled="true" disabled{% endif %}>{{ t['mode_' ~ m] }}</button>
+      {% endfor %}
+    </div>
+    <nav class="toc-mobile" aria-label="{{ t.on_this_page }}"></nav>
+  </div>
+</div>
+
+<div class="wrap guide-layout">
+  <aside class="toc-side" aria-label="{{ t.on_this_page }}">
+    <p class="toc-title">{{ t.on_this_page }}</p>
+    <nav class="toc-list"></nav>
+  </aside>
+
+  <main id="main" class="guide">
+    {#- Suggest box at the top of every guide: opens the feedback form. Modes still built on Korean guides and classes
+        without a PvP guide ask for a global source. -#}
+    {% set off = cls.get('modes_off', []) %}
+    <div class="suggest-box" role="note">
+      <svg class="sg-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M12 7v6M9 10h6"/></svg>
+      <div class="sg-text">
+        <p>{{ t.sg_text }}</p>
+        {% for m, v in cls.get('src', {}).items() if m not in off and ('(KR' in v[0] or m in cls.get('wip_modes', [])) %}<p class="sg-extra" data-only="{{ m }}">{{ t.sg_kr }}</p>{% endfor %}
+        {% if 'pvp' in off %}<p class="sg-extra">{{ t.sg_nopvp }}</p>{% endif %}
+      </div>
+      <a class="btn btn-primary btn-sm" href="{{ root }}{{ lang }}/sources/">{{ t.sources }}</a>
+    </div>
+    <section id="progress" class="g-section tracker" data-only="lvl" data-class="{{ cls.slug }}" aria-labelledby="h-progress">
+      <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-progress">{{ t.lvl_progress }}</h2></div>
+      <div class="tracker-bar">
+        <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="{{ steps|length }}" aria-valuenow="0" aria-label="{{ t.lvl_progress }}"><span></span></div>
+        <span class="progress-text"><b class="progress-count">0</b>/{{ steps|length }} {{ t.lvl_done }}</span>
+        <button type="button" class="btn btn-ghost btn-sm tracker-reset" data-confirm="{{ t.lvl_reset_confirm }}">{{ t.lvl_reset }}</button>
+      </div>
+      <p class="note">{{ t.lvl_hint }}</p>
+      <ol class="steps">
+        {% for st in steps %}
+        <li class="step step-{{ st.kind }}">
+          <label>
+            <input type="checkbox" data-step="{{ st.id }}">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">{{ st.when }}</span>
+            <span class="step-text">
+              <span class="step-tag">{{ t.lvl_class if st.kind == 'class' else t.lvl_general }}</span>
+              {% for sl in st.skills %}<img src="{{ icon_url(sl) }}" width="22" height="22" alt="" loading="lazy" data-sk="{{ sl }}">{% endfor %}
+              {{ st.text|safe }}
+            </span>
+          </label>
+        </li>
+        {% endfor %}
+      </ol>
+    </section>
+
+    {% if cls.get('wip') %}
+    <div class="callout wip-note" role="note"><h3><span class="wip-tag">{{ t.wip }}</span> {{ t.wip_title }}</h3><p>{{ t.wip_text }}</p></div>
+    {% endif %}
+    {% for m in cls.get('wip_modes', []) %}
+    <div class="callout wip-note" role="note" data-only="{{ m }}"><h3><span class="wip-tag">{{ t.wip }}</span> {{ t['wip_mode_' ~ m] }} · {{ t.wip_mode_title }}</h3><p>{{ t.wip_mode_text }}</p></div>
+    {% endfor %}
+    {% include content_tpl %}
+
+    {%- if cls.slug == SITE.get('author_main') %}
+    {#- Easter egg: the site author's main. A faint star under the guide opens the screenshot. -#}
+    <button type="button" class="egg-star" aria-label="{{ t.egg_hint }}" title="{{ t.egg_hint }}">✦</button>
+    <dialog class="egg-dlg" aria-labelledby="egg-title">
+      <div class="wn-in">
+        <div class="wn-head">
+          <h2 id="egg-title">{{ t.egg_title }}</h2>
+          <button type="button" class="icon-btn egg-x" aria-label="{{ t.cel_close }}">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+          </button>
+        </div>
+        <img class="egg-img" src="{{ root }}assets/art/egg-cleric.webp" width="1200" height="675" alt="Mimisaki" loading="lazy">
+        <p class="egg-cap">{{ cls.name[lang] }} — {{ t.egg_text }}.<br><b>Mimisaki</b> · {{ t.egg_faction }} · {{ t.egg_server }}</p>
+      </div>
+    </dialog>
+    {%- endif %}
+    <script type="application/json" id="sk-data" data-cd="{{ t.tip_cd }}" data-s="{{ t.tip_s }}" data-active="{{ t.tip_cat.active }}" data-stigma="{{ t.tip_cat.stigma }}" data-passive="{{ t.tip_cat.passive }}">{{ tooltip_json(cls.slug, lang) }}</script>
+  </main>
+</div>
+{% endblock %}

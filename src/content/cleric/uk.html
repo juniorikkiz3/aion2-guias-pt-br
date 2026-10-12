@@ -1,0 +1,327 @@
+{% from "macros.html" import section, skill, core, loadout, passives, glance, hotline, macroseq, hotbar, dv_board with context %}
+
+{# PvE — за відеогайдом Kaeria; PvP лишається вимкненим (site.json modes_off), доки немає справжнього джерела. #}
+
+{# ============================== PvE ============================== #}
+{% call glance('pve') %}
+  <h3>{{ t.core_skills }}</h3>
+  {{ core([('condemnation', '16 → 20'), ('divine-aura', '16 → 20'), ('bolt', '16 → 20'), ('judgment-thunder', '16'), ('lightning-strike-scattershot', '16')]) }}
+  <h3>{{ t.stigma_loadout }}</h3>
+  {{ loadout([('earth-punishment', 20), ('light-of-protection', 20), ('prayer-of-amplification', 20), ('noble-aura', 10)]) }}
+  <h3>{{ t.key_passives }}</h3>
+  {{ passives(['empyrean-lords-grace', 'earths-grace', 'healing-enhancement', 'radiant-benediction']) }}
+{% endcall %}
+
+{% call glance('pvp') %}
+  <h3>{{ t.core_skills }}</h3>
+  {{ core([('condemnation', '16 → 20'), ('radiant-recovery', '16 → 20'), ('judgment-thunder', '16'), ('bolt', '16'), ('chain-of-torment', '14')]) }}
+  <h3>{{ t.stigma_loadout }}</h3>
+  {{ loadout([('prayer-of-amplification', 20), ('light-of-protection', 20), ('yustiels-power', 15), ('voice-of-doom', 10)]) }}
+  <h3>{{ t.key_passives }}</h3>
+  {{ passives(['empyrean-lords-grace', 'healing-enhancement', 'earths-grace', 'survival-willpower']) }}
+{% endcall %}
+
+{% call section('intro', 'Огляд', 'pve') %}
+  <p>У підземеллях AION 2 Cleric — хілер, який <strong>мусить завдавати шкоди</strong>: нагороди залежать від твого внеску, і Cleric, що лише лікує, може піти ні з чим. У групи вистачає власних ухилень і невразливостей — підліковуй людей після ударів, а все інше вкладай у шкоду.</p>
+  <div class="callout accent">
+    <h3>Білд одним реченням</h3>
+    <p>{{ s('earth-punishment') }} робить так, що {{ s('condemnation') }} завжди критує, а крит скидає Condemnation — тож він б'є без перезарядки, а {{ s('divine-aura') }}, {{ s('bolt') }} і {{ s('noble-aura') }} додають шкоди зверху.</p>
+  </div>
+  <p class="note">Цей режим — за PvE-відеогайдом Kaeria по Cleric (російською, записано на тайванському клієнті 28 вересня; за її словами, підходить і для глобалу), звіреним із кадрами відео 30 вересня, а також з гайдом Lucia (англійською, глобал, 5 жовтня — Cleric, перше місце у світовому рейтингу, 2 160 рівня предмета). Вибір скілів можна безкоштовно переробити — ресурси коштують лише аркани.</p>
+{% endcall %}
+
+{% call section('intro-pvp', 'Огляд', 'pvp') %}
+  <p>У PvP Cleric зберігає ядро з PvE — {{ s('condemnation') }}, що скидається на критах, {{ s('judgment-thunder') }}, хіли — і змінює призначення стигм і кількох спеціалізацій: контроль, зріз ворожого лікування й виживання групи під бурстом.</p>
+  <div class="callout accent">
+    <h3>Білд одним реченням</h3>
+    <p>Бафай {{ s('prayer-of-amplification') }} і {{ s('light-of-protection') }}, вішай {{ s('voice-of-doom') }} на хілера чи танка, якого вбиваєш, і тримай {{ s('yustiels-power') }} на момент, коли ворог бурстить.</p>
+  </div>
+  <p class="note">Режим — за PvP-частиною гайду Lucia по Cleric (англійською, глобал, 5 жовтня — Cleric, перше місце у світовому рейтингу): стигми для дуелей і групових боїв та спеціалізації, які вона міняє під PvP. Окреме відео про PvP-комбо вона обіцяла; до нього ротація — як у PvE.</p>
+{% endcall %}
+
+{% call section('global', 'Глобальний 1 сезон: що змінюється', 'pve pvp') %}
+  <p>Глобальні сервери відкриваються <strong>5 жовтня 2026</strong> (ранній доступ Founder's — з 30 вересня). Що це означає для Cleric:</p>
+  <div class="callout">
+    <ul>
+      <li><strong>4 слоти стигм, максимум 20.</strong> На тайванській панелі Kaeria їх більше; чотири в цьому гайді — її вибір для глобалу. Рівнів 25 (як-от шанс подвійного удару на Light of Protection) тут немає.</li>
+      <li><strong>Тобі платять за шкоду.</strong> Нагороди в підземеллях залежать від внеску, тож Cleric, що лише лікує, може піти ні з чим — увесь цей білд про те, щоб завдавати шкоди й лікувати принагідно.</li>
+      <li><strong>Більші групи</strong> (експедиції на 5, святилища на 10): із Chanter у групі твоя мантра не складається з його — прибирай Light of Protection.</li>
+      <li><strong>Пінг нижчий, ніж на Тайвані:</strong> анімації скасовуються краще, тож макрос може вплітати більше базових атак.</li>
+    </ul>
+  </div>
+  <p class="note">Активні скіли й пасивки в глобальних і KR/TW даних однакові; стигми втрачають рівень 25. Відео-джерело записано на тайванському клієнті з англійськими назвами скілів.</p>
+{% endcall %}
+
+{% call section('skills', 'Скіли', 'pve') %}
+  <p>Майже все йде в шкоду. Лікуванням, яким це важливо, потрібно 16: Healing Light і Radiant Recovery.</p>
+  <p><strong>Порядок прокачки</strong> (Lucia): спершу два скіли, які ти вплітаєш, — {{ s('earths-retribution') }} і {{ s('judgment-thunder') }}, — потім {{ s('condemnation') }}, потім хіли. Після регіональних квестів на 45 усі скіли мають бути 12 або вище; далі бери спеціалізації й качай хіли.</p>
+  <ul class="skill-grid">
+    {% call skill('condemnation', 'must', '16 → 20', [1, 3], then=[4]) %}Найважливіший скіл на панелі: +12% по одній цілі й скидання перезарядки на криті. На 20 додай MP, якщо бракує мани, мультиудар — якщо ні.{% endcall %}
+    {% call skill('divine-aura', 'must', '16 → 20', [2, 4], then=[3]) %}Недооцінений: б'є паралельно з тобою, тож що довше стоїть — то краще. На 16 бери швидкість атаки аури й −10 с перезарядки, на 20 додай +3 с (Lucia). Варіант: Kaeria на 16 бере +3 с замість швидкості атаки; на фармі aLuckyRO бере AoE-спеціалізацію (до чотирьох мобів). Whelps (глобал) на 16 бере AoE-спеціалізацію і −10 с, на 20 — ті самі три, що й тут.{% endcall %}
+    {% call skill('bolt', 'must', '16 → 20', [1, 2], then=[4]) %}Найсильніший удар. Заряджай на максимум. +300 точності вміння, щоб він майже завжди влучав, і +30% швидкості вміння; на 20 додай гарантований крит (Lucia). Варіант: коли точності вже багато, +20% шкоди по одній цілі (Kaeria) дає більше, ніж точність. Whelps (глобал): +30% швидкості вміння і крит на 16, +20% шкоди по одній цілі на 20.{% endcall %}
+    {% call skill('judgment-thunder', 'must', '16', [1, 4]) %}Постійна шкода й скасування анімацій; спеціалізація Divine Punishment приблизно подвоює її. На 20 додай −20% MP.{% endcall %}
+    {% call skill('lightning-strike-scattershot', 'must', '16', [3, 4]) %}Лише під час оглушення, але кожен удар скорочує всі твої перезарядки на 1 с.{% endcall %}
+    {% call skill('healing-light', 'must', '16', [0, 3]) %}Швидке лікування майже без перезарядки: +2 використання і +2% HP (масштабується з бонусом лікування). На 20 додай −2 с.{% endcall %}
+    {% call skill('radiant-recovery', 'must', '16 → 20', [2, 4]) %}Найсильніше лікування поза стигмами; знімає дебаф. Lucia: −3 с перезарядки й +10% вхідного лікування до 16, потім −3 с і +5% HP — доведи до 20 якомога раніше. Варіант: +1 використання поспіль замість −3 с — два великі хіли підряд.{% endcall %}
+    {% call skill('earths-retribution', 'opt', '12 → 16', [1, 3], then=[2]) %}Базова атака для скасування анімацій: шанс Discharge і −7 с перезарядки Bolt при Discharge. Що частіше спрацьовує Discharge, то швидше повертається Bolt. На 20 додай Multi-Hit.{% endcall %}
+    {% call skill('debilitating-mark', 'opt', '12', [1, 2]) %}−15% захисту боса, поки триває шкода з часом; Lucia додає 20% шанс оглушення — контроль у Transcendence. Варіант: спеціалізація на зниження шкоди боса замість оглушення — Lucia не певна, що вона працює як написано.{% endcall %}
+    {% call skill('chain-of-torment', 'opt', '14', [2, 3]) %}Потрібна, щоб працював Condemnation; −10% стійкості до шкоди в PvE у боса. Lucia бере 20% шанс збити з ніг — контроль у Transcendence. Варіант: +3 с шкоди з часом, якщо контроль не потрібен. На 16 Whelps бере зниження стійкості й удвічі частішу шкоду з часом.{% endcall %}
+    {% call skill('light-of-regeneration', 'opt', '12–16', [2, 4]) %}Оновлюй за відкатом. +5% вхідного лікування; до 16 друга спеціалізація — +20% лікування при HP нижче 50%, на 16 — 5% стійкості.{% endcall %}
+    {% call skill('defiance', 'opt', '12', [2, 3]) %}Зняття контролю; 10% HP і +2 с імунітету.{% endcall %}
+  </ul>
+{% endcall %}
+
+{% call section('skills-pvp', 'Скіли', 'pvp') %}
+  <p>Рівні скілів і більшість спеціалізацій — як у PvE. Що змінюється в PvP:</p>
+  <ul class="skill-grid">
+    {% call skill('earths-retribution', 'opt', '16 → 20', [1, 3], then=[4]) %}Ті самі Discharge і −7 с на Bolt; на 20 бери ігнор блоку й ухилення — у PvP базова атака має влучати.{% endcall %}
+    {% call skill('chain-of-torment', 'must', '14', [2, 3]) %}20% шанс збити з ніг на додачу до −5% стійкості в PvP: контроль цінніший за шкоду з часом.{% endcall %}
+    {% call skill('debilitating-mark', 'opt', '12', [1, 2]) %}−15% захисту й 20% шанс оглушення.{% endcall %}
+    {% call skill('bolt', 'must', '16', [1, 2]) %}+300 точності вміння ще важливіші проти гравців з ухиленням.{% endcall %}
+    {% call skill('light-of-regeneration', 'opt', '16', [2, 4]) %}Спеціалізація на стійкість дає 2,5% стійкості в PvP під час лікування.{% endcall %}
+    {% call skill('defiance', 'must', '16', [2, 3]) %}Відповідь на оглушення чи збивання з ніг — у PvP вирішує бої. Lucia: спеціалізації тут майже не важливі.{% endcall %}
+  </ul>
+{% endcall %}
+
+{% call section('passives', 'Пасивки', 'pve') %}
+  <div class="callout"><ul>
+    <li>{{ s('empyrean-lords-grace') }} — найважливіша: крит. шкода, шанс подвійного удару й додаткова шкода з кожного удару. Якомога вище.</li>
+    <li>{{ s('earths-grace') }} — колись бафала групу, тепер лише тебе; качати все одно варто.</li>
+    <li>{{ s('healing-enhancement') }} — посилення лікування як частка твоєї атаки, тож Cleric збирає атаку, а не захист.</li>
+    <li>{{ s('radiant-benediction') }} — лікує союзників поруч під час атак; бери, якщо йдеш у шкоду повністю.</li>
+    <li>{{ s('warm-benediction') }} і {{ s('immortal-veil') }} — непогано мати; {{ s('empyrean-lords-benediction') }} — для PvP.</li>
+  </ul></div>
+  <p>Lucia качає ці три першими, раніше за будь-які інші пасивки: {{ s('empyrean-lords-grace') }}, {{ s('healing-enhancement') }} і {{ s('earths-grace') }}. {{ s('immortal-veil') }} допомагає на старті й втрачає сенс, коли росте броня.</p>
+  <p class="note">Перші дні (aLuckyRO): спершу качай {{ s('radiant-benediction') }} — вона лікує всю групу кожні кілька секунд, поки та б'є, — і {{ s('healing-enhancement') }}. Пасивки на крит окупаються, лише коли спорядження дає шанс криту; доти ти майже не критуєш.</p>
+{% endcall %}
+
+{% call section('gear', 'Спорядження й статі', 'pve') %}
+  <div class="callout"><ul>
+    <li><strong>Рядки спорядження:</strong> Might (атака й лікування), швидкість бою, бонус до шкоди; бонус до шкоди зброї й Precision теж сильні. Опори статусам, ухилення й захисні рядки в PvE пропускай.</li>
+    <li><strong>Зброя й guard</strong> (Lucia): Weapon Damage Boost, Might, Combat Speed, Precision. Рукавиці — Combat Speed, чоботи — Movement Speed. Аксесуари — Combat Speed, Might і Precision плюс один рядок під Earth's Grace чи Empyrean Lord's Grace.</li>
+    <li><strong>Кільця:</strong> крафти якнайшвидше — у крафтових кілець на один рядок для активних скілів більше. Усі рядки заповнюй активними скілами: Condemnation, Radiant Recovery, Judgment Thunder і Healing Light чи Divine Aura.</li>
+    <li><strong>Статі:</strong> Destruction, Wisdom (шанс подвійного удару), Illusion (перезарядки), Time (швидкість бою), Freedom (точність), плюс Death (крит) — власний вибір Kaeria, Cleric завжди бракує криту; Might, Precision, Constitution. Чотири стати Lucia: Time, Illusion, Space, Destruction.</li>
+    <li><strong>Для рейду Ludra:</strong> щонайменше 1000 Accuracy і 1000 Critical Hit.</li>
+    <li><strong>Крила:</strong> <strong>Talisra Wings</strong> (атака 60, захист 400, точність 35, −4% перезарядок) із сезонного магазину приблизно за 250 000 сезонних очок — збирай очки на них.</li>
+  </ul></div>
+  <h3>Genus Insight</h3>
+  <p>Доведи всіх петів до 3 рівня якомога раніше: за вбивство прокачаних петів дають кристали для цих рядків. Вибір Lucia для кожного колеса:</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Слот</th><th>Бери</th></tr></thead>
+    <tbody>
+      <tr><td>1, 5</td><td>Attack Bonus (5: або Max Attack)</td></tr>
+      <tr><td>2, 8</td><td>HP</td></tr>
+      <tr><td>3, 6, 9</td><td>Accuracy, або Block, якщо точності вже багато</td></tr>
+      <tr><td>4</td><td>Рядок шкоди цього колеса: Damage Boost, Perfect Chance, Back Attack Damage</td></tr>
+      <tr><td>7</td><td>Regeneration або Endurance</td></tr>
+      <tr><td>Особливе</td><td>Double Chance</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">Крути до найвищого значення й фіксуй рядок, лише коли він близький до максимуму, — і ніколи до 9–10 рівня колеса.</p>
+{% endcall %}
+
+{% call section('gear-pvp', 'Спорядження й статі', 'pvp') %}
+  <div class="callout"><ul>
+    <li><strong>Рядки спорядження</strong> — як у PvE: на зброї й guard Weapon Damage Boost, Might, Combat Speed, Precision; на аксесуарах Combat Speed, Might, Precision.</li>
+    <li><strong>Genus Insight:</strong> Critical Hit Resist замість HP у 2-му слоті й Front Attack Damage Boost у слоті шкоди цього колеса — у PvP ти стоїш до цілі обличчям.</li>
+    <li><strong>Azphel</strong>, дошка Daevanion 45 рівня, — суцільна шкода й стійкість у PvP: заповнюй її під PvP.</li>
+  </ul></div>
+{% endcall %}
+
+{% call section('arcana', 'Аркани', 'pve') %}
+  <div class="table-wrap"><table>
+    <thead><tr><th>Аркана</th><th>Сет / стат</th><th>Що ролити</th></tr></thead>
+    <tbody>
+      <tr><td>Chalice</td><td>Vigor (швидкість бою)</td><td>Усе, що доводить ключові скіли до 16 → 20</td></tr>
+      <tr><td>Parchment</td><td>Destiny або Life</td><td>Condemnation, Radiant Recovery, Earth's Retribution, Bolt</td></tr>
+      <tr><td>Compass</td><td>Death або Freedom</td><td>Lightning Strike Scattershot, Healing Light, Divine Aura, Judgment Thunder</td></tr>
+      <tr><td>Bell</td><td>Destruction</td><td>Empyrean Lord's Grace (уникай Survival Willpower)</td></tr>
+      <tr><td>Mirror</td><td>Wisdom (шкода) або Illusion (перезарядки)</td><td>Earth's Grace, Healing Enhancement</td></tr>
+    </tbody>
+  </table></div>
+  <p><strong>Бонуси сетів:</strong> збирай 2 + 2 або чотири карти Primal Vigor (+60 атаки в PvE за дві, +150 за чотири, поки твоє HP 70% і більше). На старті карта з потрібними скілами краща за карту з потрібного сету — сети виправиш пізніше.</p>
+{% endcall %}
+
+{% call section('daevanion', 'Дошки Daevanion', 'pve pvp') %}
+  <p>Daevanion піднімає твої скіли з 10 до 14 і додає статі. Кожен синій вузол дає <strong>+1 рівень</strong> своєму скілу.</p>
+  <div class="callout"><ul>
+    <li><strong>Пріоритет:</strong> спершу помаранчеві вузли перезарядок і швидкості бою, потім атака й крит, потім сині вузли скілів, потім захисні помаранчеві, пасивки останніми.</li>
+    <li>Стійкість до крит. шкоди й опір мультиудару в PvE нічого не дають — боси не критують і не б'ють мультиударом.</li>
+    <li>Скинути дошку дешево, і ти перебудовуватимеш її багато разів.</li>
+    <li><strong>Порядок Lucia:</strong> на Nezekan і Zikel бери всі чотири кути й свої скіли; на Vaizel і Triniel кути пропускай і йди одразу до активних скілів, якими користуєшся.</li>
+    <li><strong>Порядок Whelps:</strong> спершу сині вузли, що доводять активні скіли до 12, — другий слот спеціалізації дає великий приріст; потім помаранчеві атакувальні вузли (швидкість бою, скорочення перезарядки, бонус до шкоди, бонус до крит. шкоди, шанс мультиудару), вузли Empyrean Lord's Grace і Earth's Grace, атака й крит, і лише потім захисні (стійкість до шкоди, стійкість до крит. шкоди, HP, захист). Вузли MP +50 по змозі обходь.</li>
+    <li data-only="pvp"><strong>Azphel</strong> (45 рівень) — суцільна шкода й стійкість у PvP: для PvP бери її.</li>
+    <li data-only="pve"><strong>На глобалі немає Ariel:</strong> дошок п'ять, і дошка 45 рівня, Azphel, дає лише шкоду й стійкість у PvP — у PvE закривай перші чотири.</li>
+  </ul></div>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Дошка</th><th>Відкривається</th><th>Помаранчеві вузли</th></tr></thead>
+    <tbody>
+      <tr><td>Nezekan</td><td>Рів. 12</td><td>Швидкість бою, скорочення перезарядок</td></tr>
+      <tr><td>Zikel</td><td>Рів. 20</td><td>Бонус до шкоди, стійкість до шкоди</td></tr>
+      <tr><td>Vaizel</td><td>Рів. 30</td><td>Бонус і стійкість до крит. шкоди</td></tr>
+      <tr><td>Triniel</td><td>Рів. 40</td><td>Шанс мультиудару й опір йому</td></tr>
+      <tr><td>Azphel</td><td>Рів. 45</td><td>Шкода й стійкість у PvP — вузлів скілів немає</td></tr>
+    </tbody>
+  </table></div>
+  <h3>Маршрут на дошках</h3>
+  <p>Справжні глобальні дошки з даних гри. Золотом позначено найдешевший шлях від Start до вузлів, які бере цей гайд, — сині вузли пріоритетних скілів і помаранчеві, корисні в PvE (без стійкості до крит. шкоди й опору мультиудару); наведи на будь-який вузол, щоб побачити, що він дає.</p>
+  <div data-only="pve">{{ dv_board('pve') }}</div>
+  <div data-only="pvp">{{ dv_board('pvp') }}</div>
+  <p class="note">Дошки й вартість — із даних глобального клієнта (questlog.gg); шлях розраховано, а не взято з відео. Значення статів ще можуть змінитися на запуску — перевір дошку в грі, перш ніж вкладати повний маршрут.</p>
+{% endcall %}
+
+{% call section('stigmas', 'Стигми', 'pve') %}
+  <ul class="skill-grid">
+    {% call skill('earth-punishment', 'must', 'Рів. 15 → 20', upto=20) %}Condemnation завжди критує (тож не має перезарядки), а група отримує захист, атаку й шанс подвійного удару. Один із твоїх найважливіших скілів.{% endcall %}
+    {% call skill('light-of-protection', 'must', 'Рів. 20', upto=20) %}Твоя мантра: вхідне лікування, точність, +10% HP і шанс ідеального удару, без перезарядки. Не складається з мантрою Chanter — з Chanter у групі прибирай. Це перемикач: увімкни один раз і не став у лінії й макрос.{% endcall %}
+    {% call skill('prayer-of-amplification', 'must', 'Рів. 10 → 20', upto=20) %}+20% атаки за відкатом і посилення Empyrean Lord's Grace та Earth's Grace. Без неї в Cleric немає шкоди. Перші три стигми Lucia на 20: ця, Earth Punishment і Light of Protection.{% endcall %}
+    {% call skill('noble-aura', 'must', 'Рів. 10+', upto=10) %}Сфера, що атакує разом із тобою — приблизно подвоює твою шкоду; що вище, то краще.{% endcall %}
+    {% call skill('absolution', 'opt', 'з Chanter', upto=15) %}Найсильніший хіл серед стигм, але добрий лише з 15: +5% відновлення HP, лікує на 15–20k, перезарядка 1 хвилина з 5 рівня. Lucia ставить її замість Light of Protection, коли в групі Chanter.{% endcall %}
+    {% call skill('benevolence', 'opt', 'святилище', upto=15) %}Лікування з часом на всю групу; як і Absolution, варта слота лише з 15.{% endcall %}
+    {% call skill('yustiels-power', 'opt', 'святилище', upto=15) %}Стійкість до шкоди для групи на 10 с — заміна в святилищі замість Noble Aura чи Prayer.{% endcall %}
+    {% call skill('summon-resurrection', 'opt', 'Рів. 5', upto=5) %}На старті тримай на 5; бери, якщо група постійно вмирає. У випадкових групах Lucia її не бере: якщо гравець встане каменем, стигма все одно йде на 2 хвилини перезарядки.{% endcall %}
+    {% call skill('salvation', 'skip', 'не брати') %}3 с невразливості на довгій перезарядці — червоні атаки все одно крізь неї проходять; краще ухиляйся.{% endcall %}
+  </ul>
+  <p class="note">З Chanter у групі: заміни Light of Protection будь-яким лікуванням чи Summon Resurrection. Voice of Doom (−200 опору криту на босі на 15) — варіант у святилищах із другим хілером, здебільшого на старті, поки всім бракує криту; Power Burst — лише там, де треба зламати шкалу оглушення, а більше нікому (Nightmare). {{ s('root') }} і {{ s('assault-mark') }} у PvE не потрібні.</p>
+  <p class="note">Whelps: спершу Earth Punishment до 20, потім решту порівну, Light of Protection останнім. Для ролі підтримки заміни Noble Aura на {{ s('summon-resurrection') }} чи {{ s('yustiels-power') }}; з Chanter у групі міняй на них Light of Protection. У нього два пресети скілів, з Chanter і без, — у кожному свої рівні скілів.</p>
+{% endcall %}
+
+{% call section('stigmas-pvp', 'Стигми', 'pvp') %}
+  <div class="table-wrap"><table>
+    <thead><tr><th>Бій</th><th>Стигми</th></tr></thead>
+    <tbody>
+      <tr><td>Дуелі, невеликі бої</td><td>Prayer of Amplification, Light of Protection, Yustiel's Power, Voice of Doom</td></tr>
+      <tr><td>Груповий PvP</td><td>Absolution замість Voice of Doom — зняття дебафів і великий хіл</td></tr>
+      <tr><td>Безодня, відкритий світ</td><td>Іноді Summon Resurrection замість Absolution</td></tr>
+    </tbody>
+  </table></div>
+  <ul class="skill-grid">
+    {% call skill('prayer-of-amplification', 'must', 'Рів. 20', upto=20) %}+20% атаки — і посилення твоїх крит-пасивок. Для шкоди чи для сильніших хілів.{% endcall %}
+    {% call skill('light-of-protection', 'must', 'Рів. 20', upto=20) %}Шкода й стійкість у PvP для групи, точність і макс. HP. Перемикач — увімкни один раз.{% endcall %}
+    {% call skill('yustiels-power', 'must', 'Рів. 15', upto=15) %}10 с стійкості до шкоди для групи зі щитом, блоком і ухиленням — тисни, коли ворог пускає бурст.{% endcall %}
+    {% call skill('voice-of-doom', 'must', 'Рів. 10', upto=10) %}−60% вхідного лікування й відновлення від банок на цілі на 20 секунд — вимикає Cleric, Chanter і самолікування Gladiator та Templar. На 10 ще й знімає захисні щити; +20% шкоди при влучанні по кількох цілях допомагає в групових боях.{% endcall %}
+    {% call skill('absolution', 'opt', 'груповий PvP', upto=15) %}Найсильніший хіл серед стигм; з 10 знімає всі дебафи — вибір Lucia для групових боїв.{% endcall %}
+    {% call skill('summon-resurrection', 'opt', 'Безодня', upto=5) %}Для Безодні й відкритого світу, де воскресіння перевертає бій.{% endcall %}
+  </ul>
+{% endcall %}
+
+{% call section('macro', 'Макрос', 'pve') %}
+  <p>Глобальна схема Lucia: лише вбудований макрос, два кроки й дві лінії, прочитані з її панелі (кадр 13:10). В AION 2 <strong>найвищий пріоритет у нижнього слота лінії</strong>; картки показують лінії згори вниз, як у грі.</p>
+  {{ hotbar([('1', ['lightning-strike-scattershot', 'debilitating-mark']), ('2', []), ('3', ['radiant-recovery']), ('4', ['bolt']), None, ('5', ['light-of-protection']), ('6', []), ('7', []), ('8', ['noble-aura']), None, ('Q', ['prayer-of-amplification', 'earth-punishment', 'chain-of-torment', 'condemnation']), ('E', ['light-of-regeneration', 'healing-light']), ('ЛКМ', ['earths-retribution']), ('T', ['divine-aura', 'judgment-thunder'])], macro=['Q', 'T']) }}
+
+  <h3>1. Лінії на панелі</h3>
+  <div class="hotlines">
+    {% call hotline('Q', 'Лінія Prayer', ['prayer-of-amplification', 'earth-punishment', 'chain-of-torment', 'condemnation']) %}Prayer, щойно готова, потім Earth Punishment і Chain of Torment — так кожен Condemnation критує й скидається. {{ s('light-of-protection') }} у лінію не став: це перемикач, і кожне друге натискання його вимкне.{% endcall %}
+    {% call hotline('T', 'Лінія Divine Aura', ['divine-aura', 'judgment-thunder']) %}Аура, щойно готова, між нею — Judgment Thunder: після кожного Judgment Thunder Condemnation знову може критнути й скинутися.{% endcall %}
+  </div>
+  <p>Поза макросом — решта панелі:</p>
+  <div class="hotlines">
+    {% call hotline('1', 'Лінія дебафу', ['lightning-strike-scattershot', 'debilitating-mark']) %}Lightning Strike Scattershot по оглушеному босу, решту часу Debilitating Mark — тисни за відкатом.{% endcall %}
+    {% call hotline('E', 'Лінія хілу', ['light-of-regeneration', 'healing-light']) %}Light of Regeneration, щойно готовий, решту часу Healing Light (три заряди).{% endcall %}
+  </div>
+  <ul class="presslist">
+    <li><span class="press-how">Свої клавіші</span><span class="press-what"><span class="key">ЛКМ</span> {{ s('earths-retribution') }}, <span class="key">3</span> {{ s('radiant-recovery') }}, <span class="key">4</span> {{ s('bolt') }}, <span class="key">5</span> {{ s('light-of-protection') }} (перемикач — увімкни один раз), <span class="key">8</span> {{ s('noble-aura') }}.</span></li>
+  </ul>
+
+  <h3>2. Вбудований макрос</h3>
+  <p>На <span class="key">ПКМ</span>, кожен крок із затримкою <strong>10 мс</strong>:</p>
+  {{ macroseq([('Лінія Prayer', 'Prayer of Amplification'), ('Лінія Divine Aura', 'Divine Aura')]) }}
+
+  <h3>3. Клавіші</h3>
+  <ul class="presslist">
+    <li><span class="press-how">Тримай</span><span class="press-what">Макрос на <span class="key">ПКМ</span> разом з {{ s('earths-retribution') }} на <span class="key">ЛКМ</span> — базова атака, Judgment Thunder і Condemnation чергуються, поки послідовність не почнеться знову.</span></li>
+    <li><span class="press-how">Вручну</span><span class="press-what">Лінію дебафу за відкатом; лінію хілу й {{ s('radiant-recovery') }} тому, кого щойно вдарили; повністю заряджений {{ s('bolt') }}; {{ s('noble-aura') }} за відкатом.</span></li>
+  </ul>
+  <p class="note">Lucia каже, що сторонній макрос дає більше, але сама лишається на вбудованому.</p>
+
+  <h3>Інший варіант: макрос Whelps (глобал)</h3>
+  <p>Схема Whelps (відео від 5 жовтня, кадри 3:35 і 4:28): коли {{ s('condemnation') }} доходить до 12 і скидається при криті, макрос тричі тисне лінію Earth Punishment на кожне натискання лінії дебафу.</p>
+  {{ hotbar([('1', []), ('2', ['healing-light']), ('3', ['radiant-recovery']), ('4', ['bolt']), None, ('Z', []), ('X', []), ('C', ['noble-aura']), ('V', ['light-of-protection']), None, ('Q', ['debilitating-mark', 'divine-aura', 'light-of-regeneration', 'judgment-thunder']), ('E', ['lightning-strike-scattershot']), ('ЛКМ', ['earths-retribution']), ('—', ['earth-punishment', 'prayer-of-amplification', 'condemnation', 'chain-of-torment'])], macro=['—', 'Q']) }}
+  <div class="hotlines">
+    {% call hotline('—', 'Лінія Earth Punishment', ['earth-punishment', 'prayer-of-amplification', 'condemnation', 'chain-of-torment']) %}Earth Punishment і Prayer — щойно готові, щоб Condemnation завжди критував і скидався; Chain of Torment тримає мітку. У лінії нема клавіші — її тисне тільки макрос.{% endcall %}
+    {% call hotline('Q', 'Лінія дебафу', ['debilitating-mark', 'divine-aura', 'light-of-regeneration', 'judgment-thunder']) %}Дебаф, аура й лікування з часом — за відкатом; Judgment Thunder заповнює решту.{% endcall %}
+  </div>
+  {{ macroseq([('Лінія Earth Punishment', '10 мс'), ('Лінія Earth Punishment', '10 мс'), ('Лінія Earth Punishment', '10 мс'), ('Лінія дебафу', 'Q · 10 мс')]) }}
+  <ul class="presslist">
+    <li><span class="press-how">Тримай</span><span class="press-what">Макрос на <span class="key">ПКМ</span> і {{ s('earths-retribution') }} на <span class="key">ЛКМ</span>; повністю заряджай {{ s('bolt') }}, щойно він готовий.</span></li>
+    <li><span class="press-how">Вручну</span><span class="press-what">{{ s('healing-light') }} для невеликого лікування, {{ s('radiant-recovery') }} — для великого.</span></li>
+    <li><span class="press-how">Перевірка</span><span class="press-what">В аналізі бою Condemnation має влучати не рідше за Judgment Thunder. Якщо рідше — додай ще один крок лінії Earth Punishment: на спорядженні Whelps це 26 тис. DPS замість 22 тис.</span></li>
+  </ul>
+{% endcall %}
+
+{% call section('recap', 'Підсумок', 'pve') %}
+  <div class="callout accent"><ul>
+    <li><strong>Скіли:</strong> Condemnation, Radiant Recovery, Divine Aura, Bolt 16 → 20; Judgment Thunder, Lightning Strike Scattershot, Healing Light 16; решта 12–14.</li>
+    <li><strong>Стигми:</strong> Earth Punishment, Light of Protection, Prayer of Amplification (усі три до 20), Noble Aura; з Chanter міняй Light of Protection на Absolution.</li>
+    <li><strong>Гра:</strong> завдавай шкоди заради внеску; лікуй лише тих, кого щойно вдарили.</li>
+  </ul></div>
+{% endcall %}
+
+{% call section('recap-pvp', 'Підсумок', 'pvp') %}
+  <div class="callout accent"><ul>
+    <li><strong>Скіли:</strong> як у PvE; Chain of Torment і Debilitating Mark беруть спеціалізації на контроль, Earth's Retribution на 20 ігнорує блок і ухилення.</li>
+    <li><strong>Стигми:</strong> Prayer of Amplification, Light of Protection, Yustiel's Power, Voice of Doom; у груповому PvP Absolution замість Voice of Doom.</li>
+    <li><strong>Спорядження:</strong> рядки як у PvE; Critical Hit Resist і Front Attack Damage у Genus Insight, дошка Azphel.</li>
+  </ul></div>
+{% endcall %}
+
+
+
+{% call section('intro-lvl', 'Огляд', 'lvl') %}
+  <p>Cleric — хілер, але на прокачці грається як дальній дамагер: {{ s('chain-of-torment') }} мітить ціль, {{ s('condemnation') }} її карає, а пасивка {{ s('radiant-benediction') }} лікує тебе й групу з кожного удару. Лікуй лише тоді, коли треба.</p>
+  <div class="callout accent">
+    <h3>Прокачка одним реченням</h3>
+    <p>Тримай {{ s('earths-retribution') }} заради мани, спам лінію Chain вбудованим макросом і вкладай очки навичок в атаки, а не в лікування.</p>
+  </div>
+{% endcall %}
+
+{% call section('fight-lvl', t.lvl_combat, 'lvl') %}
+  <div class="callout"><ul>
+    <li><strong>Пачки:</strong> {{ s('chain-of-torment') }} (б'є до 4) → {{ s('condemnation') }} → {{ s('divine-aura') }} зі спеціалізацією на АоЕ → {{ s('judgment-thunder') }}.</li>
+    <li><strong>Елітки:</strong> {{ s('debilitating-mark') }} (знижує захист) → {{ s('chain-of-torment') }} → заряджений {{ s('bolt') }} → {{ s('condemnation') }}.</li>
+    <li><strong>Мана:</strong> режим із таргетом і вплітай {{ s('earths-retribution') }} — він відновлює MP з кожним кастом.</li>
+    <li><strong>Мало HP:</strong> {{ s('healing-light') }}, а {{ s('radiant-benediction') }} тікає, поки ти б'єш.</li>
+    <li><strong>Оглушені боси:</strong> {{ s('lightning-strike-scattershot') }} працює лише, поки ціль оглушена.</li>
+    <li><strong>Очки скілів:</strong> спершу атакувальні скіли, лікування потім; вільні очки — у {{ s('empyrean-lords-grace') }} і {{ s('earths-grace') }} (Whelps).</li>
+  </ul></div>
+{% endcall %}
+
+{% call section('macro-lvl', 'Макрос на прокачці', 'lvl') %}
+  <p>Стартове налаштування Grobs: одна лінія на кнопці й вбудований макрос з одного слота. В AION 2 <strong>найвищий пріоритет у нижнього слота лінії</strong> — картка показує лінію згори донизу, як у грі.</p>
+  <div class="hotlines">
+    {% call hotline('ПКМ', 'Лінія Chain', ['chain-of-torment', 'debilitating-mark', 'condemnation', 'judgment-thunder']) %}Chain of Torment іде першим, щоб Condemnation міг бити; Judgment Thunder без перезарядки й заповнює паузи.{% endcall %}
+  </div>
+  <p>Вбудований макрос (вікно скілів → Macro), затримка <strong>10 мс</strong>:</p>
+  {{ macroseq([('Лінія Chain', '10 мс')]) }}
+  <ul class="presslist">
+    <li><span class="press-how">Тримати</span><span class="press-what">{{ s('earths-retribution') }} на <span class="key">ЛКМ</span> разом із клавішею макросу.</span></li>
+    <li><span class="press-how">Вручну</span><span class="press-what">{{ s('bolt') }} (заряджуваний скіл — тримай поза макросом), лікування, стигми.</span></li>
+  </ul>
+  <p class="note">Старт Whelps з 4 рівня: дві лінії в макросі на ПКМ — одна з {{ s('condemnation') }} внизу, друга з {{ s('debilitating-mark') }}. Коли Condemnation дійде до 12 і почне скидатися при криті, переходь на його PvE-макрос (вкладка PvE).</p>
+{% endcall %}
+
+{% call section('stigmas-lvl', 'Стигми на прокачці', 'lvl') %}
+  <p>Стигми відкриваються на 22 рівні. Порядок Whelps за новими слотами: 22 — {{ s('earth-punishment') }} (внизу лінії Condemnation, щоб він завжди критував), 27 — {{ s('light-of-protection') }}, 32 — {{ s('noble-aura') }}, 37 — {{ s('prayer-of-amplification') }}.</p>
+  <ul class="skill-grid">
+    {% call skill('summon-resurrection', 'must', 'Рів. 1', upto=1) %}Спершу вистачить одного очка; рівень 5 пізніше скорочує час касту.{% endcall %}
+    {% call skill('noble-aura', 'must', 'Рів. 5', upto=5) %}Аура, що 5 хвилин б'ється поруч із тобою, — безкоштовна шкода.{% endcall %}
+    {% call skill('earth-punishment', 'must', 'Рів. 5', upto=5) %}Шкода з часом; рівень 5 змушує Condemnation критувати.{% endcall %}
+    {% call skill('benevolence', 'must', 'Рів. 5', upto=5) %}Лікування з часом на 20 с — живучість між пачками.{% endcall %}
+    {% call skill('absolution', 'opt', 'Рів. 5', upto=5) %}Велике лікування й зняття дебафів.{% endcall %}
+  </ul>
+{% endcall %}
+
+{# ============================ Sources ============================ #}
+<section class="sources" aria-labelledby="h-sources">
+  <h2 id="h-sources">{{ t.sources }}</h2>
+  <ul>
+    <li><a href="https://www.youtube.com/watch?v=7LjTwlZ4v_s" target="_blank" rel="noopener">Kaeria — PvE-гайд на Cleric (російською)</a> — режим PvE: рівні скілів і спеціалізації, стигми, пасивки, статі, Daevanion, аркани</li>
+    <li><a href="https://www.youtube.com/watch?v=HMod6Z4GrE0" target="_blank" rel="noopener">Grobs — AION 2 Macro Guide</a> — слайд зі стартовими макросами (лінія й макрос Cleric)</li>
+    <li><a href="https://mmo-codex.com/articles/aion-2-cleric-guide/" target="_blank" rel="noopener">MMO Codex — гайд по Cleric Aion 2</a> — порядок скілів і спеціалізації на прокачці, стигми на 22</li>
+    <li><a href="https://questlog.gg/aion-2/en/db/skills/cleric" target="_blank" rel="noopener">questlog.gg</a> — дані скілів із глобального клієнта</li>
+    <li><a href="https://www.youtube.com/watch?v=A3pZDSt4ceU" target="_blank" rel="noopener">aLuckyRO — AION 2 Latest Cleric PVE Build for Global</a> — ранні спеціалізації (Divine Aura для фарму й босів, Earth's Retribution для мани), заміни стигм для підземель, зв'язка Chain of Torment → Condemnation, пасивки на старт</li>
+    <li><a href="https://www.youtube.com/watch?v=KptUtnv35vk" target="_blank" rel="noopener">Lucia — Aion 2 Cleric Guide from a Worlds 1st Rank 1</a> — глобальні спеціалізації, рівні стигм, макрос із двох кроків, рядки спорядження, Genus Insight, крила; PvP-режим</li>
+    <li><a href="https://www.youtube.com/watch?v=3g1Wc_3_TSM" target="_blank" rel="noopener">Whelps — Cleric Starter Guide - Skills, Macro, Daevanion Board</a> — глобальний макрос із трьома кроками Earth Punishment і перевіркою за аналізом бою, спеціалізації, порядок стигм під час прокачки, заміни стигм, порядок на дошках</li>
+  </ul>
+  <p class="sources-all"><a href="{{ root }}{{ lang }}/sources/">{{ t.src_all }} →</a></p>
+</section>

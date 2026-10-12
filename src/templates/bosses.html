@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% from "tracker_parts.html" import notify_toggle with context %}
+{% block og %}bosses{% endblock %}
+{% block title %}{{ t.bs_title }} — {{ t.site_name }}{% endblock %}
+{% block desc %}{{ t.bs_desc }}{% endblock %}
+{% block body_class %}page-bosses{% endblock %}
+{% from "tabs.html" import page_tabs %}
+{% block main %}
+<main id="main">
+  <section class="page-hero has-art" style="--hero-art:url('{{ root }}assets/art/hero-bosses.webp');--hero-pos:50% 55%">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="{{ t.back_home }}"><a href="{{ root }}{{ lang }}/">{{ t.back_home }}</a><span aria-hidden="true">/</span><span>{{ t.nav_bosses }}</span></nav>
+      <h1>{{ t.bs_h1 }}</h1>
+      <p class="lead">{{ t.bs_lead }}</p>
+    </div>
+  </section>
+
+  <div class="wrap bs-page" data-lang="{{ lang }}" data-t-killed="{{ t.bs_killed_at }}" data-t-next="{{ t.bs_next }}" data-t-up="{{ t.bs_up }}" data-t-notify="{{ t.notify_boss }}">
+    {{ notify_toggle() }}
+    {#- One faction at a time (tabs); a #b-<id> link from search opens its tab. -#}
+    {% set tabs = [] %}{% for g in bosses.groups %}{% do tabs.append((g.id, g.faction[lang] ~ ' · ' ~ g.zone[lang])) %}{% endfor %}
+    {{ page_tabs(tabs, t.nav_bosses) }}
+    {% for g in bosses.groups %}
+    <section class="bs-group bs-{{ g.id }} tab-panel" data-tab-panel="{{ g.id }}" role="tabpanel" aria-labelledby="h-bs-{{ g.id }}"{% if not loop.first %} hidden{% endif %}>
+      <h2 id="h-bs-{{ g.id }}" class="bs-group-title"><span>{{ g.zone[lang] }}</span><small>{{ g.faction[lang] }}</small></h2>
+      <ul class="bs-list">
+        {% for b in g.bosses %}
+        <li class="bs-item" id="b-{{ b.id }}" data-id="{{ b.id }}"{% if b.respawn_min %} data-respawn="{{ b.respawn_min }}"{% endif %}>
+          <div class="bs-main">
+            <span class="bs-name">{{ b.name[lang] }}</span><span hidden class="bs-zone">{{ g.zone[lang] }}</span>
+            <span class="bs-meta">{% if b.get('area') and b.area.get(lang) %}{{ b.area[lang] }} · {% endif %}{% if b.level %}{{ t.bs_level }} {{ b.level }} · {% endif %}{{ t.bs_respawn }}: {% if b.respawn_min %}{% if b.respawn_min >= 60 %}{{ b.respawn_min // 60 }} {{ t.units[1] }}{% endif %}{% if b.respawn_min % 60 %}{% if b.respawn_min >= 60 %} {% endif %}{{ b.respawn_min % 60 }} {{ t.units[2] }}{% endif %}{% elif b.schedule %}{{ b.schedule }}{% else %}<i>{{ t.bs_tba }}</i>{% endif %}{% if b.kr %} · <span class="bs-kr">{{ t.bs_kr }}: {{ b.kr[lang] }}</span>{% endif %}</span>
+            <span class="bs-status" aria-live="polite"></span>
+          </div>
+          <div class="bs-ctrl">
+            <button type="button" class="btn btn-ghost btn-sm bs-bell" aria-pressed="true" title="{{ t.bs_bell }}" aria-label="{{ t.bs_bell }}: {{ b.name[lang] }}">
+              <svg class="on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg>
+              <svg class="off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.7 3A6 6 0 0 1 18 8a21 21 0 0 0 .6 5"/><path d="M17 17H3s3-2 3-9a4.7 4.7 0 0 1 .3-2"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/><path d="m2 2 20 20"/></svg>
+            </button>
+            <button type="button" class="btn btn-sm bs-kill">{{ t.bs_killed }}</button>
+            <button type="button" class="btn btn-ghost btn-sm bs-undo" hidden>{{ t.bs_undo }}</button>
+          </div>
+        </li>
+        {% endfor %}
+      </ul>
+    </section>
+    {% endfor %}
+    <p class="note">{{ t.bs_note }}</p>
+    <p class="note">{{ t.bs_later }}</p>
+  </div>
+</main>
+<script src="{{ root }}assets/js/bosses.js?v={{ ASSET_V }}" defer></script>
+{% endblock %}

@@ -1,0 +1,271 @@
+{
+  "_note": "Daevanion board presets per class. Keys are guide modes (lvl / pve / pvp). Per board (index in the class's board list, '*' = the rest; null = leave empty; \"_hide_empty\": true drops the boards the route doesn't touch): skills = skill slugs whose nodes to take, special = true takes every orange (grade 41) node, a list takes only the orange nodes with these stat ids (combatspeed, cooltimedecrease, amplifyalldamage, decreasedamage, amplifycriticaldamage, decreasecriticaldamage, additionalhitrate, additionalhitresistrate, pvpamplifydamage, pvpdecreasedamage). The path from Start is routed automatically (cheapest).",
+  "gladiator": {
+    "lvl": {
+      "0": {
+        "skills": [
+          "overhead-slam",
+          "rending-blow",
+          "ruinous-blow",
+          "keen-strike"
+        ]
+      },
+      "1": {
+        "skills": [
+          "overhead-slam",
+          "rending-blow",
+          "ruinous-blow",
+          "keen-strike"
+        ]
+      },
+      "*": null,
+      "_hide_empty": true
+    },
+    "pve": {
+      "4": null,
+      "*": {
+        "skills": [
+          "overhead-slam",
+          "rending-blow",
+          "ruinous-blow",
+          "attack-preparation"
+        ],
+        "special": true
+      }
+    },
+    "pvp": {
+      "4": {
+        "special": true
+      },
+      "*": {
+        "skills": [
+          "overhead-slam",
+          "mocking-blade",
+          "defiance",
+          "aerial-snare"
+        ],
+        "special": true
+      }
+    }
+  },
+  "templar": {
+    "pve": {
+      "4": null,
+      "*": {
+        "skills": [
+          "judgment",
+          "punishment",
+          "pummel",
+          "shield-smite",
+          "annihilate"
+        ],
+        "special": true
+      }
+    },
+    "pvp": {
+      "4": {
+        "special": true
+      },
+      "*": {
+        "skills": [
+          "judgment",
+          "punishment",
+          "pummel",
+          "shield-smite",
+          "annihilate"
+        ],
+        "special": true
+      }
+    }
+  },
+  "ranger": {
+    "pve": {
+      "4": null,
+      "*": {
+        "skills": [
+          "deadshot",
+          "snipe",
+          "gale-arrow",
+          "drill-dart",
+          "burst-arrow"
+        ],
+        "special": true
+      }
+    },
+    "pvp": {
+      "4": {
+        "special": true
+      },
+      "*": {
+        "skills": [
+          "deadshot",
+          "snare-shot",
+          "suppressing-arrow",
+          "marking-shot",
+          "defiance"
+        ],
+        "special": true
+      }
+    }
+  },
+  "assassin": {
+    "pve": {
+      "4": null,
+      "*": {
+        "skills": [
+          "heart-gore",
+          "insignia-explosion",
+          "quick-slice",
+          "ambush",
+          "storm-rampage"
+        ],
+        "special": true
+      }
+    },
+    "pvp": {
+      "4": {
+        "special": true
+      },
+      "*": {
+        "skills": [
+          "shadowstrike",
+          "flash-slice",
+          "defiance"
+        ],
+        "special": true
+      }
+    }
+  },
+  "chanter": {
+    "pve": {
+      "4": null,
+      "*": {
+        "skills": [
+          "dark-crush",
+          "onslaught",
+          "spinning-strike",
+          "incandescent-blow"
+        ],
+        "special": true
+      }
+    },
+    "pvp": {
+      "4": {
+        "special": true
+      },
+      "*": {
+        "skills": [
+          "impactful-crush",
+          "wave-blow",
+          "defiance"
+        ],
+        "special": true
+      }
+    }
+  },
+  "sorcerer": {
+    "pve": {
+      "4": null,
+      "*": {
+        "skills": [
+          "hellfire",
+          "firestorm",
+          "bittercold-wind",
+          "blaze",
+          "wish-of-concentration",
+          "robe-of-earth"
+        ],
+        "special": [
+          "combatspeed",
+          "cooltimedecrease",
+          "amplifyalldamage",
+          "amplifycriticaldamage"
+        ]
+      }
+    },
+    "pvp": {
+      "4": {
+        "special": true
+      },
+      "*": {
+        "skills": [
+          "frost",
+          "winters-shackles",
+          "firestorm"
+        ],
+        "special": true
+      }
+    }
+  },
+  "cleric": {
+    "pve": {
+      "4": null,
+      "*": {
+        "skills": [
+          "condemnation",
+          "divine-aura",
+          "bolt"
+        ],
+        "special": [
+          "combatspeed",
+          "cooltimedecrease",
+          "amplifyalldamage",
+          "amplifycriticaldamage",
+          "additionalhitrate",
+          "decreasedamage"
+        ]
+      }
+    },
+    "pvp": {
+      "4": {
+        "special": true
+      },
+      "*": {
+        "skills": [
+          "condemnation",
+          "judgment-thunder",
+          "radiant-recovery",
+          "chain-of-torment"
+        ],
+        "special": true
+      }
+    }
+  },
+  "elementalist": {
+    "pve": {
+      "4": null,
+      "*": {
+        "skills": [
+          "elemental-fusion",
+          "combustion",
+          "summon-fire-spirit",
+          "cold-shock",
+          "summon-water-spirit",
+          "mental-focus",
+          "spirit-strike"
+        ],
+        "special": [
+          "combatspeed",
+          "cooltimedecrease",
+          "amplifyalldamage",
+          "amplifycriticaldamage"
+        ]
+      }
+    },
+    "pvp": {
+      "4": {
+        "special": true
+      },
+      "*": {
+        "skills": [
+          "defiance",
+          "cold-shock",
+          "elemental-fusion",
+          "jointstrike-curse",
+          "combustion"
+        ],
+        "special": true
+      }
+    }
+  }
+}

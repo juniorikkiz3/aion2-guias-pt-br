@@ -1,0 +1,265 @@
+{% from "macros.html" import section, skill, core, loadout, passives, glance, hotline, macroseq, hotbar, dv_board with context %}
+
+{# ============================== PvE ============================== #}
+{% call glance('pve') %}
+  <h3>{{ t.core_skills }}</h3>
+  {{ core([('deadshot', '20'), ('gale-arrow', '20'), ('drill-dart', '16'), ('snipe', '16'), ('tempest-shot', '16')]) }}
+  <h3>{{ t.stigma_loadout }}</h3>
+  {{ loadout([('vaizels-authority', 20), ('bow-of-blessing', 10), ('supporting-fire', 10), ('griffon-arrow', 10)]) }}
+  <h3>{{ t.key_passives }}</h3>
+  {{ passives(['focused-eye', 'hunters-resolve', 'hunters-soul', 'concentrated-fire']) }}
+{% endcall %}
+
+{% call section('intro', 'Genel bakış', 'pve') %}
+  <p>Ranger, yaklaşık <strong>20 metreden</strong> — neredeyse tüm yeteneklerinin menzili — savaşan bir yay DPS'idir. Hasarı en üst düzeyde ama dayanıklılığı ve faydası düşük, bu yüzden konumlanma her şeydir.</p>
+  <div class="callout accent">
+    <h3>Tek cümlede build</h3>
+    <p>Bufflan, hedefte {{ s('marking-shot') }}'u (Precision: +300 Critical Hit ve +%35 {{ s('deadshot', False) }} hasarı) tut ve üç tuşu basılı tut: {{ s('snipe') }}, makro ve şarjlı {{ s('deadshot') }}.</p>
+  </div>
+  <p class="note">Bu rehber Whelps'i — Kore sunucularında 1M CP Ranger main, global testi de oynadı — ve onun questlog'daki Season 1 endgame PvE buildini izliyor.</p>
+{% endcall %}
+
+{% call section('global', 'Global Season 1: neler değişiyor', 'pve pvp') %}
+  <p>Global sunucular <strong>5 Ekim 2026</strong>'da açılıyor (Founder erken erişimi 30 Eylül'den itibaren). Bunun Ranger için anlamı:</p>
+  <div class="callout">
+    <ul>
+      <li><strong>37. seviyede dört stigma.</strong> Global test 37'de durdu; 45'te beşinci bir slot muhtemel ama doğrulanmadı — gelirse {{ s('explosive-arrow') }}'a gider.</li>
+      <li><strong>Yalnızca birkaç yetenek 20'ye ulaşır.</strong> Yetenekler puanlarla 10'da sınırlı; Daevanion 4, yüzükler 2 ve arcana 4'e kadar ekler. Season 1'de Deadshot ve Gale Arrow'u 20'de planla, arcana iyi çevirirse bir üçüncüsünü de.</li>
+      <li><strong>Accuracy sınırı bilinmiyor.</strong> Kore'de Ludra için yaklaşık 1.300'dü; global sayılar çıkışta gelecek.</li>
+      <li data-only="pvp"><strong>PvP:</strong> herkes aynı sınırlı ekipmanla başlar ve henüz bir meta oluşmadı.</li>
+    </ul>
+  </div>
+{% endcall %}
+
+{% call section('skills', 'Yetenekler', 'pve') %}
+  <p>Uzmanlık slotları <strong>8</strong>, <strong>12</strong> ve <strong>20</strong>'de açılır (16 yeni bir seçenek ekler ama slot eklemez) — bu seviyelerin her biri bir güç sıçraması. Önce aktifleri, sonra pasifleri geliştir.</p>
+  <ul class="skill-grid">
+    {% call skill('deadshot', 'must', '20', [1, 2, 4]) %}Şarjlı bomba — her zaman tam şarjlı, her zaman Precision altında. 20'den önce ilk ikisini al; şarj ederken hareket etmen gerekmiyorsa hareket seçimini +%50 hasar seçimiyle değiştir. Fubgun (global) bunun yerine en büyük kritikleri hedefliyor: 16'da Skill Speed ve Ignore Block and Evasion, 20'de hasar seçimi; hareket yalnızca dövüş gerektirdiğinde.{% endcall %}
+    {% call skill('gale-arrow', 'must', '20', [2, 3, 4]) %}Combat Speed ve hasar buffı. 20'den önce Combat Speed seçimini ve −10 sn bekleme süresini al (16'dan önce: +5 sn süre) — Fubgun üçüncü slota kadar hareketi almıyor, çünkü onsuz buff sürekli açık kalıyor.{% endcall %}
+    {% call skill('drill-dart', 'must', '16', [4, 2]) %}En az 16. Dayanıklılık gerektiren bir boss için Skill Speed yerine HP emmeyi al.{% endcall %}
+    {% call skill('snipe', 'must', '16', [3, 4]) %}Temel saldırı: Deadshot'ı kısaltır ve Tempest Arrow zincirini ekler. 20'de Multi-Hit ekle.{% endcall %}
+    {% call skill('tempest-shot', 'must', '16', [2, 4]) %}En çok hasar katkısı yapanlardan, ama 16 yeterli — nasılsa kritik sınırında olacaksın. PvP oyuncuları geri itme için 20'ye çıkarıyor.{% endcall %}
+    {% call skill('snare-shot', 'opt', '12', [1, 2]) %}12, Daevanion panosundan neredeyse bedava gelir.{% endcall %}
+    {% call skill('marking-shot', 'opt', '12', [0, 2]) %}+%5 Perfect Chance, +5 sn süre.{% endcall %}
+    {% call skill('burst-arrow', 'opt', '12', [1, 3], then=[4]) %}Kendi %50'sinin üstüne +%50 Multi-Hit, böylece her vuruş Multi-Hit olur (Moxsy), ve tek hedefe +%20. 20'de bekleme süresi sıfırlama şansını ekle.{% endcall %}
+    {% call skill('explosion-trap', 'opt', '12', [0, 2]) %}Yalnızca çöp mobları bir araya çekmek için (örn. Transcendence koşuları).{% endcall %}
+    {% call skill('suppressing-arrow', 'opt', '12', [0, 2]) %}Yalnızca sersemletmesi için — seviye atlarken iyi, endgame PvE'de kullanılmaz.{% endcall %}
+    {% call skill('defiance', 'opt', '12', [2, 1]) %}16'da: üçüncü ve beşinci seçimler.{% endcall %}
+    {% call skill('arrow-scattershot', 'opt', 'erken 12', [2, 3]) %}Yalnızca Stagger'daki bosslarda kullanılabilir. Whelps geliştirmiyor: endgame rotasyonunda diğer yetenekler daha fazlasını yapıyor. aLuckyRO ve LordRobson stagger penceresinde Multi-Hit için ilk gün 12'ye çıkarıyor — puanlar ucuzken iyi, sonra ilk çıkarılacak şey.{% endcall %}
+  </ul>
+{% endcall %}
+
+{% call section('passives', 'Pasifler', 'pve') %}
+  <p>Gerçekten önemli olanlar yalnızca {{ s('focused-eye') }} (hasar artışı) ve {{ s('hunters-resolve') }} (kritik hasar); {{ s('hunters-soul') }} üçüncü.</p>
+  <div class="callout"><ul>
+    <li>Sonra saldırı pasifleri: {{ s('concentrated-fire') }}, {{ s('rooting-eye') }}, {{ s('melee-fire') }}.</li>
+    <li>Sonra {{ s('vigilant-eye') }} (Max HP) ve {{ s('revitalization-contract') }} (%10 HP'de iyileşme).</li>
+    <li>{{ s('unyielding-resolve') }} ve {{ s('wind-vigor') }} neredeyse işe yaramaz — artan puanlarla geliştir.</li>
+  </ul></div>
+{% endcall %}
+
+{% call section('gear', 'Ekipman ve statlar', 'pve') %}
+  <p>Ekipman basit: en yüksek item level'a git. Endgame, üretilmiş silah, koruma ve aksesuarlar, Ludra bilezikleri ve zindan zırhı demek.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Slot</th><th>Şart soul bind'lar</th></tr></thead>
+    <tbody>
+      <tr><td>Silah, koruma</td><td>Combat Speed, Weapon Damage Boost, Damage Boost, Might (+ üretilmişse Multi-Hit)</td></tr>
+      <tr><td>Kask, pelerin</td><td>Double Chance, Attack Increase</td></tr>
+      <tr><td>Omuzluk</td><td>Double Chance, Critical Damage Boost</td></tr>
+      <tr><td>Göğüslük</td><td>Damage Boost</td></tr>
+      <tr><td>Dizlik</td><td>Attack Increase, Damage Tolerance</td></tr>
+      <tr><td>Eldiven / bot</td><td>Combat Speed / Move Speed</td></tr>
+      <tr><td>Küpeler / kolye</td><td>Move Speed + Might / Combat Speed + Might</td></tr>
+      <tr><td>Yüzükler</td><td>{{ s('deadshot') }} ve {{ s('gale-arrow') }} seviyeleri (sonra Drill Dart veya Snipe); yoksa Might</td></tr>
+    </tbody>
+  </table></div>
+  <div class="callout"><ul>
+    <li><strong>Accuracy ikinci stat.</strong> Parry'lenen vuruşlar hasarlarının yarısından fazlasını kaybeder ve Ranger her zaman arkadan saldıramaz. ~1.100–1.200 hedefle (destekler +100 ekler).</li>
+    <li>Kalan slotlar: Attack, Critical Hit veya Focused Eye — ilk hangisini çevirdiysen onu tut. Ranger için Critical Hit'i sınıra çıkarmak daha kolay (Marking Shot'tan +300).</li>
+    <li><strong>Manastone'lar:</strong> Season 1 için tek bir sarı Attack satırı yeterli; ön/arka saldırı setlerinin peşine düşme.</li>
+    <li>Soul bind'ları yalnızca şart olanlardan birine zaten sahip zırhta çevir.</li>
+    <li><strong>Yay ve guard her zaman +10</strong>, her parçada temel manastone'lar (N → Manastones) — ucuz ham statlar (Fubgun).</li>
+  </ul></div>
+{% endcall %}
+
+{% call section('arcana', 'Arcana', 'pve') %}
+  <p>Arcana, yeteneklerin 16'yı geçme yolu. Hedef <strong>{{ s('deadshot') }} ve {{ s('gale-arrow') }}'da +4</strong>; {{ s('snipe') }}'da +4 çevirmesi sana 20'de üçüncü bir yetenek verir.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Kart</th><th>Tür</th><th>Neyi çevirmeli</th></tr></thead>
+    <tbody>
+      <tr><td>Grail</td><td>Vigor</td><td>Deadshot, Gale Arrow (joker: her şeyi çevirebilir)</td></tr>
+      <tr><td>Parchment</td><td>Vigor</td><td>Snipe, Tempest Shot (dolgu olarak Drill Dart, Burst Arrow)</td></tr>
+      <tr><td>Compass</td><td>Death veya Freedom</td><td>Deadshot, Gale Arrow</td></tr>
+      <tr><td>Bell</td><td>Destruction</td><td>Hunter's Resolve</td></tr>
+      <tr><td>Mirror</td><td>Wisdom</td><td>Focused Eye</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">Arcana Transcendence 4. aşamadan gelir ve tamamen şansa bağlı — kafana takma; sistem muhtemelen Season 2'de değişecek.</p>
+{% endcall %}
+
+{% call section('daevanion', 'Daevanion panoları', 'pve pvp') %}
+  <p>Sonunda neredeyse her panoyu dolduracaksın, o yüzden fazla planlama. Her mavi düğüm yeteneğine <strong>+1 seviye</strong> verir.</p>
+  <div class="callout"><ul>
+    <li data-only="pve"><strong>1.</strong> Aktifleri 12'ye çıkaran mavi düğümler (ikinci uzmanlıklarını açar): {{ s('deadshot') }}, {{ s('snipe') }}, {{ s('gale-arrow') }}, {{ s('drill-dart') }}, {{ s('burst-arrow') }}.</li>
+    <li data-only="pve"><strong>2.</strong> Pano köşelerindeki saldırı turuncu düğümleri — Combat Speed, bekleme süresi azaltma. En kısa yolu al ve yoldaki yetenekleri kap.</li>
+    <li data-only="pve"><strong>3.</strong> Attack, Critical Hit, {{ s('focused-eye') }} ve {{ s('hunters-resolve') }} düğümleri; sonra geri kalanı (savunma: Defense, HP, Crit Resist).</li>
+    <li data-only="pve">En sonda MP+50 düğümlerinin etrafından dolaş. Bir panoyu sıfırlamak ucuz.</li>
+    <li data-only="pvp"><strong>Öncelik:</strong> {{ s('deadshot') }}, {{ s('snare-shot') }}, {{ s('suppressing-arrow') }}, {{ s('marking-shot') }}, {{ s('defiance') }} için mavi düğümler.</li>
+    <li data-only="pve"><strong>Global'de Ariel yok:</strong> beş pano var ve 45. seviyedeki Azphel yalnızca PvP Damage Boost ve Tolerance veriyor — PvE'de ilk dördünü bitir.</li>
+    <li data-only="pvp"><strong>Azphel</strong> (45. seviye) tamamen PvP Damage Boost ve Tolerance — al, Triniel'i de daha erken.</li>
+  </ul></div>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Pano</th><th>Açılış</th><th>Turuncu düğümler</th></tr></thead>
+    <tbody>
+      <tr><td>Nezekan</td><td>Sv 12</td><td>Combat Speed, Cooldown Reduction</td></tr>
+      <tr><td>Zikel</td><td>Sv 20</td><td>Damage Boost, Damage Tolerance</td></tr>
+      <tr><td>Vaizel</td><td>Sv 30</td><td>Critical Damage Boost ve Tolerance</td></tr>
+      <tr><td>Triniel</td><td>Sv 40</td><td>Multi-Hit Chance ve Resist</td></tr>
+      <tr><td>Azphel</td><td>Sv 45</td><td>PvP Damage Boost ve Tolerance — yetenek düğümü yok</td></tr>
+    </tbody>
+  </table></div>
+  <h3>Panolardaki rota</h3>
+  <p>Oyun verilerinden gerçek global panolar. Altın renk, Start'tan bu rehberin aldığı düğümlere — öncelikli yeteneklerin mavi düğümleri ve turuncu düğümler — giden en ucuz yolu gösterir; ne verdiğini görmek için herhangi bir düğümün üzerine gel.</p>
+  <div data-only="pve">{{ dv_board('pve') }}</div>
+  <div data-only="pvp">{{ dv_board('pvp') }}</div>
+  <p class="note">Panolar ve maliyetler global istemci verilerinden (questlog.gg) geliyor; yol videodan alınmadı, hesaplandı. Stat değerleri çıkışta hâlâ değişebilir — tam bir rotaya girmeden önce oyundaki panoyu kontrol et.</p>
+{% endcall %}
+
+{% call section('stigmas', 'Stigmalar', 'pve') %}
+  <p>Her eşiğe ulaşmak için önce eşit geliştir — 5 / 5 / 5, sonra 10. <strong>Vaizel's Authority 20</strong> için puanın olunca sıfırla ve önce onu oraya koy: Ranger o zaman oturur. Sonra sırayla Bow of Blessing, Supporting Fire ve Griffon Arrow 20'ye.</p>
+  <p class="note">Fubgun (global): 15 / 10 / 10 / 5 ile başla (Vaizel's Authority, Bow of Blessing, Supporting Fire, Explosive Arrow); Vaizel's Authority 20'den sonra sıradaki puanları Bow of Blessing 15'e koyuyor. Vaizel's Authority 20 ancak yeterli Critical Hit ile işe yarar — puanları koymadan önce antrenman mankeninde dene.</p>
+  <ul class="skill-grid">
+    {% call skill('vaizels-authority', 'must', 'Sv 20', upto=20) %}Focused Eye ve Hunter's Soul ×1,5; 20'de her kritiğin <em>tüm</em> bekleme sürelerini 1 sn kısaltma şansı %50 — devasa bir DPS sıçraması.{% endcall %}
+    {% call skill('bow-of-blessing', 'must', 'Sv 10 → 20', upto=20) %}Multi-Hit, kritikten Attack, Critical Damage ve Double Chance.{% endcall %}
+    {% call skill('supporting-fire', 'must', 'Sv 10 → 20', upto=20) %}Yanında ateş eden bir küre; bekleme süresi Vaizel's ile aynı, böylece bir düğmeyi paylaşabilirler.{% endcall %}
+    {% call skill('griffon-arrow', 'must', 'Sv 10 → 20', upto=20) %}Crimson Flames DoT; makro satırını açar.{% endcall %}
+    {% call skill('explosive-arrow', 'opt', 'alt. · 4. slot', upto=10) %}Griffon Arrow'a eşit bir alternatif: LordRobson hasarlarını yaklaşık aynı görüyor, aLuckyRO da ilk gün Griffon yerine Explosive Arrow'u 5'te (−15 sn bekleme süresi) kullanıyor. Moxsy'nin seviye atlama setinde de var. Fubgun: Griffon Arrow 15'e ulaşana kadar Explosive Arrow daha güçlü, bu da global'de uzun sürüyor. 45'te beşinci slot açılırsa ikisini de al.{% endcall %}
+    {% call skill('arrow-storm', 'opt', 'seviye', upto=5) %}Seviye atlarken gruplar için alan hasarı.{% endcall %}
+  </ul>
+{% endcall %}
+
+{% call section('macro', 'Rotasyon ve makro', 'pve') %}
+  <p>AION 2'de iki ayrı araç var ve build ikisini de kullanıyor:</p>
+  <ul>
+    <li><strong>Hızlı erişim satırı</strong> — <em>tek</em> bir hızlı erişim düğmesine üst üste dizilmiş birkaç yetenek. Basınca hazır olan en yüksek öncelikli yeteneği kullanır ve AION 2'de <strong>en alttaki slot en yüksek önceliğe sahiptir</strong>. Kartlar her satırı oyundaki gibi yukarıdan aşağıya gösterir.</li>
+    <li><strong>Oyun içi makro</strong> — tuşunu basılı tuttuğun sürece hızlı erişim satırlarına sırayla basar ve animasyon kuyruklarını iptal eder. Bekleme süresindeki yetenekler atlanır.</li>
+  </ul>
+
+  <h3>1. Hızlı erişim satırları</h3>
+  <p>Yalnızca bu iki satır önemli; herhangi bir hızlı erişim slotunda durabilirler.</p>
+  <div class="hotlines">
+    {% call hotline('1', 'Griffon satırı', ['griffon-arrow', 'snare-shot', 'burst-arrow']) %}Snare Shot hedefi yavaşlatır, böylece Burst Arrow vurabilir.{% endcall %}
+    {% call hotline('2', 'Gale satırı', ['gale-arrow', 'drill-dart', 'tempest-shot']) %}Tempest Shot her boşluğu doldurur.{% endcall %}
+  </div>
+
+  <h3>2. Oyun içi makro</h3>
+  <p>Yetenek penceresi → <strong>Macro</strong>: Griffon satırını, sonra Gale satırını ekle, her biri <strong>10 ms</strong> (bazı oyuncular 10 ile 20 ms arasında ideal bir nokta buluyor — test et). Makroyu Settings → Key Settings → General → Macro'da <span class="key">RMB</span>'ye ata.</p>
+  {{ macroseq([('Griffon satırı', '1 · 10 ms'), ('Gale satırı', '2 · 10 ms')]) }}
+  <div class="callout"><ul>
+    <li><strong>AION 2 kontrol modunu</strong> kullan — oyun içi makro AION 1 modunda kısıtlı.</li>
+    <li>Savaş kontrol ayarlarında <strong>skill queue'yu aç</strong>.</li>
+    <li>{{ s('deadshot') }}'a Key Settings → Quick Slot'ta ikinci bir tuş ver (yan fare tuşu).</li>
+  </ul></div>
+
+  <h3>3. Gerçekte neye basıyorsun</h3>
+  <ul class="presslist">
+    <li><span class="press-how">Açılış</span><span class="press-what">Bufflar elle — {{ s('bow-of-blessing') }}, {{ s('supporting-fire') }} + {{ s('vaizels-authority') }} (tek düğme, aynı bekleme süresi) — sonra {{ s('marking-shot') }} ve tam şarjlı bir {{ s('deadshot') }}.</span></li>
+    <li><span class="press-how">Basılı tut</span><span class="press-what"><span class="key">LMB</span>'de {{ s('snipe') }}, <span class="key">RMB</span>'de makro ve yan tuşta {{ s('deadshot') }} — üçü birden.</span></li>
+    <li><span class="press-how">Açık tut</span><span class="press-what">{{ s('marking-shot') }} — Precision ~3 sn'nin altına düşünce yeniden kullan (buff çubuğunu izle). Precision: +%5 Perfect Chance, +300 Critical Hit, +%35 Deadshot hasarı. 15 sn sürer — daha sık yenilemek DPS kaybıdır.</span></li>
+    <li><span class="press-how">Bekleme dolunca</span><span class="press-what">Bufflar yeniden.</span></li>
+  </ul>
+
+  <h3>Diğer seçenek: Fubgun'ın makrosu (global)</h3>
+  <p>Fubgun'ın çubuğu (9 Ekim videosu, 2:10 ve 3:00 kareleri): Burst Arrow Drill satırına geçiyor, {{ s('explosive-arrow') }} Griffon Arrow'un yerini alıyor ve bufflar kendin bastığın tek bir tuşta duruyor.</p>
+  {{ hotbar([('1', ['vaizels-authority', 'bow-of-blessing', 'supporting-fire']), ('2', ['marking-shot']), ('3', ['deadshot']), ('4', ['explosion-trap']), None, ('5', ['suppressing-arrow']), ('6', []), ('7', []), ('8', []), None, ('Q', ['gale-arrow', 'snare-shot', 'explosive-arrow']), ('E', []), ('LMB', ['snipe']), ('T', ['drill-dart', 'burst-arrow', 'tempest-shot'])], macro=['Q', 'T']) }}
+  <div class="hotlines">
+    {% call hotline('Q', 'Gale satırı', ['gale-arrow', 'snare-shot', 'explosive-arrow']) %}Gale Arrow bekleme süresi dolunca, yavaşlatma için Snare Shot, en üstte Explosive Arrow.{% endcall %}
+    {% call hotline('T', 'Drill satırı', ['drill-dart', 'burst-arrow', 'tempest-shot']) %}Önce Drill Dart, sonra Burst Arrow; boşlukları Tempest Shot doldurur.{% endcall %}
+  </div>
+  {{ macroseq([('Gale satırı', 'Q · 10 ms'), ('Drill satırı', 'T · 10 ms')]) }}
+  <ul class="presslist">
+    <li><span class="press-how">Basılı tut</span><span class="press-what"><span class="key">LMB</span>'de {{ s('snipe') }} ve <span class="key">RMB</span>'de makro birlikte, tüm dövüş boyunca. T tuşunun kendisine hiç basılmaz — onu yalnızca makro kullanır.</span></li>
+    <li><span class="press-how">Elle</span><span class="press-what"><span class="key">1</span>'deki buff satırı doğru anda, {{ s('marking-shot') }} 15 sn'de bir, {{ s('deadshot') }} bekleme süresi dolunca.</span></li>
+  </ul>
+  <p class="note">Açık dünya ve kolay zindanlar için tembel sürüm: Burst Arrow'u 1'deki buff satırının en alt slotuna koy ve bu satırı makroya ekle — bufflar kendiliğinden çalışır. Onlara kendin basmak daha fazla hasar demek ve raidlerde bu önemli.</p>
+{% endcall %}
+
+{% call section('recap', 'Özet', 'pve') %}
+  <div class="callout accent"><ul>
+    <li><strong>Yetenekler:</strong> Deadshot ve Gale Arrow 20; Drill Dart, Snipe, Tempest Shot 16; geri kalanı 12; Explosion Trap ve Suppressing Arrow yalnızca gerektiğinde (mobları toplamak, sersemletme) — endgame PvE'de atlayabilirsin; Arrow Scattershot hiç.</li>
+    <li><strong>Stigmalar:</strong> önce Vaizel's Authority 20, sonra Bow of Blessing, Supporting Fire, Griffon Arrow; 5. slot açılırsa Explosive Arrow.</li>
+    <li><strong>Pasifler:</strong> Focused Eye, Hunter's Resolve, sonra Hunter's Soul.</li>
+    <li><strong>Statlar:</strong> Accuracy sınıra kadar, sonra Attack / Critical Hit.</li>
+    <li><strong>Arcana:</strong> Deadshot ve Gale Arrow'da +4.</li>
+  </ul></div>
+{% endcall %}
+
+{# ============================ Leveling ============================ #}
+{% call section('fight-lvl', t.lvl_combat, 'lvl') %}
+  <p>Seviye atlama ve 45'teki ilk günler, Moxsy'nin Ranger rehberini izliyor (global, 5 Ekim); Kore ve Tayvan deneyimli bir Ranger olan JohnPal'ın yardımıyla hazırlandı.</p>
+  <div class="callout"><ul>
+    <li><strong>Gruplar:</strong> Ranger yeteneklerinin çoğu hedefin yalnızca 4 m çevresine vurur, bu yüzden mobları tek tek öldürme. Birkaçını {{ s('snipe') }} ile çek, sonra {{ s('marking-shot') }} ve {{ s('explosion-trap') }} ile topla, sonra makro.</li>
+    <li><strong>Elitler:</strong> önce {{ s('marking-shot') }} — Precision tüm dövüş boyunca kalır — sonra makro ve en kalın hedefe tam şarjlı {{ s('deadshot') }}. Bir elit varken Deadshot'ı çöp moblara harcama.</li>
+    <li><strong>Stagger:</strong> boss sersemlemeye yakınken {{ s('suppressing-arrow') }}. {{ s('arrow-scattershot') }}'u atla: stagger'daki boss'a basılı tutmak normal rotasyondan zayıf.</li>
+    <li><strong>Mana:</strong> {{ s('snipe') }} MP yeniler — sürekli ör.</li>
+  </ul></div>
+{% endcall %}
+
+{% call section('skills-lvl', 'Önce neyi yükseltmeli', 'lvl') %}
+  <ul class="skill-grid">
+    {% call skill('snipe', 'must', '8 → 12', [0, 3]) %}Temel saldırın: 8'de +%20 MP yenileme, 12'de isabet başına Deadshot'a −1 sn bekleme süresi. Tempest Shot ile birlikte yükselt.{% endcall %}
+    {% call skill('tempest-shot', 'must', '12', [1, 2]) %}Erken hasar: +%10 yetenek Critical Hit ve tek hedefe +%12. Snipe ile birlikte yükselt.{% endcall %}
+    {% call skill('deadshot', 'must', '12 → 16', [1, 2]) %}Her fırsatta yükselt — mobil seçim ve +%30 Skill Speed büyük bir hasar sıçraması. Şarjlı bir yetenek: elle kullan, makro yalnızca ilk şarjı atar.{% endcall %}
+    {% call skill('gale-arrow', 'must', '12', [2, 3]) %}Mobil ve Combat Speed'i artıran seçim — hız Ranger'ın ana statı.{% endcall %}
+    {% call skill('drill-dart', 'must', '12', [3, 2]) %}Sert vurur, kritikte MP yeniler, kanatır ve iyileştirir, kısa bekleme süresinde. Garantili Multi-Hit ve isabet edince +%20 Skill Speed.{% endcall %}
+    {% call skill('burst-arrow', 'must', '12', [1, 2]) %}Büyük vuruş: kendi %50'sinin üstüne +%50 Multi-Hit ile her zaman Multi-Hit olur; mobil; yavaşlatır ve köklendirir.{% endcall %}
+  </ul>
+  <div class="callout"><ul>
+    <li><strong>Sıra:</strong> Snipe ve Tempest Shot eşit, sonra açıldıkça Drill Dart, Gale Arrow ve Burst Arrow; Deadshot ise her seviye açıldığında.</li>
+    <li><strong>Pasifler</strong> yeteneklerden sonra: önce {{ s('focused-eye') }} ve {{ s('hunters-resolve') }}, sonra {{ s('hunters-soul') }}, {{ s('rooting-eye') }} ve {{ s('concentrated-fire') }} — son ikisi yavaşlatmaların, köklendirmelerin ve zamanla hasarının gücüyle çalışır.</li>
+    <li><strong>Stigmalar:</strong> {{ s('vaizels-authority') }}, {{ s('bow-of-blessing') }}, {{ s('supporting-fire') }} ve {{ s('explosive-arrow') }} eşit olarak 5'e. 45'ten sonra sıfırlama ücretsiz: 20'ye ulaşana kadar her şeyi Vaizel's Authority'ye koy — Ranger'ın en büyük güç sıçraması.</li>
+    <li><strong>Daevanion:</strong> önce büyük hasar yeteneklerinin düğümleri, sonra diğer yetenekler, sonra pasifler; Critical Hit Resist düğümlerini atla.</li>
+  </ul></div>
+  <p>Adım adım: <a href="https://ranger.tgustafsson.se/#board=zikel-59" target="_blank" rel="noopener">JohnPal'ın Ranger seviye ve Daevanion planlayıcısı →</a> · <a href="https://docs.google.com/document/d/1evrt_6e6WSHRT1vMem2i3O7ZlfANJbqyZoSn66IFrBo/edit?tab=t.0" target="_blank" rel="noopener">Allyria'nın yazılı Ranger rehberi →</a></p>
+{% endcall %}
+
+{% call section('macro-lvl', 'Seviye makrosu', 'lvl') %}
+  <p>Moxsy'nin düzeni (kare 13:32): bufflar ve burst'ler makronun bastığı iki satırda, Snipe ve Deadshot farede.</p>
+  {{ hotbar([('1', ['suppressing-arrow']), ('2', ['explosion-trap']), ('3', ['marking-shot']), ('4', ['drill-dart', 'tempest-shot']), None, ('5', []), ('6', []), ('7', []), ('8', ['burst-arrow', 'vaizels-authority', 'bow-of-blessing', 'supporting-fire']), None, ('Q', ['gale-arrow', 'explosive-arrow', 'snare-shot']), ('E', ['arrow-scattershot']), ('LMB', ['snipe']), ('RMB', ['deadshot'])], macro=['Q', '4', '8']) }}
+  <div class="hotlines">
+    {% call hotline('8', 'Burst satırı', ['burst-arrow', 'vaizels-authority', 'bow-of-blessing', 'supporting-fire']) %}Önce Burst Arrow; o bekleme süresindeyken her buff hazır olduğu an çıkar.{% endcall %}
+    {% call hotline('Q', 'Gale satırı', ['gale-arrow', 'explosive-arrow', 'snare-shot']) %}Gale Arrow, Explosive Arrow ve Burst Arrow'un ihtiyaç duyduğu yavaşlatma için Snare Shot.{% endcall %}
+    {% call hotline('4', 'Drill satırı', ['drill-dart', 'tempest-shot']) %}Bekleme süresi dolunca Drill Dart, boşlukları Tempest Shot doldurur.{% endcall %}
+  </div>
+  <p>Oyun içi makro, her adım <strong>10 ms</strong> gecikmeyle:</p>
+  {{ macroseq([('Gale satırı', 'Q'), ('Drill satırı', '4'), ('Burst satırı', '8'), ('Drill satırı', '4')]) }}
+  <p class="note">İkinci Drill Dart adımı şimdilik ek bir şey vermiyor — Moxsy'nin testinde hasar aynıydı — ama stigmalar 15'e ulaşınca işe yarar. {{ s('snipe') }}'u makroyla birlikte LMB'de basılı tut; {{ s('deadshot') }}'ı elle şarj et.</p>
+  <h3>Diğer seçenek: Grobs'un erken satırları</h3>
+  <div class="hotlines">
+    {{ hotline('1', 'Satır 1', ['griffon-arrow', 'explosive-arrow'], []) }}
+    {{ hotline('2', 'Satır 2', ['drill-dart', 'gale-arrow', 'tempest-shot'], []) }}
+  </div>
+  <p>Oyun içi makro: Satır 1 → Satır 2, her biri 10 ms. Yeteneklerin 12–16'ya ulaşınca PvE sekmesindeki tam düzene geç.</p>
+{% endcall %}
+
+{# ============================ Sources ============================ #}
+<section class="sources" aria-labelledby="h-sources">
+  <h2 id="h-sources">{{ t.sources }}</h2>
+  <ul>
+    <li><a href="https://www.youtube.com/watch?v=wKOm6yKuu_I" target="_blank" rel="noopener">Whelps — AION 2 Ranger guide</a> ve <a href="https://questlog.gg/aion-2/en/character-builder/AelonCommandAndTheSharpMerchant?build-id=8655" target="_blank" rel="noopener">questlog'daki S1 endgame PvE buildi</a> — bu rehberin izlediği build (yetenekler, stigmalar, makro, ekipman, arcana)</li>
+    <li><a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ0C3iKFteGvIbgqNDnQq7bmwIaU23DvjbPa0HPSVAdOOiCeBkEq69Cn8jVMJhToJcztCRylYeTYfOk/pubhtml" target="_blank" rel="noopener">TitanTheF — AION 2 progression sheet</a> (Ranger sekmesi) ve <a href="https://aion2t.com/ru/simulator?job=4&amp;b=8QbCF0" target="_blank" rel="noopener">aion2t'deki 45+ buildi</a> — daha önceki global build (yetenek seviyeleri, seviye atlama)</li>
+    <li><a href="https://questlog.gg/aion-2/en/db/skills/ranger" target="_blank" rel="noopener">questlog.gg</a> — global istemciden yetenek ve stigma verileri</li>
+    <li><a href="https://7mmo.com/threads/guide-ranger-aion-2-build-pve-complet-sorts-stigmas-stuff.5771/" target="_blank" rel="noopener">7MMO</a> — tam Kore PvE buildi (yetenekler, stigmalar, makro)</li>
+    <li><a href="https://vortexgaming.io/postdetail/722757" target="_blank" rel="noopener">Vortex Gaming</a> — Kore yama sonrası stigma düzeni</li>
+    <li><a href="https://game8.co/games/Aion-2/archives/613085" target="_blank" rel="noopener">Game8</a> — yetenek açılma seviyeleri, rotasyon temelleri</li>
+    <li><a href="https://gamerstogether.cz/en/aion-2-ranger-build-guide/" target="_blank" rel="noopener">Gamers Together</a> — PvP yaklaşımı</li>
+    <li>DCInside AION 2 galerisi — güncel meta ve stigmalar üzerine Koreli oyuncu gönderileri (anonim yazarlar, tek bir bağlantı yok)</li>
+    <li><a href="https://nemobek.github.io/aion2-guide/" target="_blank" rel="noopener">nemobek.github.io/aion2-guide</a> (TitanTheF'in tablosu) — seviye rotası</li>
+    <li><a href="https://www.youtube.com/watch?v=HMod6Z4GrE0" target="_blank" rel="noopener">Grobs — AION 2 Macro Guide</a> — hızlı erişim satırları ve oyun içi makro nasıl çalışır</li>
+    <li><a href="https://www.youtube.com/watch?v=VsvTt5JkEzY" target="_blank" rel="noopener">Moxsy — ULTIMATE RANGER GUIDE! (Leveling, Macros, Rotation &amp; More!)</a> — Seviye atlama modu: mob toplama, önce neyi yükseltmeli, çubuğu ve makrosu (JohnPal ile)</li>
+    <li><a href="https://www.youtube.com/watch?v=UOuiJT9E1xA" target="_blank" rel="noopener">aLuckyRO — AION 2 Latest Ranger PVE Build for Global</a> — erken uzmanlıklar, Griffon yerine Explosive Arrow, Marking Shot → Gale Arrow → Deadshot kombosu</li>
+    <li><a href="https://www.youtube.com/watch?v=fGABxC3QKd8" target="_blank" rel="noopener">LordRobson — Aion 2 Ranger - Build, Skills, Stigmas and Macros</a> — stigmaları doğruluyor (dördüncü olarak Griffon Arrow veya Explosive Arrow), önce Deadshot 16'ya, Marking Shot süresi</li>
+    <li><a href="https://www.youtube.com/watch?v=GdAakaOGPLo" target="_blank" rel="noopener">Fubgun — Endgame Ranger Guide. Macro/Stigma skills/daevanion board</a> — onun kısayol çubuğuyla ikinci makro seçeneği, Griffon Arrow yerine Explosive Arrow, Deadshot ve Gale Arrow seçimleri, başlangıç stigma seviyeleri, +10 yay ve guard</li>
+  </ul>
+  <p class="sources-all"><a href="{{ root }}{{ lang }}/sources/">{{ t.src_all }} →</a></p>
+</section>

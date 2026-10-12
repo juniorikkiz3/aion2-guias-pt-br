@@ -1,0 +1,8 @@
+{
+  "engine": "Argos Translate en-pb 1.9 (offline)",
+  "locale": "pt-BR",
+  "strings": 4980,
+  "structural_fallbacks": 87,
+  "source": "https://github.com/Couga54/aion2-guides",
+  "note": "Tradução automática inicial; nomes do cliente Global preservados. Revisão editorial parcial."
+}

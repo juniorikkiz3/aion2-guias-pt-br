@@ -1,0 +1,2156 @@
+{
+  "noble-aura": {
+    "id": "17440000",
+    "category": "stigma",
+    "icon": "noble-aura.webp",
+    "cooldown": 60000,
+    "en": {
+      "name": "Noble Aura",
+      "desc": "Summons a Noble Aura near the caster that lasts for 300s. The Aura follows the caster and attacks their target together.\n\nDeals {se_dmg:1744000711:SkillUIMinDmgSum}-{se_dmg:1744000711:SkillUIMaxDmgSum} damage to a target within 20m.\nAura Attack Cooldown: 2s",
+      "specs": [
+        {
+          "level": 5,
+          "text": "+200 Aura Critical Hit"
+        },
+        {
+          "level": 10,
+          "text": "+20 damage to targets afflicted with Debilitating Mark"
+        },
+        {
+          "level": 15,
+          "text": "+30% damage to targets with Incapacitated Immunity"
+        },
+        {
+          "level": 20,
+          "text": "-1s Aura attack cooldown"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Благородная аура",
+      "desc": "Призывает рядом с собой ауру благородства, действующую в течение 300s Аура сопровождает персонажа и атакует цель вместе с ним.\n\nНаносит {se_dmg:1744000711:SkillUIMinDmgSum}-{se_dmg:1744000711:SkillUIMaxDmgSum} урона цели в радиусе 20 м.\nПерезарядка атаки ауры: 2s",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Крит. удар от ауры +200"
+        },
+        {
+          "level": 10,
+          "text": "Урон по цели с Клеймом бессилия +20%"
+        },
+        {
+          "level": 15,
+          "text": "Урон по цели с иммунитетом к обездвиживанию +30%"
+        },
+        {
+          "level": 20,
+          "text": "Перезарядка атаки ауры -1 сек."
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Noble Aura",
+      "desc": "Convoca um Noble Aura perto do castro que dura para 300s. The Aura follows the caster and attacks their target together.\n\nDeals {se_dmg:1744000711:SkillUIMinDmgSum}-{se_dmg:1744000711:SkillUIMaxDmgSum} Dano a um alvo dentro 20m.\nAura Attack Cooldown: 2s",
+      "specs": [
+        {
+          "level": 5,
+          "text": "+ 200 Aura Crítica Hit"
+        },
+        {
+          "level": 10,
+          "text": "Mais danos 20 aos alvos afetados com Debilitating Mark"
+        },
+        {
+          "level": 15,
+          "text": "Dano 30% em alvos com imunidade incapacitada."
+        },
+        {
+          "level": 20,
+          "text": "- 1s Aura ataque o recarga"
+        }
+      ]
+    }
+  },
+  "earths-retribution": {
+    "id": "17010000",
+    "category": "active",
+    "icon": "earths-retribution.webp",
+    "cooldown": 0,
+    "en": {
+      "name": "Earth's Retribution",
+      "desc": "Deals {se_dmg:1701000011:SkillUIMinDmgSum}-{se_dmg:1701000011:SkillUIMaxDmgSum} Earth damage to a target within 20m and restores 110 MP.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "+20% MP restored"
+        },
+        {
+          "level": 8,
+          "text": "+20% [Discharge] Chain Skill trigger chance"
+        },
+        {
+          "level": 8,
+          "text": "+50% Multi-Hit on hit"
+        },
+        {
+          "level": 12,
+          "text": "-7s [Bolt] cooldown on landing [Discharge]"
+        },
+        {
+          "level": 16,
+          "text": "Ignores Block and Evasion"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Возмездие земли",
+      "desc": "Наносит {se_dmg:1701000011:SkillUIMinDmgSum}-{se_dmg:1701000011:SkillUIMaxDmgSum} урона стихии земли цели в радиусе 20 м и восстанавливает 110 ОМ.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Восстановление ОМ +20%"
+        },
+        {
+          "level": 8,
+          "text": "Шанс активировать цепное умение [Электрический разряд] +20%"
+        },
+        {
+          "level": 8,
+          "text": "Шанс мультиудара +50% при попадании"
+        },
+        {
+          "level": 12,
+          "text": "Перезарядка [Раската грома] -7s при попадании [Электрическим разрядом]"
+        },
+        {
+          "level": 16,
+          "text": "Попадание несмотря на блок и уклонение"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Earth's Retribution",
+      "desc": "De acordo com {se_dmg:1701000011:SkillUIMinDmgSum} - {se_dmg:1701000011:SkillUIMaxDmgSum} Danos na Terra em um alvo dentro de 20m e restaura 110 MP.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "+ 20% MP restaurado."
+        },
+        {
+          "level": 8,
+          "text": "+ 20% [Descarga] Chain Skill gatilho chance"
+        },
+        {
+          "level": 8,
+          "text": "+ 50% Multi-Hit no hit"
+        },
+        {
+          "level": 12,
+          "text": "-7s [BoltResfriamento na aterrisagem"
+        },
+        {
+          "level": 16,
+          "text": "Ignore Block e Evasão"
+        }
+      ]
+    }
+  },
+  "judgment-thunder": {
+    "id": "17040000",
+    "category": "active",
+    "icon": "judgment-thunder.webp",
+    "cooldown": 0,
+    "en": {
+      "name": "Judgment Thunder",
+      "desc": "Selects a target within 20m and deals {se_dmg:1704000011:SkillUIMinDmgSum}-{se_dmg:1704000011:SkillUIMaxDmgSum} Wind damage to up to 4 enemies within 4m of the target.\n\n2 Stagger Gauge Damage",
+      "specs": [
+        {
+          "level": 8,
+          "text": "-20% MP consumed"
+        },
+        {
+          "level": 8,
+          "text": "Deals up to 12% more damage when less targets are hit"
+        },
+        {
+          "level": 8,
+          "text": "-10% enemy Combat Speed for 5s on landing [Divine Punishment]"
+        },
+        {
+          "level": 12,
+          "text": "10% chance to inflict Root for 2s on landing [Divine Punishment]"
+        },
+        {
+          "level": 16,
+          "text": "Activates [Divine Punishment] 1 extra time"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Карающая молния",
+      "desc": "Наносит {se_dmg:1704000011:SkillUIMinDmgSum}–{se_dmg:1704000011:SkillUIMaxDmgSum} урона стихии ветра врагам (макс. 4) в радиусе 4 м от выбранной цели в пределах 20 м.\n\nУрон шкале ошеломления: 2",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Затрата ОМ -20%"
+        },
+        {
+          "level": 8,
+          "text": "Чем меньше целей попадания, тем больше увеличение урона (макс. до 12%)"
+        },
+        {
+          "level": 8,
+          "text": "СКР боя -10% на 5s при попадании [Возмездия небес]"
+        },
+        {
+          "level": 12,
+          "text": "Шанс 10% взять в плен на 2s при попадании [Небесного приговора]"
+        },
+        {
+          "level": 16,
+          "text": "[Возмездие небес] срабатывает еще раз"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Judgment Thunder",
+      "desc": "Seleciona um alvo dentro do 20m e lida com danos de vento {se_dmg:1704000011:SkillUIMinDmgSum}-{se_dmg:1704000011:SkillUIMaxDmgSum} para inimigos 4 dentro do 4m do alvo. 2 Stagger Gauge Danos",
+      "specs": [
+        {
+          "level": 8,
+          "text": "- 20% MP consumido."
+        },
+        {
+          "level": 8,
+          "text": "Comprou até 12% mais danos quando menos alvos foram atingidos."
+        },
+        {
+          "level": 8,
+          "text": "-10% Velocidade de combate do inimigo para 5s Em aterrissagem [Divine Punishment]"
+        },
+        {
+          "level": 12,
+          "text": "10% A chance de infligir Root para 2s Em aterrissagem [Divine Punishment]"
+        },
+        {
+          "level": 16,
+          "text": "Ativar! Punishment] 1 Tempo extra."
+        }
+      ]
+    }
+  },
+  "bolt": {
+    "id": "17060000",
+    "category": "active",
+    "icon": "bolt.webp",
+    "cooldown": 45000,
+    "en": {
+      "name": "Bolt",
+      "desc": "Selects a target within 20m and deals {se_dmg:1706000011:SkillUIMinDmgSum}-{se_dmg:1706000311:SkillUIMaxDmgSum} Wind damage to up to 4 enemies within 4m of the target.\n\nMax 3 Charge Levels\n20-35 Stagger Gauge Damage",
+      "specs": [
+        {
+          "level": 8,
+          "text": "30% chance to inflict Stun for 3s when fully charged"
+        },
+        {
+          "level": 8,
+          "text": "+300 Skill Accuracy"
+        },
+        {
+          "level": 8,
+          "text": "+30% Skill Speed"
+        },
+        {
+          "level": 12,
+          "text": "Up to +20% damage when less targets hit"
+        },
+        {
+          "level": 16,
+          "text": "Critical Hit on hit"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Раскат грома",
+      "desc": "Наносит {se_dmg:1706000011:SkillUIMinDmgSum}–{se_dmg:1706000311:SkillUIMaxDmgSum} урона стихии воздуха врагам (макс. 4) в радиусе 4 м от выбранной цели в пределах 20 м.\n\nМакс. 3 стадии заряда\nУрон по шкале ошеломления — 20–35 ед.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Шанс 30% оглушить на 3s при макс. поражении"
+        },
+        {
+          "level": 8,
+          "text": "Меткость умений +300"
+        },
+        {
+          "level": 8,
+          "text": "СКР умений +30%"
+        },
+        {
+          "level": 12,
+          "text": "Чем меньше целей попадания, тем больше увеличение урона (макс. до 20%)"
+        },
+        {
+          "level": 16,
+          "text": "Гарантир. крит. удар при попадании"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Bolt",
+      "desc": "Seleciona um alvo dentro do 20m e lida com danos de vento {se_dmg:1706000011:SkillUIMinDmgSum}-{se_dmg:1706000311:SkillUIMaxDmgSum} para inimigos 4 dentro do 4m do alvo. Max 3 Nível de carga 20 - 35 Stagger Gauge Danos",
+      "specs": [
+        {
+          "level": 8,
+          "text": "30% chance de infligir Stun para 3s quando totalmente carregado"
+        },
+        {
+          "level": 8,
+          "text": "+ 300 Habilidade Precisão"
+        },
+        {
+          "level": 8,
+          "text": "+ 30% Velocidade de Habilidade"
+        },
+        {
+          "level": 12,
+          "text": "Até + 20% dano quando menos alvos atingem"
+        },
+        {
+          "level": 16,
+          "text": "Ataque crítico no sucesso."
+        }
+      ]
+    }
+  },
+  "chain-of-torment": {
+    "id": "17070000",
+    "category": "active",
+    "icon": "chain-of-torment.webp",
+    "cooldown": 20000,
+    "en": {
+      "name": "Chain of Torment",
+      "desc": "Selects a target within 20m and deals {se_dmg:1707000011:SkillUIMinDmgSum}-{se_dmg:1707000011:SkillUIMaxDmgSum} Earth damage to up to 4 enemies within 4m of the target. Reduces enemy PvE Damage Tolerance by 5%, PvP Damage Tolerance by 2.5%, and deals {se_abe_dmg:1707000013:1707000011:SkillUIDotMaxDmg:tick} Damage over Time every 1s for 10s.\n\n10 Stagger Gauge Damage",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Slows target for 5s"
+        },
+        {
+          "level": 8,
+          "text": "+3s Damage over Time"
+        },
+        {
+          "level": 8,
+          "text": "Has a 20% chance to inflict Knockdown on the target for 3s"
+        },
+        {
+          "level": 12,
+          "text": "+10% PvE Damage Tolerance reduction and +5% PvP Damage Tolerance reduction"
+        },
+        {
+          "level": 16,
+          "text": "Ignores Block and Evasion and reduces Damage over Time interval by 50%"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Цепь боли",
+      "desc": "Наносит {se_dmg:1707000011:SkillUIMinDmgSum}–{se_dmg:1707000011:SkillUIMaxDmgSum} урона стихии земли врагам (макс. 4) в радиусе 4 м от выбранной цели в пределах 20 м. Снижает стойкость врага к урону в PvE на 5%, стойкость к урону в PvP на 2.5% и наносит {se_abe_dmg:1707000013:1707000011:SkillUIDotMaxDmg:tick} ед. постоянного урона каждые 1s в течение 10s.\n\nУрон по шкале ошеломления — 10 ед.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Замедление цели на 5s"
+        },
+        {
+          "level": 8,
+          "text": "Постоянный урон +3 сек."
+        },
+        {
+          "level": 8,
+          "text": "Шанс 20% сбить цель с ног на 3s"
+        },
+        {
+          "level": 12,
+          "text": "Стойкость к урону в PvE доп. -10%, стойкость к урону в PvP доп. -5%"
+        },
+        {
+          "level": 16,
+          "text": "Игнорирует блок и УКЛ и сокращает интервал постоянного урона на 50%"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Chain of Torment",
+      "desc": "Seleciona um alvo dentro do 20m e lida com danos {se_dmg:1707000011:SkillUIMinDmgSum}-{se_dmg:1707000011:SkillUIMaxDmgSum} na Terra para até inimigos 4 dentro do 4m do alvo. Reduz a tolerância aos danos do inimigo PvE em 5%, PvP em 2.5%, e lida com danos do {se_abe_dmg:1707000013:1707000011:SkillUIDotMaxDmg:tick} ao longo do tempo cada 1s em 10s. 10 Danos no gauge do Stagger",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Atrasa o alvo para 5s."
+        },
+        {
+          "level": 8,
+          "text": "+ Dano 3s ao longo do tempo"
+        },
+        {
+          "level": 8,
+          "text": "Tem uma chance 20% de infligir Knockdown no alvo para 3s"
+        },
+        {
+          "level": 12,
+          "text": "+ 10% PvE Redução de tolerância a danos e + 5% PvP Redução de tolerância a danos"
+        },
+        {
+          "level": 16,
+          "text": "Ignora bloqueio e evacuação e reduz danos ao longo do intervalo de tempo por 50%"
+        }
+      ]
+    }
+  },
+  "debilitating-mark": {
+    "id": "17080000",
+    "category": "active",
+    "icon": "debilitating-mark.webp",
+    "cooldown": 10000,
+    "en": {
+      "name": "Debilitating Mark",
+      "desc": "Selects a target within 20m and deals {se_dmg:1708000011:SkillUIMinDmgSum}-{se_dmg:1708000011:SkillUIMaxDmgSum} Wind damage to up to 4 enemies within 4m of the target. Reduces enemy PvE Damage Boost by 5%, PvP Damage Boost by 2.5%, and deals {se_abe_dmg:1708000013:1708000011:SkillUIDotMaxDmg:tick} Damage over Time every 1s for 10s.\n\n10 Stagger Gauge Damage",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Removes MP Consumed and restores 150 MP"
+        },
+        {
+          "level": 8,
+          "text": "-15% target Defense for duration of Damage over Time"
+        },
+        {
+          "level": 8,
+          "text": "Has a 20% chance to inflict Stun on the target for 3s"
+        },
+        {
+          "level": 12,
+          "text": "+10% PvE Damage Boost reduction and +5% PvP Damage Boost reduction"
+        },
+        {
+          "level": 16,
+          "text": "Ignores Block and Evasion and reduces Damage over Time interval by 50%"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Клеймо бессилия",
+      "desc": "Наносит {se_dmg:1708000011:SkillUIMinDmgSum}–{se_dmg:1708000011:SkillUIMaxDmgSum} урона стихии воздуха врагам (макс. 4) в радиусе 4 м от выбранной цели в пределах 20 м. Снижает усиление урона врага в PvE на 5%, усиление урона в PvP на 2.5% и наносит {se_abe_dmg:1708000013:1708000011:SkillUIDotMaxDmg:tick} ед. постоянного урона каждые 1s в течение 10s.\n\nУрон по шкале ошеломления —10 ед.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Удаление затраты ОМ, восстановление 150 ОМ"
+        },
+        {
+          "level": 8,
+          "text": "ЗЩТ цели -15% под действием постоянного урона"
+        },
+        {
+          "level": 8,
+          "text": "Шанс 20% оглушить цель на 3s"
+        },
+        {
+          "level": 12,
+          "text": "Увеличение урона в PvE доп. -10%, увеличение урона в PvP доп. -5%"
+        },
+        {
+          "level": 16,
+          "text": "Игнорирует блок и УКЛ и сокращает интервал постоянного урона на 50%"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Debilitating Mark",
+      "desc": "Seleciona um alvo dentro do 20m e lida com danos de vento {se_dmg:1708000011:SkillUIMinDmgSum}-{se_dmg:1708000011:SkillUIMaxDmgSum} para inimigos 4 dentro do 4m do alvo. Reduz o aumento de danos do inimigo PvE em 5%, PvP em 2.5% e lida com danos do {se_abe_dmg:1708000013:1708000011:SkillUIDotMaxDmg:tick} ao longo do tempo a cada 1s em 10s. 10 Danos no gauge do Stagger",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Remove o MP consumado e restaura o 150 MP"
+        },
+        {
+          "level": 8,
+          "text": "- 15% alvo Defesa para a duração de dano contínuo"
+        },
+        {
+          "level": 8,
+          "text": "Tem uma chance 20% de infligir Stun no alvo para 3s"
+        },
+        {
+          "level": 12,
+          "text": "+ 10% PvE Danos Aumentam a redução e 5% PvP Danos Aumentam a redução"
+        },
+        {
+          "level": 16,
+          "text": "Ignora bloqueio e evacuação e reduz danos ao longo do intervalo de tempo por 50%"
+        }
+      ]
+    }
+  },
+  "light-of-regeneration": {
+    "id": "17090000",
+    "category": "active",
+    "icon": "light-of-regeneration.webp",
+    "cooldown": 30000,
+    "en": {
+      "name": "Light of Regeneration",
+      "desc": "Restores {se_abe_dmg:1709000011:1709000011:SkillUIHotMin:tick}-{se_abe_dmg:1709000011:1709000011:SkillUIHotMax:tick} HP every 2s for 30s to the caster and party members within 40m.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "+5% Defense while healing"
+        },
+        {
+          "level": 8,
+          "text": "+20% amount healed when HP is 50% or less"
+        },
+        {
+          "level": 8,
+          "text": "+5% Incoming Heal during healing"
+        },
+        {
+          "level": 12,
+          "text": "+5% Move Speed during healing"
+        },
+        {
+          "level": 16,
+          "text": "+5% PvE Damage Tolerance and +2.5% PvP Damage Tolerance during healing"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Целебный луч",
+      "desc": "В течение 30s восстанавливает по {se_abe_dmg:1709000011:1709000011:SkillUIHotMin:tick}-{se_abe_dmg:1709000011:1709000011:SkillUIHotMax:tick} ОЗ себе и участникам группы в радиусе 40 м с интервалом 2s.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "ЗЩТ +5% во время восстановления"
+        },
+        {
+          "level": 8,
+          "text": "Восстановление ОЗ +20% при ОЗ 50% или ниже"
+        },
+        {
+          "level": 8,
+          "text": "Получ. исцеление +5% во время восстановления"
+        },
+        {
+          "level": 12,
+          "text": "СКР движ. +5% во время восстановления"
+        },
+        {
+          "level": 16,
+          "text": "Стойкость к урону в PvE +5%, стойкость к урону в PvP +2.5% во время восстановления"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Light of Regeneration",
+      "desc": "Restaura {se_abe_dmg:1709000011:1709000011:SkillUIHotMin:tick} - {se_abe_dmg:1709000011:1709000011:SkillUIHotMax:tick} HP cada 2s para 30s para o elenco e membros do partido dentro 40m.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "+ 5% Defesa enquanto cura"
+        },
+        {
+          "level": 8,
+          "text": "+ 20% quantidade curada quando HP é 50% ou menos"
+        },
+        {
+          "level": 8,
+          "text": "+ 5% Chegando Cura durante a cura"
+        },
+        {
+          "level": 12,
+          "text": "+ 5% Move Speed durante a cura"
+        },
+        {
+          "level": 16,
+          "text": "+ 5% PvE Tolerância de danos e 2.5% PvP Tolerância de danos durante a cura"
+        }
+      ]
+    }
+  },
+  "healing-light": {
+    "id": "17100000",
+    "category": "active",
+    "icon": "healing-light.webp",
+    "cooldown": 6000,
+    "en": {
+      "name": "Healing Light",
+      "desc": "Restores 192-211 HP to the caster and the party member with the lowest HP within 40m.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "+2 consecutive uses"
+        },
+        {
+          "level": 8,
+          "text": "+20% amount healed when HP is 50% or less"
+        },
+        {
+          "level": 8,
+          "text": "50% chance to remove 1 debuff"
+        },
+        {
+          "level": 12,
+          "text": "+2% HP restored"
+        },
+        {
+          "level": 16,
+          "text": "-2s cooldown"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Целительный свет",
+      "desc": "Восст. 192-211 ОЗ себе и участнику группы с наименьшим показателем ОЗ в радиусе 40 м.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "+2 применения подряд"
+        },
+        {
+          "level": 8,
+          "text": "Восстановление ОЗ +20% при ОЗ 50% или ниже"
+        },
+        {
+          "level": 8,
+          "text": "Шанс 50% снять 1 эффект ослабления"
+        },
+        {
+          "level": 12,
+          "text": "Доп. восстановление 2% ОЗ"
+        },
+        {
+          "level": 16,
+          "text": "Перезарядка -2 сек."
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Healing Light",
+      "desc": "Restaura 192 - 211 HP para o lançador e o membro do partido com o HP mais baixo dentro de 40m.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "+ 2 usos consecutivos"
+        },
+        {
+          "level": 8,
+          "text": "+ 20% quantidade curada quando HP é 50% ou menos"
+        },
+        {
+          "level": 8,
+          "text": "50% chance de remover 1 debuff"
+        },
+        {
+          "level": 12,
+          "text": "+ 2% HP restaurado."
+        },
+        {
+          "level": 16,
+          "text": "- Arrefecer em 2s"
+        }
+      ]
+    }
+  },
+  "radiant-recovery": {
+    "id": "17120000",
+    "category": "active",
+    "icon": "radiant-recovery.webp",
+    "cooldown": 12000,
+    "en": {
+      "name": "Radiant Recovery",
+      "desc": "Restores 379-417 HP and removes 1 debuff for the caster and party members within 40m.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Removes up to 2 debuffs"
+        },
+        {
+          "level": 8,
+          "text": "+1 consecutive use"
+        },
+        {
+          "level": 8,
+          "text": "-3s cooldown"
+        },
+        {
+          "level": 12,
+          "text": "+10% Incoming Heal for 10s"
+        },
+        {
+          "level": 16,
+          "text": "+5% HP restored"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Свет исцеления",
+      "desc": "Восст. 379–417 ОЗ для персонажа и союзников в радиусе 40 м и отменяет 1 эффект ослабления.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Снимает до 2 эффектов ослабления"
+        },
+        {
+          "level": 8,
+          "text": "Непрерывное использование +1 раз"
+        },
+        {
+          "level": 8,
+          "text": "Перезарядка -3 сек."
+        },
+        {
+          "level": 12,
+          "text": "+10% к получ. исцелению на 10s"
+        },
+        {
+          "level": 16,
+          "text": "Доп. восст. 5% ОЗ"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Radiant Recovery",
+      "desc": "Restaura 379 - 417 HP e remove 1 debuff para o elenco e membros do partido dentro 40m.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Remove até 2 debuffs"
+        },
+        {
+          "level": 8,
+          "text": "+ 1 uso consecutivo"
+        },
+        {
+          "level": 8,
+          "text": "- Arrefecer em 3s"
+        },
+        {
+          "level": 12,
+          "text": "+ 10% chegando cura para 10s"
+        },
+        {
+          "level": 16,
+          "text": "+ 5% HP restaurado."
+        }
+      ]
+    }
+  },
+  "divine-aura": {
+    "id": "17150000",
+    "category": "active",
+    "icon": "divine-aura.webp",
+    "cooldown": 30000,
+    "en": {
+      "name": "Divine Aura",
+      "desc": "Summons a Divine Aura near the caster that lasts for 5s. The Aura is stationary and periodically deals {se_dmg:1715000211:SkillUIMaxDmg} Earth damage to a selected target within 20m.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "-40% Move Speed for 3s to up to 4 enemies within 4m of the Aura"
+        },
+        {
+          "level": 8,
+          "text": "Changes to AoE Skill"
+        },
+        {
+          "level": 8,
+          "text": "+50% [Divine Aura] attacking speed"
+        },
+        {
+          "level": 12,
+          "text": "+3s [Divine Aura] duration"
+        },
+        {
+          "level": 16,
+          "text": "-10s cooldown"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Священная аура",
+      "desc": "Призывает Священную ауру рядом с собой, действующую в течение 5 сек. Аура неподвижна и с определенным интервалом наносит {se_dmg:1715000211:SkillUIMaxDmg} урона стихии земли выбранной персонажем цели в радиусе 20 м.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "-40% к СКР движ. на 3s макс. 4 врагам в радиусе 4 м от Ауры"
+        },
+        {
+          "level": 8,
+          "text": "Смена на массовое умение"
+        },
+        {
+          "level": 8,
+          "text": "СКР выстрелов [Священной ауры] +50%"
+        },
+        {
+          "level": 12,
+          "text": "Длительность [Священной ауры] +3 сек."
+        },
+        {
+          "level": 16,
+          "text": "Перезарядка -10 сек."
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Divine Aura",
+      "desc": "Chama um Divine Aura perto do caster que dura para 5s. A Aura está parada e periodicamente causa danos na Terra {se_dmg:1715000211:SkillUIMaxDmg} em um alvo selecionado dentro do 20m.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "- 40% Mova velocidade para 3s até 4 inimigos dentro 4m da Aura"
+        },
+        {
+          "level": 8,
+          "text": "Mudanças para AoE Skill"
+        },
+        {
+          "level": 8,
+          "text": "+ 50% [Divine Aura ] velocidade de ataque"
+        },
+        {
+          "level": 12,
+          "text": "+ 3s [ Divine Aura ] duração"
+        },
+        {
+          "level": 16,
+          "text": "- Arrefecer em 10s"
+        }
+      ]
+    }
+  },
+  "benevolence": {
+    "id": "17160000",
+    "category": "stigma",
+    "icon": "benevolence.webp",
+    "cooldown": 90000,
+    "en": {
+      "name": "Benevolence",
+      "desc": "Grants Benevolence to the caster for 20s. Restores 90-100 HP every 2s to the caster and party members within 40m for the duration.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "+10s duration"
+        },
+        {
+          "level": 10,
+          "text": "Restores 200 Stamina every 5s for the duration"
+        },
+        {
+          "level": 15,
+          "text": "Restores 2% HP every 5s for the duration"
+        },
+        {
+          "level": 20,
+          "text": "Cleansing effect every 5s for the duration"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Целительная сила",
+      "desc": "На 20s получает эффект Целительная сила. Во время действия эффекта восстанавливает по 90-100 ОЗ себе и участникам группы в радиусе 40 м с интервалом 2s",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Длительность +10 сек."
+        },
+        {
+          "level": 10,
+          "text": "Восстановление 200 ОД с интервалом 5s во время действия эффекта"
+        },
+        {
+          "level": 15,
+          "text": "Восстановление 2% ОЗ с интервалом 5s во время действия эффекта"
+        },
+        {
+          "level": 20,
+          "text": "Эффект Очищения с интервалом 5s во время действия эффекта"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Benevolence",
+      "desc": "Concede Benevolence para o lançador para 20s. Restaura 90 - 100 HP a cada 2s para o elenco e membros do partido dentro 40m durante a duração.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "+ Duração 10s"
+        },
+        {
+          "level": 10,
+          "text": "Restaura a resistência 200 a cada 5s durante todo o tempo."
+        },
+        {
+          "level": 15,
+          "text": "Restaura 2% HP cada 5s para a duração."
+        },
+        {
+          "level": 20,
+          "text": "Efeito de limpeza a cada 5s para a duração."
+        }
+      ]
+    }
+  },
+  "root": {
+    "id": "17190000",
+    "category": "stigma",
+    "icon": "root.webp",
+    "cooldown": 60000,
+    "en": {
+      "name": "Root",
+      "desc": "Selects a target within 20m and deals {se_dmg:1719000011:SkillUIMinDmgSum}-{se_dmg:1719000011:SkillUIMaxDmgSum} Earth damage to up to 4 enemies within 4m of the target. Has a 75% chance to inflict Root for 10s.\n100% chance to inflict Root on NPC targets.\n\n15 Stagger Gauge Damage",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Changes to mobile skill"
+        },
+        {
+          "level": 10,
+          "text": "+2s Root duration"
+        },
+        {
+          "level": 15,
+          "text": "+25% Root chance"
+        },
+        {
+          "level": 20,
+          "text": "x2 Damage over Time on Root targets"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Плен",
+      "desc": "Наносит {se_dmg:1719000011:SkillUIMinDmgSum}–{se_dmg:1719000011:SkillUIMaxDmgSum} урона стихии земли врагам (макс. 4) в радиусе 4 м от выбранной цели в пределах 20 м. С шансом 75% берет врагов в плен на 10s.\nДля NPC плен срабатывает гарантированно.\n\nУрон по шкале ошеломления — 15 ед.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Замена на умение с возможностью перемещения"
+        },
+        {
+          "level": 10,
+          "text": "Длительность плена +2 сек."
+        },
+        {
+          "level": 15,
+          "text": "Шанс взять в плен +25%"
+        },
+        {
+          "level": 20,
+          "text": "Постоянный урон цели x2 при Плене"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Root",
+      "desc": "Seleciona um alvo dentro do 20m e lida com danos {se_dmg:1719000011:SkillUIMinDmgSum}-{se_dmg:1719000011:SkillUIMaxDmgSum} na Terra para até inimigos 4 dentro do 4m do alvo. Tem uma chance 75% de infligir Root para 10s. 100% chance de infligir Root em alvos da NPC. 15 Danos no gauge do Stagger",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Mudanças na habilidade móvel."
+        },
+        {
+          "level": 10,
+          "text": "+ 2s Root duração"
+        },
+        {
+          "level": 15,
+          "text": "+ 25% Root chance"
+        },
+        {
+          "level": 20,
+          "text": "x2 Dano contínuo. Root Alvos"
+        }
+      ]
+    }
+  },
+  "defiance": {
+    "id": "17240000",
+    "category": "active",
+    "icon": "defiance.webp",
+    "cooldown": 60000,
+    "en": {
+      "name": "Defiance",
+      "desc": "Removes Stun, Knockdown, Airborne, Grab, Frost, and Fear from the caster and grants Tenacity for 5s.\nTenacity: Grants Status Effect Immunity\n\nUnaffected by cooldown reduction effects.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Adds [Blessing of Regeneration] Chain Skill"
+        },
+        {
+          "level": 8,
+          "text": "Restores 1000 Stamina on using [Defiance]"
+        },
+        {
+          "level": 8,
+          "text": "Restores 10% HP on using [Defiance]"
+        },
+        {
+          "level": 12,
+          "text": "+2s Tenacity duration"
+        },
+        {
+          "level": 16,
+          "text": "+50% PvE Damage Tolerance and +25% PvP Damage Tolerance for Tenacity duration"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Снятие шока",
+      "desc": "Отменяет эффекты Оглушения, Сбивания с ног, Воздушные оковы, захват, Заморозку и Ужас на 5s активирует для персонажа Непреклонность.\nНепреклонность: иммунитет к негат. эффектам\n\nЭффекты снижения времени перезарядки не действуют.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Добавляет 2-ное комбо [Регенерация]"
+        },
+        {
+          "level": 8,
+          "text": "При использовании [Снятия шока] восстанавливает 1000 ОД"
+        },
+        {
+          "level": 8,
+          "text": "При использовании [Снятия шока] восстанавливает 10% ОЗ"
+        },
+        {
+          "level": 12,
+          "text": "Длительность Непреклонности +2 сек."
+        },
+        {
+          "level": 16,
+          "text": "Стойкость к урону в PvE +50% и стойкость к урону в PvP +25% во время действия Непреклонности"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Defiance",
+      "desc": "Remove Stun, Knockdown, Airborne, Grab, Frost e Medo do lançador e concede Tenacidade para 5s. Tenacidade: Efeito da Imunidade. Não afetado pelos efeitos de redução do recarga.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Adiciona a habilidade da corrente [Abençoamento da regeneração]"
+        },
+        {
+          "level": 8,
+          "text": "Restaura a resistência 1000 usando o Defiance"
+        },
+        {
+          "level": 8,
+          "text": "Restaura 10% HP usando [Defiance ]"
+        },
+        {
+          "level": 12,
+          "text": "+ 2s Duração da tenacidade"
+        },
+        {
+          "level": 16,
+          "text": "+ 50% PvE Tolerância de danos e 25% PvP Tolerância de danos por duração de tenacidade"
+        }
+      ]
+    }
+  },
+  "salvation": {
+    "id": "17270000",
+    "category": "stigma",
+    "icon": "salvation.webp",
+    "cooldown": 150000,
+    "en": {
+      "name": "Salvation",
+      "desc": "The caster is immune to damage and status effects for 3s.\n\nCannot block certain powerful attacks. Unaffected by cooldown increase effects.\nTenaciousness, Salvation, Barrier Spell effects, and Unstoppable effect cannot be applied for 30s if Invincibility stacking is blocked.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "+100% Incoming Heal"
+        },
+        {
+          "level": 10,
+          "text": "Restores 20% of Max HP at the end of [Salvation]"
+        },
+        {
+          "level": 15,
+          "text": "Grants base effect of [Salvation] to the party member with the lowest HP"
+        },
+        {
+          "level": 20,
+          "text": "Triggers [Salvation] when afflicted with Impact-type status"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Спасение",
+      "desc": "Персонаж не получает урона и невосприимчив к негат. эффектам в теч. 3s\n\nНе может блокировать некоторые мощные атаки. Эффекты увеличения времени перезарядки не действуют.\nЭффекты Упорства, Спасения, Защитного барьера и Неудержимости не могут быть применены в теч. 30s, если суммирование Неуязвимости заблокировано.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Получ. исцеление +100%"
+        },
+        {
+          "level": 10,
+          "text": "Восстановление 20% от макс. ОЗ после завершения действия [Избавления]"
+        },
+        {
+          "level": 15,
+          "text": "Наложение базового эффекта [Избавления] на участника группы с наименьшим показателем ОЗ"
+        },
+        {
+          "level": 20,
+          "text": "Спасение при воздействии шок. эффекта"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Salvation",
+      "desc": "O lançador é imune a danos e efeitos de status para 3s.\n\nCannot block certain powerful attacks. Unaffected by cooldown increase effects.\nTenaciousness, Salvation, Barrier Spell efeitos, e imparável efeito não pode ser aplicado para 30s Se o empilhamento de invencibilidade está bloqueado.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "+ 100% Chegando Cura"
+        },
+        {
+          "level": 10,
+          "text": "Restaura 20% de Max HP no final de Salvation"
+        },
+        {
+          "level": 15,
+          "text": "Dá efeito base de [Salvation ] para o membro do partido com o menor HP"
+        },
+        {
+          "level": 20,
+          "text": "Gatilhos [SalvationQuando atribulado com o tipo de impacto status"
+        }
+      ]
+    }
+  },
+  "power-burst": {
+    "id": "17280000",
+    "category": "stigma",
+    "icon": "power-burst.webp",
+    "cooldown": 60000,
+    "en": {
+      "name": "Power Burst",
+      "desc": "Deals {se_dmg:1728000011:SkillUIMinDmgSum}-{se_dmg:1728000011:SkillUIMaxDmgSum} Earth damage to a target within 20m.\n\n50 Stagger Gauge Damage",
+      "specs": [
+        {
+          "level": 5,
+          "text": "+20% Skill Speed"
+        },
+        {
+          "level": 10,
+          "text": "Critical Hit on hit"
+        },
+        {
+          "level": 15,
+          "text": "75% chance to inflict Knock Back"
+        },
+        {
+          "level": 20,
+          "text": "75% chance to inflict Stun for 3s"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Всплеск энергии",
+      "desc": "Наносит {se_dmg:1728000011:SkillUIMinDmgSum}-{se_dmg:1728000011:SkillUIMaxDmgSum} урона стихии земли цели в радиусе 20 м.\n\nУрон по шкале ошеломления — 50",
+      "specs": [
+        {
+          "level": 5,
+          "text": "СКР умений +20%"
+        },
+        {
+          "level": 10,
+          "text": "Гарантир. крит. удар при попадании"
+        },
+        {
+          "level": 15,
+          "text": "Шанс 75% оттолкнуть"
+        },
+        {
+          "level": 20,
+          "text": "Шанс 75% оглушить на 3s"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Power Burst",
+      "desc": "Denuncia danos {se_dmg:1728000011:SkillUIMinDmgSum}-{se_dmg:1728000011:SkillUIMaxDmgSum} na Terra a um alvo dentro do 20m. 50 Stagger Gauge Danos",
+      "specs": [
+        {
+          "level": 5,
+          "text": "+ 20% Velocidade de Habilidade"
+        },
+        {
+          "level": 10,
+          "text": "Ataque crítico no sucesso."
+        },
+        {
+          "level": 15,
+          "text": "75% chance de infligir Knock Back"
+        },
+        {
+          "level": 20,
+          "text": "75% chance de infligir Stun para 3s"
+        }
+      ]
+    }
+  },
+  "absolution": {
+    "id": "17290000",
+    "category": "stigma",
+    "icon": "absolution.webp",
+    "cooldown": 90000,
+    "en": {
+      "name": "Absolution",
+      "desc": "Removes up to 2 debuffs and restores 1602-1762 HP to the caster and party members within 40m.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "-30s cooldown"
+        },
+        {
+          "level": 10,
+          "text": "Removes all debuffs"
+        },
+        {
+          "level": 15,
+          "text": "+5% HP restored"
+        },
+        {
+          "level": 20,
+          "text": "Restores 1.5% HP every 2s for 10s"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Отпущение",
+      "desc": "Отменяет до 2 эффектов ослабления с себя и участников группы в радиусе 40 м и восстанавливает 1602-1762 ОЗ.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Перезарядка -30 сек."
+        },
+        {
+          "level": 10,
+          "text": "Снятие всех эффектов ослабления"
+        },
+        {
+          "level": 15,
+          "text": "Доп. восстановление 5% ОЗ"
+        },
+        {
+          "level": 20,
+          "text": "Доп. восстановление 1.5% ОЗ с интервалом 2s в течение 10s"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Absolution",
+      "desc": "Remove até 2 debuffs e restaura 1602 - 1762 HP para o caster e membros do partido dentro 40m.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "- Arrefecer em 30s"
+        },
+        {
+          "level": 10,
+          "text": "Remove todos os desbuffs"
+        },
+        {
+          "level": 15,
+          "text": "+ 5% HP restaurado."
+        },
+        {
+          "level": 20,
+          "text": "Restaura 1.5% HP cada 2s para 10s"
+        }
+      ]
+    }
+  },
+  "voice-of-doom": {
+    "id": "17300000",
+    "category": "stigma",
+    "icon": "voice-of-doom.webp",
+    "cooldown": 60000,
+    "en": {
+      "name": "Voice of Doom",
+      "desc": "Selects a target within 20m and deals {se_dmg:1730000011:SkillUIMinDmgSum}-{se_dmg:1730000011:SkillUIMaxDmgSum} Earth damage to up to 4 enemies within 4m of the target. Deals {se_abe_dmg:1730000013:1730000012:SkillUIDotMaxDmg:tick} damage every 1s and reduces enemy Incoming Heal and HP Potion Recovery by 60% for 20s.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Up to +20% damage when more targets hit"
+        },
+        {
+          "level": 10,
+          "text": "Removes Protective Shields on hit"
+        },
+        {
+          "level": 15,
+          "text": "-200 Critical Hit Resist for duration"
+        },
+        {
+          "level": 20,
+          "text": "-50% Damage over Time intervals"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Крик смерти",
+      "desc": "Наносит {se_dmg:1730000011:SkillUIMinDmgSum}–{se_dmg:1730000011:SkillUIMaxDmgSum} урона стихии земли врагам (макс. 4) в радиусе 4 м от выбранной цели в пределах 20 м. Наносит {se_abe_dmg:1730000013:1730000012:SkillUIDotMaxDmg:tick} урона каждые 1s С шансом 60% снижает у врагов получ. исцеление и восстановление от зелий на 20s.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Чем больше целей попадания, тем больше увеличение урона (макс. до 20%)"
+        },
+        {
+          "level": 10,
+          "text": "Разрушение защитной оболочки при попадании"
+        },
+        {
+          "level": 15,
+          "text": "Сопротивление крит. удару -200 во время действия умения"
+        },
+        {
+          "level": 20,
+          "text": "Интервалы постоянного урона сокращаются на 50%"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Voice of Doom",
+      "desc": "Seleciona um alvo dentro do 20m e lida com danos {se_dmg:1730000011:SkillUIMinDmgSum}-{se_dmg:1730000011:SkillUIMaxDmgSum} na Terra para até inimigos 4 dentro do 4m do alvo. Denuncia danos {se_abe_dmg:1730000013:1730000012:SkillUIDotMaxDmg:tick} a cada 1s e reduz a recuperação da Poção HP para 60% para 20s.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Dano até + 20% quando mais alvos atingirem"
+        },
+        {
+          "level": 10,
+          "text": "Remove escudos protetores em ação."
+        },
+        {
+          "level": 15,
+          "text": "- 200 Crítico Hit Resista por tempo."
+        },
+        {
+          "level": 20,
+          "text": "- Dano 50% em intervalos de tempo."
+        }
+      ]
+    }
+  },
+  "condemnation": {
+    "id": "17350000",
+    "category": "active",
+    "icon": "condemnation.webp",
+    "cooldown": 3000,
+    "en": {
+      "name": "Condemnation",
+      "desc": "Selects a target within 20m afflicted with Chain of Torment and deals {se_dmg:1735000011:SkillUIMinDmgSum}-{se_dmg:1735000011:SkillUIMaxDmgSum} Earth damage to up to 4 enemies within 4m of the target.\n\n7 Stagger Gauge Damage",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Restores 100 MP on hit"
+        },
+        {
+          "level": 8,
+          "text": "Up to +12% damage when less targets hit"
+        },
+        {
+          "level": 8,
+          "text": "20% chance to inflict Root for 3s"
+        },
+        {
+          "level": 12,
+          "text": "Resets cooldown on landing a Critical Hit with [Condemnation]"
+        },
+        {
+          "level": 16,
+          "text": "Multi-Hit on hit"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Приговор",
+      "desc": "Наносит {se_dmg:1735000011:SkillUIMinDmgSum}–{se_dmg:1735000011:SkillUIMaxDmgSum} урона стихии земли врагам (макс. 4) в радиусе 4 м от выбранной цели в пределах 20 м, находящейся под действием эффекта [Цепь боли].\n\nУрон по шкале ошеломления — 7 ед.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Восстановление 100 ОМ при попадании"
+        },
+        {
+          "level": 8,
+          "text": "До +12% к урону при меньшем количестве пораженных целей"
+        },
+        {
+          "level": 8,
+          "text": "Активирует Плен в теч. 3s с шансом 20%"
+        },
+        {
+          "level": 12,
+          "text": "При попадании крит. удара умения [Кара] время перезарядки умения сбрасывается"
+        },
+        {
+          "level": 16,
+          "text": "Гарантир. мультиудар при попадании"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Condemnation",
+      "desc": "Seleciona um alvo dentro de 20m afligido com Chain of Torment e lida com danos na Terra {se_dmg:1735000011:SkillUIMinDmgSum}-{se_dmg:1735000011:SkillUIMaxDmgSum} para até inimigos 4 dentro de 4m do alvo. 7 Stagger Gauge Danos",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Restaura 100 MP no hit"
+        },
+        {
+          "level": 8,
+          "text": "Até + 12% dano quando menos alvos atingem"
+        },
+        {
+          "level": 8,
+          "text": "20% chance de infligir Root para 3s"
+        },
+        {
+          "level": 12,
+          "text": "Reinicia o recarga ao pousar um Ataque Crítico comCondemnation]"
+        },
+        {
+          "level": 16,
+          "text": "Multi-Hit na batida"
+        }
+      ]
+    }
+  },
+  "lightning-strike-scattershot": {
+    "id": "17370000",
+    "category": "active",
+    "icon": "lightning-strike-scattershot.webp",
+    "cooldown": 0,
+    "en": {
+      "name": "Lightning Strike Scattershot",
+      "desc": "Deals {se_dmg:1737000011:SkillUIMinDmgSum}-{se_dmg:1737000011:SkillUIMaxDmgSum} damage to a target afflicted with Stagger within 20m.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Absorbs 5% HP"
+        },
+        {
+          "level": 8,
+          "text": "Restores 120 MP"
+        },
+        {
+          "level": 8,
+          "text": "Changes to mobile skill"
+        },
+        {
+          "level": 12,
+          "text": "Multi-Hit on hit"
+        },
+        {
+          "level": 16,
+          "text": "-1s all skill cooldowns on hit"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Шквал молний",
+      "desc": "Наносит {se_dmg:1737000011:SkillUIMinDmgSum}-{se_dmg:1737000011:SkillUIMaxDmgSum} урона цели в состоянии Ошеломления в радиусе 20 м.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Поглощение 5% ОЗ"
+        },
+        {
+          "level": 8,
+          "text": "Восстановление 120 ОМ"
+        },
+        {
+          "level": 8,
+          "text": "Замена на умение с возможностью перемещения"
+        },
+        {
+          "level": 12,
+          "text": "Гарантир. мультиудар при попадании"
+        },
+        {
+          "level": 16,
+          "text": "Перезарядка всех умений -1s при попадании"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Lightning Strike Scattershot",
+      "desc": "De acordo com {se_dmg:1737000011:SkillUIMinDmgSum} - {se_dmg:1737000011:SkillUIMaxDmgSum} dano a um alvo atingido com Stagger dentro de 20m.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Absorve 5% HP"
+        },
+        {
+          "level": 8,
+          "text": "Restaura 120 MP"
+        },
+        {
+          "level": 8,
+          "text": "Mudanças na habilidade móvel."
+        },
+        {
+          "level": 12,
+          "text": "Multi-Hit na batida"
+        },
+        {
+          "level": 16,
+          "text": "- 1s todos os destrezas no hit"
+        }
+      ]
+    }
+  },
+  "summon-resurrection": {
+    "id": "17390000",
+    "category": "stigma",
+    "icon": "summon-resurrection.webp",
+    "cooldown": 120000,
+    "en": {
+      "name": "Summon Resurrection",
+      "desc": "Resurrects a fallen party member within 40m of the caster.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "-1s casting time"
+        },
+        {
+          "level": 10,
+          "text": "Invincible for 3s after resurrection"
+        },
+        {
+          "level": 15,
+          "text": "Restores 20% of Max HP"
+        },
+        {
+          "level": 20,
+          "text": "Invincible for 5s after resurrection"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Воскрешение призыванного существа",
+      "desc": "Воскрешает погибших участников группы в радиусе 40 м вокруг себя.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Время применения -1 сек."
+        },
+        {
+          "level": 10,
+          "text": "Эффект Неуязвимости на 3s после воскрешения"
+        },
+        {
+          "level": 15,
+          "text": "Восстановление 20% от макс. ОЗ"
+        },
+        {
+          "level": 20,
+          "text": "Эффект Неуязвимости на 5s после воскрешения"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Summon Resurrection",
+      "desc": "Ressuscita um membro do partido caído dentro do 40m do lançador.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "- Tempo de seleção 1s"
+        },
+        {
+          "level": 10,
+          "text": "Invencível para 3s após a ressurreição."
+        },
+        {
+          "level": 15,
+          "text": "Restaura 20% de Max HP"
+        },
+        {
+          "level": 20,
+          "text": "Invencível para 5s após a ressurreição."
+        }
+      ]
+    }
+  },
+  "earth-punishment": {
+    "id": "17400000",
+    "category": "stigma",
+    "icon": "earth-punishment.webp",
+    "cooldown": 30000,
+    "en": {
+      "name": "Earth Punishment",
+      "desc": "Deals {se_dmg:1740000011:SkillUIMinDmgSum}-{se_dmg:1740000011:SkillUIMaxDmgSum} Earth damage to a target within 20m and {se_abe_dmg:1740000012:1740000011:SkillUIDotMaxDmg:tick} damage every 1s for 10s.\n\n20 Stagger Gauge Damage",
+      "specs": [
+        {
+          "level": 5,
+          "text": "[Condemnation] lands as a Critical Hit on targets afflicted with [Earth Punishment]"
+        },
+        {
+          "level": 10,
+          "text": "+10% Double Chance to caster and +5% to party members from [Earth's Blessing]"
+        },
+        {
+          "level": 15,
+          "text": "+10% Attack and Defense to caster and +5% to party members from [Earth's Blessing]"
+        },
+        {
+          "level": 20,
+          "text": "+10s [Earth Punishment] and [Earth's Blessing] duration"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Возмездие природы",
+      "desc": "Наносит {se_dmg:1740000011:SkillUIMinDmgSum}–{se_dmg:1740000011:SkillUIMaxDmgSum} урона от стихии земли цели в радиусе 20 м и {se_abe_dmg:1740000012:1740000011:SkillUIDotMaxDmg:tick} урона кажд. 1s в течение 10s.\n\n20 ед. урона по шкале Истощения",
+      "specs": [
+        {
+          "level": 5,
+          "text": "По целям под действием [Возмездие природы] умение [Приговор] всегда наносит крит. удар."
+        },
+        {
+          "level": 10,
+          "text": "[Благословение природы] +10% к шансу мощного удара персонажа и +5 союзников"
+        },
+        {
+          "level": 15,
+          "text": "[Благословение природы] +10% к АТК и ЗЩТ персонажу, +5% к АТК и ЗЩТ членам группы"
+        },
+        {
+          "level": 20,
+          "text": "+10 сек. к длительности [Возмездия природы] и [Благословения природы]"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Earth Punishment",
+      "desc": "Danos {se_dmg:1740000011:SkillUIMinDmgSum}-{se_dmg:1740000011:SkillUIMaxDmgSum} na Terra em um alvo dentro de 20m e {se_abe_dmg:1740000012:1740000011:SkillUIDotMaxDmg:tick} danificam cada 1s para 10s. 20 Stagger Gauge Danos",
+      "specs": [
+        {
+          "level": 5,
+          "text": "[CondemnationAterrissamos como um ataque crítico em alvos atingidos porEarth Punishment]"
+        },
+        {
+          "level": 10,
+          "text": "+ 10% dupla chance de elenco e + 5% para membros do partido de [Bênção da Terra]"
+        },
+        {
+          "level": 15,
+          "text": "+ 10% Ataque e defesa para o caster e + 5% para membros do partido da Bênção da Terra"
+        },
+        {
+          "level": 20,
+          "text": "+ 10s [Earth Punishment ] e [Bênção da Terra] duração"
+        }
+      ]
+    }
+  },
+  "light-of-protection": {
+    "id": "17410000",
+    "category": "stigma",
+    "icon": "light-of-protection.webp",
+    "cooldown": 5000,
+    "en": {
+      "name": "Light of Protection",
+      "desc": "Increases PvE Damage Boost and PvE Damage Tolerance by 10.5% and PvP Damage Boost and PvP Damage Tolerance by 5.25% for the caster and nearby party members.\n\nDoes not stack with the Damage Boost effect from the Chanter skill [Undefeated Mantra] and only the highest skill level effect applies. If both skills are the same level, Undefeated Mantra will be applied.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "+10% Incoming Heal"
+        },
+        {
+          "level": 10,
+          "text": "+100 Accuracy"
+        },
+        {
+          "level": 15,
+          "text": "+10% Max HP"
+        },
+        {
+          "level": 20,
+          "text": "+10% Perfect Chance"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Свет спасения",
+      "desc": "Увелич. усиление урона в PvE и стойкость к урону в PvE для себя и участников группы поблизости на 10.5%, эскалацию урона в PvP и стойкость к урону в PvP — на 5.25%.\n\nНе суммируется с умением Чародея [Песнь непобедимости]: применяется только 1 эффект более высокого по уровню умения. Если уровни умений одинаковы, действует эффект умения Песни непобедимости.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Получ. исцеление +10%"
+        },
+        {
+          "level": 10,
+          "text": "Меткость +100"
+        },
+        {
+          "level": 15,
+          "text": "Макс. ОЗ +10%"
+        },
+        {
+          "level": 20,
+          "text": "Совершенный удар +10%"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Light of Protection",
+      "desc": "Aumentos PvE Danos aumentam e PvE Danos Tolerância por 10.5% e PvP Danos aumentam e PvP Danos Tolerância por 5.25% for the caster and nearby party members.\n\nDoes not stack with the Damage Boost effect from the Chanter skill [Undefeated Mantra] and only the highest skill level effect applies. If both skills are the same level, Undefeated Mantra será aplicado.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "+ 10% Chegando Cura"
+        },
+        {
+          "level": 10,
+          "text": "+ Exatidão 100"
+        },
+        {
+          "level": 15,
+          "text": "+ 10% Max HP"
+        },
+        {
+          "level": 20,
+          "text": "+ 10% chance perfeita"
+        }
+      ]
+    }
+  },
+  "yustiels-power": {
+    "id": "17420000",
+    "category": "stigma",
+    "icon": "yustiels-power.webp",
+    "cooldown": 60000,
+    "en": {
+      "name": "Yustiel's Power",
+      "desc": "Increases PvE Damage Tolerance by 20% and PvP Damage Tolerance by 10% for 10s for the caster and party members within 40m.\n\nUnaffected by cooldown increase effects.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "10% Max HP Protective Shield"
+        },
+        {
+          "level": 10,
+          "text": "+100 Block, Evasion"
+        },
+        {
+          "level": 15,
+          "text": "+20% Status Effect Resist"
+        },
+        {
+          "level": 20,
+          "text": "+10% PvE Damage Tolerance increase and +5% PvP Damage Tolerance increase"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Сила Юстиэль",
+      "desc": "Увеличивает стойкость к урону в PvE на 20% и стойкость к урону в PvP на 10% на 10s персонажа и участников команды в радиусе 40 м.\n\nЭффекты увеличения времени перезарядки не действуют.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Создание защитной оболочки, равной 10% от макс. ОЗ"
+        },
+        {
+          "level": 10,
+          "text": "Блок и УКЛ +100"
+        },
+        {
+          "level": 15,
+          "text": "Сопротивление негат. эффектам +20%"
+        },
+        {
+          "level": 20,
+          "text": "Стойкость к урону в PvE доп. +10%, стойкость к урону в PvP доп. +5%"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Yustiel's Power",
+      "desc": "Aumenta a tolerância de danos PvE em 20% e PvP em 10% em 10s para o caster e membros do partido em 40m. Não afetado pelo efeito de recarga.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "10% Max HP Escudo protetor"
+        },
+        {
+          "level": 10,
+          "text": "Bloco 100, Evasão"
+        },
+        {
+          "level": 15,
+          "text": "+ 20% Status Effect Resist"
+        },
+        {
+          "level": 20,
+          "text": "+ 10% PvE Aumento da tolerância aos danos e + 5% PvP Aumento da tolerância aos danos"
+        }
+      ]
+    }
+  },
+  "prayer-of-amplification": {
+    "id": "17430000",
+    "category": "stigma",
+    "icon": "prayer-of-amplification.webp",
+    "cooldown": 60000,
+    "en": {
+      "name": "Prayer of Amplification",
+      "desc": "Increases Attack by 20% for 10s.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "+20% PvE Damage Boost and +10% PvP Damage Boost"
+        },
+        {
+          "level": 10,
+          "text": "x1.5 [Empyrean Lord's Grace] effect for the duration"
+        },
+        {
+          "level": 15,
+          "text": "x1.5 [Earth's Grace] effect for the duration"
+        },
+        {
+          "level": 20,
+          "text": "+15% additional Attack"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Молитва усиления",
+      "desc": "На 10s увеличивает АТК на 20%.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "+20% к усилению урона в PvE, +10% к усилению урона в PvP"
+        },
+        {
+          "level": 10,
+          "text": "Эффект [Благосклонности Владык Эмпирея] во время действия умения x1,5"
+        },
+        {
+          "level": 15,
+          "text": "Эффект [Дар земли] во время действия умения x1,5"
+        },
+        {
+          "level": 20,
+          "text": "АТК доп. +15%"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Prayer of Amplification",
+      "desc": "Aumenta o ataque em 20% para 10s.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "+ 20% PvE Danos aumenta e + 10% PvP Danos aumenta"
+        },
+        {
+          "level": 10,
+          "text": "x1.5 [Empyrean Lord's GraceEfeito para a duração"
+        },
+        {
+          "level": 15,
+          "text": "x1.5 [Earth's GraceEfeito para a duração"
+        },
+        {
+          "level": 20,
+          "text": "+ 15% Ataque adicional"
+        }
+      ]
+    }
+  },
+  "assault-mark": {
+    "id": "17700000",
+    "category": "stigma",
+    "icon": "assault-mark.webp",
+    "cooldown": 120000,
+    "en": {
+      "name": "Assault Mark",
+      "desc": "Selects a target within 20m and deals {se_dmg:1770000021:SkillUIMinDmgSum}-{se_dmg:1770000021:SkillUIMaxDmgSum} damage to up to 4 enemies within 4m with a 30% chance to inflict Root.\n100% chance to inflict Root on NPC targets.\n\nIncreases Defense by max 20% proportional to hit targets.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "+20% Attack for 5s on hit"
+        },
+        {
+          "level": 10,
+          "text": "500 MP damage on hit"
+        },
+        {
+          "level": 15,
+          "text": "+10m range"
+        },
+        {
+          "level": 20,
+          "text": "+20% Root Chance"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Клеймо атаки",
+      "desc": "Наносит {se_dmg:1770000021:SkillUIMinDmgSum}–{se_dmg:1770000021:SkillUIMaxDmgSum} урона врагам (макс. 4) в радиусе 4 м от выбранной цели в пределах 20 м. С шансом 30% берет врагов в плен.\nДля NPC плен срабатывает гарантированно.\n\nУвеличивает ЗЩТ до 20% пропорционально кол-ву пораженных целей.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "АТК +20% на 5s при попадании"
+        },
+        {
+          "level": 10,
+          "text": "500 урона по ОМ при попадании"
+        },
+        {
+          "level": 15,
+          "text": "Дальность атаки +10 м"
+        },
+        {
+          "level": 20,
+          "text": "Шанс взять в плен +20%"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Assault Mark",
+      "desc": "Seleciona um alvo dentro do 20m e lida com danos {se_dmg:1770000021:SkillUIMinDmgSum}-{se_dmg:1770000021:SkillUIMaxDmgSum} para até inimigos 4 dentro do 4m com uma chance 30% de infligir Root. 100% chance de infligir Root em alvos da NPC. Aumenta a defesa em 20% proporcional ao alvo atingido.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "+ 20% Ataque para 5s em sucesso"
+        },
+        {
+          "level": 10,
+          "text": "Dano 500 MP no ataque."
+        },
+        {
+          "level": 15,
+          "text": "+ Alcance 10m"
+        },
+        {
+          "level": 20,
+          "text": "+ 20% Root Chance"
+        }
+      ]
+    }
+  },
+  "warm-benediction": {
+    "id": "17710000",
+    "category": "passive",
+    "icon": "warm-benediction.webp",
+    "cooldown": 0,
+    "en": {
+      "name": "Warm Benediction",
+      "desc": "Increases the caster's Max HP by 6% and Max MP by 7.",
+      "specs": []
+    },
+    "ru": {
+      "name": "Тепло благословения",
+      "desc": "Увеличивает макс. ОЗ на 6%, макс. ОМ — на 7%.",
+      "specs": []
+    },
+    "pt-BR": {
+      "name": "Warm Benediction",
+      "desc": "Aumenta o Max HP do lançador em 6% e Max MP em 7.",
+      "specs": []
+    }
+  },
+  "empyrean-lords-benediction": {
+    "id": "17720000",
+    "category": "passive",
+    "icon": "empyrean-lords-benediction.webp",
+    "cooldown": 0,
+    "en": {
+      "name": "Empyrean Lords' Benediction",
+      "desc": "Increases the caster's Block by 200 and restores 53-64 HP on Block.\n\nCooldown: 3s",
+      "specs": []
+    },
+    "ru": {
+      "name": "Покровительство Владык Эмпирея",
+      "desc": "Увеличивает блок на 200 и восстанавливает 53–64 ОЗ при блоке.\n\nВремя перезарядки: 3s",
+      "specs": []
+    },
+    "pt-BR": {
+      "name": "Empyrean Lords' Benediction",
+      "desc": "Aumenta o bloco de rodízio em 200 e restaura 53 - 64 HP em Block. Recarga: 3s",
+      "specs": []
+    }
+  },
+  "empyrean-lords-grace": {
+    "id": "17730000",
+    "category": "passive",
+    "icon": "empyrean-lords-grace.webp",
+    "cooldown": 0,
+    "en": {
+      "name": "Empyrean Lord's Grace",
+      "desc": "Increases the caster's Critical Hit by 100, Double Chance by 0.2% and deals {se_dmg:1773000111:SkillUIMinDmgsum}-{se_dmg:1773000111:SkillUIMaxDmgsum} extra damage on landing an attack on a target.\n\nCooldown: 1s",
+      "specs": []
+    },
+    "ru": {
+      "name": "Благосклонность Владык Эмпирея",
+      "desc": "Увелич. крит. удар персонажа на 100, шанс мощного удара на 0.2% и наносит {se_dmg:1773000111:SkillUIMinDmgsum}–{se_dmg:1773000111:SkillUIMaxDmgsum} ед. доп. урона при успешной атаке.\n\nВремя перезарядки: 1s",
+      "specs": []
+    },
+    "pt-BR": {
+      "name": "Empyrean Lord's Grace",
+      "desc": "Aumenta o impacto crítico do lançador por 100, dupla chance por 0.2% e causa dano extra {se_dmg:1773000111:SkillUIMinDmgsum}-{se_dmg:1773000111:SkillUIMaxDmgsum} ao pousar um ataque contra um alvo. Recarga: 1s",
+      "specs": []
+    }
+  },
+  "healing-enhancement": {
+    "id": "17740000",
+    "category": "passive",
+    "icon": "healing-enhancement.webp",
+    "cooldown": 0,
+    "en": {
+      "name": "Healing Enhancement",
+      "desc": "Increases the caster's Heal Boost by 22400% of Attack.",
+      "specs": []
+    },
+    "ru": {
+      "name": "Усиление исцеления",
+      "desc": "Увеличение исцеления повышается на 22400% от АТК.",
+      "specs": []
+    },
+    "pt-BR": {
+      "name": "Healing Enhancement",
+      "desc": "Aumenta o aumento da cura do lançador em 22400% de Ataque.",
+      "specs": []
+    }
+  },
+  "immortal-veil": {
+    "id": "17750000",
+    "category": "passive",
+    "icon": "immortal-veil.webp",
+    "cooldown": 0,
+    "en": {
+      "name": "Immortal Veil",
+      "desc": "Increases the caster's Defense by 2% and Critical Hit Resist by 100.",
+      "specs": []
+    },
+    "ru": {
+      "name": "Аура бессмертия",
+      "desc": "Увеличивает ЗЩТ на 2%, сопротивление крит. удару — на 100.",
+      "specs": []
+    },
+    "pt-BR": {
+      "name": "Immortal Veil",
+      "desc": "Aumenta a defesa do lançador em 2% e a resistência crítica ao ataque em 100.",
+      "specs": []
+    }
+  },
+  "heal-block": {
+    "id": "17760000",
+    "category": "passive",
+    "icon": "heal-block.webp",
+    "cooldown": 0,
+    "en": {
+      "name": "Heal Block",
+      "desc": "Has a 7% chance to reduce the target's Incoming Heal by 32% for 5s on landing an attack.\n\nCooldown: 5s",
+      "specs": []
+    },
+    "ru": {
+      "name": "Блокировка восстановления",
+      "desc": "При каждом попадании атакой с шансом 7% снижает получ. исцеление цели на 32% на 5s.\n\nВремя перезарядки: 5s",
+      "specs": []
+    },
+    "pt-BR": {
+      "name": "Heal Block",
+      "desc": "Tem uma chance 7% de reduzir o alvo para 32% para 5s ao pousar um ataque. Recarga: 5s",
+      "specs": []
+    }
+  },
+  "prayer-of-concentration": {
+    "id": "17770000",
+    "category": "passive",
+    "icon": "prayer-of-concentration.webp",
+    "cooldown": 0,
+    "en": {
+      "name": "Prayer of Concentration",
+      "desc": "Forms a Protective Shield which blocks 424 damage and increases the caster's Heal Boost by 20% for 30s when HP is 50% or less.\n\nCooldown: 60s",
+      "specs": []
+    },
+    "ru": {
+      "name": "Молитва концентрации",
+      "desc": "Создает защитную оболочку, котораяблокирует 424 ед. урона и увеличивает усиление исцеления персонажа на 20% на 30s, если показатель ОЗ 50% или ниже.\n\nВремя перезарядки: 60s",
+      "specs": []
+    },
+    "pt-BR": {
+      "name": "Prayer of Concentration",
+      "desc": "Forma um escudo protetor que bloqueia o dano 424 e aumenta o aumento da cura do lançador em 20% para 30s quando HP é 50% ou menos. Recarga: 60s",
+      "specs": []
+    }
+  },
+  "earths-grace": {
+    "id": "17780000",
+    "category": "passive",
+    "icon": "earths-grace.webp",
+    "cooldown": 0,
+    "en": {
+      "name": "Earth's Grace",
+      "desc": "Increases the caster's Critical Damage Boost by 10.5% and Accuracy by 100.",
+      "specs": []
+    },
+    "ru": {
+      "name": "Дар земли",
+      "desc": "Увеличивает эскалацию крит. урона на 10.5%, меткость — на 100.",
+      "specs": []
+    },
+    "pt-BR": {
+      "name": "Earth's Grace",
+      "desc": "Aumenta o aumento de dano crítico do lançador em 10.5% e precisão em 100.",
+      "specs": []
+    }
+  },
+  "survival-willpower": {
+    "id": "17790000",
+    "category": "passive",
+    "icon": "survival-willpower.webp",
+    "cooldown": 0,
+    "en": {
+      "name": "Survival Willpower",
+      "desc": "Increases the caster's Status Effect Resist by 17%. Increases PvE Damage Tolerance by 12% and PvP Damage Tolerance by 6% for 5s when afflicted with Stun, Knockdown, Airborne, Frost, or Fear. Increases Status Effect Resist by 10% for 5s when hit while afflicted with Stun, Knockdown, Airborne, Frost, or Fear (up to 10 stacks).\n\nDamage Tolerance Increase Cooldown: 60s\nStatus Effect Resist Increase Cooldown: 1s",
+      "specs": []
+    },
+    "ru": {
+      "name": "Инстинкт выживания",
+      "desc": "Увеличивает сопротивление негат. эффектам  на 17%. Увеличивает стойкость к урону в PvE на 12% и стойкость к урону в PvP на 6% на 5s под действием Оглушения, Сбивания с ног, Воздушных оков, Заморозки или Ужаса. Увеличивает сопротивление негат. эффектам  на 10% на 5s при получении удара в состоянии Оглушения, Сбивания с ног, Воздушных оков, Заморозки или Ужаса (суммируется не более 10 раз).\n\nВремя перезарядки увеличения стойкости к урону: 60s\nВремя перезарядки увеличения сопротивления негат. эффектам: 1s",
+      "specs": []
+    },
+    "pt-BR": {
+      "name": "Survival Willpower",
+      "desc": "Aumenta o Efeito de Estado do lançador em 17%. Aumenta a tolerância aos danos PvE em 12% e PvP em 6% para 5s quando afligido por Stun, Knockdown, Airborne, Frost, ou Medo. Aumenta o Efeito de Status Resistir ao 10% para 5s quando atingido com Stun, Knockdown, Airborne, Frost ou Medo (até 10 pilhas). Tolerância de danos Aumentar o recarga: 60s Efeito Status Resista ao aumento de recarga: 1s",
+      "specs": []
+    }
+  },
+  "radiant-benediction": {
+    "id": "17800000",
+    "category": "passive",
+    "icon": "radiant-benediction.webp",
+    "cooldown": 0,
+    "en": {
+      "name": "Radiant Benediction",
+      "desc": "Restores 384-461 HP to the caster and party members within 40m on landing an attack.\n\nCooldown: 5s",
+      "specs": []
+    },
+    "ru": {
+      "name": "Сияющее покровительство",
+      "desc": "Восстанавливает 384–461 ОЗ персонажа и участников команды в радиусе 40 м при попадании по цели.\n\nВремя перезарядки: 5s",
+      "specs": []
+    },
+    "pt-BR": {
+      "name": "Radiant Benediction",
+      "desc": "Restaura 384 - 461 HP para o elenco e membros do partido dentro 40m ao pousar um ataque. Recarga: 5s",
+      "specs": []
+    }
+  }
+}

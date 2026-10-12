@@ -1,0 +1,2156 @@
+{
+  "supporting-fire": {
+    "id": "14380000",
+    "category": "stigma",
+    "icon": "supporting-fire.webp",
+    "cooldown": 90000,
+    "en": {
+      "name": "Supporting Fire",
+      "desc": "Summons an orb that provides supporting fire for 15s near the caster. The orb has a 25% chance to fire a shot dealing {se_dmg:1438000711:SkillUIMinDmgsum}-{se_dmg:1438000711:SkillUIMaxDmgsum} Wind damage and absorbing 1.5% HP.\n\nFiring Cooldown: 0.5s",
+      "specs": [
+        {
+          "level": 5,
+          "text": "+25% activation chance"
+        },
+        {
+          "level": 10,
+          "text": "+15s duration"
+        },
+        {
+          "level": 15,
+          "text": "-30s cooldown"
+        },
+        {
+          "level": 20,
+          "text": "Critical Hit on hit"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Поддерживающий огонь",
+      "desc": "На 15s призывает в область вокруг себя сферу, ведущую огонь поддержки. Сфера с шансом 25% наносит {se_dmg:1438000711:SkillUIMinDmgsum}-{se_dmg:1438000711:SkillUIMaxDmgsum} урона стихии воздуха и ведет огонь поддержки, поглощающий 1.5% ОЗ.\n\nПерезарядка стрельбы: 0.5s",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Шанс срабатывания +25%"
+        },
+        {
+          "level": 10,
+          "text": "Длительность умения +15 сек."
+        },
+        {
+          "level": 15,
+          "text": "Перезарядка -30 сек."
+        },
+        {
+          "level": 20,
+          "text": "Гарантир. крит. удар при попадании"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Supporting Fire",
+      "desc": "Convoca uma esfera que fornece fogo de apoio para 15s perto do lançador. A esfera tem uma chance 25% de disparar um tiro com danos do {se_dmg:1438000711:SkillUIMinDmgsum}-{se_dmg:1438000711:SkillUIMaxDmgsum} Wind e absorvendo 1.5% HP. Fria de disparo: 0.5s",
+      "specs": [
+        {
+          "level": 5,
+          "text": "+ chance de ativação 25%"
+        },
+        {
+          "level": 10,
+          "text": "+ Duração 15s"
+        },
+        {
+          "level": 15,
+          "text": "- Arrefecer em 30s"
+        },
+        {
+          "level": 20,
+          "text": "Ataque crítico no sucesso."
+        }
+      ]
+    }
+  },
+  "deadshot": {
+    "id": "14010000",
+    "category": "active",
+    "icon": "deadshot.webp",
+    "cooldown": 20000,
+    "en": {
+      "name": "Deadshot",
+      "desc": "Deals {se_dmg:1401000011:SkillUIMinDmgsum}-{se_dmg:1401000311:SkillUIMaxDmgsum} Wind damage to a target within 20m. Increases damage by 35% if the caster has Precision.\n\nMax 3 Charge Levels\n10-16 Stagger Gauge Damage",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Removes MP consumed"
+        },
+        {
+          "level": 8,
+          "text": "+30% Skill Speed"
+        },
+        {
+          "level": 8,
+          "text": "Changes to mobile skill"
+        },
+        {
+          "level": 12,
+          "text": "Ignores Block and Evasion and lands as Multi-Hit"
+        },
+        {
+          "level": 16,
+          "text": "[Deadshot] grants extra damage on hit"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Прицельный выстрел",
+      "desc": "Наносит {se_dmg:1401000011:SkillUIMinDmgsum}–{se_dmg:1401000311:SkillUIMaxDmgsum} урона стихии воздуха цели в пределах 20 м. В состоянии [Зоркого глаза] урон увеличивается на 35%.\n\nМакс. 3 стадии заряда\nУрон по шкале ошеломления — 10–16 ед.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Удаление затраты ОМ"
+        },
+        {
+          "level": 8,
+          "text": "СКР умений +30%"
+        },
+        {
+          "level": 8,
+          "text": "Замена на умение с возможностью перемещения"
+        },
+        {
+          "level": 12,
+          "text": "Игнорирование блока и УКЛ, попадание мультиударом"
+        },
+        {
+          "level": 16,
+          "text": "[Прицельный выстрел] Доп. урон при попадании"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Deadshot",
+      "desc": "De acordo {se_dmg:1401000011:SkillUIMinDmgsum}-{se_dmg:1401000311:SkillUIMaxDmgsum} Dano do vento em um alvo dentro do 20m. Aumenta o dano em 35% se o rodízio tiver precisão. Max 3 Nível de carga 10 - 16 Danos no gauge do Stagger",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Remove MP consumido."
+        },
+        {
+          "level": 8,
+          "text": "+ 30% Velocidade de Habilidade"
+        },
+        {
+          "level": 8,
+          "text": "Mudanças na habilidade móvel."
+        },
+        {
+          "level": 12,
+          "text": "Ignore Block e Evasion e pouse como Multi-Hit."
+        },
+        {
+          "level": 16,
+          "text": "[ Deadshot ] concede danos extras em sucesso"
+        }
+      ]
+    }
+  },
+  "snipe": {
+    "id": "14020000",
+    "category": "active",
+    "icon": "snipe.webp",
+    "cooldown": 0,
+    "en": {
+      "name": "Snipe",
+      "desc": "Deals {se_dmg:1402000011:SkillUIMinDmgsum}-{se_dmg:1402000011:SkillUIMaxDmgsum} Wind damage to a target within 20m and restores 120 MP.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "+20% MP restored"
+        },
+        {
+          "level": 8,
+          "text": "Absorbs 0.7% HP"
+        },
+        {
+          "level": 8,
+          "text": "+50% Multi-Hit on hit"
+        },
+        {
+          "level": 12,
+          "text": "-1s [Deadshot] cooldown on hit"
+        },
+        {
+          "level": 16,
+          "text": "Adds [Tempest Arrow] Chain Skill"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Меткий выстрел",
+      "desc": "Наносит {se_dmg:1402000011:SkillUIMinDmgsum}-{se_dmg:1402000011:SkillUIMaxDmgsum} урона стихии воздуха цели в радиусе 20 м и восстанавливает 120 ОМ.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Восстановление ОМ +20%"
+        },
+        {
+          "level": 8,
+          "text": "Поглощение 0.7% ОЗ"
+        },
+        {
+          "level": 8,
+          "text": "Шанс мультиудара +50% при попадании"
+        },
+        {
+          "level": 12,
+          "text": "Перезарядка [Прицельного выстрела] -1s при попадании"
+        },
+        {
+          "level": 16,
+          "text": "Добавление 4-ой комбинации [Торнадо стрел]"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Snipe",
+      "desc": "De acordo com {se_dmg:1402000011:SkillUIMinDmgsum}-{se_dmg:1402000011:SkillUIMaxDmgsum} Dano do vento em um alvo dentro de 20m e restaura 120-MP.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "+ 20% MP restaurado."
+        },
+        {
+          "level": 8,
+          "text": "Absorve 0.7% HP"
+        },
+        {
+          "level": 8,
+          "text": "+ 50% Multi-Hit no hit"
+        },
+        {
+          "level": 12,
+          "text": "- 1s [Deadshot ] arrefecer no hit"
+        },
+        {
+          "level": 16,
+          "text": "Adiciona a habilidade da corrente"
+        }
+      ]
+    }
+  },
+  "drill-dart": {
+    "id": "14050000",
+    "category": "active",
+    "icon": "drill-dart.webp",
+    "cooldown": 5000,
+    "en": {
+      "name": "Drill Dart",
+      "desc": "Selects a target within 20m and deals {se_dmg:1405000011:SkillUIMinDmgsum}-{se_dmg:1405000011:SkillUIMaxDmgsum} Fire damage to up to 4 enemies within 4m of the target and restores 100 MP on landing a Critical Hit. Inflicts Bleed on targets, dealing {se_abe_dmg:1405000012:1405000012:SkillUIDotMinDmg:tick}-{se_abe_dmg:1405000012:1405000012:SkillUIDotMaxDmg:tick} Fire damage every 1s for 6s and reducing Incoming Heal by 60%.\n\nIncoming Heal reduction from [Drill Dart], [Debilitating Smash], and [Firestorm] does not stack.\n\n5 Stagger Gauge Damage",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Absorbs 3% HP"
+        },
+        {
+          "level": 8,
+          "text": "+2s Bleed duration"
+        },
+        {
+          "level": 8,
+          "text": "+20% Skill Speed"
+        },
+        {
+          "level": 12,
+          "text": "Multi-Hit on hit"
+        },
+        {
+          "level": 16,
+          "text": "Activates [Drill Dart] 1 extra time"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Пронзающая стрела",
+      "desc": "При крит. ударе наносит {se_dmg:1405000011:SkillUIMinDmgsum}–{se_dmg:1405000011:SkillUIMaxDmgsum} урона стихии огня врагам (макс. 4) в радиусе 4 м от цели в пределах 20 м и восстанавливает 100 ОМ. На 6s активирует Потерю крови: каждые 1 сек. цель получает {se_abe_dmg:1405000012:1405000012:SkillUIDotMinDmg:tick}–{se_abe_dmg:1405000012:1405000012:SkillUIDotMaxDmg:tick} урона стихии огня, получ. исцеление -60%.\n\nСнижение получ. исцеления от [Пронзающей стрелы], [Удара изнеможения] и [Огненного гарпуна] не суммируется.\n\nУрон по шкале ошеломления — 5 ед.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Поглощение 3% ОЗ"
+        },
+        {
+          "level": 8,
+          "text": "Длительность Потери крови +2 сек."
+        },
+        {
+          "level": 8,
+          "text": "СКР умений +20%"
+        },
+        {
+          "level": 12,
+          "text": "Гарантир. мультиудар при попадании"
+        },
+        {
+          "level": 16,
+          "text": "Доп. срабатывание [Пронзающей стрелы] 1 р."
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Drill Dart",
+      "desc": "Seleciona um alvo dentro do 20m e lida com danos de fogo {se_dmg:1405000011:SkillUIMinDmgsum}-{se_dmg:1405000011:SkillUIMaxDmgsum} para até inimigos 4 dentro do 4m do alvo e restaura 100 MP ao pousar um Ataque Crítico. Inflige Sangramento nos alvos, lidando com danos {se_abe_dmg:1405000012:1405000012:SkillUIDotMinDmg:tick}-{se_abe_dmg:1405000012:1405000012:SkillUIDotMaxDmg:tick} de fogo a cada 1s para 6s e reduzindo o Incoming Heal em 60%. Redução da cura chegando de [Drill Dart], [Debilitating Smash], e [Firestorm] não empilha. 5 Danos no gauge Stagger",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Absorve 3% HP"
+        },
+        {
+          "level": 8,
+          "text": "+ 2s Duração Sangrada"
+        },
+        {
+          "level": 8,
+          "text": "+ 20% Velocidade de Habilidade"
+        },
+        {
+          "level": 12,
+          "text": "Multi-Hit na batida"
+        },
+        {
+          "level": 16,
+          "text": "Ativar.Drill Dart] 1 Tempo extra."
+        }
+      ]
+    }
+  },
+  "griffon-arrow": {
+    "id": "14060000",
+    "category": "stigma",
+    "icon": "griffon-arrow.webp",
+    "cooldown": 45000,
+    "en": {
+      "name": "Griffon Arrow",
+      "desc": "Selects a target within 20m and deals {se_dmg:1406000011:SkillUIMinDmgsum}-{se_dmg:1406000011:SkillUIMaxDmgsum} Fire damage to up to 4 enemies within 4m. Inflicts Crimson Flames for 10s.\nCrimson Flames: Takes {se_abe_dmg:1406000012:1406000011:SkillUIDotMinDmg:tick}-{se_abe_dmg:1406000012:1406000011:SkillUIDotMaxDmg:tick} Fire Damage over Time every 1s. Damage over Time amount increases when targets move.\n\n20 Stagger Gauge Damage",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Changes to mobile skill"
+        },
+        {
+          "level": 10,
+          "text": "+5s Damage over Time duration"
+        },
+        {
+          "level": 15,
+          "text": "Enhanced Crimson Flames - Extra damage when hit while afflicted with Crimson Flames"
+        },
+        {
+          "level": 20,
+          "text": "-50% Damage over Time intervals"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Стрела грифона",
+      "desc": "Наносит {se_dmg:1406000011:SkillUIMinDmgsum}-{se_dmg:1406000011:SkillUIMaxDmgsum} урона стихии огня врагам (макс. 4) в радиусе 4 м вокруг цели, находящейся в пределах 20 м, и на 10s активирует состояние «Искра».\nИскра: каждую 1 сек. получает {se_abe_dmg:1406000012:1406000011:SkillUIDotMinDmg:tick}-{se_abe_dmg:1406000012:1406000011:SkillUIDotMaxDmg:tick} постоянного урона стихии огня. Пост. урон увеличивается при передвижении.\n\nУрон по шкале ошеломления — 20 ед.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Замена на умение с возможностью перемещения"
+        },
+        {
+          "level": 10,
+          "text": "Длительность постоянного урона +5 сек."
+        },
+        {
+          "level": 15,
+          "text": "Усиление Искры: доп. урон при атаке цели в состоянии «Искра»"
+        },
+        {
+          "level": 20,
+          "text": "Интервалы постоянного урона сокращаются на 50%"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Griffon Arrow",
+      "desc": "Seleciona um alvo dentro do 20m e lida com danos {se_dmg:1406000011:SkillUIMinDmgsum}-{se_dmg:1406000011:SkillUIMaxDmgsum} de fogo para até inimigos 4 dentro do 4m. Inflige Chamas Escarlate para o 10s. Chamas vermelhas: causam danos ao fogo {se_abe_dmg:1406000012:1406000011:SkillUIDotMinDmg:tick}-{se_abe_dmg:1406000012:1406000011:SkillUIDotMaxDmg:tick} ao longo do tempo a cada 1s. Dano contínuo aumentam quando os alvos se movem. 20 Stagger Gauge Danos",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Mudanças na habilidade móvel."
+        },
+        {
+          "level": 10,
+          "text": "Mais danos 5s ao longo do tempo."
+        },
+        {
+          "level": 15,
+          "text": "Chamas vermelhas melhoradas - danos adicionais quando atingido enquanto afligido com Chamas vermelhas"
+        },
+        {
+          "level": 20,
+          "text": "- Dano 50% em intervalos de tempo."
+        }
+      ]
+    }
+  },
+  "suppressing-arrow": {
+    "id": "14070000",
+    "category": "active",
+    "icon": "suppressing-arrow.webp",
+    "cooldown": 20000,
+    "en": {
+      "name": "Suppressing Arrow",
+      "desc": "Deals {se_dmg:1407000011:SkillUIMinDmgsum}-{se_dmg:1407000011:SkillUIMaxDmgsum} Wind damage to a target within 20m with a 40% chance to inflict Stun for 3s while Precision is active.\n100% chance to inflict Stun on NPC targets.\n\n10 Stagger Gauge Damage",
+      "specs": [
+        {
+          "level": 8,
+          "text": "+50% Multi-Hit on hit"
+        },
+        {
+          "level": 8,
+          "text": "+1s Stun duration"
+        },
+        {
+          "level": 8,
+          "text": "+20% Skill Speed"
+        },
+        {
+          "level": 12,
+          "text": "+20% Stun Chance"
+        },
+        {
+          "level": 16,
+          "text": "25% chance to reset cooldown on hit"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Поражающая стрела",
+      "desc": "В состоянии «Зоркий глаз» наносит {se_dmg:1407000011:SkillUIMinDmgsum}-{se_dmg:1407000011:SkillUIMaxDmgsum} урона стихии воздуха цели в радиусе 20 м и с шансом 40% оглушает ее на 3s\nДля NPC оглушение срабатывает гарантированно.\n\nУрон по шкале ошеломления — 10 ед.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Шанс мультиудара +50% при попадании"
+        },
+        {
+          "level": 8,
+          "text": "Длительность Оглушения +1 сек."
+        },
+        {
+          "level": 8,
+          "text": "СКР умений +20%"
+        },
+        {
+          "level": 12,
+          "text": "Шанс Оглушения +20%"
+        },
+        {
+          "level": 16,
+          "text": "Шанс 25% сбросить время перезарядки при попадании [Поражающей стрелой]"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Suppressing Arrow",
+      "desc": "De acordo com {se_dmg:1407000011:SkillUIMinDmgsum} - {se_dmg:1407000011:SkillUIMaxDmgsum} Dano do vento em um alvo dentro 20m com uma chance 40% de infligir Stun para 3s enquanto Precisão está ativa. 100% chance de infligir Stun em alvos da NPC. 10 Stagger Gauge Danos",
+      "specs": [
+        {
+          "level": 8,
+          "text": "+ 50% Multi-Hit no hit"
+        },
+        {
+          "level": 8,
+          "text": "+ 1s duração de choque"
+        },
+        {
+          "level": 8,
+          "text": "+ 20% Velocidade de Habilidade"
+        },
+        {
+          "level": 12,
+          "text": "+ 20% Stun Chance"
+        },
+        {
+          "level": 16,
+          "text": "25% chance de reiniciar o recarga no hit"
+        }
+      ]
+    }
+  },
+  "burst-arrow": {
+    "id": "14080000",
+    "category": "active",
+    "icon": "burst-arrow.webp",
+    "cooldown": 20000,
+    "en": {
+      "name": "Burst Arrow",
+      "desc": "Selects a target afflicted with Slow or Root within 20m and deals {se_dmg:1408000011:SkillUIMinDmgsum}-{se_dmg:1408000011:SkillUIMaxDmgsum} Wind damage to up to 4 enemies within 4m of the target.\n\n15 Stagger Gauge Damage",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Absorbs 10% HP"
+        },
+        {
+          "level": 8,
+          "text": "+50% Multi-Hit on hit"
+        },
+        {
+          "level": 8,
+          "text": "Changes to mobile skill"
+        },
+        {
+          "level": 12,
+          "text": "Up to +20% damage when less targets hit"
+        },
+        {
+          "level": 16,
+          "text": "25% chance to reset cooldown on hit"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Рассекающая стрела",
+      "desc": "Наносит {se_dmg:1408000011:SkillUIMinDmgsum}-{se_dmg:1408000011:SkillUIMaxDmgsum} урона стихии воздуха врагам (макс. 4) в радиусе 4 м вокруг цели в состоянии Замедления или Плена, находящейся в пределах 20 м.\n\nУрон по шкале ошеломления — 15 ед.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Поглощение 10% ОЗ"
+        },
+        {
+          "level": 8,
+          "text": "Шанс мультиудара +50% при попадании"
+        },
+        {
+          "level": 8,
+          "text": "Замена на умение с возможностью перемещения"
+        },
+        {
+          "level": 12,
+          "text": "Чем меньше целей попадания, тем больше увеличение урона (макс. до 20%)"
+        },
+        {
+          "level": 16,
+          "text": "Шанс 25% сбросить время перезарядки при попадании [Рассекающей стрелы]"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Burst Arrow",
+      "desc": "Seleciona um alvo atingido com Lento ou Root dentro do 20m e lida com {se_dmg:1408000011:SkillUIMinDmgsum} - {se_dmg:1408000011:SkillUIMaxDmgsum} Dano do vento para até inimigos 4 dentro de 4m do alvo. 15 Stagger Gauge Danos",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Absorve 10% HP"
+        },
+        {
+          "level": 8,
+          "text": "+ 50% Multi-Hit no hit"
+        },
+        {
+          "level": 8,
+          "text": "Mudanças na habilidade móvel."
+        },
+        {
+          "level": 12,
+          "text": "Até + 20% dano quando menos alvos atingem"
+        },
+        {
+          "level": 16,
+          "text": "25% chance de reiniciar o recarga no hit"
+        }
+      ]
+    }
+  },
+  "marking-shot": {
+    "id": "14090000",
+    "category": "active",
+    "icon": "marking-shot.webp",
+    "cooldown": 10000,
+    "en": {
+      "name": "Marking Shot",
+      "desc": "Deals {se_dmg:1409001021:SkillUIMinDmgsum}-{se_dmg:1409001021:SkillUIMaxDmgsum} Wind damage to a target within 20m. Moves the caster in the input direction and grants Precision for 10s.\nPrecision: Increases Critical Hit by 300\n\n7 Stagger Gauge Damage",
+      "specs": [
+        {
+          "level": 8,
+          "text": "+5% Perfect Chance for the duration"
+        },
+        {
+          "level": 8,
+          "text": "30% chance to inflict Knock Back on hit"
+        },
+        {
+          "level": 8,
+          "text": "+5s duration"
+        },
+        {
+          "level": 12,
+          "text": "+1 consecutive use"
+        },
+        {
+          "level": 16,
+          "text": "Ignores Block and Evasion and lands as a Critical Hit"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Помечающий выстрел",
+      "desc": "Наносит {se_dmg:1409001021:SkillUIMinDmgsum}-{se_dmg:1409001021:SkillUIMaxDmgsum} урона стихии воздуха цели в радиусе 20 м. Перемещается в выбранном направлении и на 10s активирует Зоркий глаз.\nЗоркий глаз: крит. удар +300\n\nУрон по шкале ошеломления — 7 ед.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Совершенный удар +5% во время действия умения"
+        },
+        {
+          "level": 8,
+          "text": "Шанс 30% оттолкнуть при попадании"
+        },
+        {
+          "level": 8,
+          "text": "+5 сек. к длительности"
+        },
+        {
+          "level": 12,
+          "text": "Непрерывное использование +1 раз"
+        },
+        {
+          "level": 16,
+          "text": "Крит. удар, несмотря на блок и уклонение"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Marking Shot",
+      "desc": "De acordo {se_dmg:1409001021:SkillUIMinDmgsum}-{se_dmg:1409001021:SkillUIMaxDmgsum} Dano do vento em um alvo dentro do 20m. Move o rodízio na direção de entrada e concede precisão para 10s. Precisão: aumenta o impacto crítico de 300 7 Stagger Gauge Danos",
+      "specs": [
+        {
+          "level": 8,
+          "text": "+ 5% Perfect Chance para a duração"
+        },
+        {
+          "level": 8,
+          "text": "30% chance de infligir Knock Back no sucesso"
+        },
+        {
+          "level": 8,
+          "text": "+ Duração 5s"
+        },
+        {
+          "level": 12,
+          "text": "+ 1 uso consecutivo"
+        },
+        {
+          "level": 16,
+          "text": "Ignora bloqueio e evacuação e aterrissa como um ataque crítico"
+        }
+      ]
+    }
+  },
+  "gale-arrow": {
+    "id": "14110000",
+    "category": "active",
+    "icon": "gale-arrow.webp",
+    "cooldown": 20000,
+    "en": {
+      "name": "Gale Arrow",
+      "desc": "Selects a target within 20m and deals {se_dmg:1411000011:SkillUIMinDmgsum}-{se_dmg:1411000011:SkillUIMaxDmgsum} Wind damage to up to 4 enemies within 4m of the target. Grants Gale to the caster for 10s.\nGale: Increases Combat Speed by 7%, PvE Damage Boost by 7%, and PvP Damage Boost by 3.5%\n\n10 Stagger Gauge Damage",
+      "specs": [
+        {
+          "level": 8,
+          "text": "+5s duration"
+        },
+        {
+          "level": 8,
+          "text": "50% chance to inflict Knock Back on hit"
+        },
+        {
+          "level": 8,
+          "text": "Changes to mobile skill"
+        },
+        {
+          "level": 12,
+          "text": "Increases Combat Speed, PvE Damage Boost, and PvP Damage Boost when less targets hit"
+        },
+        {
+          "level": 16,
+          "text": "-10s cooldown"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Шквал стрел",
+      "desc": "Наносит {se_dmg:1411000011:SkillUIMinDmgsum}-{se_dmg:1411000011:SkillUIMaxDmgsum} урона стихии воздуха врагам (макс. 4) в радиусе 4 м вокруг цели, находящейся в пределах 20 м. Активируется состояние Ярость ветра на 10s.\nЯрость ветра: СКР боя +7%, усил. урона в PvE на 7%, усил. урона в PvP на 3.5%.\n\nУрон по шкале ошеломления — 10 ед.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "+5 сек. к длительности"
+        },
+        {
+          "level": 8,
+          "text": "50% шанс отталкивания при попадании"
+        },
+        {
+          "level": 8,
+          "text": "Замена на умение с возможностью перемещения"
+        },
+        {
+          "level": 12,
+          "text": "Чем меньше целей попадания, тем больше увелич. СКР боя, усиление урона в PvE и PvP"
+        },
+        {
+          "level": 16,
+          "text": "Перезарядка -10 сек."
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Gale Arrow",
+      "desc": "Seleciona um alvo dentro do 20m e lida com danos de vento {se_dmg:1411000011:SkillUIMinDmgsum}-{se_dmg:1411000011:SkillUIMaxDmgsum} para inimigos 4 dentro do 4m do alvo. Concede Gale para o lançador do 10s. Aumenta a velocidade de combate em 7%, PvE aumenta os danos em 7% e PvP aumenta em 3.5% 10 Danos no gauge do Stagger",
+      "specs": [
+        {
+          "level": 8,
+          "text": "+ Duração 5s"
+        },
+        {
+          "level": 8,
+          "text": "50% chance de infligir Knock Back no sucesso"
+        },
+        {
+          "level": 8,
+          "text": "Mudanças na habilidade móvel."
+        },
+        {
+          "level": 12,
+          "text": "Aumenta a velocidade de combate, aumenta os danos PvE e aumenta os danos PvP quando menos alvos atingem"
+        },
+        {
+          "level": 16,
+          "text": "- Arrefecer em 10s"
+        }
+      ]
+    }
+  },
+  "ambush-kick": {
+    "id": "14120000",
+    "category": "stigma",
+    "icon": "ambush-kick.webp",
+    "cooldown": 30000,
+    "en": {
+      "name": "Ambush Kick",
+      "desc": "Moves behind a target within 5m and deals {se_dmg:1412000021:SkillUIMinDmgsum}-{se_dmg:1412000021:SkillUIMaxDmgsum} Wind damage and inflicts Knock Back. The caster moves back.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "+5m Range"
+        },
+        {
+          "level": 10,
+          "text": "10% Max HP Protective Shield for 5s on hit"
+        },
+        {
+          "level": 15,
+          "text": "50% chance to inflict Stun for 3s on hit"
+        },
+        {
+          "level": 20,
+          "text": "+50% Stun Chance"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Внезапный толчок",
+      "desc": "Перемещается за цель, находящуюся в радиусе 5 м, наносит {se_dmg:1412000021:SkillUIMinDmgsum}-{se_dmg:1412000021:SkillUIMaxDmgsum} урона стихии воздуха, отталкивает ее и перемещается назад.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Дальность атаки +5 м"
+        },
+        {
+          "level": 10,
+          "text": "Создание защитной оболочки, равной 10% от макс. ОЗ, на 5s при попадании"
+        },
+        {
+          "level": 15,
+          "text": "Шанс 50% оглушить на 3s при попадании"
+        },
+        {
+          "level": 20,
+          "text": "Шанс Оглушения +50%"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Ambush Kick",
+      "desc": "Move-se para trás de um alvo dentro do 5m e lida com danos {se_dmg:1412000021:SkillUIMinDmgsum}-{se_dmg:1412000021:SkillUIMaxDmgsum} do vento e inflige Knock Back. O lançador se move para trás.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "+ Faixa 5m"
+        },
+        {
+          "level": 10,
+          "text": "10% Max HP Escudo de proteção para 5s na batida."
+        },
+        {
+          "level": 15,
+          "text": "50% chance de infligir Stun para 3s em sucesso"
+        },
+        {
+          "level": 20,
+          "text": "+ 50% Stun Chance"
+        }
+      ]
+    }
+  },
+  "snare-shot": {
+    "id": "14130000",
+    "category": "active",
+    "icon": "snare-shot.webp",
+    "cooldown": 15000,
+    "en": {
+      "name": "Snare Shot",
+      "desc": "Selects a target within 20m and deals {se_dmg:1413000011:SkillUIMinDmgsum}-{se_dmg:1413000011:SkillUIMaxDmgsum} Earth damage to up to 4 enemies within 4m of the target. Inflicts Slow, reducing Move Speed by 40% for 5s.\n\n10 Stagger Gauge Damage",
+      "specs": [
+        {
+          "level": 8,
+          "text": "+20% Move Speed reduction"
+        },
+        {
+          "level": 8,
+          "text": "+20% Skill Speed"
+        },
+        {
+          "level": 8,
+          "text": "Changes to mobile skill"
+        },
+        {
+          "level": 12,
+          "text": "Adds [Shackling Arrow] Chain Skill"
+        },
+        {
+          "level": 16,
+          "text": "+2s Slow and Root duration"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Опутывающий выстрел",
+      "desc": "Наносит {se_dmg:1413000011:SkillUIMinDmgsum}-{se_dmg:1413000011:SkillUIMaxDmgsum} урона стихии земли врагам (макс. 4) в радиусе 4 м вокруг цели, находящейся в пределах 20 м, и на 5s замедляет их, снижающее СКР движ. на 40%.\n\nУрон по шкале ошеломления — 10 ед.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Снижение СКР движ. от [Опутывающего выстрела] +20%"
+        },
+        {
+          "level": 8,
+          "text": "СКР умений +20%"
+        },
+        {
+          "level": 8,
+          "text": "Замена на умение с возможностью перемещения"
+        },
+        {
+          "level": 12,
+          "text": "Добавление 2-й комбинации [Сковывающая стрела]"
+        },
+        {
+          "level": 16,
+          "text": "Длительность Замедления и Плена +2 сек."
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Snare Shot",
+      "desc": "Seleciona um alvo dentro do 20m e lida com danos {se_dmg:1413000011:SkillUIMinDmgsum}-{se_dmg:1413000011:SkillUIMaxDmgsum} na Terra para até inimigos 4 dentro do 4m do alvo. Inflige lentamente, reduzindo a velocidade de movimento em 40% para 5s. 10 Stagger Gauge Danos",
+      "specs": [
+        {
+          "level": 8,
+          "text": "+ 20% Move Redução de velocidade"
+        },
+        {
+          "level": 8,
+          "text": "+ 20% Velocidade de Habilidade"
+        },
+        {
+          "level": 8,
+          "text": "Mudanças na habilidade móvel."
+        },
+        {
+          "level": 12,
+          "text": "Adiciona a habilidade da corrente"
+        },
+        {
+          "level": 16,
+          "text": "+ 2s Lento e duração Root"
+        }
+      ]
+    }
+  },
+  "illusory-arrow": {
+    "id": "14150000",
+    "category": "stigma",
+    "icon": "illusory-arrow.webp",
+    "cooldown": 30000,
+    "en": {
+      "name": "Illusory Arrow",
+      "desc": "Deals {se_dmg:1415000011:SkillUIMinDmgsum}-{se_dmg:1415000011:SkillUIMaxDmgsum} Wind damage to a target within 20m and inflicts Blind for 3s.\n\n15 Stagger Gauge Damage",
+      "specs": [
+        {
+          "level": 5,
+          "text": "+1s Blind duration"
+        },
+        {
+          "level": 10,
+          "text": "Changes to AoE Skill"
+        },
+        {
+          "level": 15,
+          "text": "Inflicts Slow for 5s on hit"
+        },
+        {
+          "level": 20,
+          "text": "+1 consecutive use"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Иллюзорная стрела",
+      "desc": "Наносит {se_dmg:1415000011:SkillUIMinDmgsum}-{se_dmg:1415000011:SkillUIMaxDmgsum} урона стихии воздуха цели в радиусе 20 м и ослепляет ее на 3s\n\nУрон по шкале ошеломления — 15 ед.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Длительность Слепоты +1 сек."
+        },
+        {
+          "level": 10,
+          "text": "Смена на массовое умение"
+        },
+        {
+          "level": 15,
+          "text": "Замедление на 5s при попадании"
+        },
+        {
+          "level": 20,
+          "text": "Непрерывное использование +1 раз"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Illusory Arrow",
+      "desc": "De acordo com {se_dmg:1415000011:SkillUIMinDmgsum}-{se_dmg:1415000011:SkillUIMaxDmgsum} Dano do vento em um alvo dentro de 20m e inflige Cego para 3s. 15 Stagger Gauge Danos",
+      "specs": [
+        {
+          "level": 5,
+          "text": "+ 1s Duração cega"
+        },
+        {
+          "level": 10,
+          "text": "Mudanças para AoE Skill"
+        },
+        {
+          "level": 15,
+          "text": "Inflige lentamente para 5s em sucesso."
+        },
+        {
+          "level": 20,
+          "text": "+ 1 uso consecutivo"
+        }
+      ]
+    }
+  },
+  "sealing-arrow": {
+    "id": "14160000",
+    "category": "stigma",
+    "icon": "sealing-arrow.webp",
+    "cooldown": 60000,
+    "en": {
+      "name": "Sealing Arrow",
+      "desc": "Deals {se_dmg:1416000011:SkillUIMinDmgsum}-{se_dmg:1416000011:SkillUIMaxDmgsum} Wind damage to a target within 20m. Has a 75% chance to inflict Seal for 5s.\n100% chance to inflict Seal on NPC targets.\n\n20 Stagger Gauge Damage",
+      "specs": [
+        {
+          "level": 5,
+          "text": "50% chance to inflict Root for 5s on hit"
+        },
+        {
+          "level": 10,
+          "text": "-1000 enemy Max Stamina for 5s on hit"
+        },
+        {
+          "level": 15,
+          "text": "+2s Seal duration"
+        },
+        {
+          "level": 20,
+          "text": "+25% Seal chance"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Стрела печати",
+      "desc": "Наносит {se_dmg:1416000011:SkillUIMinDmgsum}-{se_dmg:1416000011:SkillUIMaxDmgsum} урона стихии воздуха цели в радиусе 20 м и с шансом 75% накладывает на нее Запечатывание на 5s\nДля NPC запечатывание гарантировано.\n\nУрон по шкале ошеломления — 20 ед.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Шанс 50% плена на 5s при попадании"
+        },
+        {
+          "level": 10,
+          "text": "Макс. ОД -1000 на 5s при попадании"
+        },
+        {
+          "level": 15,
+          "text": "Длительность Запечатывания +2 сек."
+        },
+        {
+          "level": 20,
+          "text": "Шанс Запечатывания +25%"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Sealing Arrow",
+      "desc": "De acordo {se_dmg:1416000011:SkillUIMinDmgsum}-{se_dmg:1416000011:SkillUIMaxDmgsum} Dano do vento em um alvo dentro do 20m. Tem uma chance 75% de infligir Seal para 5s. 100% chance de infligir Seal em alvos da NPC. 20 Stagger Gauge Danos",
+      "specs": [
+        {
+          "level": 5,
+          "text": "50% chance de infligir Root para 5s em sucesso."
+        },
+        {
+          "level": 10,
+          "text": "- 1000 inimigo Max Stamina para 5s em hit"
+        },
+        {
+          "level": 15,
+          "text": "+ 2s Duração do selo"
+        },
+        {
+          "level": 20,
+          "text": "+ 25% Seal chance"
+        }
+      ]
+    }
+  },
+  "explosion-trap": {
+    "id": "14170000",
+    "category": "active",
+    "icon": "explosion-trap.webp",
+    "cooldown": 20000,
+    "en": {
+      "name": "Explosion Trap",
+      "desc": "Sets an explosive trap at the caster's location. The trap lasts for 10 seconds and deals {se_dmg:1417000111:SkillUIMinDmgsum}-{se_dmg:1417000111:SkillUIMaxDmgsum} Earth damage to up to 4 enemies within 5m when stepped on. Has a 40% chance to inflict Stun for 3s.\n100% chance to inflict Stun on NPC targets.\n\n10 Stagger Gauge Damage",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Pulls enemies on explosion"
+        },
+        {
+          "level": 8,
+          "text": "+1s Stun duration"
+        },
+        {
+          "level": 8,
+          "text": "Extra damage after 3s on hit"
+        },
+        {
+          "level": 12,
+          "text": "+20% Stun Chance"
+        },
+        {
+          "level": 16,
+          "text": "+1 consecutive use"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Взрывной капкан",
+      "desc": "Устанавливает рядом с собой взрывную ловушку. Ловушка активна в течение 10 сек., при приближении к ней врага наносит {se_dmg:1417000111:SkillUIMinDmgsum}-{se_dmg:1417000111:SkillUIMaxDmgsum} урона стихии земли врагам (макс. 4) в радиусе 5 м и с шансом 40% оглушает их на 3s\nДля NPC оглушение срабатывает гарантированно.\n\nУрон по шкале ошеломления — 10 ед.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Притягивание врагов при взрыве"
+        },
+        {
+          "level": 8,
+          "text": "Длительность Оглушения +1 сек."
+        },
+        {
+          "level": 8,
+          "text": "Доп. урон через 3 сек. при попадании"
+        },
+        {
+          "level": 12,
+          "text": "Шанс Оглушения +20%"
+        },
+        {
+          "level": 16,
+          "text": "Непрерывное использование +1 раз"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Explosion Trap",
+      "desc": "Define uma armadilha explosiva na localização do caster. A armadilha dura 10 segundos e causa danos na Terra {se_dmg:1417000111:SkillUIMinDmgsum}-{se_dmg:1417000111:SkillUIMaxDmgsum} a inimigos 4 dentro do 5m quando pisado. Tem uma chance 40% de infligir Stun para 3s. 100% chance de infligir Stun em alvos da NPC. 10 Stagger Gauge Danos",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Faz inimigos explodirem."
+        },
+        {
+          "level": 8,
+          "text": "+ 1s duração de choque"
+        },
+        {
+          "level": 8,
+          "text": "Dano extra após 3s na batida."
+        },
+        {
+          "level": 12,
+          "text": "+ 20% Stun Chance"
+        },
+        {
+          "level": 16,
+          "text": "+ 1 uso consecutivo"
+        }
+      ]
+    }
+  },
+  "ensnaring-trap": {
+    "id": "14180000",
+    "category": "stigma",
+    "icon": "ensnaring-trap.webp",
+    "cooldown": 90000,
+    "en": {
+      "name": "Ensnaring Trap",
+      "desc": "Sets an explosive trap at the caster's location. The trap lasts for 30 seconds and deals {se_dmg:1418000111:SkillUIMinDmgsum}-{se_dmg:1418000111:SkillUIMaxDmgsum} Earth damage to up to 4 enemies within 5m when stepped on. Inflicts Airborne for 3s.\n\n20 Stagger Gauge Damage",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Adds [Guerilla Strike] Chain Skill"
+        },
+        {
+          "level": 10,
+          "text": "Removes up to 2 buffs"
+        },
+        {
+          "level": 15,
+          "text": "+1s Airborne duration"
+        },
+        {
+          "level": 20,
+          "text": "-30s cooldown"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Капкан",
+      "desc": "Устанавливает рядом с собой взрывную ловушку. Ловушка активна в течение 30 сек. и при приближении врага наносит {se_dmg:1418000111:SkillUIMinDmgsum}-{se_dmg:1418000111:SkillUIMaxDmgsum} урона стихии земли врагам (макс. 4) в радиусе 5 м и накладывает на них Воздушные оковы на 3s\n\nУрон по шкале ошеломления — 20 ед.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Добавление 2-й комбинации [Разрез с отступлением]"
+        },
+        {
+          "level": 10,
+          "text": "Отмена до 2 маг. усилений"
+        },
+        {
+          "level": 15,
+          "text": "Длительность Воздушных оков +1 сек."
+        },
+        {
+          "level": 20,
+          "text": "Перезарядка -30 сек."
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Ensnaring Trap",
+      "desc": "Define uma armadilha explosiva na localização do caster. A armadilha dura 30 segundos e causa danos na Terra {se_dmg:1418000111:SkillUIMinDmgsum}-{se_dmg:1418000111:SkillUIMaxDmgsum} a inimigos 4 dentro do 5m quando pisado. Inflige aerotransportado para o 3s. 20 Stagger Gauge Danos",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Adiciona a habilidade da corrente."
+        },
+        {
+          "level": 10,
+          "text": "Remove até 2 fans"
+        },
+        {
+          "level": 15,
+          "text": "+ 1s Duração aérea"
+        },
+        {
+          "level": 20,
+          "text": "- Arrefecer em 30s"
+        }
+      ]
+    }
+  },
+  "stealth": {
+    "id": "14190000",
+    "category": "stigma",
+    "icon": "stealth.webp",
+    "cooldown": 120000,
+    "en": {
+      "name": "Stealth",
+      "desc": "Enter Stealth for 10s.\nCannot be used in combat and the Stealth effect is removed upon entering combat.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Critical Hit on attack during Stealth"
+        },
+        {
+          "level": 10,
+          "text": "+20% Move Speed for the duration"
+        },
+        {
+          "level": 15,
+          "text": "Available in combat"
+        },
+        {
+          "level": 20,
+          "text": "+10s Stealth duration"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Невидимость",
+      "desc": "Переход в состояние невидимости на 10s.\nНельзя использовать в бою, эффект невидимости снимается при вступлении в бой.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Крит. удар при атаке в состоянии невидимости"
+        },
+        {
+          "level": 10,
+          "text": "СКР движ. +20% во время действия умения"
+        },
+        {
+          "level": 15,
+          "text": "Можно использовать во время боя"
+        },
+        {
+          "level": 20,
+          "text": "Длительность невидимости +10 сек."
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Stealth",
+      "desc": "Digite Stealth para 10s. Não pode ser usado em combate e o efeito Stealth é removido ao entrar em combate.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Ataque crítico durante Stealth."
+        },
+        {
+          "level": 10,
+          "text": "+ 20% Move Speed para a duração."
+        },
+        {
+          "level": 15,
+          "text": "Disponível em combate."
+        },
+        {
+          "level": 20,
+          "text": "+ 10s Stealth duração"
+        }
+      ]
+    }
+  },
+  "bow-of-blessing": {
+    "id": "14220000",
+    "category": "stigma",
+    "icon": "bow-of-blessing.webp",
+    "cooldown": 120000,
+    "en": {
+      "name": "Bow of Blessing",
+      "desc": "Increases the caster's Critical Hit by 200 and Accuracy by 100 for 10s.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "+50% Multi-Hit Chance for duration"
+        },
+        {
+          "level": 10,
+          "text": "Increases Attack proportional to Critical Hit for the duration"
+        },
+        {
+          "level": 15,
+          "text": "+20% Critical Damage Boost for the duration"
+        },
+        {
+          "level": 20,
+          "text": "+7% Double Chance for the duration"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Благословенный лук",
+      "desc": "Увелич. крит удар на 200, меткость — на 100 в теч. 10s.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Попадание мультиударом +50% во время действия умения"
+        },
+        {
+          "level": 10,
+          "text": "Увелич. АТК пропорционально крит. удару во время действия"
+        },
+        {
+          "level": 15,
+          "text": "Увеличение крит. урона +20% во время действия умения"
+        },
+        {
+          "level": 20,
+          "text": "Мощный удар +7% во время действия умения"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Bow of Blessing",
+      "desc": "Aumenta o impacto crítico do lançador por 200 e precisão por 100 para 10s.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "+ 50% Multi-Hit Chance para a duração"
+        },
+        {
+          "level": 10,
+          "text": "Aumenta o ataque proporcional ao ataque crítico durante a duração."
+        },
+        {
+          "level": 15,
+          "text": "+ 20% Os dano crítico aumentam por toda a duração."
+        },
+        {
+          "level": 20,
+          "text": "+ 7% dupla chance para a duração"
+        }
+      ]
+    }
+  },
+  "defiance": {
+    "id": "14260000",
+    "category": "active",
+    "icon": "defiance.webp",
+    "cooldown": 60000,
+    "en": {
+      "name": "Defiance",
+      "desc": "Removes Stun, Knockdown, Airborne, Grab, Frost, and Fear from the caster and grants Tenacity for 5s.\nTenacity: Grants Status Effect Immunity\n\nUnaffected by cooldown reduction effects.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Adds [Lightning Arrow] Chain Skill"
+        },
+        {
+          "level": 8,
+          "text": "Restores 1000 Stamina on using [Defiance]"
+        },
+        {
+          "level": 8,
+          "text": "Restores 20% HP on using [Defiance]"
+        },
+        {
+          "level": 12,
+          "text": "+2s Tenacity duration"
+        },
+        {
+          "level": 16,
+          "text": "+50% PvE Damage Tolerance and +25% PvP Damage Tolerance for Tenacity duration"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Снятие шока",
+      "desc": "Отменяет эффекты Оглушения, Сбивания с ног, Воздушные оковы, захват, Заморозку и Ужас на 5s активирует для персонажа Непреклонность.\nНепреклонность: иммунитет к негат. эффектам\n\nЭффекты снижения времени перезарядки не действуют.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Добавляет 2-й комбинации [Стрела молнии]"
+        },
+        {
+          "level": 8,
+          "text": "При использовании [Снятия шока] восстанавливает 1000 ОД"
+        },
+        {
+          "level": 8,
+          "text": "При использовании [Снятия шока] восстанавливает 20% ОЗ"
+        },
+        {
+          "level": 12,
+          "text": "Длительность Непреклонности +2 сек."
+        },
+        {
+          "level": 16,
+          "text": "Стойкость к урону в PvE +50% и стойкость к урону в PvP +25% во время действия Непреклонности"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Defiance",
+      "desc": "Remove Stun, Knockdown, Airborne, Grab, Frost e Medo do lançador e concede Tenacidade para 5s. Tenacidade: Efeito da Imunidade. Não afetado pelos efeitos de redução do recarga.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Adiciona a habilidade da corrente"
+        },
+        {
+          "level": 8,
+          "text": "Restaura a resistência 1000 usando o Defiance"
+        },
+        {
+          "level": 8,
+          "text": "Restaura 20% HP usando [Defiance ]"
+        },
+        {
+          "level": 12,
+          "text": "+ 2s Duração da tenacidade"
+        },
+        {
+          "level": 16,
+          "text": "+ 50% PvE Tolerância de danos e 25% PvP Tolerância de danos por duração de tenacidade"
+        }
+      ]
+    }
+  },
+  "arrow-storm": {
+    "id": "14270000",
+    "category": "stigma",
+    "icon": "arrow-storm.webp",
+    "cooldown": 60000,
+    "en": {
+      "name": "Arrow Storm",
+      "desc": "Selects a target within 20m and deals {se_dmg:1427000011:SkillUIMinDmgsum}-{se_dmg:1427000011:SkillUIMaxDmgsum} Wind damage to up to 4 enemies within 4m of the target. Has a 50% chance to inflict Stun for 3s.\n100% chance to inflict Stun on NPC targets.\n\n50 Stagger Gauge Damage",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Up to +20% max damage when more targets hit"
+        },
+        {
+          "level": 10,
+          "text": "Inflicts Slow for 10s on hit"
+        },
+        {
+          "level": 15,
+          "text": "+1s Stun duration"
+        },
+        {
+          "level": 20,
+          "text": "+25% Stun Chance"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Ураган стрел",
+      "desc": "Наносит {se_dmg:1427000011:SkillUIMinDmgsum}-{se_dmg:1427000011:SkillUIMaxDmgsum} урона стихии воздуха врагам (макс. 4) в радиусе 4 м вокруг цели, находящейся в радиусе 20 м, и с шансом 50% оглушает их на 3s\nДля NPC оглушение срабатывает гарантированно.\n\nУрон по шкале ошеломления — 50 ед.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Чем больше целей попадания, тем больше увеличение урона (макс. до 20%)"
+        },
+        {
+          "level": 10,
+          "text": "Замедление на 10s при попадании"
+        },
+        {
+          "level": 15,
+          "text": "Длительность Оглушения +1 сек."
+        },
+        {
+          "level": 20,
+          "text": "Шанс Оглушения +25%"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Arrow Storm",
+      "desc": "Seleciona um alvo dentro do 20m e lida com danos de vento {se_dmg:1427000011:SkillUIMinDmgsum}-{se_dmg:1427000011:SkillUIMaxDmgsum} para inimigos 4 dentro do 4m do alvo. Tem uma chance 50% de infligir Stun para 3s. 100% chance de infligir Stun em alvos da NPC. 50 Stagger Gauge Danos",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Dano máximo até + 20% quando mais alvos atingirem"
+        },
+        {
+          "level": 10,
+          "text": "Inflige lentamente para 10s em sucesso."
+        },
+        {
+          "level": 15,
+          "text": "+ 1s duração de choque"
+        },
+        {
+          "level": 20,
+          "text": "+ 25% Stun Chance"
+        }
+      ]
+    }
+  },
+  "vaizels-authority": {
+    "id": "14310000",
+    "category": "stigma",
+    "icon": "vaizels-authority.webp",
+    "cooldown": 60000,
+    "en": {
+      "name": "Vaizel's Authority",
+      "desc": "Increases the caster's Attack by 20% for 10s.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "+10% Perfect Chance for the duration"
+        },
+        {
+          "level": 10,
+          "text": "x1.5 [Focused Eye] effect for the duration"
+        },
+        {
+          "level": 15,
+          "text": "x1.5 [Hunter's Soul] effect for the duration"
+        },
+        {
+          "level": 20,
+          "text": "50% chance to reduce all skill cooldowns by 1s on Critical Hit for the duration"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Сила Байзела",
+      "desc": "На 10s увеличивает АТК на 20%.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Совершенный удар +10% во время действия умения"
+        },
+        {
+          "level": 10,
+          "text": "Эффект [Око концентрации] во время действия умения x1,5"
+        },
+        {
+          "level": 15,
+          "text": "Эффект [Души охотника] во время действия умения x1,5"
+        },
+        {
+          "level": 20,
+          "text": "С шансом 50% уменьшает время перезарядки всех умений на 1s сек. при крит. ударе во время действия"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Vaizel's Authority",
+      "desc": "Aumenta o ataque do lançador em 20% para 10s.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "+ 10% Perfect Chance para a duração"
+        },
+        {
+          "level": 10,
+          "text": "x1.5 [Focused EyeEfeito para a duração"
+        },
+        {
+          "level": 15,
+          "text": "x1.5 [Hunter's SoulEfeito para a duração"
+        },
+        {
+          "level": 20,
+          "text": "50% chance de reduzir todos os recargas de habilidade em 1s em Critical Hit para a duração"
+        }
+      ]
+    }
+  },
+  "arrow-scattershot": {
+    "id": "14330000",
+    "category": "active",
+    "icon": "arrow-scattershot.webp",
+    "cooldown": 0,
+    "en": {
+      "name": "Arrow Scattershot",
+      "desc": "Deals {se_dmg:1433000011:SkillUIMinDmgsum}-{se_dmg:1433000011:SkillUIMaxDmgsum} Wind damage to a target afflicted with Stagger within 20m.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Absorbs 5% HP"
+        },
+        {
+          "level": 8,
+          "text": "Restores 120 MP on hit"
+        },
+        {
+          "level": 8,
+          "text": "Changes to mobile skill"
+        },
+        {
+          "level": 12,
+          "text": "Multi-Hit on hit"
+        },
+        {
+          "level": 16,
+          "text": "-1s all cooldowns on hit"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Град из стрел",
+      "desc": "Наносит {se_dmg:1433000011:SkillUIMinDmgsum}-{se_dmg:1433000011:SkillUIMaxDmgsum} урона стихии воздуха цели в состоянии Ошеломления в радиусе 20 м.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Поглощение 5% ОЗ"
+        },
+        {
+          "level": 8,
+          "text": "Восстановление 120 ОМ при попадании"
+        },
+        {
+          "level": 8,
+          "text": "Замена на умение с возможностью перемещения"
+        },
+        {
+          "level": 12,
+          "text": "Гарантир. мультиудар при попадании"
+        },
+        {
+          "level": 16,
+          "text": "Перезарядка всех умений -1s при попадании"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Arrow Scattershot",
+      "desc": "Lida com danos de vento {se_dmg:1433000011:SkillUIMinDmgsum}-{se_dmg:1433000011:SkillUIMaxDmgsum} em um alvo atingido com Stagger dentro do 20m.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Absorve 5% HP"
+        },
+        {
+          "level": 8,
+          "text": "Restaura 120 MP no hit"
+        },
+        {
+          "level": 8,
+          "text": "Mudanças na habilidade móvel."
+        },
+        {
+          "level": 12,
+          "text": "Multi-Hit na batida"
+        },
+        {
+          "level": 16,
+          "text": "-1s Todos os recargas no hit"
+        }
+      ]
+    }
+  },
+  "tempest-shot": {
+    "id": "14340000",
+    "category": "active",
+    "icon": "tempest-shot.webp",
+    "cooldown": 0,
+    "en": {
+      "name": "Tempest Shot",
+      "desc": "Selects a target within 20m and deals {se_dmg:1434000011:SkillUIMinDmgsum}-{se_dmg:1434000011:SkillUIMaxDmgsum} Wind damage to up to 4 enemies within 4m of the target.\n\n1 Stagger Gauge Damage",
+      "specs": [
+        {
+          "level": 8,
+          "text": "-20% MP consumed"
+        },
+        {
+          "level": 8,
+          "text": "+10% skill Critical Hit"
+        },
+        {
+          "level": 8,
+          "text": "Deals up to 12% more damage when less targets are hit"
+        },
+        {
+          "level": 12,
+          "text": "5% chance to inflict Knock Back on Critical Hit"
+        },
+        {
+          "level": 16,
+          "text": "+20% Skill Speed"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Скоростная стрельба",
+      "desc": "Наносит {se_dmg:1434000011:SkillUIMinDmgsum}–{se_dmg:1434000011:SkillUIMaxDmgsum} урона стихии воздуха врагам (макс. 4) в радиусе 4 м от выбранной цели в пределах 20 м.\n\nУрон по шкале ошеломления — 1 ед.",
+      "specs": [
+        {
+          "level": 8,
+          "text": "Затрата ОМ -20%"
+        },
+        {
+          "level": 8,
+          "text": "Крит. удар от умения +10%"
+        },
+        {
+          "level": 8,
+          "text": "Чем меньше целей попадания, тем больше увеличение урона (макс. до 12%)"
+        },
+        {
+          "level": 12,
+          "text": "Отталкивание с шансом 5% при успешном крит. ударе"
+        },
+        {
+          "level": 16,
+          "text": "СКР умений +20%"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Tempest Shot",
+      "desc": "Seleciona um alvo dentro do 20m e lida com danos de vento {se_dmg:1434000011:SkillUIMinDmgsum}-{se_dmg:1434000011:SkillUIMaxDmgsum} para inimigos 4 dentro do 4m do alvo. 1 Stagger Gauge Danos",
+      "specs": [
+        {
+          "level": 8,
+          "text": "- 20% MP consumido."
+        },
+        {
+          "level": 8,
+          "text": "+ 10% habilidade Crítica Hit"
+        },
+        {
+          "level": 8,
+          "text": "Comprou até 12% mais danos quando menos alvos foram atingidos."
+        },
+        {
+          "level": 12,
+          "text": "5% chance de infligir Knock Back em Critical Hit"
+        },
+        {
+          "level": 16,
+          "text": "+ 20% Velocidade de Habilidade"
+        }
+      ]
+    }
+  },
+  "mother-natures-breath": {
+    "id": "14350000",
+    "category": "stigma",
+    "icon": "mother-natures-breath.webp",
+    "cooldown": 90000,
+    "en": {
+      "name": "Mother Nature's Breath",
+      "desc": "Increases the caster's PvE Damage Tolerance by 20%, PvP Damage Tolerance by 10%, and Critical Hit Resist by 200 for 6s. Grants Mother Nature's Embrace for the duration.\nMother Nature's Embrace: The caster has a 50% chance to absorb 25% of damage taken as HP.\n\nUnaffected by cooldown increase effects.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Removes and grants immunity to Damage over Time effects"
+        },
+        {
+          "level": 10,
+          "text": "x1.5 [Vigilant Eye] effect for the duration"
+        },
+        {
+          "level": 15,
+          "text": "x1.5 [Unyielding Resolve] effect for the duration"
+        },
+        {
+          "level": 20,
+          "text": "+20% PvE Damage Tolerance increase and +10% PvP Damage Tolerance increase"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Дыхание Матери-Природы",
+      "desc": "Увелич. стойкость к урону в PvE на 20%, стойкость к урону в PvP на 10% и сопротивление крит. удару на 200 в теч. 6s. Во время действия применяется эффект Объятия Природы.\nОбъятия природы: с шансом 50% происходит восст. 25% урона за счет ОЗ.\n\nЭффекты увеличения времени перезарядки не действуют.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Отмена эффекта постоянного урона и активация иммунитета"
+        },
+        {
+          "level": 10,
+          "text": "Эффект [Всевидящего ока] во время действия умения x1,5"
+        },
+        {
+          "level": 15,
+          "text": "Эффект [Железная воля] x1,5 во время действия"
+        },
+        {
+          "level": 20,
+          "text": "+20% к стойкости к урону в PvE и +10% к стойкости к урону в PvP"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Mother Nature's Breath",
+      "desc": "Aumenta a tolerância de danos PvE do lançador em 20%, PvP em 10%, e a resistência crítica ao impacto 200 em 6s. Concede o abraço da Mãe Natureza durante todo o tempo. O caster tem uma chance 50% de absorver 25% de danos tomados como HP. Não afetado pelo efeito de recarga.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Remove e concede imunidade aos efeitos de Dano contínuo."
+        },
+        {
+          "level": 10,
+          "text": "x1.5 [Vigilant EyeEfeito para a duração"
+        },
+        {
+          "level": 15,
+          "text": "x1.5 [Unyielding ResolveEfeito para a duração"
+        },
+        {
+          "level": 20,
+          "text": "+ 20% PvE Aumento da tolerância aos danos e + 10% PvP Aumento da tolerância aos danos"
+        }
+      ]
+    }
+  },
+  "explosive-arrow": {
+    "id": "14360000",
+    "category": "stigma",
+    "icon": "explosive-arrow.webp",
+    "cooldown": 45000,
+    "en": {
+      "name": "Explosive Arrow",
+      "desc": "Selects a target within 20m and deals {se_dmg:1436000011:SkillUIMinDmgsum}-{se_dmg:1436000011:SkillUIMaxDmgsum} Fire damage to up to 4 enemies within 4m. Increases damage by 20% to targets afflicted with Slow or Root.\n\n20 Stagger Gauge Damage",
+      "specs": [
+        {
+          "level": 5,
+          "text": "-15s cooldown"
+        },
+        {
+          "level": 10,
+          "text": "+10% additional damage to targets afflicted with Slow or Root"
+        },
+        {
+          "level": 15,
+          "text": "Critical Hit on hit"
+        },
+        {
+          "level": 20,
+          "text": "+20% additional damage to targets afflicted with Slow or Root"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Взрывная стрела",
+      "desc": "Наносит {se_dmg:1436000011:SkillUIMinDmgsum}–{se_dmg:1436000011:SkillUIMaxDmgsum} урона стихии огня врагам (макс. 4) в радиусе 4 м от выбранной цели в пределах 20 м. Если цель находится в состоянии Замедления или Плена, урон увеличивается на 20%.\n\nУрон по шкале ошеломления — 20 ед.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "Перезарядка -15 сек."
+        },
+        {
+          "level": 10,
+          "text": "+10% дополнительного урона по целям, находящимся под эффектом Замедления или Плена"
+        },
+        {
+          "level": 15,
+          "text": "Гарантир. крит. удар при попадании"
+        },
+        {
+          "level": 20,
+          "text": "+20% дополнительного урона по целям, находящимся под эффектом Замедления или Плена"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Explosive Arrow",
+      "desc": "Seleciona um alvo dentro do 20m e lida com danos {se_dmg:1436000011:SkillUIMinDmgsum}-{se_dmg:1436000011:SkillUIMaxDmgsum} de fogo para até inimigos 4 dentro do 4m. Aumenta os danos em 20% para alvos atingidos por lentos ou Root. 20 Stagger Gauge Danos",
+      "specs": [
+        {
+          "level": 5,
+          "text": "- Arrefecer em 15s"
+        },
+        {
+          "level": 10,
+          "text": "+ 10% danos adicionais aos alvos afetados com lento ou Root"
+        },
+        {
+          "level": 15,
+          "text": "Ataque crítico no sucesso."
+        },
+        {
+          "level": 20,
+          "text": "+ 20% danos adicionais aos alvos afetados com lento ou Root"
+        }
+      ]
+    }
+  },
+  "assault-smite": {
+    "id": "14700000",
+    "category": "stigma",
+    "icon": "assault-smite.webp",
+    "cooldown": 120000,
+    "en": {
+      "name": "Assault Smite",
+      "desc": "Selects a target within 20m and deals {se_dmg:1470000021:SkillUIMinDmgSum}-{se_dmg:1470000021:SkillUIMaxDmgSum} Wind damage to up to 4 enemies within 4m of the target. Has a 30% chance to inflict Stun for 3s.\n100% chance to inflict Stun on NPC targets.\n\nIncreases Defense by up to 20% proportional to the number of targets hit.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "+20% Attack for 5s on hit"
+        },
+        {
+          "level": 10,
+          "text": "500 MP damage on hit"
+        },
+        {
+          "level": 15,
+          "text": "+10m range"
+        },
+        {
+          "level": 20,
+          "text": "+20% Stun Chance"
+        }
+      ]
+    },
+    "ru": {
+      "name": "Сокрушающий натиск",
+      "desc": "Наносит {se_dmg:1470000021:SkillUIMinDmgSum}-{se_dmg:1470000021:SkillUIMaxDmgSum} урона стихии воздуха врагам (макс. 4) в радиусе 4 м вокруг цели, находящейся в радиусе 20 м, и с шансом 30% оглушает их на 3s\nДля NPC оглушение срабатывает гарантированно.\n\nУвеличивает ЗЩТ пропорционально количеству целей попадания (макс. до 20%).",
+      "specs": [
+        {
+          "level": 5,
+          "text": "АТК +20% на 5s при попадании"
+        },
+        {
+          "level": 10,
+          "text": "500 урона по ОМ при попадании"
+        },
+        {
+          "level": 15,
+          "text": "Дальность атаки +10 м"
+        },
+        {
+          "level": 20,
+          "text": "Шанс Оглушения +20%"
+        }
+      ]
+    },
+    "pt-BR": {
+      "name": "Assault Smite",
+      "desc": "Seleciona um alvo dentro do 20m e lida com danos de vento {se_dmg:1470000021:SkillUIMinDmgSum}-{se_dmg:1470000021:SkillUIMaxDmgSum} para inimigos 4 dentro do 4m do alvo. Tem uma chance 30% de infligir Stun para 3s. 100% chance de infligir Stun em alvos da NPC. Aumenta a defesa em até 20% proporcional ao número de alvos atingidos.",
+      "specs": [
+        {
+          "level": 5,
+          "text": "+ 20% Ataque para 5s em sucesso"
+        },
+        {
+          "level": 10,
+          "text": "Dano 500 MP no ataque."
+        },
+        {
+          "level": 15,
+          "text": "+ Alcance 10m"
+        },
+        {
+          "level": 20,
+          "text": "+ 20% Stun Chance"
+        }
+      ]
+    }
+  },
+  "vigilant-eye": {
+    "id": "14710000",
+    "category": "passive",
+    "icon": "vigilant-eye.webp",
+    "cooldown": 0,
+    "en": {
+      "name": "Vigilant Eye",
+      "desc": "Increases the caster's Evasion by 200, Max HP by 6%, and restores 85-102 HP on Evasion.\n\nCooldown: 3s",
+      "specs": []
+    },
+    "ru": {
+      "name": "Всевидящее око",
+      "desc": "Дает персонажу увеличение уклонения на 200, макс. ОЗ — на 6% и восстанавливает 85–102 ОЗ при уклонении.\n\nВремя перезарядки: 3s",
+      "specs": []
+    },
+    "pt-BR": {
+      "name": "Vigilant Eye",
+      "desc": "Aumenta a Evasão do lançador em 200, Max HP em 6%, e restaura 85 - 102 HP em Evasion. Frio: 3s",
+      "specs": []
+    }
+  },
+  "concentrated-fire": {
+    "id": "14720000",
+    "category": "passive",
+    "icon": "concentrated-fire.webp",
+    "cooldown": 0,
+    "en": {
+      "name": "Concentrated Fire",
+      "desc": "Has a 50% chance to deal {se_dmg:1472000711:SkillUIMinDmgsum}-{se_dmg:1472000711:SkillUIMaxDmgsum} Wind damage to a target taking Damage over Time.\n\nCooldown: 1s",
+      "specs": []
+    },
+    "ru": {
+      "name": "Шквальный огонь",
+      "desc": "С шансом 50% наносит {se_dmg:1472000711:SkillUIMinDmgsum}–{se_dmg:1472000711:SkillUIMaxDmgsum} урона стихии воздуха цели, находящейся под действием постоянного урона.\n\nВремя перезарядки: 1s",
+      "specs": []
+    },
+    "pt-BR": {
+      "name": "Concentrated Fire",
+      "desc": "Tem uma chance 50% de causar dano do vento {se_dmg:1472000711:SkillUIMinDmgsum}-{se_dmg:1472000711:SkillUIMaxDmgsum} a um alvo que está levando Dano contínuo. Recarga: 1s",
+      "specs": []
+    }
+  },
+  "wind-vigor": {
+    "id": "14730000",
+    "category": "passive",
+    "icon": "wind-vigor.webp",
+    "cooldown": 0,
+    "en": {
+      "name": "Wind Vigor",
+      "desc": "Increases Max Stamina by 15. Increases Move Speed by 10% for 1s when attacked.\n\nCooldown: 5s",
+      "specs": []
+    },
+    "ru": {
+      "name": "Сила ветра",
+      "desc": "Увеличивает макс. ОД на 15. Увеличивает СКР движ. на 10% на 1s при получении атаки.\n\nВремя перезарядки: 5s",
+      "specs": []
+    },
+    "pt-BR": {
+      "name": "Wind Vigor",
+      "desc": "Aumenta Max Stamina em 15. Aumenta a velocidade de movimento em 10% para 1s quando atacado. Recarga: 5s",
+      "specs": []
+    }
+  },
+  "focused-eye": {
+    "id": "14740000",
+    "category": "passive",
+    "icon": "focused-eye.webp",
+    "cooldown": 0,
+    "en": {
+      "name": "Focused Eye",
+      "desc": "Increases the caster's Accuracy by 100, PvE Damage Boost by 1%, PvP Damage Boost by 0.5%, and Double Chance by 0.2%.",
+      "specs": []
+    },
+    "ru": {
+      "name": "Око концентрации",
+      "desc": "Увеличивает меткость на 100, эскалацию урона в PvE — на 1%, эскалацию урона в PvP — на 0.5%, мощный удар — на 0.2%.",
+      "specs": []
+    },
+    "pt-BR": {
+      "name": "Focused Eye",
+      "desc": "Aumenta a precisão do lançador em 100, PvE aumenta os danos em 1%, PvP aumenta os danos em 0.5%, e dupla chance em 0.2%.",
+      "specs": []
+    }
+  },
+  "hunters-resolve": {
+    "id": "14750000",
+    "category": "passive",
+    "icon": "hunters-resolve.webp",
+    "cooldown": 0,
+    "en": {
+      "name": "Hunter's Resolve",
+      "desc": "Increases the caster's Critical Damage Boost by 6%.",
+      "specs": []
+    },
+    "ru": {
+      "name": "Решимость охотника",
+      "desc": "Увеличивает эскалацию крит. урона на 6%.",
+      "specs": []
+    },
+    "pt-BR": {
+      "name": "Hunter's Resolve",
+      "desc": "Aumenta o aumento de dano crítico do lançador em 6%.",
+      "specs": []
+    }
+  },
+  "unyielding-resolve": {
+    "id": "14760000",
+    "category": "passive",
+    "icon": "unyielding-resolve.webp",
+    "cooldown": 0,
+    "en": {
+      "name": "Unyielding Resolve",
+      "desc": "Increases the caster's Ailment-type Resist and Impact-type Resist by 11.2%.",
+      "specs": []
+    },
+    "ru": {
+      "name": "Железная воля",
+      "desc": "Увеличивает физ. сопротивление и шок. сопротивление персонажа на 11.2%.",
+      "specs": []
+    },
+    "pt-BR": {
+      "name": "Unyielding Resolve",
+      "desc": "Aumenta o tipo de doença do lançador Resistir e Resistência ao Impacto em 11.2%.",
+      "specs": []
+    }
+  },
+  "rooting-eye": {
+    "id": "14770000",
+    "category": "passive",
+    "icon": "rooting-eye.webp",
+    "cooldown": 0,
+    "en": {
+      "name": "Rooting Eye",
+      "desc": "Has a 50% chance to deal {se_dmg:1477000711:SkillUIMinDmgsum}-{se_dmg:1477000711:SkillUIMaxDmgsum} Wind damage when landing an attack on a target afflicted with Slow or Root.\n\nCooldown: 1s",
+      "specs": []
+    },
+    "ru": {
+      "name": "Пленяющий взгляд",
+      "desc": "С шансом 50% наносит {se_dmg:1477000711:SkillUIMinDmgsum}–{se_dmg:1477000711:SkillUIMaxDmgsum} урона стихии воздуха при атаке цели с эффектом Замедления или Плена.\n\nВремя перезарядки: 1s",
+      "specs": []
+    },
+    "pt-BR": {
+      "name": "Rooting Eye",
+      "desc": "Tem uma chance 50% para causar dano do vento {se_dmg:1477000711:SkillUIMinDmgsum}-{se_dmg:1477000711:SkillUIMaxDmgsum} ao pousar um ataque a um alvo atingido por lentos ou Root. Recarga: 1s",
+      "specs": []
+    }
+  },
+  "melee-fire": {
+    "id": "14780000",
+    "category": "passive",
+    "icon": "melee-fire.webp",
+    "cooldown": 0,
+    "en": {
+      "name": "Melee Fire",
+      "desc": "Has a 25% chance to inflict {se_dmg:1478000811:SkillUIMinDmgsum}-{se_dmg:1478000811:SkillUIMaxDmgsum} extra Wind damage when landing an attack. Has a 5% chance to inflict Knock Back when landing an attack on a target within 5m.\n\nCooldown: 1s",
+      "specs": []
+    },
+    "ru": {
+      "name": "Стрельба вблизи",
+      "desc": "С шансом 5% наносит {se_dmg:1478000811:SkillUIMinDmgsum}~{se_dmg:1478000811:SkillUIMaxDmgsum} доп. урона стихии воздуха при каждом попадании. С шансом 25% отталкивает при кажд. попадании по цели в радиусе 5 м.\n\nВремя перезарядки: 1s",
+      "specs": []
+    },
+    "pt-BR": {
+      "name": "Melee Fire",
+      "desc": "Tem uma chance 25% de causar dano {se_dmg:1478000811:SkillUIMinDmgsum}-{se_dmg:1478000811:SkillUIMaxDmgsum} extras ao atingir um ataque. Tem uma chance 5% de infligir Knock Back quando aterrissar um ataque em um alvo dentro do 5m. Recarga: 1s",
+      "specs": []
+    }
+  },
+  "revitalization-contract": {
+    "id": "14790000",
+    "category": "passive",
+    "icon": "revitalization-contract.webp",
+    "cooldown": 0,
+    "en": {
+      "name": "Revitalization Contract",
+      "desc": "Increases the caster's Status Effect Resist by 17%. Increases Status Effect Resist by 10% for 5s when hit while afflicted with Stun, Knockdown, Airborne, Frost, or Fear (up to 10 stacks).\nImmediately restores 35% Max HP when HP is 10% or less.\n\nHealing Cooldown: 60s\nStatus Effect Resist Cooldown: 1s",
+      "specs": []
+    },
+    "ru": {
+      "name": "Контракт оживления",
+      "desc": "Увеличивает сопротивление негат. эффектам  на 17%. Увеличивает сопротивление негат. эффектам  на 10% на 5s при получении удара в состоянии Оглушения, Сбивания с ног, Воздушных оков, Заморозки или Ужаса (суммируется не более 10 раз).\nПри падении ОЗ до 10% и ниже мгновенно восстанавливает 35% макс. ОЗ.\n\nВремя перезарядки исцеления: 60s\nВремя перезарядки сопротивления негат. эффектам: 1s",
+      "specs": []
+    },
+    "pt-BR": {
+      "name": "Revitalization Contract",
+      "desc": "Aumenta o Efeito de Estado do lançador em 17%. Aumenta o Efeito de Estado Resistir ao 10% para 5s quando atingido com Stun, Knockdown, Airborne, Frost, ou Medo (até 10 pilhas). Imediatamente restaura 35% Max HP quando HP é 10% ou menos. \"Curando o Recarga: 60s\" Efeito Status Resistir Resistir Recarga: 1s",
+      "specs": []
+    }
+  },
+  "hunters-soul": {
+    "id": "14800000",
+    "category": "passive",
+    "icon": "hunters-soul.webp",
+    "cooldown": 0,
+    "en": {
+      "name": "Hunter's Soul",
+      "desc": "Has a 50% chance to deal {se_dmg:1480000711:SkillUIMinDmgsum}-{se_dmg:1480000711:SkillUIMaxDmgsum} Wind damage on a Critical Hit.\n\nCooldown: 1s",
+      "specs": []
+    },
+    "ru": {
+      "name": "Душа охотника",
+      "desc": "При крит. ударе с шансом 50% наносит {se_dmg:1480000711:SkillUIMinDmgsum}–{se_dmg:1480000711:SkillUIMaxDmgsum} ед. урона стихии воздуха.\n\nВремя перезарядки: 1s",
+      "specs": []
+    },
+    "pt-BR": {
+      "name": "Hunter's Soul",
+      "desc": "Tem uma chance 50% para causar dano de vento {se_dmg:1480000711:SkillUIMinDmgsum}-{se_dmg:1480000711:SkillUIMaxDmgsum} em um ataque crítico. Recarga: 1s",
+      "specs": []
+    }
+  }
+}

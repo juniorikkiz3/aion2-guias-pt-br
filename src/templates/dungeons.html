@@ -1,0 +1,89 @@
+{#- Dungeon guides (/dungeons/): `dg` = data/dungeons.json (our text), `DG_DB` = data/dungeons_db.json (names and bosses from questlog).
+    Each dungeon is a section; each boss a card with its portrait and the mechanics, some with an arena diagram (templates/diagrams/<name>.svg). -#}
+{% extends "base.html" %}
+{% block og %}dungeons{% endblock %}
+{% block title %}{{ t.dg_title }} — {{ t.site_name }}{% endblock %}
+{% block desc %}{{ t.dg_desc }}{% endblock %}
+{% block body_class %}page-guide page-dungeons{% endblock %}
+{% macro at(time, key=None) -%}
+{% set S = dg.sources[key or dg.src] %}{% set p = time.split(':') %}<a class="pg-at" href="{{ S.url }}&t={{ p[0]|int * 60 + p[1]|int }}s" target="_blank" rel="noopener" title="{{ t.pg_watch }}">▶ {{ time }}</a>
+{%- endmacro %}
+{% from "tabs.html" import page_tabs %}
+{% block main %}
+<main id="main">
+  <section class="page-hero has-art" style="--hero-art:url('{{ root }}assets/art/hero-{{ dg.meta.hero }}.webp');--hero-pos:{{ dg.meta.pos }}">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="{{ t.back_home }}"><a href="{{ root }}{{ lang }}/">{{ t.back_home }}</a><span aria-hidden="true">/</span><span>{{ t.nav_dungeons }}</span></nav>
+      <h1>{{ t.dg_h1 }}</h1>
+      <p class="lead">{{ t.dg_lead }}</p>
+    </div>
+  </section>
+
+  <div class="wrap guide-layout pg-layout">
+  <aside class="toc-side pg-side" aria-label="{{ t.on_this_page }}">
+    <p class="toc-title">{{ t.on_this_page }}</p>
+    <nav class="toc-list">
+      {% for d in dg.dungeons %}<a href="#{{ d.id }}">{{ DG_DB[d.db][lang] if d.get('db') else d.name[lang] }}</a>{% endfor %}
+    </nav>
+  </aside>
+  <div class="pg-page">
+    <p class="pg-note">{{ t.dg_note }}
+      {% for key, S in dg.sources.items() %}<a class="w1-src" href="{{ S.url }}" target="_blank" rel="noopener" title="{{ S.name }}">{{ S.name.split(' — ')[0] }}</a>{% endfor %}</p>
+
+    {#- Tabs by dungeon type; site.js shows one group at a time and follows #dungeon links. -#}
+    {% set tabs = [] %}{% for tid, T in dg.types.items() %}{% do tabs.append((tid, T.tab[lang])) %}{% endfor %}
+    {{ page_tabs(tabs, t.nav_dungeons) }}
+
+    {% for tid, T in dg.types.items() %}
+    <div class="dg-group tab-panel" id="panel-{{ tid }}" data-tab-panel="{{ tid }}" role="tabpanel" aria-labelledby="tab-{{ tid }}"{% if not loop.first %} hidden{% endif %}>
+    <h2 class="dg-gtitle">{{ T.title[lang] }}</h2>
+    <p class="pg-lead dg-glead">{{ T.lead[lang] }}</p>
+    <ol class="pg-toc dg-toc" aria-label="{{ t.pg_toc }}">
+      {% for d in dg.dungeons if d.type == tid %}
+      <li><a href="#{{ d.id }}">{% if d.get('gs') %}<b>GS {{ d.gs }}</b>{% endif %}<span>{{ DG_DB[d.db][lang] if d.get('db') else d.name[lang] }}</span></a></li>
+      {% endfor %}
+    </ol>
+
+    {% for d in dg.dungeons if d.type == tid %}
+    {% set D = DG_DB[d.db] if d.get('db') else None %}
+    <section class="pg-sec dg-sec" id="{{ d.id }}" aria-labelledby="h-{{ d.id }}">
+      <h2 id="h-{{ d.id }}" class="section-title">{{ D[lang] if D else d.name[lang] }}</h2>
+      <p class="dg-meta">{% if d.get('gs') %}<span class="dg-tier">{{ t.dg_gs }}: {{ d.gs }}</span>{% endif %}{% if d.get('players') or (D and D.players) %}<span>{{ d.get('players') or D.players }} {{ t.dg_players }}</span>{% endif %}{% if d.get('il') %}<span>{{ t.pg_il }} {{ d.il }}</span>{% endif %}{% if d.get('at') %}{{ at(d.at) }}{% endif %}</p>
+      {% if d.get('lead') %}<p class="pg-lead">{{ it(d.lead[lang]) }}</p>{% endif %}
+      {% if d.get('tip') %}<div class="callout pg-tip" role="note"><p>{{ it(d.tip[lang]) }}</p></div>{% endif %}
+      {% for b in d.bosses %}
+      {% set B = (D.bosses|selectattr('id', 'equalto', b.db)|first) if (D and b.get('db')) else None %}
+      <article class="dg-boss{% if b.get('final') %} is-final{% endif %}">
+        <header class="dg-bhead">
+          {% if B and B.icon %}<img class="dg-portrait" src="{{ root }}assets/icons/bosses/{{ B.id }}.webp" width="64" height="64" alt="" loading="lazy">{% else %}<span class="dg-portrait dg-noimg" aria-hidden="true">{{ loop.index }}</span>{% endif %}
+          <div>
+            <h3>{{ B[lang] if B else b.name[lang] }}</h3>
+            <p class="dg-brole">{{ b.role[lang] }}{% if b.get('at') %} {{ at(b.at) }}{% endif %}</p>
+          </div>
+        </header>
+        {% if b.get('text') %}<p class="dg-btext">{{ it(b.text[lang]) }}</p>{% endif %}
+        {% if b.get('mechs') %}
+        <div class="dg-mechs">
+          {% for m in b.mechs %}
+          <div class="dg-mech{% if m.get('diagram') %} has-diagram{% endif %}{% if m.get('danger') %} is-danger{% endif %}">
+            {% if m.get('diagram') %}<figure class="dg-diagram">{% include 'diagrams/' ~ m.diagram ~ '.svg' %}{% if m.get('legend') %}<figcaption>{{ m.legend[lang] }}</figcaption>{% endif %}</figure>{% endif %}
+            <div class="dg-mtext">
+              <p class="dg-mname">{% if m.get('danger') %}<span class="dg-wipe">{{ t.dg_wipe }}</span> {% endif %}{{ m.name[lang] }}{% if m.get('at') %} {{ at(m.at) }}{% endif %}</p>
+              <p>{{ it(m.text[lang]) }}</p>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+        {% endif %}
+        {% if b.get('after') %}<p class="dg-btext dg-after">{{ it(b.after[lang]) }}</p>{% endif %}
+      </article>
+      {% endfor %}
+    </section>
+    {% endfor %}
+    </div>
+    {% endfor %}
+    <script type="application/json" id="sk-data">{{ items_tip_json(lang) }}</script>
+  </div>
+  </div>
+</main>
+{% endblock %}

@@ -1,0 +1,366 @@
+{% from "macros.html" import section, skill, core, loadout, passives, glance, hotline, macroseq, hotbar, dv_board with context %}
+
+{# ===== PvE і PvP: кожен PvP-блок іде після свого PvE-відповідника, тож обидва режими читаються в однаковому порядку; спільні розділи — 'pve pvp' ===== #}
+{% call glance('pve') %}
+  <h3>{{ t.core_skills }}</h3>
+  {{ core([('overhead-slam', '20'), ('rending-blow', '20'), ('ruinous-blow', '16')]) }}
+  <h3>{{ t.stigma_loadout }}</h3>
+  {{ loadout([('lunge-stance', 20), ('focused-block', 5), ('rage-burst', 5), ('zikels-blessing', 10)]) }}
+  <h3>{{ t.key_passives }}</h3>
+  {{ passives(['attack-preparation', 'experienced-counterstrike', 'murderous-burst', 'impact-hit']) }}
+{% endcall %}
+
+{% call glance('pvp') %}
+  <h3>{{ t.core_skills }}</h3>
+  {{ core([('overhead-slam', '20'), ('mocking-blade', '16'), ('defiance', '16'), ('aerial-snare', '16')]) }}
+  <h3>{{ t.stigma_loadout }} · Безодня</h3>
+  {{ loadout([('lunge-stance', 20), ('armor-of-balance', 5), ('tenaciousness', 10), ('blade-toss', 5)]) }}
+  <h3>{{ t.key_passives }}</h3>
+  {{ passives(['attack-preparation', 'survival-willpower', 'survival-stance', 'impact-hit']) }}
+{% endcall %}
+
+{% call section('intro', 'Огляд', 'pve') %}
+  <p>Gladiator — флагманський клас NCSoft, і на корейських і тайванських серверах він тримається в S-тірі. Він бафає групу, напівтанкує й завдає величезної шкоди, вимагаючи менше рішень, ніж інші класи. Sorcerer і Assassin трохи обганяють його на нерухомому манекені, але Gladiator зовсім поруч і грається набагато простіше.</p>
+  <div class="callout accent">
+    <h3>Білд одним реченням</h3>
+    <p>{{ s('overhead-slam') }} на 16–20, {{ s('lunge-stance') }} на 20 рівні стигми й {{ s('rage-burst') }}, щоб запускати Overhead Slam. Усе інше — підтримка.</p>
+  </div>
+{% endcall %}
+
+{% call section('intro-pvp', 'Огляд', 'pvp') %}
+  <p>У PvP Gladiator — <strong>живучий дайвер</strong>: скорочує дистанцію, збиває ціль із ніг і карає збитого Overhead Slam. HP, блоку й самолікування в нього вистачає, щоб вижити в центрі бійки. Це один із найпопулярніших PvP-класів, тож чекай дзеркальних матчів.</p>
+  <p>Пріоритети по черзі: <strong>антиконтроль</strong> → <strong>липкість</strong> → <strong>берст</strong>, коли їхні захисні скіли на перезарядці.</p>
+  <p class="note">Глобальної PvP-мети ще немає. Цей режим поєднує корейські/тайванські PvP-білди з даними скілів глобального клієнта — вважай його відправною точкою.</p>
+{% endcall %}
+
+{% call section('global', 'Глобальний 1 сезон: що змінюється', 'pve pvp') %}
+  <p>Глобальні сервери відкриваються <strong>5 жовтня 2026</strong> (ранній доступ Founder's — з 30 вересня), окремо від корейських/тайванських. Що це означає для Gladiator:</p>
+  <div class="callout">
+    <ul>
+      <li><strong>4 слоти стигм</strong> замість 6 (очікувано лише на 1 сезон).</li>
+      <li><strong>Стигми до 20 рівня</strong> — рівня 25 у глобальному клієнті немає.</li>
+      <li><strong>Немає Heroic-спорядження</strong> в 1 сезоні, тож на спорядженні менше бонусних рядків для пасивок.</li>
+      <li><strong>Слабші бонуси Daevanion</strong>, ніж на Тайвані: бої довші, тож час під бафами важить більше.</li>
+      <li><strong>Більші групи</strong>: експедиції на 5 і святилища на 10, а Elyos і Asmodians можуть стати в чергу разом. Групові бафи варті більше.</li>
+      <li data-only="pvp"><strong>PvP:</strong> усі починають в однаковому обмеженому спорядженні, мета ще не склалася.</li>
+    </ul>
+  </div>
+  <p class="note">Активні скіли й пасивки в глобальних і KR/TW даних однакові. Лише стигми втрачають рівень 25.</p>
+{% endcall %}
+
+{% call section('skills', 'Скіли', 'pve') %}
+  <p>Високо треба качати лише три скіли: <strong>Overhead Slam → Rending Blow → Ruinous Blow</strong>. Скіли доходять до <strong>10</strong> з очок навичок, до <strong>14</strong> з Daevanion, до <strong>16</strong> із двома кільцями (+1 кожне) і до <strong>20</strong> з арканами. Спеціалізації відкриваються на 8, 12 і 16.</p>
+  <ul class="skill-grid">
+    {% call skill('overhead-slam', 'must', '16 → 20', [2, 4], then=[3]) %}Твоє джерело шкоди №1. З Rage Burst і Lunge Stance він фактично завжди доступний. На 20 третій слот іде на гарантований крит.{% endcall %}
+    {% call skill('rending-blow', 'must', '16 → 20', [3, 4], then=[2]) %}Друге за величиною джерело шкоди й твій двигун мани. На 20 додай спеціалізацію на рух.{% endcall %}
+    {% call skill('ruinous-blow', 'must', '16', [2, 3]) %}Великий нюк, що дає Prepare for Battle (+20% шкоди в PvE, 20 с). Grobs на 8 бере +20% швидкості скілів замість криту скіла.{% endcall %}
+    {% call skill('leaping-slam', 'opt', '12', [0, 2]) %}Головний ривок; 3 с Prepare for Battle перед Ruinous Blow подовжують баф.{% endcall %}
+    {% call skill('rush-strike', 'opt', '12', [1, 0]) %}Ухилення в ривок. Із проками перезарядки від Lunge Stance витривалість краща за −10 с перезарядки.{% endcall %}
+    {% call skill('mocking-blade', 'opt', '12', [0, 1]) %}Кнопка екстреного лікування: поглинання 15% HP від босів.{% endcall %}
+    {% call skill('ankle-slice', 'opt', '12', [2, 3]) %}Запасний ривок. Ланцюжок Ankle Smash пропусти — він сповільнює ротацію.{% endcall %}
+    {% call skill('crushing-wave', 'skip', '12', [0, 3]) %}Надто повільний для босів; АоЕ й самолікування на треші.{% endcall %}
+    {% call skill('defiance', 'opt', '16, якщо є очки', [4]) %}Зняття контролю. Добре в рейдах, не пріоритет.{% endcall %}
+    {% call skill('sword-aura-rampage', 'opt', '16, якщо є очки', [2, 4]) %}Б'є лише оглушені цілі, але на 16 кожен удар знімає 1 с з <em>усіх</em> перезарядок — зокрема й стигм. Якщо спамити у вікні оглушення, він сильний; поза ним — втрата шкоди (Grobs). Не пріоритет.{% endcall %}
+    {% call skill('keen-strike', 'opt', '12', [0, 3]) %}Базова атака: +20% відновлення MP і −1 с перезарядки Ruinous Blow за влучання — aLuckyRO і Sen обидва качають її до 12 в перший день, коли мани мало. Коли Overhead Slam і Rending Blow стануть 16, перестань її затискати (Grobs, див. «Прокачку»).{% endcall %}
+    {% call skill('aerial-snare', 'opt', 'боси · 12', [2, 3]) %}Влучає лише по збитих з ніг цілях — але боси виняток. aLuckyRO качає його до 12 заради +100% шкоди по цілях з імунітетом до контролю (будь-який бос) і ланцюжка Forced Fall і бере його в Nightmare. Grobs і Arthars його не беруть; якщо додаєш, дай йому окрему клавішу, а не головну лінію.{% endcall %}
+  </ul>
+{% endcall %}
+
+{% call section('skills-pvp', 'Скіли', 'pvp') %}
+  <div class="callout accent">
+    <h3>Єдина механіка, яка важить: збивання з ніг</h3>
+    <p>{{ s('overhead-slam') }} і {{ s('aerial-snare') }} б'ють лише ціль під <strong>Knockdown</strong> (боси — виняток, тому в PvE про це не думаєш). Кожне вікно берсту починається зі збивання: Mocking Blade (гарантовано), Rush Strike після ухилення, Ankle Slice. Виняток — {{ s('rage-burst') }}, що відкриває Overhead Slam по своїй цілі на 10 с.</p>
+  </div>
+  <ul class="skill-grid">
+    {% call skill('overhead-slam', 'must', '16 → 20', [2, 4], then=[3]) %}Твоє покарання по збитих із ніг. Корейські PvP-гайди називають гарантований крит на 20 обов'язковим. Він займає третій слот, що відкривається на 20.{% endcall %}
+    {% call skill('mocking-blade', 'must', '16', [3, 4]) %}Гарантований Knockdown на 3 с — твій головний старт. На 16: довший Knockdown, що ігнорує блок і ухилення; два додаткові удари чекають третього слота на 20.{% endcall %}
+    {% call skill('defiance', 'must', '16', [3, 4]) %}Знімає оглушення, збивання, підкидання, захоплення, заморожування й страх. Обов'язково. На 16: +2 с Tenacity зі стійкістю до шкоди; спеціалізація на 20% HP — третій слот, на 20.{% endcall %}
+    {% call skill('aerial-snare', 'must', '16', [3, 4]) %}Продовження, що підкидає збиту ціль. У PvE марний, тут — основа. На 16: ланцюжок Forced Fall і половина перезарядки; шанс підкидання — третій слот, на 20.{% endcall %}
+    {% call skill('rush-strike', 'opt', '12–16', [1, 3]) %}Ухилення → ривок із шансом збити з ніг. На 16 можна поміняти спеціалізацію на дальність на +25% шансу збивання.{% endcall %}
+    {% call skill('rending-blow', 'opt', '16', [2, 4]) %}Досі твій філер і двигун мани.{% endcall %}
+    {% call skill('ruinous-blow', 'opt', '12–16', [1, 4]) %}Третій ривок; ігнорування блоку/ухилення сильне проти Templars. Ця спеціалізація потребує 16; на 12 бери дальність і додаткову шкоду.{% endcall %}
+    {% call skill('crushing-wave', 'opt', '16', [3, 4]) %}Притягування витягає хілера чи кастера з їхнього тилу.{% endcall %}
+    {% call skill('ankle-slice', 'opt', '12', [2, 0]) %}Ще один шлях у вікно збивання.{% endcall %}
+    {% call skill('leaping-slam', 'opt', '12', [1, 3]) %}Стрибок на 20 м, що дає вижити, приземлившись у групу.{% endcall %}
+  </ul>
+{% endcall %}
+
+{% call section('passives', 'Пасивки', 'pve') %}
+  <p>Очок на пасивки вдосталь — більшість доходять до максимуму без жодних роздумів. Одна пастка й одна пасивка на потім:</p>
+  <div class="callout">
+    <ul>
+      <li>{{ s('protection-armor') }} — крихітне лікування при блоці. Перекидай спорядження й карти, де вона випала.</li>
+      <li>{{ s('destructive-impulse') }} — бонус до шкоди лише по приголомшених цілях. Не пастка: aLuckyRO і Sen качають її заради вікна стагера, де вона складається з {{ s('sword-aura-rampage') }}. Бери після основних пасивок.</li>
+    </ul>
+  </div>
+  <p>{{ s('blood-absorption') }} вкладень не потребує: шанс 50% підлікуватися з кожного удару плюс велике миттєве лікування, коли падаєш до 50% HP. Тому Gladiator і обходиться без хілера.</p>
+{% endcall %}
+
+{% call section('passives-pvp', 'Пасивки', 'pvp') %}
+  <div class="table-wrap"><table>
+    <thead><tr><th>Пасивка</th><th>Цінність у PvP</th></tr></thead>
+    <tbody>
+      <tr><td>{{ s('attack-preparation') }}</td><td>Досі №1: бонус до шкоди в PvP, захист, точність.</td></tr>
+      <tr><td>{{ s('survival-willpower') }}</td><td>Опір статусам плюс стійкість, поки ти під контролем. У PvE мертвий вантаж, тут — чудово.</td></tr>
+      <tr><td>{{ s('survival-stance') }}</td><td>HP і стійкість до шкоди в PvP.</td></tr>
+      <tr><td>{{ s('impact-hit') }}</td><td>Більше шансу Impact — твої збивання частіше спрацьовують.</td></tr>
+      <tr><td>{{ s('destructive-impulse') }}</td><td>Бонус до шкоди по збитих цілях — PvE-пастка стає корисною.</td></tr>
+    </tbody>
+  </table></div>
+{% endcall %}
+
+{% call section('gear', 'Спорядження й статі', 'pve') %}
+  <p>Без Heroic-спорядження швидкість атаки, швидкість руху, Might і Precision забирають більшість бонусних рядків, лишаючи 1–2 під пасивки. Пріоритет:</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>#</th><th>Пасивка</th><th>Навіщо</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>{{ s('attack-preparation') }}</td><td>Чистий бонус до шкоди в PvE, захист і точність. Без умов.</td></tr>
+      <tr><td>2</td><td>{{ s('experienced-counterstrike') }}</td><td>Шкода спереду завжди, плюс бонус до шкоди в PvE на 20 с для тебе <em>і групи</em> з кожного блоку. Не складається з Fury Templar, але покриває групу без нього.</td></tr>
+      <tr><td>3</td><td>{{ s('murderous-burst') }} / {{ s('impact-hit') }}</td><td>Кожні 5 ударів = АоЕ-вибух + крит. шкода / більше шансу Impact і подвійного удару.</td></tr>
+    </tbody>
+  </table></div>
+  <p>Бонуси до шкоди зброї та шкоди спереду/ззаду — найсильніші типи, а Gladiator завжди б'є спереду. Не женися за ідеальними манастоунами в 1 сезоні — перекидання коштує приблизно 200–300 тис. кожне на TW.</p>
+  <h3>Стати (Ulfhednar, глобал)</h3>
+  <div class="callout"><ul>
+    <li><strong>Рядки спорядження:</strong> усе, що про шкоду, — Critical Hit, Damage Boost.</li>
+    <li><strong>Soul binds на зброї й guard:</strong> Weapon Damage Boost, Combat Speed, Damage Boost, Might — саме в такому порядку.</li>
+    <li><strong>Статі:</strong> Wisdom (шанс подвійного удару), Time (швидкість бою), Destruction (шкода) і трохи Accuracy — без неї боси парирують Gladiator.</li>
+    <li><strong>Genus Insight:</strong> перекидай рядки на атаку. Вони піднімають бойову могутність — саме на неї дивляться, коли кличуть у підземелля.</li>
+    <li><strong>Мана:</strong> якщо бракує — рядки Max MP і відновлення MP, вузли +50 MP на дошках Daevanion і зілля мани (Crafting → Alchemy).</li>
+  </ul></div>
+{% endcall %}
+
+{% call section('gear-pvp', 'Спорядження й статі', 'pvp') %}
+  <p>Зі спорядженням 1 сезону окремий PvP-сет поки не збирай — лишай PvE-спорядження й міняй пасивки, стигми та Daevanion.</p>
+  <div class="callout"><ul>
+    <li><strong>Точність</strong> — гравці блокують і ухиляються набагато частіше за босів.</li>
+    <li><strong>Крит і швидкість бою</strong> — крити запускають проки перезарядки Lunge Stance.</li>
+    <li><strong>Бонус / стійкість до шкоди в PvP</strong> замість PvE-версій усюди, де слот їх пропонує.</li>
+    <li><strong>Аркани:</strong> спершу Overhead Slam до 20, потім Mocking Blade, Defiance і Aerial Snare до 16.</li>
+  </ul></div>
+{% endcall %}
+
+{% call section('arcana', 'Аркани', 'pve') %}
+  <p>Карта, прокачана до 5, у середньому дає близько <strong>+2</strong> випадковому скілу, який вона може ролити.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Карта</th><th>Що шукати</th></tr></thead>
+    <tbody>
+      <tr><td>{{ it('{i:parchment_vigor}') }}</td><td>{{ s('overhead-slam') }} і {{ s('ruinous-blow') }} — єдині два з її шести, що важать.</td></tr>
+      <tr><td>{{ it('{i:compass_vigor}') }}</td><td>Лише {{ s('rending-blow') }}. Бери версію Freedom заради точності — парирування перед босом — це втрачена шкода.</td></tr>
+      <tr><td>{{ it('{i:chalice_vigor}') }}</td><td>Ролить будь-який скіл; крафт дає обрати два. Доповнюй те, чому ще бракує до 20.</td></tr>
+    </tbody>
+  </table></div>
+  <p>За середнього везіння: 14 + 2 (кільце) + 2 + 2 = <strong>20</strong> на Overhead Slam. Якщо до 20 може дійти лише ще один скіл, обирай Rending Blow, а не Ruinous Blow.</p>
+  <div class="callout">
+    <h3>Сети й карти пасивок</h3>
+    <p>Цілься в 4 частини <strong>Primal Vigor</strong> (усі карти Vigor вище — наведи на будь-яку, щоб побачити бонус сету). Gladiator ніколи не потрібне скорочення перезарядок (Illusion). Якщо при швидкості атаки 1 сезону закінчується MP, переходь на 2 частини <strong>Magic Armor</strong> ({{ it('{i:mirror_magic_gold}') }} та інші карти Magic). Карти пасивок: спершу {{ s('attack-preparation') }}, потім будь-яка комбінація Experienced Counterstrike &gt; Murderous Burst &gt; Impact Hit &gt; Identify Weakness.</p>
+  </div>
+{% endcall %}
+
+{% call section('daevanion', 'Дошки Daevanion', 'pve pvp') %}
+  <p>Daevanion піднімає твої скіли з 10 до 14 і додає купу статів. Кожен синій вузол дає <strong>+1 рівень</strong> своєму скілу.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Дошка</th><th>Відкривається</th><th>Фокус</th></tr></thead>
+    <tbody>
+      <tr><td>Nezekan</td><td>Рів. 12</td><td>Швидкість бою, скорочення перезарядок</td></tr>
+      <tr><td>Zikel</td><td>Рів. 20</td><td>Бонус до шкоди, стійкість до шкоди</td></tr>
+      <tr><td>Vaizel</td><td>Рів. 30</td><td>Бонус і стійкість до крит. шкоди</td></tr>
+      <tr><td>Triniel</td><td>Рів. 40</td><td>Шанс мультиудару й опір йому</td></tr>
+      <tr><td>Azphel</td><td>Рів. 45</td><td>Шкода й стійкість у PvP — вузлів скілів немає</td></tr>
+    </tbody>
+  </table></div>
+  <div class="callout">
+    <ul>
+      <li>Вартість вузлів: сірий стат 1, зелена пасивка 2, синій скіл 3, помаранчевий особливий 4.</li>
+      <li data-only="pve"><strong>Пріоритет:</strong> сині вузли {{ s('overhead-slam') }}, {{ s('rending-blow') }}, {{ s('ruinous-blow') }}, потім помаранчеві, потім статі.</li>
+      <li data-only="pvp"><strong>Пріоритет:</strong> сині вузли {{ s('overhead-slam') }}, {{ s('mocking-blade') }}, {{ s('defiance') }}, {{ s('aerial-snare') }}, потім помаранчеві.</li>
+      <li data-only="pve"><strong>На глобалі немає Ariel:</strong> у глобальному клієнті п'ять дошок — PvE-дошки Ariel з KR/TW там немає. Azphel лише для PvP, тож у PvE спершу закривай перші чотири дошки.</li>
+      <li data-only="pvp"><strong>Azphel</strong> (45 рівень) — суцільно бонус / стійкість до шкоди в PvP: бери його, а раніше — Triniel: мультиудар — це PvP-стат.</li>
+    </ul>
+  </div>
+  <h3>Маршрут на дошках</h3>
+  <p>Справжні глобальні дошки з даних гри. Золотом позначено найдешевший шлях від Start до вузлів, які бере цей гайд; наведи на будь-який вузол, щоб побачити, що він дає.</p>
+  <div data-only="pve">{{ dv_board('pve') }}</div>
+  <div data-only="pvp">{{ dv_board('pvp') }}</div>
+  <p class="note">Дошки й вартість — із даних глобального клієнта (questlog.gg). Значення статів ще можуть змінитися на запуску — перевір дошку в грі, перш ніж вкладати повний маршрут.</p>
+{% endcall %}
+
+{% call section('stigmas', 'Стигми', 'pve') %}
+  <p>Три стигми фіксовані, четверта залежить від групи. У PvE пропускай Wrath Wave, Armor of Balance, Forced Restraint, Assault Strike і Fracturing Rush; Blade Toss — лише в групі (нижче).</p>
+  <ul class="skill-grid">
+    {% call skill('lunge-stance', 'must', 'рів. 20', upto=20) %}Прок 20 рівня скорочує всі перезарядки на критах: постійні Overhead Slam, Rage Burst, блок і ривки. Перша стигма на максимум.{% endcall %}
+    {% call skill('focused-block', 'must', 'рів. 5', upto=5) %}Гарантоване парирування. Кожен блок запускає груповий баф Experienced Counterstrike — блокувати означає бафати. На 5 рівні її можна використати двічі поспіль. На прокачці бери першою.{% endcall %}
+    {% call skill('rage-burst', 'must', 'рів. 5', upto=5) %}Запускає Overhead Slam по цілі на 10 с, +10% до шкоди в PvE і −10% атаки боса.{% endcall %}
+    {% call skill('zikels-blessing', 'opt', 'рів. 10', upto=10) %}Стандартний 4-й слот: +20% атаки, не залежить від того, наскільки добре грає група.{% endcall %}
+    {% call skill('lifestealing-blade', 'opt', 'рів. 20', upto=20) %}4-й слот для зіграної групи: Predation посилює удари всіх. Має сенс лише на 20.{% endcall %}
+    {% call skill('blade-toss', 'opt', 'група', upto=5) %}Вибір aLuckyRO для групи: −30% захисту боса на 10 с, і вся група вбиває його швидше. Бери в зіграній групі замість Zikel's Blessing, коли граєш напівтанка.{% endcall %}
+    {% call skill('wave-armor', 'skip', 'рів. 15', upto=15) %}Лише без Templar. Її сильного рівня 25 на глобалі немає.{% endcall %}
+  </ul>
+  <p>Звідки стигми: магазин Nightmare, магазин Shugo Festa і магазин Безодні за рангами. Gladiator їх потрібно так мало, що збірка складається в перші дні.</p>
+{% endcall %}
+
+{% call section('stigmas-pvp', 'Стигми', 'pvp') %}
+  <p>Корейські PvP-білди беруть рівно чотири стигми, тож вони вкладаються в глобальні слоти як є.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Режим</th><th>Стигми</th></tr></thead>
+    <tbody>
+      <tr><td>Безодня</td><td>Lunge Stance, Armor of Balance, Blade Toss, Tenaciousness</td></tr>
+      <tr><td>Арена</td><td>Lunge Stance, Armor of Balance, Tenaciousness, Focused Block</td></tr>
+    </tbody>
+  </table></div>
+  <ul class="skill-grid">
+    {% call skill('lunge-stance', 'must', 'рів. 20', upto=20) %}Проки перезарядки на критах також швидше повертають Tenaciousness і Defiance.{% endcall %}
+    {% call skill('armor-of-balance', 'must', 'рів. 5+', upto=5) %}10 с тебе важко збити з ніг. Вмикай <em>до</em> того, як пірнеш у групу з купою контролю.{% endcall %}
+    {% call skill('tenaciousness', 'must', 'рів. 10+', upto=10) %}3 с імунітету до шкоди й статусів, потім лікування. На 20 сама спрацьовує на контроль Impact.{% endcall %}
+    {% call skill('blade-toss', 'opt', 'Безодня', upto=5) %}Кидок на 20 м: −30% захисту й −50% отримуваного лікування на 10 с. Твоя відповідь хілерам і втікачам.{% endcall %}
+    {% call skill('focused-block', 'opt', 'Арена', upto=5) %}Блокуй їхні сильні скіли шкоди в 1 на 1. Не витрачай на контроль.{% endcall %}
+    {% call skill('forced-restraint', 'opt', 'альт.', upto=5) %}Печатка (мовчання), щоб замкнути ціль на час вікна Overhead Slam.{% endcall %}
+    {% call skill('rage-burst', 'opt', 'альт.', upto=5) %}Відкриває Overhead Slam без збивання на 10 с.{% endcall %}
+  </ul>
+{% endcall %}
+
+{% call section('macro', 'Макрос і ротація', 'pve') %}
+  <p>В AION 2 є два окремі інструменти, і білд використовує обидва:</p>
+  <ul>
+    <li><strong>Лінія на кнопці</strong> — кілька скілів на <em>одній</em> кнопці панелі. Натискання кастує готовий скіл із найвищим пріоритетом, і в AION 2 <strong>найвищий пріоритет у нижнього слота</strong>. Картки нижче показують лінії згори донизу, як у грі, з номером пріоритету на кожному скілі.</li>
+    <li><strong>Вбудований макрос</strong> — поки тримаєш його клавішу, він по черзі натискає лінії й скасовує хвости анімацій. Скіли на перезарядці пропускаються. Базову атаку (ЛКМ) тримай <em>разом</em> із клавішею макросу, а не став у макрос — так гра краще її вплітає й скасовує.</li>
+  </ul>
+  <p>Gladiator потрібно <strong>6 скілів на 3 кнопках</strong>: 4 скіли шкоди й 2 бафи.</p>
+
+  <h3>1. Лінії на кнопках</h3>
+  <div class="hotlines">
+    {% call hotline('ПКМ', 'Головна лінія', ['rage-burst', 'overhead-slam', 'rending-blow']) %}Rage Burst стоїть у <strong>нижньому</strong> слоті — див. нижче.{% endcall %}
+    {% call hotline('E', 'Лінія Ruinous', ['ruinous-blow'], ['lifestealing-blade']) %}Дає Combat Ready. Додай Lifestealing Blade, лише якщо вона є у твоїх стигмах.{% endcall %}
+    {% call hotline('R', 'Лінія бафів', ['lunge-stance', 'zikels-blessing']) %}Обидва підтримують себе самі завдяки скороченню перезарядок від Lunge Stance.{% endcall %}
+  </div>
+
+  <h3>2. Вбудований макрос</h3>
+  <p>Вікно скілів → <strong>Macro</strong>. Постав три лінії в такому порядку й задай кожній <strong>Delay 10 мс</strong> (це пауза між кнопками, а не твій пінг). Признач макрос у Settings → Key Settings → General → Gameplay → <strong>Macro</strong> — ідеально на бічну кнопку миші, бо її тримаєш.</p>
+  {{ macroseq([('Головна лінія', 'ПКМ · 10 мс'), ('Лінія Ruinous', 'E · 10 мс'), ('Лінія бафів', 'R · 10 мс')]) }}
+
+  <p class="note">Порада на 1 сезон (Grobs): на старті перезарядки повільні, тож бафи цінніші, якщо їх розраховувати — лінію бафів можна вийняти з макросу й натискати самому прямо перед босом чи великою пачкою.</p>
+
+  <h3>3. Що ти насправді тиснеш</h3>
+  <ul class="presslist">
+    <li><span class="press-how">Тримати</span><span class="press-what"><span class="key">Клавішу макросу</span> увесь бій.</span></li>
+    <li><span class="press-how">Спам</span><span class="press-what">Головну лінію на <span class="key">ПКМ</span> і лінію Ruinous на <span class="key">E</span> поверх неї — дві лінії мають лишатися окремими, щоб їх можна було вплітати.</span></li>
+    <li><span class="press-how">Вручну</span><span class="press-what">{{ s('focused-block') }} (блок = баф групи), {{ s('mocking-blade') }} (збивання + лікування), {{ s('leaping-slam') }} (ривок), {{ s('crushing-wave') }} на пачках.</span></li>
+  </ul>
+
+  <div class="callout accent">
+    <h3>Початок бою з босом</h3>
+    <div class="combo">{{ s('lunge-stance') }} + {{ s('zikels-blessing') }}<span class="arrow">→</span>{{ s('leaping-slam') }} усередину<span class="arrow">→</span>{{ s('ruinous-blow') }}<span class="arrow">→</span>тримай макрос</div>
+    <p>Заблокуй <strong>першу атаку</strong> боса через {{ s('focused-block') }} — Experienced Counterstrike одразу бафає всю групу. Кожен бос починає по-своєму: на деяких краще застрибнути, спершу заблокувати й лише потім бафнутися. Вивчай босів і вписуй блок.</p>
+    <p class="note">Корисне налаштування (Grobs): Esc → Settings → Info Display → Combat → <strong>Display Boss Orientation Indicator</strong>. Показує, де в боса перед, — Gladiator завжди хоче бити спереду.</p>
+  </div>
+  <div class="callout">
+    <h3>Чому Rage Burst унизу</h3>
+    <p>Rage Burst — баф, який має висіти завжди, тож він займає нижній слот — найвищий пріоритет — і спрацьовує щоразу, коли виходить із перезарядки. Постав його над Overhead Slam — і він ніколи не спрацює: Lunge Stance тримає Overhead Slam постійно доступним, а нижній слот завжди перемагає. Не напихай у головну лінію більше скілів: таймінг макросу залежить від частоти кадрів, і будь-яка затримка Overhead Slam коштує більше, ніж дає додатковий скіл.</p>
+  </div>
+  <div class="callout">
+    <h3>Звідки шкода</h3>
+    <p>На хвилинному парсі на манекені: Overhead Slam (з Upward Strike) &gt; Rending Blow &gt; Ruinous Blow &gt; Lunge Stance &gt; Murderous Burst &gt; Rage Burst.</p>
+  </div>
+  <p>Макрос тримає темп — грати за тебе він не буде. Ти досі вирішуєш, коли блокувати, коли скорочувати дистанцію й коли підлікуватися. Слабші статі 1 сезону означають бої з босами на кілька хвилин, тож кожна втрачена секунда важить.</p>
+  <p class="note">Клавіші — розкладка Arthars для action-режиму (ПКМ / E); у таб-таргеті бери будь-які дві клавіші, які зручно спамити. Порядок слотів макросу йде за тією ж схемою «лінія за лінією», що й у корейських білдах.</p>
+
+  <h3>Інший варіант: макрос Ulfhednar (глобал)</h3>
+  <p>Панель Ulfhednar (відео від 6 жовтня, кадри 3:04 і 3:12). Rage Burst і Overhead Slam ділять лінію, як вище, але Rending Blow ділить лінію з {{ s('sword-aura-rampage') }}: той стоїть нижче й спрацьовує першим, щойно бос оглушений, а Ruinous Blow стає нагору лінії бафів. Замість Focused Block він бере {{ s('blade-toss') }} (−30% захисту ворога на 10 с, дебаф для всієї групи).</p>
+  {{ hotbar([('1', ['leaping-slam']), ('2', ['mocking-blade']), ('3', ['rush-strike', 'aerial-snare']), ('4', ['ankle-slice']), None, ('Caps', []), ('—', ['crushing-wave']), ('F', []), ('9', []), None, ('Q', ['zikels-blessing', 'lunge-stance', 'blade-toss', 'ruinous-blow']), ('E', ['sword-aura-rampage', 'rending-blow']), ('ЛКМ', ['keen-strike']), ('ПКМ', ['rage-burst', 'overhead-slam'])], macro=['Q', 'ПКМ', 'E'], own_keys=true) }}
+  <div class="hotlines">
+    {% call hotline('Q', 'Лінія бафів', ['zikels-blessing', 'lunge-stance', 'blade-toss', 'ruinous-blow']) %}Бафи й дебаф по КД; Ruinous Blow спрацьовує, коли всі вони висять.{% endcall %}
+    {% call hotline('ПКМ', 'Головна лінія', ['rage-burst', 'overhead-slam']) %}Rage Burst у нижньому слоті, Overhead Slam над ним.{% endcall %}
+    {% call hotline('E', 'Лінія оглушення', ['sword-aura-rampage', 'rending-blow']) %}Sword Aura Rampage б'є лише оглушені цілі, тож решту часу лінія кастує Rending Blow.{% endcall %}
+  </div>
+  {{ macroseq([('Лінія бафів', 'Q · 10 мс'), ('Головна лінія', 'ПКМ · 10 мс'), ('Лінія оглушення', 'E · 10 мс')]) }}
+  <ul class="presslist">
+    <li><span class="press-how">Тримати</span><span class="press-what">{{ s('keen-strike') }} на <span class="key">ЛКМ</span> і клавішу макросу — він ставить вбудований макрос на <span class="key">C</span>. Keen Strike тримає ману й з кожним ударом скорочує перезарядку Ruinous Blow.</span></li>
+    <li><span class="press-how">Вручну</span><span class="press-what">Ривки та {{ s('mocking-blade') }} на 1–4, {{ s('crushing-wave') }} на пачках.</span></li>
+  </ul>
+  <p class="note">Поверх цього в нього макрос у програмі миші: він спамить ті самі клавіші (по 10 мс, ЛКМ — 15 мс) і тисне клавішу вбудованого макросу, щоб вплести більше атак. Для початку вистачить звичайного вбудованого макросу.</p>
+{% endcall %}
+
+{% call section('combos-pvp', 'Комбо й гра', 'pvp') %}
+  <div class="callout">
+    <h3>Покарання за збивання</h3>
+    <div class="combo">{{ s('mocking-blade') }}<span class="arrow">→</span>{{ s('overhead-slam') }} × N<span class="arrow">→</span>{{ s('aerial-snare') }}<span class="arrow">→</span>Forced Fall</div>
+  </div>
+  <div class="callout">
+    <h3>Вхід здалеку</h3>
+    <div class="combo">{{ s('blade-toss') }}<span class="arrow">→</span>ухилення + {{ s('rush-strike') }} / {{ s('leaping-slam') }}<span class="arrow">→</span>покарання за збивання</div>
+    <p>Збивання не пройшло? {{ s('rage-burst') }} чи {{ s('forced-restraint') }} однаково відкривають вікно.</p>
+  </div>
+  <div class="callout">
+    <h3>Як вижити</h3>
+    <ul>
+      <li>{{ s('defiance') }} знімає перший жорсткий контроль; {{ s('tenaciousness') }} бережи на наступний ланцюжок.</li>
+      <li>{{ s('armor-of-balance') }} вмикай до того, як пірнаєш, а не коли вже лежиш.</li>
+      <li>Проти хілерів: спершу Blade Toss, потім притягування Crushing Wave.</li>
+    </ul>
+  </div>
+{% endcall %}
+
+{% call section('recap', 'Підсумок', 'pve') %}
+  <div class="callout accent"><ul>
+    <li><strong>Скіли:</strong> Overhead Slam 20, Rending Blow 16→20, Ruinous Blow 16; решта 12 або менше.</li>
+    <li><strong>Рівні звідки:</strong> Daevanion (+4) → кільця (+2) → аркани (+4).</li>
+    <li><strong>Стигми:</strong> Lunge Stance 20, Focused Block 5, Rage Burst 5, Zikel's Blessing 10 (або Lifestealing Blade 20).</li>
+    <li><strong>Пасивки:</strong> Attack Preparation &gt; Experienced Counterstrike &gt; Murderous Burst / Impact Hit.</li>
+  </ul></div>
+{% endcall %}
+
+{% call section('recap-pvp', 'Підсумок', 'pvp') %}
+  <div class="callout accent"><ul>
+    <li><strong>Скіли:</strong> Overhead Slam 16→20, Mocking Blade 16, Defiance 16, Aerial Snare 16.</li>
+    <li><strong>Стигми:</strong> Lunge Stance 20 + Armor of Balance + Tenaciousness + Blade Toss (Безодня) або Focused Block (Арена).</li>
+    <li><strong>Daevanion:</strong> бери Azphel (бонус і стійкість до шкоди в PvP), раніше — Triniel.</li>
+    <li><strong>Гра:</strong> збивання → Overhead Slam; контроль знімай Defiance, Tenaciousness бережи.</li>
+  </ul></div>
+{% endcall %}
+
+{# ============================ Leveling ============================ #}
+{% call section('fight-lvl', t.lvl_combat, 'lvl') %}
+  <div class="callout"><ul>
+    <li><strong>Пачки:</strong> {{ s('leaping-slam') }} усередину → {{ s('crushing-wave') }} → {{ s('rending-blow') }}. Вбивство скидає Leaping Slam → наступна пачка.</li>
+    <li><strong>Елітки:</strong> {{ s('mocking-blade') }} (збивання) → спам {{ s('overhead-slam') }} → {{ s('ruinous-blow') }} за відкатом. Ухилення → {{ s('rush-strike') }} теж збиває NPC з ніг.</li>
+    <li><strong>Мало HP:</strong> Mocking Blade і Crushing Wave поглинають HP; Blood Absorption лікує на 50%. На треші зілля не потрібні.</li>
+  </ul></div>
+{% endcall %}
+
+{% call section('macro-lvl', 'Макрос на прокачці', 'lvl') %}
+  <p>Простіше налаштування для прокачки й перших днів на капі, з ранніх макросів Grobs. Туди йдуть лише скіли, які ти спамиш; бафи, вибухи стигм і ривки лишаються на своїх клавішах.</p>
+  <div class="hotlines">
+    {{ hotline('1', 'Лінія 1', ['rage-burst', 'overhead-slam', 'rending-blow'], []) }}
+  </div>
+  <p>Вбудований макрос: Лінія 1 із затримкою 10 мс. Тримай базову атаку {{ s('keen-strike') }} на ЛКМ <strong>і</strong> клавішу макросу разом.</p>
+  <div class="callout">
+    <h3>Пріоритети на прокачці (Grobs)</h3>
+    <ul>
+      <li><strong>Пасивки:</strong> спершу {{ s('experienced-counterstrike') }}, потім {{ s('attack-preparation') }} — зараз важать лише ці дві.</li>
+      <li><strong>Daevanion:</strong> очки навичок доводять скіли до 10; далі — дошки. Маршрут на 65 очок дає +2 до чотирьох головних скілів шкоди, тож вони швидко доходять до 12 і другої спеціалізації — див. дошки нижче.</li>
+      <li><strong>На 16:</strong> коли Overhead Slam і Rending Blow на 16, перестань тримати ЛКМ — {{ s('keen-strike') }} стає втратою шкоди. Тримай лише макрос і бери в Rending Blow «Restores 50 MP on a Critical Hit» заради мани.</li>
+    </ul>
+  </div>
+  <p class="note">Коли скіли дійдуть до 12–16 і спеціалізації змінять їхні перезарядки, переходь на повне налаштування з вкладки PvE.</p>
+  <h3>Маршрут прокачки на дошках Daevanion (Grobs, 65 очок)</h3>
+  <p>+2 до Overhead Slam, Rending Blow, Ruinous Blow і Keen Strike — Nezekan на 12, потім Zikel на 20.</p>
+  {{ dv_board('lvl') }}
+{% endcall %}
+
+{# ============================ Sources ============================ #}
+<section class="sources" aria-labelledby="h-sources">
+  <h2 id="h-sources">{{ t.sources }}</h2>
+  <ul>
+    <li><a href="https://www.youtube.com/watch?v=xRPr30JetyY" target="_blank" rel="noopener">Grobs — The Only Gladiator PVE Guide You Need</a> — підтверджує білд, стигми й макрос цього гайда</li>
+    <li><a href="https://www.youtube.com/watch?v=tYTZ8VucMXw" target="_blank" rel="noopener">Arthars Gaming — The ULTIMATE AION 2 Gladiator Starter Guide</a> (PvE, з сервера TW)</li>
+    <li><a href="https://questlog.gg/aion-2/en/db/skills/gladiator" target="_blank" rel="noopener">questlog.gg</a> — дані скілів і стигм із глобального клієнта</li>
+    <li><a href="https://vortexgaming.io/en/postdetail/611533" target="_blank" rel="noopener">Vortex Gaming</a> — корейські PvP-білди (Безодня / Арена)</li>
+    <li><a href="https://www.iggm.com/news/aion-2-global-servers-dungeon-gameplay-changes-expeditions-gear-progression-stigma-slots" target="_blank" rel="noopener">IGGM</a> — зміни глобального 1 сезону</li>
+    <li><a href="https://nemobek.github.io/aion2-guide/" target="_blank" rel="noopener">nemobek.github.io/aion2-guide</a> (таблиця TitanTheF) — маршрут прокачки</li>
+    <li><a href="https://www.youtube.com/watch?v=HMod6Z4GrE0" target="_blank" rel="noopener">Grobs — AION 2 Macro Guide</a> — як працюють лінії на кнопках і вбудований макрос</li>
+    <li><a href="https://www.youtube.com/watch?v=WlxLOTs62dM" target="_blank" rel="noopener">aLuckyRO — AION 2 Latest Gladiator PVE Build for Global</a> — ранні спеціалізації (Keen Strike, Aerial Snare на босах), стигми, пріоритет Daevanion, ротація на босі спереду</li>
+    <li><a href="https://www.youtube.com/watch?v=t-B-5lR_GIs" target="_blank" rel="noopener">Sen — AION 2 Progression Guide (+ Gladiator guide)</a> — підтверджує скіли, стигми й пасивки цього гайда на глобальних серверах</li>
+    <li><a href="https://www.youtube.com/watch?v=zrdG1XDYUtE" target="_blank" rel="noopener">Ulfhednar — AION 2 Gladiator PvE DPS Build</a> — другий варіант макросу з його панеллю (лінія Sword Aura Rampage, Blade Toss), рядки спорядження, soul binds, стати, Genus Insight, мана</li>
+  </ul>
+  <p class="sources-all"><a href="{{ root }}{{ lang }}/sources/">{{ t.src_all }} →</a></p>
+</section>

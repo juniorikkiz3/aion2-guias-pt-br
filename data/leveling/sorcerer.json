@@ -1,0 +1,137 @@
+{
+  "_note": "Sorcerer leveling steps (WIP: Korean guides + MMO Codex, no solid global source yet). [[slug]] = localized skill name, [[slug#N]] = its N-th specialization.",
+  "steps": [
+    {
+      "id": "sorcerer-core",
+      "order": 2,
+      "skills": [
+        "flame-arrow",
+        "ice-chain"
+      ],
+      "when": {
+        "en": "Lv 1",
+        "ru": "Ур. 1",
+        "uk": "Рів. 1",
+        "tr": "Sv 1",
+        "pt-BR": "LV 1"
+      },
+      "text": {
+        "en": "First points into [[flame-arrow]] (restores MP on every cast) and [[ice-chain]] for packs. At 8 take [[flame-arrow#0]] — mana is your limit while leveling.",
+        "ru": "Первые очки в [[flame-arrow]] (восполняет ману каждым кастом) и [[ice-chain]] для пачек. На 8 возьми [[flame-arrow#0]] — на прокачке всё упирается в ману.",
+        "uk": "Перші очки в [[flame-arrow]] (поповнює ману кожним кастом) і [[ice-chain]] для пачок. На 8 візьми [[flame-arrow#0]] — на прокачці все впирається в ману.",
+        "tr": "İlk puanlar [[flame-arrow]] (her kullanımda MP yeniler) ve gruplar için [[ice-chain]]'e. 8'de [[flame-arrow#0]] al — seviye atlarken sınırın mana.",
+        "pt-BR": "Primeiros pontos em [[flame-arrow]] (restaura MP em cada elenco) e [[ice-chain]] para pacotes. Na 8 tomar [[flame-arrow#0]] - mana é o seu limite enquanto nivelando."
+      }
+    },
+    {
+      "id": "sorcerer-target",
+      "order": 5,
+      "skills": [],
+      "when": {
+        "en": "Settings",
+        "ru": "Настройки",
+        "uk": "Налаштування",
+        "tr": "Ayarlar",
+        "pt-BR": "Configurações"
+      },
+      "text": {
+        "en": "Use <strong>target mode</strong>, not action combat: in action mode the basic attack stops whenever you cast, and the basic attack is what keeps your MP up.",
+        "ru": "Играй в <strong>режиме с таргетом</strong>, а не в action combat: в action-режиме автоатака останавливается при каждом касте, а именно она держит ману.",
+        "uk": "Грай у <strong>режимі з таргетом</strong>, а не в action combat: в action-режимі автоатака зупиняється при кожному касті, а саме вона тримає ману.",
+        "tr": "Aksiyon savaşı değil <strong>hedef modu</strong> kullan: aksiyon modunda her büyüde temel saldırı durur ve MP'ni yukarıda tutan şey temel saldırıdır.",
+        "pt-BR": "Use o modo alvo <strong> </strong>, não combate de ação: no modo de ação o ataque básico para sempre que você lança, e o ataque básico é o que mantém seu MP para cima."
+      }
+    },
+    {
+      "id": "sorcerer-fire",
+      "order": 60,
+      "skills": [
+        "firestorm",
+        "blaze"
+      ],
+      "when": {
+        "en": "Lv 6–10",
+        "ru": "Ур. 6–10",
+        "uk": "Рів. 6–10",
+        "tr": "Sv 6–10",
+        "pt-BR": "Lv 6 - 10"
+      },
+      "text": {
+        "en": "[[firestorm]] and [[blaze]] become your single-target damage. Blaze needs Fire Mark on the target — [[fire-mark]] applies it from any fire hit.",
+        "ru": "[[firestorm]] и [[blaze]] — основной урон по одной цели. Зареву нужна Огненная метка на цели — её вешает [[fire-mark]] с любого огненного удара.",
+        "uk": "[[firestorm]] і [[blaze]] — основна шкода по одній цілі. Blaze потрібна Fire Mark на цілі — її вішає [[fire-mark]] із будь-якого вогняного удару.",
+        "tr": "[[firestorm]] ve [[blaze]] tek hedef hasarın olur. Blaze hedefte Fire Mark ister — [[fire-mark]] onu her ateş vuruşundan uygular.",
+        "pt-BR": "[[firestorm]] e [[blaze]] tornam-se seus únicos alvos. Blaze precisa de Fire Mark no alvo. [[fire-mark]] o aplica de qualquer tiro."
+      }
+    },
+    {
+      "id": "sorcerer-hellfire",
+      "order": 120,
+      "skills": [
+        "hellfire",
+        "bittercold-wind"
+      ],
+      "when": {
+        "en": "Lv 12",
+        "ru": "Ур. 12",
+        "uk": "Рів. 12",
+        "tr": "Sv 12",
+        "pt-BR": "LV 12"
+      },
+      "text": {
+        "en": "[[hellfire]] (charge to 3) for big pulls and [[bittercold-wind]] to root the pack in place — [[bittercold-wind#2]] pulls them together.",
+        "ru": "[[hellfire]] (заряд до 3) для больших пулов и [[bittercold-wind]], чтобы приковать пачку на месте — [[bittercold-wind#2]] стягивает их в кучу.",
+        "uk": "[[hellfire]] (заряд до 3) для великих пулів і [[bittercold-wind]], щоб прикувати пачку на місці — [[bittercold-wind#2]] стягує їх докупи.",
+        "tr": "Büyük çekişler için [[hellfire]] (3'e kadar şarj) ve grubu yerinde köklemek için [[bittercold-wind]] — [[bittercold-wind#2]] onları bir araya çeker.",
+        "pt-BR": "[[hellfire]] (carga para 3) para grandes puxamentos e [[bittercold-wind]] para enraizar o pacote no lugar - [[bittercold-wind#2]] os junta."
+      }
+    },
+    {
+      "id": "sorcerer-stigmas",
+      "order": 221,
+      "skills": [
+        "element-enhancement",
+        "fire-wall",
+        "cold-storm",
+        "steel-barrier"
+      ],
+      "when": {
+        "en": "Lv ~22",
+        "ru": "~Ур. 22",
+        "uk": "~Рів. 22",
+        "tr": "Sv ~22",
+        "pt-BR": "LV ~ 22"
+      },
+      "text": {
+        "en": "Stigmas: [[element-enhancement]] first, then [[fire-wall]] and [[cold-storm]] for packs. Keep [[steel-barrier]] while leveling solo — the Sorcerer is fragile.",
+        "ru": "Стигмы: сначала [[element-enhancement]], затем [[fire-wall]] и [[cold-storm]] для пачек. На соло-прокачке держи [[steel-barrier]] — Волшебник хрупкий.",
+        "uk": "Стигми: спершу [[element-enhancement]], потім [[fire-wall]] і [[cold-storm]] для пачок. На соло-прокачці тримай [[steel-barrier]] — Sorcerer крихкий.",
+        "tr": "Stigmalar: önce [[element-enhancement]], sonra gruplar için [[fire-wall]] ve [[cold-storm]]. Solo seviye atlarken [[steel-barrier]]'ı tut — Sorcerer kırılgandır.",
+        "pt-BR": "Stigmas: [[element-enhancement]] primeiro, depois [[fire-wall]] e [[cold-storm]] para pacotes. Mantenha o [[steel-barrier]] enquanto nivela sozinho. O Feiticeiro é frágil."
+      }
+    },
+    {
+      "id": "sorcerer-cap",
+      "order": 455,
+      "skills": [
+        "blaze",
+        "firestorm",
+        "hellfire"
+      ],
+      "when": {
+        "en": "Cap",
+        "ru": "Кап",
+        "uk": "Кап",
+        "tr": "Sınır",
+        "pt-BR": "Cap."
+      },
+      "text": {
+        "en": "At the cap swap Steel Barrier for [[delayed-explosion]] in groups and push [[blaze]], [[firestorm]], [[hellfire]] toward 16+ — see the PvE tab.",
+        "ru": "На капе в группе меняй Стальную оболочку на [[delayed-explosion]] и качай [[blaze]], [[firestorm]], [[hellfire]] к 16+ — вкладка PvE.",
+        "uk": "На капі в групі міняй Steel Barrier на [[delayed-explosion]] і качай [[blaze]], [[firestorm]], [[hellfire]] до 16+ — вкладка PvE.",
+        "tr": "Sınırda gruplarda Steel Barrier'ı [[delayed-explosion]] ile değiştir ve [[blaze]], [[firestorm]], [[hellfire]]'ı 16+'ya doğru it — PvE sekmesine bak.",
+        "pt-BR": "Na troca da tampa Steel Barrier para [[delayed-explosion]] em grupos e empurre [[blaze]], [[firestorm]], [[hellfire]] para 16 + - veja a aba PvE."
+      }
+    }
+  ]
+}

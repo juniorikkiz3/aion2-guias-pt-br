@@ -1,0 +1,163 @@
+{
+  "_note": "Cleric leveling steps (WIP: Grobs' early-game macro slide + MMO Codex leveling order). [[slug]] = localized skill name, [[slug#N]] = its N-th specialization.",
+  "steps": [
+    {
+      "id": "cleric-clicks",
+      "order": 2,
+      "skills": [
+        "earths-retribution",
+        "judgment-thunder"
+      ],
+      "when": {
+        "en": "Lv 1",
+        "ru": "Ур. 1",
+        "uk": "Рів. 1",
+        "tr": "Sv 1",
+        "pt-BR": "LV 1"
+      },
+      "text": {
+        "en": "Level your two no-cooldown attacks first: [[earths-retribution]] (restores MP) and [[judgment-thunder]]. Play in <strong>target mode</strong> — it keeps the basic attack going between skills, and that is your mana.",
+        "ru": "Сначала качай две атаки без перезарядки: [[earths-retribution]] (восполняет ману) и [[judgment-thunder]]. Играй в <strong>режиме с таргетом</strong> — так автоатака идёт между скиллами, а это твоя мана.",
+        "uk": "Спершу качай дві атаки без перезарядки: [[earths-retribution]] (поповнює ману) і [[judgment-thunder]]. Грай у <strong>режимі з таргетом</strong> — так автоатака йде між скілами, а це твоя мана.",
+        "tr": "Önce bekleme süresi olmayan iki saldırını geliştir: [[earths-retribution]] (MP yeniler) ve [[judgment-thunder]]. <strong>Hedef modunda</strong> oyna — yetenekler arasında temel saldırıyı sürdürür, manan da odur.",
+        "pt-BR": "Leve seus dois ataques sem recarga primeiro: [[earths-retribution]] (restaura MP) e [[judgment-thunder]]. Joga no modo alvo <strong> </strong> - ele mantém o ataque básico entre habilidades, e esse é o seu mana."
+      }
+    },
+    {
+      "id": "cleric-chain",
+      "order": 60,
+      "skills": [
+        "chain-of-torment",
+        "condemnation"
+      ],
+      "when": {
+        "en": "Lv ~6",
+        "ru": "~Ур. 6",
+        "uk": "~Рів. 6",
+        "tr": "Sv ~6",
+        "pt-BR": "LV ~ 6"
+      },
+      "text": {
+        "en": "[[chain-of-torment]] marks the target; [[condemnation]] only hits a target under Chain of Torment — put both in one hotbar line with Chain at the bottom.",
+        "ru": "[[chain-of-torment]] метит цель, а [[condemnation]] бьёт только по цели под Цепью боли — поставь оба в одну линию, Цепь внизу.",
+        "uk": "[[chain-of-torment]] мітить ціль, а [[condemnation]] б'є лише по цілі під Chain of Torment — постав обидва в одну лінію, Chain унизу.",
+        "tr": "[[chain-of-torment]] hedefi işaretler; [[condemnation]] yalnızca Chain of Torment altındaki hedefe vurur — ikisini bir hızlı erişim satırına koy, Chain en altta.",
+        "pt-BR": "[[chain-of-torment]] marca o alvo, [[condemnation]] só atinge um alvo sob Chain of Torment e coloca ambos em uma linha de hotbar com Chain na parte inferior."
+      }
+    },
+    {
+      "id": "cleric-spec",
+      "order": 80,
+      "skills": [
+        "earths-retribution",
+        "judgment-thunder",
+        "chain-of-torment",
+        "debilitating-mark"
+      ],
+      "when": {
+        "en": "Lv 8",
+        "ru": "Ур. 8",
+        "uk": "Рів. 8",
+        "tr": "Sv 8",
+        "pt-BR": "LV 8"
+      },
+      "text": {
+        "en": "First specializations: [[earths-retribution#1]], [[judgment-thunder#1]], [[chain-of-torment#1]], [[debilitating-mark#1]].",
+        "ru": "Первые особенности: [[earths-retribution#1]], [[judgment-thunder#1]], [[chain-of-torment#1]], [[debilitating-mark#1]].",
+        "uk": "Перші спеціалізації: [[earths-retribution#1]], [[judgment-thunder#1]], [[chain-of-torment#1]], [[debilitating-mark#1]].",
+        "tr": "İlk uzmanlıklar: [[earths-retribution#1]], [[judgment-thunder#1]], [[chain-of-torment#1]], [[debilitating-mark#1]].",
+        "pt-BR": "Primeira especialização: [[earths-retribution#1]], [[judgment-thunder#1]], [[chain-of-torment#1]], [[debilitating-mark#1]]."
+      }
+    },
+    {
+      "id": "cleric-bolt",
+      "order": 120,
+      "skills": [
+        "bolt",
+        "healing-light"
+      ],
+      "when": {
+        "en": "Lv 9–18",
+        "ru": "Ур. 9–18",
+        "uk": "Рів. 9–18",
+        "tr": "Sv 9–18",
+        "pt-BR": "Lv 9 - 18"
+      },
+      "text": {
+        "en": "[[bolt]] for burst and stagger (take [[bolt#2]]); [[healing-light]] for yourself. Raise attack skills, not heals — a healing-focused Cleric levels slowly.",
+        "ru": "[[bolt]] для бурста и ошеломления (бери [[bolt#2]]); [[healing-light]] — для себя. Качай атакующие скиллы, а не лечение: Целитель-хилер качается медленно.",
+        "uk": "[[bolt]] для берсту й оглушення (бери [[bolt#2]]); [[healing-light]] — для себе. Качай атакувальні скіли, а не лікування: Cleric-хілер качається повільно.",
+        "tr": "Patlama ve stagger için [[bolt]] ([[bolt#2]] al); kendin için [[healing-light]]. İyileştirmeleri değil saldırı yeteneklerini yükselt — iyileştirmeye odaklı Cleric yavaş seviye atlar.",
+        "pt-BR": "[[bolt]] para estourar e cambalear (tomar [[bolt#2]]); [[healing-light]] para você. Aumentar as habilidades de ataque, não curar, um nível de cura com foco em Clerics lentamente."
+      }
+    },
+    {
+      "id": "cleric-grace",
+      "order": 210,
+      "skills": [
+        "earths-grace"
+      ],
+      "when": {
+        "en": "Lv 21",
+        "ru": "Ур. 21",
+        "uk": "Рів. 21",
+        "tr": "Sv 21",
+        "pt-BR": "LV 21"
+      },
+      "text": {
+        "en": "Passive [[earths-grace]] (Critical Damage and Accuracy) — straight to 10 the moment you learn it.",
+        "ru": "Пассивку [[earths-grace]] (крит. урон и точность) — сразу до 10, как только выучишь.",
+        "uk": "Пасивку [[earths-grace]] (крит. шкода й точність) — одразу до 10, щойно вивчиш.",
+        "tr": "Pasif [[earths-grace]] (Critical Damage ve Accuracy) — öğrendiğin anda doğrudan 10'a.",
+        "pt-BR": "Passivo [[earths-grace]] (Danificação Crítica e Exatidão) - direto para 10 no momento em que você aprende."
+      }
+    },
+    {
+      "id": "cleric-stigmas",
+      "order": 221,
+      "skills": [
+        "summon-resurrection",
+        "noble-aura",
+        "earth-punishment",
+        "benevolence"
+      ],
+      "when": {
+        "en": "Lv 22",
+        "ru": "Ур. 22",
+        "uk": "Рів. 22",
+        "tr": "Sv 22",
+        "pt-BR": "LV 22"
+      },
+      "text": {
+        "en": "Stigmas: one point into [[summon-resurrection]], then [[noble-aura]], [[earth-punishment]], [[benevolence]] and [[absolution]] to 5.",
+        "ru": "Стигмы: одно очко в [[summon-resurrection]], затем [[noble-aura]], [[earth-punishment]], [[benevolence]] и [[absolution]] до 5.",
+        "uk": "Стигми: одне очко в [[summon-resurrection]], потім [[noble-aura]], [[earth-punishment]], [[benevolence]] і [[absolution]] до 5.",
+        "tr": "Stigmalar: [[summon-resurrection]]'a bir puan, sonra [[noble-aura]], [[earth-punishment]], [[benevolence]] ve [[absolution]] 5'e.",
+        "pt-BR": "Estigmas: um ponto em [[summon-resurrection]], depois [[noble-aura]], [[earth-punishment]], [[benevolence]] e [[absolution]] para 5."
+      }
+    },
+    {
+      "id": "cleric-cap",
+      "order": 455,
+      "skills": [
+        "earths-retribution",
+        "condemnation",
+        "healing-light"
+      ],
+      "when": {
+        "en": "Cap",
+        "ru": "Кап",
+        "uk": "Кап",
+        "tr": "Sınır",
+        "pt-BR": "Cap."
+      },
+      "text": {
+        "en": "Both clicks at 10 by level 25; then [[condemnation]], [[bolt]] and [[healing-light]]. Before group dungeons get Healing Light to 16.",
+        "ru": "Обе атаки на 10 к 25 уровню; дальше [[condemnation]], [[bolt]] и [[healing-light]]. Перед групповыми подземельями подними Целительный свет до 16.",
+        "uk": "Обидві атаки на 10 до 25 рівня; далі [[condemnation]], [[bolt]] і [[healing-light]]. Перед груповими підземеллями підніми Healing Light до 16.",
+        "tr": "25. seviyeye kadar iki tık da 10'da; sonra [[condemnation]], [[bolt]] ve [[healing-light]]. Grup zindanlarından önce Healing Light'ı 16'ya çıkar.",
+        "pt-BR": "Ambos clicam em 10 pelo nível 25; então [[condemnation]], [[bolt]] e [[healing-light]]. Antes das masmorras de grupo, Healing Light a 16."
+      }
+    }
+  ]
+}

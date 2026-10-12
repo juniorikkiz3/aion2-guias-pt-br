@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block og %}changelog{% endblock %}
+{% block title %}{{ t.wn_history }} — {{ t.site_name }}{% endblock %}
+{% block desc %}{{ t.cl_lead }}{% endblock %}
+{% block body_class %}page-changelog{% endblock %}
+{% block main %}
+<main id="main" data-changelog-seen="{{ changelog[0].id }}">
+  <section class="page-hero has-art" style="--hero-art:url('{{ root }}assets/art/hero-changelog.webp');--hero-pos:50% 45%">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="{{ t.back_home }}"><a href="{{ root }}{{ lang }}/">{{ t.back_home }}</a><span aria-hidden="true">/</span><span>{{ t.wn_history }}</span></nav>
+      <h1>{{ t.wn_history }}</h1>
+      <p class="lead">{{ t.cl_lead }}</p>
+    </div>
+  </section>
+  <div class="wrap cl-page">
+    {# one block per day: several pushes on the same day are merged, newest items first #}
+    {% for day in changelog|groupby('date')|reverse %}
+    <section class="wn-entry cl-entry" aria-label="{{ fmt_day(day.grouper, lang) }}">
+      <time class="wn-date" datetime="{{ day.grouper }}">{{ fmt_day(day.grouper, lang) }}</time>
+      <ul>
+        {% for e in day.list %}{% for it in e['items'] %}
+        <li>{% if it.get('href') %}<a href="{{ root }}{{ lang }}/{{ it.href }}">{{ it[lang]|safe }}</a>{% else %}<span>{{ it[lang]|safe }}</span>{% endif %}</li>
+        {% endfor %}{% endfor %}
+      </ul>
+    </section>
+    {% endfor %}
+  </div>
+</main>
+{% endblock %}

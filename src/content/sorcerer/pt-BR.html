@@ -1,0 +1,204 @@
+{% from "macros.html" import section, skill, core, loadout, passives, glance, hotline, macroseq, dv_board with context %}
+
+{# ============================== PvE ============================== #}
+{% call glance('pve') %}
+  <h3>{{ t.core_skills }}</h3>
+  {{ core([('hellfire', '16'), ('firestorm', '16'), ('bittercold-wind', '16'), ('blaze', '16'), ('wish-of-concentration', '16')]) }}
+  <h3>{{ t.stigma_loadout }}</h3>
+  {{ loadout([('element-enhancement', 20), ('cold-storm', 10), ('fire-wall', 10), ('delayed-explosion', 10)]) }}
+  <h3>{{ t.key_passives }}</h3>
+  {{ passives(['robe-of-flame', 'fire-mark', 'robe-of-earth', 'grace-of-enhancement']) }}
+{% endcall %}
+
+{% call section('intro', 'Visão geral', 'pve') %}
+  <p> O Feiticeiro é um canhão de vidro que lança fogo e gelo. O fogo faz o dano - {{ s('fire-mark') }} marca o alvo e {{ s('blaze') }} desconta-lo - enquanto o gelo diminui, raízes e congela para que nada chegue até você. Metade dos seus bônus de danos dependem de mana: acima de 50% MP você crit mais, acima de 25% você lida com 20% mais danos. </p>
+  <div class="callout accent">
+    <h3> A build em uma frase </h3>
+    <p> Segure uma macro que mantém {{ s('element-enhancement') }} e {{ s('wish-of-concentration') }} funcionando e alterna {{ s('flame-arrow') }} com seu fogo e linhas de gelo para que MP fique acima da metade; lance {{ s('hellfire') }} à mão. </p>
+  </div>
+  <div class="callout"><ul>
+    <li> <strong> Jogue no modo alvo. </strong> Com um alvo bloqueado, o ataque básico {{ s('flame-arrow') }} continua atirando por si só depois de cada habilidade e restaura MP. No modo de ação, ele pára depois de cada habilidade e você tem que clicar novamente. </li>
+    <li> <strong> Dois estágios. </strong> Nos primeiros dias no 45 suas habilidades se sentam no 8 - 10 com uma especialização cada - pegue o mana e escolha a velocidade nomeada nas cartas. Os níveis de cartas e as duas escolhas destacadas são o alvo posterior (16), da configuração global da EUTÓPIA e guias coreanos. </li>
+  </ul></div>
+  <p class="note"> A configuração inicial e a macro seguem o guia iniciante do feiticeiro de LuckyRO (vídeo, setembro 15, cliente de Taiwan) e sua atualização global de outubro 2; a prioridade de habilidade e o nível 16 escolhem seguir a build global da EITOPIA (nível 45, nível de item 1,260, outubro 3), que supera os gráficos de danos em seus grupos. Nomes de habilidade e dados são do cliente global. </p>
+{% endcall %}
+
+{% call section('global', 'Global — Temporada 1: o que muda', 'pve pvp') %}
+  <p> Servidores globais abrem em <strong> de outubro 5, 2026 </strong> (acesso antecipado do founder a partir de setembro 30). O que isso significa para o Feiticeiro </p>
+  <div class="callout">
+    <ul>
+      <li> <strong> 4 ranhuras de estigma, tampado em 20. </strong> Taiwan e Coréia jogam seis, os quatro mantidos aqui são os dois níveis de fontes primeiro. </li>
+      <li> <strong> Skills em 16, não 20. </strong> Arcana e anéis são as habilidades de empurrar para além do 16, e eles vêm lentamente. </li>
+      <li> <strong> Mana está apertado no início. </strong> Sobre 3,000 MP e sem redução de recarga: as primeiras escolhas são sobre MP e Velocidade de Habilidade, não danos. </li>
+      <li data-only="pvp"> <strong> PvP: </strong> todos começam com o mesmo equipamento limitado e nenhum meta se formou ainda. </li>
+    </ul>
+  </div>
+{% endcall %}
+
+{% call section('skills', 'Habilidades', 'pve') %}
+  <p> Mais tarde sete habilidades vão para <strong> 16 </strong> - {{ s('hellfire') }} primeiro - e o resto ficar em <strong> 12 </strong> ou sair do bar. Cada carta diz qual única escolha tomar enquanto a habilidade ainda está em 8-10. </p>
+  <ul class="skill-grid">
+    {% call skill('hellfire', 'must', '16', [0, 4]) %}Your biggest hit and the center of the build — EUTOPIA's number one priority. Charge it fully and cast it by hand. Before 16: +30% Velocidade de habilidade e o dano ao fogo ao longo do tempo (a LuckyRO); em 16 Trocar os dano contínuo por...15s cooldown. The third slot at 20Multi-Hit através de Bloco e Evasão.{% endcall %}
+    {% call skill('firestorm', 'must', '16', [0, 3]) %} 5 segundo de recarga e um grande dreno de mana - levar − 50% MP Custo primeiro. No 12 cada bola de fogo tira 2s do Hellfire, então os dois trabalham como um par. No 20 adicionar + 15% danos por bola de fogo. {% endcall %}
+    {% call skill('bittercold-wind', 'must', '16', [0, 3]) %} Root campo: + 1s duração, e em 12 um crit garantida através de bloco e Evasão (EUTOPIA). O nível 16 só encurta Frost: pule assim que Frost sair do seu bar. {% endcall %}
+    {% call skill('blaze', 'must', '16', [2, 3]) %}Dano principal em um alvo marcado com fogo; restaura MP. Delayed damage and Multi-Hit in a group; solo on a hard boss swap the delay for the HP absorb (aLuckyRO). At 20 Adicione o Wish of Concentration -Esfriamento.{% endcall %}
+    {% call skill('wish-of-concentration', 'must', '16', [1, 3]) %} + 10% adicional Ataque e + 10% Velocidade de Combate - ambas as fontes tomar estes dois. Em 20 adicionar - 10s para todos os tempos de recarga. {% endcall %}
+    {% call skill('winters-shackles', 'must', '16', [2, 4]) %} + 20% PvE Danos Aumentam para 5s na aterrissagem - a razão para nivelá-lo. Com o 15s em 16; EUTÓPIA toma a habilidade da corrente em vez disso. {% endcall %}
+    {% call skill('flame-arrow', 'must', '16', [3, 4]) %} Ataque básico e seu motor de mana. Primeiros dias: + 20% MP restaurado; + 50% Multi-Hit uma vez que mana segura. No 12: + 5% dano elementar para 10s sempre que Pyroclasm dispara; no 16 ele reinicia Blaze. {% endcall %}
+    {% call skill('ice-chain', 'opt', '12', [1, 3]) %}EUTÓPIA toma Ice Chain, Frost e Frost Burst Eles são lentos para tecer e adicionar pequenos danos. Ice Chain em 12 - cada golpe leva 1s Off. Winter's Shackles. +20% Velocidade de Habilidade, ou...20% MP Se mana não tiver sucesso.{% endcall %}
+    {% call skill('flame-scattershot', 'opt', '12', [2, 3]) %} Só em alvos Staggered, assim ele pode sentar na macro. Pegue o celular e multi-ataque na 12. {% endcall %}
+    {% call skill('frost', 'opt', 'evolução', [0, 2]) %} Restaura 200 MP - útil enquanto nivela e curta em mana; deixa a barra na configuração global do jogo final. {% endcall %}
+    {% call skill('defiance', 'opt', '12', [2, 3]) %} CC quebra; 20% HP volta quando você se solta. {% endcall %}
+    {% call skill('frost-burst', 'skip', 'dispensar') %}Only on Frozen targets. Not part of the global setup.{% endcall %}
+  </ul>
+{% endcall %}
+
+{% call section('passives', 'Passivas', 'pve') %}
+  <div class="table-wrap"><table>
+    <thead> <tr> <th> Passivo </th> <th> Por que </th> </tr> </thead>
+    <tbody>
+      <tr> <td> {{ s('robe-of-flame') }} </td> <td> Precisão, PvE Danos Aumentar e dupla chance - o primeiro passivo ao máximo. </td> </tr>
+      <tr> <td> {{ s('fire-mark') }} </td> <td> Aplica Fire Mark, que Blaze precisa, e queima o alvo. Max. </td> </tr>
+      <tr> <td> {{ s('robe-of-earth') }} </td> <td> Max MP e Hit crítico enquanto MP é 50% ou mais. Max. </td> </tr>
+      <tr> <td> {{ s('grace-of-enhancement') }} </td> <td> + 20% PvE Danos aumentam enquanto MP é 25% ou mais, e sucessos extras. </td> </tr>
+      <tr> <td> {{ s('vitality-evaporation') }} </td> <td> Dano extra enquanto o alvo está acima do 70% HP - forte cedo, quando as lutas são curtas. </td> </tr>
+      <tr> <td> {{ s('cold-snap') }} </td> <td> Dano extra em alvos lentos - Ice Chain os mantém lentos. </td> </tr>
+      <tr> <td> {{ s('robe-of-cold') }} </td> <td> Defesa e um lento ataque de atacantes - ataques. </td> </tr>
+    </tbody>
+  </table></div>
+  <p class="note"> Robe of Earth e Grace of Enhancement desligam quando sua mana está fraca. Nunca jogue no 10 – 20% MP. </p>
+{% endcall %}
+
+{% call section('gear', 'Equipamentos e atributos', 'pve') %}
+  <div class="callout"><ul>
+    <li> <strong> Manastones: Ataque </strong>, Ataque Crítico, Precisão. </li>
+    <li> Assista <strong> Max MP </strong> e MP Regen até sua rotação parar de secar. </li>
+    <li> Qual nível de marcha a perseguir ainda está aberto até o lançamento global. </li>
+  </ul></div>
+{% endcall %}
+
+{% call section('daevanion', 'Painéis Daevanion', 'pve pvp') %}
+  <p> Daevanion pega suas habilidades de 10 para 14 e adiciona estatísticas. Cada nó azul dá <strong> + 1 nível </strong> à sua habilidade. </p>
+  <div class="callout"><ul>
+    <li data-only="pve"> <strong> Prioridade: </strong> laranja velocidade de combate e redução de recarga, em seguida, ataque e danos aumenta, em seguida, dano crítico aumentar; depois disso, os nós azuis de {{ s('hellfire') }}, {{ s('firestorm') }}, {{ s('bittercold-wind') }}, {{ s('blaze') }}, {{ s('wish-of-concentration') }} e o verde {{ s('robe-of-earth') }}. </li>
+    <li data-only="pve"> <strong> Skip </strong> Multi-Hit e os nós laranjas defensivos - um Feiticeiro quer dano plano; pegue a precisão mais tarde. </li>
+    Prioridade <li data-only="pvp"> <strong>: nós azuis </strong> para {{ s('frost') }}, {{ s('winters-shackles') }}, {{ s('firestorm') }}. </li>
+    <li data-only="pve"> <strong> Não Ariel no global: </strong> há cinco placas, e o nível 45, um, Azphel, dá apenas PvP Danos Boost e Tolerância - em PvE terminar os quatro primeiros. </li>
+    <li data-only="pvp"> <strong> Azphel </strong> (nível 45) é tudo PvP Danos Boost e Tolerância - levá-lo. </li>
+  </ul></div>
+  <div class="table-wrap"><table>
+    <thead> <tr> <th> Painel </th> <th> Desbloquear </th> <th> nós laranja </th> </tr> </thead>
+    <tbody>
+      <tr> <td> Nezekan </td> <td> Lv 12 </td> <td> Velocidade de combate, redução de recarga </td> </tr>
+      <tr> <td> Zikel </td> <td> Lv 20 </td> <td> Danos Aumentam, Tolerância de Danos </td> </tr>
+      <tr> <td> Vaizel </td> <td> Lv 30 </td> <td> Danos Críticos Aumentam e Tolerância </td> </tr>
+      <tr> <td> Triniel </td> <td> Lv 40 </td> <td> Multi-Hit Chance e Resista </td> </tr>
+      <tr> <td> Azphel </td> <td> Lv 45 </td> <td> PvP Dano Aumentar e Tolerância - sem nós de habilidade </td> </tr>
+    </tbody>
+  </table></div>
+  <h3> A rota nas tábuas </h3>
+  <p> Os reais quadros globais dos dados do jogo. O ouro marca o caminho mais bamouse de Start para os nós que este guia pega: os nós azuis das habilidades prioritárias e os nós laranja ofensivos (sem multi-hit, sem tolerância); paira qualquer nó para ver o que ele dá. </p>
+  <div data-only="pve">{{ dv_board('pve') }}</div>
+  <div data-only="pvp">{{ dv_board('pvp') }}</div>
+  <p class="note"> Boards e custos vêm dos dados globais do cliente (questlog.gg); o caminho é calculado, não retirado de um vídeo. Os valores do stat ainda podem mudar no lançamento. Verifique o painel antes de fazer uma rota completa. </p>
+{% endcall %}
+
+{% call section('stigmas', 'Estigmas', 'pve') %}
+  Ordem de evolução <p>: Element Enhancement → Cold Storm → Fire Wall → Delayed Explosion . Em um novo personagem eles começam em cerca de 5 / 5 / 5 / 1. </p>
+  <ul class="skill-grid">
+    {% call skill('element-enhancement', 'must', 'Nv. 20', upto=20) %} + 20% Ataque de Fogo e Água (+ 10% mais em 20) - seu principal fã, usado toda vez que ele está pronto. Max primeiro. {% endcall %}
+    {% call skill('cold-storm', 'must', 'Nv. 10', upto=10) %} Water DoT com Frostbite: danos extras em cada batida que você cair dentro dele. {% endcall %}
+    {% call skill('fire-wall', 'must', 'Nv. 10', upto=10) %} Fire DoT, Embers adiciona danos extras em cada ataque. Melhor quando o chefe fica parado ou a matilha passa por ela. {% endcall %}
+    {% call skill('delayed-explosion', 'must', 'Nv. 10', upto=10) %} O alvo leva mais danos 15% de você para 4s; nível 10 corta seu recarga. Um ponto é suficiente no começo. {% endcall %}
+    {% call skill('glacial-smite', 'opt', 'alternativa', upto=10) %} Big Instant AoE bateu, mais forte em pacotes; a troca por Cold Storm em lutas curtas e agricultura. {% endcall %}
+    {% call skill('divine-burst', 'opt', 'alternativa', upto=10) %} Hit que te joga de volta do alvo, com uma absorvente HP em 10 - uma ferramenta de segurança quando você tem cacos de reposição. {% endcall %}
+    {% call skill('steel-barrier', 'opt', 'alternativa', upto=10) %} Shield vale 16% de Max HP - mantê-lo enquanto nivelando solo, e trocá-lo por Cold Storm em um chefe que continua matando você (EUTOPIA). {% endcall %}
+  </ul>
+  A configuração de Taiwan do <p class="note"> aLuckyRO corre seis estigmas: estes quatro mais Glacial Smite e Divine Burst. EUTÓPIA executa exatamente esses quatro no global, Divine Burst é sua troca quando o grupo perde os cheques escalonados. </p>
+{% endcall %}
+
+{% call section('macro', 'Macro e rotação', 'pve') %}
+  <p> AION 2 tem duas ferramentas separadas: </p>
+  <ul>
+    <li> <strong> linha de barras </strong> - várias habilidades empilhadas no <em> um botão de barras </em>. Pressionando-o lança a habilidade mais alta prioridade que está pronto, e em AION 2 o slot inferior <strong> tem a maior prioridade </strong>. As cartas mostram cada linha de cima a baixo como no jogo. </li>
+    <li> <strong> No jogo macro </strong> - enquanto você segura sua chave, ele pressiona seus botões de barra de habilidades em ordem e cancela caudas de animação. As habilidades no recarga são ignoradas. </li>
+  </ul>
+
+  <h3> 1. Linhas de barras </h3>
+  <div class="hotlines">
+    {% call hotline('4', 'Buff line', ['element-enhancement', 'bittercold-wind', 'delayed-explosion']) %} Element Enhancement explode sempre que está pronto, então o campo raiz e o dano + 15% debuff. {% endcall %}
+    {% call hotline('5', 'Concentration line', ['wish-of-concentration', 'cold-storm', 'fire-wall']) %} Primeiro o segundo, depois os dois campos sob o alvo. {% endcall %}
+    {% call hotline('1', 'Fire line', ['blaze', 'firestorm']) %} Blaze sempre que o alvo carrega um Fire Mark, Firestorm em sua recarga 5 segundo. {% endcall %}
+    {% call hotline('T', 'Ice line', ['winters-shackles', 'ice-chain']) %} Winter's Shackles para o fã de danos, Ice Chain enche o resto se você ficar com ele, sem ele a linha é Winter's Shackles sozinho. {% endcall %}
+  </div>
+  <p> {{ s('flame-arrow') }} fica sozinho no <span class="key"> R </span>, {{ s('hellfire') }} no <span class="key"> 2 </span>, {{ s('flame-scattershot') }} no <span class="key"> 3 </span>. </p>
+
+  <h3> 2. No jogo macro </h3>
+  <p> Amarre uma tecla da macro em Configurações → Configurações chave → Jogo → Macro. Cada passo com o mesmo atraso: </p>
+  {{ macroseq([('Buff line', '4'), ('Concentration line', '5'), (skill_data('flame-arrow')[lang].name, 'R'), ('Fire line', '1'), (skill_data('flame-arrow')[lang].name, 'R'), ('Ice line', 'T'), (skill_data('flame-scattershot')[lang].name, '3')]) }}
+  <ul>
+    <li> <strong> Atraso: </strong> 10 ms com um ping sob 50; 40 - 50 ms com um ping de 80 - 100 e muito mais. </li>
+    <li> <strong> Como verificar: </strong> observe seu personagem enquanto a macro corre. Depois das imagens, as animações estão sendo canceladas e o atraso está bom. </li>
+    <li> <strong> Por que duas setas de chama, </strong> eles enchem mana entre as habilidades caras, então MP fica acima do 50% e ambos os passivos de mana ficam. </li>
+  </ul>
+  <p class="note"> Os passos vêm da janela macro de ALuckyRO (Setembro 15, cliente de Taiwan); Frost e Frost Burst foram tirados após a configuração global da EUTÓPIA. Flame Scattershot como o último passo segue o que aLuckyRO diz (ele dispara sozinho em um chefe cambaleante). </p>
+
+  <h3> 3. O que você realmente pressiona </h3>
+  <ul class="presslist">
+    <li> <span class="press-how"> Segure </span> <span class="press-what"> A tecla da macro - nada mais. </span> </li>
+    <li> <span class="press-how"> pela mão </span> <span class="press-what"> {{ s('hellfire') }}: parar, carregar completamente, voltar para a macro. </span> </li>
+    <li> <span class="press-how"> Mana baixa </span> <span class="press-what"> Se MP ainda cair, solte a macro, atire alguns {{ s('flame-arrow') }} s e continue. </span> </li>
+  </ul>
+
+  <h3> 4. Mais tarde: estouro à mão </h3>
+  <p> Uma vez que seu equipamento carrega redução de recarga, os jogadores coreanos tiram as lustres da macro e abrem uma janela de estouro à mão: </p>
+  <ol>
+    <li> {{ s('delayed-explosion') }} pouco antes do tanque puxar. </li>
+    <li> {{ s('element-enhancement') }} e {{ s('wish-of-concentration') }}. </li>
+    <li> {{ s('fire-wall') }} + {{ s('cold-storm') }} sob o chefe. </li>
+    <li> {{ s('bittercold-wind') }} e {{ s('winters-shackles') }} para o aumento de danos 20%. </li>
+    <li> {{ s('hellfire') }} carregado para 3, em seguida, a macro. </li>
+  </ol>
+{% endcall %}
+
+{% call section('recap', 'Resumo', 'pve') %}
+  <div class="callout accent"><ul>
+    <li> <strong> Primeiros dias: habilidades </strong> em 8-10 com o mana e picaretas de velocidade; uma macro com os buffs dentro; modo alvo. </li>
+    <li> <strong> Mais tarde: </strong> Hellfire, Firestorm, Bittercold Wind, Blaze, Wish of Concentration, Winter's Shackles, Flame Arrow 16, Ice Chain 12 ou fora da barra. </li>
+    <li> <strong> Stigmas: </strong> Element Enhancement 20, Cold Storm 10, Fire Wall 10, Delayed Explosion 10. </li>
+    <li><strong>Mana:</strong> Mantenha-o acima. 50% - isso é dano, não conforto.</li>
+  </ul></div>
+{% endcall %}
+
+{# ============================ Leveling ============================ #}
+{% call section('fight-lvl', t.lvl_combat, 'lvl') %}
+  <div class="callout"><ul>
+    <li> <strong> Packs: </strong> {{ s('bittercold-wind') }} (root + pull) → {{ s('hellfire') }} → {{ s('ice-chain') }} até que eles caiam. </li>
+    <li> <strong> Elites: </strong> {{ s('fire-mark') }} → {{ s('blaze') }} → {{ s('firestorm') }}, kit com {{ s('ice-chain') }} lento. </li>
+    <li> <strong> Mana: </strong> usa o modo alvo para que o ataque básico continue funcionando, e teça Flame Arrow. </li>
+    <li> <strong> Baixo HP: </strong> {{ s('steel-barrier') }} e distância - o Feiticeiro não tem cura. </li>
+  </ul></div>
+{% endcall %}
+
+{% call section('macro-lvl', 'Macro para subir de nível', 'lvl') %}
+  <p>No início, duas linhas são suficientes: a linha de fogo na MB5 and the Ice line on RMB. Add the in-game macro once Bittercold Wind E seus estigmas estão dentro.</p>
+  <div class="hotlines">
+    {{ hotline('MB5', 'Fire line', ['blaze', 'firestorm', 'flame-arrow']) }}
+    {{ hotline('RMB', 'Ice line', ['frost', 'ice-chain']) }}
+  </div>
+{% endcall %}
+
+{# ============================ Sources ============================ #}
+<section class="sources" aria-labelledby="h-sources">
+  <h2 id="h-sources">{{ t.sources }}</h2>
+  <ul>
+    <li> <a href="https://www.youtube.com/watch?v=s-pYR_fmMDk" target="_blank" rel="noopener"> aLuckyRO - Guia de Feiticeiros AION 2 para Habilidades &amp; Stigmas . Macros &amp; Daevanion Setup </a> - a configuração inicial em 45: primeiras especializações, linhas de barra de habilidades e macro, mana gestão, modo de alvo, Daevanion ordem </li>
+    <li> <a href="https://www.youtube.com/watch?v=fsS86mITLsk" target="_blank" rel="noopener"> EITOPIA - Guia de Construção de Feiticeiro AION 2 - Melhores Habilidades PvE, Macro & amp; Rotação </a> - nível global - configuração 45: prioridade de habilidade (Hellfire primeiro), especializações, estigmas e suas trocas, ordem Daevanion </li>
+    <li> <a href="https://www.youtube.com/watch?v=C6-9zLLRiDE" target="_blank" rel="noopener"> aLuckyRO — AION 2 Último Feiticeiro Construção PVE para o Global </a> — especialização inicial, Firestorm → Hellfire e Ice Chain → Winter's Shackles combinações, ordem estigma </li>
+    <li> <a href="https://vortexgaming.io/en/postdetail/724101" target="_blank" rel="noopener"> Vortex Gaming — Guia do feiticeiro PvE após o balanceamento </a> — níveis de habilidade, especialização, estigmas, abridor e macro (servidores coreanos) </li>
+    <li> <a href="https://mmo-codex.com/articles/aion-2-sorcerer-guide/" target="_blank" rel="noopener"> MMO Codex - Aion 2 Feiticeiro guia </a> - estigma prioridade, macro ordem, evolução no modo alvo </li>
+    <li> <a href="https://questlog.gg/aion-2/en/db/skills/sorcerer" target="_blank" rel="noopener"> questlog.gg </a> - dados de habilidade e nomes do cliente global </li>
+    <li> <a href="https://www.youtube.com/watch?v=HMod6Z4GrE0" target="_blank" rel="noopener"> Grobs - AION 2 Macro Guide </a> - como as linhas de barras quentes e a macro no jogo funcionam </li>
+  </ul>
+  <p class="sources-all"><a href="{{ root }}{{ lang }}/sources/">{{ t.src_all }} →</a></p>
+</section>
