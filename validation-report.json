@@ -13,5 +13,15 @@
   "images_decoded": 468,
   "new_content_numbers": "exact numeric parity: Pets, Pet Tracker and progression Soulbind section in both languages",
   "macro_sequences": "order and timing unchanged",
-  "privacy": "Own static-edition privacy page; original feedback, analytics and consent UI excluded; release notes remain the reviewed snapshot."
+  "privacy": "Own static-edition privacy page; original feedback, analytics and consent UI excluded; release notes remain the reviewed snapshot.",
+  "publication": {
+    "commit_sha": "a2fa92cea8d7ce9342c74ba16f96523e7ddd39e6",
+    "version_id": "appgprj_6acd48efc1a48191bfff48deb96c6011~appgver_378e90d1ffd08191b8f0a93e407332a9",
+    "version_number": 3,
+    "deployment_id": "appgdep_6ad621447ba48191b2ffa3124f6c61f6",
+    "status": "succeeded",
+    "published_at": "2026-10-19T13:55:41.970198+00:00",
+    "url": "https://aion2-guias-br.juniorikkix.chatgpt.site/pt-BR/"
+  },
+  "github_sync": "verified same published source commit"
 }
