@@ -1,7 +1,14 @@
 {
-  "html_pages": 40,
-  "ptbr_pages": 19,
-  "ui_keys": 306,
-  "local_references_checked": 9427,
-  "errors": []
+  "pages": 40,
+  "missing_assets": [],
+  "broken_links": [],
+  "date": "2026-10-19",
+  "source": "https://aion2-guides.info/en/",
+  "source_updated": "2026-10-18",
+  "local_http": 200,
+  "javascript_syntax": "passed: site.js, tracker.js, bosses.js",
+  "source_data_parity": "passed for both languages: skill payloads, build choices, enabled modes, Daevanion ranges, weekly counters, energy/reset configuration",
+  "progress_storage": "same aion2-tracker-v1 key; upstream migration logic retained",
+  "browser_visual_qa": "unavailable: browser URL security policy blocked local preview",
+  "translation_review": "key instructions and 68 numeric discrepancies reviewed; long-form text partially reviewed"
 }

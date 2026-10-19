@@ -1,8 +1,10 @@
 {
-  "engine": "Argos Translate en-pb 1.9 (offline)",
+  "engine": "Argos en-pb 1.9 / CTranslate2, translation by sentence; local reviewed overrides",
   "locale": "pt-BR",
-  "strings": 4980,
-  "structural_fallbacks": 87,
-  "source": "https://github.com/Couga54/aion2-guides",
-  "note": "Tradução automática inicial; nomes do cliente Global preservados. Revisão editorial parcial."
+  "source": "https://aion2-guides.info/en/",
+  "source_updated": "2026-10-18",
+  "synced": "2026-10-19",
+  "memory_strings": 5950,
+  "reviewed_strings": 196,
+  "note": "Nomes e dados do cliente Global preservados. Interface, instruções principais e divergências numéricas revisadas. Textos longos restantes têm revisão editorial parcial."
 }

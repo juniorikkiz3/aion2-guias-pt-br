@@ -11,6 +11,12 @@ Inputs:
   src/assets/                       css, js, icons (copied as-is)
 """
 import json
+import sys
+from pathlib import Path as _Path
+if (_Path(__file__).resolve().parent.parent / "source-snapshot/provenance.json").exists():
+    from build_snapshot import main
+    main()
+    sys.exit(0)
 import re
 import shutil
 from pathlib import Path

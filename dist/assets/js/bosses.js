@@ -14,7 +14,7 @@
   try { muted = JSON.parse(localStorage.getItem(MUTE) || '{}') || {}; } catch (e) { muted = {}; }
   var saveMuted = function () { try { localStorage.setItem(MUTE, JSON.stringify(muted)); } catch (e) {} };
 
-  var locale = ({ 'pt-BR': 'pt-BR', ru: 'ru-RU', uk: 'uk-UA', tr: 'tr-TR' })[page.dataset.lang] || 'en-GB';
+  var locale = ({ ru: 'ru-RU', uk: 'uk-UA', tr: 'tr-TR', ja: 'ja-JP' })[page.dataset.lang] || 'en-GB';
   var time = new Intl.DateTimeFormat(locale, { weekday: 'short', hour: '2-digit', minute: '2-digit' });
   var pad = function (n) { return (n < 10 ? '0' : '') + n; };
   var left = function (ms) {

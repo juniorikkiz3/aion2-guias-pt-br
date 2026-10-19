@@ -41,8 +41,38 @@
     });
   });
 
+  // ---- confirm dialog for the whole site: A2Confirm({title, text, ok, danger}, onOk); the browser's confirm() as a fallback ----
+  var cfd = document.querySelector('.confirm-dlg'), cfOk = null;
+  window.A2Confirm = function (o, onOk) {
+    if (!cfd || typeof cfd.showModal !== 'function') { if (confirm(o.text || o.title)) onOk(); return; }
+    // {name} in the title (the thing being deleted) is shown bold and in gold
+    var ti = cfd.querySelector('.cf-title'), parts = String(o.title).split('{name}');
+    ti.textContent = parts[0];
+    if (parts.length > 1) {
+      var nm = document.createElement('b');
+      nm.className = 'cf-name';
+      nm.textContent = o.name || '';
+      ti.appendChild(nm);
+      ti.appendChild(document.createTextNode(parts.slice(1).join('')));
+    }
+    var tx = cfd.querySelector('.cf-text');
+    tx.textContent = o.text || '';
+    tx.hidden = !o.text;
+    var ok = cfd.querySelector('.cf-ok');
+    ok.textContent = o.ok;
+    ok.className = 'btn cf-ok ' + (o.danger ? 'btn-danger' : 'btn-primary');
+    cfOk = onOk;
+    cfd.returnValue = '';
+    cfd.showModal();
+    cfd.querySelector('.cf-cancel').focus();   // the safe choice is the default
+  };
+  if (cfd) {
+    cfd.addEventListener('close', function () { var f = cfOk; cfOk = null; if (cfd.returnValue === 'ok' && f) f(); });
+    cfd.addEventListener('click', function (ev) { if (ev.target === cfd) cfd.close('cancel'); });   // a click on the backdrop
+  }
+
   // ---- what's new: the latest entry pops up once; the "?" button leads to the changelog page ----
-  var wn = document.querySelector('.whatsnew:not(.feedback)');
+  var wn = document.querySelector('.whatsnew:not(.feedback):not(.confirm-dlg)');
   var top = document.querySelector('.wn-top');
   var latest = wn ? wn.dataset.id : null;
   // Opening the changelog page counts as having seen the latest entry.
@@ -64,6 +94,160 @@
   }
   markDot();
 
+  // ---- game news: NC's patch notes in short. The page carries the entries known at build time (#up-cfg); the backend
+  // build then loads the live list from /api/updates (the server writes it from NC's board). One renderer fills the
+  // drawer (the tab on the right edge), the /updates/ page and the "Patch changes" block of a class guide.
+  var upCfgEl = document.getElementById('up-cfg');
+  var UP = null;
+  try { UP = upCfgEl && JSON.parse(upCfgEl.textContent); } catch (e) { UP = null; }
+  if (UP) {
+    var upEsc = function (s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
+    // item text may carry <b> and skill references {s:class/slug} (icon + client name + tooltip, like in the guides)
+    var upTips = null;
+    var upRich = function (s) {
+      return upEsc(s).replace(/&lt;(\/?)b&gt;/g, '<$1b>').replace(/\{s:([a-z0-9-]+\/[a-z0-9-]+)\}/g, function (m, key) {
+        var d = upTips && upTips[key];
+        return d ? '<span class="sk" data-sk="' + key + '"><img src="' + UP.root + d.i + '" width="18" height="18" alt="" loading="lazy">' + upEsc(d.n) + '</span>' : '';
+      });
+    };
+    var upTx = function (x) { return x && typeof x === 'object' ? (x[UP.lang] || x.en || '') : (x || ''); };
+    var upDay = function (iso) {
+      var p = String(iso).split('-').map(Number), mon = UP.months[p[1] - 1];
+      return UP.lang === 'en' ? mon + ' ' + p[2] + ', ' + p[0] : UP.lang === 'ja' ? p[0] + '年' + p[1] + '月' + p[2] + '日' : p[2] + ' ' + mon + ' ' + p[0];
+    };
+    var upHref = function (path) { return UP.root + UP.lang + '/' + path; };
+    var upCls = function (slug) {
+      var c = UP.classes[slug];
+      return c ? '<a class="up-cls-tag" href="' + upHref(slug + '/') + '"><img src="' + c.icon + '" width="22" height="22" alt="" loading="lazy">' + upEsc(c.name) + '</a>' : '';
+    };
+    var upItem = function (i, withCls) {
+      return '<li' + (withCls && i.cls ? ' class="up-cls"' : '') + '>' + (withCls && i.cls ? upCls(i.cls) : '') + '<span>' + upRich(upTx(i.text)) +
+        (i.href ? ' <a href="' + upHref(i.href) + '">→</a>' : '') + '</span></li>';
+    };
+    // class lines grouped: one block per class (its icon and name once), its changes listed inside
+    var upClassBlocks = function (items) {
+      var order = [], by = {};
+      items.forEach(function (i) { var k = i.cls || ''; if (!by[k]) { by[k] = []; order.push(k); } by[k].push(i); });
+      return order.map(function (k) {
+        return '<li class="up-cls">' + (k ? upCls(k) : '') + '<div class="up-cls-lines">' + by[k].map(function (i) {
+          return '<p>' + upRich(upTx(i.text)) + (i.href ? ' <a href="' + upHref(i.href) + '">→</a>' : '') + '</p>';
+        }).join('') + '</div></li>';
+      }).join('');
+    };
+    var upTop = function (u) {
+      return '<time class="up-date" datetime="' + upEsc(u.date) + '">' + upDay(u.date) + '</time><a class="up-official" href="' + upEsc(u.url) +
+        '" target="_blank" rel="noopener">' + upEsc(UP.t.official) + ' ↗</a>';
+    };
+    var upClassItems = function (u) {
+      var out = [];
+      (u.groups || []).forEach(function (g) { if (g.kind === 'classes') out = out.concat(g.items); });
+      return out;
+    };
+    var renderNews = function () {
+      var list = UP.entries || [];
+      // the drawer: the five newest, each with its class lines
+      var dl = document.querySelector('.up-drawer-list');
+      if (dl) dl.innerHTML = list.slice(0, 5).map(function (u) {
+        var cl = upClassItems(u);
+        return '<article class="up-card"><p class="up-card-top">' + upTop(u) + '</p><h3 class="up-card-title">' + upEsc(upTx(u.title)) + '</h3>' +
+          '<p class="up-summary">' + upEsc(upTx(u.summary)) + '</p>' +
+          (cl.length ? '<ul class="up-items">' + upClassBlocks(cl) + '</ul>' : '') +
+          '<a class="up-card-more" href="' + upHref('updates/#up-' + u.id) + '">' + upEsc(UP.t.details) + ' →</a></article>';
+      }).join('');
+      // the /updates/ page: everything, by group
+      var pg = document.querySelector('[data-up-page]');
+      if (pg) pg.innerHTML = list.map(function (u) {
+        return '<article class="up-entry" id="up-' + upEsc(u.id) + '"><div class="up-entry-side">' + upTop(u) + '</div><div class="up-entry-body">' +
+          '<h2 class="up-entry-title">' + upEsc(upTx(u.title)) + '</h2><p class="up-summary">' + upEsc(upTx(u.summary)) + '</p>' +
+          (u.groups || []).map(function (g) {
+            return '<section class="up-group"><h3 class="up-group-title">' + upEsc(UP.t['g_' + g.kind] || g.kind) + '</h3><ul class="up-items">' +
+              (g.kind === 'classes' ? upClassBlocks(g.items) : g.items.map(function (i) { return upItem(i, true); }).join('')) + '</ul></section>';
+          }).join('') + '</div></article>';
+      }).join('');
+      if (pg && location.hash) { var at = document.getElementById(location.hash.slice(1)); if (at) at.scrollIntoView(); }
+      // a class guide: the class's lines from the five newest patches that touch it, and whether the guide was checked
+      var sec = document.querySelector('.up-sec[data-cls]');
+      if (sec) {
+        var slug = sec.dataset.cls, mine = list.map(function (u) {
+          return { u: u, items: upClassItems(u).filter(function (i) { return i.cls === slug; }) };
+        }).filter(function (x) { return x.items.length; }).slice(0, 5);
+        sec.querySelector('.up-sec-list').innerHTML = mine.map(function (x) {
+          var ok = x.u.checked && x.u.checked[slug];
+          return '<article class="up-sec-entry"><div class="up-sec-top"><time class="up-date" datetime="' + upEsc(x.u.date) + '">' + upDay(x.u.date) + '</time>' +
+            '<a class="up-sec-title" href="' + upHref('updates/#up-' + x.u.id) + '">' + upEsc(upTx(x.u.title)) + '</a>' +
+            '<span class="up-check' + (ok ? ' is-ok' : '') + '">' + upEsc(ok ? UP.t.checked : UP.t.unchecked) + '</span></div>' +
+            '<ul class="up-items">' + x.items.map(function (i) { return upItem(i, false); }).join('') + '</ul></article>';
+        }).join('');
+        var was = sec.hidden;
+        sec.hidden = !mine.length;
+        if (was !== sec.hidden) document.dispatchEvent(new Event('a2-sections'));   // the table of contents follows
+      }
+      var tab = document.querySelector('.up-tab');
+      if (tab) {
+        tab.hidden = !list.length;
+        if (list.length) tab.dataset.id = list[0].id;
+      }
+    };
+    var upNeedsTips = function () { return /\{s:/.test(JSON.stringify(UP.entries || [])); };
+    var upRender = function () {
+      if (upTips || !upNeedsTips()) return renderNews();
+      fetch(UP.root + UP.lang + '/skill-tips.json').then(function (r) { return r.json(); })
+        .then(function (d) { upTips = d; if (window.A2Tips) window.A2Tips.add(d); }).catch(function () { upTips = {}; })
+        .then(renderNews);
+    };
+    upRender();
+    var upApi = document.documentElement.dataset.api;
+    if (upApi) fetch(upApi + '/updates', { headers: { Accept: 'application/json' } })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (d) {
+        if (!d || !Array.isArray(d.entries) || !d.entries.length) return;
+        UP.entries = d.entries.map(function (u) {
+          return { id: u.id, date: u.date, url: u.url, title: u.title, summary: u.summary, checked: u.checked || {},
+            groups: (u.groups || []).map(function (g) { return { kind: g.kind, items: g.items.map(function (i) { return { cls: i.cls, href: i.href, text: i }; }) }; }) };
+        });
+        upRender();
+        if (typeof upDot === 'function') upDot();
+      }).catch(function () {});
+  }
+
+  // the drawer: the tab on the right edge opens it; a dot on the tab until the newest patch has been seen
+  var upd = document.querySelector('.up-drawer'), upBtn = document.querySelector('.up-tab'), upDot = null;
+  // centred on a whole pixel: top:50% with translate(-50%) lands on half a pixel and thins the borders
+  var upPlace = function () {
+    if (!upBtn || upBtn.hidden) return;
+    if (window.matchMedia('(max-width: 600px)').matches) { upBtn.classList.remove('is-placed'); upBtn.style.top = upBtn.style.height = ''; return; }   // phones: pinned near the bottom (site.css)
+    upBtn.style.height = '';
+    var h = Math.ceil(upBtn.getBoundingClientRect().height);   // the text makes it fractional: the bottom border would blur
+    upBtn.style.height = h + 'px';
+    upBtn.style.top = Math.round((window.innerHeight - h) / 2) + 'px';
+    upBtn.classList.add('is-placed');
+  };
+  upPlace();
+  window.addEventListener('resize', upPlace);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(upPlace);   // the web font changes its height
+  if (upd && upBtn && typeof upd.showModal === 'function') {
+    var upSeenNow = function () { store('updates-seen', upBtn.dataset.id); };
+    if (document.querySelector('.page-updates')) upSeenNow();
+    var upDotFirst = true;
+    upDot = function () {
+      // the first time with no colour fade, so a fresh page never "blinks" gold
+      if (upDotFirst) { upBtn.style.transition = 'none'; }
+      upBtn.classList.toggle('has-new', store('updates-seen') !== upBtn.dataset.id);
+      if (upDotFirst) { void upBtn.offsetWidth; upBtn.style.transition = ''; upDotFirst = false; }
+    };
+    var upClose = function () {
+      if (!upd.open || upd.classList.contains('is-closing')) return;
+      upd.classList.add('is-closing');
+      setTimeout(function () { upd.classList.remove('is-closing'); upd.close(); }, 200);   // the slide-out time (site.css)
+    };
+    upBtn.addEventListener('click', function () { upd.showModal(); upSeenNow(); upDot(); });
+    upd.querySelector('.up-x').addEventListener('click', upClose);
+    upd.addEventListener('cancel', function (ev) { ev.preventDefault(); upClose(); });   // Esc slides it out too
+    upd.addEventListener('click', function (ev) { if (ev.target === upd) upClose(); });  // a click on the backdrop
+    if (document.querySelector('.page-updates')) upSeenNow();
+    upDot();
+  }
+
   // ---- search (Ctrl+K or "/"): index built per language at docs/<lang>/search.json ----
   var sdlg = document.querySelector('.search-dlg');
   if (sdlg && typeof sdlg.showModal === 'function') {
@@ -71,7 +255,7 @@
     var KINDS = {};
     try { KINDS = JSON.parse(sdlg.dataset.kinds); } catch (e) {}
     var INDEX = null, hits = [], sel = 0;
-    var norm = function (s) { return String(s).toLowerCase().replace(/ё/g, 'е'); };
+    var norm = function (s) { s = String(s); return (s.normalize ? s.normalize('NFKC') : s).toLowerCase().replace(/ё/g, 'е'); };
     var escH = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
     var loadIndex = function () {
       if (INDEX) return Promise.resolve(INDEX);
@@ -123,7 +307,22 @@
         sres.appendChild(li);
       });
     };
-    var run = function () { loadIndex().then(function () { hits = search(sq.value); sel = 0; render(); }); };
+    // backend build only (data-api on <html>): log each finished query - a result opened, the dialog closed, or a
+    // new query after a pause - with how many results it showed; typing "g", "gl", "gla" counts once
+    var sApi = root.dataset.api, pend = '', pendN = 0, pendAt = 0;
+    var flush = function (clicked) {
+      if (!sApi || pend.length < 2) { pend = ''; return; }
+      var body = JSON.stringify({ q: pend, results: pendN, lang: root.lang, clicked: !!clicked });
+      pend = '';
+      if (navigator.sendBeacon) navigator.sendBeacon(sApi + '/search', new Blob([body], { type: 'application/json' }));
+      else fetch(sApi + '/search', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: body, keepalive: true }).catch(function () {});
+    };
+    var track = function () {
+      var q = sq.value.trim();
+      if (pend && q !== pend && Date.now() - pendAt > 2500 && q.indexOf(pend) !== 0) flush(false);
+      pend = q; pendN = hits.length; pendAt = Date.now();
+    };
+    var run = function () { loadIndex().then(function () { hits = search(sq.value); sel = 0; render(); track(); }); };
     var openSearch = function () {
       if (sdlg.open) return;
       sdlg.showModal();
@@ -139,8 +338,9 @@
     sdlg.addEventListener('click', function (ev) {
       if (ev.target === sdlg) sdlg.close();
       // links to this same page (another section of the guide) must close the dialog too
-      if (ev.target.closest && ev.target.closest('a')) setTimeout(function () { sdlg.close(); }, 0);
+      if (ev.target.closest && ev.target.closest('a')) { flush(true); setTimeout(function () { sdlg.close(); }, 0); }
     });
+    sdlg.addEventListener('close', function () { flush(false); });
     document.querySelectorAll('.search-open').forEach(function (b) { b.addEventListener('click', openSearch); });
     document.addEventListener('keydown', function (ev) {
       var typing = /^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement && document.activeElement.tagName);
@@ -189,6 +389,45 @@
     });
   }
 
+  // ---- backend build only (data-api on <html>): count the view, the heart likes of the guide and its sections (no counts shown) ----
+  if (root.dataset.api) {
+    var api = root.dataset.api, page = root.dataset.page || '';
+    var hp = document.querySelector('[data-helpful]');
+    var showStats = function (d) {
+      if (!hp || !d || d.views === undefined) return;
+      hp.hidden = false;
+      hp.querySelector('[data-v]').setAttribute('aria-pressed', String(d.mine === 1));
+    };
+    var showSections = function (d) {
+      document.querySelectorAll('.sec-vote').forEach(function (box) {
+        var mine = d && d.sections ? d.sections[box.dataset.sec] || 0 : 0;
+        box.querySelector('[data-v]').setAttribute('aria-pressed', String(mine === 1));
+      });
+    };
+    var post = function (url, body) {
+      return fetch(api + url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) })
+        .then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; });
+    };
+    post('/view', { page: page }).then(function (d) { showStats(d); showSections(d); });
+    // a heart: the first click likes, the second takes it back; it fills at once and pops (the server answer only confirms)
+    var like = function (b) {
+      var on = b.getAttribute('aria-pressed') !== 'true';
+      b.setAttribute('aria-pressed', String(on));
+      b.classList.remove('is-pop');
+      if (on) { void b.offsetWidth; b.classList.add('is-pop'); }
+      return on ? 1 : 0;
+    };
+    document.addEventListener('click', function (ev) {
+      var b = ev.target.closest && ev.target.closest('.sec-vote [data-v]');
+      if (!b) return;
+      post('/vote/section', { page: page, section: b.closest('.sec-vote').dataset.sec, v: like(b) });
+    });
+    if (hp) hp.addEventListener('click', function (ev) {
+      var b = ev.target.closest('[data-v]');
+      if (b) post('/vote', { page: page, v: like(b) });
+    });
+  }
+
   // ---- fallback without the form: prefill a GitHub issue with this page and mode ----
   document.querySelectorAll('.report-link').forEach(function (a) {
     a.addEventListener('click', function () {
@@ -200,17 +439,66 @@
   });
 
   // ---- language: remember the choice, keep ?mode and #section ------------
-  store('lang', root.lang);
+  // The choice is saved only when the visitor makes it (language menu, the hint below), here and in a cookie: the server
+  // reads the cookie to send a link without a language (/cleric/) to /<lang>/cleric/.
+  var LANGS = ['pt-BR', 'en'];
+  var setLang = function (l) {
+    store('lang', l);
+    try { document.cookie = 'lang=' + l + '; path=/; max-age=31536000; SameSite=Lax'; } catch (err) {}
+  };
+  var chosen = store('lang');
+  if (LANGS.indexOf(chosen) < 0) chosen = null;
+  else if (document.cookie.indexOf('lang=' + chosen) < 0) setLang(chosen);   // saved before the cookie existed
   document.querySelectorAll('[data-keep-query]').forEach(function (a) {
     a.addEventListener('click', function () {
-      store('lang', a.getAttribute('hreflang'));
+      setLang(a.getAttribute('hreflang'));
       a.href = a.href.split(/[?#]/)[0] + location.search + location.hash;
     });
   });
 
+  // ---- hint: this page is also in the visitor's language (chosen, else the browser's); never switches by itself ----
+  (function () {   // own scope: bar / top / x are names used elsewhere in this file
+    var hintData = document.getElementById('lang-hint-data');
+    var want = chosen;
+    if (!want) {
+      var nav = (navigator.languages || [navigator.language || 'en']).join(',').toLowerCase();
+      var first = (nav.match(/(^|,)(pt|en)/) || [])[2];
+      want = first === 'pt' ? 'pt-BR' : first || 'en';   // the same rule as the root page
+    }
+    var wantLink = document.querySelector('.lang-panel a[hreflang="' + want + '"]');
+    if (hintData && want !== root.lang && wantLink) {
+      var H = JSON.parse(hintData.textContent)[want];
+      var bar = document.createElement('div');
+      bar.className = 'lang-hint';
+      bar.lang = want;
+      bar.innerHTML = '<div class="wrap lh-in"><span class="lh-text"></span><a class="lh-go"></a><button type="button" class="lh-x">×</button></div>';
+      bar.querySelector('.lh-text').textContent = H.text;
+      var go = bar.querySelector('.lh-go');
+      go.textContent = H.go;
+      go.href = wantLink.href.split(/[?#]/)[0] + location.search + location.hash;
+      go.addEventListener('click', function () { setLang(want); });
+      var x = bar.querySelector('.lh-x');
+      x.setAttribute('aria-label', H.close);
+      x.title = H.close;
+      x.addEventListener('click', function () { setLang(root.lang); bar.remove(); });   // closing = stay with this language
+      var top = document.querySelector('.topbar');
+      if (top) top.after(bar);
+    }
+  })();
+
   // ---- countdown to the next launch event in the top bar (every page) ------
+  // hover card of a top bar chip (CSS shows data-tip under the chip); the native tooltip would double it
+  var chipTip = function (el, text) {
+    if (el.dataset.tip === text) return;
+    el.dataset.tip = text;
+    el.setAttribute('aria-label', text);
+  };
+  var chipClock = function (t, withDay) {
+    try { return new Intl.DateTimeFormat(document.documentElement.lang, withDay ? { weekday: 'short', hour: '2-digit', minute: '2-digit' } : { hour: '2-digit', minute: '2-digit' }).format(t); } catch (err) { return ''; }
+  };
   var topTimer = document.querySelector('.top-timer');
   if (topTimer) {
+    topTimer.removeAttribute('title');
     var ttList = [];
     try { ttList = JSON.parse(topTimer.dataset.events).map(function (e) { return { at: Date.parse(e.at), n: e.n, o: e.o }; }); } catch (err) {}
     var ttName = topTimer.querySelector('.tt-name'), ttTime = topTimer.querySelector('.tt-time');
@@ -225,16 +513,20 @@
       if (live) {
         ttName.textContent = live.o;
         ttTime.innerHTML = '<span class="tt-short">' + topTimer.dataset.open + '</span>';
+        chipTip(topTimer, live.o);
+        topTimer.classList.remove('tt-wait');
         setTimeout(ttTick, 30000);
         return;
       }
-      if (!next) { topTimer.hidden = true; return; }
+      if (!next) { topTimer.hidden = true; topTimer.classList.remove('tt-wait'); return; }
       var ms = next.at - now, d = Math.floor(ms / 864e5), h = Math.floor(ms / 36e5) % 24, m = Math.floor(ms / 6e4) % 60, sec = Math.floor(ms / 1e3) % 60;
       var U = topTimer.dataset.units.split(',');
       ttName.textContent = next.n;
       // full form for wide screens, a short one (two units) for phones
       ttTime.innerHTML = '<span class="tt-full">' + (d ? d + U[0] + ' ' : '') + p2(h) + ':' + p2(m) + ':' + p2(sec) + '</span>' +
         '<span class="tt-short">' + (d ? d + U[0] + ' ' + h + U[1] : h ? p2(h) + ':' + p2(m) : p2(m) + ':' + p2(sec)) + '</span>';
+      chipTip(topTimer, next.n + ' · ' + chipClock(next.at, true));
+      topTimer.classList.remove('tt-wait');
       setTimeout(ttTick, 1000 - (Date.now() % 1000));
     };
     ttTick();
@@ -253,11 +545,35 @@
     ttChips.forEach(function (c) { c.classList.remove('is-away'); });
   }
 
+  // ---- server region for the timers: Global (EU / NA, the same schedule) or Asia (the Rift an hour earlier).
+  //      Chosen in the language menu or above the home timers; until then guessed from the time zone. ----
+  var REGION = (function () {
+    var r = store('region');
+    if (r === 'global' || r === 'asia') return r;
+    var tz = '';
+    try { tz = Intl.DateTimeFormat().resolvedOptions().timeZone || ''; } catch (err) {}
+    return /^(Asia\/(Tokyo|Seoul|Shanghai|Chongqing|Hong_Kong|Macau|Taipei|Singapore|Manila|Bangkok|Jakarta|Makassar|Jayapura|Kuala_Lumpur|Kuching|Ho_Chi_Minh|Saigon|Phnom_Penh|Vientiane|Yangon|Brunei|Ulaanbaatar|Pontianak)|Australia\/|Pacific\/(Auckland|Guam|Port_Moresby))/.test(tz) ? 'asia' : 'global';
+  })();
+  var regionShift = function (el) { return REGION === 'asia' ? (+el.dataset.asiaMin || 0) * 6e4 : 0; };
+  var showRegion = function () {
+    [].forEach.call(document.querySelectorAll('.rg [data-region]'), function (b) { b.setAttribute('aria-checked', String(b.dataset.region === REGION)); });
+    [].forEach.call(document.querySelectorAll('[data-rg-tag]'), function (t) { t.hidden = REGION !== 'asia'; });
+  };
+  showRegion();
+  document.addEventListener('click', function (ev) {
+    var b = ev.target.closest && ev.target.closest('.rg [data-region]');
+    if (!b || b.dataset.region === REGION) return;
+    REGION = b.dataset.region;
+    store('region', REGION);
+    showRegion();
+    document.dispatchEvent(new CustomEvent('a2-region'));   // the timers re-read their anchors
+  });
+
   // ---- Rift countdown in the top bar (every page): openings every N hours from the anchor, at the same
   //      wall-clock hours in the server time zone across daylight saving (like the weekly reset) ----
-  var rift = document.querySelector('.rift-timer');
-  if (rift) {
-    var rtAnchor = Date.parse(rift.dataset.anchor), rtEvery = (+rift.dataset.every || 3) * 36e5;
+  // every chip of this kind: the Rift and the Shugo Festival (data-name; the Rift has none)
+  [].forEach.call(document.querySelectorAll('.rift-timer'), function (rift) {
+    var rtAnchor = Date.parse(rift.dataset.anchor) + regionShift(rift), rtEvery = (+rift.dataset.every || 3) * 36e5;
     var rtTime = rift.querySelector('.rt-time'), rtName = rift.querySelector('.rt-name'), rtFmt = null;
     var rtOpen = (+rift.dataset.openMin || 0) * 6e4;
     try { rtFmt = new Intl.DateTimeFormat('en-US', { timeZone: rift.dataset.tz, hourCycle: 'h23', year: 'numeric', month: 'numeric', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric' }); } catch (err) {}
@@ -269,6 +585,7 @@
     };
     var rtOff0 = rtOff(rtAnchor);
     var rtAt = function (k) { var t = rtAnchor + k * rtEvery; return t + rtOff0 - rtOff(t); };
+    document.addEventListener('a2-region', function () { rtAnchor = Date.parse(rift.dataset.anchor) + regionShift(rift); rtOff0 = rtOff(rtAnchor); });
     var r2 = function (n) { return (n < 10 ? '0' : '') + n; };
     var rtTick = function () {
       var now = Date.now(), k = Math.max(0, Math.floor((now - rtAnchor) / rtEvery) - 1), next;
@@ -276,20 +593,19 @@
       // the entrance stays open a few minutes after each opening: count down to its closing instead
       var shut = k > 0 ? rtAt(k - 1) + rtOpen : 0, open = now < shut;
       rift.classList.toggle('is-open', open);
-      rtName.textContent = open ? rift.dataset.open : 'Rift';
+      rtName.textContent = open ? rift.dataset.open : (rift.dataset.name || 'Rift');
       if (open) next = shut;
       var ms = next - now, h = Math.floor(ms / 36e5), m = Math.floor(ms / 6e4) % 60, s = Math.floor(ms / 1e3) % 60;
       // full form, and a short one (no seconds once there are hours) for phones
       rtTime.innerHTML = '<span class="rt-full">' + (h ? h + ':' + r2(m) : m) + ':' + r2(s) + '</span><span class="rt-short">' + (h ? h + ':' + r2(m) : m + ':' + r2(s)) + '</span>';
       rift.classList.toggle('is-soon', !open && ms < 6e5);   // last 10 minutes
-      try {
-        rift.title = rift.dataset.title + ' · ' + new Intl.DateTimeFormat(document.documentElement.lang, { hour: '2-digit', minute: '2-digit' }).format(rtAt(k));
-      } catch (err) {}
+      chipTip(rift, open ? rift.dataset.open + ' · ' + chipClock(rtAt(k - 1)) + '–' + chipClock(shut) : (rift.dataset.name || 'Rift') + ' · ' + chipClock(rtAt(k)));
+      rift.classList.remove('tt-wait');
       setTimeout(rtTick, 1000 - (Date.now() % 1000));
     };
-    rift.dataset.title = rift.title;
+    rift.removeAttribute('title');
     rtTick();
-  }
+  });
 
   // ---- weekly reset countdown in the top bar: every 7 days from the anchor at the same wall-clock hour in tz ----
   var rst = document.querySelector('.wr-chip');
@@ -311,12 +627,11 @@
       while ((next = rsAt(k)) <= now) k++;
       var ms = next - now, d = Math.floor(ms / 864e5), h = Math.floor(ms / 36e5) % 24, m = Math.floor(ms / 6e4) % 60, s = Math.floor(ms / 1e3) % 60;
       rsTime.innerHTML = '<span class="rt-full">' + (d ? d + rsU[0] + ' ' + h + rsU[1] : s2(h) + ':' + s2(m) + ':' + s2(s)) + '</span><span class="rt-short">' + (d ? d + rsU[0] : h ? h + rsU[1] : m + rsU[2]) + '</span>';
-      try {
-        rst.title = rst.dataset.title + ' · ' + new Intl.DateTimeFormat(document.documentElement.lang, { weekday: 'short', hour: '2-digit', minute: '2-digit' }).format(next);
-      } catch (err) {}
+      chipTip(rst, rst.dataset.name + ' · ' + chipClock(next, true));
+      rst.classList.remove('tt-wait');
       setTimeout(rsTick, 1000 - (Date.now() % 1000));
     };
-    rst.dataset.title = rst.title;
+    rst.removeAttribute('title');
     rsTick();
   }
 
@@ -329,7 +644,7 @@
     var pad = function (n) { return (n < 10 ? '0' : '') + n; };
     // Main date = the visitor's own local time; the UTC text from the build moves to the note.
     try {
-      var fmt = new Intl.DateTimeFormat(({ 'pt-BR': 'pt-BR', ru: 'ru-RU', uk: 'uk-UA', tr: 'tr-TR' })[evBox.dataset.lang] || 'en-GB',
+      var fmt = new Intl.DateTimeFormat(({ 'pt-BR': 'pt-BR', ru: 'ru-RU', uk: 'uk-UA', tr: 'tr-TR', ja: 'ja-JP' })[evBox.dataset.lang] || 'en-GB',
         { weekday: 'short', day: 'numeric', month: 'long', hour: '2-digit', minute: '2-digit', timeZoneName: 'short' });
       evs.forEach(function (e) {
         var t = e.li.querySelector('.ev-when time'), el = e.li.querySelector('.ev-local');
@@ -360,10 +675,10 @@
     // Repeating timers (Rift, weekly reset): the next occurrence every N hours from the anchor, at the same
     // wall-clock hour in tz across daylight saving — the same rule as the top bar chips.
     [].slice.call(evBox.querySelectorAll('.ev-cycle')).forEach(function (li) {
-      var anchor = Date.parse(li.dataset.anchor), every = (+li.dataset.every || 168) * 36e5, openMs = (+li.dataset.openMin || 0) * 6e4;
+      var anchor = Date.parse(li.dataset.anchor) + regionShift(li), every = (+li.dataset.every || 168) * 36e5, openMs = (+li.dataset.openMin || 0) * 6e4;
       var cells = li.querySelectorAll('.ev-timer b'), when = li.querySelector('.ev-when time'), zf = null, lf = null;
       try { zf = new Intl.DateTimeFormat('en-US', { timeZone: li.dataset.tz, hourCycle: 'h23', year: 'numeric', month: 'numeric', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric' }); } catch (err) {}
-      try { lf = new Intl.DateTimeFormat(({ 'pt-BR': 'pt-BR', ru: 'ru-RU', uk: 'uk-UA', tr: 'tr-TR' })[evBox.dataset.lang] || 'en-GB', { weekday: 'short', hour: '2-digit', minute: '2-digit', timeZoneName: 'short' }); } catch (err) {}
+      try { lf = new Intl.DateTimeFormat(({ 'pt-BR': 'pt-BR', ru: 'ru-RU', uk: 'uk-UA', tr: 'tr-TR', ja: 'ja-JP' })[evBox.dataset.lang] || 'en-GB', { weekday: 'short', hour: '2-digit', minute: '2-digit', timeZoneName: 'short' }); } catch (err) {}
       var off = function (t) {
         if (!zf) return 0;
         var p = {};
@@ -372,6 +687,7 @@
       };
       var off0 = off(anchor);
       var at = function (k) { var t = anchor + k * every; return t + off0 - off(t); };
+      document.addEventListener('a2-region', function () { anchor = Date.parse(li.dataset.anchor) + regionShift(li); off0 = off(anchor); });
       var ctick = function () {
         var now = Date.now(), k = Math.max(0, Math.floor((now - anchor) / every) - 1), next;
         while ((next = at(k)) <= now) k++;
@@ -423,7 +739,7 @@
     window.addEventListener('hashchange', fromHash);
     window.addEventListener('resize', place);
     // remember the last tab of this page in this browser (a #link still wins)
-    var key = 'tab:' + location.pathname.replace(/^.*?\/(?:en|ru|uk|tr)\//, '');
+    var key = 'tab:' + location.pathname.replace(/^.*?\/(?:pt-BR|en)\//, '');
     var saved = null;
     try { saved = localStorage.getItem(key); } catch (err) {}
     if (saved && tabs.some(function (x) { return x.dataset.tab === saved; })) show(saved);
@@ -434,14 +750,19 @@
   });
 
   // ---- tooltips: hover (or tap) any skill name or icon, or an item on the progression page ---------------------
+  // Class pages carry their own data (#sk-data); the game news adds skills of any class (window.A2Tips.add).
   var skEl = document.getElementById('sk-data');
-  if (skEl) {
-    var SK = {};
-    try { SK = JSON.parse(skEl.textContent); } catch (e) {}
+  var SK = {}, tipL = skEl ? skEl.dataset : ((UP && UP.tip) || {});
+  window.A2Tips = { add: function (o) { for (var k in o) SK[k] = o[k]; } };
+  if (skEl) { try { SK = JSON.parse(skEl.textContent); } catch (e) {} }
+  if (skEl || UP) {
     var tip = document.createElement('div');
     tip.className = 'sk-tip';
     tip.setAttribute('role', 'tooltip');
     tip.hidden = true;
+    // a popover lives in the top layer: above modal dialogs too (the Game news drawer); older browsers use z-index
+    var tipPop = typeof tip.showPopover === 'function';
+    if (tipPop) tip.popover = 'manual';
     document.body.appendChild(tip);
     var shownFor = null;
     var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
@@ -450,13 +771,14 @@
       if (!d) return;
       shownFor = el;
       // Items (progression page) bring their own meta line and grade; skills get category + cooldown.
-      var meta = d.m !== undefined ? [d.m] : [skEl.dataset[d.c] || ''];
-      if (d.cd) meta.push(skEl.dataset.cd + ' ' + d.cd + ' ' + skEl.dataset.s);
+      var meta = d.m !== undefined ? [d.m] : [tipL[d.c] || ''];
+      if (d.cd) meta.push(tipL.cd + ' ' + d.cd + ' ' + tipL.s);
       tip.innerHTML = '<p class="sk-tip-name' + (d.g ? ' is-item g' + d.g : '') + '">' + esc(d.n) + '</p>' +
         '<p class="sk-tip-meta">' + esc(meta.filter(Boolean).join(' · ')) + '</p>' +
         (d.d ? '<p class="sk-tip-desc">' + esc(d.d).replace(/\n+/g, '<br>') + '</p>' : '') +
         (d.sp.length ? '<ul>' + d.sp.map(function (s) { return '<li><b>' + s[0] + '</b>' + esc(s[1]) + '</li>'; }).join('') + '</ul>' : '');
       tip.hidden = false;
+      if (tipPop) { try { if (tip.matches(':popover-open')) tip.hidePopover(); tip.showPopover(); } catch (e) {} }   // re-shown = on top
       var r = el.getBoundingClientRect(), w = tip.offsetWidth, h = tip.offsetHeight;
       var x = Math.min(Math.max(8, r.left + r.width / 2 - w / 2), window.innerWidth - w - 8);
       var y = r.bottom + 8;
@@ -464,7 +786,7 @@
       tip.style.left = x + 'px';
       tip.style.top = y + 'px';
     };
-    var hideTip = function () { tip.hidden = true; shownFor = null; };
+    var hideTip = function () { tip.hidden = true; shownFor = null; if (tipPop) { try { tip.hidePopover(); } catch (e) {} } };
     var hoverable = matchMedia('(hover: hover)').matches;
     if (hoverable) {
       document.addEventListener('mouseover', function (ev) {
@@ -478,7 +800,7 @@
         if (el && el !== shownFor) { showTip(el); ev.preventDefault(); } else hideTip();
       });
     }
-    window.addEventListener('scroll', hideTip, { passive: true });
+    document.addEventListener('scroll', hideTip, { passive: true, capture: true });   // the page or any scrolling box (the drawer)
     document.addEventListener('keydown', function (ev) { if (ev.key === 'Escape') hideTip(); });
   }
 
@@ -523,6 +845,63 @@
       });
       range.style.setProperty('--p', (+range.value / +range.max * 100) + '%');
     });
+    // one budget for all boards (option A): each board gets a share in proportion to the guide's route on it; past the
+    // whole route the rest is shared by what each board still has. Shares snap to whole nodes, and what is left over
+    // goes to the board furthest behind its share whose next node still fits.
+    var tR = box.querySelector('[data-dvb-total]'), tN = box.querySelector('[data-dvb-total-n]'), tReset = box.querySelector('[data-dvb-total-reset]');
+    var bs = panels.filter(function (panel) { return !panel.hasAttribute('data-dvb-nobudget'); }).map(function (panel) {
+      var range = panel.querySelector('[data-dvb-range]'), reset = panel.querySelector('[data-dvb-reset]');
+      var cums = {};
+      [].forEach.call(panel.querySelectorAll('.dvb-n:not(.start)'), function (n) { var c = +n.getAttribute('data-c'); if (c > 0) cums[c] = 1; });
+      return { panel: panel, range: range, route: reset ? +reset.getAttribute('data-dvb-reset') : +range.value, max: +range.max,
+        steps: Object.keys(cums).map(Number).sort(function (x, y) { return x - y; }) };
+    });
+    var at = function (b, v) { var s = 0; for (var i = 0; i < b.steps.length && b.steps[i] <= v + 1e-9; i++) s = b.steps[i]; return s; };
+    var next = function (b, s) { for (var i = 0; i < b.steps.length; i++) if (b.steps[i] > s) return b.steps[i]; return null; };
+    function share(budget) {
+      var R = 0, M = 0;
+      bs.forEach(function (b) { R += b.route; M += b.max; });
+      var want = bs.map(function (b) { return budget <= R ? (R ? budget * b.route / R : 0) : b.route + (budget - R) * (b.max - b.route) / ((M - R) || 1); });
+      var got = bs.map(function (b, i) { return at(b, want[i]); });
+      var left = budget - got.reduce(function (x, y) { return x + y; }, 0);
+      for (;;) {
+        var best = -1, bestRatio = Infinity;
+        bs.forEach(function (b, i) {
+          var n = next(b, got[i]);
+          if (n === null || n - got[i] > left) return;
+          var ratio = want[i] ? got[i] / want[i] : Infinity;
+          if (ratio < bestRatio) { bestRatio = ratio; best = i; }
+        });
+        if (best < 0) break;
+        var n = next(bs[best], got[best]); left -= n - got[best]; got[best] = n;
+      }
+      return got;
+    }
+    function showTotal(v) {
+      if (!tR) return;
+      tR.value = v; tR.style.setProperty('--p', (+tR.value / +tR.max * 100) + '%');
+      if (document.activeElement !== tN) tN.value = v;
+      tReset.disabled = +v === +tReset.getAttribute('data-dvb-total-reset');
+    }
+    function setTotal(v) {
+      v = Math.max(0, Math.min(+tR.max, Math.round(+v) || 0));
+      share(v).forEach(function (s, i) { setBoard(bs[i].panel, s); });
+      showTotal(v);
+    }
+    if (tR) {
+      tR.addEventListener('input', function () { setTotal(tR.value); });
+      tN.addEventListener('input', function () { if (tN.value !== '') setTotal(tN.value); });
+      tN.addEventListener('change', function () { setTotal(tN.value); tN.value = tR.value; });
+      tReset.addEventListener('click', function () { setTotal(tReset.getAttribute('data-dvb-total-reset')); tR.focus(); });
+      // a board moved by hand: the budget becomes the sum of the boards
+      bs.forEach(function (b) {
+        var sync = function () { showTotal(bs.reduce(function (x, y) { return x + +y.range.value; }, 0)); };
+        b.range.addEventListener('input', sync);
+        var r = b.panel.querySelector('[data-dvb-reset]');
+        if (r) r.addEventListener('click', function () { setTimeout(sync, 0); });
+      });
+      showTotal(+tR.value);
+    }
     tabs.forEach(function (tab, i) {
       tab.addEventListener('click', function () { pick(tab); });
       tab.addEventListener('keydown', function (ev) {
@@ -559,6 +938,7 @@
       return s.offsetParent !== null;
     });
   }
+  document.addEventListener('a2-sections', function () { buildToc(); });
   function buildToc() {
     var secs = visibleSections();
     [sideToc, mobileToc].forEach(function (nav) {
@@ -619,6 +999,7 @@
     window.scrollTo({ top: y, behavior: 'instant' });
     syncButtons();
     buildToc();
+    if (stOnMode) stOnMode();
     store('mode', mode);
     var url = new URL(location.href);
     if (mode === 'pve') url.searchParams.delete('mode'); else url.searchParams.set('mode', mode);
@@ -651,6 +1032,43 @@
   }
   syncButtons();
   buildToc();
+
+  // ---- backend build only: anonymous guide statistics - which mode is opened and how far each section is read
+  // (a section counts once its heading reaches the upper part of the screen). The server keeps a salted visitor hash
+  // per day and key, like page views; sent in small batches, the last one when the tab is hidden.
+  var stOnMode = null;
+  if (root.dataset.api && root.dataset.page) {
+    var stUrl = root.dataset.api + '/stat', stPage = root.dataset.page.replace(/\/$/, '').replace(/\//g, '-');
+    var stSend = function (kind, keys) {
+      if (!keys.length) return;
+      var body = JSON.stringify({ kind: kind, keys: keys });
+      try { if (navigator.sendBeacon && navigator.sendBeacon(stUrl, new Blob([body], { type: 'application/json' }))) return; } catch (e) {}
+      fetch(stUrl, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: body, keepalive: true }).catch(function () {});
+    };
+    var stModes = {}, stSeen = {}, stQueue = [];
+    var stFlush = function () { if (stQueue.length) { stSend('reach', stQueue); stQueue = []; } };
+    var stObs = 'IntersectionObserver' in window ? new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        var sec = e.target.closest('.g-section'), k = sec && sec.dataset.stKey;
+        if (e.isIntersecting && k && !stSeen[k]) { stSeen[k] = 1; stQueue.push(k); }
+      });
+    }, { rootMargin: '0px 0px -40% 0px' }) : null;
+    stOnMode = function () {
+      var m = root.dataset.mode;
+      if (document.querySelector('.mode-switch') && !stModes[m]) { stModes[m] = 1; stSend('mode', [stPage + ':' + m]); }
+      if (!stObs) return;
+      stFlush();
+      stObs.disconnect();
+      visibleSections().forEach(function (s, i) {
+        s.dataset.stKey = stPage + ':' + m + ':' + (i + 1) + '-' + s.id;
+        stObs.observe(s.querySelector('h2') || s);
+      });
+    };
+    stOnMode();
+    setInterval(stFlush, 15000);
+    document.addEventListener('visibilitychange', function () { if (document.visibilityState === 'hidden') stFlush(); });
+    window.addEventListener('pagehide', stFlush);
+  }
   // Turn on the mode transitions only after the first paint, so the page doesn't animate on load.
   requestAnimationFrame(function () { requestAnimationFrame(function () { root.classList.add('anim'); }); });
   if (hashTarget) window.addEventListener('load', function () { hashTarget.scrollIntoView({ behavior: 'instant' }); });
@@ -685,7 +1103,7 @@
     try { done = JSON.parse(store(key) || '{}') || {}; } catch (e) { done = {}; }
     var boxes = tracker.querySelectorAll('input[data-step]');
     var bar = tracker.querySelector('.progress');
-    var render = function () {
+    var renderTracker = function () {
       var n = 0;
       boxes.forEach(function (b) {
         b.checked = !!done[b.dataset.step];
@@ -700,15 +1118,17 @@
       b.addEventListener('change', function () {
         if (b.checked) done[b.dataset.step] = 1; else delete done[b.dataset.step];
         store(key, JSON.stringify(done));
-        render();
+        renderTracker();
       });
     });
     tracker.querySelector('.tracker-reset').addEventListener('click', function (e) {
-      if (!confirm(e.currentTarget.dataset.confirm)) return;
-      done = {};
-      store(key, '{}');
-      render();
+      var b = e.currentTarget;
+      window.A2Confirm({ title: b.textContent.trim(), text: b.dataset.confirm, ok: b.textContent.trim(), danger: true }, function () {
+        done = {};
+        store(key, '{}');
+        renderTracker();
+      });
     });
-    render();
+    renderTracker();
   }
 })();
