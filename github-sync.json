@@ -9,5 +9,6 @@
   "site_url": "https://aion2-guias-br.juniorikkix.chatgpt.site/pt-BR/",
   "automation_id": "atualizar-aion-2-em-portugu-s",
   "cadence": "A cada três dias às 09:00, America/Sao_Paulo",
-  "status": "repository_created_upload_pending"
+  "status": "configured",
+  "initial_site_commit": "63557936be3641445145dda66a007b2905b12f77"
 }
