@@ -19,7 +19,7 @@
 <meta property="og:title" content="AION 2 Best Settings — Controls, Keys and FPS">
 <meta property="og:description" content="AION 2 settings to change on day one: control mode, targeting, the macro key, Defiance on its own key, buff scrolls, FPS and options for mass PvP.">
 <meta property="og:url" content="https://aion2-guides.info/en/settings/">
-<meta property="og:image" content="https://aion2-guides.info/assets/og/settings-en.jpg?v=a7ef0001">
+<meta property="og:image" content="https://aion2-guides.info/assets/og/settings-en.jpg?v=60727ed0">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image"><link rel="icon" href="../../favicon.ico" sizes="48x48">
@@ -27,9 +27,6 @@
 <link rel="icon" href="../../assets/favicon-96.png" type="image/png" sizes="96x96">
 <link rel="icon" href="../../assets/favicon-192.png" type="image/png" sizes="192x192">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Yeseva+One&family=JetBrains+Mono:wght@500;700&display=swap&subset=cyrillic" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Yeseva+One&family=JetBrains+Mono:wght@500;700&display=swap&subset=cyrillic"></noscript>
 <script>
   // Theme + guide mode before first paint (no flash).
   (function (r) {
@@ -43,9 +40,11 @@
   })(document.documentElement);
 </script>
 <script>
-  // Google Analytics (site.json "ga"). Not loaded on local previews. A visitor who came through the root
-  // language redirect keeps the site they came from (root.html saves it in sessionStorage).
-  if (!/^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname)) {
+  // Google Analytics (site.json "ga"), loaded only after the visitor allows analytics in the cookie banner (site.js
+  // "cookie consent"; the choice is kept for 180 days in localStorage "a2-consent"); never on local previews. A visitor
+  // who came through the root language redirect keeps the site they came from (root.html saves it in sessionStorage).
+  window.a2GA = function () {
+    if (window.gtag || /^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname)) return;
     (function () {
       var s = document.createElement('script');
       s.async = true;
@@ -58,9 +57,13 @@
       gtag('js', new Date());
       gtag('config', 'G-6WYEWLG4B5', ref ? { page_referrer: ref } : {});
     })();
-  }
+  };
+  try {
+    var c = JSON.parse(localStorage.getItem('a2-consent') || 'null');
+    if (c && c.v === 'granted' && Date.now() - c.t < 180 * 864e5) a2GA();
+  } catch (e) {}
 </script>
-<link rel="stylesheet" href="../../assets/css/site.css?v=a7ef0001">
+<link rel="stylesheet" href="../../assets/css/site.css?v=60727ed0">
 </head>
 <body class="page-guide page-settings">
 <a class="skip-link" href="#main">Skip to content</a>
@@ -101,7 +104,7 @@
         </a>
       </nav>
     </details>
-    <div class="topbar-tools">      <span class="rift-timer tt-wait" data-anchor="2026-10-02T18:00:00Z" data-asia-min="-60" data-every="3" data-tz="Europe/Kyiv" data-open-min="10" data-open="Rift is open" title="Rift — portal to the enemy zone, opens every 3 hours; the entrance stays open for 10 minutes, inside you can stay about an hour. Next">
+    <div class="topbar-tools">      <span class="rift-timer tt-wait" data-anchor="2026-10-02T18:00:00Z" data-asia-min="-60" data-asia-tz="Asia/Tokyo" data-every="3" data-tz="Europe/Kyiv" data-open-min="10" data-open="Rift is open" title="Rift — portal to the enemy zone, opens every 3 hours; the entrance stays open for 10 minutes, inside you can stay about an hour. Next">
         <img class="rt-ico" src="../../assets/icons/timers/rift.webp" width="20" height="20" alt=""><span class="rt-name">Rift</span><b class="rt-time">--:--</b>
       </span>
       <span class="rift-timer sg-chip tt-wait" data-anchor="2026-10-13T00:00:00Z" data-every="1" data-tz="Europe/Kyiv" data-open-min="3" data-name="Shugo Festival" data-open="Shugo Festival entry is open" title="Shugo Festival · every hour · entry 3 min">
@@ -134,6 +137,10 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h10M18 6h2M4 12h4M12 12h8M4 18h12M20 18h0"/><circle cx="16" cy="6" r="2"/><circle cx="10" cy="12" r="2"/><circle cx="18" cy="18" r="2"/></svg>
               <span class="nm-name">Game settings</span><span class="nm-desc">Controls, keys, FPS and mass PvP</span>
             </a>
+            <a href="../../en/pets/" class="nm-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c-3.5 0-6.5 5.2-6.5 10a6.5 6.5 0 0 0 13 0C18.5 8.2 15.5 3 12 3z"/><path d="M9 14l2 1.5 3-3"/></svg>
+              <span class="nm-name">Pets</span><span class="nm-desc">Farming tips and Genus Insight</span>
+            </a>
             <a href="../../en/dungeons/" class="nm-item">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V10l9-7 9 7v11"/><path d="M9 21v-6a3 3 0 0 1 6 0v6"/></svg>
               <span class="nm-name">Dungeons</span><span class="nm-desc">Boss mechanics with arena diagrams</span>
@@ -152,6 +159,13 @@
             <a href="../../en/bosses/" class="nm-item">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c-4.4 0-8 3.1-8 7.5 0 2.6 1.3 4.4 3 5.5V20h2v-2h2v2h2v-2h2v2h2v-4c1.7-1.1 3-2.9 3-5.5C20 6.1 16.4 3 12 3z"/><circle cx="9" cy="11" r="1.5"/><circle cx="15" cy="11" r="1.5"/></svg>
               <span class="nm-name">World bosses</span><span class="nm-desc">Kill tracker and timers</span>
+            </a>
+            <a href="../../en/pet-tracker/" class="nm-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="10" r="1.8"/><circle cx="10" cy="5.5" r="1.8"/><circle cx="14" cy="5.5" r="1.8"/><circle cx="18" cy="10" r="1.8"/><path d="M12 11c-3 0-5.5 3.6-5.5 6.2 0 1.6 1.2 2.3 2.6 2.3 1.2 0 1.9-.6 2.9-.6s1.7.6 2.9.6c1.4 0 2.6-.7 2.6-2.3C17.5 14.6 15 11 12 11z"/></svg>
+              <span class="nm-name">Pet Tracker</span><span class="nm-desc">Windows app: pet souls and an overlay</span>
+            </a><a href="https://loxin.gg/" class="nm-item" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 16a8 8 0 1 1 16 0"/><path d="M12 16l3.5-4.5"/><circle cx="12" cy="16" r="1.2"/></svg>
+              <span class="nm-name">DPS meter</span><span class="nm-desc">LOXIN for Windows · loxin.gg</span>
             </a>
           </div>
           <div class="nm-foot">
@@ -197,7 +211,7 @@
   <div class="wrap guide-layout pg-layout"><aside class="toc-side pg-side" aria-label="On this page">
     <p class="toc-title">On this page</p>
     <nav class="toc-list">
-<a href="#first">Change these first</a><a href="#controls">Combat → Controls</a><a href="#targeting">Combat → Target Scanning</a><a href="#autouse">Combat → Looting and Auto-use</a><a href="#keys">Key Settings: keys worth binding</a><a href="#display">Info Display: what is shown on screen</a><a href="#graphics">Graphics → Optimize: FPS and mass PvP</a><a href="#camera">Graphics → Camera / Direction</a><a href="#other">The other tabs</a>    </nav>
+<a href="#first">Change these first</a><a href="#controls">Combat → Controls</a><a href="#targeting">Combat → Target Scanning</a><a href="#autouse">Combat → Looting and Auto-use</a><a href="#keys">Key Settings: keys worth binding</a><a href="#display">Info Display: what is shown on screen</a><a href="#graphics">Graphics → Optimize: FPS and mass PvP</a><a href="#camera">Graphics → Camera / Direction</a><a href="#other">The other tabs</a><a href="#tools">Tools worth installing</a>    </nav>
   </aside>
   <div class="pg-page">
     <p class="pg-note">From two settings videos: Whelps (a Ranger main) and Grobs. Setting names are written as in the English client; the values are theirs — treat them as a starting point. Where the two disagree, both options are given. Every block links to its moments in the videos.
@@ -213,6 +227,7 @@
       <li><a href="#graphics"><span>Graphics → Optimize: FPS and mass PvP</span></a></li>
       <li><a href="#camera"><span>Graphics → Camera / Direction</span></a></li>
       <li><a href="#other"><span>The other tabs</span></a></li>
+      <li><a href="#tools"><span>Tools worth installing</span></a></li>
     </ol>
 
     <section class="pg-sec" id="first" aria-labelledby="h-first">
@@ -341,6 +356,11 @@
       <ul class="pg-list">
 <li><strong>Accessibility</strong> — font size and chat colours, subtitles. <a class="pg-at" href="https://www.youtube.com/watch?v=M5IeDf9CczU&t=523s" target="_blank" rel="noopener" title="Watch this moment in the video">▶ 8:43</a></li><li><strong>Notification</strong> — game alerts and requests; invites can be declined automatically. He left everything at the defaults.</li><li><strong>Miscellaneous</strong> — interface and voice language; under <em>Account</em> — the field for coupon codes.</li>      </ul>
     </section>
+    <section class="pg-sec" id="tools" aria-labelledby="h-tools">
+      <h2 id="h-tools" class="section-title">Tools worth installing</h2>
+<p class="pg-lead">Apps and sites outside the game that we recommend.</p>      <ul class="pg-list">
+<li><strong><a href="https://loxin.gg/" target="_blank" rel="noopener">LOXIN</a></strong> — the DPS meter we recommend. A Windows app: live party damage, rDPS, healing, death recaps, boss timers and parses of real fights. Its authors say it is free, has no ads and never reads the game's memory.</li><li><strong><a href="../pet-tracker/">Aion 2 Pet Tracker</a></strong> — a Windows app for the pet farm: the level and souls of every pet, a live soul count and an overlay with the pets you hunt.</li><li><strong><a href="https://aion2pets.app/map/" target="_blank" rel="noopener">aion2pets.app/map</a></strong> — where each pet's monsters spawn. More pet farming tips: <a href="../pets/">Pets and Genus Insight</a>.</li>      </ul>
+    </section>
     <script type="application/json" id="sk-data">{"i:mystcrystal":{"n":"Mysterious Crystal (Bound)","m":"","g":71,"d":"The main material used for transmuting Arcana.\nIt can be obtained by extracting Arcana.","sp":[]},"i:wings":{"n":"Ultimate Daeva Wings (Bound)","m":"","g":41,"d":"Grants [Ultimate Daeva Wings (Bound)].\n\n[Equipped Effect]\nHP: 500\nMP: 250\nPenetration: 500\nCritical Hit: 35\n[Owned Effect]\nFlight Power: 1000\nPenetration: 100\nAccuracy Bonus: 20\nAttack Bonus: 10","sp":[]},"i:bracelet":{"n":"Ascension Bracelet","m":"Item level 51","g":41,"d":"Defense: 156\nAttack: 65","sp":[]},"i:trace":{"n":"Empyrean Trace: Altgard (Bound)","m":"","g":71,"d":"A trace faintly imbued with the strength of the Empyrean Lords who protect Altgard. Can be resonated with Altgard Monolith.","sp":[]},"i:dcrystal":{"n":"Daevanion Crystal (Bound)","m":"","g":71,"d":"Use to obtain 1 Daevanion Point.","sp":[]},"i:dcrystal_azphel":{"n":"Daevanion Crystal: Azphel (Bound)","m":"","g":71,"d":"Use to obtain 1 Azphel Daevanion Point.","sp":[]},"i:wisdom":{"n":"Wisdom Stone (Bound)","m":"","g":71,"d":"A mysterious stone imbued with memories of battle.\nUse to obtain 1 Skill Point.","sp":[]},"i:clashrune":{"n":"Clash Rune Chest (Bound)","m":"","g":71,"d":"A rune that can be earned only by those who have overcome a nightmare.\nUse to obtain a Clash Rune (Bound) and Rune Enhance Scrolls (Bound).","sp":[]},"i:beltscroll":{"n":"Noble Belt Enhance Scroll (Bound)","m":"","g":11,"d":"An Enhance Scroll containing an ancient power.\nUse to enhance Noble Belt.","sp":[]},"i:shugokey":{"n":"Shugo Festival Reward Key (Bound)","m":"","g":71,"d":"Recharges 1 Shugo Festival Reward Key count.","sp":[]},"i:shugocoin":{"n":"Centuryroot Token","m":"","g":11,"d":"Made by drying high quality centuryroot, this token is popular among Shugo as a collectable item. Can be used to purchase various items in the Shugo Festival Shop.","sp":[]},"i:nmcoin":{"n":"Phantasmal Fragment","m":"","g":11,"d":"A fragment of a dream corrupted by nightmarish horrors. Can be used to purchase various items in the Nightmare Shop.","sp":[]},"i:abysspts":{"n":"Abyss Points","m":"","g":11,"d":"A mark of honor won on the fields of a war without end.","sp":[]},"i:bakarma":{"n":"Bakarma Breastplate","m":"Item level 54","g":41,"d":"HP: 216\nDefense: 397","sp":[]},"i:voucher":{"n":"Gear Change Voucher: Vakron Sky Island (Bound)","m":"","g":41,"d":"A reward obtained by defeating Vakron.\nWhen used as a Substance Morph material, it can be transformed into a Unique Guard or Unique Gear Selection Chest.","sp":[]},"i:vakronguard":{"n":"Vakron Guard","m":"Item level 70","g":41,"d":"Critical Hit: 50\nAccuracy: 50\nAttack: 144","sp":[]},"i:mana_sup":{"n":"Superior Manastone (Bound)","m":"","g":11,"d":"Can be engraved on Manastone slots in all weapons and armor to imbue them with stats.\nThe type and value of the stats are determined by chance.","sp":[]},"i:mana_int":{"n":"Intermediate Manastone (Bound)","m":"","g":11,"d":"Can be engraved on Manastone slots in all weapons and armor to imbue them with stats.\nThe type and value of the stats are determined by chance.","sp":[]},"i:mana_less":{"n":"Lesser Manastone (Bound)","m":"","g":11,"d":"Can be engraved on Manastone slots in all weapons and armor to imbue them with stats.\nThe type and value of the stats are determined by chance.","sp":[]},"i:theostone":{"n":"Theostone: Jumentis's Dexterity (Bound)","m":"","g":31,"d":"Grants [Theostone: Jumentis's Dexterity].\nThe obtained Theostone can be found in the Enhancement menu.\nHas a 20% chance to deal 250 AoE Wind damage to up to 4 targets on attack\nEffect Activation Cooldown: 1s\nOnly one Theostone's effect applies when identical Theostones are engraved.","sp":[]},"i:enhance":{"n":"Enhance Stone","m":"","g":11,"d":"Used to awaken hidden potential of gear.","sp":[]},"i:bell_green":{"n":"Bell of Vigor","m":"Item level 40 · Set: Primal Vigor","g":21,"d":"Justice [Nezekan]: 12","sp":[["2×","+60 PvE Attack when HP is 70% or more"],["4×","+150 PvE Attack when HP is 70% or more"]]},"i:mirror_green":{"n":"Mirror of Magic","m":"Item level 40 · Set: Magic Armor","g":21,"d":"Wisdom [Lumiel]: 12","sp":[["2×","Restores 1,500 MP when MP is 20% or less [30s cooldown]"],["4×","+1,000 PvE Defense when MP is 50% or more"]]},"i:compass_grey":{"n":"Compass of Magic","m":"Item level 20 · Set: Magic Armor","g":11,"d":"Death [Triniel]: 8","sp":[["2×","Restores 1,500 MP when MP is 20% or less [30s cooldown]"],["4×","+1,000 PvE Defense when MP is 50% or more"]]},"i:chalice_grey":{"n":"Chalice of Magic","m":"Item level 20 · Set: Magic Armor","g":11,"d":"Space [Israphel]: 8","sp":[["2×","Restores 1,500 MP when MP is 20% or less [30s cooldown]"],["4×","+1,000 PvE Defense when MP is 50% or more"]]},"i:mirror_gold":{"n":"Mirror of Vigor","m":"Item level 80 · Set: Primal Vigor","g":41,"d":"Illusion [Kaisinel]: 20","sp":[["2×","+60 PvE Attack when HP is 70% or more"],["4×","+150 PvE Attack when HP is 70% or more"]]},"i:transfer_w":{"n":"Transfer Stone: Weapon (Unique) (Bound)","m":"","g":41,"d":"A formidable gemstone that transfers the boundless power of the gear to another.\nCan be used on the Unique Weapon.","sp":[]},"i:transfer_a":{"n":"Transfer Stone: Armor (Unique) (Bound)","m":"","g":41,"d":"A formidable gemstone that transfers the boundless power of the gear to another.\nCan be used on the Unique Armor.","sp":[]},"i:stigmashard":{"n":"Stigma Shard (Bound)","m":"","g":71,"d":"A fragment sealed with the Essence of Experience.\nGrants 1 Stigma Shard Point when obtained.","sp":[]},"i:amplify":{"n":"Amplify Stone (Unique) (Bound)","m":"","g":41,"d":"A mystical gemstone that awakens the unique power of gear.\nUsed to amplify Unique Gear that has reached its maximum enhancement level.","sp":[]},"i:amplify_frag":{"n":"Amplify Stone Fragment (Unique) (Bound)","m":"","g":41,"d":"A piece of an Amplify Stone used to awaken the unique power of the gear.\nCan be converted into an Amplify Stone through Substance Morph.","sp":[]},"i:sync":{"n":"Sync Stone (Unique) (Bound)","m":"","g":41,"d":"A stone that harmonizes the energies within gear to awaken new possibilities.\nWhen used in [Enhancement - Soul Binding - Sync], it allows you to adjust the properties of gear.","sp":[]},"i:sapphire":{"n":"Sapphire Gemstone (Bound)","m":"","g":11,"d":"A gemstone infused with valuable gems. Used as a material for handicrafting accessories.","sp":[]},"i:ruby":{"n":"Ruby Gemstone (Bound)","m":"","g":11,"d":"A gemstone infused with valuable gems. Used as a material for handicrafting accessories.","sp":[]},"i:odyle":{"n":"Odyle","m":"","g":11,"d":"Used to imbue an item with the power of Odyle. Used as a material for Crafting and Substance Morph.","sp":[]},"i:log":{"n":"Yggdrasil Log (Bound)","m":"","g":11,"d":"A magic-imbued log. Used for making wooden weapons in Handicrafting.","sp":[]},"i:odyle_energy":{"n":"Odyle Energy (Bound)","m":"","g":71,"d":"Recharges 40 Odyle Energy.\nOdyle Energy can be used to activate the Odyle Energy Cube that appears when you clear an Expedition, Transcendence, or Sanctuary.","sp":[]},"i:ore":{"n":"Orichalcum Ore","m":"","g":11,"d":"A hard ore. Used as a material for Blacksmithing and Armorsmithing.","sp":[]},"i:herb":{"n":"Calendula","m":"","g":11,"d":"An herb used to concoct a potion in Alchemy.","sp":[]},"i:ingredient":{"n":"Kukuru","m":"","g":11,"d":"A cooking ingredient.","sp":[]},"i:parchment_vigor":{"n":"Parchment of Vigor","m":"Item level 80 · Set: Primal Vigor","g":41,"d":"Life [Yustiel]: 20","sp":[["2×","+60 PvE Attack when HP is 70% or more"],["4×","+150 PvE Attack when HP is 70% or more"]]},"i:compass_vigor":{"n":"Compass of Vigor","m":"Item level 80 · Set: Primal Vigor","g":41,"d":"","sp":[["2×","+60 PvE Attack when HP is 70% or more"],["4×","+150 PvE Attack when HP is 70% or more"]]},"i:chalice_vigor":{"n":"Chalice of Vigor","m":"Item level 80 · Set: Primal Vigor","g":41,"d":"","sp":[["2×","+60 PvE Attack when HP is 70% or more"],["4×","+150 PvE Attack when HP is 70% or more"]]},"i:mirror_magic_gold":{"n":"Mirror of Magic","m":"Item level 80 · Set: Magic Armor","g":41,"d":"Wisdom [Lumiel]: 20","sp":[["2×","Restores 1,500 MP when MP is 20% or less [30s cooldown]"],["4×","+1,000 PvE Defense when MP is 50% or more"]]},"i:holyspirit_torso":{"n":"Holy Spirit Breastplate","m":"Item level 41","g":41,"d":"HP: 164\nDefense: 299","sp":[]},"i:spectral_torso":{"n":"Spectral Breastplate","m":"Item level 41","g":41,"d":"HP: 164\nDefense: 299","sp":[]}}</script>
   </div>
   </div>
@@ -352,11 +372,18 @@
       <a class="brand brand-sm" href="../../en/">AION 2 Global - Guides</a>
       <p>Unofficial fan site, not affiliated with NCSOFT. AION 2 and its skill icons are © NCSOFT.</p>
       <p class="foot-credit">Guides are collected from content creators — all credit goes to them; the site is put together with the help of Claude (AI).</p>
-      <p>Last checked: <time datetime="2026-10-18">Oct 18, 2026</time>.</p>
-      <p><a href="../../en/sources/">All sources and creators</a> · <a href="../../en/changelog/">Changelog</a> · <button type="button" class="link-btn report-open">Send feedback</button></p>
+      <p>Last checked: <time datetime="2026-10-19">Oct 19, 2026</time>.</p>
+      <p><a href="../../en/sources/">All sources and creators</a> · <a href="../../en/changelog/">Changelog</a> · <a href="../../en/privacy/">Privacy</a> · <button type="button" class="link-btn ck-open">Cookie settings</button> · <button type="button" class="link-btn report-open">Send feedback</button></p>
     </div>
   </div>
 </footer>
+<section class="ck" data-ga="G-6WYEWLG4B5" role="region" aria-label="Cookies" hidden>
+  <p class="ck-text">We&#39;d like to use Google Analytics to see which guides people read. It sets cookies, so it loads only if you allow it. Our own view counters work without cookies. <a href="../../en/privacy/">Privacy</a></p>
+  <div class="ck-act">
+    <button type="button" class="btn btn-ghost ck-deny">Necessary only</button>
+    <button type="button" class="btn btn-primary ck-allow">Allow analytics</button>
+  </div>
+</section>
 <dialog class="search-dlg" aria-label="Search" data-index="../../en/search.json" data-base="../../en/" data-empty="Nothing found"
   data-kinds="{&#34;boss&#34;: &#34;Boss&#34;, &#34;class&#34;: &#34;Class&#34;, &#34;page&#34;: &#34;Page&#34;, &#34;section&#34;: &#34;Section&#34;, &#34;skill&#34;: &#34;Skill&#34;}" data-root="../../">
   <div class="search-in">
@@ -368,7 +395,7 @@
     <ul class="search-res" role="listbox"></ul>
   </div>
 </dialog>
-<dialog class="whatsnew" data-id="2026-10-17-assassin-pvp" aria-labelledby="wn-title">
+<dialog class="whatsnew" data-id="2026-10-19-pets" aria-labelledby="wn-title">
   <form method="dialog" class="wn-in">
     <div class="wn-head">
       <h2 id="wn-title">What&#39;s new</h2>
@@ -377,9 +404,11 @@
       </button>
     </div>
     <section class="wn-entry">
-      <time class="wn-date" datetime="2026-10-17">Oct 17, 2026</time>
+      <time class="wn-date" datetime="2026-10-19">Oct 19, 2026</time>
       <ul>
-        <li><a href="../../en/assassin/?mode=pvp"><strong>Assassin PvP</strong> — the new mode from AlanStriker's global setup: stun and knockdown picks, stigmas, his hotbar and macro, the rotation; Keyba's stigma alternatives and passive order</a></li>
+        <li><a href="../../en/pets/"><strong>Pets and Genus Insight</strong> — its own page now: where each pet's monsters spawn, farming faster, cubes by sound, when to level Insight and Aragon's lock order for every wheel</a></li>
+        <li><a href="../../en/pet-tracker/"><strong>Aion 2 Pet Tracker</strong> — download page for the Windows app: pet levels and souls, a live soul count and an overlay</a></li>
+        <li><a href="../../en/progression/#soulbind"><strong>Soulbind</strong> — the stats to aim for on each gear slot</a></li>
       </ul>
     </section>
     <button class="btn btn-primary wn-ok" value="close">Got it</button>
@@ -435,7 +464,7 @@
     </div>
   </form>
 </dialog>
-<script src="../../assets/js/site.js?v=a7ef0001" defer></script>
-<script src="../../assets/js/fx.js?v=a7ef0001" defer></script>
+<script src="../../assets/js/site.js?v=60727ed0" defer></script>
+<script src="../../assets/js/fx.js?v=60727ed0" defer></script>
 </body>
 </html>

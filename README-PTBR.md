@@ -2,7 +2,7 @@
 
 Versão independente baseada em https://aion2-guides.info/en/ (Couga54 / AION 2 Guides).
 
-Sincronizada em 19/10/2026 com a versão da fonte atualizada até 18/10/2026. O repositório público anterior deixou de receber as mudanças de conteúdo após 10/10. Por isso, esta atualização usa uma captura das páginas públicas do novo domínio.
+Sincronizada em 19/10/2026 com a versão da fonte atualizada até 19/10/2026. O repositório público anterior deixou de receber as mudanças de conteúdo após 10/10. Por isso, esta atualização usa uma captura das páginas públicas do novo domínio.
 
 ## Conteúdo
 

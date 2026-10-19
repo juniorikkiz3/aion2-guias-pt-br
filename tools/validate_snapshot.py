@@ -1,5 +1,6 @@
 """Validate built pages against the captured source before publishing."""
 from pathlib import Path
+from collections import Counter
 from urllib.parse import urljoin,urlparse,unquote
 import json,re
 from bs4 import BeautifulSoup
@@ -13,7 +14,7 @@ for page in pages:
     raw=page.read_text(encoding='utf8');soup=BeautifulSoup(raw,'html.parser')
     for script in soup.find_all('script',type='application/json'):json.loads(script.string)
     assert not soup.html.get('data-api'),page
-    assert not soup.select('.report-open,.feedback,.sec-vote'),page
+    assert not soup.select('.report-open,.feedback,.sec-vote,.ck,.ck-open,[data-pt-api]'),page
     assert 'googletagmanager' not in raw and 'ZXQ' not in raw,page
     for el in soup.find_all(True):
         for attr in ['src','href','data-index']:
@@ -47,5 +48,13 @@ for sourcefile in (SNAP/'en').rglob('index.html'):
         if a:
             a=json.loads(a.string);b=json.loads(b.string)
             for key in ['energy','reset','unlocks','cls_slugs','guides']:assert a.get(key)==b.get(key),(lang,str(rel),key)
+        # The new guide tables and release notes must retain every numeric value.
+        selector='main' if str(rel).replace('\\','/') in ['pets/index.html','pet-tracker/index.html'] else '#soulbind' if str(rel).replace('\\','/')=='progression/index.html' else None
+        if selector:
+            def numbers(el):return Counter(re.findall(r'\d+(?:[.,:]\d+)*',el.get_text(' ',strip=True)))
+            assert numbers(source.select_one(selector))==numbers(target.select_one(selector)),(lang,str(rel),'new content numbers')
+        # Macro order, timings and referenced skills retain the source structure.
+        for selector in ['.macroseq .ms-n','.macroseq .ms-detail']:
+            assert [e.get_text(strip=True) for e in source.select(selector)]==[e.get_text(strip=True) for e in target.select(selector)],(lang,str(rel),selector)
 assert "var KEY = 'aion2-tracker-v1'" in (OUT/'assets/js/tracker.js').read_text(encoding='utf8')
 print(json.dumps({'pages':len(pages),'missing_assets':0,'broken_links':0,'source_data_parity':'passed','tracker_storage':'preserved'}))

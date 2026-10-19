@@ -19,6 +19,36 @@
     store('theme', root.dataset.theme);
   });
 
+  // ---- cookie consent: Google Analytics loads only after "Allow analytics" (base.html a2GA); the choice is kept for 180 days.
+  // "Necessary only" also removes GA cookies left from before and stops GA on this page. ----
+  var ck = document.querySelector('.ck');
+  if (ck) {
+    var ckGet = function () {
+      try { var c = JSON.parse(store('a2-consent') || 'null'); return c && Date.now() - c.t < 180 * 864e5 ? c.v : null; } catch (e) { return null; }
+    };
+    var ckShow = function () { ck.hidden = false; requestAnimationFrame(function () { ck.classList.add('is-in'); }); };
+    var ckHide = function () { ck.classList.remove('is-in'); setTimeout(function () { ck.hidden = true; }, 200); };
+    var ckSet = function (v) {
+      store('a2-consent', JSON.stringify({ v: v, t: Date.now() }));
+      ckHide();
+      if (v === 'granted') { if (window.a2GA) window.a2GA(); return; }
+      if (ck.dataset.ga) window['ga-disable-' + ck.dataset.ga] = true;
+      var host = location.hostname, base = host.replace(/^www\./, '');
+      document.cookie.split(';').forEach(function (c) {
+        var n = c.split('=')[0].trim();
+        if (!/^_ga/.test(n)) return;
+        [host, '.' + base].forEach(function (d) { document.cookie = n + '=; max-age=0; path=/; domain=' + d; });
+        document.cookie = n + '=; max-age=0; path=/';
+      });
+    };
+    ck.querySelector('.ck-allow').addEventListener('click', function () { ckSet('granted'); });
+    ck.querySelector('.ck-deny').addEventListener('click', function () { ckSet('denied'); });
+    [].forEach.call(document.querySelectorAll('.ck-open'), function (b) {
+      b.addEventListener('click', function () { ckShow(); ck.querySelector('.ck-allow').focus(); });
+    });
+    if (!ckGet()) ckShow();
+  }
+
   // ---- class picker, pages menu and language menu: close on outside click and Escape, one open at a time ----
   var calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
   [].forEach.call(document.querySelectorAll('details.class-menu, details.lang-menu'), function (cmenu, i, all) {
@@ -555,6 +585,10 @@
     return /^(Asia\/(Tokyo|Seoul|Shanghai|Chongqing|Hong_Kong|Macau|Taipei|Singapore|Manila|Bangkok|Jakarta|Makassar|Jayapura|Kuala_Lumpur|Kuching|Ho_Chi_Minh|Saigon|Phnom_Penh|Vientiane|Yangon|Brunei|Ulaanbaatar|Pontianak)|Australia\/|Pacific\/(Auckland|Guam|Port_Moresby))/.test(tz) ? 'asia' : 'global';
   })();
   var regionShift = function (el) { return REGION === 'asia' ? (+el.dataset.asiaMin || 0) * 6e4 : 0; };
+  // the server clock of a repeating timer: each region keeps its own (Europe CET/CEST like Kyiv, Asia JST with no daylight
+  // saving - 6sword / aion2timer.online), so the Asian Rift must not move when Kyiv changes its clocks
+  var regionTz = function (el) { return REGION === 'asia' && el.dataset.asiaTz ? el.dataset.asiaTz : el.dataset.tz; };
+  var zoneFmt = function (tz) { try { return new Intl.DateTimeFormat('en-US', { timeZone: tz, hourCycle: 'h23', year: 'numeric', month: 'numeric', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric' }); } catch (err) { return null; } };
   var showRegion = function () {
     [].forEach.call(document.querySelectorAll('.rg [data-region]'), function (b) { b.setAttribute('aria-checked', String(b.dataset.region === REGION)); });
     [].forEach.call(document.querySelectorAll('[data-rg-tag]'), function (t) { t.hidden = REGION !== 'asia'; });
@@ -576,7 +610,7 @@
     var rtAnchor = Date.parse(rift.dataset.anchor) + regionShift(rift), rtEvery = (+rift.dataset.every || 3) * 36e5;
     var rtTime = rift.querySelector('.rt-time'), rtName = rift.querySelector('.rt-name'), rtFmt = null;
     var rtOpen = (+rift.dataset.openMin || 0) * 6e4;
-    try { rtFmt = new Intl.DateTimeFormat('en-US', { timeZone: rift.dataset.tz, hourCycle: 'h23', year: 'numeric', month: 'numeric', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric' }); } catch (err) {}
+    rtFmt = zoneFmt(regionTz(rift));
     var rtOff = function (t) {   // the zone's UTC offset at moment t, in ms
       if (!rtFmt) return 0;
       var p = {};
@@ -585,7 +619,7 @@
     };
     var rtOff0 = rtOff(rtAnchor);
     var rtAt = function (k) { var t = rtAnchor + k * rtEvery; return t + rtOff0 - rtOff(t); };
-    document.addEventListener('a2-region', function () { rtAnchor = Date.parse(rift.dataset.anchor) + regionShift(rift); rtOff0 = rtOff(rtAnchor); });
+    document.addEventListener('a2-region', function () { rtFmt = zoneFmt(regionTz(rift)); rtAnchor = Date.parse(rift.dataset.anchor) + regionShift(rift); rtOff0 = rtOff(rtAnchor); });
     var r2 = function (n) { return (n < 10 ? '0' : '') + n; };
     var rtTick = function () {
       var now = Date.now(), k = Math.max(0, Math.floor((now - rtAnchor) / rtEvery) - 1), next;
@@ -677,7 +711,7 @@
     [].slice.call(evBox.querySelectorAll('.ev-cycle')).forEach(function (li) {
       var anchor = Date.parse(li.dataset.anchor) + regionShift(li), every = (+li.dataset.every || 168) * 36e5, openMs = (+li.dataset.openMin || 0) * 6e4;
       var cells = li.querySelectorAll('.ev-timer b'), when = li.querySelector('.ev-when time'), zf = null, lf = null;
-      try { zf = new Intl.DateTimeFormat('en-US', { timeZone: li.dataset.tz, hourCycle: 'h23', year: 'numeric', month: 'numeric', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric' }); } catch (err) {}
+      zf = zoneFmt(regionTz(li));
       try { lf = new Intl.DateTimeFormat(({ ru: 'ru-RU', uk: 'uk-UA', tr: 'tr-TR', ja: 'ja-JP' })[evBox.dataset.lang] || 'en-GB', { weekday: 'short', hour: '2-digit', minute: '2-digit', timeZoneName: 'short' }); } catch (err) {}
       var off = function (t) {
         if (!zf) return 0;
@@ -687,7 +721,7 @@
       };
       var off0 = off(anchor);
       var at = function (k) { var t = anchor + k * every; return t + off0 - off(t); };
-      document.addEventListener('a2-region', function () { anchor = Date.parse(li.dataset.anchor) + regionShift(li); off0 = off(anchor); });
+      document.addEventListener('a2-region', function () { zf = zoneFmt(regionTz(li)); anchor = Date.parse(li.dataset.anchor) + regionShift(li); off0 = off(anchor); });
       var ctick = function () {
         var now = Date.now(), k = Math.max(0, Math.floor((now - anchor) / every) - 1), next;
         while ((next = at(k)) <= now) k++;
@@ -926,6 +960,83 @@
   }
 
   // Everything below is for class pages.
+  // ---- Aion 2 Pet Tracker page: the latest release from the GitHub API --------------------------------
+  // The page is built with the release known at build time (tools/pet_tracker.py); this refreshes the version,
+  // date, size and notes, cached for an hour in localStorage (the anonymous API allows 60 requests an hour per IP).
+  // Without the API nothing changes: the download button is the permanent "latest" link anyway.
+  var ptPage = document.querySelector('[data-pt-api]');
+  if (ptPage) {
+    var ptUi = JSON.parse(ptPage.getAttribute('data-pt-ui'));
+    var ptNotesLang = ptPage.getAttribute('data-pt-lang');
+    var esc = function (s) { return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); };
+    var inline = function (s) {
+      return esc(s).replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>').replace(/`([^`]+)`/g, '<code>$1</code>')
+        .replace(/\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
+    };
+    // the same subset as md() in tools/pet_tracker.py: headings, paragraphs, nested bullet lists
+    var md = function (text) {
+      var out = [], depth = 0, para = [];
+      var flush = function () { if (para.length) { out.push('<p>' + inline(para.join(' ')) + '</p>'); para = []; } };
+      var close = function (d) { while (depth > d) { out.push('</li></ul>'); depth--; } };
+      text.split('\n').forEach(function (raw) {
+        var line = raw.replace(/\s+$/, ''), item = /^( *)[-*] +(.*)/.exec(line), head = /^#{1,6} +(.*)/.exec(line);
+        if (item) {
+          flush();
+          var d = Math.floor(item[1].length / 2) + 1;
+          if (d > depth) { out.push('<ul><li>'); depth++; } else { close(d); out.push('</li><li>'); }
+          out.push(inline(item[2]));
+        } else if (head) { flush(); close(0); out.push('<h4>' + inline(head[1]) + '</h4>'); }
+        else if (!line.trim()) { flush(); close(0); }
+        else if (depth) out.push(' ' + inline(line.trim()));
+        else para.push(line.trim());
+      });
+      flush(); close(0);
+      return out.join('');
+    };
+    var notesPart = function (body, lang) {
+      body = (body || '').replace(/\r\n/g, '\n');
+      var m = /<details>\s*<summary>[^<]*<\/summary>([\s\S]*?)<\/details>/.exec(body);
+      var part = lang === 'ru' && m ? m[1] : (m ? body.slice(0, m.index) : body);
+      var lines = part.trim().split('\n');
+      var i = lines.findIndex(function (l) { return /what's new|что нового/i.test(l); });
+      return (i >= 0 ? lines.slice(i + 1) : lines).join('\n').trim();
+    };
+    var ptShow = function (d) {
+      var asset = (d.assets || []).filter(function (a) { return a.name === 'Aion2PetTracker-Setup.exe'; })[0];
+      var v = String(d.tag_name || '').replace(/^v/, '');
+      if (!v) return;
+      var day = new Date(d.published_at);
+      var q = function (sel) { return ptPage.querySelector(sel); };
+      q('[data-pt-meta]').hidden = false;
+      q('[data-pt-ver]').textContent = ptUi.version.replace('{v}', v);
+      var dt = q('[data-pt-date]');
+      if (dt && !isNaN(day) && dt.getAttribute('datetime') !== d.published_at.slice(0, 10)) {   // a newer release than the built page
+        dt.setAttribute('datetime', d.published_at.slice(0, 10));
+        dt.textContent = day.toLocaleDateString(ptUi.lang, { year: 'numeric', month: 'long', day: 'numeric' });
+      }
+      var sz = q('[data-pt-size]');
+      if (sz && asset) sz.textContent = ptUi.size.replace('{n}', Math.round(asset.size / 1048576));
+      [].forEach.call(ptPage.querySelectorAll('[data-pt-release]'), function (a) { if (d.html_url) a.href = d.html_url; });
+      var notes = notesPart(d.body, ptNotesLang) || notesPart(d.body, 'en');
+      if (notes) {
+        q('[data-pt-notes]').hidden = false;
+        q('[data-pt-notes-h]').textContent = ptUi.notes_h.replace('{v}', v);
+        q('[data-pt-md]').innerHTML = md(notes);
+      }
+    };
+    var cached = null;
+    try { cached = JSON.parse(store('pt-release') || 'null'); } catch (e) { cached = null; }
+    if (cached && Date.now() - cached.t < 3600e3) ptShow(cached.d);
+    else fetch(ptPage.getAttribute('data-pt-api'), { headers: { Accept: 'application/vnd.github+json' } })
+      .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(function (d) {
+        ptShow(d);
+        store('pt-release', JSON.stringify({ t: Date.now(), d: { tag_name: d.tag_name, published_at: d.published_at, html_url: d.html_url, body: d.body,
+          assets: (d.assets || []).map(function (a) { return { name: a.name, size: a.size }; }) } }));
+      })
+      .catch(function () { if (cached) ptShow(cached.d); });   // keep the built-in release, or the stale cache
+  }
+
   if (!document.querySelector('.guide')) return;
 
   // ---- table of contents (rebuilt per mode) --------------------------------

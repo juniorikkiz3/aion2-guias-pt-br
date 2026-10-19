@@ -2,9 +2,10 @@
   "engine": "Argos en-pb 1.9 / CTranslate2, translation by sentence; local reviewed overrides",
   "locale": "pt-BR",
   "source": "https://aion2-guides.info/en/",
-  "source_updated": "2026-10-18",
+  "source_updated": "2026-10-19",
   "synced": "2026-10-19",
   "memory_strings": 5950,
-  "reviewed_strings": 196,
-  "note": "Nomes e dados do cliente Global preservados. Interface, instruções principais e divergências numéricas revisadas. Textos longos restantes têm revisão editorial parcial."
+  "reviewed_strings": 477,
+  "note": "Nomes e dados do cliente Global preservados. Interface, instruções principais e divergências numéricas revisadas. Textos longos restantes têm revisão editorial parcial.",
+  "new_content_review": "Pets/Genus Insight, Pet Tracker 0.2.0, Soulbind slot table and navigation manually translated and reviewed; reused mistranslations in these sections corrected. Earlier long-form translation remains partially reviewed."
 }

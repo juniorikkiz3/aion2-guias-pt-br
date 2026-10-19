@@ -20,7 +20,7 @@ ATTRS=['title','aria-label','placeholder','data-empty','data-confirm','data-send
 SKIP={'id','slug','cls','kind','lang','root','url','href','icon','i','key','s','type','code','date','at','anchor','tz','source','name_en','sk','cls_slugs','guides','char_defaults'}
 TEXT={'name','title','summary','text','label','description','desc','t','tip','units','months','cls_names','unlock_names','en','content','d','n','st','specs'}
 untranslated=set()
-def clean(s):return re.sub(r'\s+',' ',s).strip()
+def clean(s):return re.sub(r'\s+',' ',s.replace('Â·','·')).strip()
 def tx(s):
     c=clean(s)
     if not c or not re.search('[A-Za-z]',c):return s
@@ -41,9 +41,16 @@ def build_page(p,lang):
     rel='' if rel=='.' else rel+'/'
     depth=1+(rel.count('/') if rel else 0);base='../'*depth
     soup=BeautifulSoup(p.read_text(encoding='utf8'),'html.parser')
+    # This independent static edition does not operate the source owner's server.
+    if rel=='privacy/':
+        for script in list(soup.select('main script[type="application/json"]')):soup.head.append(script.extract())
+        soup.select_one('main').clear()
+    # Keep the translated release notes tied to the captured/reviewed version.
+    # A live English GitHub response must not overwrite Portuguese content.
+    for el in soup.select('[data-pt-api]'):el.attrs.pop('data-pt-api',None)
     soup.html['lang']=lang
     soup.html.attrs.pop('data-api',None)
-    for selector in ['.feedback','.report-open','.suggest-box','.report-box','.sec-vote','[data-helpful]','.egg-star','.egg-dlg','.main-heart']:
+    for selector in ['.feedback','.report-open','.suggest-box','.report-box','.sec-vote','[data-helpful]','.egg-star','.egg-dlg','.main-heart','.ck','.ck-open']:
         for el in soup.select(selector):el.decompose()
     for script in list(soup.find_all('script')):
         if script.get('type')=='application/json':continue
@@ -58,7 +65,7 @@ def build_page(p,lang):
         if meta.get('property')=='og:locale':meta['content']='pt_BR' if lang=='pt-BR' else 'en_US'
         if meta.get('property')=='og:site_name':meta['content']='AION 2 — Guias em Português'
         if meta.get('property')=='og:image':meta['content']=meta['content'].replace(SOURCE,ORIGIN)
-        if lang=='pt-BR' and (meta.get('name')=='description' or meta.get('property') in ['og:title','og:description']):meta['content']=tx(meta['content'])
+        if lang=='pt-BR' and rel!='privacy/' and (meta.get('name')=='description' or meta.get('property') in ['og:title','og:description']):meta['content']=tx(meta['content'])
     for el in soup.find_all(True):
         for a in ['href','src','poster','data-index','data-base']:
             v=el.get(a)
@@ -87,6 +94,11 @@ def build_page(p,lang):
             for a in ATTRS:
                 if el.get(a):el[a]=tx(el[a])
             if el.get('data-kinds'):el['data-kinds']=json.dumps(jtx(json.loads(el['data-kinds']),True),ensure_ascii=False)
+        if rel=='pets/':
+            at=soup.find('a',href='https://www.youtube.com/watch?v=vuDEDKipRAU&t=248s')
+            if at:
+                item=at.find_parent('li');at.extract();item.clear()
+                item.append(soupfrag('Os marcadores <strong>Source</strong> do menu de pets indicam apenas o teleporte mais próximo dos monstros, não os pontos onde eles surgem. '));item.append(at)
     nav=soup.select_one('.lang-panel')
     if nav:
         for a in list(nav.find_all('a',hreflang=True)):a.decompose()
@@ -105,18 +117,25 @@ def build_page(p,lang):
     if footer:
         credit=footer.select_one('.foot-credit')
         if credit:credit.clear();credit.append(soupfrag('Edição independente em português baseada em <a href="https://aion2-guides.info/en/" target="_blank" rel="noopener">Couga54 / AION 2 Guides</a>. Créditos aos criadores nas fontes.' if lang=='pt-BR' else 'Independent Brazilian edition based on <a href="https://aion2-guides.info/en/" target="_blank" rel="noopener">Couga54 / AION 2 Guides</a>. Credit to the creators listed in Sources.'))
-        notice=soup.new_tag('p');notice.string='Fonte atualizada até 18/10/2026 · Sincronizada em 19/10/2026. Tradução automática com revisão parcial; nomes do cliente Global preservados.' if lang=='pt-BR' else 'Source updated through Oct 18, 2026 · Synced Oct 19, 2026. Machine translation with partial review; Global client names preserved.'
+        notice=soup.new_tag('p');notice.string='Fonte atualizada até 19/10/2026 · Sincronizada em 19/10/2026. Novidades de Pets, Pet Tracker e Soulbind revisadas em português; tradução anterior com revisão parcial. Nomes do cliente Global preservados.' if lang=='pt-BR' else 'Source updated through Oct 19, 2026 · Synced Oct 19, 2026. New Pets, Pet Tracker and Soulbind content reviewed in Portuguese; earlier translations partially reviewed. Global client names preserved.'
         footer.append(notice)
     modal=soup.select_one('dialog.whatsnew:not(.feedback)')
     if modal:
-        modal['data-id']='ptbr-source-2026-10-19'
+        modal['data-id']='ptbr-source-2026-10-19-pets'
         sec=modal.select_one('.wn-entry')
         if sec:
-            sec.clear();sec.append(soupfrag('<time class="wn-date" datetime="2026-10-19">19 out 2026</time><ul><li>Guias sincronizados com a fonte até 18 de outubro: builds e macros revisadas, PvP de Assassino e Chanter, progressão após o nível 45, controle semanal e orçamento de cristais Daevanion.</li><li>Novidades do jogo e notas de patch disponíveis no menu lateral.</li></ul>' if lang=='pt-BR' else '<time class="wn-date" datetime="2026-10-19">Oct 19, 2026</time><ul><li>Synced with the source through Oct 18: updated builds and macros, Assassin and Chanter PvP, progression after 45, weekly tracker and Daevanion crystal budget.</li><li>Game news and patch notes available from the side tab.</li></ul>'))
+            sec.clear();sec.append(soupfrag('<time class="wn-date" datetime="2026-10-19">19 out 2026</time><ul><li>Pets e Genus Insight: locais de monstros, dicas de farm, cubos pelo som e linhas para bloquear.</li><li>Pet Tracker: página do aplicativo para Windows e notas da versão 0.2.0 em português. O aplicativo oferece inglês e russo.</li><li>Progressão: atributos de Soulbind para cada espaço de equipamento.</li></ul>' if lang=='pt-BR' else '<time class="wn-date" datetime="2026-10-19">Oct 19, 2026</time><ul><li>Pets and Genus Insight: monster locations, farming tips, cubes by sound and lines to lock.</li><li>Windows Pet Tracker page and version 0.2.0 notes; the app supports English and Russian.</li><li>Progression: Soulbind stats for each equipment slot.</li></ul>'))
     if rel=='changelog/':
         first=soup.select_one('.cl-entry')
-        if first:first.insert_before(soupfrag('<section class="wn-entry cl-entry"><time class="wn-date" datetime="2026-10-19">19 out 2026</time><ul><li>Edição em português sincronizada com a fonte atualizada até 18/10/2026.</li></ul></section>' if lang=='pt-BR' else '<section class="wn-entry cl-entry"><time class="wn-date" datetime="2026-10-19">Oct 19, 2026</time><ul><li>Brazilian edition synced with the source through Oct 18, 2026.</li></ul></section>'))
-    text=str(soup).replace('a7ef0001','ptbr20261019')
+        if first:first.insert_before(soupfrag('<section class="wn-entry cl-entry"><time class="wn-date" datetime="2026-10-19">19 out 2026</time><ul><li>Edição em português sincronizada com a fonte de 19/10/2026: Pets, Genus Insight, Pet Tracker e Soulbind.</li></ul></section>' if lang=='pt-BR' else '<section class="wn-entry cl-entry"><time class="wn-date" datetime="2026-10-19">Oct 19, 2026</time><ul><li>Brazilian edition synced with the Oct 19 source: Pets, Genus Insight, Pet Tracker and Soulbind.</li></ul></section>'))
+    if rel=='privacy/':
+        from privacy_content import CONTENT,DESCRIPTION,TITLE
+        soup.select_one('main').append(soupfrag(CONTENT[lang]))
+        soup.title.string=TITLE[lang]
+        for meta in soup.find_all('meta'):
+            if meta.get('name')=='description' or meta.get('property')=='og:description':meta['content']=DESCRIPTION[lang]
+            if meta.get('property')=='og:title':meta['content']=TITLE[lang]
+    text=str(soup).replace('a7ef0001','ptbr20261019pets').replace('60727ed0','ptbr20261019pets').replace('Â·','·')
     write(lang+'/'+rel+'index.html',text)
 
 def main():
@@ -129,8 +148,16 @@ def main():
     for lang in ['en','pt-BR']:
         for file in ['search.json','skill-tips.json']:
             cfg=json.loads((SNAP/'en'/file).read_text(encoding='utf8'))
+            if file=='search.json':
+                for item in cfg:
+                    for k in ['t','s']:
+                        if item.get(k):item[k]=item[k].replace('Â·','·')
+                    if 'privacy' in str(item.get('u','')):
+                        from privacy_content import DESCRIPTION,TITLE
+                        item['t']=TITLE[lang];item['s']=DESCRIPTION[lang]
             if lang=='pt-BR' and file=='search.json':
                 for item in cfg:
+                    if 'privacy' in str(item.get('u','')):continue
                     for k in ['t','s']:
                         if item.get(k):item[k]=tx(item[k])
             write(lang+'/'+file,json.dumps(cfg,ensure_ascii=False,separators=(',',':')))

@@ -19,7 +19,7 @@
 <meta property="og:title" content="AION 2 Gear Progression After 45 — Item Level Route">
 <meta property="og:description" content="AION 2 global progression after level 45: the item level route from 1,279 to 2,800 — Shugo Festival, Nightmare, Draupnir, Vakron, Transcendence and the raid.">
 <meta property="og:url" content="https://aion2-guides.info/en/progression/">
-<meta property="og:image" content="https://aion2-guides.info/assets/og/progression-en.jpg?v=a7ef0001">
+<meta property="og:image" content="https://aion2-guides.info/assets/og/progression-en.jpg?v=60727ed0">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image"><link rel="icon" href="../../favicon.ico" sizes="48x48">
@@ -27,9 +27,6 @@
 <link rel="icon" href="../../assets/favicon-96.png" type="image/png" sizes="96x96">
 <link rel="icon" href="../../assets/favicon-192.png" type="image/png" sizes="192x192">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Yeseva+One&family=JetBrains+Mono:wght@500;700&display=swap&subset=cyrillic" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Yeseva+One&family=JetBrains+Mono:wght@500;700&display=swap&subset=cyrillic"></noscript>
 <script>
   // Theme + guide mode before first paint (no flash).
   (function (r) {
@@ -43,9 +40,11 @@
   })(document.documentElement);
 </script>
 <script>
-  // Google Analytics (site.json "ga"). Not loaded on local previews. A visitor who came through the root
-  // language redirect keeps the site they came from (root.html saves it in sessionStorage).
-  if (!/^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname)) {
+  // Google Analytics (site.json "ga"), loaded only after the visitor allows analytics in the cookie banner (site.js
+  // "cookie consent"; the choice is kept for 180 days in localStorage "a2-consent"); never on local previews. A visitor
+  // who came through the root language redirect keeps the site they came from (root.html saves it in sessionStorage).
+  window.a2GA = function () {
+    if (window.gtag || /^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname)) return;
     (function () {
       var s = document.createElement('script');
       s.async = true;
@@ -58,9 +57,13 @@
       gtag('js', new Date());
       gtag('config', 'G-6WYEWLG4B5', ref ? { page_referrer: ref } : {});
     })();
-  }
+  };
+  try {
+    var c = JSON.parse(localStorage.getItem('a2-consent') || 'null');
+    if (c && c.v === 'granted' && Date.now() - c.t < 180 * 864e5) a2GA();
+  } catch (e) {}
 </script>
-<link rel="stylesheet" href="../../assets/css/site.css?v=a7ef0001">
+<link rel="stylesheet" href="../../assets/css/site.css?v=60727ed0">
 </head>
 <body class="page-guide page-progression">
 <a class="skip-link" href="#main">Skip to content</a>
@@ -101,7 +104,7 @@
         </a>
       </nav>
     </details>
-    <div class="topbar-tools">      <span class="rift-timer tt-wait" data-anchor="2026-10-02T18:00:00Z" data-asia-min="-60" data-every="3" data-tz="Europe/Kyiv" data-open-min="10" data-open="Rift is open" title="Rift — portal to the enemy zone, opens every 3 hours; the entrance stays open for 10 minutes, inside you can stay about an hour. Next">
+    <div class="topbar-tools">      <span class="rift-timer tt-wait" data-anchor="2026-10-02T18:00:00Z" data-asia-min="-60" data-asia-tz="Asia/Tokyo" data-every="3" data-tz="Europe/Kyiv" data-open-min="10" data-open="Rift is open" title="Rift — portal to the enemy zone, opens every 3 hours; the entrance stays open for 10 minutes, inside you can stay about an hour. Next">
         <img class="rt-ico" src="../../assets/icons/timers/rift.webp" width="20" height="20" alt=""><span class="rt-name">Rift</span><b class="rt-time">--:--</b>
       </span>
       <span class="rift-timer sg-chip tt-wait" data-anchor="2026-10-13T00:00:00Z" data-every="1" data-tz="Europe/Kyiv" data-open-min="3" data-name="Shugo Festival" data-open="Shugo Festival entry is open" title="Shugo Festival · every hour · entry 3 min">
@@ -134,6 +137,10 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h10M18 6h2M4 12h4M12 12h8M4 18h12M20 18h0"/><circle cx="16" cy="6" r="2"/><circle cx="10" cy="12" r="2"/><circle cx="18" cy="18" r="2"/></svg>
               <span class="nm-name">Game settings</span><span class="nm-desc">Controls, keys, FPS and mass PvP</span>
             </a>
+            <a href="../../en/pets/" class="nm-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c-3.5 0-6.5 5.2-6.5 10a6.5 6.5 0 0 0 13 0C18.5 8.2 15.5 3 12 3z"/><path d="M9 14l2 1.5 3-3"/></svg>
+              <span class="nm-name">Pets</span><span class="nm-desc">Farming tips and Genus Insight</span>
+            </a>
             <a href="../../en/dungeons/" class="nm-item">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V10l9-7 9 7v11"/><path d="M9 21v-6a3 3 0 0 1 6 0v6"/></svg>
               <span class="nm-name">Dungeons</span><span class="nm-desc">Boss mechanics with arena diagrams</span>
@@ -152,6 +159,13 @@
             <a href="../../en/bosses/" class="nm-item">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c-4.4 0-8 3.1-8 7.5 0 2.6 1.3 4.4 3 5.5V20h2v-2h2v2h2v-2h2v2h2v-4c1.7-1.1 3-2.9 3-5.5C20 6.1 16.4 3 12 3z"/><circle cx="9" cy="11" r="1.5"/><circle cx="15" cy="11" r="1.5"/></svg>
               <span class="nm-name">World bosses</span><span class="nm-desc">Kill tracker and timers</span>
+            </a>
+            <a href="../../en/pet-tracker/" class="nm-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="10" r="1.8"/><circle cx="10" cy="5.5" r="1.8"/><circle cx="14" cy="5.5" r="1.8"/><circle cx="18" cy="10" r="1.8"/><path d="M12 11c-3 0-5.5 3.6-5.5 6.2 0 1.6 1.2 2.3 2.6 2.3 1.2 0 1.9-.6 2.9-.6s1.7.6 2.9.6c1.4 0 2.6-.7 2.6-2.3C17.5 14.6 15 11 12 11z"/></svg>
+              <span class="nm-name">Pet Tracker</span><span class="nm-desc">Windows app: pet souls and an overlay</span>
+            </a><a href="https://loxin.gg/" class="nm-item" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 16a8 8 0 1 1 16 0"/><path d="M12 16l3.5-4.5"/><circle cx="12" cy="16" r="1.2"/></svg>
+              <span class="nm-name">DPS meter</span><span class="nm-desc">LOXIN for Windows · loxin.gg</span>
             </a>
           </div>
           <div class="nm-foot">
@@ -197,11 +211,11 @@
   <div class="wrap guide-layout pg-layout"><aside class="toc-side pg-side" aria-label="On this page">
     <p class="toc-title">On this page</p>
     <nav class="toc-list">
-<a href="#global">The item level milestones</a><a href="#s45"><b>45</b>Story, regional quests and your map</a><a href="#s1400"><b>1400</b>To 1,400: Shugo, Nightmare, Draupnir</a><a href="#s1900"><b>1900</b>To 1,900: Vakron and Urugugu</a><a href="#s2100"><b>2100</b>To 2,100: ★2 Transcendence and a crafted card</a><a href="#s2500"><b>2500</b>To 2,500: Ferocious Horn Den</a><a href="#s2800"><b>2800</b>To 2,800: gold arcana and the raid</a><a href="#hardcore">Hardcore route: enhance a cheap blank, then transfer</a><a href="#enhance">How gear upgrades work</a><a href="#insight">Pets and Genus Insight</a><a href="#titles">Titles: what to equip</a><a href="#all">Tips for everyone</a>    </nav>
+<a href="#global">The item level milestones</a><a href="#s45"><b>45</b>Story, regional quests and your map</a><a href="#s1400"><b>1400</b>To 1,400: Shugo, Nightmare, Draupnir</a><a href="#s1900"><b>1900</b>To 1,900: Vakron and Urugugu</a><a href="#s2100"><b>2100</b>To 2,100: ★2 Transcendence and a crafted card</a><a href="#s2500"><b>2500</b>To 2,500: Ferocious Horn Den</a><a href="#s2800"><b>2800</b>To 2,800: gold arcana and the raid</a><a href="#hardcore">Hardcore route: enhance a cheap blank, then transfer</a><a href="#enhance">How gear upgrades work</a><a href="#soulbind">Soulbind: stats for each slot</a><a href="#insight">Pets and Genus Insight</a><a href="#titles">Titles: what to equip</a><a href="#all">Tips for everyone</a>    </nav>
   </aside>
   <div class="pg-page">
     <p class="pg-note">Based on Aragon&#39;s global route to 2,500 item level (October 10) and SywoGG&#39;s progression guide; the upgrade mechanics come from TitanTheF&#39;s progression sheet. Blocks from a video link to their moment.
-<a class="w1-src" href="https://www.youtube.com/watch?v=oMsHxN0KeoI" target="_blank" rel="noopener" title="Aragon — How I Hit 2,500 Item Level FAST! (zero P2W) - 2 Week Gear Progression Aion 2">Aragon</a><a class="w1-src" href="https://www.youtube.com/watch?v=a8zVweGN--4" target="_blank" rel="noopener" title="Sanya Jacuzzi — Они всё изменили! Мой новый план прокачки после 45 уровня">Sanya Jacuzzi</a><a class="w1-src" href="https://www.youtube.com/watch?v=J8WVY3FxPQM" target="_blank" rel="noopener" title="SywoGG — AION 2: UPDATED Gear Progression Guide for GLOBAL">SywoGG</a><a class="w1-src" href="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ0C3iKFteGvIbgqNDnQq7bmwIaU23DvjbPa0HPSVAdOOiCeBkEq69Cn8jVMJhToJcztCRylYeTYfOk/pubhtml#gid=53494555" target="_blank" rel="noopener" title="TitanTheF — AION 2 progression sheet">TitanTheF</a><a class="w1-src" href="https://www.youtube.com/watch?v=ipBRzqvELwk&amp;t=930" target="_blank" rel="noopener" title="Fubgun — 100k+ DPS, Full Ranger Guide (pets and Genus Insight from 15:30)">Fubgun</a></p>
+<a class="w1-src" href="https://www.youtube.com/watch?v=oMsHxN0KeoI" target="_blank" rel="noopener" title="Aragon — How I Hit 2,500 Item Level FAST! (zero P2W) - 2 Week Gear Progression Aion 2">Aragon</a><a class="w1-src" href="https://www.youtube.com/watch?v=a8zVweGN--4" target="_blank" rel="noopener" title="Sanya Jacuzzi — Они всё изменили! Мой новый план прокачки после 45 уровня">Sanya Jacuzzi</a><a class="w1-src" href="https://www.youtube.com/watch?v=J8WVY3FxPQM" target="_blank" rel="noopener" title="SywoGG — AION 2: UPDATED Gear Progression Guide for GLOBAL">SywoGG</a><a class="w1-src" href="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ0C3iKFteGvIbgqNDnQq7bmwIaU23DvjbPa0HPSVAdOOiCeBkEq69Cn8jVMJhToJcztCRylYeTYfOk/pubhtml#gid=53494555" target="_blank" rel="noopener" title="TitanTheF — AION 2 progression sheet">TitanTheF</a><a class="w1-src" href="https://www.youtube.com/watch?v=vuDEDKipRAU" target="_blank" rel="noopener" title="Aragon — 8 Pet Farming Secrets in Aion 2! (soulbind stats from 3:19)">Aragon</a></p>
 
     <ol class="pg-toc" aria-label="Steps">
       <li><a href="#global"><span>The item level milestones</span></a></li>
@@ -213,6 +227,7 @@
       <li><a href="#s2800"><b>2800</b><span>To 2,800: gold arcana and the raid</span></a></li>
       <li><a href="#hardcore"><span>Hardcore route: enhance a cheap blank, then transfer</span></a></li>
       <li><a href="#enhance"><span>How gear upgrades work</span></a></li>
+      <li><a href="#soulbind"><span>Soulbind: stats for each slot</span></a></li>
       <li><a href="#insight"><span>Pets and Genus Insight</span></a></li>
       <li><a href="#titles"><span>Titles: what to equip</span></a></li>
       <li><a href="#all"><span>Tips for everyone</span></a></li>
@@ -321,21 +336,20 @@
       <ul class="pg-list">
 <li><strong>Enhance.</strong> Gold gear has a 100% chance up to +10, after that it drops. A fail never breaks the item — only the materials and kina are spent. Above +15 you also need <span class="it g41" data-sk="i:amplify"><img src="../../assets/icons/items/amplify.webp" width="20" height="20" alt="" loading="lazy">Amplify Stone (Unique)</span>, made in Substance Morph from <span class="it g41" data-sk="i:amplify_frag"><img src="../../assets/icons/items/amplify_frag.webp" width="20" height="20" alt="" loading="lazy">Amplify Stone Fragment (Unique)</span> and <span class="it g11" data-sk="i:enhance"><img src="../../assets/icons/items/enhance.webp" width="20" height="20" alt="" loading="lazy">Enhance Stone</span>.</li><li><strong>Manastones.</strong> The number of slots depends on the rarity: white 1, green 2 and so on. There are two kinds — for weapons and armor, and for accessories — each in a normal and a PvP version (<span class="it g11" data-sk="i:mana_sup"><img src="../../assets/icons/items/mana_sup.webp" width="20" height="20" alt="" loading="lazy">Superior Manastone</span>).</li><li><strong>Theostones</strong> go into the weapon and the guard: damage, damage over time or control. They trigger with a chance on attack — the higher your combat speed, the more often (<span class="it g31" data-sk="i:theostone"><img src="../../assets/icons/items/theostone.webp" width="20" height="20" alt="" loading="lazy">Theostone: Jumentis&#39;s Dexterity</span>).</li><li><strong>Soul Binding.</strong> Tab 1 raises the quality of the stats, tab 2 rerolls them — with any unneeded gold gear or reroll items — tab 3 uses books. <span class="it g41" data-sk="i:sync"><img src="../../assets/icons/items/sync.webp" width="20" height="20" alt="" loading="lazy">Sync Stone (Unique)</span> comes from the battle pass, hard dungeons and dungeons from 2,800.</li><li><strong>Transfer</strong> moves enhancement and stats to another item — see the hardcore route above.</li><li><strong>Titles</strong> each give passive stats; the title info shows how to get one.</li><li><strong>The season</strong> lasts 2–3 months. Season points buy crafting materials in the season shop.</li>      </ul>
     </section>
-    <section class="pg-sec" id="insight" aria-labelledby="h-insight">
-      <h2 id="h-insight" class="section-title">Pets and Genus Insight</h2>
-<p class="pg-sec-src">Source: <a class="pg-at" href="https://www.youtube.com/watch?v=ipBRzqvELwk&amp;t=930" target="_blank" rel="noopener" title="Fubgun — 100k+ DPS, Full Ranger Guide (pets and Genus Insight from 15:30)">Fubgun</a></p><p class="pg-lead">Account-wide pet bonuses: a big chunk of Combat Power once you farm the crystals. What to level first and what to roll at level 10.</p>      <h3 class="pg-h">Pets</h3>
-      <ul class="pg-list">
-<li><strong>Cogni pets</strong> to max level first: each gives +2 Critical Hit and +1 Might. Some only come from boxes — level every one you can farm.</li><li><strong>Natura pets</strong> next: +1 Precision each at max level.</li><li><strong>Fera and Varian pets</strong> are not worth the time.</li><li>Pets and Genus Insight are shared by every character on the account — progress on an alt counts too.</li>      </ul>
-      <h3 class="pg-h">Genus Insight</h3>
-      <ul class="pg-list">
-<li>Insight levels cost <strong>rainbow crystals</strong>. Cubes give them much faster than farming mobs — plan on about 30–40 cubes to bring every wheel to 10 and roll its lines.</li><li><strong>Every wheel to 10 first.</strong> All five at 10 unlock the <strong>Unbound by Genus</strong> title (see Titles below).</li><li>Then on every wheel <strong>roll line 4 first</strong> — the damage line — and lock it. After that roll the other lines one by one.</li>      </ul>
+    <section class="pg-sec" id="soulbind" aria-labelledby="h-soulbind">
+      <h2 id="h-soulbind" class="section-title">Soulbind: stats for each slot</h2>
+<p class="pg-sec-src">Source: <a class="pg-at" href="https://www.youtube.com/watch?v=vuDEDKipRAU" target="_blank" rel="noopener" title="Aragon — 8 Pet Farming Secrets in Aion 2! (soulbind stats from 3:19)">Aragon</a></p><p class="pg-lead">Rerolling the soulbind stats on your gear burns other legendary pieces — the drops you get farming mobs and pets.</p>      <ul class="pg-list">
+<li>In the soulbind window pick <strong>Sync</strong>, a legendary piece to burn and the stat line you want. The window shows the chance for that stat; Sync consumes the piece. <a class="pg-at" href="https://www.youtube.com/watch?v=vuDEDKipRAU&t=199s" target="_blank" rel="noopener" title="Watch this moment in the video">▶ Aragon 3:19</a></li><li>Attack, Might and Precision go on every piece anyway — the table lists the other lines with the most impact.</li>      </ul>
       <div class="pg-table-wrap">
         <table class="pg-table">
-          <thead><tr><th scope="col">Wheel</th><th scope="col">Line 4 (roll first)</th><th scope="col">Keep on the other lines</th></tr></thead>
-          <tbody><tr><th scope="row">Cogni</th><td>Damage Boost</td><td>Boss Attack, Critical Hit, Attack Bonus, Back Attack Critical Hit, PvE Accuracy</td></tr><tr><th scope="row">Natura</th><td>PvE Damage Boost</td><td>Critical Attack, Front Attack, PvE Attack, Front Attack Critical Hit</td></tr><tr><th scope="row">Varian</th><td>PvE Damage Boost</td><td>Boss Attack, Accuracy Bonus, Max Attack, Critical Hit, PvE Accuracy</td></tr><tr><th scope="row">Fera</th><td>Weapon Damage Boost</td><td>Attack Bonus, PvE Attack, Critical Hit, PvE Accuracy</td></tr><tr><th scope="row">Special</th><td>Double Chance</td><td>Attack Bonus, Boss Attack, Accuracy Bonus, PvE Accuracy</td></tr></tbody>
+          <thead><tr><th scope="col">Slot</th><th scope="col">Stats</th></tr></thead>
+          <tbody><tr><th scope="row">Weapon and guard</th><td>Combat Speed, Weapon Damage Boost, Damage Boost</td></tr><tr><th scope="row">Head</th><td>Double Chance, Attack Increase</td></tr><tr><th scope="row">Shoulders</th><td>Critical Damage Boost, Double Chance</td></tr><tr><th scope="row">Chest</th><td>Damage Boost, Perfect Chance</td></tr><tr><th scope="row">Legs</th><td>Attack Increase, Perfect Chance, Damage Tolerance</td></tr><tr><th scope="row">Arms</th><td>Combat Speed, Perfect Chance</td></tr><tr><th scope="row">Feet</th><td>Move Speed, Perfect Chance</td></tr><tr><th scope="row">Cloak</th><td>Double Chance, Attack Increase</td></tr><tr><th scope="row">Earrings</th><td>Move Speed</td></tr><tr><th scope="row">Necklace</th><td>Combat Speed</td></tr><tr><th scope="row">Rings</th><td>Skills</td></tr></tbody>
         </table>
-      </div>
-      <div class="callout pg-tip" role="note"><p>A damage dealer's wheels (Fubgun's, all at 10): defensive lines — Defense, HP, resists — stay as they rolled. Tanks and healers pick differently; the Templar and Cleric guides have their own lines.</p></div>
+<p class="pg-table-at"> <a class="pg-at" href="https://www.youtube.com/watch?v=vuDEDKipRAU&t=238s" target="_blank" rel="noopener" title="Watch this moment in the video">▶ Aragon 3:58</a></p>      </div>
+    </section>
+    <section class="pg-sec" id="insight" aria-labelledby="h-insight">
+      <h2 id="h-insight" class="section-title">Pets and Genus Insight</h2>
+      <p class="pg-p">Pets, Genus Insight and the lines to roll now have their own page: <a href="../pets/">Pets and Genus Insight</a>.</p>
     </section>
     <section class="pg-sec" id="titles" aria-labelledby="h-titles">
       <h2 id="h-titles" class="section-title">Titles: what to equip</h2>
@@ -411,11 +425,18 @@
       <a class="brand brand-sm" href="../../en/">AION 2 Global - Guides</a>
       <p>Unofficial fan site, not affiliated with NCSOFT. AION 2 and its skill icons are © NCSOFT.</p>
       <p class="foot-credit">Guides are collected from content creators — all credit goes to them; the site is put together with the help of Claude (AI).</p>
-      <p>Last checked: <time datetime="2026-10-18">Oct 18, 2026</time>.</p>
-      <p><a href="../../en/sources/">All sources and creators</a> · <a href="../../en/changelog/">Changelog</a> · <button type="button" class="link-btn report-open">Send feedback</button></p>
+      <p>Last checked: <time datetime="2026-10-19">Oct 19, 2026</time>.</p>
+      <p><a href="../../en/sources/">All sources and creators</a> · <a href="../../en/changelog/">Changelog</a> · <a href="../../en/privacy/">Privacy</a> · <button type="button" class="link-btn ck-open">Cookie settings</button> · <button type="button" class="link-btn report-open">Send feedback</button></p>
     </div>
   </div>
 </footer>
+<section class="ck" data-ga="G-6WYEWLG4B5" role="region" aria-label="Cookies" hidden>
+  <p class="ck-text">We&#39;d like to use Google Analytics to see which guides people read. It sets cookies, so it loads only if you allow it. Our own view counters work without cookies. <a href="../../en/privacy/">Privacy</a></p>
+  <div class="ck-act">
+    <button type="button" class="btn btn-ghost ck-deny">Necessary only</button>
+    <button type="button" class="btn btn-primary ck-allow">Allow analytics</button>
+  </div>
+</section>
 <dialog class="search-dlg" aria-label="Search" data-index="../../en/search.json" data-base="../../en/" data-empty="Nothing found"
   data-kinds="{&#34;boss&#34;: &#34;Boss&#34;, &#34;class&#34;: &#34;Class&#34;, &#34;page&#34;: &#34;Page&#34;, &#34;section&#34;: &#34;Section&#34;, &#34;skill&#34;: &#34;Skill&#34;}" data-root="../../">
   <div class="search-in">
@@ -427,7 +448,7 @@
     <ul class="search-res" role="listbox"></ul>
   </div>
 </dialog>
-<dialog class="whatsnew" data-id="2026-10-17-assassin-pvp" aria-labelledby="wn-title">
+<dialog class="whatsnew" data-id="2026-10-19-pets" aria-labelledby="wn-title">
   <form method="dialog" class="wn-in">
     <div class="wn-head">
       <h2 id="wn-title">What&#39;s new</h2>
@@ -436,9 +457,11 @@
       </button>
     </div>
     <section class="wn-entry">
-      <time class="wn-date" datetime="2026-10-17">Oct 17, 2026</time>
+      <time class="wn-date" datetime="2026-10-19">Oct 19, 2026</time>
       <ul>
-        <li><a href="../../en/assassin/?mode=pvp"><strong>Assassin PvP</strong> — the new mode from AlanStriker's global setup: stun and knockdown picks, stigmas, his hotbar and macro, the rotation; Keyba's stigma alternatives and passive order</a></li>
+        <li><a href="../../en/pets/"><strong>Pets and Genus Insight</strong> — its own page now: where each pet's monsters spawn, farming faster, cubes by sound, when to level Insight and Aragon's lock order for every wheel</a></li>
+        <li><a href="../../en/pet-tracker/"><strong>Aion 2 Pet Tracker</strong> — download page for the Windows app: pet levels and souls, a live soul count and an overlay</a></li>
+        <li><a href="../../en/progression/#soulbind"><strong>Soulbind</strong> — the stats to aim for on each gear slot</a></li>
       </ul>
     </section>
     <button class="btn btn-primary wn-ok" value="close">Got it</button>
@@ -494,7 +517,7 @@
     </div>
   </form>
 </dialog>
-<script src="../../assets/js/site.js?v=a7ef0001" defer></script>
-<script src="../../assets/js/fx.js?v=a7ef0001" defer></script>
+<script src="../../assets/js/site.js?v=60727ed0" defer></script>
+<script src="../../assets/js/fx.js?v=60727ed0" defer></script>
 </body>
 </html>

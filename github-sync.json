@@ -10,5 +10,16 @@
   "automation_id": "atualizar-aion-2-em-portugu-s",
   "cadence": "A cada três dias às 09:00, America/Sao_Paulo",
   "status": "configured",
-  "initial_site_commit": "63557936be3641445145dda66a007b2905b12f77"
+  "initial_site_commit": "63557936be3641445145dda66a007b2905b12f77",
+  "last_maintenance": {
+    "date": "2026-10-19",
+    "source_updated": "2026-10-19",
+    "changes": [
+      "Pets and Genus Insight guide",
+      "Pet Tracker Windows page and reviewed v0.2.0 notes",
+      "Soulbind stats by equipment slot",
+      "Static edition privacy page and self-hosted fonts"
+    ],
+    "validation": "passed; browser visual QA unavailable"
+  }
 }
