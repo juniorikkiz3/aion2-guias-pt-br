@@ -1,0 +1,13 @@
+{
+  "repository": "juniorikkiz3/aion2-guias-pt-br",
+  "url": "https://github.com/juniorikkiz3/aion2-guias-pt-br",
+  "visibility": "public",
+  "branch": "main",
+  "remote": "github",
+  "source": "https://aion2-guides.info/en/",
+  "site_project_id": "appgprj_6acd48efc1a48191bfff48deb96c6011",
+  "site_url": "https://aion2-guias-br.juniorikkix.chatgpt.site/pt-BR/",
+  "automation_id": "atualizar-aion-2-em-portugu-s",
+  "cadence": "A cada três dias às 09:00, America/Sao_Paulo",
+  "status": "repository_created_upload_pending"
+}

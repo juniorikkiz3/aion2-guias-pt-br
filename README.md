@@ -1,123 +1,33 @@
-# AION 2 Guides
+# AION 2 — Guias em português do Brasil
 
-Class guides and trackers for **AION 2 global Season 1** in English, Russian and Ukrainian. Skill, item and Daevanion board data come from the global client (via questlog.gg); the builds come from creators' guides, which every page lists as its sources.
+[Abrir o site](https://aion2-guias-br.juniorikkix.chatgpt.site/pt-BR/) · [Repositório desta edição](https://github.com/juniorikkiz3/aion2-guias-pt-br)
 
-**Live site:** https://couga54.github.io/aion2-guides/
+Manutenção configurada no Codex a cada três dias, às 09:00 de Brasília. Ela verifica a fonte, traduz e revisa as mudanças, valida o resultado e publica no mesmo site e neste GitHub. A execução usa este computador: ele precisa estar ligado com o Codex aberto. O procedimento e as verificações estão em [MAINTENANCE.md](MAINTENANCE.md). O repositório público não muda o acesso do site hospedado.
 
-## What's on the site
+Versão independente baseada em https://aion2-guides.info/en/ (Couga54 / AION 2 Guides).
 
-| Class | PvE | PvP | Leveling | Daevanion boards |
-|---|---|---|---|---|
-| Gladiator | ✅ | ✅ | ✅ | PvE, PvP, leveling |
-| Templar | ✅ | ✅ | ✅ | PvE, PvP |
-| Ranger | ✅ | — | ✅ | PvE |
-| Assassin | ✅ | — | ✅ | PvE |
-| Chanter | ✅ | — | ✅ | PvE |
-| Cleric | ✅ | — | ✅ | PvE |
-| Sorcerer | ✅ | — | ✅ | PvE |
-| Elementalist | — | — | ✅ | — |
+Sincronizada em 19/10/2026 com a versão da fonte atualizada até 18/10/2026. O repositório público anterior deixou de receber as mudanças de conteúdo após 10/10. Por isso, esta atualização usa uma captura das páginas públicas do novo domínio.
 
-A PvP mode is switched on only when there is a real source for it.
+## Conteúdo
 
-Besides the class guides:
+- 20 páginas em PT-BR: início, oito classes e onze páginas de guias/ferramentas, incluindo Novidades do jogo.
+- Versão em inglês para comparação.
+- Busca, temas claro/escuro, modos PvE/PvP/evolução, painéis Daevanion e controles locais de progresso.
+- Tradução inicial com Argos Translate en-pb 1.9 executado localmente. Interface e partes principais do Clérigo revisadas; textos restantes precisam de revisão editorial.
+- Nomes de habilidades, itens e chefes preservados em inglês quando usados como dados do cliente Global. Não é uma tradução oficial do jogo.
 
-- **After 45** (progression) and **Gathering and crafting** — what to do at the level cap, gear upgrade basics, professions.
-- **Game settings** — controls, targeting, keys, on-screen info, FPS and mass PvP options worth changing on day one.
-- **First week** — a day-by-day plan for the launch week.
-- **Weekly tracker** and **Bosses** — checklists and respawn timers kept in the browser, with optional notifications.
-- **Sources** — every creator and site the guides are built on, and who to watch for each class.
-- **What's new** — a changelog, also shown once as a popup after each update.
+## Pastas e atualização
 
-On every class page: a "build at a glance" panel, skill cards with specializations, hover tooltips for skills and items, hotbar lines and the in-game macro, a leveling checklist, and the Daevanion boards with the route the guide takes. Search is on `Ctrl+K`.
+O gerador atual é `tools/build_snapshot.py`, acionado por `tools/build.py`. `source-snapshot/en/` contém as páginas e os dados públicos da fonte; `source-snapshot/assets/` contém seus recursos atualizados; `source-snapshot/provenance.json` registra a origem e as datas. As traduções ficam em `translations/memory.json`; as revisões manuais têm prioridade em `translations/reviewed.json`. `dist/` é o site pronto. A estrutura `data/` e `src/` da edição inicial fica preservada como referência e como base dos recursos compartilhados.
 
-## How it's built
+Para gerar novamente: instale Python e as dependências de `requirements.txt`, então execute `python tools/build.py` na pasta do projeto. O build é local e determinístico: não depende de serviço de tradução nem de acesso à fonte. Para visualizar: `python -m http.server 8313 --directory dist`, depois abra http://localhost:8313/ . O servidor local deve ser iniciado apenas durante o uso.
 
-A small Python static-site generator (Jinja2) renders everything into `docs/`, which GitHub Pages serves. No framework and no build step for CSS or JS.
+As atualizações do projeto original não são importadas automaticamente. Compare alterações e revise as traduções antes de atualizar. Informações, horários e recomendações do jogo refletem as fontes do projeto original; a tradução não constitui nova verificação no jogo.
 
-```
-data/
-  site.json               classes (modes, sources and dates, status), languages, launch events
-  i18n.json               UI strings (EN / RU / UK)
-  skills/<class>.json     skill names, descriptions, specializations (generated)
-  boards/<class>.json     Daevanion boards: nodes, costs, effects (generated)
-  boards/presets.json     which nodes each guide mode takes; the route is calculated at build time
-  items.json              item names, icons, tooltips (generated)
-  class_items.json        item keys used inside class guides
-  leveling/*.json         leveling checklist: shared route + per-class steps
-  progression.json, crafting.json, settings.json, week1.json, weekly.json, bosses.json   the other pages
-  sources.json            creators and sites, "who to watch"
-  changelog.json          What's new
-src/
-  templates/              base, home, class page, guide pages, trackers, macros
-  content/<class>/        en.html, ru.html and uk.html — the guide text
-  assets/                 css, js, icons, class art, social preview images
-tools/
-  build.py                data + templates → docs/
-  fetch_skills.py         skills and icons from questlog.gg
-  fetch_boards.py         Daevanion boards from questlog.gg
-  fetch_items.py          items and icons from questlog.gg
-  fetch_art.py            class art
-  make_og.py              social preview images
-  video_guide.py          prepare a guide video for analysis: fetch_video.py + fetch_transcript.py + storyboard.py
-docs/                     build output (committed, published)
-frames/                   local working files per guide video (git-ignored, see below)
-```
+Esta captura inclui as builds e macros revisadas, os modos PvP de Assassino e Chanter, a progressão de Aragon após o nível 45, pets/Genus Insight, títulos, o controle semanal com roster e assinatura por conta, os relógios de Rift/Shugo e a distribuição do orçamento total de cristais Daevanion. As notas do jogo são uma captura datada e não recebem atualizações automáticas.
 
-## Setup
+## Créditos
 
-```bash
-python -m venv .venv
-.venv/Scripts/python -m pip install -r requirements.txt
-```
+Projeto original: Couga54 / AION 2 Guides. Referências e criadores estão na página de fontes. AION 2 e os recursos do jogo pertencem à NCSOFT; dados de habilidades, itens e painéis vêm do Questlog. A identidade, as análises de acesso e o formulário de mensagens do proprietário original foram desativados nesta edição independente.
 
-On macOS/Linux use `.venv/bin/python` instead of `.venv/Scripts/python`.
-
-## Build and preview
-
-```bash
-.venv/Scripts/python tools/build.py
-python -m http.server 8000 --directory docs
-```
-
-Then open http://localhost:8000.
-
-## Updating a guide from a video
-
-```bash
-.venv/Scripts/python tools/video_guide.py <youtube url or id>
-```
-
-This downloads the video (Full HD, no sound), saves its transcript and cuts it into frames and contact sheets in `frames/<youtube id>/`. The rest of the workflow — reading the frames, comparing with the current guide, proposing changes, what to update afterwards — is described in `.claude/skills/guide-from-video/SKILL.md`.
-
-**Source material stays local.** Creators' videos, transcripts, frames and screenshots live only in `frames/`, which is git-ignored; they are never committed or published. The repository holds our own text, the game data and links to the sources.
-
-## Editing a class guide
-
-- The text is in `src/content/<class>/en.html`, `ru.html` and `uk.html` — always change all three. Ukrainian pages show skill, item and other game names in English (there is no Ukrainian game data), so `uk.html` writes them in English too.
-- `{{ s('skill-slug') }}` renders a skill with its icon and name in the page language; `{{ it('{i:item_key}') }}` does the same for an item.
-- `{% call skill('slug', 'must', '16', [1, 3]) %}…{% endcall %}` is a skill card with the chosen specializations; `hotline(...)` and `macroseq(...)` draw hotbar lines and macro steps; `{{ dv_board('pve') }}` shows the Daevanion boards with that mode's route.
-- Sections are tagged with the modes they belong to (`'pve'`, `'pvp'`, `'pve pvp'`, `'lvl'`). Each PvP block sits right after its PvE counterpart, so both modes read in the same order.
-- After a change, set the class's `updated` date and the `src` date of every re-checked mode in `data/site.json`, update the creator in `data/sources.json`, and add an entry to `data/changelog.json`.
-- In leveling steps, `[[skill-slug]]` gives the skill name and `[[skill-slug#N]]` its N-th specialization.
-
-## Adding a class
-
-1. Fetch its data: `tools/fetch_skills.py <class>` and `tools/fetch_boards.py <class>`.
-2. Write `src/content/<class>/en.html`, `ru.html` and `uk.html` (copy an existing class as a template).
-3. Add class steps to `data/leveling/<class>.json` and, for the boards, the class's presets to `data/boards/presets.json`.
-4. Set `"status": "ready"` (plus `accent`, `weapon`, `difficulty`, `pitch`, `src`) for the class in `data/site.json`.
-5. Run `tools/make_og.py`, then `tools/build.py`.
-
-## Publishing
-
-Push to `main`; GitHub Pages serves the `docs/` folder (**Settings → Pages → Deploy from a branch**, branch `main`, folder `/docs`).
-
-Report form: the "Report a mistake" buttons open a form that is sent to the owner's Telegram through a small Cloudflare Worker — its code is in `tools/feedback-worker/worker.js` (secrets `BOT_TOKEN` and `CHAT_ID` are set in the Worker, never in the repo), its address is `feedback_url` in `data/site.json` (empty string = the buttons open a GitHub issue instead).
-
-Google Analytics: the measurement ID is `ga` in `data/site.json` (empty string turns it off); the tag is not loaded on localhost.
-
-`LAUNCH.md` lists every value that has to be re-checked against the live servers; `CONTEXT.md` holds the project requirements and verified game facts.
-
-## Credits
-
-Unofficial fan site, not affiliated with NCSOFT. AION 2, its art and its skill icons are © NCSOFT. Game data comes from [questlog.gg](https://questlog.gg/aion-2/). The builds are based on creators' guides — each guide page and the Sources page link to them.
+Publicação inicial privada pelo Sites. A pasta `.openai/` contém a identidade desta hospedagem; não a reutilize para registrar outro projeto.
