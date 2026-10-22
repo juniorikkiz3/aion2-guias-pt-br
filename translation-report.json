@@ -2,10 +2,10 @@
   "engine": "Argos en-pb 1.9 / CTranslate2, translation by sentence; local reviewed overrides",
   "locale": "pt-BR",
   "source": "https://aion2-guides.info/en/",
-  "source_updated": "2026-10-19",
-  "synced": "2026-10-19",
+  "source_updated": "2026-10-21",
+  "synced": "2026-10-22",
   "memory_strings": 5950,
-  "reviewed_strings": 477,
+  "reviewed_strings": 901,
   "note": "Nomes e dados do cliente Global preservados. Interface, instruções principais e divergências numéricas revisadas. Textos longos restantes têm revisão editorial parcial.",
-  "new_content_review": "Pets/Genus Insight, Pet Tracker 0.2.0, Soulbind slot table and navigation manually translated and reviewed; reused mistranslations in these sections corrected. Earlier long-form translation remains partially reviewed."
+  "new_content_review": "Ariel/Daevanion, Cleric Whelps presets, Sorcerer EUTOPIA/Krix Domi, Ranger JOHNPAL, DPS meters, regional timers and Pet Tracker 0.3.6 manually translated and reviewed. Numeric/macro wording discrepancies in reused translations corrected; older long-form text remains partially reviewed."
 }

@@ -4,6 +4,12 @@
   var OFF = (root.getAttribute('data-off') || '').split(' ');
   var MODES = ['pve', 'pvp', 'lvl'].filter(function (m) { return OFF.indexOf(m) < 0; });
 
+  // a row of tabs wider than the screen: bring the chosen one to the middle of the row. Only the row scrolls -
+  // scrollIntoView would move the page too, and it runs on every resize (a phone's address bar hiding while you scroll)
+  function tabsCentre(bar, on) {
+    bar.scrollTo({ left: on.offsetLeft - (bar.clientWidth - on.offsetWidth) / 2, behavior: 'smooth' });
+  }
+
   function store(key, value) {
     try {
       if (value === undefined) return localStorage.getItem(key);
@@ -119,8 +125,8 @@
     // The launch celebration (celebrate.js) takes the stage first; What's new waits for the next visit.
     if (!clPage && store('whatsnew-seen') !== latest) setTimeout(function () {
       var party = document.querySelector('.cel-banner:not([hidden])');
-      if (!wn.open && !party) wn.showModal();
-    }, 600);
+      if (!wn.open && !party) { wn.showModal(); store('whatsnew-seen', latest); }   // seen once shown: a reload or a link away
+    }, 600);                                                                          // while it is open must not bring it back
   }
   markDot();
 
@@ -164,9 +170,27 @@
         }).join('') + '</div></li>';
       }).join('');
     };
+    // the date, then a tag for announcements (maintenance, account restrictions, other) - patch notes have none
     var upTop = function (u) {
-      return '<time class="up-date" datetime="' + upEsc(u.date) + '">' + upDay(u.date) + '</time><a class="up-official" href="' + upEsc(u.url) +
-        '" target="_blank" rel="noopener">' + upEsc(UP.t.official) + ' ↗</a>';
+      var tag = u.tag && UP.t['tag_' + u.tag];
+      return '<span class="up-when"><time class="up-date" datetime="' + upEsc(u.date) + '">' + upDay(u.date) + '</time>' +
+        (tag ? '<span class="up-tag up-tag-' + upEsc(u.tag) + '">' + upEsc(tag) + '</span>' : '') + '</span>' +
+        '<a class="up-official" href="' + upEsc(u.url) + '" target="_blank" rel="noopener">' +
+        upEsc(u.board === 'notice' ? UP.t.official_notice : UP.t.official) + ' ↗</a>';
+    };
+    // maintenance: the window in the reader's own time zone, e.g. "Your time: Tue, Oct 21, 09:30–15:00 (5 h 30 min)"
+    var upLocal = function (u) {
+      var w = u.window, s = w && new Date(w.start), e = w && new Date(w.end);
+      if (!w || isNaN(s) || isNaN(e) || e <= s) return '';
+      var day = { weekday: 'short', day: 'numeric', month: 'short' }, hm = { hour: 'numeric', minute: '2-digit' };
+      var same = s.toDateString() === e.toDateString();
+      var txt = s.toLocaleDateString(UP.lang, day) + ', ' + s.toLocaleTimeString(UP.lang, hm) + '–' +
+        (same ? '' : e.toLocaleDateString(UP.lang, day) + ', ') + e.toLocaleTimeString(UP.lang, hm);
+      var min = Math.round((e - s) / 6e4), h = Math.floor(min / 60), m = min % 60;
+      var sp = UP.lang === 'ja' ? '' : ' ';                // Japanese: 5時間30分
+      var dur = (h ? h + sp + UP.t.h : '') + (h && m ? sp : '') + (m ? m + sp + UP.t.min : '');
+      return '<p class="up-local"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
+        '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span><b>' + upEsc(UP.t.local) + ':</b> ' + upEsc(txt) + ' (' + upEsc(dur) + ')</span></p>';
     };
     var upClassItems = function (u) {
       var out = [];
@@ -179,22 +203,47 @@
       var dl = document.querySelector('.up-drawer-list');
       if (dl) dl.innerHTML = list.slice(0, 5).map(function (u) {
         var cl = upClassItems(u);
-        return '<article class="up-card"><p class="up-card-top">' + upTop(u) + '</p><h3 class="up-card-title">' + upEsc(upTx(u.title)) + '</h3>' +
+        return '<article class="up-card"><p class="up-card-top">' + upTop(u) + '</p><h3 class="up-card-title">' + upEsc(upTx(u.title)) + '</h3>' + upLocal(u) +
           '<p class="up-summary">' + upEsc(upTx(u.summary)) + '</p>' +
           (cl.length ? '<ul class="up-items">' + upClassBlocks(cl) + '</ul>' : '') +
           '<a class="up-card-more" href="' + upHref('updates/#up-' + u.id) + '">' + upEsc(UP.t.details) + ' →</a></article>';
       }).join('');
-      // the /updates/ page: everything, by group
+      // the /updates/ page: a filter by kind (only the kinds in the loaded list), then UP_STEP entries at a time; "Show more" opens the next ones and, past
+      // the loaded list, asks the API for older ones
       var pg = document.querySelector('[data-up-page]');
-      if (pg) pg.innerHTML = list.map(function (u) {
+      var fl = document.querySelector('.up-filters');
+      if (fl) {
+        // the buttons are drawn again only when the kinds in the list change, so the indicator can slide between them
+        var has = {};
+        list.forEach(function (u) { has[u.tag || 'patch'] = 1; });
+        var kinds = ['all', 'patch', 'maint', 'notice', 'bans'].filter(function (k) { return k === 'all' || has[k]; });
+        if (fl.dataset.kinds !== kinds.join()) {
+          fl.dataset.kinds = kinds.join();
+          [].slice.call(fl.querySelectorAll('.up-filter')).forEach(function (b) { b.remove(); });
+          fl.insertAdjacentHTML('beforeend', kinds.map(function (k) {
+            return '<button type="button" role="radio" class="pt-tab up-filter" data-f="' + k + '" aria-checked="false">' +
+              upEsc(k === 'all' ? UP.t.filter_all : UP.t['tag_' + k]) + '</button>';
+          }).join(''));
+        }
+        if (kinds.indexOf(upFilter) < 0) upFilter = 'all';
+        fl.hidden = kinds.length < 3;                     // "All" and a single kind: nothing to choose
+        upFilterMark(fl);
+      }
+      var shownList = list.filter(function (u) { return upFilter === 'all' || (u.tag || 'patch') === upFilter; });
+      if (pg && location.hash && !upHashDone) {            // a link to one entry: show the list down to it
+        var want = location.hash.slice(4), ix = list.map(function (u) { return u.id; }).indexOf(want);
+        if (ix >= 0) { upFilter = 'all'; shownList = list; upShown = Math.max(upShown, ix + 1); }
+      }
+      if (pg) pg.innerHTML = shownList.slice(0, upShown).map(function (u) {
         return '<article class="up-entry" id="up-' + upEsc(u.id) + '"><div class="up-entry-side">' + upTop(u) + '</div><div class="up-entry-body">' +
-          '<h2 class="up-entry-title">' + upEsc(upTx(u.title)) + '</h2><p class="up-summary">' + upEsc(upTx(u.summary)) + '</p>' +
+          '<h2 class="up-entry-title">' + upEsc(upTx(u.title)) + '</h2>' + upLocal(u) + '<p class="up-summary">' + upEsc(upTx(u.summary)) + '</p>' +
           (u.groups || []).map(function (g) {
             return '<section class="up-group"><h3 class="up-group-title">' + upEsc(UP.t['g_' + g.kind] || g.kind) + '</h3><ul class="up-items">' +
               (g.kind === 'classes' ? upClassBlocks(g.items) : g.items.map(function (i) { return upItem(i, true); }).join('')) + '</ul></section>';
           }).join('') + '</div></article>';
-      }).join('');
-      if (pg && location.hash) { var at = document.getElementById(location.hash.slice(1)); if (at) at.scrollIntoView(); }
+      }).join('') + (shownList.length > upShown || upMore ? '<p class="up-more-wrap"><button type="button" class="btn btn-ghost up-more"' +
+        (upLoading ? ' disabled' : '') + '>' + upEsc(UP.t.more) + '</button></p>' : '');
+      if (pg && location.hash && !upHashDone) { var at = document.getElementById(location.hash.slice(1)); if (at) { at.scrollIntoView(); upHashDone = true; } }
       // a class guide: the class's lines from the five newest patches that touch it, and whether the guide was checked
       var sec = document.querySelector('.up-sec[data-cls]');
       if (sec) {
@@ -218,6 +267,44 @@
         if (list.length) tab.dataset.id = list[0].id;
       }
     };
+    var UP_STEP = 10, upShown = UP_STEP, upFilter = 'all', upMore = false, upLoading = false, upHashDone = false;
+    // the chosen filter: aria-checked, and the gold indicator under it (it slides once the bar has been placed)
+    var upFilterMark = function (fl) {
+      var on = null;
+      [].forEach.call(fl.querySelectorAll('.up-filter'), function (b) {
+        var me = b.dataset.f === upFilter;
+        b.setAttribute('aria-checked', me ? 'true' : 'false');
+        if (me) on = b;
+      });
+      var ind = fl.querySelector('.pt-ind');
+      if (!on || !ind || fl.hidden) return;
+      ind.style.width = on.offsetWidth + 'px';
+      ind.style.transform = 'translateX(' + on.offsetLeft + 'px)';
+      if (fl.scrollWidth > fl.clientWidth) tabsCentre(fl, on);
+      if (!fl.classList.contains('is-ready')) requestAnimationFrame(function () { fl.classList.add('is-ready'); });
+    };
+    window.addEventListener('resize', function () { var fl = document.querySelector('.up-filters'); if (fl) upFilterMark(fl); });
+    var upMap = function (u) {
+      return { id: u.id, date: u.date, posted: u.posted, url: u.url, board: u.board || 'update', tag: u.tag || 'patch', window: u.window, title: u.title, summary: u.summary, checked: u.checked || {},
+        groups: (u.groups || []).map(function (g) { return { kind: g.kind, items: g.items.map(function (i) { return { cls: i.cls, href: i.href, text: i }; }) }; }) };
+    };
+    document.addEventListener('click', function (ev) {
+      var f = ev.target.closest && ev.target.closest('.up-filter');
+      if (f) { if (f.dataset.f !== upFilter) { upFilter = f.dataset.f; upShown = UP_STEP; renderNews(); } return; }
+      var m = ev.target.closest && ev.target.closest('.up-more');
+      if (!m) return;
+      upShown += UP_STEP;
+      var have = (UP.entries || []).filter(function (u) { return upFilter === 'all' || (u.tag || 'patch') === upFilter; }).length;
+      if (have >= upShown || !upMore || !upApi) return renderNews();
+      // past the loaded list: the next page from the API (older than the last entry), then draw
+      var last = UP.entries[UP.entries.length - 1];
+      upLoading = true; renderNews();
+      fetch(upApi + '/updates?limit=40&before=' + encodeURIComponent(last.posted || last.date + 'T00:00:00Z'), { headers: { Accept: 'application/json' } })
+        .then(function (r) { return r.ok ? r.json() : null; })
+        .then(function (d) { if (d && Array.isArray(d.entries)) { UP.entries = UP.entries.concat(d.entries.map(upMap)); upMore = !!d.more; } else upMore = false; })
+        .catch(function () { upMore = false; })
+        .then(function () { upLoading = false; upRender(); });
+    });
     var upNeedsTips = function () { return /\{s:/.test(JSON.stringify(UP.entries || [])); };
     var upRender = function () {
       if (upTips || !upNeedsTips()) return renderNews();
@@ -227,17 +314,17 @@
     };
     upRender();
     var upApi = document.documentElement.dataset.api;
-    if (upApi) fetch(upApi + '/updates', { headers: { Accept: 'application/json' } })
+    if (upApi) fetch(upApi + '/updates?limit=40', { headers: { Accept: 'application/json' } })
       .then(function (r) { return r.ok ? r.json() : null; })
       .then(function (d) {
-        if (!d || !Array.isArray(d.entries) || !d.entries.length) return;
-        UP.entries = d.entries.map(function (u) {
-          return { id: u.id, date: u.date, url: u.url, title: u.title, summary: u.summary, checked: u.checked || {},
-            groups: (u.groups || []).map(function (g) { return { kind: g.kind, items: g.items.map(function (i) { return { cls: i.cls, href: i.href, text: i }; }) }; }) };
-        });
-        upRender();
+        if (d && Array.isArray(d.entries) && d.entries.length) {
+          UP.entries = d.entries.map(upMap);
+          upMore = !!d.more;
+          if (upBtn) upBtn.dataset.id = d.entries[0].id;   // now: the list may be drawn later (after the skill tips load)
+          upRender();
+        }
         if (typeof upDot === 'function') upDot();
-      }).catch(function () {});
+      }).catch(function () { if (typeof upDot === 'function') upDot(); });
   }
 
   // the drawer: the tab on the right edge opens it; a dot on the tab until the newest patch has been seen
@@ -275,7 +362,9 @@
     upd.addEventListener('cancel', function (ev) { ev.preventDefault(); upClose(); });   // Esc slides it out too
     upd.addEventListener('click', function (ev) { if (ev.target === upd) upClose(); });  // a click on the backdrop
     if (document.querySelector('.page-updates')) upSeenNow();
-    upDot();
+    // with the API the newest entry comes a moment later: mark the tab only then, or it lights up for the built-in
+    // (older) entry and fades out again on every reload
+    if (!document.documentElement.dataset.api) upDot();
   }
 
   // ---- search (Ctrl+K or "/"): index built per language at docs/<lang>/search.json ----
@@ -393,6 +482,49 @@
     var fbForm = fb.querySelector('.fb-form'), fbText = fb.querySelector('.fb-text'), fbStatus = fb.querySelector('.fb-status'), fbSend = fb.querySelector('.fb-send');
     var fbMode = function () { return document.querySelector('.guide') ? root.dataset.mode : ''; };
     var fbSay = function (key, kind) { fbStatus.textContent = key ? fbStatus.dataset[key] : ''; fbStatus.className = 'fb-status' + (kind ? ' is-' + kind : ''); };
+    // the screenshot field (Pet Tracker page only): PNG / JPEG up to 3 MB - picked, dropped on the zone or pasted with
+    // Ctrl+V anywhere in the form; read as a data URL when the form is sent
+    var fbFile = fb.querySelector('.fb-file'), fbPick = null, fbThumb = '';
+    var fbFileSet = function (f) {
+      fbPick = f || null;
+      if (fbThumb) { URL.revokeObjectURL(fbThumb); fbThumb = ''; }
+      fbFile.querySelector('.fb-drop').hidden = !!f;
+      fbFile.querySelector('.fb-pick').hidden = !f;
+      if (f) {
+        fbThumb = URL.createObjectURL(f);
+        fbFile.querySelector('.fb-pick-img').src = fbThumb;
+        fbFile.querySelector('.fb-pick-name').textContent = f.name || 'image.' + (f.type === 'image/png' ? 'png' : 'jpg');
+        fbFile.querySelector('.fb-pick-size').textContent = f.size < 1048576 ? Math.max(1, Math.round(f.size / 1024)) + ' KB' : (f.size / 1048576).toFixed(1) + ' MB';
+      } else fbFile.querySelector('.fb-file-in').value = '';
+    };
+    var fbTake = function (f) {
+      if (!f) return;
+      var bad = !/^image\/(png|jpeg)$/.test(f.type) ? 'type' : f.size > 3 * 1024 * 1024 ? 'big' : '';
+      if (bad) { fbStatus.textContent = fbFile.dataset[bad]; fbStatus.className = 'fb-status is-err'; return; }
+      fbSay(''); fbFileSet(f);
+    };
+    if (fbFile) {
+      var drop = fbFile.querySelector('.fb-drop');
+      fbFile.querySelector('.fb-file-in').addEventListener('change', function () { fbTake(this.files && this.files[0]); });
+      fbFile.querySelector('.fb-file-x').addEventListener('click', function () { fbFileSet(null); fbFile.querySelector('.fb-file-in').focus(); });
+      ['dragenter', 'dragover'].forEach(function (t) {
+        drop.addEventListener(t, function (ev) { ev.preventDefault(); drop.classList.add('is-over'); });
+      });
+      ['dragleave', 'drop'].forEach(function (t) {
+        drop.addEventListener(t, function (ev) { if (t === 'dragleave' && drop.contains(ev.relatedTarget)) return; drop.classList.remove('is-over'); });
+      });
+      drop.addEventListener('drop', function (ev) { ev.preventDefault(); fbTake(ev.dataTransfer && ev.dataTransfer.files[0]); });
+      // Ctrl+V: an image in the clipboard becomes the screenshot; pasted text still goes into the fields
+      fb.addEventListener('paste', function (ev) {
+        var items = ev.clipboardData ? ev.clipboardData.items : [];
+        for (var k = 0; k < items.length; k++) {
+          if (items[k].kind === 'file' && /^image\//.test(items[k].type)) { ev.preventDefault(); fbTake(items[k].getAsFile()); return; }
+        }
+      });
+    }
+    var readImage = function (f) {
+      return new Promise(function (ok, no) { var r = new FileReader(); r.onload = function () { ok(r.result); }; r.onerror = no; r.readAsDataURL(f); });
+    };
     document.querySelectorAll('.report-open').forEach(function (b) {
       b.addEventListener('click', function () {
         fb.querySelector('.fb-where').textContent = fb.dataset.page + (fbMode() ? ' · ' + fbMode().toUpperCase() : '');
@@ -406,15 +538,16 @@
       ev.preventDefault();
       if (fbText.value.trim().length < 5) { fbSay('short', 'err'); fbText.focus(); return; }
       fbSend.disabled = true; fbSay('sending');
-      fetch(fb.dataset.url, {
-        method: 'POST', headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ text: fbText.value, contact: fb.querySelector('.fb-contact').value, hp: fb.querySelector('.fb-hp').value,
-          page: fb.dataset.page + location.hash, lang: fb.dataset.lang, mode: fbMode() })
+      (fbPick ? readImage(fbPick) : Promise.resolve(null)).then(function (image) {
+        var body = { text: fbText.value, contact: fb.querySelector('.fb-contact').value, hp: fb.querySelector('.fb-hp').value,
+          page: fb.dataset.page + location.hash, lang: fb.dataset.lang, mode: fbMode() };
+        if (image) body.image = image;
+        return fetch(fb.dataset.url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
       }).then(function (r) { return r.json().then(function (j) { return { s: r.status, j: j }; }); }).then(function (r) {
         if (r.j && r.j.ok) {
-          fbSay('ok', 'ok'); fbText.value = '';
+          fbSay('ok', 'ok'); fbText.value = ''; if (fbFile) fbFileSet(null);
           setTimeout(function () { if (fb.open) fb.close(); }, 1800);
-        } else { fbSay(r.s === 429 ? 'rate' : 'err', 'err'); fbSend.disabled = false; }
+        } else { fbSay(r.s === 429 ? 'rate' : (r.j && /^file-/.test(r.j.error || '') ? 'file' : 'err'), 'err'); fbSend.disabled = false; }
       }).catch(function () { fbSay('err', 'err'); fbSend.disabled = false; });
     });
   }
@@ -575,57 +708,76 @@
     ttChips.forEach(function (c) { c.classList.remove('is-away'); });
   }
 
-  // ---- server region for the timers: Global (EU / NA, the same schedule) or Asia (the Rift an hour earlier).
-  //      Chosen in the language menu or above the home timers; until then guessed from the time zone. ----
+  // ---- server region for the timers: the regions and their schedules come from site.json timers (as questlog.gg
+  //      models them: each region has its server time zone, every schedule runs at the same local wall-clock times
+  //      there). Chosen in the language menu or above the home timers; until then guessed from the time zone. ----
+  var TM = null;
+  try { TM = JSON.parse(document.getElementById('timers-cfg').textContent); } catch (err) { TM = null; }
+  var RG = {};
+  (TM ? TM.regions : []).forEach(function (r) { RG[r[0]] = { label: r[1], client: r[2], tz: r[3] }; });
   var REGION = (function () {
     var r = store('region');
-    if (r === 'global' || r === 'asia') return r;
+    if (r === 'global') r = 'eu'; else if (r === 'asia') r = 'as';   // the two regions before October 21
+    if (RG[r]) return r;
     var tz = '';
     try { tz = Intl.DateTimeFormat().resolvedOptions().timeZone || ''; } catch (err) {}
-    return /^(Asia\/(Tokyo|Seoul|Shanghai|Chongqing|Hong_Kong|Macau|Taipei|Singapore|Manila|Bangkok|Jakarta|Makassar|Jayapura|Kuala_Lumpur|Kuching|Ho_Chi_Minh|Saigon|Phnom_Penh|Vientiane|Yangon|Brunei|Ulaanbaatar|Pontianak)|Australia\/|Pacific\/(Auckland|Guam|Port_Moresby))/.test(tz) ? 'asia' : 'global';
+    return tz === 'Asia/Seoul' ? 'kr' : tz === 'Asia/Taipei' ? 'tw'
+      : /Los_Angeles|Vancouver|Tijuana|Denver|Phoenix|Boise|Edmonton|Anchorage|Juneau|Honolulu/.test(tz) ? 'naw'
+      : /Sao_Paulo|Argentina|Santiago|Bogota|Lima|Caracas|Montevideo|Asuncion|La_Paz|Guayaquil|Fortaleza|Recife|Bahia|Belem|Manaus/.test(tz) ? 'la'
+      : /^America\//.test(tz) ? 'nae' : /^(Asia|Australia|Pacific)\//.test(tz) ? 'as' : 'eu';
   })();
-  var regionShift = function (el) { return REGION === 'asia' ? (+el.dataset.asiaMin || 0) * 6e4 : 0; };
-  // the server clock of a repeating timer: each region keeps its own (Europe CET/CEST like Kyiv, Asia JST with no daylight
-  // saving - 6sword / aion2timer.online), so the Asian Rift must not move when Kyiv changes its clocks
-  var regionTz = function (el) { return REGION === 'asia' && el.dataset.asiaTz ? el.dataset.asiaTz : el.dataset.tz; };
   var zoneFmt = function (tz) { try { return new Intl.DateTimeFormat('en-US', { timeZone: tz, hourCycle: 'h23', year: 'numeric', month: 'numeric', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric' }); } catch (err) { return null; } };
-  var showRegion = function () {
-    [].forEach.call(document.querySelectorAll('.rg [data-region]'), function (b) { b.setAttribute('aria-checked', String(b.dataset.region === REGION)); });
-    [].forEach.call(document.querySelectorAll('[data-rg-tag]'), function (t) { t.hidden = REGION !== 'asia'; });
+  var zoneOff = function (fmt, t) {   // a zone's UTC offset at moment t, in ms
+    if (!fmt) return 0;
+    var p = {};
+    fmt.formatToParts(new Date(t)).forEach(function (x) { p[x.type] = +x.value; });
+    return Date.UTC(p.year, p.month - 1, p.day, p.hour % 24, p.minute, p.second) - Math.floor(t / 1000) * 1000;
   };
-  showRegion();
-  document.addEventListener('click', function (ev) {
-    var b = ev.target.closest && ev.target.closest('.rg [data-region]');
-    if (!b || b.dataset.region === REGION) return;
-    REGION = b.dataset.region;
+  // one repeating timer for the current region: the first start (local start time on its date in the zone), the period,
+  // the open window, and at(k) = the k-th start at the same wall-clock time across daylight saving
+  var cycle = function (name) {
+    var R = RG[REGION] || RG.eu, S = TM && TM.schedules[R ? R.client : 'global'] && TM.schedules[R ? R.client : 'global'][name];
+    if (!S) return null;
+    var tz = S.tz || R.tz, fmt = zoneFmt(tz), d = (S.date || '2026-10-01').split('-'), hm = S.start.split(':');
+    var wall = Date.UTC(+d[0], +d[1] - 1, +d[2], +hm[0], +hm[1]);
+    var anchor = wall - zoneOff(fmt, wall - zoneOff(fmt, wall)), off0 = zoneOff(fmt, anchor), every = S.every_min * 6e4;
+    return {
+      anchor: anchor, every: every, open: (S.open_min || 0) * 6e4,
+      at: function (k) { var t = anchor + k * every; return t + off0 - zoneOff(fmt, t); },
+      // the first start after now, and its index
+      next: function (now) { var k = Math.max(0, Math.floor((now - anchor) / every) - 1); while (this.at(k) <= now) k++; return k; }
+    };
+  };
+  var showRegion = function () {
+    [].forEach.call(document.querySelectorAll('[data-region-select]'), function (sel) { sel.value = REGION; });
+    [].forEach.call(document.querySelectorAll('[data-rg-tag]'), function (t) { t.textContent = '· ' + REGION.toUpperCase(); t.hidden = false; });
+  };
+  var setRegion = function (r) {
+    if (!RG[r] || r === REGION) return;
+    REGION = r;
     store('region', REGION);
     showRegion();
-    document.dispatchEvent(new CustomEvent('a2-region'));   // the timers re-read their anchors
+    document.dispatchEvent(new CustomEvent('a2-region'));   // the timers re-read their schedules
+  };
+  showRegion();
+  document.addEventListener('change', function (ev) {
+    if (ev.target.matches && ev.target.matches('[data-region-select]')) setRegion(ev.target.value);
   });
 
   // ---- Rift countdown in the top bar (every page): openings every N hours from the anchor, at the same
   //      wall-clock hours in the server time zone across daylight saving (like the weekly reset) ----
   // every chip of this kind: the Rift and the Shugo Festival (data-name; the Rift has none)
   [].forEach.call(document.querySelectorAll('.rift-timer'), function (rift) {
-    var rtAnchor = Date.parse(rift.dataset.anchor) + regionShift(rift), rtEvery = (+rift.dataset.every || 3) * 36e5;
-    var rtTime = rift.querySelector('.rt-time'), rtName = rift.querySelector('.rt-name'), rtFmt = null;
-    var rtOpen = (+rift.dataset.openMin || 0) * 6e4;
-    rtFmt = zoneFmt(regionTz(rift));
-    var rtOff = function (t) {   // the zone's UTC offset at moment t, in ms
-      if (!rtFmt) return 0;
-      var p = {};
-      rtFmt.formatToParts(new Date(t)).forEach(function (x) { p[x.type] = +x.value; });
-      return Date.UTC(p.year, p.month - 1, p.day, p.hour % 24, p.minute, p.second) - Math.floor(t / 1000) * 1000;
-    };
-    var rtOff0 = rtOff(rtAnchor);
-    var rtAt = function (k) { var t = rtAnchor + k * rtEvery; return t + rtOff0 - rtOff(t); };
-    document.addEventListener('a2-region', function () { rtFmt = zoneFmt(regionTz(rift)); rtAnchor = Date.parse(rift.dataset.anchor) + regionShift(rift); rtOff0 = rtOff(rtAnchor); });
+    var C = cycle(rift.dataset.cycle);
+    if (!C) return;
+    var rtTime = rift.querySelector('.rt-time'), rtName = rift.querySelector('.rt-name');
+    var rtAt = function (k) { return C.at(k); };
+    document.addEventListener('a2-region', function () { C = cycle(rift.dataset.cycle) || C; });
     var r2 = function (n) { return (n < 10 ? '0' : '') + n; };
     var rtTick = function () {
-      var now = Date.now(), k = Math.max(0, Math.floor((now - rtAnchor) / rtEvery) - 1), next;
-      while ((next = rtAt(k)) <= now) k++;
+      var now = Date.now(), k = C.next(now), next = rtAt(k);
       // the entrance stays open a few minutes after each opening: count down to its closing instead
-      var shut = k > 0 ? rtAt(k - 1) + rtOpen : 0, open = now < shut;
+      var shut = k > 0 ? rtAt(k - 1) + C.open : 0, open = now < shut;
       rift.classList.toggle('is-open', open);
       rtName.textContent = open ? rift.dataset.open : (rift.dataset.name || 'Rift');
       if (open) next = shut;
@@ -642,23 +794,13 @@
   });
 
   // ---- weekly reset countdown in the top bar: every 7 days from the anchor at the same wall-clock hour in tz ----
-  var rst = document.querySelector('.wr-chip');
-  if (rst) {
-    var rsAnchor = Date.parse(rst.dataset.anchor), WK = 7 * 864e5, rsFmt = null, rsU = rst.dataset.units.split(',');
-    var rsTime = rst.querySelector('.wr-time');
-    try { rsFmt = new Intl.DateTimeFormat('en-US', { timeZone: rst.dataset.tz, hourCycle: 'h23', year: 'numeric', month: 'numeric', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric' }); } catch (err) {}
-    var rsOff = function (t) {
-      if (!rsFmt) return 0;
-      var p = {};
-      rsFmt.formatToParts(new Date(t)).forEach(function (x) { p[x.type] = +x.value; });
-      return Date.UTC(p.year, p.month - 1, p.day, p.hour % 24, p.minute, p.second) - Math.floor(t / 1000) * 1000;
-    };
-    var rsOff0 = rsOff(rsAnchor);
-    var rsAt = function (k) { var t = rsAnchor + k * WK; return t + rsOff0 - rsOff(t); };
+  var rst = document.querySelector('.wr-chip'), rsC = cycle('weekly_reset');
+  if (rst && rsC) {
+    var rsU = rst.dataset.units.split(','), rsTime = rst.querySelector('.wr-time');
+    document.addEventListener('a2-region', function () { rsC = cycle('weekly_reset') || rsC; });
     var s2 = function (n) { return (n < 10 ? '0' : '') + n; };
     var rsTick = function () {
-      var now = Date.now(), k = Math.max(0, Math.floor((now - rsAnchor) / WK) - 1), next;
-      while ((next = rsAt(k)) <= now) k++;
+      var now = Date.now(), next = rsC.at(rsC.next(now));
       var ms = next - now, d = Math.floor(ms / 864e5), h = Math.floor(ms / 36e5) % 24, m = Math.floor(ms / 6e4) % 60, s = Math.floor(ms / 1e3) % 60;
       rsTime.innerHTML = '<span class="rt-full">' + (d ? d + rsU[0] + ' ' + h + rsU[1] : s2(h) + ':' + s2(m) + ':' + s2(s)) + '</span><span class="rt-short">' + (d ? d + rsU[0] : h ? h + rsU[1] : m + rsU[2]) + '</span>';
       chipTip(rst, rst.dataset.name + ' · ' + chipClock(next, true));
@@ -709,23 +851,14 @@
     // Repeating timers (Rift, weekly reset): the next occurrence every N hours from the anchor, at the same
     // wall-clock hour in tz across daylight saving — the same rule as the top bar chips.
     [].slice.call(evBox.querySelectorAll('.ev-cycle')).forEach(function (li) {
-      var anchor = Date.parse(li.dataset.anchor) + regionShift(li), every = (+li.dataset.every || 168) * 36e5, openMs = (+li.dataset.openMin || 0) * 6e4;
-      var cells = li.querySelectorAll('.ev-timer b'), when = li.querySelector('.ev-when time'), zf = null, lf = null;
-      zf = zoneFmt(regionTz(li));
+      var C = cycle(li.dataset.cycle);
+      if (!C) return;
+      var cells = li.querySelectorAll('.ev-timer b'), when = li.querySelector('.ev-when time'), lf = null;
       try { lf = new Intl.DateTimeFormat(({ ru: 'ru-RU', uk: 'uk-UA', tr: 'tr-TR', ja: 'ja-JP' })[evBox.dataset.lang] || 'en-GB', { weekday: 'short', hour: '2-digit', minute: '2-digit', timeZoneName: 'short' }); } catch (err) {}
-      var off = function (t) {
-        if (!zf) return 0;
-        var p = {};
-        zf.formatToParts(new Date(t)).forEach(function (x) { p[x.type] = +x.value; });
-        return Date.UTC(p.year, p.month - 1, p.day, p.hour % 24, p.minute, p.second) - Math.floor(t / 1000) * 1000;
-      };
-      var off0 = off(anchor);
-      var at = function (k) { var t = anchor + k * every; return t + off0 - off(t); };
-      document.addEventListener('a2-region', function () { zf = zoneFmt(regionTz(li)); anchor = Date.parse(li.dataset.anchor) + regionShift(li); off0 = off(anchor); });
+      document.addEventListener('a2-region', function () { C = cycle(li.dataset.cycle) || C; });
       var ctick = function () {
-        var now = Date.now(), k = Math.max(0, Math.floor((now - anchor) / every) - 1), next;
-        while ((next = at(k)) <= now) k++;
-        var shut = openMs && k > 0 ? at(k - 1) + openMs : 0, open = now < shut;   // the Rift entrance stays open a few minutes
+        var now = Date.now(), k = C.next(now), next = C.at(k);
+        var shut = C.open && k > 0 ? C.at(k - 1) + C.open : 0, open = now < shut;   // the Rift entrance stays open a few minutes
         li.classList.toggle('is-open', open);
         var ms = (open ? shut : next) - now;
         var v = [Math.floor(ms / 864e5), Math.floor(ms / 36e5) % 24, Math.floor(ms / 6e4) % 60, Math.floor(ms / 1e3) % 60];
@@ -738,7 +871,7 @@
   }
 
   // ---- page tabs (templates/tabs.html): show one data-tab-panel, slide the gold indicator, open the tab of a #link ----
-  [].forEach.call(document.querySelectorAll('.page-tabs'), function (bar) {
+  [].forEach.call(document.querySelectorAll('.page-tabs:not(.up-filters)'), function (bar) {   // the news filters have their own code
     var tabs = [].slice.call(bar.querySelectorAll('.pt-tab')), ind = bar.querySelector('.pt-ind');
     var panels = [].slice.call(document.querySelectorAll('[data-tab-panel]'));
     var place = function () {
@@ -746,7 +879,7 @@
       if (!on || !ind) return;
       ind.style.width = on.offsetWidth + 'px';
       ind.style.transform = 'translateX(' + on.offsetLeft + 'px)';
-      if (bar.scrollWidth > bar.clientWidth) on.scrollIntoView({ block: 'nearest', inline: 'center' });
+      if (bar.scrollWidth > bar.clientWidth) tabsCentre(bar, on);
     };
     var show = function (id) {
       tabs.forEach(function (x) { x.setAttribute('aria-selected', x.dataset.tab === id ? 'true' : 'false'); });
@@ -970,7 +1103,7 @@
     var ptNotesLang = ptPage.getAttribute('data-pt-lang');
     var esc = function (s) { return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); };
     var inline = function (s) {
-      return esc(s).replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>').replace(/`([^`]+)`/g, '<code>$1</code>')
+      return esc(s).replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>').replace(/(^|[^*\w])\*([^*\s][^*]*?)\*(?!\*)/g, '$1<em>$2</em>').replace(/`([^`]+)`/g, '<code>$1</code>')
         .replace(/\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
     };
     // the same subset as md() in tools/pet_tracker.py: headings, paragraphs, nested bullet lists
@@ -1002,7 +1135,9 @@
       return (i >= 0 ? lines.slice(i + 1) : lines).join('\n').trim();
     };
     var ptShow = function (d) {
-      var asset = (d.assets || []).filter(function (a) { return a.name === 'Aion2PetTracker-Setup.exe'; })[0];
+      // the installer named after its version (Aion2PetTracker_0.3.0_x64-setup.exe) when the release has one, else the plain one
+      var asset = (d.assets || []).filter(function (a) { return /^Aion2PetTracker_.+_x64-setup\.exe$/.test(a.name); })[0] ||
+        (d.assets || []).filter(function (a) { return a.name === 'Aion2PetTracker-Setup.exe'; })[0];
       var v = String(d.tag_name || '').replace(/^v/, '');
       if (!v) return;
       var day = new Date(d.published_at);
@@ -1017,6 +1152,8 @@
       var sz = q('[data-pt-size]');
       if (sz && asset) sz.textContent = ptUi.size.replace('{n}', Math.round(asset.size / 1048576));
       [].forEach.call(ptPage.querySelectorAll('[data-pt-release]'), function (a) { if (d.html_url) a.href = d.html_url; });
+      var dl = q('[data-pt-dl]');
+      if (dl && asset && asset.url) dl.href = asset.url;
       var notes = notesPart(d.body, ptNotesLang) || notesPart(d.body, 'en');
       if (notes) {
         q('[data-pt-notes]').hidden = false;
@@ -1030,12 +1167,30 @@
     else fetch(ptPage.getAttribute('data-pt-api'), { headers: { Accept: 'application/vnd.github+json' } })
       .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
       .then(function (d) {
+        (d.assets || []).forEach(function (a) { a.url = a.browser_download_url; });
         ptShow(d);
         store('pt-release', JSON.stringify({ t: Date.now(), d: { tag_name: d.tag_name, published_at: d.published_at, html_url: d.html_url, body: d.body,
-          assets: (d.assets || []).map(function (a) { return { name: a.name, size: a.size }; }) } }));
+          assets: (d.assets || []).map(function (a) { return { name: a.name, size: a.size, url: a.browser_download_url }; }) } }));
       })
       .catch(function () { if (cached) ptShow(cached.d); });   // keep the built-in release, or the stale cache
+    // backend build: the download button counts a click (the admin page's Pet Tracker card; once per visitor a day)
+    var ptDl = ptPage.querySelector('[data-pt-dl]');
+    if (ptDl && root.dataset.api) ptDl.addEventListener('click', function () {
+      var body = JSON.stringify({ kind: 'dl', keys: ['pet-tracker:' + (root.lang || 'en').slice(0, 2)] });
+      try { if (navigator.sendBeacon && navigator.sendBeacon(root.dataset.api + '/stat', new Blob([body], { type: 'application/json' }))) return; } catch (e) {}
+      fetch(root.dataset.api + '/stat', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: body, keepalive: true }).catch(function () {});
+    });
   }
+
+  // ---- backend build only: links out to the tools we list (data-go="dps:<id>", DPS meters page) count a click for the
+  // admin page (stat kind 'go', once per visitor a day per link)
+  if (root.dataset.api) document.addEventListener('click', function (ev) {
+    var a = ev.target.closest && ev.target.closest('a[data-go]');
+    if (!a) return;
+    var body = JSON.stringify({ kind: 'go', keys: [a.getAttribute('data-go')] }), url = root.dataset.api + '/stat';
+    try { if (navigator.sendBeacon && navigator.sendBeacon(url, new Blob([body], { type: 'application/json' }))) return; } catch (e) {}
+    fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: body, keepalive: true }).catch(function () {});
+  });
 
   if (!document.querySelector('.guide')) return;
 

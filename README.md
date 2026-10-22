@@ -6,14 +6,14 @@ Manutenção configurada no Codex a cada três dias, às 09:00 de Brasília. Ela
 
 Versão independente baseada em https://aion2-guides.info/en/ (Couga54 / AION 2 Guides).
 
-Sincronizada em 19/10/2026 com a versão da fonte atualizada até 19/10/2026. O repositório público anterior deixou de receber as mudanças de conteúdo após 10/10. Por isso, esta atualização usa uma captura das páginas públicas do novo domínio.
+Sincronizada em 22/10/2026 com a versão da fonte atualizada até 21/10/2026. O repositório público anterior deixou de receber as mudanças de conteúdo após 10/10. Por isso, esta atualização usa uma captura das páginas públicas do novo domínio.
 
 ## Conteúdo
 
-- 20 páginas em PT-BR: início, oito classes e onze páginas de guias/ferramentas, incluindo Novidades do jogo.
+- 24 páginas em PT-BR, incluindo início, oito classes, guias e ferramentas, Pets, Pet Tracker e medidores de DPS.
 - Versão em inglês para comparação.
 - Busca, temas claro/escuro, modos PvE/PvP/evolução, painéis Daevanion e controles locais de progresso.
-- Tradução inicial com Argos Translate en-pb 1.9 executado localmente. Interface e partes principais do Clérigo revisadas; textos restantes precisam de revisão editorial.
+- Tradução inicial com Argos Translate en-pb 1.9 executado localmente. Novidades de Ariel/Daevanion, Cleric, Sorcerer, Ranger, cronômetros e medidores de DPS traduzidas e revisadas manualmente em 22/10; textos anteriores mantêm revisão editorial parcial.
 - Nomes de habilidades, itens e chefes preservados em inglês quando usados como dados do cliente Global. Não é uma tradução oficial do jogo.
 
 ## Pastas e atualização

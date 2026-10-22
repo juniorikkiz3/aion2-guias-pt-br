@@ -1,7 +1,7 @@
 """Build the independent EN/PT-BR edition from the current published-source snapshot.
 
 The upstream public repository stopped updating on October 10. source-snapshot is
-the October 19 public HTML/assets capture; translations are deterministic and local.
+the October 21 public HTML/assets capture; translations are deterministic and local.
 No remote translation, tracking or feedback service runs in the published edition.
 """
 from pathlib import Path
@@ -50,7 +50,7 @@ def build_page(p,lang):
     for el in soup.select('[data-pt-api]'):el.attrs.pop('data-pt-api',None)
     soup.html['lang']=lang
     soup.html.attrs.pop('data-api',None)
-    for selector in ['.feedback','.report-open','.suggest-box','.report-box','.sec-vote','[data-helpful]','.egg-star','.egg-dlg','.main-heart','.ck','.ck-open']:
+    for selector in ['.feedback','.report-open','.suggest-box','.report-box','.sec-vote','[data-helpful]','.egg-star','.egg-dlg','.main-heart','.ck','.ck-open','.pt-ask','.pt-ask-list']:
         for el in soup.select(selector):el.decompose()
     for script in list(soup.find_all('script')):
         if script.get('type')=='application/json':continue
@@ -82,6 +82,8 @@ def build_page(p,lang):
             cfg=json.loads(script.string or '{}')
             if isinstance(cfg,dict) and cfg.get('lang')=='en':cfg['lang']=lang
             if lang=='pt-BR' and sid in ['up-cfg','tracker-config']:cfg=jtx(cfg)
+            if lang=='pt-BR' and sid=='timers-cfg':
+                for region in cfg.get('regions',[]):region[1]=tx(region[1])
             if sid=='tracker-config':
                 cfg['char_defaults']=list(dict.fromkeys(cfg.get('char_defaults',[])+['Principal']))
             if lang=='pt-BR' and sid=='up-cfg':cfg['months']=['jan','fev','mar','abr','mai','jun','jul','ago','set','out','nov','dez']
@@ -117,17 +119,18 @@ def build_page(p,lang):
     if footer:
         credit=footer.select_one('.foot-credit')
         if credit:credit.clear();credit.append(soupfrag('Edição independente em português baseada em <a href="https://aion2-guides.info/en/" target="_blank" rel="noopener">Couga54 / AION 2 Guides</a>. Créditos aos criadores nas fontes.' if lang=='pt-BR' else 'Independent Brazilian edition based on <a href="https://aion2-guides.info/en/" target="_blank" rel="noopener">Couga54 / AION 2 Guides</a>. Credit to the creators listed in Sources.'))
-        notice=soup.new_tag('p');notice.string='Fonte atualizada até 19/10/2026 · Sincronizada em 19/10/2026. Novidades de Pets, Pet Tracker e Soulbind revisadas em português; tradução anterior com revisão parcial. Nomes do cliente Global preservados.' if lang=='pt-BR' else 'Source updated through Oct 19, 2026 · Synced Oct 19, 2026. New Pets, Pet Tracker and Soulbind content reviewed in Portuguese; earlier translations partially reviewed. Global client names preserved.'
+        notice=soup.new_tag('p');notice.string='Fonte atualizada até 21/10/2026 · Sincronizada em 22/10/2026. Novidades de Ariel/Daevanion, Cleric, Sorcerer, Ranger, cronômetros e medidores de DPS revisadas em português; tradução anterior com revisão parcial. Nomes do cliente Global preservados.' if lang=='pt-BR' else 'Source updated through Oct 21, 2026 · Synced Oct 22, 2026. New Ariel/Daevanion, Cleric, Sorcerer, Ranger, timers and DPS meter content reviewed in Portuguese; earlier translations partially reviewed. Global client names preserved.'
         footer.append(notice)
     modal=soup.select_one('dialog.whatsnew:not(.feedback)')
     if modal:
-        modal['data-id']='ptbr-source-2026-10-19-pets'
+        modal['data-id']='ptbr-source-2026-10-22-ariel'
+        if soup.select_one('[data-changelog-seen]'):soup.select_one('[data-changelog-seen]')['data-changelog-seen']=modal['data-id']
         sec=modal.select_one('.wn-entry')
         if sec:
-            sec.clear();sec.append(soupfrag('<time class="wn-date" datetime="2026-10-19">19 out 2026</time><ul><li>Pets e Genus Insight: locais de monstros, dicas de farm, cubos pelo som e linhas para bloquear.</li><li>Pet Tracker: página do aplicativo para Windows e notas da versão 0.2.0 em português. O aplicativo oferece inglês e russo.</li><li>Progressão: atributos de Soulbind para cada espaço de equipamento.</li></ul>' if lang=='pt-BR' else '<time class="wn-date" datetime="2026-10-19">Oct 19, 2026</time><ul><li>Pets and Genus Insight: monster locations, farming tips, cubes by sound and lines to lock.</li><li>Windows Pet Tracker page and version 0.2.0 notes; the app supports English and Russian.</li><li>Progression: Soulbind stats for each equipment slot.</li></ul>'))
+            sec.clear();sec.append(soupfrag('<time class="wn-date" datetime="2026-10-22">22 out 2026</time><ul><li>Tabuleiro de Ariel com orçamento próprio de 60 cristais e cronômetros por região do servidor.</li><li>Builds de Cleric, Sorcerer e Ranger atualizadas com as novas configurações, prioridades e macros da fonte.</li><li>Nova página de medidores de DPS e Pet Tracker atualizado para a versão 0.3.6.</li></ul>' if lang=='pt-BR' else '<time class="wn-date" datetime="2026-10-22">Oct 22, 2026</time><ul><li>Ariel board with its separate 60-crystal budget and server-region timers.</li><li>Cleric, Sorcerer and Ranger builds updated with the source\'s new presets, priorities and macros.</li><li>New DPS meters page and Pet Tracker version 0.3.6.</li></ul>'))
     if rel=='changelog/':
         first=soup.select_one('.cl-entry')
-        if first:first.insert_before(soupfrag('<section class="wn-entry cl-entry"><time class="wn-date" datetime="2026-10-19">19 out 2026</time><ul><li>Edição em português sincronizada com a fonte de 19/10/2026: Pets, Genus Insight, Pet Tracker e Soulbind.</li></ul></section>' if lang=='pt-BR' else '<section class="wn-entry cl-entry"><time class="wn-date" datetime="2026-10-19">Oct 19, 2026</time><ul><li>Brazilian edition synced with the Oct 19 source: Pets, Genus Insight, Pet Tracker and Soulbind.</li></ul></section>'))
+        if first:first.insert_before(soupfrag('<section class="wn-entry cl-entry"><time class="wn-date" datetime="2026-10-22">22 out 2026</time><ul><li>Edição em português sincronizada com a fonte de 21/10/2026: Ariel/Daevanion, builds e macros de Cleric, Sorcerer e Ranger, cronômetros regionais, medidores de DPS e Pet Tracker 0.3.6.</li></ul></section>' if lang=='pt-BR' else '<section class="wn-entry cl-entry"><time class="wn-date" datetime="2026-10-22">Oct 22, 2026</time><ul><li>Brazilian edition synced with the Oct 21 source: Ariel/Daevanion, Cleric, Sorcerer and Ranger builds and macros, regional timers, DPS meters and Pet Tracker 0.3.6.</li></ul></section>'))
     if rel=='privacy/':
         from privacy_content import CONTENT,DESCRIPTION,TITLE
         soup.select_one('main').append(soupfrag(CONTENT[lang]))
@@ -135,7 +138,7 @@ def build_page(p,lang):
         for meta in soup.find_all('meta'):
             if meta.get('name')=='description' or meta.get('property')=='og:description':meta['content']=DESCRIPTION[lang]
             if meta.get('property')=='og:title':meta['content']=TITLE[lang]
-    text=str(soup).replace('a7ef0001','ptbr20261019pets').replace('60727ed0','ptbr20261019pets').replace('Â·','·')
+    text=str(soup).replace('a7ef0001','ptbr20261022ariel').replace('60727ed0','ptbr20261022ariel').replace('43057db0','ptbr20261022ariel').replace('Â·','·')
     write(lang+'/'+rel+'index.html',text)
 
 def main():
@@ -169,7 +172,7 @@ def main():
     write('index.html','<!doctype html><html lang="pt-BR"><meta charset="utf-8"><title>AION 2 — Guias em Português</title><script>var l="pt-BR";try{if(localStorage.getItem("lang")==="en")l="en"}catch(e){}location.replace(l+"/"+location.search+location.hash)</script><a href="pt-BR/">Abrir os guias em português</a></html>')
     write('404.html','<!doctype html><html lang="pt-BR"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>Página não encontrada — AION 2</title><body style="background:#0b0e14;color:#eee;font:20px system-ui;padding:10vw"><h1>Página não encontrada</h1><a style="color:#d9b36c" href="/pt-BR/">Voltar aos guias</a></body></html>')
     pages=[p.relative_to(OUT).as_posix().removesuffix('index.html') for lang in ['en','pt-BR'] for p in (OUT/lang).rglob('index.html')]
-    write('sitemap.xml','<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+''.join('<url><loc>'+ORIGIN+p+'</loc><lastmod>2026-10-19</lastmod></url>' for p in pages)+'</urlset>')
+    write('sitemap.xml','<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+''.join('<url><loc>'+ORIGIN+p+'</loc><lastmod>2026-10-22</lastmod></url>' for p in pages)+'</urlset>')
     write('robots.txt','User-agent: *\nAllow: /\nSitemap: '+ORIGIN+'sitemap.xml\n')
     (ROOT/'translations/unmatched.json').write_text(json.dumps(sorted(untranslated),ensure_ascii=False,indent=2),encoding='utf8')
     print(f'Built {len(pages)} pages from current source snapshot; {len(untranslated)} untranslated fragments to inspect.')

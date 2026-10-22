@@ -48,11 +48,26 @@ for sourcefile in (SNAP/'en').rglob('index.html'):
         if a:
             a=json.loads(a.string);b=json.loads(b.string)
             for key in ['energy','reset','unlocks','cls_slugs','guides']:assert a.get(key)==b.get(key),(lang,str(rel),key)
+        a=source.find('script',id='timers-cfg');b=target.find('script',id='timers-cfg')
+        if a:
+            a=json.loads(a.string);b=json.loads(b.string)
+            assert a['schedules']==b['schedules'],(lang,str(rel),'timer schedules')
+            assert [[r[0],*r[2:]] for r in a['regions']]==[[r[0],*r[2:]] for r in b['regions']],(lang,str(rel),'region ids and time zones')
+        for selector,attrs in [('[data-sk]',['data-sk']),('.dvb-panel',['data-tab-panel','data-dvb-nobudget']),('.dvb-n',['data-c','data-s','data-n','data-v','data-type']),('.hbar-col',['class'])]:
+            assert [[e.get(k) for k in attrs] for e in source.select(selector)]==[[e.get(k) for k in attrs] for e in target.select(selector)],(lang,str(rel),selector)
         # The new guide tables and release notes must retain every numeric value.
-        selector='main' if str(rel).replace('\\','/') in ['pets/index.html','pet-tracker/index.html'] else '#soulbind' if str(rel).replace('\\','/')=='progression/index.html' else None
+        selector='main' if str(rel).replace('\\','/') in ['pets/index.html','pet-tracker/index.html','dps-meters/index.html'] else '#soulbind' if str(rel).replace('\\','/')=='progression/index.html' else None
         if selector:
             def numbers(el):return Counter(re.findall(r'\d+(?:[.,:]\d+)*',el.get_text(' ',strip=True)))
             assert numbers(source.select_one(selector))==numbers(target.select_one(selector)),(lang,str(rel),'new content numbers')
+        if str(rel).replace('\\','/') in ['cleric/index.html','sorcerer/index.html','ranger/index.html']:
+            # Brazilian grouping/decimal punctuation may differ; values may not.
+            def localized_numbers(el):
+                values=re.findall(r'\d+(?:[.,:]\d+)*',el.get_text(' ',strip=True))
+                return Counter(re.sub(r'[.,]','',v) if re.fullmatch(r'\d{1,3}(?:[.,]\d{3})+',v) else v.replace(',','.') for v in values)
+            main=BeautifulSoup(str(source.main),'html.parser')
+            for e in main.select('.suggest-box,.sec-vote,[data-helpful]'):e.decompose()
+            assert localized_numbers(main)==localized_numbers(target.main),(lang,str(rel),'full guide numeric parity')
         # Macro order, timings and referenced skills retain the source structure.
         for selector in ['.macroseq .ms-n','.macroseq .ms-detail']:
             assert [e.get_text(strip=True) for e in source.select(selector)]==[e.get_text(strip=True) for e in target.select(selector)],(lang,str(rel),selector)

@@ -1,27 +1,17 @@
 {
-  "pages": 46,
+  "pages": 48,
   "missing_assets": [],
   "broken_links": [],
-  "date": "2026-10-19",
+  "date": "2026-10-22",
   "source": "https://aion2-guides.info/en/",
-  "source_updated": "2026-10-19",
-  "javascript_syntax": "passed: site.js, tracker.js, bosses.js and 2 unique inline scripts",
-  "source_data_parity": "passed for both languages: skill payloads, build choices, enabled modes, Daevanion ranges, weekly counters, energy/reset configuration",
+  "source_updated": "2026-10-21",
+  "javascript_syntax": "passed: all dist/assets/js/*.js and 2 unique inline scripts",
+  "source_data_parity": "passed for both languages: skill payloads/references, hotbar/macro order and timings, Ariel board nodes/routes/costs and independent budget, enabled modes, tracker limits/energy/reset, regional schedules/IDs/time zones",
   "progress_storage": "same aion2-tracker-v1 key; upstream migration logic retained",
   "browser_visual_qa": "unavailable: browser URL security policy blocked local preview",
-  "translation_review": "All new content manually reviewed; zero unmatched fragments. Earlier long-form translations remain partially reviewed.",
-  "images_decoded": 468,
-  "new_content_numbers": "exact numeric parity: Pets, Pet Tracker and progression Soulbind section in both languages",
-  "macro_sequences": "order and timing unchanged",
-  "privacy": "Own static-edition privacy page; original feedback, analytics and consent UI excluded; release notes remain the reviewed snapshot.",
-  "publication": {
-    "commit_sha": "a2fa92cea8d7ce9342c74ba16f96523e7ddd39e6",
-    "version_id": "appgprj_6acd48efc1a48191bfff48deb96c6011~appgver_378e90d1ffd08191b8f0a93e407332a9",
-    "version_number": 3,
-    "deployment_id": "appgdep_6ad621447ba48191b2ffa3124f6c61f6",
-    "status": "succeeded",
-    "published_at": "2026-10-19T13:55:41.970198+00:00",
-    "url": "https://aion2-guias-br.juniorikkix.chatgpt.site/pt-BR/"
-  },
-  "github_sync": "verified same published source commit"
+  "translation_review": "New or changed material manually translated and reviewed; zero unmatched fragments. Older long-form translations remain partially reviewed.",
+  "images_decoded": 473,
+  "new_content_numbers": "exact numeric parity: Pets, Pet Tracker, DPS meters and Soulbind; normalized full-guide parity for Cleric, Sorcerer and Ranger",
+  "macro_sequences": "matches the current source: hotbar order, referenced skills, macro steps and timing",
+  "privacy": "Own static-edition privacy page; original feedback, analytics and consent UI excluded; release notes remain the reviewed snapshot."
 }

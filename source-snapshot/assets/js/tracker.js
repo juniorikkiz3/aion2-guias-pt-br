@@ -14,10 +14,14 @@
   var T = CFG.t;
   var KEY = 'aion2-tracker-v1';
   var WEEK = 7 * 864e5;
-  var ANCHOR = Date.parse(CFG.reset.anchor);
+  // the week runs from the reset of the visitor's server region (site.js: store 'region'): global Wednesday 16:00 Seoul
+  // time, Korea and Taiwan Wednesday 05:00 local (site.json weekly_reset, timers)
+  var RS = CFG.reset;
+  try { var rg = localStorage.getItem('region'); if (RS[rg] && RS[rg].anchor) RS = RS[rg]; } catch (e) {}
+  var ANCHOR = Date.parse(RS.anchor);
   var EN = CFG.energy;
   var INTERVAL = EN.interval_min * 6e4;
-  var EA = Date.parse(EN.anchor || CFG.reset.anchor);   // a real energy tick; all others are interval apart
+  var EA = Date.parse(EN.anchor || RS.anchor);   // a real energy tick; all others are interval apart
   var ROSTER = !!document.querySelector('.roster-grid');   // weekly page: the roster may be empty
   var CLS = {};
   (CFG.cls_slugs || []).forEach(function (s, i) { CLS[s] = CFG.cls_names[i]; });
@@ -129,8 +133,8 @@
   function active() { return charById(state.active); }
 
   // ---- time --------------------------------------------------------------------
-  // Resets keep the local hour of the anchor in CFG.reset.tz (e.g. 10:00 Kyiv time), also after a daylight saving change.
-  var TZ = CFG.reset.tz, tzFmt = null;
+  // Resets keep the local hour of the anchor in the reset's tz (16:00 Seoul time), also after a daylight saving change.
+  var TZ = RS.tz, tzFmt = null;
   try { if (TZ) tzFmt = new Intl.DateTimeFormat('en-US', { timeZone: TZ, hourCycle: 'h23', year: 'numeric', month: 'numeric', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric' }); } catch (e) {}
   function tzOffset(t) {
     if (!tzFmt) return 0;
@@ -236,24 +240,35 @@
   }
   // counters of an item: the server's for shared items, else the character's
   function bag(li, c) { return li.dataset.scope === 'server' ? state.server.done : c.done; }
-  function weekPct(c) {
-    var done = 0, total = 0;
-    $$('.wk-item[data-scope="char"]').forEach(function (li) {
-      if (li.dataset.inactive || (li.dataset.il && c.il && +li.dataset.il > c.il)) return;   // not open (yet) for this character
-      var max = +li.dataset.max;
-      done += Math.min(max, c.done[li.dataset.id] || 0); total += max;
-    });
-    return total ? Math.round(done / total * 100) : 0;
+  // an item that does not count for this character: not open (yet), or PvP while the character's PvP switch is off
+  function itemOff(li, c) {
+    return !!(li.dataset.inactive || (li.dataset.il && c.il && +li.dataset.il > c.il) || (li.dataset.pvp && c.noPvp));
   }
+  // the week's %: the mean of the open items, each weighs the same (30 arena wins count as much as one Nightmare run)
+  function share(lis, c) {
+    var sum = 0, n = 0;
+    lis.forEach(function (li) {
+      if (itemOff(li, c)) return;
+      var max = +li.dataset.max;
+      sum += Math.min(max, bag(li, c)[li.dataset.id] || 0) / max; n++;
+    });
+    return n ? Math.round(sum / n * 100) : 0;
+  }
+  function weekPct(c) { return share($$('.wk-item[data-scope="char"]'), c); }
 
   function renderWeekly() {
     var c = active();
-    var done = 0, total = 0;
+    $$('.wk-group[data-pvp]').forEach(function (g) {
+      var sw = $('.wk-pvp-switch', g);
+      if (sw) sw.setAttribute('aria-checked', c.noPvp ? 'false' : 'true');
+      g.classList.toggle('is-off', !!c.noPvp);
+      var note = $('.wk-pvp-off-note', g);
+      if (note) note.hidden = !c.noPvp;
+    });
     $$('.wk-item').forEach(function (li) {
       var id = li.dataset.id, max = +li.dataset.max, n = Math.min(max, bag(li, c)[id] || 0);
-      var locked = !!(li.dataset.inactive || (li.dataset.il && c.il && +li.dataset.il > c.il));
+      var locked = itemOff(li, c);
       li.classList.toggle('is-locked', locked);
-      if (!locked) { done += n; total += max; }
       li.classList.toggle('is-done', n >= max);
       $$('button', li).forEach(function (x) { x.disabled = locked; });
       var b = $('.wk-count b', li);
@@ -261,9 +276,8 @@
       $$('.wk-pips i', li).forEach(function (p, i) { p.classList.toggle('on', i < n); });
       $$('.wk-check', li).forEach(function (chk) { chk.setAttribute('aria-pressed', n >= max ? 'true' : 'false'); });
     });
-    var dn = $('.wk-done-n'), tn = $('.wk-total-n');
-    if (dn) dn.textContent = done;
-    if (tn) tn.textContent = total;
+    var dn = $('.wk-done-n');
+    if (dn) dn.textContent = share($$('.wk-item'), c);
   }
 
   function renderWeek1() {
@@ -304,7 +318,7 @@
 
     var f = $('.energy-form', card);
     if (f && document.activeElement !== f.v) f.v.value = e.unset ? '' : e.v;
-    $('.energy-chest', card).disabled = e.v < EN.chest;
+    $$('.energy-chest', card).forEach(function (b) { b.disabled = e.v < EN.chest * (+b.dataset.n || 1); });
     var ch = $('.energy-charged-in', card);
     if (ch && document.activeElement !== ch) ch.value = c.charged || 0;
   }
@@ -518,12 +532,15 @@
 
     var card = $('.energy-card');
     if (card) {
-      $('.energy-chest', card).addEventListener('click', function () {
-        var c = active(), now = Date.now();
-        settleEnergy(c, now);
-        if (c.energy.v < EN.chest) { renderEnergy(now); return; } // not enough for a chest
-        setEnergy(c, c.energy.v - EN.chest, now);
-        save(); renderEnergy(now);
+      // a chest costs EN.chest; the ×2 button opens two at once
+      $$('.energy-chest', card).forEach(function (b) {
+        b.addEventListener('click', function () {
+          var c = active(), now = Date.now(), cost = EN.chest * (+b.dataset.n || 1);
+          settleEnergy(c, now);
+          if (c.energy.v < cost) { renderEnergy(now); return; } // not enough for them
+          setEnergy(c, c.energy.v - cost, now);
+          save(); renderEnergy(now);
+        });
       });
       $('.energy-form', card).addEventListener('submit', function (ev) {
         ev.preventDefault();
@@ -537,6 +554,16 @@
       });
     }
 
+    // PvP switch (per character): off = the arena is greyed out and not counted in the week's %
+    $$('.wk-pvp-switch').forEach(function (sw) {
+      requestAnimationFrame(function () { requestAnimationFrame(function () { sw.classList.add('is-ready'); }); });
+      sw.addEventListener('click', function () {
+        var c = active();
+        if (!c) return;
+        c.noPvp = !c.noPvp;
+        save(); renderAll();
+      });
+    });
     // membership switch: one flag for the account; transitions are switched on only after the first paint, so the
     // saved state shows without the thumb sliding in
     var mem = $('.mem-switch');

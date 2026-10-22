@@ -12,16 +12,18 @@
   "status": "configured",
   "initial_site_commit": "63557936be3641445145dda66a007b2905b12f77",
   "last_maintenance": {
-    "date": "2026-10-19",
-    "source_updated": "2026-10-19",
+    "date": "2026-10-22",
+    "source_updated": "2026-10-21",
     "changes": [
-      "Pets and Genus Insight guide",
-      "Pet Tracker Windows page and reviewed v0.2.0 notes",
-      "Soulbind stats by equipment slot",
-      "Static edition privacy page and self-hosted fonts"
+      "Ariel board with separate 60-crystal budget",
+      "Cleric endgame presets with and without Chanter",
+      "Sorcerer EUTOPIA/Krix Domi build and macro update",
+      "Ranger JOHNPAL macro and stigma update",
+      "Server-region timers",
+      "DPS meters page",
+      "Pet Tracker 0.3.6 and pet wiki links"
     ],
-    "validation": "passed; browser visual QA unavailable",
-    "github_verified_commit": "a2fa92cea8d7ce9342c74ba16f96523e7ddd39e6"
+    "validation": "passed; browser visual QA unavailable"
   },
   "last_publication": {
     "commit_sha": "a2fa92cea8d7ce9342c74ba16f96523e7ddd39e6",
