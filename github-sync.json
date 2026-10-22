@@ -23,15 +23,16 @@
       "DPS meters page",
       "Pet Tracker 0.3.6 and pet wiki links"
     ],
-    "validation": "passed; browser visual QA unavailable"
+    "validation": "passed; browser visual QA unavailable",
+    "github_verified_commit": "dd5796eb4c90d7a977e67fb05cb05da6ea5ebab1"
   },
   "last_publication": {
-    "commit_sha": "a2fa92cea8d7ce9342c74ba16f96523e7ddd39e6",
-    "version_id": "appgprj_6acd48efc1a48191bfff48deb96c6011~appgver_378e90d1ffd08191b8f0a93e407332a9",
-    "version_number": 3,
-    "deployment_id": "appgdep_6ad621447ba48191b2ffa3124f6c61f6",
+    "commit_sha": "dd5796eb4c90d7a977e67fb05cb05da6ea5ebab1",
+    "version_id": "appgprj_6acd48efc1a48191bfff48deb96c6011~appgver_b1db31c190508191a7df869213411b0d",
+    "version_number": 4,
+    "deployment_id": "appgdep_6ada85c298b88191830f0676d9b950ee",
     "status": "succeeded",
-    "published_at": "2026-10-19T13:55:41.970198+00:00",
+    "published_at": "2026-10-22T21:53:27.849965+00:00",
     "url": "https://aion2-guias-br.juniorikkix.chatgpt.site/pt-BR/"
   }
 }
