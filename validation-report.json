@@ -2,26 +2,17 @@
   "pages": 48,
   "missing_assets": [],
   "broken_links": [],
-  "date": "2026-10-22",
+  "date": "2026-10-25",
   "source": "https://aion2-guides.info/en/",
-  "source_updated": "2026-10-21",
+  "source_updated": "2026-10-23",
   "javascript_syntax": "passed: all dist/assets/js/*.js and 2 unique inline scripts",
   "source_data_parity": "passed for both languages: skill payloads/references, hotbar/macro order and timings, Ariel board nodes/routes/costs and independent budget, enabled modes, tracker limits/energy/reset, regional schedules/IDs/time zones",
   "progress_storage": "same aion2-tracker-v1 key; upstream migration logic retained",
   "browser_visual_qa": "unavailable: browser URL security policy blocked local preview",
-  "translation_review": "New or changed material manually translated and reviewed; zero unmatched fragments. Older long-form translations remain partially reviewed.",
+  "translation_review": "DPS meter list/changelog manually reviewed; zero unmatched fragments. Earlier long-form translations remain partially reviewed.",
   "images_decoded": 473,
   "new_content_numbers": "exact numeric parity: Pets, Pet Tracker, DPS meters and Soulbind; normalized full-guide parity for Cleric, Sorcerer and Ranger",
   "macro_sequences": "matches the current source: hotbar order, referenced skills, macro steps and timing",
   "privacy": "Own static-edition privacy page; original feedback, analytics and consent UI excluded; release notes remain the reviewed snapshot.",
-  "publication": {
-    "commit_sha": "dd5796eb4c90d7a977e67fb05cb05da6ea5ebab1",
-    "version_id": "appgprj_6acd48efc1a48191bfff48deb96c6011~appgver_b1db31c190508191a7df869213411b0d",
-    "version_number": 4,
-    "deployment_id": "appgdep_6ada85c298b88191830f0676d9b950ee",
-    "status": "succeeded",
-    "published_at": "2026-10-22T21:53:27.849965+00:00",
-    "url": "https://aion2-guias-br.juniorikkix.chatgpt.site/pt-BR/"
-  },
-  "github_sync": "verified same published source commit"
+  "source_changes": "NotMeter removed from DPS meter list and count corrected from seven other meters to six. Source sk-data, timers-cfg, tracker-config, up-cfg and all captured assets unchanged from prior sync."
 }

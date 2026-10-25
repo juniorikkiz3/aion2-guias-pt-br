@@ -12,19 +12,13 @@
   "status": "configured",
   "initial_site_commit": "63557936be3641445145dda66a007b2905b12f77",
   "last_maintenance": {
-    "date": "2026-10-22",
-    "source_updated": "2026-10-21",
+    "date": "2026-10-25",
+    "source_updated": "2026-10-23",
     "changes": [
-      "Ariel board with separate 60-crystal budget",
-      "Cleric endgame presets with and without Chanter",
-      "Sorcerer EUTOPIA/Krix Domi build and macro update",
-      "Ranger JOHNPAL macro and stigma update",
-      "Server-region timers",
-      "DPS meters page",
-      "Pet Tracker 0.3.6 and pet wiki links"
+      "DPS meter list aligned with source: NotMeter removed",
+      "Changelog corrected to six other DPS meters"
     ],
-    "validation": "passed; browser visual QA unavailable",
-    "github_verified_commit": "dd5796eb4c90d7a977e67fb05cb05da6ea5ebab1"
+    "validation": "passed; browser visual QA unavailable"
   },
   "last_publication": {
     "commit_sha": "dd5796eb4c90d7a977e67fb05cb05da6ea5ebab1",
