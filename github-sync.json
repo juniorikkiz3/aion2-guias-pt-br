@@ -18,15 +18,16 @@
       "DPS meter list aligned with source: NotMeter removed",
       "Changelog corrected to six other DPS meters"
     ],
-    "validation": "passed; browser visual QA unavailable"
+    "validation": "passed; browser visual QA unavailable",
+    "github_verified_commit": "dc5d8fbd162d56bf73ef47874671a59f9f4938d6"
   },
   "last_publication": {
-    "commit_sha": "dd5796eb4c90d7a977e67fb05cb05da6ea5ebab1",
-    "version_id": "appgprj_6acd48efc1a48191bfff48deb96c6011~appgver_b1db31c190508191a7df869213411b0d",
-    "version_number": 4,
-    "deployment_id": "appgdep_6ada85c298b88191830f0676d9b950ee",
+    "commit_sha": "dc5d8fbd162d56bf73ef47874671a59f9f4938d6",
+    "version_id": "appgprj_6acd48efc1a48191bfff48deb96c6011~appgver_1adb39ed474c8191b5a511b70ac242c9",
+    "version_number": 5,
+    "deployment_id": "appgdep_6ade08c8b69881918059956b68055124",
     "status": "succeeded",
-    "published_at": "2026-10-22T21:53:27.849965+00:00",
+    "published_at": "2026-10-25T13:49:18.679233+00:00",
     "url": "https://aion2-guias-br.juniorikkix.chatgpt.site/pt-BR/"
   }
 }
