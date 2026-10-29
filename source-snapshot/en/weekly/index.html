@@ -19,7 +19,7 @@
 <meta property="og:title" content="AION 2 Weekly Tracker — Entries &amp; Odyle Energy">
 <meta property="og:description" content="Track AION 2 weekly entries and Odyle energy for all your characters. Resets itself every week; saved in your browser.">
 <meta property="og:url" content="https://aion2-guides.info/en/weekly/">
-<meta property="og:image" content="https://aion2-guides.info/assets/og/weekly-en.jpg?v=43057db0">
+<meta property="og:image" content="https://aion2-guides.info/assets/og/weekly-en.jpg?v=1248fb6e">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image"><link rel="icon" href="../../favicon.ico" sizes="48x48">
@@ -63,7 +63,7 @@
     if (c && c.v === 'granted' && Date.now() - c.t < 180 * 864e5) a2GA();
   } catch (e) {}
 </script>
-<link rel="stylesheet" href="../../assets/css/site.css?v=43057db0">
+<link rel="stylesheet" href="../../assets/css/site.css?v=1248fb6e">
 </head>
 <body class="page-tracker page-weekly">
 <a class="skip-link" href="#main">Skip to content</a>
@@ -286,20 +286,43 @@
           <h2 id="h-il" class="card-title">Content by item level</h2>
           <label class="il-input"><span>Item level</span><input type="number" class="il-in" min="0" max="9999" inputmode="numeric" placeholder="1650"></label>
           <ol class="il-list">
-<li data-il="700"><b>700</b><span>Krao Cave Conquest, Draupnir</span></li><li data-il="1000"><b>1000</b><span>Ascension Trial: Easy</span></li><li data-il="1400"><b>1400</b><span>Vakron Sky Island, Urugugu Canyon Conquest</span></li><li data-il="1500"><b>1500</b><span>Ascension Trial: Normal</span></li><li data-il="1600"><b>1600</b><span>★1 Transcendence: Deus Research Base, Shattered Arkanis</span></li><li data-il="1900"><b>1900</b><span>★2 Transcendence</span></li><li data-il="2000"><b>2000</b><span>Ascension Trial: Hard</span></li><li data-il="2100"><b>2100</b><span>Ferocious Horn Den, Fire Temple Conquest</span></li><li data-il="2200"><b>2200</b><span>★3 Transcendence</span></li><li data-il="2500"><b>2500</b><span>★4 Transcendence, Ascension Trial: Extreme</span></li><li data-il="2800"><b>2800</b><span>Dying Dramata&#39;s Nest, Cradle of Nihility; Ludra raid (not active yet)</span></li><li data-il="3000"><b>3000</b><span>Hall of Illusion, Azure Breath Island</span></li><li data-il="3500"><b>3500</b><span>Corroded Decontamination Facility (raid)</span></li>          </ol>
+<li data-il="700"><b>700</b><span>Krao Cave Conquest, Draupnir</span></li><li data-il="1000"><b>1000</b><span>Ascension Trial: Easy</span></li><li data-il="1400"><b>1400</b><span>Vakron Sky Island, Urugugu Canyon Conquest</span></li><li data-il="1500"><b>1500</b><span>Ascension Trial: Normal</span></li><li data-il="1600"><b>1600</b><span>★1 Transcendence: Deus Research Base, Shattered Arkanis</span></li><li data-il="1900"><b>1900</b><span>★2 Transcendence</span></li><li data-il="2000"><b>2000</b><span>Ascension Trial: Hard</span></li><li data-il="2100"><b>2100</b><span>Ferocious Horn Den, Fire Temple Conquest</span></li><li data-il="2200"><b>2200</b><span>★3 Transcendence</span></li><li data-il="2500"><b>2500</b><span>★4 Transcendence, Ascension Trial: Extreme</span></li><li data-il="2700"><b>2700</b><span>Urugugu Canyon, Vakron Sky Island: Hard</span></li><li data-il="2800"><b>2800</b><span>Dying Dramata&#39;s Nest, Cradle of Nihility; Ludra raid (not active yet)</span></li><li data-il="3000"><b>3000</b><span>Hall of Illusion, Azure Breath Island</span></li><li data-il="3500"><b>3500</b><span>Corroded Decontamination Facility (raid)</span></li>          </ol>
           <p class="il-next"></p>
           <a class="il-route" href="../../en/progression/">Item level route →</a>
         </section>
       </aside>
 
-      <div class="wk-groups"><p class="wk-summary"><b class="wk-done-n">0</b>% done this week</p>
-        <section class="wk-group wk-scope-server" aria-labelledby="h-wk-server">
+      <div class="wk-groups">
+        <section class="wk-group wk-scope-char" aria-labelledby="h-wk-daily">
           <div class="wk-group-head">
-            <h2 id="h-wk-server" class="card-title">Shared on the server</h2>
-            <span class="wk-tag wk-tag-server">Server</span>          </div>
+            <h2 id="h-wk-daily" class="card-title">Daily</h2><span class="wk-tag wk-tag-day wk-day-left">Daily</span>          </div>
+          <ul class="wk-list">
+            <li class="wk-item" data-id="duty-missions" data-max="5" data-scope="server" data-period="day">
+              <div class="wk-text"><span class="wk-name">Duty Missions <em class="wk-il wk-sc-server">Server</em></span><span class="wk-note">5 a day for the whole server.</span></div>
+              <div class="wk-ctrl">
+                <button type="button" class="wk-btn" data-d="-1" aria-label="−1">−</button>
+                <span class="wk-count"><b>0</b>/5</span>
+                <button type="button" class="wk-btn" data-d="1" aria-label="+1">+</button>
+                <button type="button" class="wk-check wk-fill" aria-pressed="false" aria-label="Mark all done" title="Mark all done"></button>
+              </div>
+              <div class="wk-pips" aria-hidden="true"><i data-n="1"></i><i data-n="2"></i><i data-n="3"></i><i data-n="4"></i><i data-n="5"></i></div>
+            </li>
+            <li class="wk-item" data-id="supply-requests" data-max="1" data-scope="char" data-period="day">
+              <div class="wk-text"><span class="wk-name">Supply Requests</span><span class="wk-note">Tick it once you have done all you can today.</span></div>
+              <div class="wk-ctrl"><button type="button" class="wk-check" aria-pressed="false" aria-label="Supply Requests"></button></div>
+            </li>
+            <li class="wk-item" data-id="attendance" data-max="1" data-scope="account" data-period="day">
+              <div class="wk-text"><span class="wk-name">Attendance reward <em class="wk-il wk-sc-account">Account</em></span><span class="wk-note">Once a day for the whole account.</span></div>
+              <div class="wk-ctrl"><button type="button" class="wk-check" aria-pressed="false" aria-label="Attendance reward"></button></div>
+            </li>
+          </ul>
+        </section>
+<p class="wk-summary"><b class="wk-done-n">0</b>% done this week</p>        <section class="wk-group wk-scope-server" aria-labelledby="h-wk-server">
+          <div class="wk-group-head">
+            <h2 id="h-wk-server" class="card-title">Shared on the server</h2>            <span class="wk-tag wk-tag-server">Server</span>          </div>
 <p class="wk-group-note">One counter for all your characters on the server.</p>          <ul class="wk-list">
             <li class="wk-item" data-id="daily-dungeon" data-max="14" data-scope="server">
-              <div class="wk-text"><span class="wk-name">Daily Dungeon</span><span class="wk-note">14 entries a week for the whole server — a run on an alt uses up your main&#39;s. Weekly despite the name.</span></div>
+              <div class="wk-text"><span class="wk-name">Daily Dungeon</span><span class="wk-note">14 entries a week for the whole server — a run on an alt uses up your main&#39;s. Weekly despite the name. Odylium Repository (Soul Crystals) takes from the same entries.</span></div>
               <div class="wk-ctrl">
                 <button type="button" class="wk-btn" data-d="-1" aria-label="−1">−</button>
                 <span class="wk-count"><b>0</b>/14</span>
@@ -307,6 +330,16 @@
                 <button type="button" class="wk-check wk-fill" aria-pressed="false" aria-label="Mark all done" title="Mark all done"></button>
               </div>
               <div class="wk-pips" aria-hidden="true"><i data-n="1"></i><i data-n="2"></i><i data-n="3"></i><i data-n="4"></i><i data-n="5"></i><i data-n="6"></i><i data-n="7"></i><i data-n="8"></i><i data-n="9"></i><i data-n="10"></i><i data-n="11"></i><i data-n="12"></i><i data-n="13"></i><i data-n="14"></i></div>
+            </li>
+            <li class="wk-item" data-id="dimensional-invasion" data-max="7" data-scope="server">
+              <div class="wk-text"><span class="wk-name">Dimensional Invasion reward key</span><span class="wk-note">1 a day for the whole server, 7 a week.</span></div>
+              <div class="wk-ctrl">
+                <button type="button" class="wk-btn" data-d="-1" aria-label="−1">−</button>
+                <span class="wk-count"><b>0</b>/7</span>
+                <button type="button" class="wk-btn" data-d="1" aria-label="+1">+</button>
+                <button type="button" class="wk-check wk-fill" aria-pressed="false" aria-label="Mark all done" title="Mark all done"></button>
+              </div>
+              <div class="wk-pips" aria-hidden="true"><i data-n="1"></i><i data-n="2"></i><i data-n="3"></i><i data-n="4"></i><i data-n="5"></i><i data-n="6"></i><i data-n="7"></i></div>
             </li>
             <li class="wk-item" data-id="shugo-festa" data-max="21" data-scope="server">
               <div class="wk-text"><span class="wk-name">Shugo Festival keys used</span><span class="wk-note">+3 a day for the whole server; they stack to 7, or 21 with the membership — spend them before they cap. Keys from items go to a separate stock of up to 30.</span></div>
@@ -350,10 +383,95 @@
             </li>
           </ul>
         </section>
+        <section class="wk-group wk-scope-server" data-until="2026-11-04T07:00:00Z" aria-labelledby="h-wk-halloween">
+          <div class="wk-group-head">
+            <h2 id="h-wk-halloween" class="card-title">Halloween Coin Merchant</h2><span class="wk-tag wk-tag-until">until Nov 4</span>          </div>
+<p class="wk-group-note">One counter for all your characters on the server.</p>          <ul class="wk-list">
+            <li class="wk-item" data-id="hw-odyle" data-max="4" data-scope="server">
+              <div class="wk-text"><span class="wk-name">Odyle Energy</span><span class="wk-note">10 Pumpkin Coins each. From level 45.</span></div>
+              <div class="wk-ctrl">
+                <button type="button" class="wk-btn" data-d="-1" aria-label="−1">−</button>
+                <span class="wk-count"><b>0</b>/4</span>
+                <button type="button" class="wk-btn" data-d="1" aria-label="+1">+</button>
+                <button type="button" class="wk-check wk-fill" aria-pressed="false" aria-label="Mark all done" title="Mark all done"></button>
+              </div>
+              <div class="wk-pips" aria-hidden="true"><i data-n="1"></i><i data-n="2"></i><i data-n="3"></i><i data-n="4"></i></div>
+            </li>
+            <li class="wk-item" data-id="hw-rift" data-max="2" data-scope="server">
+              <div class="wk-text"><span class="wk-name">Lower Abyss Rift Stone</span><span class="wk-note">30 Pumpkin Coins each. From level 45.</span></div>
+              <div class="wk-ctrl">
+                <button type="button" class="wk-btn" data-d="-1" aria-label="−1">−</button>
+                <span class="wk-count"><b>0</b>/2</span>
+                <button type="button" class="wk-btn" data-d="1" aria-label="+1">+</button>
+                <button type="button" class="wk-check wk-fill" aria-pressed="false" aria-label="Mark all done" title="Mark all done"></button>
+              </div>
+              <div class="wk-pips" aria-hidden="true"><i data-n="1"></i><i data-n="2"></i></div>
+            </li>
+            <li class="wk-item" data-id="hw-skin" data-max="5" data-scope="server">
+              <div class="wk-text"><span class="wk-name">Skin Chest (10 times)</span><span class="wk-note">15 Pumpkin Coins each.</span></div>
+              <div class="wk-ctrl">
+                <button type="button" class="wk-btn" data-d="-1" aria-label="−1">−</button>
+                <span class="wk-count"><b>0</b>/5</span>
+                <button type="button" class="wk-btn" data-d="1" aria-label="+1">+</button>
+                <button type="button" class="wk-check wk-fill" aria-pressed="false" aria-label="Mark all done" title="Mark all done"></button>
+              </div>
+              <div class="wk-pips" aria-hidden="true"><i data-n="1"></i><i data-n="2"></i><i data-n="3"></i><i data-n="4"></i><i data-n="5"></i></div>
+            </li>
+            <li class="wk-item" data-id="hw-res" data-max="10" data-scope="server">
+              <div class="wk-text"><span class="wk-name">Resurrection Spiritstone</span><span class="wk-note">2 Pumpkin Coins each.</span></div>
+              <div class="wk-ctrl">
+                <button type="button" class="wk-btn" data-d="-1" aria-label="−1">−</button>
+                <span class="wk-count"><b>0</b>/10</span>
+                <button type="button" class="wk-btn" data-d="1" aria-label="+1">+</button>
+                <button type="button" class="wk-check wk-fill" aria-pressed="false" aria-label="Mark all done" title="Mark all done"></button>
+              </div>
+              <div class="wk-pips" aria-hidden="true"><i data-n="1"></i><i data-n="2"></i><i data-n="3"></i><i data-n="4"></i><i data-n="5"></i><i data-n="6"></i><i data-n="7"></i><i data-n="8"></i><i data-n="9"></i><i data-n="10"></i></div>
+            </li>
+            <li class="wk-item" data-id="hw-clear" data-max="7" data-scope="server">
+              <div class="wk-text"><span class="wk-name">Instant Clear Ticket: Daily Dungeon</span><span class="wk-note">3 Pumpkin Coins each.</span></div>
+              <div class="wk-ctrl">
+                <button type="button" class="wk-btn" data-d="-1" aria-label="−1">−</button>
+                <span class="wk-count"><b>0</b>/7</span>
+                <button type="button" class="wk-btn" data-d="1" aria-label="+1">+</button>
+                <button type="button" class="wk-check wk-fill" aria-pressed="false" aria-label="Mark all done" title="Mark all done"></button>
+              </div>
+              <div class="wk-pips" aria-hidden="true"><i data-n="1"></i><i data-n="2"></i><i data-n="3"></i><i data-n="4"></i><i data-n="5"></i><i data-n="6"></i><i data-n="7"></i></div>
+            </li>
+            <li class="wk-item" data-id="hw-nm" data-max="3" data-scope="server">
+              <div class="wk-text"><span class="wk-name">Nightmare Dungeon Challenge Ticket</span><span class="wk-note">7 Pumpkin Coins each.</span></div>
+              <div class="wk-ctrl">
+                <button type="button" class="wk-btn" data-d="-1" aria-label="−1">−</button>
+                <span class="wk-count"><b>0</b>/3</span>
+                <button type="button" class="wk-btn" data-d="1" aria-label="+1">+</button>
+                <button type="button" class="wk-check wk-fill" aria-pressed="false" aria-label="Mark all done" title="Mark all done"></button>
+              </div>
+              <div class="wk-pips" aria-hidden="true"><i data-n="1"></i><i data-n="2"></i><i data-n="3"></i></div>
+            </li>
+            <li class="wk-item" data-id="hw-shugo" data-max="3" data-scope="server">
+              <div class="wk-text"><span class="wk-name">Shugo Festival Reward Key</span><span class="wk-note">7 Pumpkin Coins each.</span></div>
+              <div class="wk-ctrl">
+                <button type="button" class="wk-btn" data-d="-1" aria-label="−1">−</button>
+                <span class="wk-count"><b>0</b>/3</span>
+                <button type="button" class="wk-btn" data-d="1" aria-label="+1">+</button>
+                <button type="button" class="wk-check wk-fill" aria-pressed="false" aria-label="Mark all done" title="Mark all done"></button>
+              </div>
+              <div class="wk-pips" aria-hidden="true"><i data-n="1"></i><i data-n="2"></i><i data-n="3"></i></div>
+            </li>
+            <li class="wk-item" data-id="hw-candy" data-max="3" data-scope="server">
+              <div class="wk-text"><span class="wk-name">Candy Keys: Red, Yellow, Blue</span><span class="wk-note">Not from the merchant: Substance Morph, 60 Candy Key Fragments each (they drop in Expedition and Transcendence), each colour once a week. Open the candies in towns.</span></div>
+              <div class="wk-ctrl">
+                <button type="button" class="wk-btn" data-d="-1" aria-label="−1">−</button>
+                <span class="wk-count"><b>0</b>/3</span>
+                <button type="button" class="wk-btn" data-d="1" aria-label="+1">+</button>
+                <button type="button" class="wk-check wk-fill" aria-pressed="false" aria-label="Mark all done" title="Mark all done"></button>
+              </div>
+              <div class="wk-pips" aria-hidden="true"><i data-n="1"></i><i data-n="2"></i><i data-n="3"></i></div>
+            </li>
+          </ul>
+        </section>
         <section class="wk-group wk-scope-char" aria-labelledby="h-wk-dungeons">
           <div class="wk-group-head">
-            <h2 id="h-wk-dungeons" class="card-title">Dungeons</h2>
-            <span class="wk-tag wk-tag-char">Per character</span>          </div>
+            <h2 id="h-wk-dungeons" class="card-title">Dungeons</h2>            <span class="wk-tag wk-tag-char">Per character</span>          </div>
           <ul class="wk-list">
             <li class="wk-item" data-id="nightmare" data-max="14" data-scope="char">
               <div class="wk-text"><span class="wk-name">Nightmare</span><span class="wk-note">+2 attempts a day, bank up to 14; the first boss from 1,000 item level.</span></div>
@@ -389,8 +507,7 @@
         </section>
         <section class="wk-group wk-scope-char" data-pvp="1" aria-labelledby="h-wk-pvp">
           <div class="wk-group-head">
-            <h2 id="h-wk-pvp" class="card-title">PvP</h2>
-            <span class="wk-tag wk-tag-char">Per character</span><span class="wk-pvp-off-note" hidden>Not counted</span>
+            <h2 id="h-wk-pvp" class="card-title">PvP</h2>            <span class="wk-tag wk-tag-char">Per character</span><span class="wk-pvp-off-note" hidden>Not counted</span>
             <button type="button" class="wk-switch wk-pvp-switch" role="switch" aria-checked="true" title="Off: the arena is not counted in this character&#39;s week">
               <span class="wk-switch-label">Enabled</span>
               <span class="wk-switch-track" aria-hidden="true"><span class="wk-switch-thumb"></span></span>
@@ -440,8 +557,7 @@
         </section>
         <section class="wk-group wk-scope-char" aria-labelledby="h-wk-resources">
           <div class="wk-group-head">
-            <h2 id="h-wk-resources" class="card-title">Energy &amp; resources</h2>
-            <span class="wk-tag wk-tag-char">Per character</span>          </div>
+            <h2 id="h-wk-resources" class="card-title">Energy &amp; resources</h2>            <span class="wk-tag wk-tag-char">Per character</span>          </div>
           <ul class="wk-list">
             <li class="wk-item" data-id="odyle-craft" data-max="4" data-scope="char">
               <div class="wk-text"><span class="wk-name">Odyle energy craft (Substance Morph)</span><span class="wk-note">40 energy each; 4 a week for this character.</span></div>
@@ -470,8 +586,8 @@
     </div>
 <p class="report-box"><span class="helpful" data-helpful hidden><button type="button" class="btn btn-ghost btn-sm hp-b" data-v="1" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg><span>Like this page</span></button></span></p>  </div>
 </main>
-<script type="application/json" id="tracker-config">{"char_defaults": ["Main", "\u041e\u0441\u043d\u043e\u0432\u0430", "\u041e\u0441\u043d\u043e\u0432\u0430", "Ana", "\u30e1\u30a4\u30f3"], "cls_names": ["Gladiator", "Ranger", "Templar", "Assassin", "Sorcerer", "Spiritmaster", "Cleric", "Chanter"], "cls_slugs": ["gladiator", "ranger", "templar", "assassin", "sorcerer", "elementalist", "cleric", "chanter"], "energy": {"anchor": "2026-10-13T19:00:00Z", "cap": 560, "cap_member": 840, "chest": 40, "interval_min": 180, "regen": 15}, "guides": ["gladiator", "ranger", "templar", "assassin", "sorcerer", "elementalist", "cleric", "chanter"], "lang": "en", "reset": {"anchor": "2026-09-30T07:00:00Z", "confirmed": true, "kr": {"anchor": "2026-09-29T20:00:00Z", "tz": "Asia/Seoul"}, "tw": {"anchor": "2026-09-29T21:00:00Z", "tz": "Asia/Taipei"}, "tz": "Asia/Seoul"}, "root": "../../", "t": {"char_class_none": "No class", "char_default": "Main", "char_delete": "Delete", "char_delete_confirm": "Delete this character and all its progress?", "energy_at_cap": "At the cap \u2014 regeneration is wasted, spend it", "energy_full": "full", "energy_next": "next +{n} in", "energy_next_at": "next +{n} at {time}", "notify_energy": "Odyle energy is full", "units": ["d", "h", "m", "s"], "wk_add": "Add character", "wk_add_first": "Add your first character", "wk_del_text": "Its energy, item level and weekly progress will be gone. This can\u0027t be undone.", "wk_del_title": "Delete {name}?", "wk_energy_unset": "enter your energy", "wk_energy_unset_long": "Enter the energy you have in the game now \u2014 the page counts on from there.", "wk_from": "from {il}", "wk_full": "Full \u2014 spend it", "wk_full_in": "full in {t}", "wk_guide": "{cls} guide", "wk_il": "Item level", "wk_il_short": "IL", "wk_name_needed": "Enter a name", "wk_next_tick": "Next +{n} for everyone at {time}", "wk_num_range": "Enter a whole number from 0 to {max}", "wk_select": "Selected", "wk_unlocks_next": "Next: +{d} item level", "wk_unlocks_none": "Enter the item level to see what is open.", "wk_week_pct": "{p}% of the week"}, "unlock_names": ["Krao Cave Conquest, Draupnir", "Ascension Trial: Easy", "Vakron Sky Island, Urugugu Canyon Conquest", "Ascension Trial: Normal", "\u26051 Transcendence: Deus Research Base, Shattered Arkanis", "\u26052 Transcendence", "Ascension Trial: Hard", "Ferocious Horn Den, Fire Temple Conquest", "\u26053 Transcendence", "\u26054 Transcendence, Ascension Trial: Extreme", "Dying Dramata\u0027s Nest, Cradle of Nihility; Ludra raid (not active yet)", "Hall of Illusion, Azure Breath Island", "Corroded Decontamination Facility (raid)"], "unlocks": [700, 1000, 1400, 1500, 1600, 1900, 2000, 2100, 2200, 2500, 2800, 3000, 3500]}</script>
-<script src="../../assets/js/tracker.js?v=43057db0" defer></script>
+<script type="application/json" id="tracker-config">{"char_defaults": ["Main", "\u041e\u0441\u043d\u043e\u0432\u0430", "\u041e\u0441\u043d\u043e\u0432\u0430", "Ana", "\u30e1\u30a4\u30f3"], "cls_names": ["Gladiator", "Ranger", "Templar", "Assassin", "Sorcerer", "Spiritmaster", "Cleric", "Chanter"], "cls_slugs": ["gladiator", "ranger", "templar", "assassin", "sorcerer", "elementalist", "cleric", "chanter"], "energy": {"anchor": "2026-10-13T19:00:00Z", "cap": 560, "cap_member": 840, "chest": 40, "interval_min": 180, "regen": 15}, "guides": ["gladiator", "ranger", "templar", "assassin", "sorcerer", "elementalist", "cleric", "chanter"], "lang": "en", "reset": {"anchor": "2026-09-30T07:00:00Z", "confirmed": true, "kr": {"anchor": "2026-09-29T20:00:00Z", "tz": "Asia/Seoul"}, "tw": {"anchor": "2026-09-29T21:00:00Z", "tz": "Asia/Taipei"}, "tz": "Asia/Seoul"}, "root": "../../", "t": {"char_class_none": "No class", "char_default": "Main", "char_delete": "Delete", "char_delete_confirm": "Delete this character and all its progress?", "energy_at_cap": "At the cap \u2014 regeneration is wasted, spend it", "energy_full": "full", "energy_next": "next +{n} in", "energy_next_at": "next +{n} at {time}", "notify_energy": "Odyle energy is full", "units": ["d", "h", "m", "s"], "wk_add": "Add character", "wk_add_first": "Add your first character", "wk_day_in": "New day in {t}", "wk_del_text": "Its energy, item level and weekly progress will be gone. This can\u0027t be undone.", "wk_del_title": "Delete {name}?", "wk_energy_unset": "enter your energy", "wk_energy_unset_long": "Enter the energy you have in the game now \u2014 the page counts on from there.", "wk_from": "from {il}", "wk_full": "Full \u2014 spend it", "wk_full_in": "full in {t}", "wk_guide": "{cls} guide", "wk_il": "Item level", "wk_il_short": "IL", "wk_name_needed": "Enter a name", "wk_next_tick": "Next +{n} for everyone at {time}", "wk_num_range": "Enter a whole number from 0 to {max}", "wk_select": "Selected", "wk_unlocks_next": "Next: +{d} item level", "wk_unlocks_none": "Enter the item level to see what is open.", "wk_week_pct": "{p}% of the week"}, "unlock_names": ["Krao Cave Conquest, Draupnir", "Ascension Trial: Easy", "Vakron Sky Island, Urugugu Canyon Conquest", "Ascension Trial: Normal", "\u26051 Transcendence: Deus Research Base, Shattered Arkanis", "\u26052 Transcendence", "Ascension Trial: Hard", "Ferocious Horn Den, Fire Temple Conquest", "\u26053 Transcendence", "\u26054 Transcendence, Ascension Trial: Extreme", "Urugugu Canyon, Vakron Sky Island: Hard", "Dying Dramata\u0027s Nest, Cradle of Nihility; Ludra raid (not active yet)", "Hall of Illusion, Azure Breath Island", "Corroded Decontamination Facility (raid)"], "unlocks": [700, 1000, 1400, 1500, 1600, 1900, 2000, 2100, 2200, 2500, 2700, 2800, 3000, 3500]}</script>
+<script src="../../assets/js/tracker.js?v=1248fb6e" defer></script>
 
 <footer class="site-footer">
   <div class="wrap footer-in">
@@ -479,7 +595,7 @@
       <a class="brand brand-sm" href="../../en/">AION 2 Global - Guides</a>
       <p>Unofficial fan site, not affiliated with NCSOFT. AION 2 and its skill icons are © NCSOFT.</p>
       <p class="foot-credit">Guides are collected from content creators — all credit goes to them; the site is put together with the help of Claude (AI).</p>
-      <p>Last checked: <time datetime="2026-10-23">Oct 23, 2026</time>.</p>
+      <p>Last checked: <time datetime="2026-10-28">Oct 28, 2026</time>.</p>
       <p><a href="../../en/sources/">All sources and creators</a> · <a href="../../en/changelog/">Changelog</a> · <a href="../../en/privacy/">Privacy</a> · <button type="button" class="link-btn ck-open">Cookie settings</button> · <button type="button" class="link-btn report-open">Send feedback</button></p>
     </div>
   </div>
@@ -502,7 +618,7 @@
     <ul class="search-res" role="listbox"></ul>
   </div>
 </dialog>
-<dialog class="whatsnew" data-id="2026-10-23-thanks" aria-labelledby="wn-title">
+<dialog class="whatsnew" data-id="2026-10-28-patch" aria-labelledby="wn-title">
   <form method="dialog" class="wn-in">
     <div class="wn-head">
       <h2 id="wn-title">What&#39;s new</h2>
@@ -511,9 +627,10 @@
       </button>
     </div>
     <section class="wn-entry">
-      <time class="wn-date" datetime="2026-10-23">Oct 23, 2026</time>
+      <time class="wn-date" datetime="2026-10-28">Oct 28, 2026</time>
       <ul>
-        <li><span><strong>Thank you for your feedback!</strong> We read every message sent with the “Send feedback” button, and many guide fixes start there. Keep it coming.</span></li>
+        <li><span><strong>October 28 patch on the site</strong> — Assassin: Illusive Clone now comes back in 1 minute, together with Swift Contract and Savage Fang, so the guide no longer holds them apart. Weekly tracker: Hard Urugugu Canyon and Vakron Sky Island at 2,700 item level, and Odylium Repository shares its entries with the Daily Dungeon.</span></li>
+        <li><span><strong>Ariel board: 120 crystals</strong> — Hard Urugugu Canyon and Vakron Sky Island give their own Ariel Fragments, 30 crystals each. The first 60 of the route stay as they were; the next 60 take the other three Boss Damage Boost by 87, then all four PvE Damage Tolerance by 117.</span></li>
       </ul>
     </section>
     <button class="btn btn-primary wn-ok" value="close">Got it</button>
@@ -561,14 +678,45 @@
     <label class="fb-label" for="fb-contact">Contact for a reply (optional)</label>
     <input id="fb-contact" class="fb-contact" name="contact" type="text" maxlength="100" autocomplete="off" placeholder="Discord or Telegram">    <input class="fb-hp" name="website" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">
     <p class="fb-meta">Sent together with the message: <b class="fb-where"></b></p>
-    <p class="fb-status" role="status" data-sending="Sending…" data-ok="Sent — thank you!" data-err="Could not send. Please try again later." data-rate="Too many messages in a row — try again in a few minutes." data-short="Write a few words first." data-file="The image couldn&#39;t be sent — try another one or send the message without it."></p>
+    <p class="fb-status" role="status" data-sending="Sending…" data-ok="Sent — thank you! If we reply, you will see it in the chat at the bottom right of the site." data-err="Could not send. Please try again later." data-rate="Too many messages in a row — try again in a few minutes." data-short="Write a few words first." data-file="The image couldn&#39;t be sent — try another one or send the message without it."></p>
     <div class="fb-actions">
       <button type="submit" class="btn btn-primary fb-send">Send</button>
       <button type="button" class="btn btn-ghost fb-cancel">Cancel</button>
     </div>
   </form>
 </dialog>
-<script src="../../assets/js/site.js?v=43057db0" defer></script>
-<script src="../../assets/js/fx.js?v=43057db0" defer></script>
+<div class="fc" data-lang="en" data-page="en/weekly/">
+  <section class="fc-panel" id="fc-panel" role="dialog" aria-modal="false" aria-labelledby="fc-title" hidden>
+    <header class="fc-head">
+      <span class="fc-ava" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M16 3c1.8 4.6 5.6 7.2 12 8-4.4 2.2-6.8 5.6-7.4 10.6L16 29l-4.6-7.4C10.8 16.6 8.4 13.2 4 11c6.4-.8 10.2-3.4 12-8z" fill="currentColor"/></svg></span>
+      <div class="fc-id"><p class="fc-title" id="fc-title">Aion 2 Guides</p><p class="fc-sub">We read every message</p></div>
+      <button type="button" class="icon-btn fc-x" aria-label="Got it">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </header>
+    <div class="fc-log" aria-live="polite" data-author="Aion 2 Guides" data-you="You" data-wait="No reply yet. We read every message, so check back later." data-hello="Hi! Found a mistake or something outdated, or want a guide added? Write here: we read every message and reply in this chat."></div>
+    <form class="fc-form" novalidate>
+      <input class="fc-contact" type="text" maxlength="100" autocomplete="off" placeholder="Contact for a reply (optional): Discord or Telegram" aria-label="Contact for a reply (optional)">
+      <input class="fb-hp fc-hp" name="website" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div class="fc-row">
+        <label class="sr-only" for="fc-text">Your message</label>
+        <textarea id="fc-text" class="fc-text" rows="1" maxlength="2000" data-ph-new="Describe the mistake or your idea…" data-ph-reply="Write a reply…"></textarea>
+        <button type="submit" class="fc-send" aria-label="Send" title="Send (Ctrl+Enter)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
+        </button>
+      </div>
+      <p class="fc-status" role="status" data-sending="Sending…" data-err="Could not send. Please try again later." data-rate="Too many messages in a row — try again in a few minutes." data-short="Write a few words first." data-links="Too many links in one message (3 at most)." data-dup="You have already sent this message." data-more="Please wait for our reply before sending more messages."></p>
+      <p class="fc-meta">Sent together with the message: <b class="fc-where"></b></p>
+    </form>
+  </section>
+  <button type="button" class="fc-nudge" hidden>Aion 2 Guides replied to you</button>
+  <button type="button" class="fc-launch" aria-expanded="false" aria-controls="fc-panel" aria-label="Send feedback" title="Send feedback">
+    <svg class="fc-i-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12.5a7.5 7.5 0 0 1-11.1 6.6L4 20l1.1-4.2A7.5 7.5 0 1 1 20 12.5z"/></svg>
+    <svg class="fc-i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    <span class="fc-dot" hidden></span>
+  </button>
+</div>
+<script src="../../assets/js/site.js?v=1248fb6e" defer></script>
+<script src="../../assets/js/fx.js?v=1248fb6e" defer></script>
 </body>
 </html>

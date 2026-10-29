@@ -14,7 +14,7 @@ for page in pages:
     raw=page.read_text(encoding='utf8');soup=BeautifulSoup(raw,'html.parser')
     for script in soup.find_all('script',type='application/json'):json.loads(script.string)
     assert not soup.html.get('data-api'),page
-    assert not soup.select('.report-open,.feedback,.sec-vote,.ck,.ck-open,[data-pt-api]'),page
+    assert not soup.select('.report-open,.feedback,.fc,.sec-vote,.ck,.ck-open,[data-pt-api]'),page
     assert 'googletagmanager' not in raw and 'ZXQ' not in raw,page
     for el in soup.find_all(True):
         for attr in ['src','href','data-index']:
@@ -38,7 +38,7 @@ for sourcefile in (SNAP/'en').rglob('index.html'):
     source=BeautifulSoup(sourcefile.read_text(encoding='utf8'),'html.parser')
     for lang in ['en','pt-BR']:
         target=BeautifulSoup((OUT/lang/rel).read_text(encoding='utf8'),'html.parser')
-        for selector,attrs in [('[data-sk-card]',['data-sk-card']),('.mode-switch button',['data-set-mode','disabled']),('[data-dvb-total]',['min','max','value']),('[data-dvb-range]',['min','max','value']),('.wk-item',['data-id','data-max','data-scope','data-il','data-inactive'])]:
+        for selector,attrs in [('[data-sk-card]',['data-sk-card']),('.mode-switch button',['data-set-mode','disabled']),('[data-dvb-total]',['min','max','value']),('[data-dvb-range]',['min','max','value']),('.wk-item',['data-id','data-max','data-scope','data-il','data-inactive','data-period']),('[data-until]',['data-until'])]:
             a=[[el.get(key) for key in attrs] for el in source.select(selector)]
             b=[[el.get(key) for key in attrs] for el in target.select(selector)]
             assert a==b,(lang,str(rel),selector)
@@ -60,7 +60,7 @@ for sourcefile in (SNAP/'en').rglob('index.html'):
         if selector:
             def numbers(el):return Counter(re.findall(r'\d+(?:[.,:]\d+)*',el.get_text(' ',strip=True)))
             assert numbers(source.select_one(selector))==numbers(target.select_one(selector)),(lang,str(rel),'new content numbers')
-        if str(rel).replace('\\','/') in ['cleric/index.html','sorcerer/index.html','ranger/index.html']:
+        if str(rel).replace('\\','/') in ['cleric/index.html','sorcerer/index.html','ranger/index.html','assassin/index.html','templar/index.html','gladiator/index.html','weekly/index.html']:
             # Brazilian grouping/decimal punctuation may differ; values may not.
             def localized_numbers(el):
                 values=re.findall(r'\d+(?:[.,:]\d+)*',el.get_text(' ',strip=True))

@@ -1,7 +1,7 @@
 """Build the independent EN/PT-BR edition from the current published-source snapshot.
 
 The upstream public repository stopped updating on October 10. source-snapshot is
-the October 23 public HTML/assets capture; translations are deterministic and local.
+the October 28 public HTML/assets capture; translations are deterministic and local.
 No remote translation, tracking or feedback service runs in the published edition.
 """
 from pathlib import Path
@@ -50,7 +50,7 @@ def build_page(p,lang):
     for el in soup.select('[data-pt-api]'):el.attrs.pop('data-pt-api',None)
     soup.html['lang']=lang
     soup.html.attrs.pop('data-api',None)
-    for selector in ['.feedback','.report-open','.suggest-box','.report-box','.sec-vote','[data-helpful]','.egg-star','.egg-dlg','.main-heart','.ck','.ck-open','.pt-ask','.pt-ask-list']:
+    for selector in ['.feedback','.report-open','.suggest-box','.report-box','.sec-vote','[data-helpful]','.egg-star','.egg-dlg','.main-heart','.ck','.ck-open','.pt-ask','.pt-ask-list','.fc']:
         for el in soup.select(selector):el.decompose()
     # Release notices describe this edition; omit the source owner's feedback appeals.
     for entry in soup.select('dialog.whatsnew .wn-entry'):entry.clear()
@@ -121,18 +121,21 @@ def build_page(p,lang):
     if footer:
         credit=footer.select_one('.foot-credit')
         if credit:credit.clear();credit.append(soupfrag('Edição independente em português baseada em <a href="https://aion2-guides.info/en/" target="_blank" rel="noopener">Couga54 / AION 2 Guides</a>. Créditos aos criadores nas fontes.' if lang=='pt-BR' else 'Independent Brazilian edition based on <a href="https://aion2-guides.info/en/" target="_blank" rel="noopener">Couga54 / AION 2 Guides</a>. Credit to the creators listed in Sources.'))
-        notice=soup.new_tag('p');notice.string='Fonte atualizada até 23/10/2026 · Sincronizada em 25/10/2026. Lista de medidores de DPS revisada em português; conteúdo anterior com revisão editorial parcial. Nomes do cliente Global preservados.' if lang=='pt-BR' else 'Source updated through Oct 23, 2026 · Synced Oct 25, 2026. DPS meter list reviewed in Portuguese; earlier content partially reviewed. Global client names preserved.'
+        notice=soup.new_tag('p');notice.string='Fonte atualizada até 28/10/2026 · Sincronizada em 28/10/2026. Patch de outubro, Ariel, tarefas diárias, Halloween, correções de classes e Pet Tracker 0.4.2 revisados em português; conteúdo anterior com revisão parcial. Nomes do cliente Global preservados.' if lang=='pt-BR' else 'Source updated through Oct 28, 2026 · Synced Oct 28, 2026. October patch, Ariel, daily tasks, Halloween, class fixes and Pet Tracker 0.4.2 reviewed in Portuguese; earlier content partially reviewed. Global client names preserved.'
         footer.append(notice)
     modal=soup.select_one('dialog.whatsnew:not(.feedback)')
     if modal:
-        modal['data-id']='ptbr-source-2026-10-25-dps'
+        modal['data-id']='ptbr-source-2026-10-28-patch'
         if soup.select_one('[data-changelog-seen]'):soup.select_one('[data-changelog-seen]')['data-changelog-seen']=modal['data-id']
         sec=modal.select_one('.wn-entry')
         if sec:
-            sec.clear();sec.append(soupfrag('<time class="wn-date" datetime="2026-10-25">25 out 2026</time><ul><li>Lista de medidores de DPS sincronizada com a fonte: LOXIN e seis outras opções. O NotMeter deixou de ser listado.</li></ul>' if lang=='pt-BR' else '<time class="wn-date" datetime="2026-10-25">Oct 25, 2026</time><ul><li>DPS meter list synced with the source: LOXIN and six other options. NotMeter is no longer listed.</li></ul>'))
+            sec.clear();sec.append(soupfrag('<time class="wn-date" datetime="2026-10-28">28 out 2026</time><ul><li>Ariel ampliado para 120 cristais próprios; Assassin atualizado com Illusive Clone em 1 minuto.</li><li>Controle semanal com tarefas diárias e compras de Halloween até 4 de novembro.</li><li>Correções de Cleric, Templar e Gladiator e novidades do Pet Tracker 0.4.2.</li></ul>' if lang=='pt-BR' else '<time class="wn-date" datetime="2026-10-28">Oct 28, 2026</time><ul><li>Ariel expanded to 120 separate crystals; Assassin updated with a 1-minute Illusive Clone cooldown.</li><li>Weekly tracker now includes daily tasks and Halloween purchases through November 4.</li><li>Cleric, Templar and Gladiator fixes and Pet Tracker 0.4.2 updates.</li></ul>'))
     if rel=='changelog/':
         first=soup.select_one('.cl-entry')
-        if first:first.insert_before(soupfrag('<section class="wn-entry cl-entry"><time class="wn-date" datetime="2026-10-25">25 out 2026</time><ul><li>Edição em português sincronizada com a fonte de 23/10/2026: NotMeter removido da lista de medidores de DPS.</li></ul></section>' if lang=='pt-BR' else '<section class="wn-entry cl-entry"><time class="wn-date" datetime="2026-10-25">Oct 25, 2026</time><ul><li>Brazilian edition synced with the Oct 23 source: NotMeter removed from the DPS meter list.</li></ul></section>'))
+        if first:first.insert_before(soupfrag('<section class="wn-entry cl-entry"><time class="wn-date" datetime="2026-10-28">28 out 2026</time><ul><li>Edição em português sincronizada com a fonte de 28/10/2026: Ariel com 120 cristais, Illusive Clone com recarga de 1 minuto, tarefas diárias, Halloween, correções de Cleric/Templar/Gladiator e Pet Tracker 0.4.2.</li></ul></section>' if lang=='pt-BR' else '<section class="wn-entry cl-entry"><time class="wn-date" datetime="2026-10-28">Oct 28, 2026</time><ul><li>Brazilian edition synced with the Oct 28 source: 120 Ariel crystals, a 1-minute Illusive Clone cooldown, daily tasks, Halloween, Cleric/Templar/Gladiator fixes and Pet Tracker 0.4.2.</li></ul></section>'))
+        for item in soup.select('.cl-entry li'):
+            if ('Feedback is now a chat' in item.get_text() or 'Feedback agora é um chat' in item.get_text()):
+                item.clear();item.append(soupfrag('O <a href="https://aion2-guides.info/en/" target="_blank" rel="noopener">site fonte</a> passou a oferecer feedback por chat. O recurso pertence ao site original.' if lang=='pt-BR' else 'The <a href="https://aion2-guides.info/en/" target="_blank" rel="noopener">source website</a> introduced chat feedback. This feature belongs to the original site.'))
     if rel=='privacy/':
         from privacy_content import CONTENT,DESCRIPTION,TITLE
         soup.select_one('main').append(soupfrag(CONTENT[lang]))
@@ -140,7 +143,7 @@ def build_page(p,lang):
         for meta in soup.find_all('meta'):
             if meta.get('name')=='description' or meta.get('property')=='og:description':meta['content']=DESCRIPTION[lang]
             if meta.get('property')=='og:title':meta['content']=TITLE[lang]
-    text=str(soup).replace('a7ef0001','ptbr20261022ariel').replace('60727ed0','ptbr20261022ariel').replace('43057db0','ptbr20261022ariel').replace('Â·','·')
+    text=str(soup).replace('a7ef0001','ptbr20261028patch').replace('60727ed0','ptbr20261028patch').replace('43057db0','ptbr20261028patch').replace('1248fb6e','ptbr20261028patch').replace('Â·','·')
     write(lang+'/'+rel+'index.html',text)
 
 def main():
@@ -171,10 +174,12 @@ def main():
     data=data.replace('(uk|tr|ja|ru|be)','(pt|en)').replace("want = first === 'be' ? 'ru' : first || 'en';","want = first === 'pt' ? 'pt-BR' : first || 'en';")
     data=data.replace("({ ru: 'ru-RU'","({ 'pt-BR': 'pt-BR', ru: 'ru-RU'").replace('(?:en|ru|uk|tr|ja)','(?:pt-BR|en)')
     js.write_text(data,encoding='utf8')
+    tracker=OUT/'assets/js/tracker.js'
+    tracker.write_text(tracker.read_text(encoding='utf8').replace("({ ru: 'ru-RU'","({ 'pt-BR': 'pt-BR', ru: 'ru-RU'"),encoding='utf8')
     write('index.html','<!doctype html><html lang="pt-BR"><meta charset="utf-8"><title>AION 2 — Guias em Português</title><script>var l="pt-BR";try{if(localStorage.getItem("lang")==="en")l="en"}catch(e){}location.replace(l+"/"+location.search+location.hash)</script><a href="pt-BR/">Abrir os guias em português</a></html>')
     write('404.html','<!doctype html><html lang="pt-BR"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>Página não encontrada — AION 2</title><body style="background:#0b0e14;color:#eee;font:20px system-ui;padding:10vw"><h1>Página não encontrada</h1><a style="color:#d9b36c" href="/pt-BR/">Voltar aos guias</a></body></html>')
     pages=[p.relative_to(OUT).as_posix().removesuffix('index.html') for lang in ['en','pt-BR'] for p in (OUT/lang).rglob('index.html')]
-    write('sitemap.xml','<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+''.join('<url><loc>'+ORIGIN+p+'</loc><lastmod>2026-10-25</lastmod></url>' for p in pages)+'</urlset>')
+    write('sitemap.xml','<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+''.join('<url><loc>'+ORIGIN+p+'</loc><lastmod>2026-10-28</lastmod></url>' for p in pages)+'</urlset>')
     write('robots.txt','User-agent: *\nAllow: /\nSitemap: '+ORIGIN+'sitemap.xml\n')
     (ROOT/'translations/unmatched.json').write_text(json.dumps(sorted(untranslated),ensure_ascii=False,indent=2),encoding='utf8')
     print(f'Built {len(pages)} pages from current source snapshot; {len(untranslated)} untranslated fragments to inspect.')

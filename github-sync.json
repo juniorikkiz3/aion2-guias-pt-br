@@ -12,14 +12,17 @@
   "status": "configured",
   "initial_site_commit": "63557936be3641445145dda66a007b2905b12f77",
   "last_maintenance": {
-    "date": "2026-10-25",
-    "source_updated": "2026-10-23",
+    "date": "2026-10-28",
+    "source_updated": "2026-10-28",
     "changes": [
-      "DPS meter list aligned with source: NotMeter removed",
-      "Changelog corrected to six other DPS meters"
+      "Ariel 120-crystal route and new Hard dungeon sources",
+      "Assassin 1-minute Illusive Clone cooldown",
+      "Cleric Earth's Promise/Chain of Torment interaction",
+      "Templar Flash Rampage and Gladiator Zikel's Blessing corrections",
+      "Daily tasks, Halloween merchant and Dimensional Invasion counters",
+      "Pet Tracker 0.4.2 with minimap and Nearby mode"
     ],
-    "validation": "passed; browser visual QA unavailable",
-    "github_verified_commit": "dc5d8fbd162d56bf73ef47874671a59f9f4938d6"
+    "validation": "passed; browser visual QA not performed"
   },
   "last_publication": {
     "commit_sha": "dc5d8fbd162d56bf73ef47874671a59f9f4938d6",

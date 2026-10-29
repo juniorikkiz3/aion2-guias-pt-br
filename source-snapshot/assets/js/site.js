@@ -476,6 +476,145 @@
     egg.querySelector('.egg-x').addEventListener('click', function () { egg.close(); });
   }
 
+  // ---- feedback chat (backend build): the launcher at the bottom right and a support-style panel above it. One chat per
+  //      visitor: the first message gives this browser a conversation key (local storage "fb-thread": {k, id, seen}, seen =
+  //      the last reply opened; the server keeps only the key's hash), every next one goes into the same conversation from
+  //      any page. The server closes it after two weeks of silence ("gone"): the next message starts a new one. Replies of
+  //      Aion 2 Guides: a dot on the launcher and a one-time note next to it. Spam: a honeypot and the time since opening (ms). ----
+  var fc = document.querySelector('.fc');
+  var ftAdd = function () {}, fcOpenNew = null;
+  if (fc && root.dataset.api) (function () {
+    var api = root.dataset.api, panel = fc.querySelector('.fc-panel'), launch = fc.querySelector('.fc-launch'), dot = fc.querySelector('.fc-dot'), nudge = fc.querySelector('.fc-nudge');
+    var log = fc.querySelector('.fc-log'), form = fc.querySelector('.fc-form'), text = fc.querySelector('.fc-text');
+    var contact = fc.querySelector('.fc-contact'), hp = fc.querySelector('.fc-hp'), status = fc.querySelector('.fc-status'), send = fc.querySelector('.fc-send');
+    var th = null, data = null, poll = 0, checked = 0, openedAt = 0, shutT = 0, opened = false;
+    var read = function () {
+      th = null;
+      try { th = JSON.parse(store('fb-thread') || 'null'); } catch (e) {}
+      if (!th || !/^[\w-]{32}$/.test(th.k || '')) th = null;
+    };
+    var save = function () { store('fb-thread', th ? JSON.stringify(th) : ''); };
+    var say = function (key, kind) { status.textContent = key ? status.dataset[key] : ''; status.className = 'fc-status' + (kind ? ' is-' + kind : ''); };
+    var lastOwner = function () { var n = 0; (data && data.msgs || []).forEach(function (m) { if (m.side === 'owner') n = m.id; }); return n; };
+    var unread = function () { return !!th && lastOwner() > (th.seen || 0); };
+    var mode = function () { return document.querySelector('.guide') ? root.dataset.mode : ''; };
+    var tf;
+    try { tf = new Intl.DateTimeFormat(({ ru: 'ru-RU', uk: 'uk-UA', tr: 'tr-TR', ja: 'ja-JP' })[fc.dataset.lang] || 'en-GB', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' }); } catch (e) { tf = null; }
+    var when = function (s) { var t = Date.parse(String(s).replace(' ', 'T') + 'Z'); return tf && t ? tf.format(t) : ''; };
+    var nowSql = function () { return new Date().toISOString().slice(0, 19).replace('T', ' '); };
+    var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
+    var bubble = function (side, at, body) {
+      return '<div class="fc-m ' + (side === 'owner' ? 'is-owner' : 'is-me') + '"><p class="fc-who">' + esc(side === 'owner' ? log.dataset.author : log.dataset.you)
+        + (at ? ' · <time>' + esc(when(at)) + '</time>' : '') + '</p><p class="fc-body">' + esc(body) + '</p></div>';
+    };
+    var hideNudge = function () { nudge.classList.remove('is-on'); setTimeout(function () { if (!nudge.classList.contains('is-on')) nudge.hidden = true; }, 200); };
+    var mark = function () {
+      var any = unread();
+      dot.hidden = !any;
+      // the note next to the launcher: once for each new reply, never while the panel is open
+      var show = any && !opened && lastOwner() > (+store('fb-toast') || 0);
+      if (show && nudge.hidden) { nudge.hidden = false; requestAnimationFrame(function () { nudge.classList.add('is-on'); }); }
+      if (!show && !nudge.hidden) hideNudge();
+    };
+    var grow = function () { text.style.height = 'auto'; text.style.height = Math.min(text.scrollHeight + 2, 140) + 'px'; };
+    var draw = function () {
+      var h = bubble('owner', '', log.dataset.hello);
+      if (th && data) {
+        h += bubble('visitor', data.at, data.text);
+        data.msgs.forEach(function (m) { h += bubble(m.side, m.at, m.text); });
+        if (!lastOwner()) h += '<p class="fc-wait">' + esc(log.dataset.wait) + '</p>';
+      }
+      log.innerHTML = h;
+      log.scrollTop = log.scrollHeight;
+      contact.hidden = !!th;   // asked once, with the first message
+      fc.querySelector('.fc-where').textContent = fc.dataset.page + (mode() ? ' · ' + mode().toUpperCase() : '');
+      text.placeholder = text.dataset[th ? 'phReply' : 'phNew'];
+    };
+    // the conversation; "open" = it is on screen (its replies count as read on the server too); gone = deleted or closed
+    var load = function (open) {
+      if (!th) return Promise.resolve();
+      checked = Date.now();
+      var k = th.k;
+      return fetch(api + '/feedback/threads', { method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ keys: [k], open: open ? k : '' }) })
+        .then(function (r) { return r.ok ? r.json() : null; }).then(function (j) {
+          var t = j && j.threads && j.threads[0];
+          if (!t || !th || th.k !== k) return;
+          if (t.gone) { th = data = null; save(); }
+          else {
+            data = t;
+            if (opened) { th.seen = lastOwner(); save(); }
+          }
+          if (opened) draw();
+          mark();
+        }).catch(function () {});
+    };
+    var openPanel = function () {
+      clearTimeout(shutT);
+      store('fb-toast', String(lastOwner()));
+      hideNudge();
+      if (!opened) openedAt = Date.now();
+      opened = true;
+      panel.hidden = false;
+      requestAnimationFrame(function () { fc.classList.add('is-open'); });
+      launch.setAttribute('aria-expanded', 'true');
+      say(''); draw(); grow();
+      text.focus({ preventScroll: true });
+      load(true);
+      clearInterval(poll);
+      poll = setInterval(function () { if (!document.hidden) load(true); }, 15000);
+    };
+    var closePanel = function () {
+      if (!opened) return;
+      var back = panel.contains(document.activeElement);
+      opened = false;
+      fc.classList.remove('is-open');
+      launch.setAttribute('aria-expanded', 'false');
+      clearInterval(poll);
+      shutT = setTimeout(function () { panel.hidden = true; }, 160);
+      if (back) launch.focus();
+    };
+    launch.addEventListener('click', function () { opened ? closePanel() : openPanel(); });
+    nudge.addEventListener('click', openPanel);
+    fc.querySelector('.fc-x').addEventListener('click', closePanel);
+    fc.addEventListener('keydown', function (ev) { if (ev.key === 'Escape' && opened) { ev.stopPropagation(); closePanel(); } });
+    text.addEventListener('input', grow);
+    text.addEventListener('keydown', function (ev) { if (ev.key === 'Enter' && (ev.ctrlKey || ev.metaKey)) form.requestSubmit(); });
+    var fail = function (r) {
+      var e = r.j && r.j.error;
+      say(r.s === 429 ? (e === 'more' ? 'more' : 'rate') : r.s === 409 ? 'dup' : e === 'links' ? 'links' : 'err', 'err');
+    };
+    form.addEventListener('submit', function (ev) {
+      ev.preventDefault();
+      var v = text.value.trim(), first = !th;
+      if (v.length < (first ? 5 : 2)) { say('short', 'err'); text.focus(); return; }
+      var page = fc.dataset.page + location.hash, ms = Date.now() - openedAt;
+      var body = first ? { text: v, contact: contact.value, hp: hp.value, page: page, lang: fc.dataset.lang, mode: mode(), ms: ms }
+        : { key: th.k, text: v, hp: hp.value, page: page, mode: mode(), ms: ms };
+      send.disabled = true; say('sending');
+      fetch(api + (first ? '/feedback' : '/feedback/reply'), { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) })
+        .then(function (r) { return r.json().then(function (j) { return { s: r.status, j: j }; }); }).then(function (r) {
+          send.disabled = false;
+          // the chat was closed in the meantime (two weeks of silence): the same text starts a new one
+          if (!first && r.s === 404) { th = data = null; save(); draw(); return form.requestSubmit(); }
+          if (!r.j || !r.j.ok) return fail(r);
+          text.value = ''; grow(); say('');
+          if (first && r.j.key) {
+            th = { k: r.j.key, id: r.j.id, seen: 0 }; save();
+            data = { id: r.j.id, at: nowSql(), text: v, msgs: [] };
+            contact.value = '';
+          } else if (!first && data) data.msgs.push(r.j.msg);
+          draw(); text.focus({ preventScroll: true });
+        }).catch(function () { send.disabled = false; say('err', 'err'); });
+    });
+    // a key from the feedback form (the Pet Tracker page keeps it for the screenshot): it becomes this visitor's chat
+    ftAdd = function (k, id) { th = { k: k, id: id, seen: 0 }; data = null; save(); load(false); };
+    fcOpenNew = openPanel;
+    read();
+    load(false);
+    document.addEventListener('visibilitychange', function () { if (!document.hidden && !opened && Date.now() - checked > 120000) load(false); });
+  })();
+
   // ---- "Report a mistake": a form sent to the site owner (Telegram, through the Worker in site.json) ----
   var fb = document.querySelector('.feedback');
   if (fb && typeof fb.showModal === 'function') {
@@ -522,11 +661,14 @@
         }
       });
     }
+    var fbOpened = 0;
     var readImage = function (f) {
       return new Promise(function (ok, no) { var r = new FileReader(); r.onload = function () { ok(r.result); }; r.onerror = no; r.readAsDataURL(f); });
     };
     document.querySelectorAll('.report-open').forEach(function (b) {
       b.addEventListener('click', function () {
+        if (fcOpenNew && !fbFile) return fcOpenNew();   // the backend build: the chat (the form stays only for the screenshot page)
+        fbOpened = Date.now();
         fb.querySelector('.fb-where').textContent = fb.dataset.page + (fbMode() ? ' · ' + fbMode().toUpperCase() : '');
         fbSay(''); fbSend.disabled = false;
         fb.showModal(); fbText.focus();
@@ -540,13 +682,14 @@
       fbSend.disabled = true; fbSay('sending');
       (fbPick ? readImage(fbPick) : Promise.resolve(null)).then(function (image) {
         var body = { text: fbText.value, contact: fb.querySelector('.fb-contact').value, hp: fb.querySelector('.fb-hp').value,
-          page: fb.dataset.page + location.hash, lang: fb.dataset.lang, mode: fbMode() };
+          page: fb.dataset.page + location.hash, lang: fb.dataset.lang, mode: fbMode(), ms: Date.now() - fbOpened };
         if (image) body.image = image;
         return fetch(fb.dataset.url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
       }).then(function (r) { return r.json().then(function (j) { return { s: r.status, j: j }; }); }).then(function (r) {
         if (r.j && r.j.ok) {
           fbSay('ok', 'ok'); fbText.value = ''; if (fbFile) fbFileSet(null);
-          setTimeout(function () { if (fb.open) fb.close(); }, 1800);
+          if (r.j.key) ftAdd(r.j.key, r.j.id);
+          setTimeout(function () { if (fb.open) fb.close(); }, r.j.key ? 3200 : 1800);
         } else { fbSay(r.s === 429 ? 'rate' : (r.j && /^file-/.test(r.j.error || '') ? 'file' : 'err'), 'err'); fbSend.disabled = false; }
       }).catch(function () { fbSay('err', 'err'); fbSend.disabled = false; });
     });

@@ -4,6 +4,8 @@
    - week: index of the weekly period the `done` counters belong to. When the current
      period differs, the counters are cleared — no manual reset needed.
    - server.done: the counters every character on the server shares (items with data-scope="server").
+   - day / daily (on a character and on server): the same for the daily group (data-period="day"), cleared at the daily
+     reset - the weekly reset's time of day, every day. data-scope="account" items are kept with the server's.
    - energy: v was the value at time t; every tick of the server-wide grid (anchor + k × interval) after t adds
      `regen`, up to cap. */
 (function () {
@@ -23,6 +25,8 @@
   var INTERVAL = EN.interval_min * 6e4;
   var EA = Date.parse(EN.anchor || RS.anchor);   // a real energy tick; all others are interval apart
   var ROSTER = !!document.querySelector('.roster-grid');   // weekly page: the roster may be empty
+  // a time-limited group (an event shop, weekly.json "until") leaves the page once it is over, before the build drops it
+  [].forEach.call(document.querySelectorAll('.wk-group[data-until]'), function (g) { if (Date.now() >= Date.parse(g.dataset.until)) g.remove(); });
   var CLS = {};
   (CFG.cls_slugs || []).forEach(function (s, i) { CLS[s] = CFG.cls_names[i]; });
 
@@ -151,6 +155,14 @@
     return k;
   }
   function nextReset(now) { return now < ANCHOR ? ANCHOR : resetAt(weekIndex(now) + 1); }
+  // the daily reset: the weekly one's wall-clock time on every day
+  function dayAt(k) { var t = ANCHOR + k * 864e5; return t + ANCHOR_OFF - tzOffset(t); }
+  function dayIndex(now) {
+    var k = Math.floor((now - ANCHOR) / 864e5);
+    if (now >= dayAt(k + 1)) k++;
+    else if (now < dayAt(k)) k--;
+    return k;
+  }
   function pad(n) { return (n < 10 ? '0' : '') + n; }
   function split(ms) {
     ms = Math.max(0, ms);
@@ -164,7 +176,7 @@
   }
   var dateFmt;
   try {
-    dateFmt = new Intl.DateTimeFormat(({ ru: 'ru-RU', uk: 'uk-UA', tr: 'tr-TR', ja: 'ja-JP' })[CFG.lang] || 'en-GB',
+    dateFmt = new Intl.DateTimeFormat(({ 'pt-BR': 'pt-BR', ru: 'ru-RU', uk: 'uk-UA', tr: 'tr-TR', ja: 'ja-JP' })[CFG.lang] || 'en-GB',
       { weekday: 'short', day: 'numeric', month: 'long', hour: '2-digit', minute: '2-digit', timeZoneName: 'short' });
   } catch (e) { dateFmt = null; }
   function fmtDate(ms) { return dateFmt ? dateFmt.format(ms) : new Date(ms).toUTCString(); }
@@ -172,10 +184,13 @@
   // Clear weekly counters of every character whose data belongs to an older week.
   function rollWeeks(now) {
     var idx = weekIndex(now), changed = false;
+    var di = dayIndex(now);
     state.chars.forEach(function (c) {
       if (c.week !== idx) { c.week = idx; c.done = {}; changed = true; }
+      if (c.day !== di) { c.day = di; c.daily = {}; changed = true; }
     });
     if (state.server && state.server.week !== idx) { state.server.week = idx; state.server.done = {}; changed = true; }
+    if (state.server && state.server.day !== di) { state.server.day = di; state.server.daily = {}; changed = true; }
     return changed;
   }
 
@@ -239,7 +254,10 @@
     el.style.clipPath = 'inset(0 ' + (100 - p) + '% 0 0 round 999px)';
   }
   // counters of an item: the server's for shared items, else the character's
-  function bag(li, c) { return li.dataset.scope === 'server' ? state.server.done : c.done; }
+  function bag(li, c) {
+    var o = li.dataset.scope === 'char' ? c : state.server;
+    return li.dataset.period === 'day' ? o.daily : o.done;
+  }
   // an item that does not count for this character: not open (yet), or PvP while the character's PvP switch is off
   function itemOff(li, c) {
     return !!(li.dataset.inactive || (li.dataset.il && c.il && +li.dataset.il > c.il) || (li.dataset.pvp && c.noPvp));
@@ -254,7 +272,7 @@
     });
     return n ? Math.round(sum / n * 100) : 0;
   }
-  function weekPct(c) { return share($$('.wk-item[data-scope="char"]'), c); }
+  function weekPct(c) { return share($$('.wk-item[data-scope="char"]:not([data-period])'), c); }
 
   function renderWeekly() {
     var c = active();
@@ -277,7 +295,13 @@
       $$('.wk-check', li).forEach(function (chk) { chk.setAttribute('aria-pressed', n >= max ? 'true' : 'false'); });
     });
     var dn = $('.wk-done-n');
-    if (dn) dn.textContent = share($$('.wk-item'), c);
+    if (dn) dn.textContent = share($$('.wk-item:not([data-period])'), c);   // the daily group is not part of the week
+  }
+
+  // the daily group's tag: the time to the next daily reset
+  function renderDay(now) {
+    var el = $('.wk-day-left');
+    if (el) el.textContent = T.wk_day_in.replace('{t}', short(dayAt(dayIndex(now) + 1) - now));
   }
 
   function renderWeek1() {
@@ -615,7 +639,7 @@
   (function tick() {
     var now = Date.now();
     if (rollWeeks(now) && active()) { save(); renderWeekly(); }
-    renderEnergy(now); renderRoster(now); renderReset(now);
+    renderEnergy(now); renderRoster(now); renderReset(now); renderDay(now);
     setTimeout(tick, 1000 - (now % 1000));
   })();
 })();

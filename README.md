@@ -6,7 +6,7 @@ Manutenção configurada no Codex a cada três dias, às 09:00 de Brasília. Ela
 
 Versão independente baseada em https://aion2-guides.info/en/ (Couga54 / AION 2 Guides).
 
-Sincronizada em 25/10/2026 com a versão da fonte atualizada até 23/10/2026. O repositório público anterior deixou de receber as mudanças de conteúdo após 10/10. Por isso, esta atualização usa uma captura das páginas públicas do novo domínio.
+Sincronizada em 28/10/2026 com a versão da fonte atualizada até 28/10/2026. O repositório público anterior deixou de receber as mudanças de conteúdo após 10/10. Por isso, esta atualização usa uma captura das páginas públicas do novo domínio.
 
 ## Conteúdo
 
