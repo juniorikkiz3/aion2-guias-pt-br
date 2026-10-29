@@ -22,15 +22,16 @@
       "Daily tasks, Halloween merchant and Dimensional Invasion counters",
       "Pet Tracker 0.4.2 with minimap and Nearby mode"
     ],
-    "validation": "passed; browser visual QA not performed"
+    "validation": "passed; browser visual QA not performed",
+    "github_verified_commit": "31e524708518a82a34100d1b3de5861f89e2fa25"
   },
   "last_publication": {
-    "commit_sha": "dc5d8fbd162d56bf73ef47874671a59f9f4938d6",
-    "version_id": "appgprj_6acd48efc1a48191bfff48deb96c6011~appgver_1adb39ed474c8191b5a511b70ac242c9",
-    "version_number": 5,
-    "deployment_id": "appgdep_6ade08c8b69881918059956b68055124",
+    "commit_sha": "31e524708518a82a34100d1b3de5861f89e2fa25",
+    "version_id": "appgprj_6acd48efc1a48191bfff48deb96c6011~appgver_48f8994a2b3c81919c2cfb499dfec767",
+    "version_number": 6,
+    "deployment_id": "appgdep_6ae2a6cb0fdc819187acd268743b9e2e",
     "status": "succeeded",
-    "published_at": "2026-10-25T13:49:18.679233+00:00",
+    "published_at": "2026-10-29T01:52:33.387229+00:00",
     "url": "https://aion2-guias-br.juniorikkix.chatgpt.site/pt-BR/"
   }
 }

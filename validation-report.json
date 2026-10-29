@@ -15,5 +15,15 @@
   "macro_sequences": "matches the current source: hotbar order, referenced skills, macro steps and timing",
   "privacy": "Own static-edition privacy page; original feedback, analytics and consent UI excluded; release notes remain the reviewed snapshot.",
   "source_changes": "Ariel expanded from 60 to 120 separate crystals; Assassin/Cleric/Templar/Gladiator corrections; daily tasks and Halloween counters; Pet Tracker 0.4.2. Updated source CSS, site.js, tracker.js and skill-tips imported.",
-  "checked_at_utc": "2026-10-29T01:42:59.429133+00:00"
+  "checked_at_utc": "2026-10-29T01:42:59.429133+00:00",
+  "publication": {
+    "commit_sha": "31e524708518a82a34100d1b3de5861f89e2fa25",
+    "version_id": "appgprj_6acd48efc1a48191bfff48deb96c6011~appgver_48f8994a2b3c81919c2cfb499dfec767",
+    "version_number": 6,
+    "deployment_id": "appgdep_6ae2a6cb0fdc819187acd268743b9e2e",
+    "status": "succeeded",
+    "published_at": "2026-10-29T01:52:33.387229+00:00",
+    "url": "https://aion2-guias-br.juniorikkix.chatgpt.site/pt-BR/"
+  },
+  "github_sync": "verified same published source commit"
 }
