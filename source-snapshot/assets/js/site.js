@@ -1155,15 +1155,18 @@
       });
       range.style.setProperty('--p', (+range.value / +range.max * 100) + '%');
     });
-    // one budget for all boards (option A): each board gets a share in proportion to the guide's route on it; past the
-    // whole route the rest is shared by what each board still has. Shares snap to whole nodes, and what is left over
-    // goes to the board furthest behind its share whose next node still fits.
+    // one budget for all boards: below the guide's whole route each board gets a share in proportion to its route
+    // (snapped to whole nodes, the leftover to the board furthest behind whose next node fits); past the route the
+    // build's own sequence (data-dvb-seq: [board id, running total], useful nodes only) is followed node by node.
     var tR = box.querySelector('[data-dvb-total]'), tN = box.querySelector('[data-dvb-total-n]'), tReset = box.querySelector('[data-dvb-total-reset]');
+    var seq = [];
+    try { seq = JSON.parse(box.getAttribute('data-dvb-seq') || '[]'); } catch (e) { seq = []; }
     var bs = panels.filter(function (panel) { return !panel.hasAttribute('data-dvb-nobudget'); }).map(function (panel) {
       var range = panel.querySelector('[data-dvb-range]'), reset = panel.querySelector('[data-dvb-reset]');
       var cums = {};
       [].forEach.call(panel.querySelectorAll('.dvb-n:not(.start)'), function (n) { var c = +n.getAttribute('data-c'); if (c > 0) cums[c] = 1; });
       return { panel: panel, range: range, route: reset ? +reset.getAttribute('data-dvb-reset') : +range.value, max: +range.max,
+        id: panel.id.split('-').slice(2).join('-'),
         steps: Object.keys(cums).map(Number).sort(function (x, y) { return x - y; }) };
     });
     var at = function (b, v) { var s = 0; for (var i = 0; i < b.steps.length && b.steps[i] <= v + 1e-9; i++) s = b.steps[i]; return s; };
@@ -1171,6 +1174,16 @@
     function share(budget) {
       var R = 0, M = 0;
       bs.forEach(function (b) { R += b.route; M += b.max; });
+      if (budget > R && seq.length) {
+        var got = bs.map(function (b) { return b.route; }), left = budget - R, stop = {};
+        seq.forEach(function (s) {
+          var i = -1;
+          bs.forEach(function (b, j) { if (b.id === String(s[0])) i = j; });
+          if (i < 0 || stop[i]) return;
+          if (s[1] - got[i] <= left) { left -= s[1] - got[i]; got[i] = s[1]; } else stop[i] = 1;
+        });
+        return got;
+      }
       var want = bs.map(function (b) { return budget <= R ? (R ? budget * b.route / R : 0) : b.route + (budget - R) * (b.max - b.route) / ((M - R) || 1); });
       var got = bs.map(function (b, i) { return at(b, want[i]); });
       var left = budget - got.reduce(function (x, y) { return x + y; }, 0);

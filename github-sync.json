@@ -12,18 +12,15 @@
   "status": "configured",
   "initial_site_commit": "63557936be3641445145dda66a007b2905b12f77",
   "last_maintenance": {
-    "date": "2026-10-28",
-    "source_updated": "2026-10-28",
+    "date": "2026-11-02",
+    "source_updated": "2026-10-31",
     "changes": [
-      "Ariel 120-crystal route and new Hard dungeon sources",
-      "Assassin 1-minute Illusive Clone cooldown",
-      "Cleric Earth's Promise/Chain of Torment interaction",
-      "Templar Flash Rampage and Gladiator Zikel's Blessing corrections",
-      "Daily tasks, Halloween merchant and Dimensional Invasion counters",
-      "Pet Tracker 0.4.2 with minimap and Nearby mode"
+      "Ranger PvP guide enabled as work in progress, based on Korean sources",
+      "Daevanion routes and shared budget up to 416 crystals",
+      "Passive usage statistics and early skill-level guidance",
+      "Pet Tracker 0.7.0 notes, minimap teleports and retained filters"
     ],
-    "validation": "passed; browser visual QA not performed",
-    "github_verified_commit": "31e524708518a82a34100d1b3de5861f89e2fa25"
+    "validation": "passed; browser visual QA not performed"
   },
   "last_publication": {
     "commit_sha": "31e524708518a82a34100d1b3de5861f89e2fa25",

@@ -2,10 +2,10 @@
   "engine": "Argos en-pb 1.9 / CTranslate2, translation by sentence; local reviewed overrides",
   "locale": "pt-BR",
   "source": "https://aion2-guides.info/en/",
-  "source_updated": "2026-10-28",
-  "synced": "2026-10-28",
+  "source_updated": "2026-10-31",
+  "synced": "2026-11-02",
   "memory_strings": 5950,
-  "reviewed_strings": 986,
+  "reviewed_strings": 1168,
   "note": "Nomes e dados do cliente Global preservados. Interface, instruções principais e divergências numéricas revisadas. Textos longos restantes têm revisão editorial parcial.",
-  "new_content_review": "October 28 patch, Ariel 120-crystal route, Assassin cooldown, Cleric Earth's Promise interaction, Templar/Gladiator fixes, daily/Halloween tracker and Pet Tracker 0.4.2 manually translated and reviewed. Original chat UI excluded; historical source chat announcement attributed to the original website. Earlier long-form content remains partially reviewed."
+  "new_content_review": "Ranger PvP guide fully translated and reviewed with WIP/Korean-source status preserved, including reused stigma specialization text; Daevanion 416-crystal route and passive statistics; early skill-level guidance and Pet Tracker 0.7.0 notes reviewed. Earlier long-form text remains partially reviewed."
 }

@@ -1,7 +1,7 @@
 """Build the independent EN/PT-BR edition from the current published-source snapshot.
 
 The upstream public repository stopped updating on October 10. source-snapshot is
-the October 28 public HTML/assets capture; translations are deterministic and local.
+the October 31 public HTML/assets capture; translations are deterministic and local.
 No remote translation, tracking or feedback service runs in the published edition.
 """
 from pathlib import Path
@@ -117,22 +117,28 @@ def build_page(p,lang):
     brand=soup.select_one('.brand-text')
     if brand:
         brand.clear();brand.append(soupfrag('<b>AION 2</b><small>Guias em Português</small>' if lang=='pt-BR' else '<b>AION 2</b><small>Guides · Brazilian edition</small>'))
+    # The new Ranger PvP mode is explicitly WIP and based on Korean sources.
+    # Avoid repeating the shared template's contradictory "tested global" notice.
+    if rel=='ranger/':
+        origin=soup.select_one('#intro-pvp .guide-origin')
+        if origin:
+            origin.clear();origin.append(soupfrag('<b>Season 1.</b> Configuração em desenvolvimento, baseada em guias coreanos e adaptada aos 4 espaços de stigma e limite 20 do Global.' if lang=='pt-BR' else '<b>Season 1.</b> Work in progress based on Korean guides, adapted to the 4 stigma slots and level 20 cap of Global.'))
     footer=soup.select_one('.site-footer .footer-in > div')
     if footer:
         credit=footer.select_one('.foot-credit')
         if credit:credit.clear();credit.append(soupfrag('Edição independente em português baseada em <a href="https://aion2-guides.info/en/" target="_blank" rel="noopener">Couga54 / AION 2 Guides</a>. Créditos aos criadores nas fontes.' if lang=='pt-BR' else 'Independent Brazilian edition based on <a href="https://aion2-guides.info/en/" target="_blank" rel="noopener">Couga54 / AION 2 Guides</a>. Credit to the creators listed in Sources.'))
-        notice=soup.new_tag('p');notice.string='Fonte atualizada até 28/10/2026 · Sincronizada em 28/10/2026. Patch de outubro, Ariel, tarefas diárias, Halloween, correções de classes e Pet Tracker 0.4.2 revisados em português; conteúdo anterior com revisão parcial. Nomes do cliente Global preservados.' if lang=='pt-BR' else 'Source updated through Oct 28, 2026 · Synced Oct 28, 2026. October patch, Ariel, daily tasks, Halloween, class fixes and Pet Tracker 0.4.2 reviewed in Portuguese; earlier content partially reviewed. Global client names preserved.'
+        notice=soup.new_tag('p');notice.string='Fonte atualizada até 31/10/2026 · Sincronizada em 02/11/2026. Ranger PvP (em desenvolvimento), rotas Daevanion e Pet Tracker 0.7.0 revisados em português; conteúdo anterior com revisão parcial. Nomes do cliente Global preservados.' if lang=='pt-BR' else 'Source updated through Oct 31, 2026 · Synced Nov 2, 2026. Ranger PvP (work in progress), Daevanion routes and Pet Tracker 0.7.0 reviewed in Portuguese; earlier content partially reviewed. Global client names preserved.'
         footer.append(notice)
     modal=soup.select_one('dialog.whatsnew:not(.feedback)')
     if modal:
-        modal['data-id']='ptbr-source-2026-10-28-patch'
+        modal['data-id']='ptbr-source-2026-11-02-ranger'
         if soup.select_one('[data-changelog-seen]'):soup.select_one('[data-changelog-seen]')['data-changelog-seen']=modal['data-id']
         sec=modal.select_one('.wn-entry')
         if sec:
-            sec.clear();sec.append(soupfrag('<time class="wn-date" datetime="2026-10-28">28 out 2026</time><ul><li>Ariel ampliado para 120 cristais próprios; Assassin atualizado com Illusive Clone em 1 minuto.</li><li>Controle semanal com tarefas diárias e compras de Halloween até 4 de novembro.</li><li>Correções de Cleric, Templar e Gladiator e novidades do Pet Tracker 0.4.2.</li></ul>' if lang=='pt-BR' else '<time class="wn-date" datetime="2026-10-28">Oct 28, 2026</time><ul><li>Ariel expanded to 120 separate crystals; Assassin updated with a 1-minute Illusive Clone cooldown.</li><li>Weekly tracker now includes daily tasks and Halloween purchases through November 4.</li><li>Cleric, Templar and Gladiator fixes and Pet Tracker 0.4.2 updates.</li></ul>'))
+            sec.clear();sec.append(soupfrag('<time class="wn-date" datetime="2026-11-02">2 nov 2026</time><ul><li>Ranger PvP: novo guia em desenvolvimento, adaptado de fontes coreanas, com habilidades, stigmas, atributos e combos.</li><li>Daevanion: controle até 416 cristais e rotas revisadas; cristais de Ariel continuam separados.</li><li>Pet Tracker 0.7.0: teleportes no minimapa e filtros preservados.</li></ul>' if lang=='pt-BR' else '<time class="wn-date" datetime="2026-11-02">Nov 2, 2026</time><ul><li>Ranger PvP: new work-in-progress guide adapted from Korean sources, with skills, stigmas, stats and combos.</li><li>Daevanion: budget up to 416 crystals and revised routes; Ariel crystals remain separate.</li><li>Pet Tracker 0.7.0: minimap teleports and saved filters.</li></ul>'))
     if rel=='changelog/':
         first=soup.select_one('.cl-entry')
-        if first:first.insert_before(soupfrag('<section class="wn-entry cl-entry"><time class="wn-date" datetime="2026-10-28">28 out 2026</time><ul><li>Edição em português sincronizada com a fonte de 28/10/2026: Ariel com 120 cristais, Illusive Clone com recarga de 1 minuto, tarefas diárias, Halloween, correções de Cleric/Templar/Gladiator e Pet Tracker 0.4.2.</li></ul></section>' if lang=='pt-BR' else '<section class="wn-entry cl-entry"><time class="wn-date" datetime="2026-10-28">Oct 28, 2026</time><ul><li>Brazilian edition synced with the Oct 28 source: 120 Ariel crystals, a 1-minute Illusive Clone cooldown, daily tasks, Halloween, Cleric/Templar/Gladiator fixes and Pet Tracker 0.4.2.</li></ul></section>'))
+        if first:first.insert_before(soupfrag('<section class="wn-entry cl-entry"><time class="wn-date" datetime="2026-11-02">2 nov 2026</time><ul><li>Edição em português sincronizada com a fonte de 31/10/2026: Ranger PvP em desenvolvimento, rotas Daevanion até 416 cristais, estatísticas de passivas e Pet Tracker 0.7.0.</li></ul></section>' if lang=='pt-BR' else '<section class="wn-entry cl-entry"><time class="wn-date" datetime="2026-11-02">Nov 2, 2026</time><ul><li>Brazilian edition synced with the Oct 31 source: work-in-progress Ranger PvP, Daevanion routes up to 416 crystals, passive statistics and Pet Tracker 0.7.0.</li></ul></section>'))
         for item in soup.select('.cl-entry li'):
             if ('Feedback is now a chat' in item.get_text() or 'Feedback agora é um chat' in item.get_text()):
                 item.clear();item.append(soupfrag('O <a href="https://aion2-guides.info/en/" target="_blank" rel="noopener">site fonte</a> passou a oferecer feedback por chat. O recurso pertence ao site original.' if lang=='pt-BR' else 'The <a href="https://aion2-guides.info/en/" target="_blank" rel="noopener">source website</a> introduced chat feedback. This feature belongs to the original site.'))
@@ -143,7 +149,7 @@ def build_page(p,lang):
         for meta in soup.find_all('meta'):
             if meta.get('name')=='description' or meta.get('property')=='og:description':meta['content']=DESCRIPTION[lang]
             if meta.get('property')=='og:title':meta['content']=TITLE[lang]
-    text=str(soup).replace('a7ef0001','ptbr20261028patch').replace('60727ed0','ptbr20261028patch').replace('43057db0','ptbr20261028patch').replace('1248fb6e','ptbr20261028patch').replace('Â·','·')
+    text=str(soup).replace('a7ef0001','ptbr20261102ranger').replace('60727ed0','ptbr20261102ranger').replace('43057db0','ptbr20261102ranger').replace('1248fb6e','ptbr20261102ranger').replace('9bc5b6a1','ptbr20261102ranger').replace('Â·','·')
     write(lang+'/'+rel+'index.html',text)
 
 def main():
@@ -179,7 +185,7 @@ def main():
     write('index.html','<!doctype html><html lang="pt-BR"><meta charset="utf-8"><title>AION 2 — Guias em Português</title><script>var l="pt-BR";try{if(localStorage.getItem("lang")==="en")l="en"}catch(e){}location.replace(l+"/"+location.search+location.hash)</script><a href="pt-BR/">Abrir os guias em português</a></html>')
     write('404.html','<!doctype html><html lang="pt-BR"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>Página não encontrada — AION 2</title><body style="background:#0b0e14;color:#eee;font:20px system-ui;padding:10vw"><h1>Página não encontrada</h1><a style="color:#d9b36c" href="/pt-BR/">Voltar aos guias</a></body></html>')
     pages=[p.relative_to(OUT).as_posix().removesuffix('index.html') for lang in ['en','pt-BR'] for p in (OUT/lang).rglob('index.html')]
-    write('sitemap.xml','<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+''.join('<url><loc>'+ORIGIN+p+'</loc><lastmod>2026-10-28</lastmod></url>' for p in pages)+'</urlset>')
+    write('sitemap.xml','<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+''.join('<url><loc>'+ORIGIN+p+'</loc><lastmod>2026-11-02</lastmod></url>' for p in pages)+'</urlset>')
     write('robots.txt','User-agent: *\nAllow: /\nSitemap: '+ORIGIN+'sitemap.xml\n')
     (ROOT/'translations/unmatched.json').write_text(json.dumps(sorted(untranslated),ensure_ascii=False,indent=2),encoding='utf8')
     print(f'Built {len(pages)} pages from current source snapshot; {len(untranslated)} untranslated fragments to inspect.')

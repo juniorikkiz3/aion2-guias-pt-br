@@ -60,7 +60,7 @@ for sourcefile in (SNAP/'en').rglob('index.html'):
         if selector:
             def numbers(el):return Counter(re.findall(r'\d+(?:[.,:]\d+)*',el.get_text(' ',strip=True)))
             assert numbers(source.select_one(selector))==numbers(target.select_one(selector)),(lang,str(rel),'new content numbers')
-        if str(rel).replace('\\','/') in ['cleric/index.html','sorcerer/index.html','ranger/index.html','assassin/index.html','templar/index.html','gladiator/index.html','weekly/index.html']:
+        if str(rel).replace('\\','/') in ['cleric/index.html','sorcerer/index.html','ranger/index.html','assassin/index.html','templar/index.html','gladiator/index.html','chanter/index.html','elementalist/index.html','weekly/index.html']:
             # Brazilian grouping/decimal punctuation may differ; values may not.
             def localized_numbers(el):
                 values=re.findall(r'\d+(?:[.,:]\d+)*',el.get_text(' ',strip=True))
