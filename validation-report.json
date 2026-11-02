@@ -15,5 +15,15 @@
   "macro_sequences": "matches the current source: hotbar order, referenced skills, macro steps and timing",
   "privacy": "Own static-edition privacy page; original feedback, analytics and consent UI excluded; release notes remain the reviewed snapshot.",
   "source_changes": "Ranger PvP enabled as WIP, Daevanion routes recalculated with 416-crystal shared cap, passive usage statistics and Pet Tracker 0.7.0. Source JS and search updated; additional referenced skill icons captured.",
-  "checked_at_utc": "2026-11-02T13:37:47.225966+00:00"
+  "checked_at_utc": "2026-11-02T13:37:47.225966+00:00",
+  "publication": {
+    "commit_sha": "2251b35c5b86d1c64698d975fa29c454a1692d1a",
+    "version_id": "appgprj_6acd48efc1a48191bfff48deb96c6011~appgver_c4d2de22688081918aabc189c0f84889",
+    "version_number": 7,
+    "deployment_id": "appgdep_6ae894d8ef488191bc963513ad9dd1d0",
+    "status": "succeeded",
+    "published_at": "2026-11-02T13:49:36.298698+00:00",
+    "url": "https://aion2-guias-br.juniorikkix.chatgpt.site/pt-BR/"
+  },
+  "github_sync": "verified same published source commit"
 }
